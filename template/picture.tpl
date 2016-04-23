@@ -352,7 +352,7 @@ $('.carousel .item').each(function(){
   
   var items = 4;
   if ($(window).width() < 860) {
-    items = 2;
+    items = 1;
   }
  
   for (var i=0;i<items;i++) {
