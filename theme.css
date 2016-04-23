@@ -1,0 +1,93 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+.jumbotron { display: none; }
+
+body {
+  font-family: "PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #dbdbdb;
+  background-color: #4f4f4f;
+}
+.navbar-main .navbar-header {
+  font-weight: bold;
+}
+
+.navbar-default {
+  background-color: #2E2E2E;
+  border-color: #000;
+}
+.navbar-main { background-color: #000; }
+
+a,
+.navbar-default .navbar-nav>li>a {
+  color: #A9A9A9;
+}
+
+a:hover,
+.navbar-default .navbar-nav>li>a:hover {
+   color: #fff;
+   text-decoration: none;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: #2e2e2e;
+
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #4f4f4f;
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #2e2e2e;
+}
+
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:focus,
+.dropdown-menu>.active>a:hover {
+    background-color: #2e2e2e;
+}
+
+#sidebar .handle, #sidebar .info {
+    color: #2e2e2e;
+    box-shadow: -5px 0 10px 0px #2e2e2e;
+}
+
+#sidebar .info a { color: #4f4f4f; }
+
+.carousel-inner > .item.next,
+.carousel-inner > .item.active.right {
+    left: 0;
+    -webkit-transform: translate3d(16.666%, 0, 0);
+    -ms-transform: translate3d(16.666%, 0, 0);
+    -o-transform: translate3d(16.666%, 0, 0);
+    transform: translate3d(16.666%, 0, 0);
+ }
+
+.carousel-inner > .item.prev,
+.carousel-inner > .item.active.left {
+  left: 0;
+  -webkit-transform: translate3d(-16.666%, 0, 0);
+  -ms-transform: translate3d(-16.666%, 0, 0);
+  -o-transform: translate3d(-16.666%, 0, 0);
+  transform: translate3d(-16.666%, 0, 0);
+}
+.carousel-inner>.active.left { left: -16.666%; }
+.carousel-inner>.active.right { left: 16.666%; }
+.carousel-inner>.prev { left:  -16.666%; }
+.carousel-inner>.next { left:  16.666%; }
+.carousel-control.left { background-image: none; }
+.carousel-control.right { background-image: none; }
+.carousel-inner>.item { vertical-align: middle; }
+.carousel-inner>.item>.col-lg-2 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
