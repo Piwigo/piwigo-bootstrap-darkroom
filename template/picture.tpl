@@ -352,7 +352,6 @@ $('.carousel .item').each(function(){
   
   var items = 4;
   if ($(window).width() < 860) {
-    alert('Less than 860');
     items = 2;
   }
  
