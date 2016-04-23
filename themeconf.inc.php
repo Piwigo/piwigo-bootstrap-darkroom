@@ -16,12 +16,11 @@ $themeconf = array(
     'url' => 'https://kuther.net/'
 );
 
+// needed for the navigation carousel in picture.tpl
+// borrowed from https://github.com/ThomasDaheim/piwigo-stuff/tree/master/picturethumbs
 add_event_handler('loc_end_picture', 'add_thumbnails_to_template');
 function add_thumbnails_to_template()
 {
-  // stuff borrowed from category_default.inc.php
-  // to retrieve template data required for thumbnails
-  
   global $template, $conf, $user, $page;
   
   // select all pictures for this category
@@ -67,7 +66,6 @@ function add_thumbnails_to_template()
     
     $tpl_thumbnails_var[] = $tpl_var;
   }
-  //print_r($tpl_thumbnails_var);
   
   $template->assign( array(
     'derivative_params' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_SQUARE) ) ),
@@ -78,7 +76,6 @@ function add_thumbnails_to_template()
   $template->assign('thumbnails', $tpl_thumbnails_var);
 
   unset($tpl_thumbnails_var, $pictures);
-  //print_r($template);
 }
 
 //$controller = new \BootstrapLightroom\ThemeController();
