@@ -63,6 +63,19 @@ a:hover,
 
 #sidebar .info a { color: #4f4f4f; }
 
+// ratings
+@media (min-width: 768px) {
+  #rating .dl-horizontal dd {
+    margin-left: 230px;
+  }
+}
+@media (min-width: 768px) {
+  #rating .dl-horizontal dt {
+    width: 220px;
+  }
+}
+
+// The carousel on picture.tpl
 .carousel-inner > .item.next,
 .carousel-inner > .item.active.right {
     left: 0;

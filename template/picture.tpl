@@ -250,13 +250,13 @@
         <h4 class="imageComment">{$COMMENT_IMG}</h4>
 {/if}
 {if $display_info.visits}
-        <div id="visits">
+        <div id="visits" class="col-lg-4 col-md-6 col-md-offset-1">
             <b>{'Visits'|@translate}</b>
             <span class="count">{$INFO_VISITS}</span>
         </div>
 {/if}
 {if $display_info.rating_score and isset($rate_summary)}
-        <div id="rating">
+        <div id="rating" class="col-lg-4 col-md-6">
             <dl class="dl-horizontal">
                 <dt>{'Rating score'|@translate} <span id="ratingCount">({if $rate_summary.count}{$rate_summary.count|@translate_dec:'%d rate':'%d rates'}){else}{'no rate'|@translate}{/if})</span></dt>
                 <dd id="averageRate">
@@ -352,7 +352,6 @@ $('.carousel .item').each(function(){
   
   var items = 4;
   if ($(window).width() < 860) {
-    alert('Less than 860');
     items = 2;
   }
  
@@ -367,7 +366,7 @@ $('.carousel .item').each(function(){
 });
 {/strip}{/footer_script}
 <div class="container">
- <div class="col-lg-10 col-md-offset-1">
+ <div class="col-lg-10 col-md-12 col-md-offset-1">
   <div id="thumbnailCarousel" class="carousel slide">
     <div class="carousel-inner">
 {foreach from=$thumbnails item=thumbnail}
@@ -378,11 +377,11 @@ $('.carousel .item').each(function(){
 {/if}
 {if $thumbnail.id eq $current.id}
       <div class="item active">
-        <div class="col-lg-2 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
+        <div class="col-lg-2 col-md-3 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
       </div>
 {else}
       <div class="item">
-        <div class="col-lg-2 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
+        <div class="col-lg-2 col-md-3 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
       </div>
 {/if}
 {/foreach}
