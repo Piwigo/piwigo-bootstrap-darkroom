@@ -250,13 +250,13 @@
         <h4 class="imageComment">{$COMMENT_IMG}</h4>
 {/if}
 {if $display_info.visits}
-        <div id="visits">
+        <div id="visits" class="col-lg-4 col-md-6 col-md-offset-1">
             <b>{'Visits'|@translate}</b>
             <span class="count">{$INFO_VISITS}</span>
         </div>
 {/if}
 {if $display_info.rating_score and isset($rate_summary)}
-        <div id="rating">
+        <div id="rating" class="col-lg-4 col-md-6">
             <dl class="dl-horizontal">
                 <dt>{'Rating score'|@translate} <span id="ratingCount">({if $rate_summary.count}{$rate_summary.count|@translate_dec:'%d rate':'%d rates'}){else}{'no rate'|@translate}{/if})</span></dt>
                 <dd id="averageRate">
