@@ -338,24 +338,14 @@
 
 {if !empty($thumbnails)}
 {footer_script require='jquery'}{strip}
-$('#thumbnailCarousel').carousel({
-  interval: false,
-  wrap: false
-});
-
-$('.carousel .item').each(function(){
+$('.carousel[data-type="multi"] .item').each(function(){
   var next = $(this).next();
   if (!next.length) {
     next = $(this).siblings(':first');
   }
   next.children(':first-child').clone().appendTo($(this));
   
-  var items = 4;
-  if ($(window).width() < 860) {
-    items = 1;
-  }
- 
-  for (var i=0;i<items;i++) {
+  for (var i=0;i<4;i++) {
     next=next.next();
     if (!next.length) {
     	next = $(this).siblings(':first');
@@ -367,7 +357,7 @@ $('.carousel .item').each(function(){
 {/strip}{/footer_script}
 <div class="container">
  <div class="col-lg-10 col-md-offset-1">
-  <div id="thumbnailCarousel" class="carousel slide">
+  <div id="thumbnailCarousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="false" data-wrap="false">
     <div class="carousel-inner">
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative value=$pwg->derivative($derivative_params, $thumbnail.src_image)}
@@ -377,11 +367,11 @@ $('.carousel .item').each(function(){
 {/if}
 {if $thumbnail.id eq $current.id}
       <div class="item active">
-        <div class="col-lg-2 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
       </div>
 {else}
       <div class="item">
-        <div class="col-lg-2 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
+        <div class="col-lg-2  col-md-4 col-sm-6 col-xs-12 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
       </div>
 {/if}
 {/foreach}
