@@ -339,20 +339,17 @@
 {if !empty($thumbnails)}
 {footer_script require='jquery'}{strip}
 $('.carousel[data-type="multi"] .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-  
-  for (var i=0;i<4;i++) {
+  var next = $(this);
+  var last;
+  for (var i=0;i<5;i++) {
     next=next.next();
     if (!next.length) {
     	next = $(this).siblings(':first');
-  	}
+    }
     
-    next.children(':first-child').clone().appendTo($(this));
+    last=next.children(':first-child').clone().appendTo($(this));
   }
+  last.addClass('rightest');
 });
 {/strip}{/footer_script}
 <div class="container">
