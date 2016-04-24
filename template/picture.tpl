@@ -367,11 +367,11 @@ $('.carousel[data-type="multi"] .item').each(function(){
 {/if}
 {if $thumbnail.id eq $current.id}
       <div class="item active">
-        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
       </div>
 {else}
       <div class="item">
-        <div class="col-lg-2  col-md-4 col-sm-6 col-xs-12 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
       </div>
 {/if}
 {/foreach}
