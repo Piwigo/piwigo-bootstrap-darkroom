@@ -4,9 +4,15 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#picture-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a> [{$PHOTO}]</div>
         </div>
-        <div class="navbar-right">
+        <div class="navbar-right navbar-collapse collapse" id="picture-nav">
             <ul class="nav navbar-nav">
 {if isset($current.unique_derivatives) && count($current.unique_derivatives)>1}
 {footer_script require='jquery'}{strip}
@@ -358,6 +364,13 @@ $('.slick-carousel').slick({
    breakpoint: 600,
    settings: {
     slidesToShow: 3,
+    slidesToScroll: 2
+   }
+  },
+  {
+   breakpoint: 420,
+   settings: {
+    slidesToShow: 2,
     slidesToScroll: 2
    }
   }]
