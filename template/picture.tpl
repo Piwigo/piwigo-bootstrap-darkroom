@@ -364,7 +364,7 @@ $('.slick-carousel').slick({
 });
 
 var currentThumbnailIndex = $('.slick-carousel').find('[data-thumbnail-active="1"]').data('slick-index');
-$(".slick-slider").slick('goTo', currentThumbnailIndex, false);
+$(".slick-slider").slick('goTo', currentThumbnailIndex, true);
 
 {/strip}{/footer_script}
 <div class="container">
