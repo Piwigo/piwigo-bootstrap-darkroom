@@ -95,3 +95,29 @@ a:hover,
 
 /* the carousel */
 .slick-slide img { display: inherit !important; }
+
+/* pagination */
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+  background-color: #4f4f4f;
+  border: 1px solid #000;
+}
+.pagination>li>a,
+.pagination>li>span {
+  color: #dbdbdb;
+  background-color: #2e2e2e;
+  border: 1px solid #000;
+}
+.pagination>.disabled>a,
+.pagination>.disabled>a:focus,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>span,
+.pagination>.disabled>span:focus,
+.pagination>.disabled>span:hover {
+  background-color: #2e2e2e;
+  border: 1px solid #000;
+}
