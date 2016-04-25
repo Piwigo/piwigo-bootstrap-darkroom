@@ -73,28 +73,4 @@ a:hover,
 }
 
 /* the carousel */
-.carousel-control { width:  4%; }
-.carousel-control.left, .carousel-control.right { background-image: none; }
-.carousel-inner .active.left { left: -16.667%; }
-.carousel-inner .next        { left:  16.667%; }
-.carousel-inner .prev        { left: -16.667%; }
-.item:not(.prev) {visibility: visible;}
-.item.right:not(.prev) {visibility: hidden;}
-.rightest{ visibility: visible;}
-.carousel-inner > .item.next,
-.carousel-inner > .item.active.right {
-   left: 0;
-   -webkit-transform: translate3d(16.667%, 0, 0);
-   -ms-transform: translate3d(16.667%, 0, 0);
-   -o-transform: translate3d(16.667%, 0, 0);
-   transform: translate3d(16.667%, 0, 0);
-}
-
-.carousel-inner > .item.prev,
-.carousel-inner > .item.active.left {
-  left: 0;
-  -webkit-transform: translate3d(-16.666%, 0, 0);
-  -ms-transform: translate3d(-16.666%, 0, 0);
-  -o-transform: translate3d(-16.666%, 0, 0);
-  transform: translate3d(-16.666%, 0, 0);
-}
+.slick-slide img { display: inherit !important; }

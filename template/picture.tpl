@@ -337,25 +337,37 @@
 {/if}
 
 {if !empty($thumbnails)}
+{combine_css path="themes/bootstrap_lightroom/slick/slick.css"}
+{combine_css path="themes/bootstrap_lightroom/slick/slick-theme.css"}
+{combine_script id="slick.carousel" require="jquery" path="themes/bootstrap_lightroom/slick/slick.min.js"}
 {footer_script require='jquery'}{strip}
-$('.carousel[data-type="multi"] .item').each(function(){
-  var next = $(this);
-  var last;
-  for (var i=0;i<5;i++) {
-    next=next.next();
-    if (!next.length) {
-    	next = $(this).siblings(':first');
-    }
-    
-    last=next.children(':first-child').clone().appendTo($(this));
-  }
-  last.addClass('rightest');
+$('.slick-carousel').slick({
+ infinite: false,
+ slidesToShow: 6,
+ slidesToScroll: 1,
+ lazyLoad: 'progressive',
+ responsive: [
+  {
+   breakpoint: 1024,
+   settings: {
+    slidesToShow: 4
+   }
+  },
+  {
+   breakpoint: 600,
+   settings: {
+    slidesToShow: 3
+   }
+  }]
 });
+
+var currentThumbnailIndex = $('.slick-carousel').find('[data-thumbnail-active="1"]').data('slick-index');
+$(".slick-slider").slick('goTo', currentThumbnailIndex, false);
+
 {/strip}{/footer_script}
 <div class="container">
  <div class="col-lg-10 col-md-offset-1">
-  <div id="thumbnailCarousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="false" data-wrap="false">
-    <div class="carousel-inner">
+  <div id="thumbnailCarousel" class="slick-carousel">
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative value=$pwg->derivative($derivative_params, $thumbnail.src_image)}
 {if !$derivative->is_cached()}
@@ -363,19 +375,12 @@ $('.carousel[data-type="multi"] .item').each(function(){
 {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
 {if $thumbnail.id eq $current.id}
-      <div class="item active">
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
-      </div>
+        <div class="text-center" data-thumbnail-active="1"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
 {else}
-      <div class="item">
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
-      </div>
+        <div class="text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
 {/if}
 {/foreach}
-    </div>
   </div>
-  <a class="left carousel-control" href="#thumbnailCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-  <a class="right carousel-control" href="#thumbnailCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
  </div>
 </div>
 {/if}
