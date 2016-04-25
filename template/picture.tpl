@@ -351,7 +351,7 @@ $('.slick-carousel').slick({
  infinite: false,
  slidesToShow: 6,
  slidesToScroll: 5,
- lazyLoad: 'progressive',
+ lazyLoad: 'ondemand',
  responsive: [
   {
    breakpoint: 1024,
