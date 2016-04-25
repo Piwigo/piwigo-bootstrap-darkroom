@@ -8,6 +8,6 @@ Features:
 - A carousel album navigation on the picture page using slick slider
 
 Usage:
-1. Git clone or download and move to piwigo/themes/bootstrap_lightroom
-2. Enable Bootstrap Default parent theme, go to its settings, and set Bootstrap theme to "none"
-3. Enable Bootstrap Lightroom
+# Git clone or download and move to piwigo/themes/bootstrap_lightroom
+# Enable Bootstrap Default parent theme, go to its settings, and set Bootstrap theme to "none"
+# Enable Bootstrap Lightroom
