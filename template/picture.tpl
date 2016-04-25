@@ -344,19 +344,21 @@
 $('.slick-carousel').slick({
  infinite: false,
  slidesToShow: 6,
- slidesToScroll: 1,
+ slidesToScroll: 5,
  lazyLoad: 'progressive',
  responsive: [
   {
    breakpoint: 1024,
    settings: {
-    slidesToShow: 4
+    slidesToShow: 4,
+    slidesToScroll: 3
    }
   },
   {
    breakpoint: 600,
    settings: {
-    slidesToShow: 3
+    slidesToShow: 3,
+    slidesToScroll: 2
    }
   }]
 });
@@ -375,7 +377,7 @@ $(".slick-slider").slick('goTo', currentThumbnailIndex, false);
 {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
 {if $thumbnail.id eq $current.id}
-        <div class="text-center" data-thumbnail-active="1"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
+        <div class="text-center thumbnail-active" data-thumbnail-active="1"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
 {else}
         <div class="text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE} class="img-responsive"></a></div>
 {/if}
