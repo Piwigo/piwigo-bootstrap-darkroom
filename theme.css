@@ -78,11 +78,15 @@ a:hover,
 }
 
 #sidebar .handle, #sidebar .info {
-    color: #2e2e2e;
+    color: #a9a9a9;
+    background-color: #2e2e2e;
+    border-top: 1px solid #2e2e2e;
+    border-bottom: 1px solid #2e2e2e;
+    border-left: 1px solid #2e2e2e;
     box-shadow: -5px 0 10px 0px #2e2e2e;
 }
 
-#sidebar .info a { color: #4f4f4f; }
+#sidebar .info a { color: #fff; }
 
 @media (min-width: 768px) {
   #rating .dl-horizontal dd {
