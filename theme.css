@@ -2,13 +2,14 @@
 
 .jumbotron { display: none; }
 
+/* Main */
 body {
   font-family: "PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #dbdbdb;
   background-color: #4f4f4f;
 }
 
-
+/* Navbar */
 .navbar-main .navbar-header {
   font-weight: bold;
 }
@@ -37,6 +38,7 @@ a,
 
 a:focus,
 a:hover,
+a:active,
 .navbar-default .navbar-nav>li>a:hover {
    color: #fff;
    text-decoration: none;
@@ -100,6 +102,7 @@ a:hover,
 
 /* the carousel */
 .slick-slide img { display: inherit !important; }
+.slick-slide, .slick-slide *{ outline: none !important; }
 
 /* pagination */
 .pagination>.active>a,
