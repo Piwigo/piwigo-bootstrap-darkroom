@@ -343,9 +343,9 @@
 {/if}
 
 {if !empty($thumbnails)}
-{combine_css path="themes/bootstrap_lightroom/slick/slick.css"}
-{combine_css path="themes/bootstrap_lightroom/slick/slick-theme.css"}
-{combine_script id="slick.carousel" require="jquery" path="themes/bootstrap_lightroom/slick/slick.min.js"}
+{combine_css path="themes/bootstrap_darkroom/slick/slick.css"}
+{combine_css path="themes/bootstrap_darkroom/slick/slick-theme.css"}
+{combine_script id="slick.carousel" require="jquery" path="themes/bootstrap_darkroom/slick/slick.min.js"}
 {footer_script require='jquery'}{strip}
 $('.slick-carousel').slick({
  infinite: false,

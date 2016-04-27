@@ -1,6 +1,6 @@
 <?php
 /*
-Theme Name: Bootstrap Lightroom
+Theme Name: Bootstrap Darkroom
 Version: 1.0.0
 Description: A Bootstrap Default child theme with darker colors based on Lightroom and a carousel on the picture page
 Theme URI: http://piwigo.org/ext/extension_view.php?eid=796
@@ -9,7 +9,7 @@ Author URI: https://kuther.net/
 */
 
 $themeconf = array(
-    'name' => 'bootstrap_lightroom',
+    'name' => 'bootstrap_darkroom',
     'parent' => 'bootstrapdefault',
     'load_parent_css' => true,
     'load_parent_local_head' => true,
