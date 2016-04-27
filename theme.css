@@ -92,6 +92,16 @@ a:active,
 /* Buttons */
 .btn-default { outline: none !important; }
 
+/* Panels */
+.panel { background-color: #4f4f4f }
+.panel-primary { border-color: #000; }
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #2e2e2e;
+    border-color: #000;
+    background-image: none !important;
+}
+
 /* Sidebar */
 #sidebar .handle, #sidebar .info {
     color: #a9a9a9;
@@ -113,11 +123,11 @@ a:active,
   }
 }
 
-/* the carousel */
+/* Carousel */
 .slick-slide img { display: inherit !important; }
 .slick-slide, .slick-slide *{ outline: none !important; }
 
-/* pagination */
+/* Pagination */
 .pagination>.active>a,
 .pagination>.active>a:focus,
 .pagination>.active>a:hover,
