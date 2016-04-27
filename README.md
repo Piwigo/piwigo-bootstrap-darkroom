@@ -22,8 +22,8 @@ like social integration or bootstrap theme. To change those, enable bootstrap de
 
 * If the square thumbnails aren't cached already, the carousel sometimes fails to load them on initial page load.
 You need to scroll once to load them. Possible workarounds:
-** Pre-generate the derivates right after upload
-** Change the carousel's "on-demand" lazy loading method to "progressive", but this would load _all_ thumbnails
+ * Pre-generate the derivates right after upload
+ * Change the carousel's "on-demand" lazy loading method to "progressive", but this would load _all_ thumbnails
 
 ### TODOs
 
