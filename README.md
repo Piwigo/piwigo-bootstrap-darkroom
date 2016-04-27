@@ -24,6 +24,8 @@ like social integration or bootstrap theme. To change those, enable bootstrap de
 You need to scroll once to load them. Possible workarounds:
  * Pre-generate the derivates right after upload
  * Change the carousel's "on-demand" lazy loading method to "progressive", but this would load _all_ thumbnails
+* Guests cannot see the rating stars when "guests can rate" is disabled in Options -> Permissions
+ * This is a bug in bootstrap default, see https://github.com/Philio/bootstrapdefault/issues/26
 
 ### TODOs
 
