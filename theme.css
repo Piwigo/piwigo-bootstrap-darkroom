@@ -68,6 +68,8 @@ a:active,
     background-color: #2e2e2e;
 }
 
+#navigationButtons>span { color: #4f4f4f; }
+
 @media (max-width: 460px) {
   #thePicturePage .navbar-brand {
     height: 100%;
