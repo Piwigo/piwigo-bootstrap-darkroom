@@ -264,7 +264,7 @@
 {if $display_info.rating_score and isset($rate_summary)}
         <div id="rating" class="col-lg-4 col-md-6">
             <dl class="dl-horizontal">
-                <dt>{'Rating score'|@translate} <span id="ratingCount">({if $rate_summary.count}{$rate_summary.count|@translate_dec:'%d rate':'%d rates'}){else}{'no rate'|@translate}{/if})</span></dt>
+                <dt>{'Rating score'|@translate} <span id="ratingCount">({if $rate_summary.count}{$rate_summary.count|@translate_dec:'%d rate':'%d rates'}{else}{'no rate'|@translate}{/if})</span></dt>
                 <dd id="averageRate">
 {foreach from=$rating.marks item=mark name=rate_loop}
                     <span class="{if $rate_summary.count && $rate_summary.average > $mark - 0.5}rateButtonStarFull{else}rateButtonStarEmpty{/if}" data-value="{$mark}"></span>
