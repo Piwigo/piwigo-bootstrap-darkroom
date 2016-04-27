@@ -7,8 +7,8 @@ A Piwigo theme based on [Bootstrap Default](https://github.com/Philio/bootstrapd
 * Fully responsive
 * Lightroom based dark color scheme
 * Carousel album navigation on the picture page using [slick slider](http://kenwheeler.github.io/slick/)
-** Responsive scale down of thumbnails: large = 6, medium = 4, small = 2
-** Lazy loading of thumbnails on-demand to keep the initial page load size down
+ * Responsive scale down of thumbnails: large = 6, medium = 4, small = 2
+ * Lazy loading of thumbnails on-demand to keep the initial page load size down
 
 ### Usage
 
