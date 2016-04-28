@@ -1,4 +1,9 @@
 <!-- Start of picture.tpl -->
+{if get_device() != 'desktop'}
+{combine_script id='config' path='themes/bootstrap_darkroom/js/config.js' require='jquery'}
+{combine_script id='jquery.mobile' path='themes/bootstrap_darkroom/js/jquery.mobile.min.js' require='jquery,config'}
+{/if}
+
 {if !empty($PLUGIN_PICTURE_BEFORE)}{$PLUGIN_PICTURE_BEFORE}{/if}
 
 <nav class="navbar navbar-default" role="navigation">
@@ -132,6 +137,19 @@
 
 <div class="container">
     {include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
+{if get_device() != 'desktop' }
+{footer_script require="jquery"}{strip}
+$('#theMainImage').bind('swipeleft swiperight', function (event) {
+   if (event.type == 'swipeleft') {
+       console.log('left');
+       $('#navigationButtons span.glyphicon')[2].click();
+   } else {
+       console.log('right');
+       $('#navigationButtons span.glyphicon')[0].click(); 
+   }
+});
+{/strip}{/footer_script}
+{/if}
 </div>
 
 <div id="theImage">
@@ -347,7 +365,7 @@
 {combine_css path="themes/bootstrap_darkroom/slick/slick-theme.css"}
 {combine_script id="slick.carousel" require="jquery" path="themes/bootstrap_darkroom/slick/slick.min.js"}
 {footer_script require='jquery'}{strip}
-$('.slick-carousel').slick({
+$('#thumbnailCarousel').slick({
  infinite: false,
  slidesToShow: 6,
  slidesToScroll: 5,
@@ -376,8 +394,8 @@ $('.slick-carousel').slick({
   }]
 });
 
-var currentThumbnailIndex = $('.slick-carousel').find('[data-thumbnail-active="1"]').data('slick-index');
-$(".slick-slider").slick('goTo', currentThumbnailIndex, true);
+var currentThumbnailIndex = $('#thumbnailCarousel').find('[data-thumbnail-active="1"]').data('slick-index');
+$('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
 
 {/strip}{/footer_script}
 <div class="container">
