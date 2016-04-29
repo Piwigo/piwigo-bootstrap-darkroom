@@ -179,6 +179,12 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
                 <dd>{$INFO_POSTED_DATE}</dd>
             </div>
 {/if}
+{if $display_info.visits}
+            <div id="visits" class="imageInfo">
+                <dt>{'Visits'|@translate}</dt>
+                <dd>{$INFO_VISITS}</dd>
+            </div>
+{/if}
 {if $display_info.dimensions and isset($INFO_DIMENSIONS)}
             <div id="Dimensions" class="imageInfo">
                 <dt>{'Dimensions'|@translate}</dt>
@@ -276,12 +282,7 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
 {if isset($COMMENT_IMG)}
         <h4 class="imageComment">{$COMMENT_IMG}</h4>
 {/if}
-{if $display_info.visits}
-        <div id="visits" class="col-lg-4 col-md-6 col-md-offset-1">
-            <b>{'Visits'|@translate}</b>
-            <span class="count">{$INFO_VISITS}</span>
-        </div>
-{/if}
+
 {if $display_info.rating_score and isset($rate_summary)}
         <div id="rating" class="col-lg-4 col-md-6">
             <dl class="dl-horizontal">
@@ -370,22 +371,30 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
 {footer_script require='jquery'}{strip}
 $('#thumbnailCarousel').slick({
  infinite: false,
- slidesToShow: 6,
- slidesToScroll: 5,
+ centerMode: false,
+ slidesToShow: 7,
+ slidesToScroll: 6,
  lazyLoad: 'ondemand',
  responsive: [
   {
+   breakpoint: 1200,
+   settings: {
+    slidesToShow: 6,
+    slidesToScroll: 5
+   }
+  },
+  {
    breakpoint: 1024,
    settings: {
-    slidesToShow: 4,
-    slidesToScroll: 3
+    slidesToShow: 5,
+    slidesToScroll: 4
    }
   },
   {
    breakpoint: 600,
    settings: {
     slidesToShow: 3,
-    slidesToScroll: 2
+    slidesToScroll: 3
    }
   },
   {
