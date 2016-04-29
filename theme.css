@@ -171,3 +171,6 @@ a:active,
 
 /* Openstreetmap Plugin fixlets */
 .leaflet-control a { color: #4f4f4f !important; }
+
+/* jQM */
+.ui-loader { display: none; }
