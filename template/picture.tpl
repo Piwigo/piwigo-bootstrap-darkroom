@@ -367,22 +367,30 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
 {footer_script require='jquery'}{strip}
 $('#thumbnailCarousel').slick({
  infinite: false,
- slidesToShow: 6,
- slidesToScroll: 5,
+ centerMode: false,
+ slidesToShow: 7,
+ slidesToScroll: 6,
  lazyLoad: 'ondemand',
  responsive: [
   {
+   breakpoint: 1200,
+   settings: {
+    slidesToShow: 6,
+    slidesToScroll: 5
+   }
+  },
+  {
    breakpoint: 1024,
    settings: {
-    slidesToShow: 4,
-    slidesToScroll: 3
+    slidesToShow: 5,
+    slidesToScroll: 4
    }
   },
   {
    breakpoint: 600,
    settings: {
     slidesToShow: 3,
-    slidesToScroll: 2
+    slidesToScroll: 3
    }
   },
   {
