@@ -171,3 +171,8 @@ a:active,
 
 /* Openstreetmap Plugin fixlets */
 .leaflet-control a { color: #4f4f4f !important; }
+
+.col-centered {
+ float: none;
+ margin: 0 auto;
+}

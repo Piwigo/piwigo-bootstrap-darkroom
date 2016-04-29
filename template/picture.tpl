@@ -156,127 +156,6 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
     {$ELEMENT_CONTENT}
 </div>
 
-<!--
-<div id="sidebar">
-    <div id="info-content" class="info">
-        <dl>
-            <h4>{'Information'|@translate}</h4>
-{if $display_info.author and isset($INFO_AUTHOR)}
-            <div id="Author" class="imageInfo">
-                <dt>{'Author'|@translate}</dt>
-                <dd>{$INFO_AUTHOR}</dd>
-            </div>
-{/if}
-{if $display_info.created_on and isset($INFO_CREATION_DATE)}
-            <div id="datecreate" class="imageInfo">
-                <dt>{'Created on'|@translate}</dt>
-                <dd>{$INFO_CREATION_DATE}</dd>
-            </div>
-{/if}
-{if $display_info.posted_on}
-            <div id="datepost" class="imageInfo">
-                <dt>{'Posted on'|@translate}</dt>
-                <dd>{$INFO_POSTED_DATE}</dd>
-            </div>
-{/if}
-{if $display_info.visits}
-            <div id="visits" class="imageInfo">
-                <dt>{'Visits'|@translate}</dt>
-                <dd>{$INFO_VISITS}</dd>
-            </div>
-{/if}
-{if $display_info.dimensions and isset($INFO_DIMENSIONS)}
-            <div id="Dimensions" class="imageInfo">
-                <dt>{'Dimensions'|@translate}</dt>
-                <dd>{$INFO_DIMENSIONS}</dd>
-            </div>
-{/if}
-{if $display_info.file}
-            <div id="File" class="imageInfo">
-                <dt>{'File'|@translate}</dt>
-                <dd>{$INFO_FILE}</dd>
-            </div>
-{/if}
-{if $display_info.filesize and isset($INFO_FILESIZE)}
-            <div id="Filesize" class="imageInfo">
-                <dt>{'Filesize'|@translate}</dt>
-                <dd>{$INFO_FILESIZE}</dd>
-            </div>
-{/if}
-{if $display_info.tags and isset($related_tags)}
-            <div id="Tags" class="imageInfo">
-                <dt>{'Tags'|@translate}</dt>
-                <dd>
-                    {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a href="{$tag.URL}">{$tag.name}</a>{/foreach}
-                </dd>
-            </div>
-{/if}
-{if $display_info.categories and isset($related_categories)}
-            <div id="Categories" class="imageInfo">
-                <dt>{'Albums'|@translate}</dt>
-                <dd>
-{foreach from=$related_categories item=cat name=cat_loop}
-                {if !$smarty.foreach.cat_loop.first}<br />{/if}{$cat}
-{/foreach}
-                </dd>
-            </div>
-{/if}
-{if $display_info.privacy_level and isset($available_permission_levels)}
-{combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
-{footer_script require='jquery'}{strip}
-    function setPrivacyLevel(id, level, label) {
-    (new PwgWS('{$ROOT_URL}')).callService(
-        "pwg.images.setPrivacyLevel", { image_id:id, level:level},
-        {
-            method: "POST",
-            onFailure: function(num, text) { alert(num + " " + text); },
-            onSuccess: function(result) {
-                jQuery('#dropdownPermissions').html(label + ' <span class="caret"></span>');
-                jQuery('.permission-li').removeClass('active');
-                jQuery('#permission-' + level).addClass('active');
-            }
-        }
-    );
-    }
-    (SwitchBox=window.SwitchBox||[]).push("#privacyLevelLink", "#privacyLevelBox");
-{/strip}{/footer_script}
-            <div id="Privacy" class="imageInfo">
-                <dt>{'Who can see this photo?'|@translate}</dt>
-                <dd>
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
-                            {$available_permission_levels[$current.level]}
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownPermissions">
-{foreach from=$available_permission_levels item=label key=level}
-                            <li id="permission-{$level}" role="presentation" class="permission-li {if $current.level == $level} active{/if}"><a role="menuitem" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
-{/foreach}
-                        </ul>
-                    </div>
-                </dd>
-            </div>
-{/if}
-{if isset($metadata)}
-{foreach from=$metadata item=meta}
-            <br />
-            <h4>{$meta.TITLE}</h4>
-{foreach from=$meta.lines item=value key=label}
-            <dt>{$label}</dt>
-            <dd>{$value}</dd>
-{/foreach}
-{/foreach}
-{/if}
-        </dl>
-    </div>
-    <div class="handle">
-        <a id="info-link" href="#">
-            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-        </a>
-    </div>
-</div>
--->
-
 <div class="container">
     <section id="important-info">
 {if isset($COMMENT_IMG)}
@@ -431,90 +310,22 @@ $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
 {/if}
 
 <div class="container">
- <div id="infopanel">
+ <div id="infopanel" class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-centered">
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate}</a></li>
-    <li role="presentation"><a href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
-    <li role="presentation"><a href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{$meta.TITLE}</a></li>
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation" class="active"><a href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
+{if isset($metadata)}
+    <li role="presentation"><a href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF-Metadata'|@translate}</a></li>
+{/if}
+{if isset($comment_add) || $COMMENT_COUNT > 0}
+    <li role="presentation"><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate}</a></li>
+{/if}
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="tab_comments">
-
-{if isset($comment_add) || $COMMENT_COUNT > 0}
-<a name="comments"></a>
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-{$shortname = $theme_config->comments_disqus_shortname}
-{if $theme_config->comments_type == 'disqus' and !empty($shortname)}
-                <div id="disqus_thread"></div>
-{footer_script}{strip}
-var disqus_shortname = '{/strip}{$shortname}{strip}';
-
-(function() {
-var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-{/strip}
-{/footer_script}
-{else}
-            <h3>{'Comments'|@translate}</h3>
-            <div class="tabbable">
-                <ul class="nav nav-pills">
-{if $COMMENT_COUNT > 0}
-                    <li class="active"><a href="#viewcomments" data-toggle="tab">{$COMMENT_COUNT|@translate_dec:'%d comment':'%d comments'}</a></li>
-{/if}
-{if isset($comment_add)}
-                    <li{if $COMMENT_COUNT == 0} class="active"{/if}><a href="#addcomment" data-toggle="tab">{'Add a comment'|@translate}</a></li>
-{/if}
-                </ul>
-                <div class="tab-content">
-{if $COMMENT_COUNT > 0}
-                    <div id="viewcomments" class="tab-pane active">
-{include file='comment_list.tpl'}
-                    </div>
-{/if}
-{if isset($comment_add)}
-                    <div id="addcomment" class="tab-pane{if $COMMENT_COUNT == 0} active{/if}">
-                        <form method="post" action="{$comment_add.F_ACTION}">
-{if $comment_add.SHOW_AUTHOR}
-                            <div class="form-group">
-                                <label for="author">{'Author'|@translate}{if $comment_add.AUTHOR_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
-                                <input class="form-control" type="text" name="author" id="author" value="{$comment_add.AUTHOR}">
-                            </div>
-{/if}
-{if $comment_add.SHOW_EMAIL}
-                            <div class="form-group">
-                                <label for="email">{'Email address'|@translate}{if $comment_add.EMAIL_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
-                                <input class="form-control" type="text" name="email" id="email" value="{$comment_add.EMAIL}">
-                            </div>
-{/if}
-{if $comment_add.SHOW_WEBSITE}
-                            <div class="form-group">
-                                <label for="website_url">{'Website'|@translate} :</label>
-                                <input class="form-control" type="text" name="website_url" id="website_url" value="{$comment_add.WEBSITE_URL}">
-                            </div>
-{/if}
-                            <div class="form-group">
-                                <label for="contentid">{'Comment'|@translate} ({'mandatory'|@translate}) :</label>
-                                <textarea class="form-control" name="content" id="contentid" rows="5" cols="50">{$comment_add.CONTENT}</textarea>
-                            </div>
-                            <input type="hidden" name="key" value="{$comment_add.KEY}">
-                            <button type="submit" class="btn btn-default">{'Submit'|@translate}</button>
-                        </form>
-                    </div>
-{/if}
-                </div>
-            </div>
-{/if}
-        </div>
-    </div>
-{/if}
-    </div>
-    <div role="tabpanel" class="tab-pane" id="tab_info">
+<!-- information -->
+    <div role="tabpanel" class="tab-pane active" id="tab_info">
       <div id="info-content" class="info">
         <dl>
             <h4>{'Information'|@translate}</h4>
@@ -534,6 +345,12 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             <div id="datepost" class="imageInfo">
                 <dt>{'Posted on'|@translate}</dt>
                 <dd>{$INFO_POSTED_DATE}</dd>
+            </div>
+{/if}
+{if $display_info.visits}
+            <div id="visits" class="imageInfo">
+                <dt>{'Visits'|@translate}</dt>
+                <dd>{$INFO_VISITS}</dd>
             </div>
 {/if}
 {if $display_info.dimensions and isset($INFO_DIMENSIONS)}
@@ -611,9 +428,10 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         </dl>
       </div>
     </div>
+<!-- metadata -->
+{if isset($metadata)}
     <div role="tabpanel" class="tab-pane" id="tab_metadata">
       <dl>
-{if isset($metadata)}
 {foreach from=$metadata item=meta}
             <br />
             <h4>{$meta.TITLE}</h4>
@@ -622,10 +440,79 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             <dd>{$value}</dd>
 {/foreach}
 {/foreach}
-{/if}
       </dl>
     </div>
-    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+{/if}
+<!-- comments -->
+{if isset($comment_add) || $COMMENT_COUNT > 0}
+    <div role="tabpanel" class="tab-pane" id="tab_comments">
+
+<a name="comments"></a>
+{$shortname = $theme_config->comments_disqus_shortname}
+{if $theme_config->comments_type == 'disqus' and !empty($shortname)}
+                <div id="disqus_thread"></div>
+{footer_script}{strip}
+var disqus_shortname = '{/strip}{$shortname}{strip}';
+
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+{/strip}
+{/footer_script}
+{else}
+            <h3>{'Comments'|@translate}</h3>
+            <div class="tabbable">
+                <ul class="nav nav-pills">
+{if $COMMENT_COUNT > 0}
+                    <li class="active"><a href="#viewcomments" data-toggle="tab">{$COMMENT_COUNT|@translate_dec:'%d comment':'%d comments'}</a></li>
+{/if}
+{if isset($comment_add)}
+                    <li{if $COMMENT_COUNT == 0} class="active"{/if}><a href="#addcomment" data-toggle="tab">{'Add a comment'|@translate}</a></li>
+{/if}
+                </ul>
+                <div class="tab-content">
+{if $COMMENT_COUNT > 0}
+                    <div id="viewcomments" class="tab-pane active">
+{include file='comment_list.tpl'}
+                    </div>
+{/if}
+{if isset($comment_add)}
+                    <div id="addcomment" class="tab-pane{if $COMMENT_COUNT == 0} active{/if}">
+                        <form method="post" action="{$comment_add.F_ACTION}">
+{if $comment_add.SHOW_AUTHOR}
+                            <div class="form-group">
+                                <label for="author">{'Author'|@translate}{if $comment_add.AUTHOR_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
+                                <input class="form-control" type="text" name="author" id="author" value="{$comment_add.AUTHOR}">
+                            </div>
+{/if}
+{if $comment_add.SHOW_EMAIL}
+                            <div class="form-group">
+                                <label for="email">{'Email address'|@translate}{if $comment_add.EMAIL_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
+                                <input class="form-control" type="text" name="email" id="email" value="{$comment_add.EMAIL}">
+                            </div>
+{/if}
+{if $comment_add.SHOW_WEBSITE}
+                            <div class="form-group">
+                                <label for="website_url">{'Website'|@translate} :</label>
+                                <input class="form-control" type="text" name="website_url" id="website_url" value="{$comment_add.WEBSITE_URL}">
+                            </div>
+{/if}
+                            <div class="form-group">
+                                <label for="contentid">{'Comment'|@translate} ({'mandatory'|@translate}) :</label>
+                                <textarea class="form-control" name="content" id="contentid" rows="5" cols="50">{$comment_add.CONTENT}</textarea>
+                            </div>
+                            <input type="hidden" name="key" value="{$comment_add.KEY}">
+                            <button type="submit" class="btn btn-default">{'Submit'|@translate}</button>
+                        </form>
+                    </div>
+{/if}
+                </div>
+            </div>
+{/if}
+    </div>
+{/if}
   </div>
  </div>
 </div>
