@@ -180,10 +180,10 @@
 </div>
 {if !empty($cats_navbar) || !empty($thumb_navbar)}
 <div class="container">
-{if !empty($cats_navbar) && !isset($GDThumb)}
+{if !empty($cats_navbar)}
     {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$cats_navbar}
 {/if}
-{if !empty($thumb_navbar) && !isset($GThumb) && !isset($GDThumb)}
+{if !empty($thumb_navbar)}
     {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$thumb_navbar}
 {/if}
 </div>
