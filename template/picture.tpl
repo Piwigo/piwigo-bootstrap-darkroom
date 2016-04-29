@@ -155,6 +155,8 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
 <div id="theImage">
     {$ELEMENT_CONTENT}
 </div>
+
+<!--
 <div id="sidebar">
     <div id="info-content" class="info">
         <dl>
@@ -267,6 +269,7 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
         </a>
     </div>
 </div>
+-->
 
 <div class="container">
     <section id="important-info">
@@ -418,10 +421,21 @@ $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
 </div>
 {/if}
 
+<div class="container">
+ <div id="infopanel">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate}</a></li>
+    <li role="presentation"><a href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
+    <li role="presentation"><a href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{$meta.TITLE}</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="tab_comments">
 
 {if isset($comment_add) || $COMMENT_COUNT > 0}
 <a name="comments"></a>
-<div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
 {$shortname = $theme_config->comments_disqus_shortname}
@@ -489,8 +503,123 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 {/if}
         </div>
     </div>
-</div>
 {/if}
+    </div>
+    <div role="tabpanel" class="tab-pane" id="tab_info">
+      <div id="info-content" class="info">
+        <dl>
+            <h4>{'Information'|@translate}</h4>
+{if $display_info.author and isset($INFO_AUTHOR)}
+            <div id="Author" class="imageInfo">
+                <dt>{'Author'|@translate}</dt>
+                <dd>{$INFO_AUTHOR}</dd>
+            </div>
+{/if}
+{if $display_info.created_on and isset($INFO_CREATION_DATE)}
+            <div id="datecreate" class="imageInfo">
+                <dt>{'Created on'|@translate}</dt>
+                <dd>{$INFO_CREATION_DATE}</dd>
+            </div>
+{/if}
+{if $display_info.posted_on}
+            <div id="datepost" class="imageInfo">
+                <dt>{'Posted on'|@translate}</dt>
+                <dd>{$INFO_POSTED_DATE}</dd>
+            </div>
+{/if}
+{if $display_info.dimensions and isset($INFO_DIMENSIONS)}
+            <div id="Dimensions" class="imageInfo">
+                <dt>{'Dimensions'|@translate}</dt>
+                <dd>{$INFO_DIMENSIONS}</dd>
+            </div>
+{/if}
+{if $display_info.file}
+            <div id="File" class="imageInfo">
+                <dt>{'File'|@translate}</dt>
+                <dd>{$INFO_FILE}</dd>
+            </div>
+{/if}
+{if $display_info.filesize and isset($INFO_FILESIZE)}
+            <div id="Filesize" class="imageInfo">
+                <dt>{'Filesize'|@translate}</dt>
+                <dd>{$INFO_FILESIZE}</dd>
+            </div>
+{/if}
+{if $display_info.tags and isset($related_tags)}
+            <div id="Tags" class="imageInfo">
+                <dt>{'Tags'|@translate}</dt>
+                <dd>
+                    {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a href="{$tag.URL}">{$tag.name}</a>{/foreach}
+                </dd>
+            </div>
+{/if}
+{if $display_info.categories and isset($related_categories)}
+            <div id="Categories" class="imageInfo">
+                <dt>{'Albums'|@translate}</dt>
+                <dd>
+{foreach from=$related_categories item=cat name=cat_loop}
+                {if !$smarty.foreach.cat_loop.first}<br />{/if}{$cat}
+{/foreach}
+                </dd>
+            </div>
+{/if}
+{if $display_info.privacy_level and isset($available_permission_levels)}
+{combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
+{footer_script require='jquery'}{strip}
+    function setPrivacyLevel(id, level, label) {
+    (new PwgWS('{$ROOT_URL}')).callService(
+        "pwg.images.setPrivacyLevel", { image_id:id, level:level},
+        {
+            method: "POST",
+            onFailure: function(num, text) { alert(num + " " + text); },
+            onSuccess: function(result) {
+                jQuery('#dropdownPermissions').html(label + ' <span class="caret"></span>');
+                jQuery('.permission-li').removeClass('active');
+                jQuery('#permission-' + level).addClass('active');
+            }
+        }
+    );
+    }
+    (SwitchBox=window.SwitchBox||[]).push("#privacyLevelLink", "#privacyLevelBox");
+{/strip}{/footer_script}
+            <div id="Privacy" class="imageInfo">
+                <dt>{'Who can see this photo?'|@translate}</dt>
+                <dd>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
+                            {$available_permission_levels[$current.level]}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownPermissions">
+{foreach from=$available_permission_levels item=label key=level}
+                            <li id="permission-{$level}" role="presentation" class="permission-li {if $current.level == $level} active{/if}"><a role="menuitem" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
+{/foreach}
+                        </ul>
+                    </div>
+                </dd>
+            </div>
+{/if}
+        </dl>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="tab_metadata">
+      <dl>
+{if isset($metadata)}
+{foreach from=$metadata item=meta}
+            <br />
+            <h4>{$meta.TITLE}</h4>
+{foreach from=$meta.lines item=value key=label}
+            <dt>{$label}</dt>
+            <dd>{$value}</dd>
+{/foreach}
+{/foreach}
+{/if}
+      </dl>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+  </div>
+ </div>
+</div>
 
 {if !empty($navbar) }
 <div class="container">
@@ -498,14 +627,4 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 </div>
 {/if}
 
-<!--
-<div id="imageToolBar">
-{include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
-
-{if isset($U_SLIDESHOW_STOP)}
-<p>
-	[ <a href="{$U_SLIDESHOW_STOP}">{'stop the slideshow'|@translate}</a> ]
-</p>
-{/if}
--->
 {if !empty($PLUGIN_PICTURE_AFTER)}{$PLUGIN_PICTURE_AFTER}{/if}
