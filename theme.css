@@ -71,7 +71,8 @@ a:active,
 #navigationButtons>span { color: #4f4f4f; }
 
 @media (max-width: 460px) {
-  #thePicturePage .navbar-brand {
+  #thePicturePage .navbar-brand,
+  #theCategoryPage .navbar-brand {
     height: 100%;
     width: 80%;
   }
@@ -171,6 +172,9 @@ a:active,
 
 /* Openstreetmap Plugin fixlets */
 .leaflet-control a { color: #4f4f4f !important; }
+
+/* jQM */
+.ui-loader { display: none; }
 
 .col-centered {
  float: none;
