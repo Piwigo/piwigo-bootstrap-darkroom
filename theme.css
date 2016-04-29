@@ -128,6 +128,7 @@ a:active,
 /* Carousel */
 .slick-slide img { display: inherit !important; }
 .slick-slide, .slick-slide *{ outline: none !important; }
+.slick-list { padding: 10px 0 !important; }
 
 /* Pagination */
 .pagination>.active>a,
