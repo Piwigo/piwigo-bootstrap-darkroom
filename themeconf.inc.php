@@ -16,6 +16,12 @@ $themeconf = array(
     'url' => 'https://kuther.net/'
 );
 
+//debug
+//$conf['template_combine_files'] = false;
+
+// always show metadata initially
+pwg_set_session_var('show_metadata', true);
+
 // needed for the navigation carousel in picture.tpl
 // borrowed from https://github.com/ThomasDaheim/piwigo-stuff/tree/master/picturethumbs
 add_event_handler('loc_end_picture', 'get_all_thumbnails_in_category');

@@ -161,59 +161,6 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
 {if isset($COMMENT_IMG)}
         <h4 class="imageComment">{$COMMENT_IMG}</h4>
 {/if}
-
-{if $display_info.rating_score and isset($rate_summary)}
-        <div id="rating" class="col-lg-4 col-md-6">
-            <dl class="dl-horizontal">
-                <dt>{'Rating score'|@translate} <span id="ratingCount">({if $rate_summary.count}{$rate_summary.count|@translate_dec:'%d rate':'%d rates'}{else}{'no rate'|@translate}{/if})</span></dt>
-                <dd id="averageRate">
-{foreach from=$rating.marks item=mark name=rate_loop}
-                    <span class="{if $rate_summary.count && $rate_summary.average > $mark - 0.5}rateButtonStarFull{else}rateButtonStarEmpty{/if}" data-value="{$mark}"></span>
-{/foreach}
-                </dd>
-{if isset($rating)}
-                <dt id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</dt>
-                <dd>
-                    <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
-{foreach from=$rating.marks item=mark name=rate_loop}
-{if isset($rating.USER_RATE) && $mark==$rating.USER_RATE}
-                        <span class="rateButtonStarFull" data-value="{$mark}"></span>
-{else}
-                        <span class="rateButtonStarEmpty" data-value="{$mark}"></span>
-{/if}
-{/foreach}
-{strip}{combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
-{combine_script id='rating' load='async' require='core.scripts' require='jquery' path="themes/bootstrapdefault/js/rating.js"}
-{footer_script require='jquery'}
-    var _pwgRatingAutoQueue = _pwgRatingAutoQueue||[];
-    _pwgRatingAutoQueue.push( {ldelim}rootUrl: '{$ROOT_URL}', image_id: {$current.id},
-    onSuccess : function(rating) {ldelim}
-        var e = document.getElementById("updateRate");
-        if (e) e.innerHTML = "{'Update your rating'|@translate|@escape:'javascript'}";
-        e = document.getElementById("ratingScore");
-        if (e) e.innerHTML = rating.score;
-        e = document.getElementById("ratingCount");
-        if (e) {ldelim}
-            if (rating.count == 1) {ldelim}
-                e.innerHTML = "({'1 rate'|@translate|@escape:'javascript'})";
-            } else {ldelim}
-                e.innerHTML = "({'%d rates'|@translate|@escape:'javascript'})".replace( "%d", rating.count);
-            }
-        {rdelim}
-        $('#averageRate').find('span').each(function() {ldelim}
-            $(this).addClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarFull' : 'rateButtonStarEmpty');
-            $(this).removeClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarEmpty' : 'rateButtonStarFull');
-        {rdelim});
-    {rdelim}
-{rdelim} );
-{/footer_script}
-{/strip}
-                    </form>
-                </dd>
-{/if}
-            </dl>
-        </div>
-{/if}
     </section>
 </div>
 
@@ -334,6 +281,63 @@ $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
                 <dt>{'Author'|@translate}</dt>
                 <dd>{$INFO_AUTHOR}</dd>
             </div>
+{/if}
+{if $display_info.rating_score and isset($rate_summary)}
+        <div id="Average" class="imageInfo">
+                <dt>{'Rating score'|@translate}</dt>
+                <dd>
+                {if $rate_summary.count}
+                        <span id="ratingScore">{$rate_summary.score}</span> <span id="ratingCount">({$rate_summary.count|@translate_dec:'%d rate':'%d rates'})</span>
+                {else}
+                        <span id="ratingScore">{'no rate'|@translate}</span> <span id="ratingCount"></span>
+                {/if}
+                </dd>
+        </div>
+{/if}
+
+{if isset($rating)}
+        <div id="rating" class="imageInfo">
+                <dt id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</dt>
+                <dd>
+                        <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
+                        <div>
+                        {foreach from=$rating.marks item=mark name=rate_loop}
+                        {if isset($rating.USER_RATE) && $mark==$rating.USER_RATE}
+                                <span class="rateButtonStarFull" data-value="{$mark}"></span>
+                        {else}
+                                <span class="rateButtonStarEmpty" data-value="{$mark}"></span>
+                        {/if}
+                        {/foreach}
+                        {strip}{combine_script id='core.scripts' path='themes/default/js/scripts.js'}
+                        {combine_script id='rating' require='core.scripts' path='themes/bootstrapdefault/js/rating.js'}
+                        {footer_script require='jquery'}
+                                var _pwgRatingAutoQueue = _pwgRatingAutoQueue||[];
+                                _pwgRatingAutoQueue.push( {ldelim}rootUrl: '{$ROOT_URL}', image_id: {$current.id},
+                                        onSuccess : function(rating) {ldelim}
+                                                var e = document.getElementById("updateRate");
+                                                if (e) e.innerHTML = "{'Update your rating'|@translate|@escape:'javascript'}";
+                                                e = document.getElementById("ratingScore");
+                                                if (e) e.innerHTML = rating.score;
+                                                e = document.getElementById("ratingCount");
+                                                if (e) {ldelim}
+                                                        if (rating.count == 1) {ldelim}
+                                                                e.innerHTML = "({'%d rate'|@translate|@escape:'javascript'})".replace( "%d", rating.count);
+                                                        {rdelim} else {ldelim}
+                                                                e.innerHTML = "({'%d rates'|@translate|@escape:'javascript'})".replace( "%d", rating.count);
+                                                        {rdelim}
+                                                {rdelim}
+                                                $('#averageRate').find('span').each(function() {ldelim}
+                                                        $(this).addClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarFull' : 'rateButtonStarEmpty');
+                                                        $(this).removeClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarEmpty' : 'rateButtonStarFull');
+                                                {rdelim});
+                                        {rdelim}
+                                {rdelim});
+                        {/footer_script}
+                        {/strip}
+                        </div>
+                        </form>
+                </dd>
+        </div>
 {/if}
 {if $display_info.created_on and isset($INFO_CREATION_DATE)}
             <div id="datecreate" class="imageInfo">
