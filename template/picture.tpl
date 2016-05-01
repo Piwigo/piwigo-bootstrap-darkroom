@@ -141,10 +141,8 @@
 {footer_script require="jquery"}{strip}
 $('#theMainImage').bind('swipeleft swiperight', function (event) {
    if (event.type == 'swipeleft') {
-       console.log('left');
        $('#navigationButtons span.glyphicon')[2].click();
    } else {
-       console.log('right');
        $('#navigationButtons span.glyphicon')[0].click(); 
    }
 });
