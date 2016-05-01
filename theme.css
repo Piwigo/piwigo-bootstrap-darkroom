@@ -226,7 +226,7 @@ a:active,
     border: 1px solid #2e2e2e;
     border-bottom-color: transparent;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .nav-tabs.nav-justified>li>a {
     border-bottom: none;
   }
