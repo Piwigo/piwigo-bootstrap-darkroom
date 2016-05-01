@@ -16,6 +16,16 @@ $themeconf = array(
     'url' => 'https://kuther.net/'
 );
 
+// config
+add_event_handler('init', 'set_config_values');
+function set_config_values()
+{
+  global $template, $pwg_loaded_plugins, $stripped_responsive;
+  $template->assign(array(
+                          'rv_tscroller_enabled'=> isset($pwg_loaded_plugins['rv_tscroller'])
+                         ));
+}
+
 // needed for the navigation carousel in picture.tpl
 // borrowed from https://github.com/ThomasDaheim/piwigo-stuff/tree/master/picturethumbs
 add_event_handler('loc_end_picture', 'add_thumbnails_to_template');
