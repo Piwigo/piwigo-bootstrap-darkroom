@@ -22,6 +22,16 @@ $themeconf = array(
 // always show metadata initially
 pwg_set_session_var('show_metadata', true);
 
+// config
+add_event_handler('init', 'set_config_values');
+function set_config_values()
+{
+  global $template, $pwg_loaded_plugins, $stripped_responsive;
+  $template->assign(array(
+                          'rv_tscroller_enabled'=> isset($pwg_loaded_plugins['rv_tscroller'])
+                         ));
+}
+
 // needed for the navigation carousel in picture.tpl
 // borrowed from https://github.com/ThomasDaheim/piwigo-stuff/tree/master/picturethumbs
 add_event_handler('loc_end_picture', 'get_all_thumbnails_in_category');
