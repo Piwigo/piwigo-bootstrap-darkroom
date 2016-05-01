@@ -26,7 +26,7 @@ pwg_set_session_var('show_metadata', true);
 add_event_handler('init', 'set_config_values');
 function set_config_values()
 {
-  global $template, $pwg_loaded_plugins, $stripped_responsive;
+  global $template, $pwg_loaded_plugins;
   $template->assign(array(
                           'rv_tscroller_enabled'=> isset($pwg_loaded_plugins['rv_tscroller'])
                          ));
