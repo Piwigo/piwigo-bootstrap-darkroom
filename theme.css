@@ -110,6 +110,13 @@ a:active,
     background-image: none !important;
 }
 
+/* Wells */
+.well {
+  background-color: #2e2e2e;
+  border-color: #000 !important;
+  background-image: none !important;
+}
+
 /* Sidebar */
 #sidebar .handle, #sidebar .info {
     color: #a9a9a9;
@@ -122,6 +129,9 @@ a:active,
 #sidebar .info a { color: #fff; }
 
 /* Rating */
+#important-info #rating {
+    float: none;
+}
 @media (min-width: 768px) {
   #rating .dl-horizontal dd {
     margin-left: 230px;
