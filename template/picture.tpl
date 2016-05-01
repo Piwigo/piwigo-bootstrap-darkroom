@@ -408,7 +408,7 @@ $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
 
 {/strip}{/footer_script}
 <div class="container">
- <div class="col-lg-10 col-md-offset-1">
+ <div class="col-lg-10 col-md-12 col-centered">
   <div id="thumbnailCarousel" class="slick-carousel">
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative value=$pwg->derivative($derivative_params, $thumbnail.src_image)}
