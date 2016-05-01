@@ -237,7 +237,7 @@ $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
 
 {/strip}{/footer_script}
 <div class="container">
- <div class="col-lg-10 col-md-offset-1">
+ <div class="col-lg-10 col-md-12 col-centered">
   <div id="thumbnailCarousel" class="slick-carousel">
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative value=$pwg->derivative($derivative_params, $thumbnail.src_image)}
@@ -420,7 +420,7 @@ $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
                             {$available_permission_levels[$current.level]}
                             <span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownPermissions">
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownPermissions">
 {foreach from=$available_permission_levels item=label key=level}
                             <li id="permission-{$level}" role="presentation" class="permission-li {if $current.level == $level} active{/if}"><a role="menuitem" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
 {/foreach}
