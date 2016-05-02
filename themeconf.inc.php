@@ -1,8 +1,8 @@
 <?php
 /*
 Theme Name: Bootstrap Darkroom
-Version: 1.0.2
-Description: A Bootstrap Default child theme with darker colors based on Lightroom and a carousel on the picture page
+Version: 1.1.0
+Description: A mobile-ready Bootstrap Default child theme with darker colors based on Lightroom, a carousel on the picture page and PhotoSwipe for fullscreen slide-shows
 Theme URI: http://piwigo.org/ext/extension_view.php?eid=831
 Author: Thomas Kuther
 Author URI: https://https://github.com/tkuther/piwigo-bootstrap-darkroom
@@ -32,7 +32,7 @@ function set_config_values()
                          ));
 }
 
-// needed for the navigation carousel in picture.tpl
+// needed for the carousel and photoswipe
 // borrowed from https://github.com/ThomasDaheim/piwigo-stuff/tree/master/picturethumbs
 add_event_handler('loc_end_picture', 'get_all_thumbnails_in_category');
 function get_all_thumbnails_in_category()
