@@ -28,6 +28,7 @@ You need to scroll once to load them. Possible workarounds:
  * Pre-generate the derivates right after upload
  * Change the carousel's "on-demand" lazy loading method to "progressive", but this would load _all_ thumbnails
 * Some features from Bootstrap Default do not work yet (social buttons, discus comments)
+* The "breadcrumbs" in the second navbar might mess up the layout on mobile devices if category/picture names are long
 
 ### TODOs
 
