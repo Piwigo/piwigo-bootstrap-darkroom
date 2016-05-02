@@ -139,11 +139,13 @@
     {include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
 {if get_device() != 'desktop' }
 {footer_script require="jquery"}{strip}
-$('#theMainImage').bind('swipeleft swiperight', function (event) {
+$('#theMainImage').bind('swipeleft swiperight tap', function (event) {
    if (event.type == 'swipeleft') {
        $('#navigationButtons span.glyphicon')[2].click();
-   } else {
+   } else if (event.type == 'swiperight') {
        $('#navigationButtons span.glyphicon')[0].click(); 
+   } else if (event.type == 'tap') {
+       $('#navigationButtons a#startPhotoSwipe span').click();
    }
 });
 {/strip}{/footer_script}
