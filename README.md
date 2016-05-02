@@ -34,6 +34,7 @@ You need to scroll once to load them. Possible workarounds:
 
 * Make some carousel options configurable in the Admin backend (lazy loadingi method, number of thumbnails etc)
 * Get social buttons from Bootstrap Default working
+* Add autoplay to PhotoSwipe modal, and replace the slideshow with it
 
 ### Preview
 
