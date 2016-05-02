@@ -235,6 +235,31 @@ $(document).ready(function(){
 
   $('#thumbnailCarousel').show();
 });
+
+$('#thumbnailCarousel').each(function() {
+     var $pic     = $(this),
+         getItems = function() {
+             var items = [];
+             $pic.find('a img').each(function() {
+                 var $src    = $(this).data('src-large'),
+                     $size   = $(this).data('size-large').split(' x '),
+                     $width  = $size[0],
+                     $height = $size[1];
+                 var item = {
+                     src : $src,
+                     w   : $width,
+                     h   : $height
+                 };
+
+                 items.push(item);
+
+             });
+             return items;
+         };
+     var items = getItems();
+
+     console.log(items);
+});
 {/strip}{/footer_script}
 <div class="container">
  <div class="col-lg-10 col-md-12 col-centered">
