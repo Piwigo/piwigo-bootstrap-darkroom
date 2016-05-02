@@ -286,14 +286,14 @@ $('#thumbnailCarousel').each(function() {
             closeOnScroll: false,
             closeOnVerticalDrag: false
         };
-        var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+        var photoSwipe = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
         var realViewportWidth,
             useLargeImages = false,
             firstResize = true,
             imageSrcWillChange;
 
-        lightBox.listen('beforeResize', function() {
-            realViewportWidth = lightBox.viewportSize.x * window.devicePixelRatio;
+        photoSwipe.listen('beforeResize', function() {
+            realViewportWidth = photoSwipe.viewportSize.x * window.devicePixelRatio;
             if(useLargeImages && realViewportWidth < 1000) {
                 useLargeImages = false;
                 imageSrcWillChange = true;
@@ -303,7 +303,7 @@ $('#thumbnailCarousel').each(function() {
             }
 
             if(imageSrcWillChange && !firstResize) {
-                lightBox.invalidateCurrItems();
+                photoSwipe.invalidateCurrItems();
             }
 
             if(firstResize) {
@@ -313,7 +313,7 @@ $('#thumbnailCarousel').each(function() {
             imageSrcWillChange = false;
         });
 
-        lightBox.listen('gettingData', function(index, item) {
+        photoSwipe.listen('gettingData', function(index, item) {
             if( useLargeImages ) {
                 item.src = item.originalImage.src;
                 item.w = item.originalImage.w;
@@ -325,7 +325,7 @@ $('#thumbnailCarousel').each(function() {
             }
         });
 
-        lightBox.init();
+        photoSwipe.init();
      });
 });
 {/strip}{/footer_script}
@@ -353,7 +353,7 @@ $('#thumbnailCarousel').each(function() {
   <ul class="nav nav-tabs nav-justified" role="tablist">
     <li role="presentation" class="active"><a href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
 {if isset($metadata)}
-    <li role="presentation"><a href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF-Metadata'|@translate}</a></li>
+    <li role="presentation"><a href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
 {/if}
 {if isset($comment_add) || $COMMENT_COUNT > 0}
     <li role="presentation"><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate}</a></li>
