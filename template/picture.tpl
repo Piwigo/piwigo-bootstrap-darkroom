@@ -283,7 +283,9 @@ $('#thumbnailCarousel').each(function() {
         var options = {
             index: $index,
             bgOpacity: 0.9,
-            showHideOpacity: true
+            showHideOpacity: true,
+            closeOnScroll: false,
+            closeOnVerticalDrag: false
         };
         var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
         var realViewportWidth,
