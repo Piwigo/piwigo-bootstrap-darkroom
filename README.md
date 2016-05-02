@@ -1,21 +1,24 @@
 Piwigo Bootstrap Darkroom
 -------------------
-A Piwigo theme based on [Bootstrap Default](https://github.com/Philio/bootstrapdefault) by Phil Bayfield.
+A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Philio/bootstrapdefault) by Phil Bayfield.
 
 ### Features
 
-* Fully responsive
 * Lightroom based dark color scheme
 * Carousel album navigation on the picture page using [slick slider](http://kenwheeler.github.io/slick/)
- * Responsive scale down of thumbnails: large = 6, medium = 4, small = 2
- * Lazy loading of thumbnails on-demand to keep the initial page load size down
+* Full screen view using PhotoSwipe
+* Fully responsive Navbars, Carousel and PhotoSwipe view
+* Mobile ready features (async loading of carousel & PhotoSwipe content, swipe & tap events) 
 
 ### Usage
 
-1. Git clone and move to piwigo/themes/bootstrap_darkroom, or just use the Extension Manager
+1. Installation. Use one of:
+ * Git clone and move to piwigo/themes/bootstrap_darkroom
+ * Download from http://piwigo.org/ext/extension_view.php?eid=831
+ * Or just use the Extension Manager
 2. Enable Bootstrap Darkroom
 
-Note: the theme doesn't override configuration options from the "bootstrap default" parent theme
+Note: the theme doesn't override configuration options from the "bootstrap default" parent theme (yet)
 like social integration or bootstrap theme. To change those, enable bootstrap default and configure things there.
 
 ### Known issues
@@ -24,13 +27,12 @@ like social integration or bootstrap theme. To change those, enable bootstrap de
 You need to scroll once to load them. Possible workarounds:
  * Pre-generate the derivates right after upload
  * Change the carousel's "on-demand" lazy loading method to "progressive", but this would load _all_ thumbnails
-* Guests cannot see the rating stars when "guests can rate" is disabled in Options -> Permissions
- * This is a bug in bootstrap default, see https://github.com/Philio/bootstrapdefault/issues/26
+* Some features from Bootstrap Default do not work yet (social buttons, discus comments)
 
 ### TODOs
 
-* Make picture.tpl actually usable on mobile devices (full screen images, dragable & swishable, off-canvas info), maybe overriding current picture.tpl with a synced slider.
-* Make some carousel options configurable in the Admin backend (lazy loading, number of thumbnails etc)
+* Make some carousel options configurable in the Admin backend (lazy loadingi method, number of thumbnails etc)
+* Get social buttons from Bootstrap Default working
 
 ### Preview
 
