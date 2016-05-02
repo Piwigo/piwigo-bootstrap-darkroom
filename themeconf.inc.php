@@ -56,7 +56,6 @@ function get_all_thumbnails_in_category()
     $pictures[] = $row;
   }
   
-  trigger_notify('loc_begin_index_thumbnails', $pictures);
   $tpl_thumbnails_var = array();
 
   foreach ($pictures as $row)
@@ -79,6 +78,7 @@ function get_all_thumbnails_in_category()
       'URL' => $url,
       'DESCRIPTION' => $desc,
       'src_image' => new SrcImage($row),
+      'SIZE' => $row['width'].'x'.$row['height'],
     ) );
     
     $tpl_thumbnails_var[] = $tpl_var;
@@ -86,11 +86,8 @@ function get_all_thumbnails_in_category()
   
   $template->assign( array(
     'derivative_params_thumb' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_SQUARE) ) ),
-      ) );
-  $template->assign( array(
     'derivative_params_large' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_LARGE) ) ),
       ) );
-  $tpl_thumbnails_var = trigger_change('loc_end_index_thumbnails', $tpl_thumbnails_var, $pictures);
   $template->assign('thumbnails', $tpl_thumbnails_var);
 
   unset($tpl_thumbnails_var, $pictures);

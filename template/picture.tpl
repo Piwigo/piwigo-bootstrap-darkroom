@@ -193,61 +193,60 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
 {combine_css path="themes/bootstrap_darkroom/slick/slick-theme.css"}
 {combine_script id="slick.carousel" require="jquery" path="themes/bootstrap_darkroom/slick/slick.min.js"}
 {footer_script require='jquery'}{strip}
-$('#thumbnailCarousel').slick({
- infinite: false,
- centerMode: false,
- slidesToShow: 7,
- slidesToScroll: 6,
- lazyLoad: 'ondemand',
- responsive: [
-  {
-   breakpoint: 1200,
-   settings: {
-    slidesToShow: 6,
-    slidesToScroll: 5
-   }
-  },
-  {
-   breakpoint: 1024,
-   settings: {
-    slidesToShow: 5,
-    slidesToScroll: 4
-   }
-  },
-  {
-   breakpoint: 600,
-   settings: {
-    slidesToShow: 3,
-    slidesToScroll: 3
-   }
-  },
-  {
-   breakpoint: 420,
-   settings: {
-    slidesToShow: 2,
-    slidesToScroll: 2
-   }
-  }]
+$(document).ready(function(){
+  $('#thumbnailCarousel').slick({
+    infinite: false,
+    centerMode: false,
+    slidesToShow: 7,
+    slidesToScroll: 6,
+    lazyLoad: 'ondemand',
+    responsive: [
+     {
+      breakpoint: 1200,
+      settings: {
+       slidesToShow: 6,
+       slidesToScroll: 5
+      }
+     },
+     {
+      breakpoint: 1024,
+      settings: {
+       slidesToShow: 5,
+       slidesToScroll: 4
+      }
+     },
+     {
+      breakpoint: 600,
+      settings: {
+       slidesToShow: 3,
+       slidesToScroll: 3
+      }
+     },
+     {
+      breakpoint: 420,
+      settings: {
+       slidesToShow: 2,
+       slidesToScroll: 2
+      }
+    }]
+  });
+  var currentThumbnailIndex = $('#thumbnailCarousel').find('[data-thumbnail-active="1"]').data('slick-index');
+  $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
+
+  $('#thumbnailCarousel').show();
 });
-
-var currentThumbnailIndex = $('#thumbnailCarousel').find('[data-thumbnail-active="1"]').data('slick-index');
-$('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
-
 {/strip}{/footer_script}
 <div class="container">
  <div class="col-lg-10 col-md-12 col-centered">
   <div id="thumbnailCarousel" class="slick-carousel">
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative value=$pwg->derivative($derivative_params_thumb, $thumbnail.src_image)}
+{assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
 {if !$derivative->is_cached()}
 {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
 {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
-{if $thumbnail.id eq $current.id}
-        <div class="text-center thumbnail-active" data-thumbnail-active="1"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
-{else}
-        <div class="text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
-{/if}
+        {if $thumbnail.id eq $current.id}<div class="text-center thumbnail-active" data-thumbnail-active="1">{else}<div class="text-center">{/if}<a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
 {/foreach}
   </div>
  </div>
@@ -306,8 +305,8 @@ $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
                                 <span class="rateButtonStarEmpty" data-value="{$mark}"></span>
                         {/if}
                         {/foreach}
-                        {strip}{combine_script id='core.scripts' path='themes/default/js/scripts.js'}
-                        {combine_script id='rating' require='core.scripts' path='themes/bootstrapdefault/js/rating.js'}
+                        {strip}{combine_script id='core.scripts' path='themes/default/js/scripts.js' load='async'}
+                        {combine_script id='rating' require='core.scripts' path='themes/bootstrapdefault/js/rating.js' load='async'}
                         {footer_script require='jquery'}
                                 var _pwgRatingAutoQueue = _pwgRatingAutoQueue||[];
                                 _pwgRatingAutoQueue.push( {ldelim}rootUrl: '{$ROOT_URL}', image_id: {$current.id},
