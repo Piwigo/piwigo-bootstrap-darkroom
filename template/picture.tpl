@@ -139,13 +139,13 @@
     {include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
 {if get_device() != 'desktop' }
 {footer_script require="jquery"}{strip}
-$('#theMainImage').bind('swipeleft swiperight tap', function (event) {
+$('#theMainImage').bind('swipeleft swiperight', function (event) {
    if (event.type == 'swipeleft') {
-       $('#navigationButtons span.glyphicon')[2].click();
+       $('#navigationButtons a#navPrevPicture span').click();
    } else if (event.type == 'swiperight') {
-       $('#navigationButtons span.glyphicon')[0].click(); 
-   } else if (event.type == 'tap') {
-       $('#navigationButtons a#startPhotoSwipe span').click();
+       $('#navigationButtons a#navNextPicture span').click(); 
+   } else {
+       return;
    }
 });
 {/strip}{/footer_script}
@@ -279,7 +279,6 @@ $('#thumbnailCarousel').each(function() {
      $('#startPhotoSwipe').on('click', 'span', function(event) {
         event.preventDefault();
         var $index = $('#thumbnailCarousel').find('[data-thumbnail-active="1"]').data('slick-index');
-        console.log('PhotoSwipe index: ' + $index);
         var options = {
             index: $index,
             bgOpacity: 0.9,
