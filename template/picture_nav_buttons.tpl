@@ -48,6 +48,11 @@
         <span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Thumbnails'|@translate}</span>
     </a>
 {/if}{/strip}
+{strip}{if !isset($slideshow)}
+        <a href="#" title="{'Fullscreen'|@translate}" id="startPhotoSwipe">
+                <span class="glyphicon glyphicon-resize-full"></span><span class="glyphicon-text">{'Fullscreen'|@translate}</span>
+        </a>
+{/if}{/strip}
 {if isset($slideshow.U_START_PLAY)}
 	<a href="{$slideshow.U_START_PLAY}" title="{'Play of slideshow'|@translate}">
 		<span class="glyphicon glyphicon-play"></span><span class="glyphicon-text">{'Play of slideshow'|@translate}</span>
@@ -69,11 +74,6 @@
 	</a>
 {else}
     <span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon-text">{'Next'|@translate}</span>
-{/if}{/strip}
-{strip}{if !isset($slideshow)}
-        <a href="#" title="{'Fullscreen'|@translate}" class="pull-right" id="startPhotoSwipe">
-                <span class="glyphicon glyphicon-resize-full"></span><span class="glyphicon-text">{'Fullscreen'|@translate}</span>
-        </a>
 {/if}{/strip}
 {*<!--{strip}{if isset($last)}
 	<a href="{$last.U_IMG}" title="{'Last'|@translate} : {$last.TITLE}" class="pwg-state-default pwg-button pwg-button-icon-right">
