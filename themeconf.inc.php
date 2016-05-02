@@ -16,6 +16,12 @@ $themeconf = array(
     'url' => 'https://kuther.net/'
 );
 
+//debug
+//$conf['template_combine_files'] = false;
+
+// always show metadata initially
+pwg_set_session_var('show_metadata', true);
+
 // config
 add_event_handler('init', 'set_config_values');
 function set_config_values()
@@ -28,8 +34,8 @@ function set_config_values()
 
 // needed for the navigation carousel in picture.tpl
 // borrowed from https://github.com/ThomasDaheim/piwigo-stuff/tree/master/picturethumbs
-add_event_handler('loc_end_picture', 'add_thumbnails_to_template');
-function add_thumbnails_to_template()
+add_event_handler('loc_end_picture', 'get_all_thumbnails_in_category');
+function get_all_thumbnails_in_category()
 {
   global $template, $conf, $user, $page;
   
@@ -49,7 +55,6 @@ function add_thumbnails_to_template()
     $pictures[] = $row;
   }
   
-  trigger_notify('loc_begin_index_thumbnails', $pictures);
   $tpl_thumbnails_var = array();
 
   foreach ($pictures as $row)
@@ -72,17 +77,17 @@ function add_thumbnails_to_template()
       'URL' => $url,
       'DESCRIPTION' => $desc,
       'src_image' => new SrcImage($row),
+      'SIZE' => $row['width'].'x'.$row['height'],
     ) );
     
     $tpl_thumbnails_var[] = $tpl_var;
   }
   
   $template->assign( array(
-    'derivative_params' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_SQUARE) ) ),
-    'maxRequests' =>$conf['max_requests'],
-    'SHOW_THUMBNAIL_CAPTION' =>$conf['show_thumbnail_caption'],
+    'derivative_params_thumb' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_SQUARE) ) ),
+    'derivative_params_medium' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_MEDIUM) ) ),
+    'derivative_params_large' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_LARGE) ) ),
       ) );
-  $tpl_thumbnails_var = trigger_change('loc_end_index_thumbnails', $tpl_thumbnails_var, $pictures);
   $template->assign('thumbnails', $tpl_thumbnails_var);
 
   unset($tpl_thumbnails_var, $pictures);

@@ -129,19 +129,39 @@ a:active,
 #sidebar .info a { color: #fff; }
 
 /* Rating */
-#important-info #rating {
-    float: none;
+#infopanel #rating .rateButtonStarFull {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
 }
-@media (min-width: 768px) {
-  #rating .dl-horizontal dd {
-    margin-left: 230px;
-  }
-  #rating .dl-horizontal dt {
-    width: 220px;
-  }
+#infopanel #rating .rateButtonStarFull:before {
+  content: "\e006";
+}
+#infopanel #rating .rateButtonStarEmpty {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
+#infopanel #rating .rateButtonStarEmpty:before {
+  content: "\e007";
 }
 
 /* Carousel */
+#thumbnailCarousel { display: none; }  /* hide initially until loaded */
 .slick-slide img { display: inherit !important; }
 .slick-slide, .slick-slide *{ outline: none !important; }
 .slick-list { padding: 10px 0 !important; }
@@ -191,3 +211,31 @@ a:active,
 
 /* jQM */
 .ui-loader { display: none; }
+
+/* Tabs */
+.nav-tabs.nav-justified>li>a {
+    border-bottom: 1px solid #2e2e2e;
+}
+.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:focus, .nav-tabs.nav-justified>.active>a:hover {
+    border-bottom-color: #2e2e2e;
+    border: 1px solid #2e2e2e;
+}
+.nav-tabs>li>a {
+    background-color: #4f4f4f;
+}
+.nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+    background-color: #2e2e2e;
+    border: 1px solid #2e2e2e;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #a9a9a9;
+    cursor: default;
+    background-color: #2e2e2e;
+    border: 1px solid #2e2e2e;
+    border-bottom-color: transparent;
+}
+@media (max-width: 767px) {
+  .nav-tabs.nav-justified>li>a {
+    border-bottom: none;
+  }
+}

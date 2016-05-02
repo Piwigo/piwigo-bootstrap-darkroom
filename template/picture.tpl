@@ -139,13 +139,13 @@
     {include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
 {if get_device() != 'desktop' }
 {footer_script require="jquery"}{strip}
-$('#theMainImage').bind('swipeleft swiperight', function (event) {
+$('#theMainImage').bind('swipeleft swiperight tap', function (event) {
    if (event.type == 'swipeleft') {
-       console.log('left');
        $('#navigationButtons span.glyphicon')[2].click();
-   } else {
-       console.log('right');
+   } else if (event.type == 'swiperight') {
        $('#navigationButtons span.glyphicon')[0].click(); 
+   } else if (event.type == 'tap') {
+       $('#navigationButtons a#startPhotoSwipe span').click();
    }
 });
 {/strip}{/footer_script}
@@ -155,8 +155,215 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
 <div id="theImage">
     {$ELEMENT_CONTENT}
 </div>
-<div id="sidebar">
-    <div id="info-content" class="info">
+
+<div class="container">
+    <section id="important-info">
+{if isset($COMMENT_IMG)}
+        <h4 class="imageComment">{$COMMENT_IMG}</h4>
+{/if}
+    </section>
+</div>
+
+{include file="http_scheme.tpl"}
+{if $theme_config->social_enabled}
+<div class="container">
+    <section id="share">
+{if $theme_config->social_twitter}
+        <a href="http://twitter.com/share?text={$current.TITLE}&amp;url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+{/if}
+{if $theme_config->social_facebook}
+        <a href="https://www.facebook.com/sharer/sharer.php?u={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+{/if}
+{if $theme_config->social_google_plus}
+        <a href="https://plus.google.com/share?url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+            <i class="fa fa-google-plus"></i>
+        </a>
+{/if}
+    </section>
+</div>
+{/if}
+
+{if !empty($thumbnails)}
+{combine_css path="themes/bootstrap_darkroom/slick/slick.css"}
+{combine_css path="themes/bootstrap_darkroom/slick/slick-theme.css"}
+{combine_script id="slick.carousel" require="jquery" path="themes/bootstrap_darkroom/slick/slick.min.js"}
+{combine_css path="themes/bootstrap_darkroom/photoswipe/photoswipe.css"}
+{combine_css path="themes/bootstrap_darkroom/photoswipe/default-skin/default-skin.css"}
+{combine_script id="photoswipe" require="jquery" path="themes/bootstrap_darkroom/photoswipe/photoswipe.min.js"}
+{combine_script id="photoswipe.ui" require="photoswipe" path="themes/bootstrap_darkroom/photoswipe/photoswipe-ui-default.min.js"}
+{footer_script require='jquery'}{strip}
+$(document).ready(function(){
+  $('#thumbnailCarousel').slick({
+    infinite: false,
+    centerMode: false,
+    slidesToShow: 7,
+    slidesToScroll: 6,
+    lazyLoad: 'ondemand',
+    responsive: [
+     {
+      breakpoint: 1200,
+      settings: {
+       slidesToShow: 6,
+       slidesToScroll: 5
+      }
+     },
+     {
+      breakpoint: 1024,
+      settings: {
+       slidesToShow: 5,
+       slidesToScroll: 4
+      }
+     },
+     {
+      breakpoint: 600,
+      settings: {
+       slidesToShow: 3,
+       slidesToScroll: 3
+      }
+     },
+     {
+      breakpoint: 420,
+      settings: {
+       slidesToShow: 2,
+       slidesToScroll: 2
+      }
+    }]
+  });
+  var currentThumbnailIndex = $('#thumbnailCarousel').find('[data-thumbnail-active="1"]').data('slick-index');
+  $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
+
+  $('#thumbnailCarousel').show();
+});
+
+$('#thumbnailCarousel').each(function() {
+     var $pic     = $(this),
+         getItems = function() {
+             var items = [];
+             $pic.find('a img').each(function() {
+                 var $src_large     = $(this).data('src-large'),
+                     $size_large    = $(this).data('size-large').split(' x '),
+                     $width_large   = $size_large[0],
+                     $height_large  = $size_large[1],
+                     $src_medium    = $(this).data('src-medium'),
+                     $size_medium   = $(this).data('size-medium').split(' x '),
+                     $width_medium  = $size_medium[0],
+                     $height_medium = $size_medium[1];
+                 var item = {
+                     mediumImage: {
+                         src : $src_medium,
+                         w   : $width_medium,
+                         h   : $height_medium
+                     },
+                     originalImage: {
+                         src : $src_large,
+                         w   : $width_large,
+                         h   : $height_large
+                     }
+                 };
+
+                 items.push(item);
+
+             });
+             return items;
+         };
+     var items = getItems();
+
+     var $pswp = $('.pswp')[0];
+     $('#startPhotoSwipe').on('click', 'span', function(event) {
+        event.preventDefault();
+        var $index = $('#thumbnailCarousel').find('[data-thumbnail-active="1"]').data('slick-index');
+        console.log('PhotoSwipe index: ' + $index);
+        var options = {
+            index: $index,
+            bgOpacity: 0.9,
+            showHideOpacity: true
+        };
+        var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+        var realViewportWidth,
+            useLargeImages = false,
+            firstResize = true,
+            imageSrcWillChange;
+
+        lightBox.listen('beforeResize', function() {
+            realViewportWidth = lightBox.viewportSize.x * window.devicePixelRatio;
+            if(useLargeImages && realViewportWidth < 1000) {
+                useLargeImages = false;
+                imageSrcWillChange = true;
+            } else if(!useLargeImages && realViewportWidth >= 1000) {
+                useLargeImages = true;
+                imageSrcWillChange = true;
+            }
+
+            if(imageSrcWillChange && !firstResize) {
+                lightBox.invalidateCurrItems();
+            }
+
+            if(firstResize) {
+                firstResize = false;
+            }
+
+            imageSrcWillChange = false;
+        });
+
+        lightBox.listen('gettingData', function(index, item) {
+            if( useLargeImages ) {
+                item.src = item.originalImage.src;
+                item.w = item.originalImage.w;
+                item.h = item.originalImage.h;
+            } else {
+                item.src = item.mediumImage.src;
+                item.w = item.mediumImage.w;
+                item.h = item.mediumImage.h;
+            }
+        });
+
+        lightBox.init();
+     });
+});
+{/strip}{/footer_script}
+<div class="container">
+ <div class="col-lg-10 col-md-12 col-centered">
+  <div id="thumbnailCarousel" class="slick-carousel">
+{foreach from=$thumbnails item=thumbnail}
+{assign var=derivative value=$pwg->derivative($derivative_params_thumb, $thumbnail.src_image)}
+{assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
+{assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
+{if !$derivative->is_cached()}
+{combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
+{combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
+{/if}
+        {if $thumbnail.id eq $current.id}<div class="text-center thumbnail-active" data-thumbnail-active="1">{else}<div class="text-center">{/if}<a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}" alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
+{/foreach}
+  </div>
+ </div>
+</div>
+{/if}
+
+<div class="container">
+ <div id="infopanel" class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-centered">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation" class="active"><a href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
+{if isset($metadata)}
+    <li role="presentation"><a href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF-Metadata'|@translate}</a></li>
+{/if}
+{if isset($comment_add) || $COMMENT_COUNT > 0}
+    <li role="presentation"><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate}</a></li>
+{/if}
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+<!-- information -->
+    <div role="tabpanel" class="tab-pane active" id="tab_info">
+      <div id="info-content" class="info">
         <dl>
             <h4>{'Information'|@translate}</h4>
 {if $display_info.author and isset($INFO_AUTHOR)}
@@ -164,6 +371,63 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
                 <dt>{'Author'|@translate}</dt>
                 <dd>{$INFO_AUTHOR}</dd>
             </div>
+{/if}
+{if $display_info.rating_score and isset($rate_summary)}
+        <div id="Average" class="imageInfo">
+                <dt>{'Rating score'|@translate}</dt>
+                <dd>
+                {if $rate_summary.count}
+                        <span id="ratingScore">{$rate_summary.score}</span> <span id="ratingCount">({$rate_summary.count|@translate_dec:'%d rate':'%d rates'})</span>
+                {else}
+                        <span id="ratingScore">{'no rate'|@translate}</span> <span id="ratingCount"></span>
+                {/if}
+                </dd>
+        </div>
+{/if}
+
+{if isset($rating)}
+        <div id="rating" class="imageInfo">
+                <dt id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</dt>
+                <dd>
+                        <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
+                        <div>
+                        {foreach from=$rating.marks item=mark name=rate_loop}
+                        {if isset($rating.USER_RATE) && $mark==$rating.USER_RATE}
+                                <span class="rateButtonStarFull" data-value="{$mark}"></span>
+                        {else}
+                                <span class="rateButtonStarEmpty" data-value="{$mark}"></span>
+                        {/if}
+                        {/foreach}
+                        {strip}{combine_script id='core.scripts' path='themes/default/js/scripts.js' load='async'}
+                        {combine_script id='rating' require='core.scripts' path='themes/bootstrapdefault/js/rating.js' load='async'}
+                        {footer_script require='jquery'}
+                                var _pwgRatingAutoQueue = _pwgRatingAutoQueue||[];
+                                _pwgRatingAutoQueue.push( {ldelim}rootUrl: '{$ROOT_URL}', image_id: {$current.id},
+                                        onSuccess : function(rating) {ldelim}
+                                                var e = document.getElementById("updateRate");
+                                                if (e) e.innerHTML = "{'Update your rating'|@translate|@escape:'javascript'}";
+                                                e = document.getElementById("ratingScore");
+                                                if (e) e.innerHTML = rating.score;
+                                                e = document.getElementById("ratingCount");
+                                                if (e) {ldelim}
+                                                        if (rating.count == 1) {ldelim}
+                                                                e.innerHTML = "({'%d rate'|@translate|@escape:'javascript'})".replace( "%d", rating.count);
+                                                        {rdelim} else {ldelim}
+                                                                e.innerHTML = "({'%d rates'|@translate|@escape:'javascript'})".replace( "%d", rating.count);
+                                                        {rdelim}
+                                                {rdelim}
+                                                $('#averageRate').find('span').each(function() {ldelim}
+                                                        $(this).addClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarFull' : 'rateButtonStarEmpty');
+                                                        $(this).removeClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarEmpty' : 'rateButtonStarFull');
+                                                {rdelim});
+                                        {rdelim}
+                                {rdelim});
+                        {/footer_script}
+                        {/strip}
+                        </div>
+                        </form>
+                </dd>
+        </div>
 {/if}
 {if $display_info.created_on and isset($INFO_CREATION_DATE)}
             <div id="datecreate" class="imageInfo">
@@ -246,7 +510,7 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
                             {$available_permission_levels[$current.level]}
                             <span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownPermissions">
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownPermissions">
 {foreach from=$available_permission_levels item=label key=level}
                             <li id="permission-{$level}" role="presentation" class="permission-li {if $current.level == $level} active{/if}"><a role="menuitem" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
 {/foreach}
@@ -255,7 +519,13 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
                 </dd>
             </div>
 {/if}
+        </dl>
+      </div>
+    </div>
+<!-- metadata -->
 {if isset($metadata)}
+    <div role="tabpanel" class="tab-pane" id="tab_metadata">
+      <dl>
 {foreach from=$metadata item=meta}
             <br />
             <h4>{$meta.TITLE}</h4>
@@ -264,175 +534,14 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
             <dd>{$value}</dd>
 {/foreach}
 {/foreach}
-{/if}
-        </dl>
+      </dl>
     </div>
-    <div class="handle">
-        <a id="info-link" href="#">
-            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-        </a>
-    </div>
-</div>
-
-<div class="container">
-    <section id="important-info">
-{if isset($COMMENT_IMG)}
-        <h4 class="imageComment">{$COMMENT_IMG}</h4>
 {/if}
-
-{if $display_info.rating_score and isset($rate_summary)}
-        <div id="rating" class="col-lg-4 col-md-6">
-            <dl class="dl-horizontal">
-                <dt>{'Rating score'|@translate} <span id="ratingCount">({if $rate_summary.count}{$rate_summary.count|@translate_dec:'%d rate':'%d rates'}{else}{'no rate'|@translate}{/if})</span></dt>
-                <dd id="averageRate">
-{foreach from=$rating.marks item=mark name=rate_loop}
-                    <span class="{if $rate_summary.count && $rate_summary.average > $mark - 0.5}rateButtonStarFull{else}rateButtonStarEmpty{/if}" data-value="{$mark}"></span>
-{/foreach}
-                </dd>
-{if isset($rating)}
-                <dt id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</dt>
-                <dd>
-                    <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
-{foreach from=$rating.marks item=mark name=rate_loop}
-{if isset($rating.USER_RATE) && $mark==$rating.USER_RATE}
-                        <span class="rateButtonStarFull" data-value="{$mark}"></span>
-{else}
-                        <span class="rateButtonStarEmpty" data-value="{$mark}"></span>
-{/if}
-{/foreach}
-{strip}{combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
-{combine_script id='rating' load='async' require='core.scripts' require='jquery' path="themes/bootstrapdefault/js/rating.js"}
-{footer_script require='jquery'}
-    var _pwgRatingAutoQueue = _pwgRatingAutoQueue||[];
-    _pwgRatingAutoQueue.push( {ldelim}rootUrl: '{$ROOT_URL}', image_id: {$current.id},
-    onSuccess : function(rating) {ldelim}
-        var e = document.getElementById("updateRate");
-        if (e) e.innerHTML = "{'Update your rating'|@translate|@escape:'javascript'}";
-        e = document.getElementById("ratingScore");
-        if (e) e.innerHTML = rating.score;
-        e = document.getElementById("ratingCount");
-        if (e) {ldelim}
-            if (rating.count == 1) {ldelim}
-                e.innerHTML = "({'1 rate'|@translate|@escape:'javascript'})";
-            } else {ldelim}
-                e.innerHTML = "({'%d rates'|@translate|@escape:'javascript'})".replace( "%d", rating.count);
-            }
-        {rdelim}
-        $('#averageRate').find('span').each(function() {ldelim}
-            $(this).addClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarFull' : 'rateButtonStarEmpty');
-            $(this).removeClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarEmpty' : 'rateButtonStarFull');
-        {rdelim});
-    {rdelim}
-{rdelim} );
-{/footer_script}
-{/strip}
-                    </form>
-                </dd>
-{/if}
-            </dl>
-        </div>
-{/if}
-    </section>
-</div>
-
-{include file="http_scheme.tpl"}
-{if $theme_config->social_enabled}
-<div class="container">
-    <section id="share">
-{if $theme_config->social_twitter}
-        <a href="http://twitter.com/share?text={$current.TITLE}&amp;url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
-           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
-            <i class="fa fa-twitter"></i>
-        </a>
-{/if}
-{if $theme_config->social_facebook}
-        <a href="https://www.facebook.com/sharer/sharer.php?u={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
-           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
-            <i class="fa fa-facebook"></i>
-        </a>
-{/if}
-{if $theme_config->social_google_plus}
-        <a href="https://plus.google.com/share?url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
-           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
-            <i class="fa fa-google-plus"></i>
-        </a>
-{/if}
-    </section>
-</div>
-{/if}
-
-{if !empty($thumbnails)}
-{combine_css path="themes/bootstrap_darkroom/slick/slick.css"}
-{combine_css path="themes/bootstrap_darkroom/slick/slick-theme.css"}
-{combine_script id="slick.carousel" require="jquery" path="themes/bootstrap_darkroom/slick/slick.min.js"}
-{footer_script require='jquery'}{strip}
-$('#thumbnailCarousel').slick({
- infinite: false,
- centerMode: false,
- slidesToShow: 7,
- slidesToScroll: 6,
- lazyLoad: 'ondemand',
- responsive: [
-  {
-   breakpoint: 1200,
-   settings: {
-    slidesToShow: 6,
-    slidesToScroll: 5
-   }
-  },
-  {
-   breakpoint: 1024,
-   settings: {
-    slidesToShow: 5,
-    slidesToScroll: 4
-   }
-  },
-  {
-   breakpoint: 600,
-   settings: {
-    slidesToShow: 3,
-    slidesToScroll: 3
-   }
-  },
-  {
-   breakpoint: 420,
-   settings: {
-    slidesToShow: 2,
-    slidesToScroll: 2
-   }
-  }]
-});
-
-var currentThumbnailIndex = $('#thumbnailCarousel').find('[data-thumbnail-active="1"]').data('slick-index');
-$('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
-
-{/strip}{/footer_script}
-<div class="container">
- <div class="col-lg-10 col-md-12 col-centered">
-  <div id="thumbnailCarousel" class="slick-carousel">
-{foreach from=$thumbnails item=thumbnail}
-{assign var=derivative value=$pwg->derivative($derivative_params, $thumbnail.src_image)}
-{if !$derivative->is_cached()}
-{combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
-{combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
-{/if}
-{if $thumbnail.id eq $current.id}
-        <div class="text-center thumbnail-active" data-thumbnail-active="1"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
-{else}
-        <div class="text-center"><a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
-{/if}
-{/foreach}
-  </div>
- </div>
-</div>
-{/if}
-
-
+<!-- comments -->
 {if isset($comment_add) || $COMMENT_COUNT > 0}
+    <div role="tabpanel" class="tab-pane" id="tab_comments">
+
 <a name="comments"></a>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
 {$shortname = $theme_config->comments_disqus_shortname}
 {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
                 <div id="disqus_thread"></div>
@@ -496,10 +605,11 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                 </div>
             </div>
 {/if}
-        </div>
     </div>
-</div>
 {/if}
+  </div>
+ </div>
+</div>
 
 {if !empty($navbar) }
 <div class="container">
@@ -507,14 +617,39 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 </div>
 {/if}
 
-<!--
-<div id="imageToolBar">
-{include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
-
-{if isset($U_SLIDESHOW_STOP)}
-<p>
-	[ <a href="{$U_SLIDESHOW_STOP}">{'stop the slideshow'|@translate}</a> ]
-</p>
-{/if}
--->
 {if !empty($PLUGIN_PICTURE_AFTER)}{$PLUGIN_PICTURE_AFTER}{/if}
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+     <div class="pswp__bg"></div>
+     <div class="pswp__scroll-wrap">
+           <div class="pswp__container">
+             <div class="pswp__item"></div>
+             <div class="pswp__item"></div>
+             <div class="pswp__item"></div>
+           </div>
+           <div class="pswp__ui pswp__ui--hidden">
+             <div class="pswp__top-bar">
+                 <div class="pswp__counter"></div>
+                 <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                 <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+                 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                 <div class="pswp__preloader">
+                     <div class="pswp__preloader__icn">
+                       <div class="pswp__preloader__cut">
+                         <div class="pswp__preloader__donut"></div>
+                       </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                 <div class="pswp__share-tooltip"></div>
+             </div>
+             <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+             <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+             <div class="pswp__caption">
+                 <div class="pswp__caption__center"></div>
+             </div>
+         </div>
+     </div>
+</div>
