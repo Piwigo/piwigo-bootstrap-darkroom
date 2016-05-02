@@ -35,7 +35,6 @@ function set_config_values()
 // needed for the navigation carousel in picture.tpl
 // borrowed from https://github.com/ThomasDaheim/piwigo-stuff/tree/master/picturethumbs
 add_event_handler('loc_end_picture', 'get_all_thumbnails_in_category');
-add_event_handler('loc_begin_picture', 'get_all_thumbnails_in_category');
 function get_all_thumbnails_in_category()
 {
   global $template, $conf, $user, $page;
@@ -86,6 +85,7 @@ function get_all_thumbnails_in_category()
   
   $template->assign( array(
     'derivative_params_thumb' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_SQUARE) ) ),
+    'derivative_params_medium' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_MEDIUM) ) ),
     'derivative_params_large' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_LARGE) ) ),
       ) );
   $template->assign('thumbnails', $tpl_thumbnails_var);

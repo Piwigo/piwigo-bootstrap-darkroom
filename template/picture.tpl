@@ -192,6 +192,10 @@ $('#theMainImage').bind('swipeleft swiperight', function (event) {
 {combine_css path="themes/bootstrap_darkroom/slick/slick.css"}
 {combine_css path="themes/bootstrap_darkroom/slick/slick-theme.css"}
 {combine_script id="slick.carousel" require="jquery" path="themes/bootstrap_darkroom/slick/slick.min.js"}
+{combine_css path="themes/bootstrap_darkroom/photoswipe/photoswipe.css"}
+{combine_css path="themes/bootstrap_darkroom/photoswipe/default-skin/default-skin.css"}
+{combine_script id="photoswipe" require="jquery" path="themes/bootstrap_darkroom/photoswipe/photoswipe.min.js"}
+{combine_script id="photoswipe.ui" require="photoswipe" path="themes/bootstrap_darkroom/photoswipe/photoswipe-ui-default.min.js"}
 {footer_script require='jquery'}{strip}
 $(document).ready(function(){
   $('#thumbnailCarousel').slick({
@@ -241,14 +245,25 @@ $('#thumbnailCarousel').each(function() {
          getItems = function() {
              var items = [];
              $pic.find('a img').each(function() {
-                 var $src    = $(this).data('src-large'),
-                     $size   = $(this).data('size-large').split(' x '),
-                     $width  = $size[0],
-                     $height = $size[1];
+                 var $src_large     = $(this).data('src-large'),
+                     $size_large    = $(this).data('size-large').split(' x '),
+                     $width_large   = $size_large[0],
+                     $height_large  = $size_large[1],
+                     $src_medium    = $(this).data('src-medium'),
+                     $size_medium   = $(this).data('size-medium').split(' x '),
+                     $width_medium  = $size_medium[0],
+                     $height_medium = $size_medium[1];
                  var item = {
-                     src : $src,
-                     w   : $width,
-                     h   : $height
+                     mediumImage: {
+                         src : $src_medium,
+                         w   : $width_medium,
+                         h   : $height_medium
+                     },
+                     originalImage: {
+                         src : $src_large,
+                         w   : $width_large,
+                         h   : $height_large
+                     }
                  };
 
                  items.push(item);
@@ -258,7 +273,57 @@ $('#thumbnailCarousel').each(function() {
          };
      var items = getItems();
 
-     console.log(items);
+     var $pswp = $('.pswp')[0];
+     $('#startPhotoSwipe').on('click', 'span', function(event) {
+        event.preventDefault();
+        var $index = $('#thumbnailCarousel').find('[data-thumbnail-active="1"]').data('slick-index');
+        console.log('PhotoSwipe index: ' + $index);
+        var options = {
+            index: $index,
+            bgOpacity: 0.9,
+            showHideOpacity: true
+        };
+        var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+        var realViewportWidth,
+            useLargeImages = false,
+            firstResize = true,
+            imageSrcWillChange;
+
+        lightBox.listen('beforeResize', function() {
+            realViewportWidth = lightBox.viewportSize.x * window.devicePixelRatio;
+            if(useLargeImages && realViewportWidth < 1000) {
+                useLargeImages = false;
+                imageSrcWillChange = true;
+            } else if(!useLargeImages && realViewportWidth >= 1000) {
+                useLargeImages = true;
+                imageSrcWillChange = true;
+            }
+
+            if(imageSrcWillChange && !firstResize) {
+                lightBox.invalidateCurrItems();
+            }
+
+            if(firstResize) {
+                firstResize = false;
+            }
+
+            imageSrcWillChange = false;
+        });
+
+        lightBox.listen('gettingData', function(index, item) {
+            if( useLargeImages ) {
+                item.src = item.originalImage.src;
+                item.w = item.originalImage.w;
+                item.h = item.originalImage.h;
+            } else {
+                item.src = item.mediumImage.src;
+                item.w = item.mediumImage.w;
+                item.h = item.mediumImage.h;
+            }
+        });
+
+        lightBox.init();
+     });
 });
 {/strip}{/footer_script}
 <div class="container">
@@ -266,12 +331,13 @@ $('#thumbnailCarousel').each(function() {
   <div id="thumbnailCarousel" class="slick-carousel">
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative value=$pwg->derivative($derivative_params_thumb, $thumbnail.src_image)}
+{assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
 {assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
 {if !$derivative->is_cached()}
 {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
 {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
-        {if $thumbnail.id eq $current.id}<div class="text-center thumbnail-active" data-thumbnail-active="1">{else}<div class="text-center">{/if}<a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
+        {if $thumbnail.id eq $current.id}<div class="text-center thumbnail-active" data-thumbnail-active="1">{else}<div class="text-center">{/if}<a href="{$thumbnail.URL}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}" alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
 {/foreach}
   </div>
  </div>
@@ -550,3 +616,38 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 {/if}
 
 {if !empty($PLUGIN_PICTURE_AFTER)}{$PLUGIN_PICTURE_AFTER}{/if}
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+     <div class="pswp__bg"></div>
+     <div class="pswp__scroll-wrap">
+           <div class="pswp__container">
+             <div class="pswp__item"></div>
+             <div class="pswp__item"></div>
+             <div class="pswp__item"></div>
+           </div>
+           <div class="pswp__ui pswp__ui--hidden">
+             <div class="pswp__top-bar">
+                 <div class="pswp__counter"></div>
+                 <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                 <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+                 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                 <div class="pswp__preloader">
+                     <div class="pswp__preloader__icn">
+                       <div class="pswp__preloader__cut">
+                         <div class="pswp__preloader__donut"></div>
+                       </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                 <div class="pswp__share-tooltip"></div>
+             </div>
+             <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+             <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+             <div class="pswp__caption">
+                 <div class="pswp__caption__center"></div>
+             </div>
+         </div>
+     </div>
+</div>

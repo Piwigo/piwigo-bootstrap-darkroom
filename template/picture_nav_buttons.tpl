@@ -70,6 +70,11 @@
 {else}
     <span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon-text">{'Next'|@translate}</span>
 {/if}{/strip}
+{strip}{if !isset($slideshow)}
+        <a href="#" title="{'Fullscreen'|@translate}" class="pull-right" id="startPhotoSwipe">
+                <span class="glyphicon glyphicon-resize-full"></span><span class="glyphicon-text">{'Fullscreen'|@translate}</span>
+        </a>
+{/if}{/strip}
 {*<!--{strip}{if isset($last)}
 	<a href="{$last.U_IMG}" title="{'Last'|@translate} : {$last.TITLE}" class="pwg-state-default pwg-button pwg-button-icon-right">
 		<span class="pwg-icon pwg-icon-arrowstop-e"></span><span class="pwg-button-text">{'Last'|@translate}</span>
