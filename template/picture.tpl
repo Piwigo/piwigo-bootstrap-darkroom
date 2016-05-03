@@ -16,6 +16,16 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a> [{$PHOTO}]</div>
+{footer_script require='jquery'}{strip}
+ var $nrLevels = $('.navbar-brand a').length,
+     $html;
+ while ($nrLevels > 2) {
+   $('.navbar-brand a')[0].remove();
+   $nrLevels = $('.navbar-brand a').length;
+   $html = $('.navbar-brand').html().replace(/^ \/ /, "");
+   $('.navbar-brand').html($html);
+ }
+{/strip}{/footer_script}
         </div>
         <div class="navbar-right navbar-collapse collapse" id="picture-nav">
             <ul class="nav navbar-nav">
