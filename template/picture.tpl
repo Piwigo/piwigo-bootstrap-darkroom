@@ -341,9 +341,6 @@ $('#thumbnailCarousel').each(function() {
             }
         });
 
-        photoSwipe.init();
-
-
         if ($('.pswp__button--autoplay').length === 0) {
             $('<button class="pswp__button pswp__button--autoplay" title="AutoPlay"></button>').insertAfter('.pswp__button--zoom');
         }
@@ -359,8 +356,14 @@ $('#thumbnailCarousel').each(function() {
                 $autoplayId = setInterval(function() { photoSwipe.next(); }, 3000);
                 $('.pswp__button--autoplay').addClass('stop');
             }
+            photoSwipe.listen('close', function() {
+                clearInterval($autoplayId);
+                $autoplayId = null;
+            });
+
         });
 
+        photoSwipe.init();
      });
 });
 {/strip}{/footer_script}
