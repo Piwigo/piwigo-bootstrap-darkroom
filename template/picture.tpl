@@ -257,8 +257,12 @@ $('#thumbnailCarousel').each(function() {
          getItems = function() {
              var items = [];
              $pic.find('a').each(function() {
-                 var $src_large     = $(this).data('src-large'),
-                     $size_large    = $(this).data('size-large').split(' x '),
+                 var $src_xlarge    = $(this).data('src-xlarge'),
+                     $size_xlarge   = $(this).data('size-xlarge').split(' x '),
+                     $width_xlarge  = $size_xlarge[0],
+                     $height_xlarge = $size_xlarge[1],
+                     $src_large     = $(this).data('src-xlarge'),
+                     $size_large    = $(this).data('size-xlarge').split(' x '),
                      $width_large   = $size_large[0],
                      $height_large  = $size_large[1],
                      $src_medium    = $(this).data('src-medium'),
@@ -274,10 +278,16 @@ $('#thumbnailCarousel').each(function() {
                          h     : $height_medium,
                          title : $title
                      },
-                     originalImage: {
+                     largeImage: {
                          src   : $src_large,
                          w     : $width_large,
                          h     : $height_large,
+                         title : $title
+                     },
+                     xlargeImage: {
+                         src   : $src_xlarge,
+                         w     : $width_xlarge,
+                         h     : $height_xlarge,
                          title : $title
                      }
                  };
@@ -302,17 +312,20 @@ $('#thumbnailCarousel').each(function() {
         };
         var photoSwipe = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
         var realViewportWidth,
-            useLargeImages = false,
+            curImageSize = "medium",
             firstResize = true,
             imageSrcWillChange;
 
         photoSwipe.listen('beforeResize', function() {
             realViewportWidth = photoSwipe.viewportSize.x * window.devicePixelRatio;
-            if(useLargeImages && realViewportWidth < 768) {
-                useLargeImages = false;
+            if(curImageSize != "medium" && realViewportWidth < 768) {
+                curImageSize = "medium";
                 imageSrcWillChange = true;
-            } else if(!useLargeImages && realViewportWidth >= 768) {
-                useLargeImages = true;
+            } else if(curImageSize != "large" && realViewportWidth >= 768 && realViewportWidth < 1200) {
+                curImageSize = "large";
+                imageSrcWillChange = true;
+            } else if(curImageSize != "xlarge" && realViewportWidth >= 1200) {
+                curImageSize = "xlarge";
                 imageSrcWillChange = true;
             }
 
@@ -328,11 +341,16 @@ $('#thumbnailCarousel').each(function() {
         });
 
         photoSwipe.listen('gettingData', function(index, item) {
-            if( useLargeImages ) {
-                item.src = item.originalImage.src;
-                item.w = item.originalImage.w;
-                item.h = item.originalImage.h;
-                item.title = item.originalImage.title;
+            if(curImageSize = "xlarge") {
+                item.src = item.xlargeImage.src;
+                item.w = item.xlargeImage.w;
+                item.h = item.xlargeImage.h;
+                item.title = item.xlargeImage.title;
+            } else if(curImageSize = "large") {
+                item.src = item.largeImage.src;
+                item.w = item.largeImage.w;
+                item.h = item.largeImage.h;
+                item.title = item.largeImage.title;
             } else {
                 item.src = item.mediumImage.src;
                 item.w = item.mediumImage.w;
@@ -374,11 +392,12 @@ $('#thumbnailCarousel').each(function() {
 {assign var=derivative value=$pwg->derivative($derivative_params_thumb, $thumbnail.src_image)}
 {assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
 {assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
+{assign var=derivative_xlarge value=$pwg->derivative($derivative_params_xlarge, $thumbnail.src_image)}
 {if !$derivative->is_cached()}
 {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
 {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
-        {if $thumbnail.id eq $current.id}<div class="text-center thumbnail-active" data-thumbnail-active="1">{else}<div class="text-center">{/if}<a href="{$thumbnail.URL}" data-title="{$thumbnail.TN_TITLE}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src- medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
+        {if $thumbnail.id eq $current.id}<div class="text-center thumbnail-active" data-thumbnail-active="1">{else}<div class="text-center">{/if}<a href="{$thumbnail.URL}" data-title="{$thumbnail.TN_TITLE}" data-src-xlarge="{$derivative_xlarge->get_url()}" data-size-xlarge="{$derivative_xlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src- medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
 {/foreach}
   </div>
  </div>
