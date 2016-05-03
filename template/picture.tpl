@@ -261,8 +261,8 @@ $('#thumbnailCarousel').each(function() {
                      $size_xlarge   = $(this).data('size-xlarge').split(' x '),
                      $width_xlarge  = $size_xlarge[0],
                      $height_xlarge = $size_xlarge[1],
-                     $src_large     = $(this).data('src-xlarge'),
-                     $size_large    = $(this).data('size-xlarge').split(' x '),
+                     $src_large     = $(this).data('src-large'),
+                     $size_large    = $(this).data('size-large').split(' x '),
                      $width_large   = $size_large[0],
                      $height_large  = $size_large[1],
                      $src_medium    = $(this).data('src-medium'),
@@ -312,20 +312,17 @@ $('#thumbnailCarousel').each(function() {
         };
         var photoSwipe = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
         var realViewportWidth,
-            curImageSize = "medium",
+            useLargeImages = false,
             firstResize = true,
             imageSrcWillChange;
 
         photoSwipe.listen('beforeResize', function() {
             realViewportWidth = photoSwipe.viewportSize.x * window.devicePixelRatio;
-            if(curImageSize != "medium" && realViewportWidth < 768) {
-                curImageSize = "medium";
+            if(useLargeImages && realViewportWidth < 1335) {
+                useLargeImages = false;
                 imageSrcWillChange = true;
-            } else if(curImageSize != "large" && realViewportWidth >= 768 && realViewportWidth < 1200) {
-                curImageSize = "large";
-                imageSrcWillChange = true;
-            } else if(curImageSize != "xlarge" && realViewportWidth >= 1200) {
-                curImageSize = "xlarge";
+            } else if(!useLargeImages && realViewportWidth >= 1335) {
+                useLargeImages = true;
                 imageSrcWillChange = true;
             }
 
@@ -341,21 +338,16 @@ $('#thumbnailCarousel').each(function() {
         });
 
         photoSwipe.listen('gettingData', function(index, item) {
-            if(curImageSize = "xlarge") {
+            if( useLargeImages ) {
                 item.src = item.xlargeImage.src;
                 item.w = item.xlargeImage.w;
                 item.h = item.xlargeImage.h;
                 item.title = item.xlargeImage.title;
-            } else if(curImageSize = "large") {
+            } else {
                 item.src = item.largeImage.src;
                 item.w = item.largeImage.w;
                 item.h = item.largeImage.h;
                 item.title = item.largeImage.title;
-            } else {
-                item.src = item.mediumImage.src;
-                item.w = item.mediumImage.w;
-                item.h = item.mediumImage.h;
-                item.title = item.mediumImage.title;
             }
         });
 
@@ -397,7 +389,7 @@ $('#thumbnailCarousel').each(function() {
 {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
 {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
-        {if $thumbnail.id eq $current.id}<div class="text-center thumbnail-active" data-thumbnail-active="1">{else}<div class="text-center">{/if}<a href="{$thumbnail.URL}" data-title="{$thumbnail.TN_TITLE}" data-src-xlarge="{$derivative_xlarge->get_url()}" data-size-xlarge="{$derivative_xlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src- medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
+        {if $thumbnail.id eq $current.id}<div class="text-center thumbnail-active" data-thumbnail-active="1">{else}<div class="text-center">{/if}<a href="{$thumbnail.URL}" data-title="{$thumbnail.TN_TITLE}" data-src-xlarge="{$derivative_xlarge->get_url()}" data-size-xlarge="{$derivative_xlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
 {/foreach}
   </div>
  </div>
