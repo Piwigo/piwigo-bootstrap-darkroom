@@ -342,6 +342,25 @@ $('#thumbnailCarousel').each(function() {
         });
 
         photoSwipe.init();
+
+
+        if ($('.pswp__button--autoplay').length === 0) {
+            $('<button class="pswp__button pswp__button--autoplay" title="AutoPlay"></button>').insertAfter('.pswp__button--zoom');
+        }
+
+        var $autoplayId = null;
+        $('.pswp__button--autoplay').on('click', function(event) {
+            event.preventDefault();
+            if ($autoplayId) {
+                clearInterval($autoplayId);
+                $autoplayId = null;
+                $('.pswp__button--autoplay').removeClass('stop');
+            } else {
+                $autoplayId = setInterval(function() { photoSwipe.next(); }, 3000);
+                $('.pswp__button--autoplay').addClass('stop');
+            }
+        });
+
      });
 });
 {/strip}{/footer_script}
