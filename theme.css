@@ -239,3 +239,6 @@ a:active,
     border-bottom: none;
   }
 }
+
+/* PhotoSwipe */
+.pswp__ui--idle .pswp__caption { opacity: 0; }
