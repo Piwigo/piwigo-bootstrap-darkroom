@@ -23,7 +23,11 @@
    $('.navbar-brand a')[0].remove();
    $nrLevels = $('.navbar-brand a').length;
    $html = $('.navbar-brand').html().replace(/^ \/ /, "");
-   $('.navbar-brand').html($html);
+   if ($nrLevels === 2) {
+      $('.navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>{$LEVEL_SEPARATOR}' + $html);
+   } else {
+      $('.navbar-brand').html($html);
+   }
  }
 {/strip}{/footer_script}
         </div>
