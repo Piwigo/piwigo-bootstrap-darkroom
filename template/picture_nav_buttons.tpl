@@ -45,7 +45,7 @@
 {/if}{/strip}
 {strip}{if isset($U_UP) and !isset($slideshow)}
     <a href="{$U_UP}" title="{'Thumbnails'|@translate}">
-        <span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Thumbnails'|@translate}</span>
+        <span class="glyphicon glyphicon-chevron-up"></span><span class="glyphicon-text">{'Thumbnails'|@translate}</span>
     </a>
 {/if}{/strip}
 {strip}{if !isset($slideshow)}
