@@ -171,11 +171,13 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 </div>
 
 <div class="container">
-    <section id="important-info">
 {if isset($COMMENT_IMG)}
+  <div class="text-center col-lg-10 -col-md-12 col-centered">
+    <section id="important-info">
         <h4 class="imageComment">{$COMMENT_IMG}</h4>
-{/if}
     </section>
+  </div>
+{/if}
 </div>
 
 {include file="http_scheme.tpl"}
@@ -355,12 +357,8 @@ $('#thumbnailCarousel').each(function() {
             }
         });
 
-        if ($('.pswp__button--autoplay').length === 0) {
-            $('<button class="pswp__button pswp__button--autoplay" title="AutoPlay"></button>').insertAfter('.pswp__button--zoom');
-        }
-
         var $autoplayId = null;
-        $('.pswp__button--autoplay').on('click', function(event) {
+        $('.pswp__button--autoplay').on('click touchstart', function(event) {
             event.preventDefault();
             if ($autoplayId) {
                 clearInterval($autoplayId);
@@ -688,6 +686,7 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                  <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
                  <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
                  <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                 <button class="pswp__button pswp__button--autoplay" title="AutoPlay"></button>
                  <div class="pswp__preloader">
                      <div class="pswp__preloader__icn">
                        <div class="pswp__preloader__cut">
