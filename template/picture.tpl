@@ -1,7 +1,6 @@
 <!-- Start of picture.tpl -->
 {if get_device() != 'desktop'}
-{combine_script id='config' path='themes/bootstrap_darkroom/js/config.js' require='jquery'}
-{combine_script id='jquery.mobile' path='themes/bootstrap_darkroom/js/jquery.mobile-1.4.5.min.js' require='jquery,config'}
+{combine_script id='jquery.mobile-events' path='themes/bootstrap_darkroom/js/jquery.mobile-events.min.js' require='jquery'}
 {/if}
 
 {if !empty($PLUGIN_PICTURE_BEFORE)}{$PLUGIN_PICTURE_BEFORE}{/if}
