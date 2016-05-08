@@ -257,56 +257,57 @@ $(document).ready(function(){
   $('#thumbnailCarousel').show();
 });
 
-$('#thumbnailCarousel').each(function() {
-     var $pic     = $(this),
-         getItems = function() {
-             var items = [];
-             $pic.find('a').each(function() {
-                 var $src_xlarge    = $(this).data('src-xlarge'),
-                     $size_xlarge   = $(this).data('size-xlarge').split(' x '),
-                     $width_xlarge  = $size_xlarge[0],
-                     $height_xlarge = $size_xlarge[1],
-                     $src_large     = $(this).data('src-large'),
-                     $size_large    = $(this).data('size-large').split(' x '),
-                     $width_large   = $size_large[0],
-                     $height_large  = $size_large[1],
-                     $src_medium    = $(this).data('src-medium'),
-                     $size_medium   = $(this).data('size-medium').split(' x '),
-                     $width_medium  = $size_medium[0],
-                     $height_medium = $size_medium[1],
-                     $href          = $(this).attr('href'),
-                     $title         = '<div class="text-center"><a href="' + $href + '"><i class="glyphicon glyphicon-info-sign"></i> ' + $(this).data('title') + '</div>';
-                 var item = {
-                     mediumImage: {
-                         src   : $src_medium,
-                         w     : $width_medium,
-                         h     : $height_medium,
-                         title : $title
-                     },
-                     largeImage: {
-                         src   : $src_large,
-                         w     : $width_large,
-                         h     : $height_large,
-                         title : $title
-                     },
-                     xlargeImage: {
-                         src   : $src_xlarge,
-                         w     : $width_xlarge,
-                         h     : $height_xlarge,
-                         title : $title
-                     }
-                 };
 
-                 items.push(item);
+function startPhotoSwipe(event) {
+    event.preventDefault();
+    $('#thumbnailCarousel').each(function() {
+         var $pic     = $(this),
+             getItems = function() {
+                 var items = [];
+                 $pic.find('a').each(function() {
+                     var $src_xlarge    = $(this).data('src-xlarge'),
+                         $size_xlarge   = $(this).data('size-xlarge').split(' x '),
+                             $width_xlarge  = $size_xlarge[0],
+                         $height_xlarge = $size_xlarge[1],
+                         $src_large     = $(this).data('src-large'),
+                         $size_large    = $(this).data('size-large').split(' x '),
+                         $width_large   = $size_large[0],
+                         $height_large  = $size_large[1],
+                         $src_medium    = $(this).data('src-medium'),
+                         $size_medium   = $(this).data('size-medium').split(' x '),
+                         $width_medium  = $size_medium[0],
+                         $height_medium = $size_medium[1],
+                         $href          = $(this).attr('href'),
+                         $title         = '<div class="text-center"><a href="' + $href + '"><i class="glyphicon glyphicon-info-sign"></i> ' + $(this).data('title') + '</div>';
+                     var item = {
+                         mediumImage: {
+                             src   : $src_medium,
+                             w     : $width_medium,
+                             h     : $height_medium,
+                             title : $title
+                         },
+                         largeImage: {
+                             src   : $src_large,
+                             w     : $width_large,
+                             h     : $height_large,
+                             title : $title
+                         },
+                         xlargeImage: {
+                             src   : $src_xlarge,
+                             w     : $width_xlarge,
+                             h     : $height_xlarge,
+                             title : $title
+                         }
+                     };
+    
+                     items.push(item);
+    
+                 });
+                 return items;
+             };
+        var items = getItems();
 
-             });
-             return items;
-         };
-     var items = getItems();
-
-     var $pswp = $('.pswp')[0];
-     var startPhotoSwipe = function(event) {
-        event.preventDefault();
+        var $pswp = $('.pswp')[0];
         var $index = $('#thumbnailCarousel').find('[data-thumbnail-active="1"]').data('slick-index');
         var options = {
             index: $index,
@@ -356,29 +357,33 @@ $('#thumbnailCarousel').each(function() {
             }
         });
 
-        var $autoplayId = null;
+        photoSwipe.init();
+
+        var autoplayId = null;
         $('.pswp__button--autoplay').on('click touchstart', function(event) {
             event.preventDefault();
-            if ($autoplayId) {
-                clearInterval($autoplayId);
-                $autoplayId = null;
+            if (autoplayId) {
+                clearInterval(autoplayId);
+                autoplayId = null;
                 $('.pswp__button--autoplay').removeClass('stop');
             } else {
-                $autoplayId = setInterval(function() { photoSwipe.next(); }, 3000);
+                autoplayId = setInterval(function() { photoSwipe.next(); }, 3000);
                 $('.pswp__button--autoplay').addClass('stop');
             }
-            photoSwipe.listen('close', function() {
-                clearInterval($autoplayId);
-                $autoplayId = null;
-            });
-
         });
-        photoSwipe.init();
-     };
+        photoSwipe.listen('destroy', function() {
+            if (autoplayId) {
+                console.log('clearing autoplayId on close');
+                clearInterval(autoplayId);
+                autoplayId = null;
+                $('.pswp__button--autoplay').removeClass('stop');
+            }
+        });
+    });
+};
 
-     $('#startPhotoSwipe').on('click', 'span', startPhotoSwipe);
-     $('#theImage').on('doubletap', 'img', startPhotoSwipe);
-});
+$('#startPhotoSwipe').on('click', 'span', startPhotoSwipe);
+$('#theImage').on('doubletap', 'img', startPhotoSwipe);
 {/strip}{/footer_script}
 <div class="container">
  <div class="col-lg-10 col-md-12 col-centered">
