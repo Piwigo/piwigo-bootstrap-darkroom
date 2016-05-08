@@ -157,7 +157,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
        $('#navigationButtons a#navNextPicture span').click();
    } else if (event.type == 'swiperight') {
        $('#navigationButtons a#navPrevPicture span').click(); 
-   } else { 
+   } else {
        return;
    }
 });
@@ -305,7 +305,7 @@ $('#thumbnailCarousel').each(function() {
      var items = getItems();
 
      var $pswp = $('.pswp')[0];
-     var startPhotoSwipe = function(event) {
+     $('#startPhotoSwipe').on('click', 'span', function(event) {
         event.preventDefault();
         var $index = $('#thumbnailCarousel').find('[data-thumbnail-active="1"]').data('slick-index');
         var options = {
@@ -373,11 +373,9 @@ $('#thumbnailCarousel').each(function() {
             });
 
         });
-        photoSwipe.init();
-     };
 
-     $('#startPhotoSwipe').on('click', 'span', startPhotoSwipe);
-     $('#theImage').on('doubletap', 'img', startPhotoSwipe);
+        photoSwipe.init();
+     });
 });
 {/strip}{/footer_script}
 <div class="container">
