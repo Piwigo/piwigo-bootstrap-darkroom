@@ -5,7 +5,7 @@
 
 {if !empty($PLUGIN_PICTURE_BEFORE)}{$PLUGIN_PICTURE_BEFORE}{/if}
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-secondary" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#picture-nav">
@@ -16,16 +16,16 @@
             </button>
             <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a> [{$PHOTO}]</div>
 {footer_script require='jquery'}{strip}
- var $nrLevels = $('.navbar-brand a').length,
+ var $nrLevels = $('.navbar-secondary .navbar-brand a').length,
      $html;
  while ($nrLevels > 2) {
-   $('.navbar-brand a')[0].remove();
-   $nrLevels = $('.navbar-brand a').length;
-   $html = $('.navbar-brand').html().replace(/^ \/ /, "");
+   $('.navbar-secondary .navbar-brand a')[0].remove();
+   $nrLevels = $('.navbar-secondary .navbar-brand a').length;
+   $html = $('.navbar-secondary .navbar-brand').html().replace(/^ \/ /, "");
    if ($nrLevels === 2) {
-      $('.navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>{$LEVEL_SEPARATOR}' + $html);
+      $('.navbar-secondary .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>{$LEVEL_SEPARATOR}' + $html);
    } else {
-      $('.navbar-brand').html($html);
+      $('.navbar-secondary .navbar-brand').html($html);
    }
  }
 {/strip}{/footer_script}
