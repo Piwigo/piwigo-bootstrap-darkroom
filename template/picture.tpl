@@ -369,15 +369,17 @@ function startPhotoSwipe(event) {
             } else {
                 autoplayId = setInterval(function() { photoSwipe.next(); }, 3000);
                 $('.pswp__button--autoplay').addClass('stop');
+                console.log('started autoplay with id ' + autoplayId);
             }
         });
         photoSwipe.listen('destroy', function() {
             if (autoplayId) {
-                console.log('clearing autoplayId on close');
+                console.log('clearing autoplayId ' + autoplayId + ' on close');
                 clearInterval(autoplayId);
                 autoplayId = null;
                 $('.pswp__button--autoplay').removeClass('stop');
             }
+            $('.pswp__button--autoplay').off('click touchstart');
         });
     });
 };
