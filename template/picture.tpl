@@ -258,8 +258,7 @@ $(document).ready(function(){
 });
 
 
-function startPhotoSwipe(event) {
-    event.preventDefault();
+function startPhotoSwipe() {
     $('#thumbnailCarousel').each(function() {
          var $pic     = $(this),
              getItems = function() {
@@ -384,11 +383,18 @@ function startPhotoSwipe(event) {
 
 $('#startPhotoSwipe').on('click', 'span', startPhotoSwipe);
 $('#theImage').on('doubletap', 'img', startPhotoSwipe);
+{if isset($U_SLIDESHOW_START)}
 $('#startSlideshow').on('click', 'span', function() {
   console.log('Starting slideshow..');
-  startPhotoSwipe(event);
+  startPhotoSwipe();
   $('.pswp__button--autoplay')[0].click();
-});  
+});
+{/if}
+if (window.location.hash === "#start-slideshow") {
+    console.log('Received #start-slideshow url hash. Starting slideshow...');
+    startPhotoSwipe();
+    $('.pswp__button--autoplay')[0].click();
+}
 {/strip}{/footer_script}
 <div class="container">
  <div class="col-lg-10 col-md-12 col-centered">

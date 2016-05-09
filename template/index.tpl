@@ -77,10 +77,13 @@
 {/if}
 {if isset($U_SLIDESHOW)}
                 <li>
-                    {strip}<a href="{$U_SLIDESHOW}" title="{'slideshow'|@translate}" rel="nofollow">
+                    {strip}<a href="{$U_SLIDESHOW}#start-slideshow" id="startSlideshow" title="{'slideshow'|@translate}" rel="nofollow">
                         <span class="glyphicon glyphicon-play"></span><span class="glyphicon-text">{'slideshow'|@translate}</span>
                     </a>{/strip}
                 </li>
+{footer_script require="jquery"}
+$('#startSlideshow')[0].search = "";
+{/footer_script}
 {/if}
 {if isset($U_MODE_FLAT)}
                 <li>
