@@ -69,7 +69,7 @@
 {/if}
 {if isset($U_SLIDESHOW_START)}
                 <li>
-                    <a href="{$U_SLIDESHOW_START}" title="{'Slideshow'|@translate}" rel="nofollow">
+                    <a href="#" title="{'Slideshow'|@translate}" id="startSlideshow" rel="nofollow">
                         <span class="glyphicon glyphicon-play"></span><span class="glyphicon-text">{'Slideshow'|@translate}</span>
                     </a>
                 </li>
@@ -384,6 +384,11 @@ function startPhotoSwipe(event) {
 
 $('#startPhotoSwipe').on('click', 'span', startPhotoSwipe);
 $('#theImage').on('doubletap', 'img', startPhotoSwipe);
+$('#startSlideshow').on('click', 'span', function() {
+  console.log('Starting slideshow..');
+  startPhotoSwipe(event);
+  $('.pswp__button--autoplay')[0].click();
+});  
 {/strip}{/footer_script}
 <div class="container">
  <div class="col-lg-10 col-md-12 col-centered">
