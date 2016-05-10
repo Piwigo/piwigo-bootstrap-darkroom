@@ -7,6 +7,8 @@ Theme URI: http://piwigo.org/ext/extension_view.php?eid=831
 Author: Thomas Kuther
 Author URI: https://https://github.com/tkuther/piwigo-bootstrap-darkroom
 */
+require_once(PHPWG_THEMES_PATH . 'bootstrap_darkroom/include/themecontroller.php');
+require_once(PHPWG_THEMES_PATH . 'bootstrap_darkroom/include/config.php');
 
 $themeconf = array(
     'name' => 'bootstrap_darkroom',
@@ -94,5 +96,5 @@ function get_all_thumbnails_in_category()
   unset($tpl_thumbnails_var, $pictures);
 }
 
-//$controller = new \BootstrapLightroom\ThemeController();
-//$controller->init();
+$controller = new \BootstrapDarkroom\ThemeController();
+$controller->init();
