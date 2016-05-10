@@ -165,7 +165,11 @@ a:active,
 }
 
 /* Carousel */
-#thumbnailCarousel { display: none; }  /* hide initially until loaded */
+#thumbnailCarousel {
+  display: none; /* hide initially until page is loaded */
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+}
 .slick-slide img { display: inherit !important; }
 .slick-slide, .slick-slide *{ outline: none !important; }
 .slick-list { padding: 10px 0 !important; }
