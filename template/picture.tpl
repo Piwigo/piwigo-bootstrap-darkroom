@@ -220,7 +220,11 @@ $(document).ready(function(){
     centerMode: false,
     slidesToShow: 7,
     slidesToScroll: 6,
+{if $theme_config_extra->slick_lazyload == "progressive"}
+    lazyLoad: 'progressive',
+{else}
     lazyLoad: 'ondemand',
+{/if}
     responsive: [
      {
       breakpoint: 1200,
