@@ -382,9 +382,11 @@ function startPhotoSwipe() {
 };
 
 $('#startPhotoSwipe').on('click', 'span', startPhotoSwipe);
-$('#theImage').on('doubletap', 'img', startPhotoSwipe);
+{if get_device() != 'desktop'}
+$('#theImage').on('doubletap', startPhotoSwipe);
+{/if}
 {if isset($U_SLIDESHOW_START)}
-$('#startSlideshow').on('click', 'span', function() {
+$('#startSlideshow').on('click touchstart', function() {
   console.log('Starting slideshow..');
   startPhotoSwipe();
   $('.pswp__button--autoplay')[0].click();
