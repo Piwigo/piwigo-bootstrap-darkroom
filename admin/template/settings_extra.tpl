@@ -7,8 +7,8 @@
     <input type="hidden" name="boostrap_darkroom_settings" value="true" />
     <div id="configContent">
         <fieldset class="mainConf">
-            <legend>{'Slick lazyload method'|@translate}</legend>
-            <ul>
+            <legend>{'Slick carousel lazyload method'|@translate}</legend>
+            <ul style="float; left;">
                 <li>
                     <select name="slick_lazyload">
                         <option value="ondemand"{if $theme_config_extra->slick_lazyload == 'ondemand'} selected="selected"{/if}>ondemand</option>
@@ -16,6 +16,12 @@
                     </select>
                 </li>
             </ul>
+            <dl>
+                <dt>ondemand</dt>
+                <dd>{'Load only currently active images on page load, other images as they are requested. This keeps the initial page size low.'|@translate}</dd>
+                <dt>progressive</dt>
+                <dd>{'Load currently active images first, then all other images. Depending on the size of your albums this can cause each page access loading several MBs of thumbnails.'|@translate}</dd>
+            </dl>
         </fieldset>
     </div>
     <p class="formButtons">
