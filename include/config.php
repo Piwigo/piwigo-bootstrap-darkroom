@@ -14,13 +14,16 @@ class ExtraConfig {
 
     const KEY_VERSION = 'conf_version';
     const KEY_SLICK_LAZYLOAD = 'slick_lazyload';
+    const KEY_SHOW_JUMBOTRON = 'show_jumbotron';
 
     private $defaults = array(
         self::KEY_SLICK_LAZYLOAD => 'ondemand',
+        self::KEY_SHOW_JUMBOTRON => false,
     );
 
     private $types = array(
         self::KEY_SLICK_LAZYLOAD => self::TYPE_STRING,
+        self::KEY_SHOW_JUMBOTRON => self::TYPE_BOOL,
     );
 
     private $config = array();

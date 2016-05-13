@@ -40,8 +40,8 @@ if ($page['tab'] == TAB_SETTINGS_EXTRA) {
 // TabSheet
 $tabsheet = new tabsheet();
 $tabsheet->set_id('bsdark');
-$tabsheet->add(TAB_SETTINGS, l10n('Settings'), ADMIN_PATH . '&tab=' . TAB_SETTINGS);
-$tabsheet->add(TAB_SETTINGS_EXTRA, l10n('More Settings'), ADMIN_PATH . '&tab=' . TAB_SETTINGS_EXTRA);
+$tabsheet->add(TAB_SETTINGS, 'Bootstrap Default ' . l10n('Settings'), ADMIN_PATH . '&tab=' . TAB_SETTINGS);
+$tabsheet->add(TAB_SETTINGS_EXTRA, 'Bootstrap Darkroom Extra ' . l10n('Settings'), ADMIN_PATH . '&tab=' . TAB_SETTINGS_EXTRA);
 $tabsheet->add(TAB_ABOUT, l10n('About'), ADMIN_PATH . '&tab=' . TAB_ABOUT);
 $tabsheet->select($page['tab']);
 $tabsheet->assign();
