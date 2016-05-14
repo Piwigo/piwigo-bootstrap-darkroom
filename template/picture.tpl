@@ -226,7 +226,7 @@ $(document).ready(function(){
       breakpoint: 1200,
       settings: {
        slidesToShow: 5,
-       slidesToScroll: 5
+       slidesToScroll: 4
       }
      },
      {
@@ -435,7 +435,7 @@ if (window.location.hash === "#start-slideshow") {
 <!-- information -->
     <div role="tabpanel" class="tab-pane active" id="tab_info">
       <div id="info-content" class="info">
-        <dl>
+        <dl class="dl-horizontal">
             <h4>{'Information'|@translate}</h4>
 {if $display_info.author and isset($INFO_AUTHOR)}
             <div id="Author" class="imageInfo">
@@ -596,7 +596,7 @@ if (window.location.hash === "#start-slideshow") {
 <!-- metadata -->
 {if isset($metadata)}
     <div role="tabpanel" class="tab-pane" id="tab_metadata">
-      <dl>
+      <dl class="dl-horizontal">
 {foreach from=$metadata item=meta}
             <br />
             <h4>{$meta.TITLE}</h4>
