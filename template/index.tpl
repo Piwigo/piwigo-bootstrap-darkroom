@@ -127,6 +127,31 @@ $('#startSlideshow')[0].search = "";
         </div>
     </div>
 </nav>
+{footer_script require="jquery"}
+(function($) {
+    $.fn.changeElementType = function(newType) {
+        var attrs = {};
+        if (!(this[0] && this[0].attributes))
+            return;
+
+        $.each(this[0].attributes, function(idx, attr) {
+            attrs[attr.nodeName] = attr.nodeValue;
+        });
+        this.replaceWith(function() {
+            return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+    }
+})(jQuery);
+$('#batchDownloadBox').changeElementType('ul');
+$('#batchDownloadBox').attr('role', 'menu').attr('style', '');
+$('#batchDownloadBox .switchBoxTitle').changeElementType('li');
+$('#batchDownloadBox .switchBoxTitle').addClass('dropdown-header').removeClass('switchBoxTitle');
+$('#batchDownloadBox').addClass('dropdown-menu').removeClass('switchBox');
+$('#batchDownloadBox a').wrap('<li></li>');
+$('#batchDownloadBox br').remove();
+$('#batchDownloadLink').addClass('dropdown-toggle').attr('data-toggle', 'dropdown');
+$('#batchDownloadLink').closest('li').addClass('dropdown');
+{/footer_script}
 
 {include file='infos_errors.tpl'}
 
