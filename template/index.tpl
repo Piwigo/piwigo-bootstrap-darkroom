@@ -142,15 +142,16 @@ $('#startSlideshow')[0].search = "";
         });
     }
 })(jQuery);
+$('#batchDownloadLink').closest('li').addClass('dropdown');
+$('#batchDownloadLink').addClass('dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown').attr('href', '#');
+$('#batchDownloadLink .pwg-button-text').after('<span class="caret"></span>');
 $('#batchDownloadBox').changeElementType('ul');
+$('#batchDownloadBox').addClass('dropdown-menu').removeClass('switchBox');
 $('#batchDownloadBox').attr('role', 'menu').attr('style', '');
 $('#batchDownloadBox .switchBoxTitle').changeElementType('li');
 $('#batchDownloadBox .switchBoxTitle').addClass('dropdown-header').removeClass('switchBoxTitle');
-$('#batchDownloadBox').addClass('dropdown-menu').removeClass('switchBox');
 $('#batchDownloadBox a').wrap('<li></li>');
 $('#batchDownloadBox br').remove();
-$('#batchDownloadLink').addClass('dropdown-toggle').attr('data-toggle', 'dropdown');
-$('#batchDownloadLink').closest('li').addClass('dropdown');
 {/footer_script}
 
 {include file='infos_errors.tpl'}
