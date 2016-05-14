@@ -216,24 +216,16 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {footer_script require='jquery'}{strip}
 $(document).ready(function(){
   $('#thumbnailCarousel').slick({
-{if $theme_config_extra->slick_infinite}
-    infinite: true,
-{else}
-    infinite: false,
-{/if}
-    centerMode: false,
+    infinite: {if $theme_config_extra->slick_infinite}true{else}false{/if},
+    centerMode: {if $theme_config_extra->slick_centered}true{else}false{/if},
     slidesToShow: 7,
     slidesToScroll: 6,
-{if $theme_config_extra->slick_lazyload == "progressive"}
-    lazyLoad: 'progressive',
-{else}
-    lazyLoad: 'ondemand',
-{/if}
+    lazyLoad: '{if $theme_config_extra->slick_lazyload == "progressive"}progressive{else}ondemand{/if}',
     responsive: [
      {
       breakpoint: 1200,
       settings: {
-       slidesToShow: 6,
+       slidesToShow: 5,
        slidesToScroll: 5
       }
      },

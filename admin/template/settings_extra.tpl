@@ -15,14 +15,9 @@
                         <option value="ondemand"{if $theme_config_extra->slick_lazyload == 'ondemand'} selected="selected"{/if}>ondemand</option>
                         <option value="progressive"{if $theme_config_extra->slick_lazyload == 'progressive'} selected="selected"{/if}>progressive</option>
                     </select>
+                    <span class="info">"ondemand" will load the image as soon as you slide to it. "progressive" loads all images one after another when the page loads (use carefully!).</span>
                 </li>
             </ul>
-            <dl class="dl-horizontal">
-                <dt>ondemand</dt>
-                <dd>{'Load only currently active images on page load, other images as they are requested. This keeps the initial page size low.'|@translate}</dd>
-                <dt>progressive</dt>
-                <dd>{'Load currently active images first, then all other images. Depending on the size of your albums this can cause each page access loading several MBs of thumbnails.'|@translate}</dd>
-            </dl>
             <h4>infinite looping</h4>
             <ul>
                 <li>
@@ -31,6 +26,18 @@
                         <input type="checkbox" name="slick_infinite"{if $theme_config_extra->slick_infinite} checked="checked"{/if}>
                         {'Enabled'|@translate}
                     </label>
+                    <span class="info">Infinitely scroll through images in an album</span>
+                </li>
+            </ul>
+            <h4>center mode</h4>
+            <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="slick_centered"{if $theme_config_extra->slick_centered} checked="checked"{/if}>
+                        {'Enabled'|@translate}
+                    </label>
+                    <span class="info">Display the currently selected image in the middle. Looks best with infinite looping enabled.</span>
                 </li>
             </ul>
         </fieldset>
@@ -43,9 +50,9 @@
                         <input type="checkbox" name="show_jumbotron"{if $theme_config_extra->show_jumbotron} checked="checked"{/if}>
                         {'Enabled'|@translate}
                     </label>
+                    <span class="info">Show a jumbotron banner on the categroy pages. It is still disabled on mobile devices.</span>
                 </li>
             </ul>
-            <blockquote>Show a jumbotron banner on the categroy pages. It is still disabled on mobile devices.</blockquote>
         </fieldset>
     </div>
     <p class="formButtons">

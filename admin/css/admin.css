@@ -27,3 +27,8 @@ fieldset>h4 { text-align: left !important;}
 .dl-horizontal dd:after {
   clear: both;
 }
+.content dt {
+  font-style: normal !important;
+  font-weight: bold;
+}
+span.info { padding-left: 20px; }
