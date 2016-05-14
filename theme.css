@@ -163,6 +163,16 @@ a:active,
   content: "\e007";
 }
 
+/* Info tabs */
+@media (min-width: 768px) {
+  #infopanel .dl-horizontal dt {
+      width: 220px;
+  }
+  .dl-horizontal dd {
+      margin-left: 240px;
+  }
+}
+
 /* Carousel */
 #thumbnailCarousel {
   display: none; /* hide initially until page is loaded */
