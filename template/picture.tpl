@@ -216,7 +216,11 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {footer_script require='jquery'}{strip}
 $(document).ready(function(){
   $('#thumbnailCarousel').slick({
+{if $theme_config_extra->slick_infinite}
+    infinite: true,
+{else}
     infinite: false,
+{/if}
     centerMode: false,
     slidesToShow: 7,
     slidesToScroll: 6,

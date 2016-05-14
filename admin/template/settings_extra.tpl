@@ -17,14 +17,22 @@
                     </select>
                 </li>
             </ul>
-            <blockquote>
-            <dl>
+            <dl class="dl-horizontal">
                 <dt>ondemand</dt>
                 <dd>{'Load only currently active images on page load, other images as they are requested. This keeps the initial page size low.'|@translate}</dd>
                 <dt>progressive</dt>
                 <dd>{'Load currently active images first, then all other images. Depending on the size of your albums this can cause each page access loading several MBs of thumbnails.'|@translate}</dd>
             </dl>
-            </blockquote>
+            <h4>infinite looping</h4>
+            <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="slick_infinite"{if $theme_config_extra->slick_infinite} checked="checked"{/if}>
+                        {'Enabled'|@translate}
+                    </label>
+                </li>
+            </ul>
         </fieldset>
         <fieldset>
             <legend>{'Show the jumbotron'|@translate}</legend>
