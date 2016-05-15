@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset={$CONTENT_ENCODING}">
     <meta name="generator" content="Piwigo (aka PWG), see piwigo.org">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 {if isset($meta_ref) }
@@ -40,10 +40,17 @@
     <link rel="up" title="{'Thumbnails'|@translate}" href="{$U_UP}">
 {/if}
 
-{combine_css path="themes/bootstrapdefault/bootstrap/dist/css/bootstrap.min.css" order=-20}
+{if $theme_config_extra->bootswatch}
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/{$theme_config_extra->bootswatch_theme}/bootstrap.min.css">
+{else}
+    {combine_css path="themes/bootstrapdefault/bootstrap/dist/css/bootstrap.min.css" order=-20}
+{/if}
 {foreach from=$themes item=theme}
 {if $theme.load_css}
     {combine_css path="themes/`$theme.id`/theme.css" order=-10}
+{/if}
+{if !$theme_config_extra->bootswatch}
+    {combine_css path="themes/bootstrap_darkroom/theme-colors.css"}
 {/if}
 {if !empty($theme.local_head)}{include file=$theme.local_head load_css=$theme.load_css}{/if}
 {/foreach}

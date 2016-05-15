@@ -7,6 +7,61 @@
     <input type="hidden" name="boostrap_darkroom_settings" value="true" />
     <div id="configContent">
         <fieldset class="mainConf">
+            <legend>{'Theme colors'|@translate}</legend>
+            <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="bootswatch"{if $theme_config_extra->bootswatch} checked="checked"{/if}>
+                        {'Enabled'|@translate}
+                    </label>
+                    <span class="info">Use a Bootswatch Theme. This overrides Darkroom's default colors with a theme from <a href="https://bootswatch.com/">https://bootswatch.com</a>!</span>
+                </li>
+            </ul>
+            <select id="bootswatch_theme" name="bootswatch_theme"></select>
+{footer_script require="jquery"}
+var select = $("#bootswatch_theme");
+var cur_theme = '{$theme_config_extra->bootswatch_theme}';
+function getBootswatchThemes() {
+    $.getJSON("https://bootswatch.com/api/3.json", function (data) {
+      var themes = data.themes;
+      select.show();
+
+      themes.forEach(function(value, index){
+        $name = value.name;
+        $lname = $name.toLowerCase();
+        select.append($("<option />")
+              .val($lname)
+              .text($name));
+
+        if ($lname === cur_theme) {
+           $('option[value=' + $lname + ']').attr('selected', 'selected');
+        }
+      });
+
+    }, "json").fail(function(){
+        $(".alert").toggleClass("alert-info alert-danger");
+        $(".alert h4").text("Failed to load available Bootswatch Themes!");
+    });
+}
+
+$(document).ready(function() {
+  if ($('input[name=bootswatch]').is(':checked')) {
+    getBootswatchThemes();
+  }
+});
+
+$('input[name=bootswatch]').change(function() {
+  if ($('input[name=bootswatch]').is(':checked')) {
+    getBootswatchThemes();
+  } else {
+    select.empty();
+    select.hide();
+  }   
+});
+{/footer_script}
+        </fieldset>
+        <fieldset class="mainConf">
             <legend>{'Slick carousel settings'|@translate}</legend>
             <h4>lazyLoad method</h4>
             <ul>

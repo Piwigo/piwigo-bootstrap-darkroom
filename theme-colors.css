@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+.jumbotron {
+  background-color: #2e2e2e;
+}
+
+/* Main */
+body {
+  font-family: "PT Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #dbdbdb;
+  background-color: #4f4f4f;
+}
+
+/* Navbar */
+.navbar-main .navbar-header {
+  font-weight: bold;
+}
+
+.navbar-default {
+  background-image: none !important;
+  background-color: #2E2E2E;
+  border-color: #000;
+}
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: #000;
+}
+.navbar-default .navbar-toggle { border-color: #4f4f4f; }
+.navbar-default .navbar-collapse, .navbar-default .navbar-form { border-color: #4f4f4f; }
+
+.navbar-main { background-color: #000; }
+.navbar-main .navbar-toggle:focus,
+.navbar-main .navbar-toggle:hover {
+  background-color: #2E2E2E;
+}
+
+a,
+.navbar-default .navbar-nav>li>a {
+  color: #A9A9A9;
+}
+
+a:focus,
+a:hover,
+a:active,
+.navbar-default .navbar-nav>li>a:hover {
+   color: #fff;
+   text-decoration: none;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: #2e2e2e;
+    background-image: none !important;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #4f4f4f;
+    background-image: none !important;
+}
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #2e2e2e;
+}
+
+#navigationButtons>span { color: #4f4f4f; }
+
+/* Dropdowns */
+.dropdown-menu>li>a {
+    color: #4f4f4f !important;
+    outline: none !important;
+}
+
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:focus,
+.dropdown-menu>.active>a:hover {
+    color: #fff !important;
+    background-color: #2e2e2e !important;
+    background-image: none !important;
+}
+
+/* Buttons */
+.btn-default { outline: none !important; }
+
+/* Panels */
+.panel { background-color: #4f4f4f }
+.panel-primary { border-color: #000; }
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #2e2e2e;
+    border-color: #000;
+    background-image: none !important;
+}
+
+/* Wells */
+.well {
+  background-color: #2e2e2e;
+  border-color: #000 !important;
+  background-image: none !important;
+}
+
+/* Sidebar */
+#sidebar .handle, #sidebar .info {
+    color: #a9a9a9;
+    background-color: #2e2e2e;
+    border-top: 1px solid #2e2e2e;
+    border-bottom: 1px solid #2e2e2e;
+    border-left: 1px solid #2e2e2e;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+}
+#sidebar .info a { color: #fff; }
+
+/* Pagination */
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+  background-color: #4f4f4f;
+  border: 1px solid #000;
+}
+.pagination>li>a,
+.pagination>li>span {
+  color: #dbdbdb;
+  background-color: #2e2e2e;
+  border: 1px solid #000;
+}
+.pagination>.disabled>a,
+.pagination>.disabled>a:focus,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>span,
+.pagination>.disabled>span:focus,
+.pagination>.disabled>span:hover {
+  background-color: #2e2e2e;
+  border: 1px solid #000;
+}
+
+/* Tabs */
+.nav-tabs.nav-justified>li>a {
+    border-bottom: 1px solid #2e2e2e;
+}
+.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:focus, .nav-tabs.nav-justified>.active>a:hover {
+    border-bottom-color: #2e2e2e;
+    border: 1px solid #2e2e2e;
+}
+.nav-tabs>li>a {
+    background-color: #4f4f4f;
+}
+.nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+    background-color: #2e2e2e;
+    border: 1px solid #2e2e2e;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #a9a9a9;
+    cursor: default;
+    background-color: #2e2e2e;
+    border: 1px solid #2e2e2e;
+    border-bottom-color: transparent;
+}
+@media (max-width: 767px) {
+  .nav-tabs.nav-justified>li>a {
+    border-bottom: none;
+  }
+}
+
+/*
+ * Plugin fixlets
+ */
+
+/* Openstreetmap Plugin fixlets */
+.leaflet-control a { color: #4f4f4f !important; }
