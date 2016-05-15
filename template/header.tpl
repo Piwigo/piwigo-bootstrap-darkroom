@@ -43,7 +43,7 @@
 {if $theme_config_extra->bootswatch}
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/{$theme_config_extra->bootswatch_theme}/bootstrap.min.css">
 {else}
-    {combine_css path="themes/bootstrapdefault/bootstrap/dist/css/bootstrap.min.css" order=-20}
+    {combine_css path="themes/bootstrap_darkroom/bootstrap/dist/css/bootstrap.min.css" order=-20}
 {/if}
 {foreach from=$themes item=theme}
 {if $theme.load_css}
@@ -56,7 +56,7 @@
 {/foreach}
 
 {if $theme_config->bootstrap_theme == 'default' and !$theme_config_extra->bootswatch}
-{combine_css path="themes/bootstrapdefault/bootstrap/dist/css/bootstrap-theme.min.css" order=0}
+{combine_css path="themes/bootstrap_darkroom/bootstrap/dist/css/bootstrap-theme.min.css" order=0}
 {/if}
 {if file_exists("local/bootstrapdefault/custom.css")}
 {combine_css path="local/bootstrapdefault/custom.css" order=10}
@@ -74,7 +74,7 @@
 {combine_script id='jquery'}
 {combine_script id='jquery-ajaxmanager' require='jquery' path='themes/default/js/plugins/jquery.ajaxmanager.js'}
 {combine_script id='thumbnails-loader' require='jquery-ajaxmanager' path='themes/default/js/thumbnails.loader.js'}
-{combine_script id='bootstrap' require='jquery' path="themes/bootstrapdefault/bootstrap/dist/js/bootstrap.min.js"}
+{combine_script id='bootstrap' require='jquery' path="themes/bootstrap_darkroom/bootstrap/dist/js/bootstrap.min.js"}
 {combine_script id=$themeconf.name require='bootstrap' path="themes/bootstrapdefault/js/theme.js"}
 {get_combined_scripts load='header'}
 
