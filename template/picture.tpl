@@ -217,7 +217,12 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 $(document).ready(function(){
   $('#thumbnailCarousel').slick({
     infinite: {if $theme_config_extra->slick_infinite}true{else}false{/if},
-    centerMode: {if $theme_config_extra->slick_centered}true{else}false{/if},
+{if $theme_config_extra->slick_centered}
+    centerMode: true,
+    swipeToSlide: true,
+{else}
+    centerMode: false,
+{/if}
     slidesToShow: 7,
     slidesToScroll: 6,
     lazyLoad: '{if $theme_config_extra->slick_lazyload == "progressive"}progressive{else}ondemand{/if}',
@@ -246,6 +251,7 @@ $(document).ready(function(){
      {
       breakpoint: 420,
       settings: {
+       centerMode: false,
        slidesToShow: 2,
        slidesToScroll: 2
       }
