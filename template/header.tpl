@@ -55,7 +55,7 @@
 {if !empty($theme.local_head)}{include file=$theme.local_head load_css=$theme.load_css}{/if}
 {/foreach}
 
-{if $theme_config->bootstrap_theme == 'default'}
+{if $theme_config->bootstrap_theme == 'default' and !$theme_config_extra->bootswatch}
 {combine_css path="themes/bootstrapdefault/bootstrap/dist/css/bootstrap-theme.min.css" order=0}
 {/if}
 {if file_exists("local/bootstrapdefault/custom.css")}
