@@ -4,8 +4,8 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 
 ### Features
 
-* Lightroom based dark color scheme
-* Carousel album navigation on the picture page using [slick slider](http://kenwheeler.github.io/slick/)
+* Choose themes from [Bootswatch](https://bootswatch.com), or use the included dark color scheme based on Lightroom's colors (default).
+* Configurable carousel album navigation on the picture page using [slick slider](http://kenwheeler.github.io/slick/)
 * Full screen view using [PhotoSwipe](http://photoswipe.com), including autoplay slideshow
 * Fully responsive Navbars, Carousel and PhotoSwipe view
 * Mobile ready features (async loading of carousel & PhotoSwipe content, adaptive image size selection, swipe & tap events) 
@@ -17,7 +17,7 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
  * Download from http://piwigo.org/ext/extension_view.php?eid=831
  * Or just use the Extension Manager
 2. Enable Bootstrap Darkroom
-3. Disable smartpocket, if enabled.
+3. To use it for mobile devices you need to disable smartpocket, if enabled.
 
 ### Known issues
 
