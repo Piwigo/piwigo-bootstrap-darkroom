@@ -432,7 +432,6 @@ if (window.location.hash === "#start-slideshow") {
 
   <!-- Tab panes -->
   <div class="tab-content">
-<!-- information -->
     <div role="tabpanel" class="tab-pane active" id="tab_info">
       <div id="info-content" class="info">
         <dl class="dl-horizontal">
@@ -598,7 +597,6 @@ if (window.location.hash === "#start-slideshow") {
     <div role="tabpanel" class="tab-pane" id="tab_metadata">
       <dl class="dl-horizontal">
 {foreach from=$metadata item=meta}
-            <br />
             <h4>{$meta.TITLE}</h4>
 {foreach from=$meta.lines item=value key=label}
             <dt>{$label}</dt>
@@ -611,11 +609,10 @@ if (window.location.hash === "#start-slideshow") {
 <!-- comments -->
 {if isset($comment_add) || $COMMENT_COUNT > 0}
     <div role="tabpanel" class="tab-pane" id="tab_comments">
-
 <a name="comments"></a>
 {$shortname = $theme_config->comments_disqus_shortname}
 {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
-                <div id="disqus_thread"></div>
+       <div id="disqus_thread"></div>
 {footer_script}{strip}
 var disqus_shortname = '{/strip}{$shortname}{strip}';
 
@@ -627,7 +624,7 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 {/strip}
 {/footer_script}
 {else}
-            <h3>{'Comments'|@translate}</h3>
+            <h4>{'Comments'|@translate}</h4>
             <div class="tabbable">
                 <ul class="nav nav-pills">
 {if $COMMENT_COUNT > 0}
