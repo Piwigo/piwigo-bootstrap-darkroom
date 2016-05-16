@@ -19,7 +19,7 @@
 }
 
 /* Rating */
-#infopanel #rating .rateButtonStarFull {
+#rating .rateButtonStarFull {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -31,10 +31,10 @@
   -moz-osx-font-smoothing: grayscale;
   cursor: pointer;
 }
-#infopanel #rating .rateButtonStarFull:before {
+#rating .rateButtonStarFull:before {
   content: "\e006";
 }
-#infopanel #rating .rateButtonStarEmpty {
+#rating .rateButtonStarEmpty {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -46,7 +46,7 @@
   -moz-osx-font-smoothing: grayscale;
   cursor: pointer;
 }
-#infopanel #rating .rateButtonStarEmpty:before {
+#rating .rateButtonStarEmpty:before {
   content: "\e007";
 }
 

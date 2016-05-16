@@ -7,7 +7,7 @@ require_once(PHPWG_THEMES_PATH . 'bootstrapdefault/include/config.php');
 class ExtraConfig {
 
     const CONF_PARAM = 'bootstrap_darkroom';
-    const CONF_VERSION = 3;
+    const CONF_VERSION = 4;
 
     const TYPE_BOOL = 'bool';
     const TYPE_STRING = 'string';
@@ -21,6 +21,7 @@ class ExtraConfig {
     const KEY_SLICK_INFINITE = 'slick_infinite';
     const KEY_SLICK_CENTERED = 'slick_centered';
     const KEY_SHOW_JUMBOTRON = 'show_jumbotron';
+    const KEY_PICTURE_INFO = 'picture_info';
 
     private $defaults = array(
         self::KEY_BOOTSWATCH => false,
@@ -30,6 +31,7 @@ class ExtraConfig {
         self::KEY_SLICK_INFINITE => false,
         self::KEY_SLICK_CENTERED => false,
         self::KEY_SHOW_JUMBOTRON => false,
+        self::KEY_PICTURE_INFO => 'tabs',
     );
 
     private $types = array(
@@ -40,6 +42,7 @@ class ExtraConfig {
         self::KEY_SLICK_INFINITE => self::TYPE_BOOL,
         self::KEY_SLICK_CENTERED => self::TYPE_BOOL,
         self::KEY_SHOW_JUMBOTRON => self::TYPE_BOOL,
+        self::KEY_PICTURE_INFO => self::TYPE_STRING,
     );
 
     private $config = array();

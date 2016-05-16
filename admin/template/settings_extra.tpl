@@ -119,6 +119,20 @@ $('input[name=bootswatch]').change(function() {
                 </li>
             </ul>
         </fieldset>
+        <fieldset>
+            <legend>{'Picture information'|@translate}</legend>
+            <ul>
+                <li>
+                    <select name="picture_info">
+                        <option value="tabs"{if $theme_config_extra->picture_info == 'tabs'} selected="selected"{/if}>Tabs below the image</option>
+                        <option value="sidebar"{if $theme_config_extra->picture_info == 'sidebar'} selected="selected"{/if}>Sidebar (like Boostrap Default)</option>
+                        <option value="notatall"{if $theme_config_extra->picture_info == 'notatall'} selected="selected"{/if}>Not at all</option>
+                    </select>
+                    <span class="info">Choose display type for the picture infos on the picture page.</span>
+                </li>
+            </ul>
+            <p>Note: on mobile devices, the Tabs are forced as the Sidebar button would overlay the main picture.</p>
+        </fieldset>
     </div>
     <p class="formButtons">
         <input type="submit" name="submit" value="Save settings">

@@ -169,6 +169,10 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     {$ELEMENT_CONTENT}
 </div>
 
+{if $theme_config_extra->picture_info == 'sidebar' && get_device() == 'desktop'}
+  {include file='picture_info_sidebar.tpl'}
+{/if}
+
 <div class="container">
 {if isset($COMMENT_IMG)}
   <div class="text-center col-lg-10 -col-md-12 col-centered">
@@ -428,17 +432,20 @@ if (window.location.hash === "#start-slideshow") {
  <div id="infopanel" class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-centered">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs nav-justified" role="tablist">
+{if $theme_config_extra->picture_info == 'tabs' || get_device() != 'desktop'}
     <li role="presentation" class="active"><a href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
 {if isset($metadata)}
     <li role="presentation"><a href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
 {/if}
+{/if}
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <li role="presentation"><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate}</a></li>
+    <li role="presentation"{if $theme_config_extra->picture_info != 'tabs'} class="active"{/if}><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate}</a></li>
 {/if}
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
+{if $theme_config_extra->picture_info === 'tabs' || get_device() != 'desktop'}
     <div role="tabpanel" class="tab-pane active" id="tab_info">
       <div id="info-content" class="info">
         <dl class="dl-horizontal">
@@ -613,9 +620,10 @@ if (window.location.hash === "#start-slideshow") {
       </dl>
     </div>
 {/if}
+{/if}
 <!-- comments -->
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <div role="tabpanel" class="tab-pane" id="tab_comments">
+    <div role="tabpanel" class="tab-pane{if $theme_config_extra->picture_info != 'tabs'} active{/if}" id="tab_comments">
 <a name="comments"></a>
 {$shortname = $theme_config->comments_disqus_shortname}
 {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
@@ -631,7 +639,7 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 {/strip}
 {/footer_script}
 {else}
-            <h4>{'Comments'|@translate}</h4>
+            {if $theme_config_extra->picture_info == 'tabs'}<h4>{'Comments'|@translate}</h4>{/if}
             <div class="tabbable">
                 <ul class="nav nav-pills">
 {if $COMMENT_COUNT > 0}
