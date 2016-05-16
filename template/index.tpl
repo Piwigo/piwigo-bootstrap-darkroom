@@ -212,7 +212,7 @@ $('#batchDownloadBox br').remove();
 {if !empty($cats_navbar)}
     {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$cats_navbar}
 {/if}
-{if !empty($thumb_navbar) && !isset($rv_tscroller_enabled)}
+{if !empty($thumb_navbar) && !$rv_tscroller_enabled}
     {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$thumb_navbar}
 {/if}
 </div>
