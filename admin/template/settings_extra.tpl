@@ -63,6 +63,16 @@ $('input[name=bootswatch]').change(function() {
         </fieldset>
         <fieldset class="mainConf">
             <legend>{'Slick carousel settings'|@translate}</legend>
+            <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="slick_enabled"{if $theme_config_extra->slick_enabled} checked="checked"{/if}>
+                        {'Enabled'|@translate}
+                    </label>
+                    <span class="info">Enable the slick carousel on the picture page.</span>
+                </li>
+            </ul>
             <h4>lazyLoad method</h4>
             <ul>
                 <li>

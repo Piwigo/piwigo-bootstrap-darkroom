@@ -214,6 +214,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {combine_script id="photoswipe" require="jquery" path="themes/bootstrap_darkroom/photoswipe/photoswipe.min.js"}
 {combine_script id="photoswipe.ui" require="photoswipe" path="themes/bootstrap_darkroom/photoswipe/photoswipe-ui-default.min.js"}
 {footer_script require='jquery'}{strip}
+{if $theme_config_extra->slick_enabled}
 $(document).ready(function(){
   $('#thumbnailCarousel').slick({
     infinite: {if $theme_config_extra->slick_infinite}true{else}false{/if},
@@ -262,6 +263,7 @@ $(document).ready(function(){
 
   $('#thumbnailCarousel').show();
 });
+{/if}
 
 function startPhotoSwipe() {
     $('#thumbnailCarousel').each(function() {
