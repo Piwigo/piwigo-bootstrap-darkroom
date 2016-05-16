@@ -223,22 +223,22 @@ $(document).ready(function(){
 {else}
     centerMode: false,
 {/if}
-    slidesToShow: 7,
-    slidesToScroll: 6,
+    slidesToShow: {if sizeOf($thumbnails) <= 7}{sizeOf($thumbnails)}{else}7{/if},
+    slidesToScroll: {if sizeOf($thumbnails) <= 7}{sizeOf($thumbnails) - 1}{else}6{/if},
     lazyLoad: '{if $theme_config_extra->slick_lazyload == "progressive"}progressive{else}ondemand{/if}',
     responsive: [
      {
       breakpoint: 1200,
       settings: {
-       slidesToShow: 5,
-       slidesToScroll: 4
+       slidesToShow: {if sizeOf($thumbnails) <= 5}{sizeOf($thumbnails)}{else}5{/if},
+       slidesToScroll: {if sizeOf($thumbnails) <= 5}{sizeOf($thumbnails) - 1}{else}4{/if}
       }
      },
      {
       breakpoint: 1024,
       settings: {
-       slidesToShow: 5,
-       slidesToScroll: 4
+       slidesToShow: {if sizeOf($thumbnails) <= 5}{sizeOf($thumbnails)}{else}5{/if},
+       slidesToScroll: {if sizeOf($thumbnails) <= 5}{sizeOf($thumbnails) - 1}{else}4{/if}
       }
      },
      {
@@ -262,7 +262,6 @@ $(document).ready(function(){
 
   $('#thumbnailCarousel').show();
 });
-
 
 function startPhotoSwipe() {
     $('#thumbnailCarousel').each(function() {
