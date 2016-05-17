@@ -18,14 +18,17 @@
                     <span class="info">Use a Bootswatch Theme. This overrides Darkroom's default colors with a theme from <a href="https://bootswatch.com/">https://bootswatch.com</a>!</span>
                 </li>
             </ul>
+            <label id="bootswatch_theme_label" labelfor="bootswatch_theme">Bootswatch theme</label>
             <select id="bootswatch_theme" name="bootswatch_theme"></select>
 {footer_script require="jquery"}
 var select = $("#bootswatch_theme");
+var label = $("#bootswatch_theme_label");
 var cur_theme = '{$theme_config_extra->bootswatch_theme}';
 function getBootswatchThemes() {
     $.getJSON("https://bootswatch.com/api/3.json", function (data) {
       var themes = data.themes;
       select.show();
+      label.show();
 
       themes.forEach(function(value, index){
         $name = value.name;
@@ -57,6 +60,7 @@ $('input[name=bootswatch]').change(function() {
   } else {
     select.empty();
     select.hide();
+    label.hide();
   }   
 });
 {/footer_script}
@@ -73,9 +77,9 @@ $('input[name=bootswatch]').change(function() {
                     <span class="info">Enable the slick carousel on the picture page.</span>
                 </li>
             </ul>
-            <h4>lazyLoad method</h4>
             <ul>
                 <li>
+                    <label labelfor="slick_lazyload">lazyLoad method</label>
                     <select name="slick_lazyload">
                         <option value="ondemand"{if $theme_config_extra->slick_lazyload == 'ondemand'} selected="selected"{/if}>ondemand</option>
                         <option value="progressive"{if $theme_config_extra->slick_lazyload == 'progressive'} selected="selected"{/if}>progressive</option>
@@ -83,24 +87,22 @@ $('input[name=bootswatch]').change(function() {
                     <span class="info">"ondemand" will load the image as soon as you slide to it. "progressive" loads all images one after another when the page loads (use carefully!).</span>
                 </li>
             </ul>
-            <h4>infinite looping</h4>
             <ul>
                 <li>
                     <label class="font-checkbox">
                         <span class="icon-check"></span>
                         <input type="checkbox" name="slick_infinite"{if $theme_config_extra->slick_infinite} checked="checked"{/if}>
-                        {'Enabled'|@translate}
+                        Infinite looping
                     </label>
                     <span class="info">Infinitely scroll through images in an album</span>
                 </li>
             </ul>
-            <h4>center mode</h4>
             <ul>
                 <li>
                     <label class="font-checkbox">
                         <span class="icon-check"></span>
                         <input type="checkbox" name="slick_centered"{if $theme_config_extra->slick_centered} checked="checked"{/if}>
-                        {'Enabled'|@translate}
+                        Center mode 
                     </label>
                     <span class="info">Display the currently selected image in the middle. Works best with infinite looping enabled.</span>
                 </li>

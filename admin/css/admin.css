@@ -6,4 +6,4 @@
 fieldset>h4 { text-align: left !important;}
 span.info { padding-left: 20px; }
 
-#bootswatch_theme { display: none;}
+#bootswatch_theme, #bootswatch_theme_label { display: none;}
