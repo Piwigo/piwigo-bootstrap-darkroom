@@ -21,7 +21,7 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 
 ### Known issues
 
-* If the square thumbnails aren't cached already, the carousel sometimes fails to load them on initial page load.
+* [UPDATE: seems fixed in Slick 1.6.0] If the square thumbnails aren't cached already, the carousel sometimes fails to load them on initial page load.
 You need to scroll once to load them. Possible workarounds:
  * Pre-generate the derivates right after upload
  * Change the carousel's "on-demand" lazy loading method to "progressive" in theme settings

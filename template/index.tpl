@@ -2,6 +2,7 @@
 {combine_script id='core.switchbox' require='jquery' path='themes/default/js/switchbox.js'}
 {combine_script id='cookie' require='jquery' path="themes/bootstrapdefault/js/jquery.cookie.js"}
 {combine_script id='equalheights' require='jquery' path="themes/bootstrapdefault/js/jquery.equalheights.js"}
+{combine_script id='plugin.fixes' require='jquery' path='themes/bootstrap_darkroom/js/plugin_fixes.js'}
 {if !empty($PLUGIN_INDEX_CONTENT_BEFORE)}{$PLUGIN_INDEX_CONTENT_BEFORE}{/if}
 
 <nav class="navbar navbar-default navbar-secondary" role="navigation">
@@ -129,32 +130,6 @@ $('#startSlideshow')[0].search = "";
         </div>
     </div>
 </nav>
-{footer_script require="jquery"}
-(function($) {
-    $.fn.changeElementType = function(newType) {
-        var attrs = {};
-        if (!(this[0] && this[0].attributes))
-            return;
-
-        $.each(this[0].attributes, function(idx, attr) {
-            attrs[attr.nodeName] = attr.nodeValue;
-        });
-        this.replaceWith(function() {
-            return $("<" + newType + "/>", attrs).append($(this).contents());
-        });
-    }
-})(jQuery);
-$('#batchDownloadLink').closest('li').addClass('dropdown');
-$('#batchDownloadLink').addClass('dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown').attr('href', '#');
-$('#batchDownloadLink .pwg-button-text').after('<span class="caret"></span>');
-$('#batchDownloadBox').changeElementType('ul');
-$('#batchDownloadBox').addClass('dropdown-menu').removeClass('switchBox');
-$('#batchDownloadBox').attr('role', 'menu').attr('style', '');
-$('#batchDownloadBox .switchBoxTitle').changeElementType('li');
-$('#batchDownloadBox .switchBoxTitle').addClass('dropdown-header').removeClass('switchBoxTitle');
-$('#batchDownloadBox a').wrap('<li></li>');
-$('#batchDownloadBox br').remove();
-{/footer_script}
 
 {include file='infos_errors.tpl'}
 
