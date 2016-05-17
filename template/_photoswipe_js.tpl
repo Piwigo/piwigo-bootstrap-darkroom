@@ -2,7 +2,7 @@
 {combine_css path="themes/bootstrap_darkroom/photoswipe/default-skin/default-skin.css"}
 {combine_script id="photoswipe" require="jquery" path="themes/bootstrap_darkroom/photoswipe/photoswipe.min.js"}
 {combine_script id="photoswipe.ui" require="photoswipe" path="themes/bootstrap_darkroom/photoswipe/photoswipe-ui-default.min.js"}
-{footer_script require='jquery'}{strip}
+{footer_script require='jquery' require="photoswipe.ui"}{strip}
 function startPhotoSwipe() {
     $('#thumbnailCarousel').each(function() {
          var $pic     = $(this),
