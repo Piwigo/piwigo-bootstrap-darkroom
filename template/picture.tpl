@@ -434,7 +434,7 @@ if (window.location.hash === "#start-slideshow") {
  <div id="infopanel" class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-centered">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs nav-justified" role="tablist">
-{if $theme_config_extra->picture_info == 'tabs' || get_device() != 'desktop'}
+{if $theme_config_extra->picture_info == 'tabs' || (get_device() != 'desktop' && !$theme_config_extra->picture_info == 'disabled')}
     <li role="presentation" class="active"><a href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
 {if isset($metadata)}
     <li role="presentation"><a href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
@@ -447,7 +447,7 @@ if (window.location.hash === "#start-slideshow") {
 
   <!-- Tab panes -->
   <div class="tab-content">
-{if $theme_config_extra->picture_info === 'tabs' || get_device() != 'desktop'}
+{if $theme_config_extra->picture_info === 'tabs' || (get_device() != 'desktop' && !$theme_config_extra->picture_info == 'disabled')}
     <div role="tabpanel" class="tab-pane active" id="tab_info">
       <div id="info-content" class="info">
         <dl class="dl-horizontal">

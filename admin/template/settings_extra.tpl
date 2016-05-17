@@ -142,12 +142,12 @@ $('input[name=bootswatch]').change(function() {
             <legend>{'Picture information display'|@translate}</legend>
             <ul>
                 <li>
+                    <label labelfor="picture_info">{'Info display position'|@translate}</label>
                     <select name="picture_info">
                         <option value="tabs"{if $theme_config_extra->picture_info == 'tabs'} selected="selected"{/if}>{'Tabs below the image'|@translate}</option>
                         <option value="sidebar"{if $theme_config_extra->picture_info == 'sidebar'} selected="selected"{/if}>{'Sidebar (like Boostrap Default)'|@translate}</option>
-                        <option value="notatall"{if $theme_config_extra->picture_info == 'notatall'} selected="selected"{/if}>{'Not at all'|@translate}</option>
+                        <option value="disabled"{if $theme_config_extra->picture_info == 'disabled'} selected="selected"{/if}>{'Disabled'|@translate}</option>
                     </select>
-                    <span class="info">{'Choose display type for the picture infos on the picture page.'|@translate}</span>
                 </li>
             </ul>
             <p>{'Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'|@translate}</p>

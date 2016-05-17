@@ -21,6 +21,7 @@
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
 $lang['Enabled'] = 'Aktiviert';
+$lang['Disabled'] = 'Deaktiviert';
 $lang['Theme colors'] = 'Farbschema';
 $lang['Use a Bootswatch Theme. This overrides Darkroom\'s default colors with a theme from'] = 'Benutze ein Booswatch Thema. Dies ersetzt die Standard-Farben mit einem Farbschema von';
 $lang['Bootswatch theme'] = 'Booswatch Thema';
@@ -39,10 +40,5 @@ $lang['Show a jumbotron banner on the categroy pages (disabled by default on mob
 $lang['Picture information display'] = 'Anzeige der Bild-Informationen';
 $lang['Tabs below the image'] = 'Reiter unter dem Bild';
 $lang['Sidebar (like Boostrap Default)'] = 'Sidebar (wie Boostrap Default)';
-$lang['Not at all'] = 'Nirgends';
-$lang['Choose display type for the picture infos on the picture page.'] = 'Wähle die Art der Anzeige für die Bilfdinfos.';
-$lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Hinweis: auf Mobil-Geräten werden immer die Tabs verwendet, da der Knopf für die Sidebar das Hauptbild überlagrn würde.';
-
-
-
-
+$lang['Info display position'] = 'Position der Info-Anzeige';
+$lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Hinweis: auf Mobil-Geräten werden immer die Tabs verwendet, da der Knopf für die Sidebar das Hauptbild überlagern würde.';
