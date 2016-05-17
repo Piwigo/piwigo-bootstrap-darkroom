@@ -6,6 +6,8 @@ if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
 include_once(PHPWG_ROOT_PATH . 'admin/include/tabsheet.class.php');
 require_once(PHPWG_THEMES_PATH . 'bootstrap_darkroom/include/config.php');
 
+load_language('theme.lang', PHPWG_THEMES_PATH.'bootstrap_darkroom/');
+
 // Constants
 define('THEME_ID', basename(dirname(dirname(__FILE__))));
 define('ADMIN_PATH',   get_root_url() . 'admin.php?page=theme&theme=' . THEME_ID);
