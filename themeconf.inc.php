@@ -19,7 +19,7 @@ $themeconf = array(
 );
 
 //debug
-$conf['template_combine_files'] = false;
+//$conf['template_combine_files'] = false;
 
 // always show metadata initially
 pwg_set_session_var('show_metadata', true);
