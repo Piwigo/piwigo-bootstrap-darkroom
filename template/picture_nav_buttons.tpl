@@ -48,7 +48,7 @@
         <span class="glyphicon glyphicon-chevron-up"></span><span class="glyphicon-text">{'Thumbnails'|@translate}</span>
     </a>
 {/if}{/strip}
-{strip}{if !isset($slideshow)}
+{strip}{if !isset($slideshow) && $theme_config_extra->photoswipe}
         <a href="#" title="{'Fullscreen'|@translate}" id="startPhotoSwipe">
                 <span class="glyphicon glyphicon-resize-full"></span><span class="glyphicon-text">{'Fullscreen'|@translate}</span>
         </a>

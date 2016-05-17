@@ -81,9 +81,11 @@
                         <span class="glyphicon glyphicon-play"></span><span class="glyphicon-text">{'slideshow'|@translate}</span>
                     </a>{/strip}
                 </li>
+{if $theme_config_extra->photoswipe}
 {footer_script require="jquery"}
 $('#startSlideshow')[0].search = "";
 {/footer_script}
+{/if}
 {/if}
 {if isset($U_MODE_FLAT)}
                 <li>

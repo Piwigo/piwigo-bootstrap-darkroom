@@ -7,10 +7,11 @@ require_once(PHPWG_THEMES_PATH . 'bootstrapdefault/include/config.php');
 class ExtraConfig {
 
     const CONF_PARAM = 'bootstrap_darkroom';
-    const CONF_VERSION = 4;
+    const CONF_VERSION = 5;
 
     const TYPE_BOOL = 'bool';
     const TYPE_STRING = 'string';
+    const TYPE_NUM = 'numeric';
 
     const KEY_VERSION = 'conf_version';
 
@@ -22,6 +23,8 @@ class ExtraConfig {
     const KEY_SLICK_CENTERED = 'slick_centered';
     const KEY_SHOW_JUMBOTRON = 'show_jumbotron';
     const KEY_PICTURE_INFO = 'picture_info';
+    const KEY_PHOTOSWIPE = 'photoswipe';
+    const KEY_PHOTOSWIPE_INTERVAL = 'photoswipe_interval';
 
     private $defaults = array(
         self::KEY_BOOTSWATCH => false,
@@ -32,6 +35,8 @@ class ExtraConfig {
         self::KEY_SLICK_CENTERED => false,
         self::KEY_SHOW_JUMBOTRON => false,
         self::KEY_PICTURE_INFO => 'tabs',
+        self::KEY_PHOTOSWIPE => true,
+        self::KEY_PHOTOSWIPE_INTERVAL => '3500',
     );
 
     private $types = array(
@@ -43,6 +48,8 @@ class ExtraConfig {
         self::KEY_SLICK_CENTERED => self::TYPE_BOOL,
         self::KEY_SHOW_JUMBOTRON => self::TYPE_BOOL,
         self::KEY_PICTURE_INFO => self::TYPE_STRING,
+        self::KEY_PHOTOSWIPE => self::TYPE_BOOL,
+        self::KEY_PHOTOSWIPE_INTERVAL => self::TYPE_NUM,
     );
 
     private $config = array();
@@ -82,6 +89,9 @@ class ExtraConfig {
                 case self::TYPE_BOOL:
                     $this->config[$key] = $value ? true : false;
                     break;
+                case self::TYPE_NUM:
+                    $this->config[$key] = is_numeric($value) ? $value : $this->defaults[$key];
+                    break;
             }
         }
     }
@@ -91,6 +101,7 @@ class ExtraConfig {
             switch ($this->types[$key]) {
                 case self::TYPE_STRING:
                 case self::TYPE_BOOL:
+                case self::TYPE_NUM:
                     return $this->config[$key];
             }
         } else {

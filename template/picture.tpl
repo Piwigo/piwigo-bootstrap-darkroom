@@ -69,7 +69,7 @@
 {/if}
 {if isset($U_SLIDESHOW_START)}
                 <li>
-                    <a href="#" title="{'Slideshow'|@translate}" id="startSlideshow" rel="nofollow">
+                    <a href="{if $theme_config_extra->photoswipe}#{else}{$U_SLIDESHOW_START}{/if}" title="{'Slideshow'|@translate}" id="startSlideshow" rel="nofollow">
                         <span class="glyphicon glyphicon-play"></span><span class="glyphicon-text">{'Slideshow'|@translate}</span>
                     </a>
                 </li>
@@ -269,6 +269,7 @@ $(document).ready(function(){
 });
 {/if}
 
+{if $theme_config_extra->photoswipe}
 function startPhotoSwipe() {
     $('#thumbnailCarousel').each(function() {
          var $pic     = $(this),
@@ -377,7 +378,7 @@ function startPhotoSwipe() {
                 autoplayId = null;
                 $('.pswp__button--autoplay').removeClass('stop');
             } else {
-                autoplayId = setInterval(function() { photoSwipe.next(); }, 3000);
+                autoplayId = setInterval(function() { photoSwipe.next(); }, {$theme_config_extra->photoswipe_interval});
                 $('.pswp__button--autoplay').addClass('stop');
             }
         });
@@ -408,6 +409,7 @@ if (window.location.hash === "#start-slideshow") {
     startPhotoSwipe();
     $('.pswp__button--autoplay')[0].click();
 }
+{/if}
 {/strip}{/footer_script}
 <div class="container">
  <div class="col-lg-10 col-md-12 col-centered">

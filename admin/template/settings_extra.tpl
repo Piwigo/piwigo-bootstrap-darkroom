@@ -102,7 +102,24 @@ $('input[name=bootswatch]').change(function() {
                         <input type="checkbox" name="slick_centered"{if $theme_config_extra->slick_centered} checked="checked"{/if}>
                         {'Enabled'|@translate}
                     </label>
-                    <span class="info">Display the currently selected image in the middle. Looks best with infinite looping enabled.</span>
+                    <span class="info">Display the currently selected image in the middle. Works best with infinite looping enabled.</span>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>{'PhotoSwipe settings'|@translate}</legend>
+            <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="photoswipe"{if $theme_config_extra->photoswipe} checked="checked"{/if}>
+                        {'Enabled'|@translate}
+                    </label>
+                    <span class="info">Enable PhotoSwipe fullscreen slideshow. Disable if you prefer to use Plugins like Fotorama or Piwigo's default slideshow.</span>
+                </li>
+                <li>
+                    <label labelfor="photoswipe_interval">Autoplay interval</label>
+                    <input type="number" name="photoswipe_interval" value="{$theme_config_extra->photoswipe_interval}" min="1000" max="50000"> milliseconds
                 </li>
             </ul>
         </fieldset>
