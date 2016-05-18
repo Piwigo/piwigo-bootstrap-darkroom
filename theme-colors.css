@@ -124,7 +124,7 @@ a:active,
 .pagination>.active>span,
 .pagination>.active>span:focus,
 .pagination>.active>span:hover {
-  background-color: #4f4f4f;
+  background-color: #a9a9a9;
   border: 1px solid #000;
 }
 .pagination>li>a,
@@ -133,6 +133,16 @@ a:active,
   background-color: #2e2e2e;
   border: 1px solid #000;
 }
+
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+  color: #2e2e2e;
+  background-color: #a9a9a9;
+  border: 1px solid #000;
+}
+
 .pagination>.disabled>a,
 .pagination>.disabled>a:focus,
 .pagination>.disabled>a:hover,
