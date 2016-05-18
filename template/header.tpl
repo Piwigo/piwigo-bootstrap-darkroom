@@ -74,7 +74,8 @@
 {combine_script id='jquery'}
 {combine_script id='jquery-ajaxmanager' require='jquery' path='themes/default/js/plugins/jquery.ajaxmanager.js'}
 {combine_script id='thumbnails-loader' require='jquery-ajaxmanager' path='themes/default/js/thumbnails.loader.js'}
-{combine_script id='bootstrap' require='jquery' path="themes/bootstrap_darkroom/bootstrap/dist/js/bootstrap.min.js"}
+{combine_script id='plugin.fixes' require='jquery' path='themes/bootstrap_darkroom/js/plugin_fixes.js'}
+{combine_script id='bootstrap' require='jquery' require='plugin.fixes' path="themes/bootstrap_darkroom/bootstrap/dist/js/bootstrap.min.js"}
 {combine_script id=$themeconf.name require='bootstrap' path="themes/bootstrapdefault/js/theme.js"}
 {get_combined_scripts load='header'}
 

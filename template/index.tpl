@@ -2,7 +2,6 @@
 {combine_script id='core.switchbox' require='jquery' path='themes/default/js/switchbox.js'}
 {combine_script id='cookie' require='jquery' path="themes/bootstrapdefault/js/jquery.cookie.js"}
 {combine_script id='equalheights' require='jquery' path="themes/bootstrapdefault/js/jquery.equalheights.js"}
-{combine_script id='plugin.fixes' require='jquery' path='themes/bootstrap_darkroom/js/plugin_fixes.js'}
 {if !empty($PLUGIN_INDEX_CONTENT_BEFORE)}{$PLUGIN_INDEX_CONTENT_BEFORE}{/if}
 
 <nav class="navbar navbar-default navbar-secondary" role="navigation">

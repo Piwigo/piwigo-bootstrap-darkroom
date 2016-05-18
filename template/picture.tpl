@@ -2,7 +2,6 @@
 {if get_device() != 'desktop'}
 {combine_script id='jquery.mobile-events' path='themes/bootstrap_darkroom/js/jquery.mobile-events.min.js' require='jquery'}
 {/if}
-{combine_script id='plugin.fixes' require='jquery' path='themes/bootstrap_darkroom/js/plugin_fixes.js'}
 
 {if !empty($PLUGIN_PICTURE_BEFORE)}{$PLUGIN_PICTURE_BEFORE}{/if}
 
