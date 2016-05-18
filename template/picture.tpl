@@ -209,7 +209,8 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 </div>
 {/if}
 
-{if !empty($thumbnails)}
+{if !empty($thumbnails) && ($theme_config_extra->slick_enabled || $theme_config_extra->photoswipe)}
+<!-- Thumbnail DOM -->
 {if $theme_config_extra->slick_enabled}
   {include file="_slick_js.tpl"}
 {/if}
