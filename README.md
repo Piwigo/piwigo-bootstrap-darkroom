@@ -25,6 +25,7 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 * On iOS the PhotoSwipe fullscreen mode isn't supported. On iPhone it does work in landscape orientation only, on iPad it doesn't work at all. That's an iOS bug. Works just fine on Android
 * For videos, PhotoSwipe will show the thumbnail instead of playing the video
 * Plugins that add buttons to the Navbar might not (yet) be supported, see [Plugin Support Matrix](https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki/Plugin-Support-Matrix)
+* The Sidebar, if enabled in settings, doesn't play well with Bootswatch Themes. You need to CSS-style the sidebar yourself.
 
 ### Preview
 
