@@ -17,16 +17,14 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
  * Download from http://piwigo.org/ext/extension_view.php?eid=831
  * Or just use the Extension Manager
 2. Enable Bootstrap Darkroom
-3. To use it for mobile devices you need to disable smartpocket, if enabled.
+3. To use it for mobile devices you need to disable the Smartpocket theme, if enabled.
 
 ### Known issues
 
-* [UPDATE: seems fixed in Slick 1.6.0] If the square thumbnails aren't cached already, the carousel sometimes fails to load them on initial page load.
-You need to scroll once to load them. Possible workarounds:
- * Pre-generate the derivates right after upload
- * Change the carousel's "on-demand" lazy loading method to "progressive" in theme settings
-* The "breadcrumbs" in the second navbar might mess up the layout on mobile devices if category/picture names are long. Currently the depth of the category paths is limited two 2 level (parent category/image name) and max 80% width, but long image names can still mess things up.
-* On iOS the PhotoSwipe fullscreen mode isn't supported. On iPhone it does work in landscape orientation only, on iPad it doesn't work at all. That's an iOS bug.
+* The secondary navbar on the picture page might span several lines, depending on the length of the category/picture name. As a workaround, the number of nested levels is truncated to max 2 levels.
+* On iOS the PhotoSwipe fullscreen mode isn't supported. On iPhone it does work in landscape orientation only, on iPad it doesn't work at all. That's an iOS bug. Works just fine on Android
+* For videos, PhotoSwipe will show the thumbnail instead of playing the video
+* Plugins that add buttons to the Navbar might not (yet) be supported, see [Plugin Support Matrix](https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki/Plugin-Support-Matrix)
 
 ### Preview
 
