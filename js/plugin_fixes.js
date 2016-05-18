@@ -52,7 +52,7 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-  $('#downloadSizeBox').off('mouseleave');
+  $('#downloadSizeBox').off('mouseleave click');
   $('#downloadSizeLink').off().on('click', function() { $('#downloadSizeLink').dropdown() });
 });
 /* Download by Size END */
