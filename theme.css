@@ -51,6 +51,7 @@
 }
 
 /* Info tabs */
+#info-content { margin: 0 10px; }
 @media (min-width: 768px) {
   #infopanel .dl-horizontal dt {
       width: 220px;
