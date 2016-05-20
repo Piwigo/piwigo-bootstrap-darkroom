@@ -3,6 +3,10 @@
 {combine_script id="photoswipe" require="jquery" path="themes/bootstrap_darkroom/photoswipe/photoswipe.min.js"}
 {combine_script id="photoswipe.ui" require="photoswipe" path="themes/bootstrap_darkroom/photoswipe/photoswipe-ui-default.min.js"}
 {footer_script require='jquery' require="photoswipe.ui"}{strip}
+$('#thumbnailCarousel').find('a').each(function(idx) {
+   $(this).attr('data-index', idx);
+});
+
 function startPhotoSwipe() {
     $('#thumbnailCarousel').each(function() {
          var $pic     = $(this),
@@ -45,14 +49,13 @@ function startPhotoSwipe() {
                      };
     
                      items.push(item);
-    
                  });
                  return items;
              };
         var items = getItems();
 
         var $pswp = $('.pswp')[0];
-        var $index = $('#thumbnailCarousel').find('[data-thumbnail-active="1"]').data('slick-index');
+        var $index = $('#thumbnailCarousel').find('[data-thumbnail-active="1"] a').data('index');
         var options = {
             index: $index,
             bgOpacity: 0.95,
