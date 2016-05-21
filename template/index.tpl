@@ -82,6 +82,7 @@
                     </a>{/strip}
                 </li>
 {if $theme_config_extra->photoswipe}
+{* remove ?slideshow handler here *}
 {footer_script require="jquery"}
 $('#startSlideshow')[0].search = "";
 {/footer_script}
@@ -179,6 +180,56 @@ $('#startSlideshow')[0].search = "";
         <!-- Start of thumbnails -->
         <div id="thumbnails">{$THUMBNAILS}</div>
 {footer_script}{literal}$(document).ready(function(){$('#content img').load(function(){$('#content .col-inner').equalHeights()})});{/literal}{/footer_script}
+{if $theme_config_extra->thumbnail_linkto == "photoswipe" || ($theme_config_extra->thumbnail_linkto == "photoswipe_mobile_only" && get_device() != 'desktop')}
+{define_derivative name='derivative_params_medium' type=IMG_MEDIUM}
+{define_derivative name='derivative_params_large' type=IMG_LARGE}
+{define_derivative name='derivative_params_xlarge' type=IMG_XLARGE}
+        <div id="thumbnailCarousel">
+{foreach from=$thumbnails item=thumbnail}
+{assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
+{assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
+{assign var=derivative_xlarge value=$pwg->derivative($derivative_params_xlarge, $thumbnail.src_image)}
+            <a href="{$thumbnail.URL}"
+               data-title="{$thumbnail.TN_TITLE}"
+               data-src-medium="{$derivative_medium->get_url()}"
+               data-size-medium="{$derivative_medium->get_size_hr()}"
+               data-src-large="{$derivative_large->get_url()}"
+               data-size-large="{$derivative_large->get_size_hr()}"
+               data-src-xlarge="{$derivative_xlarge->get_url()}"
+               data-size-xlarge="{$derivative_xlarge->get_size_hr()}"></a>
+{/foreach}
+{include file='_photoswipe_js.tpl' selector='#thumbnailCarousel'}
+        </div>
+{footer_script require='jquery' require='photoswipe'}
+$('#startSlideshow').attr('href', '#');
+$('#startSlideshow').on('click touchstart', function() {
+   startPhotoSwipe(0);
+   $('.pswp__button--autoplay')[0].click();
+});
+$('#thumbnails').find('a').each(function(idx) {
+   if ($(this).find('img').length === 1) {
+      $(this).attr('href', '#').attr('data-index', idx);
+      $(this).on('click touchstart', function() {
+         startPhotoSwipe(idx);
+      });
+   }
+});
+{if $rv_tscroller_enabled}
+$(document).ajaxComplete(function() {
+   $('#thumbnails').find('a').each(function(idx) {
+      if ($(this).find('img').length > 0) {
+         if (!$(this).attr('data-index')) {
+            $(this).attr('href', '#').attr('data-index', idx);
+            $(this).on('click touchstart', function() {
+               startPhotoSwipe(idx);
+            });
+         }
+      }
+   });
+});
+{/if}
+{/footer_script}
+{/if}
         <!-- End of thumbnails -->
 {/if}
     </div>
@@ -227,4 +278,42 @@ $('#startSlideshow')[0].search = "";
 </div>
 
 {if !empty($PLUGIN_INDEX_CONTENT_AFTER)}{$PLUGIN_INDEX_CONTENT_AFTER}{/if}
+
+{if !empty($THUMBNAILS) && ($theme_config_extra->thumbnail_linkto == "photoswipe" || ($theme_config_extra->thumbnail_linkto == "photoswipe_mobile_only" && get_device() != 'desktop'))}
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+     <div class="pswp__bg"></div>
+     <div class="pswp__scroll-wrap">
+           <div class="pswp__container">
+             <div class="pswp__item"></div>
+             <div class="pswp__item"></div>
+             <div class="pswp__item"></div>
+           </div>
+           <div class="pswp__ui pswp__ui--hidden">
+             <div class="pswp__top-bar">
+                 <div class="pswp__counter"></div>
+                 <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                 <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+                 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                 <button class="pswp__button pswp__button--autoplay" title="AutoPlay"></button>
+                 <div class="pswp__preloader">
+                     <div class="pswp__preloader__icn">
+                       <div class="pswp__preloader__cut">
+                         <div class="pswp__preloader__donut"></div>
+                       </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                 <div class="pswp__share-tooltip"></div>
+             </div>
+             <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+             <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+             <div class="pswp__caption">
+                 <div class="pswp__caption__center"></div>
+             </div>
+         </div>
+     </div>
+</div>
+{/if}
 <!-- End of index.tpl -->

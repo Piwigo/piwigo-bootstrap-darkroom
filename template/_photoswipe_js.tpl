@@ -3,19 +3,23 @@
 {combine_script id="photoswipe" require="jquery" path="themes/bootstrap_darkroom/photoswipe/photoswipe.min.js"}
 {combine_script id="photoswipe.ui" require="photoswipe" path="themes/bootstrap_darkroom/photoswipe/photoswipe-ui-default.min.js"}
 {footer_script require='jquery' require="photoswipe.ui"}{strip}
-$('#thumbnailCarousel').find('a').each(function(idx) {
+
+var selector = '{$selector}';
+
+$(selector).find('a').each(function(idx) {
    $(this).attr('data-index', idx);
 });
 
-function startPhotoSwipe() {
-    $('#thumbnailCarousel').each(function() {
+function startPhotoSwipe(idx) {
+    $(selector).each(function() {
+         $('#thumbnail-active').addClass('active');
          var $pic     = $(this),
              getItems = function() {
                  var items = [];
                  $pic.find('a').each(function() {
                      var $src_xlarge    = $(this).data('src-xlarge'),
                          $size_xlarge   = $(this).data('size-xlarge').split(' x '),
-                             $width_xlarge  = $size_xlarge[0],
+                         $width_xlarge  = $size_xlarge[0],
                          $height_xlarge = $size_xlarge[1],
                          $src_large     = $(this).data('src-large'),
                          $size_large    = $(this).data('size-large').split(' x '),
@@ -55,7 +59,11 @@ function startPhotoSwipe() {
         var items = getItems();
 
         var $pswp = $('.pswp')[0];
-        var $index = $('#thumbnailCarousel').find('[data-thumbnail-active="1"] a').data('index');
+        if (typeof(idx) === "number") {
+            var $index = idx;
+        } else {
+            var $index = $(selector + ' a.active').data('index');
+        }
         var options = {
             index: $index,
             bgOpacity: 0.95,
@@ -104,8 +112,6 @@ function startPhotoSwipe() {
             }
         });
 
-        photoSwipe.init();
-
         var autoplayId = null;
         $('.pswp__button--autoplay').on('click touchstart', function(event) {
             event.preventDefault();
@@ -114,10 +120,11 @@ function startPhotoSwipe() {
                 autoplayId = null;
                 $('.pswp__button--autoplay').removeClass('stop');
             } else {
-                autoplayId = setInterval(function() { photoSwipe.next(); }, {$theme_config_extra->photoswipe_interval});
+                autoplayId = setInterval(function() { photoSwipe.next(); $index = photoSwipe.getCurrentIndex(); }, {$theme_config_extra->photoswipe_interval});
                 $('.pswp__button--autoplay').addClass('stop');
             }
         });
+
         photoSwipe.listen('destroy', function() {
             if (autoplayId) {
                 clearInterval(autoplayId);
@@ -125,7 +132,16 @@ function startPhotoSwipe() {
                 $('.pswp__button--autoplay').removeClass('stop');
             }
             $('.pswp__button--autoplay').off('click touchstart');
+            $('#thumbnailCarousel a.active').removeClass('active');
         });
+
+        photoSwipe.init();
+
+	curr = photoSwipe.getCurrentIndex();
+        if (curr !== $index && autoplayId == null) {
+            photoSwipe.goTo($index);
+        }
+
     });
 };
 
@@ -135,13 +151,11 @@ $('#theImage').on('doubletap', startPhotoSwipe);
 {/if}
 {if isset($U_SLIDESHOW_START)}
 $('#startSlideshow').on('click touchstart', function() {
-  console.log('Starting slideshow..');
-  startPhotoSwipe();
+  startPhotoSwipe(0);
   $('.pswp__button--autoplay')[0].click();
 });
 {/if}
 if (window.location.hash === "#start-slideshow") {
-    console.log('Received #start-slideshow url hash. Starting slideshow...');
     startPhotoSwipe();
     $('.pswp__button--autoplay')[0].click();
 }

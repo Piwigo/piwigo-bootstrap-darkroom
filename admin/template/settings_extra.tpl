@@ -152,6 +152,19 @@ $('input[name=bootswatch]').change(function() {
             </ul>
             <p>{'Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'|@translate}</p>
         </fieldset>
+        <fieldset>
+            <legend>{'Thumbnail Link Target'|@translate}</legend>
+            <ul>
+                <li>
+                    <label labelfor="thumbnail_linkto">{'Link thumbnail to'|@translate}</label>
+                    <select name="thumbnail_linkto">
+                        <option value="picture"{if $theme_config_extra->thumbnail_linkto == 'picture'} selected="selected"{/if}>{'Picture details page'|@translate}</option>
+                        <option value="photoswipe"{if $theme_config_extra->thumbnail_linkto == 'photoswipe'} selected="selected"{/if}>{'PhotoSwipe Slideshow'|@translate}</option>
+                        <option value="photoswipe_mobile_only"{if $theme_config_extra->thumbnail_linkto == 'photoswipe_mobile_only'} selected="selected"{/if}>{'Photoswipe Slideshow (Mobile devices only)'|@translate}</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
     </div>
     <p class="formButtons">
         <input type="submit" name="submit" value="{'Save Settings'|@translate}">

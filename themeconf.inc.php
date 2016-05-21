@@ -37,9 +37,14 @@ function set_config_values()
 // needed for the carousel and photoswipe
 // borrowed from https://github.com/ThomasDaheim/piwigo-stuff/tree/master/picturethumbs
 add_event_handler('loc_end_picture', 'get_all_thumbnails_in_category');
+add_event_handler('loc_end_index', 'get_all_thumbnails_in_category');
 function get_all_thumbnails_in_category()
 {
   global $template, $conf, $user, $page;
+
+  if (!$page['items']) {
+    return;
+  }
   
   // select all pictures for this category
   $query = '
