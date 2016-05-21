@@ -2,6 +2,9 @@
 {combine_script id='core.switchbox' require='jquery' path='themes/default/js/switchbox.js'}
 {combine_script id='cookie' require='jquery' path="themes/bootstrapdefault/js/jquery.cookie.js"}
 {combine_script id='equalheights' require='jquery' path="themes/bootstrapdefault/js/jquery.equalheights.js"}
+{if get_device() != 'desktop'}
+{combine_script id='jquery.mobile-events' path='themes/bootstrap_darkroom/js/jquery.mobile-events.min.js' require='jquery'}
+{/if}
 {if !empty($PLUGIN_INDEX_CONTENT_BEFORE)}{$PLUGIN_INDEX_CONTENT_BEFORE}{/if}
 
 <nav class="navbar navbar-default navbar-secondary" role="navigation">
@@ -209,7 +212,7 @@ $('#startSlideshow').on('click touchstart', function() {
 $('#thumbnails').find('a').each(function(idx) {
    if ($(this).find('img').length === 1) {
       $(this).attr('href', '#').attr('data-index', idx);
-      $(this).on('click touchstart', function() {
+      $(this).on('click tap', function() {
          startPhotoSwipe(idx);
       });
    }
@@ -220,7 +223,7 @@ $(document).ajaxComplete(function() {
       if ($(this).find('img').length > 0) {
          if (!$(this).attr('data-index')) {
             $(this).attr('href', '#').attr('data-index', idx);
-            $(this).on('click touchstart', function() {
+            $(this).on('click tap', function() {
                startPhotoSwipe(idx);
             });
          }

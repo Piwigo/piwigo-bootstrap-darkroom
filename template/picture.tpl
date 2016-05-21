@@ -1,8 +1,4 @@
 <!-- Start of picture.tpl -->
-{if get_device() != 'desktop'}
-{combine_script id='jquery.mobile-events' path='themes/bootstrap_darkroom/js/jquery.mobile-events.min.js' require='jquery'}
-{/if}
-
 {if !empty($PLUGIN_PICTURE_BEFORE)}{$PLUGIN_PICTURE_BEFORE}{/if}
 
 <nav class="navbar navbar-default navbar-secondary" role="navigation">
