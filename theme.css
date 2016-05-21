@@ -1,8 +1,7 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css);
 
-.jumbotron {
-  background-color: #2e2e2e;
-}
+/* Win Phone 8.1 + fix */
+@-ms-viewport       { width: device-width; }
 
 /* Main */
 .col-centered {
@@ -16,6 +15,11 @@
     height: 100%;
     width: 80%;
   }
+}
+
+/* Jumbotron */
+.jumbotron {
+  background-color: #2e2e2e;
 }
 
 /* Rating */
