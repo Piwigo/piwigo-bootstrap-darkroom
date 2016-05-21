@@ -20,50 +20,6 @@
             </ul>
             <label id="bootswatch_theme_label" labelfor="bootswatch_theme">{'Bootswatch theme'|@translate}</label>
             <select id="bootswatch_theme" name="bootswatch_theme"></select>
-{footer_script require="jquery"}
-var select = $("#bootswatch_theme");
-var label = $("#bootswatch_theme_label");
-var cur_theme = '{$theme_config_extra->bootswatch_theme}';
-function getBootswatchThemes() {
-    $.getJSON("https://bootswatch.com/api/3.json", function (data) {
-      var themes = data.themes;
-      select.show();
-      label.show();
-
-      themes.forEach(function(value, index){
-        $name = value.name;
-        $lname = $name.toLowerCase();
-        select.append($("<option />")
-              .val($lname)
-              .text($name));
-
-        if ($lname === cur_theme) {
-           $('option[value=' + $lname + ']').attr('selected', 'selected');
-        }
-      });
-
-    }, "json").fail(function(){
-        $(".alert").toggleClass("alert-info alert-danger");
-        $(".alert h4").text("Failed to load available Bootswatch Themes!");
-    });
-}
-
-$(document).ready(function() {
-  if ($('input[name=bootswatch]').is(':checked')) {
-    getBootswatchThemes();
-  }
-});
-
-$('input[name=bootswatch]').change(function() {
-  if ($('input[name=bootswatch]').is(':checked')) {
-    getBootswatchThemes();
-  } else {
-    select.empty();
-    select.hide();
-    label.hide();
-  }   
-});
-{/footer_script}
         </fieldset>
         <fieldset class="mainConf">
             <legend>Slick Carousel {'Settings'|@translate}</legend>
@@ -170,3 +126,63 @@ $('input[name=bootswatch]').change(function() {
         <input type="submit" name="submit" value="{'Save Settings'|@translate}">
     </p>
 </form>
+{footer_script require="jquery"}
+var select = $("#bootswatch_theme");
+var label = $("#bootswatch_theme_label");
+var cur_theme = '{$theme_config_extra->bootswatch_theme}';
+function getBootswatchThemes() {
+    $.getJSON("https://bootswatch.com/api/3.json", function (data) {
+      var themes = data.themes;
+      select.show();
+      label.show();
+
+      themes.forEach(function(value, index){
+        $name = value.name;
+        $lname = $name.toLowerCase();
+        select.append($("<option />")
+              .val($lname)
+              .text($name));
+
+        if ($lname === cur_theme) {           $('option[value=' + $lname + ']').attr('selected', 'selected');
+        }
+      });
+
+    }, "json").fail(function(){
+        $(".alert").toggleClass("alert-info alert-danger");
+        $(".alert h4").text("Failed to load available Bootswatch Themes!");
+    });
+}
+
+$(document).ready(function() {
+  if ($('input[name=bootswatch]').is(':checked')) {
+    getBootswatchThemes();
+  }
+  curr = $('select[name=thumbnail_linkto]').val();
+  if (!$('input[name=photoswipe]').is(':checked') && curr !== 'photoswipe') {
+    $('select[name=thumbnail_linkto]').val('picture');
+    $('select[name=thumbnail_linkto] option[value=photoswipe]').attr('disabled', 'disabled');
+    $('select[name=thumbnail_linkto] option[value=photoswipe_mobile_only]').attr('disabled', 'disabled');
+  }
+});
+
+$('input[name=bootswatch]').change(function() {
+  if ($('input[name=bootswatch]').is(':checked')) {
+    getBootswatchThemes();
+  } else {
+    select.empty();
+    select.hide();
+    label.hide();
+  }
+});
+$('input[name=photoswipe]').change(function() {
+  curr = $('select[name=thumbnail_linkto]').val();
+  if (!$(this).is(':checked') && curr !== 'picture') {
+    $('select[name=thumbnail_linkto]').val('picture');
+    $('select[name=thumbnail_linkto] option[value=photoswipe]').attr('disabled', 'disabled');
+    $('select[name=thumbnail_linkto] option[value=photoswipe_mobile_only]').attr('disabled', 'disabled');
+  } else {
+    $('select[name=thumbnail_linkto] option[value=photoswipe]').removeAttr('disabled');
+    $('select[name=thumbnail_linkto] option[value=photoswipe_mobile_only]').removeAttr('disabled');
+  }
+});
+{/footer_script}
