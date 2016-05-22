@@ -137,10 +137,12 @@ function startPhotoSwipe(idx) {
 
         photoSwipe.init();
 
-	curr = photoSwipe.getCurrentIndex();
-        if (curr !== $index && autoplayId == null) {
-            photoSwipe.goTo($index);
-        }
+        photoSwipe.listen('initialZoomInEnd', function() {
+	    curr = photoSwipe.getCurrentIndex();
+            if (curr !== $index && autoplayId == null) {
+                photoSwipe.goTo($index);
+            }
+        });
 
     });
 };
