@@ -17,7 +17,11 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
  * Download from http://piwigo.org/ext/extension_view.php?eid=831
  * Or just use the Extension Manager
 2. Enable Bootstrap Darkroom
-3. To use it for mobile devices you need to disable the Smartpocket theme, if enabled.
+3. To use it as the standard theme for mobile devices, you need to disable the Smartpocket theme (if enabled). In combination with the recommended plugins and by setting "Thumbnail link target" to "PhotoSwipe" or "PhotoSwipe (mobile devices only)" it will behave like smartpocket (click on thumbnail opens the slideshow, masonry style thumbnail page with ajax loading).
+
+### Recommended Plugins
+* [GThumb+](http://piwigo.org/ext/extension_view.php?eid=591) or [gdThumb](http://piwigo.org/ext/extension_view.php?eid=771): this will give you masonry-style thumbnail page.
+* [RV Thumbnail Scroller](http://piwigo.org/ext/extension_view.php?eid=493): this one will load items on the thumbnails page as they are requested using ajax. HIGHLY recommended for mobile devices.
 
 ### Known issues
 
