@@ -37,6 +37,7 @@ function set_config_values()
 // needed for the carousel and photoswipe
 // borrowed from https://github.com/ThomasDaheim/piwigo-stuff/tree/master/picturethumbs
 add_event_handler('loc_end_picture', 'get_all_thumbnails_in_category');
+// also needed on index.tpl for compatibility with GThumb+/GDThumb
 add_event_handler('loc_end_index', 'get_all_thumbnails_in_category');
 function get_all_thumbnails_in_category()
 {
