@@ -6,7 +6,7 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 
 * Choose themes from [Bootswatch](https://bootswatch.com), or use the included dark color scheme based on Lightroom's colors (default).
 * Configurable carousel album navigation on the picture page using [slick slider](http://kenwheeler.github.io/slick/)
-* Full screen view using [PhotoSwipe](http://photoswipe.com), including autoplay slideshow
+* Full screen slideshow view using [PhotoSwipe](http://photoswipe.com), including autoplay slideshow
 * Fully responsive Navbars, Carousel and PhotoSwipe view
 * Mobile ready features (async loading of carousel & PhotoSwipe content, adaptive image size selection, swipe & tap events) 
 

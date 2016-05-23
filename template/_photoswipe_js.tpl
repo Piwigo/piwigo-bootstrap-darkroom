@@ -147,7 +147,10 @@ function startPhotoSwipe(idx) {
     });
 };
 
-$('#startPhotoSwipe').on('click', 'span', startPhotoSwipe);
+$('#startPhotoSwipe').on('click', function(event) {
+  event.preventDefault;
+  startPhotoSwipe();
+});
 {if get_device() != 'desktop'}
 $('#theImage').on('doubletap', startPhotoSwipe);
 {/if}

@@ -204,7 +204,7 @@ $('#startSlideshow')[0].search = "";
 {include file='_photoswipe_js.tpl' selector='#thumbnailCarousel'}
         </div>
 {footer_script require='jquery' require='photoswipe'}
-$('#startSlideshow').attr('href', '#');
+$('#startSlideshow').attr('href', 'javascript:;');
 $('#startSlideshow').on('click touchstart', function() {
    startPhotoSwipe(0);
    $('.pswp__button--autoplay')[0].click();
@@ -224,7 +224,7 @@ function setupPhotoSwipe() {
       var $pswpIndex;
       if ($(this).find('img').length > 0) {
          var _href = $(this).href;
-         $(this).attr('href', '#').attr('data-href', _href);
+         $(this).attr('href', 'javascript:;').attr('data-href', _href);
          if (!$(this).attr('data-index')) {
             $(this).attr('data-index', _index);
             $pswpIndex = _index;

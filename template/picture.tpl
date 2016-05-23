@@ -69,7 +69,7 @@
 {/if}
 {if isset($U_SLIDESHOW_START)}
                 <li>
-                    <a href="{if $theme_config_extra->photoswipe}#{else}{$U_SLIDESHOW_START}{/if}" title="{'Slideshow'|@translate}" id="startSlideshow" rel="nofollow">
+                    <a href="{if $theme_config_extra->photoswipe}javascript:;{else}{$U_SLIDESHOW_START}{/if}" title="{'Slideshow'|@translate}" id="startSlideshow" rel="nofollow">
                         <span class="glyphicon glyphicon-play"></span><span class="glyphicon-text">{'Slideshow'|@translate}</span>
                     </a>
                 </li>
