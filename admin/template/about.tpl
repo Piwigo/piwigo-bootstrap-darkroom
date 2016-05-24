@@ -4,7 +4,7 @@
 </div>
 <div id="configContent" style="margin: 0 auto; max-width: 420px">
     <h3>{'Bootstrap Darkroom'|@translate}</h3>
-    <h4>{'Version'|@translate}: 1.2.1</h4>
+    <h4>{'Version'|@translate}: 1.2.2</h4>
     <h5>{'By'|@translate}: <a href="https://github.com/tkuther/piwigo-bootstrap-darkroom">Thomas Kuther</a></h5>
     <h5>{'Based on Bootstrap Default by'|@translate}: <a href="https://philio.me">Phil Bayfield</a></h5>
 
@@ -14,6 +14,12 @@
     </p>
 
     <p>{'Source'|@translate}: <a href="https://github.com/tkuther/piwigo-bootstrap-darkroom" target="_blank">https://github.com/tkuther/piwigo-bootstrap-darkroom</a>
+    </p>
+
+    <p>{'Documentation'|@translate}: <a href="https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki" target="_blank">https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki</a>
+    </p>
+
+    <p>If you find any issues, please report them to the <a href="https://github.com/tkuther/piwigo-bootstrap-darkroom/issues">Issue tracker</a>
     </p>
 
     <p><a href="https://github.com/tkuther/piwigo-bootstrap-darkroom/issues"
