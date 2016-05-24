@@ -16,6 +16,7 @@
             </button>
             <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a> [{$PHOTO}]</div>
 {footer_script require='jquery'}{strip}
+$(document).ready(function() {
  var $nrLevels = $('.navbar-secondary .navbar-brand a').length,
      $html;
  while ($nrLevels > 2) {
@@ -28,6 +29,7 @@
       $('.navbar-secondary .navbar-brand').html($html);
    }
  }
+});
 {/strip}{/footer_script}
         </div>
         <div class="navbar-right navbar-collapse collapse" id="picture-nav">
