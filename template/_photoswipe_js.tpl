@@ -64,12 +64,18 @@ function startPhotoSwipe(idx) {
         } else {
             var $index = $(selector + ' a.active').data('index');
         }
+        if (navigator.userAgent.match(/IEMobile\/11\.0/)) {
+            var $history = false;
+        } else {
+            var $history = true;
+        }
         var options = {
             index: $index,
             bgOpacity: 0.95,
             showHideOpacity: true,
             closeOnScroll: false,
-            closeOnVerticalDrag: false
+            closeOnVerticalDrag: false,
+            history: $history
         };
         var photoSwipe = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
         var realViewportWidth,
