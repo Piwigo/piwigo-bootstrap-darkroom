@@ -109,6 +109,20 @@
             <p>{'Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'|@translate}</p>
         </fieldset>
         <fieldset>
+            <legend>{'Category display'|@translate}</legend>
+            <ul>
+                <li>
+                    <label labelfor="category_wells">{'Display categories as Bootstrap media wells'|@translate}</label>
+                    <select name="category_wells">
+                        <option value="never"{if $theme_config_extra->category_wells == 'never'} selected="selected"{/if}>{'Never'|@translate}</option>
+                        <option value="always"{if $theme_config_extra->category_wells == 'always'} selected="selected"{/if}>{'Always'|@translate}</option>
+                        <option value="mobile_only"{if $theme_config_extra->category_wells == 'mobile_only'} selected="selected"{/if}>{'On mobile devices only'|@translate}</option>
+                    </select>
+                </li>
+            </ul>
+            <p>{'This will display categories as media wells with squared thumbnails, similar to the smartpocket mobile theme.'|@translate}</p>
+        </fieldset>
+        <fieldset>
             <legend>{'Thumbnail Link Target'|@translate}</legend>
             <ul>
                 <li>

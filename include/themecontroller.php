@@ -13,6 +13,8 @@ class ThemeController {
 
     public function init() {
         add_event_handler('loc_begin_page_header', array($this, 'assignConfig'));
+        // why is this needed to have config on mainpage_categories.tpl ???
+        add_event_handler('loc_begin_index_category_thumbnails', array($this, 'assignConfig'));
     }
 
     public function assignConfig() {

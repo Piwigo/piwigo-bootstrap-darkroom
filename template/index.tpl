@@ -125,7 +125,7 @@ $('#startSlideshow')[0].search = "";
 {/if}
 {if !empty($PLUGIN_INDEX_BUTTONS)}{foreach from=$PLUGIN_INDEX_BUTTONS item=button}<li>{$button}</li>{/foreach}{/if}
 {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
-{if (!empty($CATEGORIES) && !isset($GDThumb)) || (!empty($THUMBNAILS) && !isset($GThumb) && !isset($GDThumb)) }
+{if ((!empty($CATEGORIES) && !isset($GDThumb)) || (!empty($THUMBNAILS) && !isset($GThumb) && !isset($GDThumb))) && ($theme_config_extra->category_wells == 'never' || ($theme_config_extra->category_wells == 'mobile_only' && get_device() == 'desktop'))}
                 <li id="btn-grid"{if $smarty.cookies.view != 'list'} class="active"{/if}><a href="#"><span class="glyphicon glyphicon-th"></span></a></li>
                 <li id="btn-list"{if $smarty.cookies.view == 'list'} class="active"{/if}><a href="#"><span class="glyphicon glyphicon-th-list"></span></a></li>
 {/if}
@@ -165,7 +165,7 @@ $('#startSlideshow')[0].search = "";
         {$CONTENT_DESCRIPTION}
     </h4>
 {/if}
-    <div id="content" class="row {if $smarty.cookies.view == 'list'}content-list{else}content-grid{/if}">
+    <div id="content" class="{if $theme_config_extra->category_wells == 'never' || ($theme_config_extra->category_wells == 'mobile_only' && get_device() == 'desktop')}row{if $smarty.cookies.view == 'list'} content-list{else} content-grid{/if}{/if}">
 {if !empty($CONTENT)}
     <!-- Start of content -->
     {$CONTENT}
