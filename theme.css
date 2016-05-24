@@ -105,6 +105,9 @@
   font-family:"Glyphicons Halflings";
 }
 
+/* Wells */
+.well-categories { margin-bottom: 10px; }
+
 /*
  * Plugin fixlets
  */

@@ -45,7 +45,7 @@
     {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
 <a href="{$cat.URL}">
-  <div class="well">
+  <div class="well well-sm well-categories">
     <div class="media">
       <div class="media-left">
           <img class="media-object" {strip}{if $derivative_square->is_cached()}src="{$derivative_square->get_url()}"{else}src="{$ROOT_URL}themes/bootstrapdefault/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}">
