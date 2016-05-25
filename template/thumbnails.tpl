@@ -27,9 +27,9 @@
 {include file="grid_classes.tpl" width=$width height=$height}
 <div class="col-outer {if $smarty.cookies.view == 'list'}col-lg-12 col-md-12 col-sm-12 col-xs-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
     <div class="col-inner">
-		<a class="col-thumbnail" href="{$thumbnail.URL}" data-index="{$idx}">
+        <a class="col-thumbnail" href="{$thumbnail.URL}" data-index="{$idx}">
             <div class="placeholder-{$width}">
-			    <img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrapdefault/img/transparent.png"
+                <img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrapdefault/img/transparent.png"
                      data-src="{$derivative->get_url()}"{/if}
                      alt="{$thumbnail.TN_ALT}"
                      title="{$thumbnail.TN_TITLE}">

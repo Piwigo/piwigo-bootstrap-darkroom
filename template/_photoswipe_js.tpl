@@ -6,10 +6,6 @@
 
 var selector = '{$selector}';
 
-$(selector).find('a').each(function(idx) {
-   $(this).attr('data-index', idx);
-});
-
 function startPhotoSwipe(idx) {
     $(selector).each(function() {
          $('#thumbnail-active').addClass('active');

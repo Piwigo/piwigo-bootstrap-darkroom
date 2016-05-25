@@ -188,11 +188,13 @@ $('#startSlideshow')[0].search = "";
 {define_derivative name='derivative_params_large' type=IMG_LARGE}
 {define_derivative name='derivative_params_xlarge' type=IMG_XLARGE}
         <div id="thumbnailCarousel">
+{assign var=idx value=0}
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
 {assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
 {assign var=derivative_xlarge value=$pwg->derivative($derivative_params_xlarge, $thumbnail.src_image)}
             <a href="{$thumbnail.URL}"
+               data-index="{$idx}"
                data-title="{$thumbnail.TN_TITLE}"
                data-src-medium="{$derivative_medium->get_url()}"
                data-size-medium="{$derivative_medium->get_size_hr()}"
@@ -200,6 +202,7 @@ $('#startSlideshow')[0].search = "";
                data-size-large="{$derivative_large->get_size_hr()}"
                data-src-xlarge="{$derivative_xlarge->get_url()}"
                data-size-xlarge="{$derivative_xlarge->get_size_hr()}"></a>
+{assign var=idx value=$idx+1}
 {/foreach}
 {include file='_photoswipe_js.tpl' selector='#thumbnailCarousel'}
         </div>
@@ -232,7 +235,6 @@ function setupPhotoSwipe() {
             $pswpIndex = $(this).data('index');
          }
          $(this).off().on('click tap', function() {
-            console.log('start photoswipe with index: ' + $pswpIndex);
             startPhotoSwipe($pswpIndex);
          });
       }

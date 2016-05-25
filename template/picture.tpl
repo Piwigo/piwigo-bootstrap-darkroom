@@ -222,6 +222,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 <div class="container">
  <div class="col-lg-10 col-md-12 col-centered">
   <div id="thumbnailCarousel" class="slick-carousel">
+{assign var=idx value=0}
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative value=$pwg->derivative($derivative_params_thumb, $thumbnail.src_image)}
 {assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
@@ -231,7 +232,8 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
 {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
-        {if $thumbnail.id eq $current.id}<div class="text-center thumbnail-active"><a id="thumbnail-active" {else}<div class="text-center"><a {/if}href="{$thumbnail.URL}" data-title="{$thumbnail.TN_TITLE}" data-src-xlarge="{$derivative_xlarge->get_url()}" data-size-xlarge="{$derivative_xlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
+        {if $thumbnail.id eq $current.id}<div class="text-center thumbnail-active"><a id="thumbnail-active" {else}<div class="text-center"><a {/if}href="{$thumbnail.URL}" data-index="{$idx}" data-title="{$thumbnail.TN_TITLE}" data-src-xlarge="{$derivative_xlarge->get_url()}" data-size-xlarge="{$derivative_xlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"><img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a></div>
+{assign var=idx value=$idx+1}
 {/foreach}
   </div>
  </div>
