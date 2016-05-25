@@ -201,7 +201,7 @@ $('#startSlideshow')[0].search = "";
                data-src-large="{$derivative_large->get_url()}"
                data-size-large="{$derivative_large->get_size_hr()}"
                data-src-xlarge="{$derivative_xlarge->get_url()}"
-               data-size-xlarge="{$derivative_xlarge->get_size_hr()}"></a>
+               data-size-xlarge="{$derivative_xlarge->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{/if}></a>
 {assign var=idx value=$idx+1}
 {/foreach}
 {include file='_photoswipe_js.tpl' selector='#thumbnailCarousel'}

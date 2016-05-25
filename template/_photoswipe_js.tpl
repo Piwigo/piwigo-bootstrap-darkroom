@@ -13,6 +13,30 @@ function startPhotoSwipe(idx) {
              getItems = function() {
                  var items = [];
                  $pic.find('a').each(function() {
+                   if ($(this).attr('data-video')) {
+                     var $src            = $(this).data('src-original'),
+                         $size           = $(this).data('size-original').split('x'),
+                         $width          = $size[0],
+                         $height         = $size[1],
+                         $src_preview    = $(this).data('src-large'),
+                         $size_preview   = $(this).data('size-large').split(' x '),
+                         $width_preview  = $size_preview[0],
+                         $height_preview = $size_preview[1],
+                         $href           = $(this).attr('href'),
+                         $title          = '<div class="text-center"><a href="' + $href + '"><i class="glyphicon glyphicon-info-sign"></i> ' + $(this).data('title') + '</div>';
+                     var item = {
+                         is_video : true,
+                         src      : $src_preview,
+                         w        : $width_preview,
+                         h        : $height_preview,
+                         title    : $title,
+                         videoProperties: {
+                            src   : $src,
+                            w     : $width,
+                            h     : $height,
+                         }
+                     };
+                   } else {
                      var $src_xlarge    = $(this).data('src-xlarge'),
                          $size_xlarge   = $(this).data('size-xlarge').split(' x '),
                          $width_xlarge  = $size_xlarge[0],
@@ -28,6 +52,7 @@ function startPhotoSwipe(idx) {
                          $href          = $(this).attr('href'),
                          $title         = '<div class="text-center"><a href="' + $href + '"><i class="glyphicon glyphicon-info-sign"></i> ' + $(this).data('title') + '</div>';
                      var item = {
+                         is_video: false,
                          mediumImage: {
                              src   : $src_medium,
                              w     : $width_medium,
@@ -47,8 +72,8 @@ function startPhotoSwipe(idx) {
                              title : $title
                          }
                      };
-    
-                     items.push(item);
+                   }
+                   items.push(item);
                  });
                  return items;
              };
@@ -101,16 +126,22 @@ function startPhotoSwipe(idx) {
         });
 
         photoSwipe.listen('gettingData', function(index, item) {
-            if( useLargeImages ) {
-                item.src = item.xlargeImage.src;
-                item.w = item.xlargeImage.w;
-                item.h = item.xlargeImage.h;
-                item.title = item.xlargeImage.title;
-            } else {
-                item.src = item.largeImage.src;
-                item.w = item.largeImage.w;
-                item.h = item.largeImage.h;
-                item.title = item.largeImage.title;
+            if(!item.is_video) { 
+              if( useLargeImages ) {
+                if (!item.is_video) {
+                  item.src = item.xlargeImage.src;
+                  item.w = item.xlargeImage.w;
+                  item.h = item.xlargeImage.h;
+                  item.title = item.xlargeImage.title;
+                }
+              } else {
+                if (!item.is_video) {
+                  item.src = item.largeImage.src;
+                  item.w = item.largeImage.w;
+                  item.h = item.largeImage.h;
+                  item.title = item.largeImage.title;
+                }
+              }
             }
         });
 
@@ -139,6 +170,8 @@ function startPhotoSwipe(idx) {
 
         photoSwipe.init();
 
+        detectVideo(photoSwipe);
+
         photoSwipe.listen('initialZoomInEnd', function() {
 	    curr = photoSwipe.getCurrentIndex();
             if (curr !== $index && autoplayId == null) {
@@ -146,7 +179,75 @@ function startPhotoSwipe(idx) {
             }
         });
 
+        photoSwipe.listen('afterChange', function() {
+            detectVideo(photoSwipe);
+        });
+
+        photoSwipe.listen('beforeChange', function() {
+           removeVideo();
+        });
+
+        photoSwipe.listen('resize', function() { 
+           if ($('.videoHolder').length > 0) updateVideoPosition(photoSwipe);
+        });
+
+        photoSwipe.listen('close', function() {
+           removeVideo();
+        });
+
     });
+
+    function removeVideo() {
+        if ($('.videoHolder').length > 0) { 
+            if ($('#video').length > 0) {
+                $('video')[0].pause();
+                $('video')[0].src = "";
+                $('.videoHolder').remove();
+                $('.pswp__img').css('visibility','visible');
+            } else {
+                $('.videoHolder').remove();
+            }
+        }
+    }
+ 
+    function detectVideo(photoSwipe) {
+        var is_video = photoSwipe.currItem.is_video;
+        console.log(is_video);
+        if (is_video) {
+            var src = photoSwipe.currItem.videoProperties.src;
+            if (src.indexOf('mp4') >= 0) {
+                addVideo(photoSwipe.currItem);
+                updateVideoPosition(photoSwipe);
+            }
+        }
+    }
+
+    function addVideo(item, vp) {
+        var videofile = item.videoProperties.src;
+        var v = $('<div />', {
+                    class:'videoHolder',
+                    css : ({literal}{'position': 'absolute','width':item.w, 'height':item.h}{/literal})
+
+        });
+        v.one('click touchstart', (function() {
+            var playerCode = '<video id="video" width="'+item.w+'" height="'+item.h+'" autoplay controls>' +
+            '<source src="'+videofile+'" type="video/mp4"></source>' +
+            '</video>';
+             $(this).html(playerCode);
+             $('.pswp__img').css('visibility','hidden');
+ 
+        }));
+        v.appendTo('.pswp__scroll-wrap');
+    }
+    
+    function updateVideoPosition(o) {
+        var item = o.currItem;
+        var vp = o.viewportSize;
+        var top = (vp.y - item.h)/2;
+        var left = (vp.x - item.w)/2;
+        $('.videoHolder').css({literal}{position:'absolute',top:top, left:left}{/literal});
+        
+    }
 };
 
 $('#startPhotoSwipe').on('click', function(event) {

@@ -86,6 +86,7 @@ function get_all_thumbnails_in_category()
       'DESCRIPTION' => $desc,
       'src_image' => new SrcImage($row),
       'SIZE' => $row['width'].'x'.$row['height'],
+      'PATH' => $row['path'],
     ) );
     
     $tpl_thumbnails_var[] = $tpl_var;
