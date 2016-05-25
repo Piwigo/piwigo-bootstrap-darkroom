@@ -298,8 +298,4 @@ $(document).ajaxComplete(function() {
 </div>
 
 {if !empty($PLUGIN_INDEX_CONTENT_AFTER)}{$PLUGIN_INDEX_CONTENT_AFTER}{/if}
-
-{if !empty($THUMBNAILS) && ($theme_config_extra->thumbnail_linkto == "photoswipe" || ($theme_config_extra->thumbnail_linkto == "photoswipe_mobile_only" && get_device() != 'desktop'))}
-{include file='_photoswipe_div.tpl'}
-{/if}
 <!-- End of index.tpl -->

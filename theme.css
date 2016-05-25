@@ -105,6 +105,19 @@
   font-family:"Glyphicons Halflings";
 }
 
+.pswp__scroll-wrap .videoHolder {
+    width: 320px;
+    margin: 0 auto;
+}
+.pswp__scroll-wrap .videoHolder video {
+}
+.videoHolder {
+    background: url(img/play-circle-white.png) no-repeat center center;
+    background-size: 128px 128px;
+    height: 100%;
+    cursor: pointer;
+}
+
 /* Wells */
 .well-categories { margin-bottom: 10px; }
 

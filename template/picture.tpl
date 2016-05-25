@@ -513,5 +513,3 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 {/if}
 
 {if !empty($PLUGIN_PICTURE_AFTER)}{$PLUGIN_PICTURE_AFTER}{/if}
-
-{include file='_photoswipe_div.tpl'}

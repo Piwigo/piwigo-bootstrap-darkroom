@@ -3,7 +3,6 @@
 {combine_script id="photoswipe" require="jquery" path="themes/bootstrap_darkroom/photoswipe/photoswipe.min.js"}
 {combine_script id="photoswipe.ui" require="photoswipe" path="themes/bootstrap_darkroom/photoswipe/photoswipe-ui-default.min.js"}
 {footer_script require='jquery' require="photoswipe.ui"}{strip}
-
 var selector = '{$selector}';
 
 function startPhotoSwipe(idx) {
@@ -96,6 +95,7 @@ function startPhotoSwipe(idx) {
             showHideOpacity: true,
             closeOnScroll: false,
             closeOnVerticalDrag: false,
+            focus: false,
             history: $history
         };
         var photoSwipe = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
@@ -204,6 +204,7 @@ function startPhotoSwipe(idx) {
                 $('video')[0].src = "";
                 $('.videoHolder').remove();
                 $('.pswp__img').css('visibility','visible');
+                $(document).off('webkitfullscreenchange mozfullscreenchange fullscreenchange');
             } else {
                 $('.videoHolder').remove();
             }
@@ -212,13 +213,9 @@ function startPhotoSwipe(idx) {
  
     function detectVideo(photoSwipe) {
         var is_video = photoSwipe.currItem.is_video;
-        console.log(is_video);
         if (is_video) {
-            var src = photoSwipe.currItem.videoProperties.src;
-            if (src.indexOf('mp4') >= 0) {
-                addVideo(photoSwipe.currItem);
-                updateVideoPosition(photoSwipe);
-            }
+            addVideo(photoSwipe.currItem);
+            updateVideoPosition(photoSwipe);
         }
     }
 
@@ -235,9 +232,26 @@ function startPhotoSwipe(idx) {
             '</video>';
              $(this).html(playerCode);
              $('.pswp__img').css('visibility','hidden');
- 
         }));
         v.appendTo('.pswp__scroll-wrap');
+
+        {* this is soooo nasty, but i have no better idea to fix the fs-video-size issue *}
+        $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+            var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen,
+                event = state ? 'FullscreenOn' : 'FullscreenOff',
+                holder_height = item.h;
+            console.log('fullscreen toggled: ' + event + ', video height: ' + holder_height);
+            if (event === 'FullscreenOn') {
+                $('#the_page').hide();
+                $('body').css('margin-top', '-'+window.screen.height);
+                $('.videoHolder').css('height', window.screen.height);
+                console.log('page hidden');
+            } else {
+                $('body').css('margin-top', '');
+                $('#the_page').show();
+                $('.videoHolder').css('height', holder_height);
+            }
+        });
     }
     
     function updateVideoPosition(o) {
@@ -246,7 +260,6 @@ function startPhotoSwipe(idx) {
         var top = (vp.y - item.h)/2;
         var left = (vp.x - item.w)/2;
         $('.videoHolder').css({literal}{position:'absolute',top:top, left:left}{/literal});
-        
     }
 };
 
@@ -267,4 +280,5 @@ if (window.location.hash === "#start-slideshow") {
     startPhotoSwipe();
     $('.pswp__button--autoplay')[0].click();
 }
+
 {/strip}{/footer_script}
