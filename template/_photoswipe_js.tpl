@@ -235,23 +235,24 @@ function startPhotoSwipe(idx) {
         }));
         v.appendTo('.pswp__scroll-wrap');
 
-        {* this is soooo nasty, but i have no better idea to fix the fs-video-size issue *}
-        $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
-            var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen,
-                event = state ? 'FullscreenOn' : 'FullscreenOff',
-                holder_height = item.h;
-            console.log('fullscreen toggled: ' + event + ', video height: ' + holder_height);
-            if (event === 'FullscreenOn') {
-                $('#the_page').hide();
-                $('body').css('margin-top', '-'+window.screen.height);
-                $('.videoHolder').css('height', window.screen.height);
-                console.log('page hidden');
-            } else {
-                $('body').css('margin-top', '');
-                $('#the_page').show();
-                $('.videoHolder').css('height', holder_height);
-            }
-        });
+        {* this is soooo nasty, but i have no better idea to fix the fullscreen video issue on OS X *}
+        if (navigator.appVersion.indexOf("Macintosh") !== -1) {
+            $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange', function(e) {
+                var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen,
+                    event = state ? 'FullscreenOn' : 'FullscreenOff',
+                    holder_height = item.h;
+                console.log('fullscreen toggled: ' + event + ', video height: ' + holder_height);
+                if (event === 'FullscreenOn') {
+                    $('#the_page').hide();
+                    $('body').css('margin-top', '-'+window.screen.height);
+                    $('.videoHolder').css('height', window.screen.height);
+                } else {
+                    $('body').css('margin-top', '');
+                    $('#the_page').show();
+                    $('.videoHolder').css('height', holder_height);
+                }
+            });
+        }
     }
     
     function updateVideoPosition(o) {
