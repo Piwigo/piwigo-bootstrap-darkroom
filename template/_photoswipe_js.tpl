@@ -184,7 +184,7 @@ function startPhotoSwipe(idx) {
         });
 
         photoSwipe.listen('resize', function() { 
-           if ($('.videoHolder').length > 0) updateVideoPosition(photoSwipe);
+           if ($('.video-modal').length > 0) updateVideoPosition(photoSwipe);
         });
 
         photoSwipe.listen('close', function() {
@@ -193,18 +193,18 @@ function startPhotoSwipe(idx) {
     });
 
     function removeVideo() {
-        if ($('.videoHolder').length > 0) { 
+        if ($('.video-modal').length > 0) { 
             if ($('#video').length > 0) {
                 $('video')[0].pause();
                 $('video')[0].src = "";
-                $('.videoHolder').remove();
+                $('.video-modal').remove();
                 $('.pswp__img').css('visibility','visible');
                 $(document).off('webkitfullscreenchange mozfullscreenchange fullscreenchange');
                 if ((navigator.appVersion.indexOf("iPhone") !== -1) || (navigator.appVersion.indexOf("iPad") !== -1)) {
-                    $('.videoHolder').css('background', '');
+                    $('.video-modal').css('background', '');
                 }
             } else {
-                $('.videoHolder').remove();
+                $('.video-modal').remove();
             }
         }
     }
@@ -220,7 +220,7 @@ function startPhotoSwipe(idx) {
     function addVideo(item, vp) {
         var videofile = item.videoProperties.src;
         var v = $('<div />', {
-                    class:'videoHolder',
+                    class:'video-modal',
                     css : ({literal}{'position': 'absolute','width':item.w, 'height':item.h}{/literal})
 
         });
@@ -230,15 +230,15 @@ function startPhotoSwipe(idx) {
             '</video>';
             $(this).html(playerCode);
             $('.pswp__img').css('visibility','hidden');
-            $('.pswp__scroll-wrap .videoHolder video').css('visibility', 'visible');
+            $('.video-modal video').css('visibility', 'visible');
             if ((navigator.appVersion.indexOf("iPhone") !== -1) || (navigator.appVersion.indexOf("iPad") !== -1)) {
-                $('.videoHolder').css('background', 'none');
+                $('.video-modal').css('background', 'none');
             }
         }));
-        v.appendTo('.pswp__scroll-wrap');
+        v.insertAfter('.pswp__scroll-wrap');
 
-        {* this is soooo nasty, but i have no better idea to fix the fullscreen video issue on OS X *}
-        if (navigator.appVersion.indexOf("Macintosh") !== -1) {
+        {* this is soooo nasty, but i have no better idea to fix the fullscreen video issue on OS X, Chrome/Windows *}
+        if (!(navigator.userAgent.match("Firefox") == -1 && navigator.appVersion.indexOf("Windows") !== -1) || navigator.appVersion.indexOf("Macintosh") !== -1 ) {
             $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange', function(e) {
                 var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen,
                     event = state ? 'FullscreenOn' : 'FullscreenOff',
@@ -247,11 +247,11 @@ function startPhotoSwipe(idx) {
                 if (event === 'FullscreenOn') {
                     $('#the_page').hide();
                     $('body').css('margin-top', '-'+window.screen.height);
-                    $('.videoHolder').css('height', window.screen.height);
+                    $('.video-modal').css('height', window.screen.height);
                 } else {
                     $('body').css('margin-top', '');
                     $('#the_page').show();
-                    $('.videoHolder').css('height', holder_height);
+                    $('.video-modal').css('height', holder_height);
                 }
             });
         }
@@ -262,26 +262,27 @@ function startPhotoSwipe(idx) {
         var vp = o.viewportSize;
         var top = (vp.y - item.h)/2;
         var left = (vp.x - item.w)/2;
-        $('.videoHolder').css({literal}{position:'absolute',top:top, left:left}{/literal});
+        $('.video-modal').css({literal}{position:'absolute',top:top, left:left}{/literal});
     }
 };
 
-$('#startPhotoSwipe').on('click', function(event) {
-  event.preventDefault;
-  startPhotoSwipe();
-});
+$(document).ready(function() {
+    $('#startPhotoSwipe').on('click', function(event) {
+        event.preventDefault;
+        startPhotoSwipe();
+    });
 {if get_device() != 'desktop'}
-$('#theImage').on('doubletap', startPhotoSwipe);
+    $('#theImage').on('doubletap', startPhotoSwipe);
 {/if}
 {if isset($U_SLIDESHOW_START)}
-$('#startSlideshow').on('click touchstart', function() {
-  startPhotoSwipe(0);
-  $('.pswp__button--autoplay')[0].click();
-});
+    $('#startSlideshow').on('click touchstart', function() {
+        startPhotoSwipe(0);
+        $('.pswp__button--autoplay')[0].click();
+    });
 {/if}
-if (window.location.hash === "#start-slideshow") {
-    startPhotoSwipe();
-    $('.pswp__button--autoplay')[0].click();
-}
-
+    if (window.location.hash === "#start-slideshow") {
+        startPhotoSwipe();
+        $('.pswp__button--autoplay')[0].click();
+    }
+});
 {/strip}{/footer_script}

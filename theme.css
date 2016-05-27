@@ -107,18 +107,16 @@
   color: #fff;
 }
 
-.pswp__scroll-wrap .videoHolder {
-    width: 320px;
-    margin: 0 auto;
-}
-.pswp__scroll-wrap .videoHolder video {
-    visibility: hidden;
-}
-.videoHolder {
+.video-modal {
     background: url(img/play-circle-white.png) no-repeat center center;
     background-size: 128px 128px;
     height: 100%;
+    width: 320px;
+    margin: 0 auto;
     cursor: pointer;
+}
+.video-modal video {
+    visibility: hidden;
 }
 
 /* Wells */

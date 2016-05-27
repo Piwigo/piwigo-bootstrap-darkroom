@@ -233,7 +233,9 @@ function setupPhotoSwipe() {
    });
 }
 
-setupPhotoSwipe();
+$(document).ready(function() {
+   setupPhotoSwipe();
+});
 
 {if $rv_tscroller_enabled}
 $(document).ajaxComplete(function() {
