@@ -112,6 +112,7 @@
     margin: 0 auto;
 }
 .pswp__scroll-wrap .videoHolder video {
+    visibility: hidden;
 }
 .videoHolder {
     background: url(img/play-circle-white.png) no-repeat center center;

@@ -128,19 +128,15 @@ function startPhotoSwipe(idx) {
         photoSwipe.listen('gettingData', function(index, item) {
             if(!item.is_video) { 
               if( useLargeImages ) {
-                if (!item.is_video) {
                   item.src = item.xlargeImage.src;
                   item.w = item.xlargeImage.w;
                   item.h = item.xlargeImage.h;
                   item.title = item.xlargeImage.title;
-                }
               } else {
-                if (!item.is_video) {
                   item.src = item.largeImage.src;
                   item.w = item.largeImage.w;
                   item.h = item.largeImage.h;
                   item.title = item.largeImage.title;
-                }
               }
             }
         });
@@ -194,7 +190,6 @@ function startPhotoSwipe(idx) {
         photoSwipe.listen('close', function() {
            removeVideo();
         });
-
     });
 
     function removeVideo() {
@@ -205,6 +200,9 @@ function startPhotoSwipe(idx) {
                 $('.videoHolder').remove();
                 $('.pswp__img').css('visibility','visible');
                 $(document).off('webkitfullscreenchange mozfullscreenchange fullscreenchange');
+                if ((navigator.appVersion.indexOf("iPhone") !== -1) || (navigator.appVersion.indexOf("iPad") !== -1)) {
+                    $('.videoHolder').css('background', '');
+                }
             } else {
                 $('.videoHolder').remove();
             }
@@ -226,12 +224,16 @@ function startPhotoSwipe(idx) {
                     css : ({literal}{'position': 'absolute','width':item.w, 'height':item.h}{/literal})
 
         });
-        v.one('click touchstart', (function() {
+        v.one('click', (function() {
             var playerCode = '<video id="video" width="'+item.w+'" height="'+item.h+'" autoplay controls>' +
             '<source src="'+videofile+'" type="video/mp4"></source>' +
             '</video>';
-             $(this).html(playerCode);
-             $('.pswp__img').css('visibility','hidden');
+            $(this).html(playerCode);
+            $('.pswp__img').css('visibility','hidden');
+            $('.pswp__scroll-wrap .videoHolder video').css('visibility', 'visible');
+            if ((navigator.appVersion.indexOf("iPhone") !== -1) || (navigator.appVersion.indexOf("iPad") !== -1)) {
+                $('.videoHolder').css('background', 'none');
+            }
         }));
         v.appendTo('.pswp__scroll-wrap');
 
@@ -254,7 +256,7 @@ function startPhotoSwipe(idx) {
             });
         }
     }
-    
+ 
     function updateVideoPosition(o) {
         var item = o.currItem;
         var vp = o.viewportSize;

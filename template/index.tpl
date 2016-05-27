@@ -213,15 +213,6 @@ $('#startSlideshow').on('click touchstart', function() {
    $('.pswp__button--autoplay')[0].click();
 });
 
-function checkIfVideo() {
-   $('#thumbnails').find('a').each(function(idx) {
-         if ($(this).find('img[src*="pwg_representative"]').length === 1) {
-            $(this).attr('data-video', 'true');
-            $('#thumbnailCarousel').find('a[data-index="' + idx + '"]').attr('data-video', 'true');
-         }
-   });
-}
-
 function setupPhotoSwipe() {
    $('#thumbnails').find('a').each(function(_index) {
       var $pswpIndex;
@@ -234,7 +225,8 @@ function setupPhotoSwipe() {
          } else {
             $pswpIndex = $(this).data('index');
          }
-         $(this).off().on('click tap', function() {
+         $(this).off().on('click tap', function(event) {
+            event.preventDefault;
             startPhotoSwipe($pswpIndex);
          });
       }
