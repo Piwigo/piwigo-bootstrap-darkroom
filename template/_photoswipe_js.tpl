@@ -252,11 +252,11 @@ function startPhotoSwipe(idx) {
                 console.log('fullscreen toggled: ' + event + ', video height: ' + holder_height);
                 if (event === 'FullscreenOn') {
                     $('#the_page').hide();
-                    $('body').css('margin-top', '-'+window.screen.height);
+                    $('body').css('height', window.screen.height);
                     $('.video-modal').css('height', window.screen.height);
                 } else {
-                    $('body').css('margin-top', '');
                     $('#the_page').show();
+                    $('body').css('height', '');
                     $('.video-modal').css('height', holder_height);
                 }
             });
