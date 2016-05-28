@@ -239,7 +239,7 @@ function startPhotoSwipe(idx) {
             if (navigator.userAgent.match(/(iPhone|iPad|Android)/)) {
                 $('.video-modal').css('background', 'none');
             }
-            console.log('video click fired');
+            $('.pswp__button--autoplay.stop')[0].click();
         }));
         v.appendTo('.pswp__scroll-wrap');
 
