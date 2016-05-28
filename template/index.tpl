@@ -226,7 +226,7 @@ function setupPhotoSwipe() {
             $pswpIndex = $(this).data('index');
          }
          $(this).off().on('click tap', function(event) {
-            event.preventDefault;
+            event.preventDefault();
             startPhotoSwipe($pswpIndex);
          });
       }

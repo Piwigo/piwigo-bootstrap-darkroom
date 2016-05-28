@@ -17,8 +17,8 @@ function startPhotoSwipe(idx) {
                          $size           = $(this).data('size-original').split('x'),
                          $width          = $size[0],
                          $height         = $size[1],
-                         $src_preview    = $(this).data('src-large'),
-                         $size_preview   = $(this).data('size-large').split(' x '),
+                         $src_preview    = $(this).data('src-medium'),
+                         $size_preview   = $(this).data('size-medium').split(' x '),
                          $width_preview  = $size_preview[0],
                          $height_preview = $size_preview[1],
                          $href           = $(this).attr('href'),
@@ -91,7 +91,6 @@ function startPhotoSwipe(idx) {
         }
         var options = {
             index: $index,
-            bgOpacity: 0.95,
             showHideOpacity: true,
             closeOnScroll: false,
             closeOnVerticalDrag: false,
@@ -200,7 +199,7 @@ function startPhotoSwipe(idx) {
                 $('.video-modal').remove();
                 $('.pswp__img').css('visibility','visible');
                 $(document).off('webkitfullscreenchange mozfullscreenchange fullscreenchange');
-                if ((navigator.appVersion.indexOf("iPhone") !== -1) || (navigator.appVersion.indexOf("iPad") !== -1)) {
+                if (navigator.userAgent.match(/(iPhone|iPad|Android)/)) {
                     $('.video-modal').css('background', '');
                 }
             } else {
@@ -212,30 +211,32 @@ function startPhotoSwipe(idx) {
     function detectVideo(photoSwipe) {
         var is_video = photoSwipe.currItem.is_video;
         if (is_video) {
-            addVideo(photoSwipe.currItem);
+            addVideo(photoSwipe.currItem, photoSwipe.viewportSize);
             updateVideoPosition(photoSwipe);
         }
     }
 
     function addVideo(item, vp) {
-        var videofile = item.videoProperties.src;
+        var vfile = item.videoProperties.src;
+        var vsize = setVideoSize(item, vp);
         var v = $('<div />', {
                     class:'video-modal',
-                    css : ({literal}{'position': 'absolute','width':item.w, 'height':item.h}{/literal})
+                    css : ({literal}{'position': 'absolute','width':vsize.w, 'height':vsize.h}{/literal})
 
         });
-        v.one('click', (function() {
-            var playerCode = '<video id="video" width="'+item.w+'" height="'+item.h+'" autoplay controls>' +
-            '<source src="'+videofile+'" type="video/mp4"></source>' +
+        v.one('{if get_device() == 'desktop'}click{else}touchstart{/if}', (function() {
+            var playerCode = '<video id="video" width="100%" height="auto" autoplay controls>' +
+            '<source src="'+vfile+'" type="video/mp4"></source>' +
             '</video>';
             $(this).html(playerCode);
             $('.pswp__img').css('visibility','hidden');
             $('.video-modal video').css('visibility', 'visible');
-            if ((navigator.appVersion.indexOf("iPhone") !== -1) || (navigator.appVersion.indexOf("iPad") !== -1)) {
+            if (navigator.userAgent.match(/(iPhone|iPad|Android)/)) {
                 $('.video-modal').css('background', 'none');
             }
+            console.log('video click fired');
         }));
-        v.insertAfter('.pswp__scroll-wrap');
+        v.appendTo('.pswp__scroll-wrap');
 
         {* this is soooo nasty, but i have no better idea to fix the fullscreen video issue on OS X, Chrome/Windows *}
         if (!(navigator.userAgent.match("Firefox") == -1 && navigator.appVersion.indexOf("Windows") !== -1) || navigator.appVersion.indexOf("Macintosh") !== -1 ) {
@@ -257,12 +258,34 @@ function startPhotoSwipe(idx) {
         }
     }
  
-    function updateVideoPosition(o) {
+    function updateVideoPosition(o, w, h) {
         var item = o.currItem;
         var vp = o.viewportSize;
-        var top = (vp.y - item.h)/2;
-        var left = (vp.x - item.w)/2;
+        var vsize = setVideoSize(item, vp);
+        var top = (vp.y - vsize.h)/2;
+        var left = (vp.x - vsize.w)/2;
         $('.video-modal').css({literal}{position:'absolute',top:top, left:left}{/literal});
+    }
+
+    function setVideoSize(item, vp) {
+        var w = item.videoProperties.w,
+            h = item.videoProperties.h,
+            vw = vp.x,
+            r,
+            vh;
+            console.log('video width: ' + w + ', viewport width: ' + vw);
+        if (vw < w) {
+            r = w/h;
+            vh = vw/r;
+            console.log('viewport is smaller. resized video to ' + vw + 'x' + vh);
+            w = vw;
+            h = vh;
+        }
+
+	return {
+            w: w,
+            h: h
+        };
     }
 };
 
