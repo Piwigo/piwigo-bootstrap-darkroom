@@ -33,7 +33,7 @@
         </div>
 {/if}
     </div>
-{if (!empty($THUMBNAILS) || $BODY_ID == "thePicturePage") && ($theme_config_extra->thumbnail_linkto == "photoswipe" || ($theme_config_extra->thumbnail_linkto == "photoswipe_mobile_only" && get_device() != 'desktop'))}
+{if ($theme_config_extra->photoswipe && $BODY_ID == "thePicturePage") || !empty($THUMBNAILS) && ($theme_config_extra->thumbnail_linkto == "photoswipe" || ($theme_config_extra->thumbnail_linkto == "photoswipe_mobile_only" && get_device() != 'desktop'))}
 {include file='_photoswipe_div.tpl'}
 {/if}
 </body>
