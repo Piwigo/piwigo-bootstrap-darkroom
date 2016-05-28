@@ -183,7 +183,12 @@ function startPhotoSwipe(idx) {
         });
 
         photoSwipe.listen('resize', function() { 
-           if ($('.video-modal').length > 0) updateVideoPosition(photoSwipe);
+           if ($('.video-modal').length > 0) {
+              var vsize = setVideoSize(photoSwipe.currItem, photoSwipe.viewportSize);
+              console.log('PhotoSwipe resize in action. Setting video size to ' + vsize.w + 'x' + vsize.h);
+              $('.video-modal').css({literal}{'width':vsize.w, 'height':vsize.h}{/literal});
+              updateVideoPosition(photoSwipe);
+           }
         });
 
         photoSwipe.listen('close', function() {
