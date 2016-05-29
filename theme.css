@@ -17,6 +17,18 @@
   }
 }
 
+.content-grid .col-inner .caption h4.title {
+  position: relative;
+}
+.content-grid .col-inner .caption h4.title a.recent {
+  padding-right: 16px;
+}
+.content-grid .col-inner .caption h4.title img {
+  position: absolute;
+  top: 6px;
+  right: 0;
+}
+
 /* Jumbotron */
 .jumbotron {
   background-color: #2e2e2e;
