@@ -3,12 +3,16 @@
 /* Win Phone 8.1 + fix */
 @-ms-viewport       { width: device-width; }
 
+/* hide jQM loading text */
+.ui-loader { display: none; }
+
 /* Main */
 .col-centered {
  float: none;
  margin: 0 auto;
 }
 
+/* Navigation */
 @media (max-width: 460px) {
   #thePicturePage .navbar-brand,
   #theCategoryPage .navbar-brand {
@@ -17,6 +21,7 @@
   }
 }
 
+/* Category thumbnails */
 .content-grid .col-inner .caption h4.title {
   position: relative;
 }
@@ -66,8 +71,9 @@
   content: "\e007";
 }
 
+
 /* Info tabs */
-#info-content { margin: 0 10px; }
+#infopanel #info-content { margin: 0 10px; }
 @media (min-width: 768px) {
   #infopanel .dl-horizontal dt {
       width: 220px;
@@ -101,9 +107,6 @@
   border: 1px solid white;
 }
 
-/* hide jQM loading text */
-.ui-loader { display: none; }
-
 /* PhotoSwipe */
 .pswp__ui--idle .pswp__caption { opacity: 0; }
 .pswp__button--autoplay { background: none !important; }
@@ -133,6 +136,9 @@
 
 /* Wells */
 .well-categories { margin-bottom: 10px; }
+
+/* Sidebar */
+#sidebar { z-index: 100; }
 
 /*
  * Plugin fixlets
