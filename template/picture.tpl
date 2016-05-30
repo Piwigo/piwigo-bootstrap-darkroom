@@ -17,6 +17,7 @@
             <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a> [{$PHOTO}]</div>
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
+if (!navigator.userAgent.match(/rv:11/)) {
  var $nrLevels = $('.navbar-secondary .navbar-brand a').length,
      $html;
  while ($nrLevels > 2) {
@@ -29,6 +30,7 @@ $(document).ready(function() {
       $('.navbar-secondary .navbar-brand').html($html);
    }
  }
+}
 });
 {/strip}{/footer_script}
         </div>
