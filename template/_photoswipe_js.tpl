@@ -254,7 +254,6 @@ function startPhotoSwipe(idx) {
                 var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen,
                     event = state ? 'FullscreenOn' : 'FullscreenOff',
                     holder_height = item.h;
-                console.log('fullscreen toggled: ' + event + ', video height: ' + holder_height);
                 if (event === 'FullscreenOn') {
                     $('#the_page').hide();
                     $('body').css('height', window.screen.height);
@@ -283,11 +282,9 @@ function startPhotoSwipe(idx) {
             vw = vp.x,
             r,
             vh;
-            console.log('video width: ' + w + ', viewport width: ' + vw);
         if (vw < w) {
             r = w/h;
             vh = vw/r;
-            console.log('viewport is smaller. resized video to ' + vw + 'x' + vh);
             w = vw;
             h = vh;
         }
