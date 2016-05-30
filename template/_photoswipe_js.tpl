@@ -249,7 +249,7 @@ function startPhotoSwipe(idx) {
         }
 
         {* this is soooo nasty, but i have no better idea to fix the fullscreen video issue on OS X, Chrome/Windows *}
-        if ((navigator.appVersion.indexOf("Windows") !== -1 && navigator.userAgent.match(/(Chrome|Firefox)/)) || navigator.appVersion.indexOf("Macintosh") !== -1 ) {
+        if ((navigator.appVersion.indexOf("Windows") !== -1 && navigator.userAgent.match(/(Chrome|Firefox)/)) || navigator.userAgent.match(/(X11|Macintosh)/)) {
             $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange', function(e) {
                 var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen,
                     event = state ? 'FullscreenOn' : 'FullscreenOff',
