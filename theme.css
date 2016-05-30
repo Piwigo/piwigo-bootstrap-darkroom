@@ -141,6 +141,9 @@
 /* Sidebar */
 #sidebar { z-index: 100; }
 
+/* Video */
+video[poster] { object-fit: cover; }
+
 /*
  * Plugin fixlets
  */
