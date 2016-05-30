@@ -240,7 +240,7 @@ function startPhotoSwipe(idx) {
             if (navigator.userAgent.match(/(iPhone|iPad|Android)/)) {
                 $('.pswp-video-modal').css('background', 'none');
             }
-            $('.pswp__button--autoplay.stop')[0].click();
+            if ($('.pswp__button--autoplay.stop').length > 0) $('.pswp__button--autoplay.stop')[0].click();
         }));
         if (navigator.appVersion.indexOf("Windows") !== -1 && navigator.userAgent.match(/(Edge|rv:11)/)) {
             v.insertAfter('.pswp__scroll-wrap');
