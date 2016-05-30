@@ -4,13 +4,17 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 
 ### Features
 
-* Choose themes from [Bootswatch](https://bootswatch.com), or use the included dark color scheme based on Lightroom's colors (default).
+* Choose color themes from [Bootswatch](https://bootswatch.com), or use the included dark color scheme based on Lightroom's colors (default).
 * Configurable carousel album navigation on the picture page using [slick slider](http://kenwheeler.github.io/slick/)
 * Full screen slideshow view using [PhotoSwipe](http://photoswipe.com)
- * Auto play support
- * Video support (using HTML 5 video player modal)
-* Fully responsive Navbars, Carousel and PhotoSwipe view
-* Mobile ready features (async loading of carousel & PhotoSwipe content, adaptive image size selection, swipe & tap events) 
+ * Auto play support (replaces Piwigo default slideshow)
+ * Album thumbnails can be linked to PhotoSwipe directly (like smartpocket)
+ * Video support inside the slideshow modal
+* Video support on Picture page using native HTML 5 video widget
+* 100% mobile ready
+ * fully responsive Navbars, Carousel, PhotoSwipe slideshow, video content
+ * async/ondemand loading of carousel & PhotoSwipe content, adaptive image size selection, swipe & tap events
+ 
 
 ### Usage
 
@@ -27,9 +31,8 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 
 ### Known issues
 
-* The secondary navbar on the picture page might span several lines, depending on the length of the category/picture name. As a workaround, the number of nested levels is truncated to max 2 levels.
+* The secondary navbar on the picture page might span several lines, depending on the length of the category/picture name. As a workaround, the number of nested levels is truncated to max 2 levels by default.
 * On iOS the PhotoSwipe fullscreen mode isn't supported. On iPhone it does work in landscape orientation only, on iPad it doesn't work at all. That's an iOS bug. Works just fine on Android
-* For videos, PhotoSwipe will show the thumbnail instead of playing the video
 * Plugins that add buttons to the Navbar might not (yet) be supported, see [Plugin Support Matrix](https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki/Plugin-Support-Matrix)
 * The Sidebar, if enabled in settings, doesn't play well with Bootswatch Themes. You need to CSS-style the sidebar yourself.
 
