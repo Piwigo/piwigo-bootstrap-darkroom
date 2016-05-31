@@ -104,5 +104,9 @@ function get_all_thumbnails_in_category()
   unset($tpl_thumbnails_var, $pictures);
 }
 
+// register video files
+$video_ext = array('mp4','m4v');
+$conf['file_ext'] = array_merge ($conf['file_ext'], $video_ext, array_map('strtoupper', $video_ext));
+
 $controller = new \BootstrapDarkroom\ThemeController();
 $controller->init();
