@@ -16,8 +16,10 @@
 @media (max-width: 460px) {
   #thePicturePage .navbar-brand,
   #theCategoryPage .navbar-brand {
-    height: 100%;
     width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
@@ -167,4 +169,42 @@ video[poster] { object-fit: cover; }
 .batch-downloader-icon:before {
   content:"\e197";
   font-family:"Glyphicons Halflings";
+}
+
+/* Navmenu stuff */
+html, body {
+  height: 100%;
+}
+#the_page { padding-top: 70px; }
+.navbar {
+  z-index: 3;
+  border-bottom: none;
+  width: 100%;
+}
+.navbar-toggle {
+  float: right;
+  vertical-align: middle;
+}
+@media (min-width: 992px) {
+  .navbar {
+    left: auto;
+  }
+}
+.navmenu {
+   overflow: visible;
+   width: 50px;
+   padding-top: 50px;
+   z-index: 2;
+   font-size: 20px;
+   border: none;
+   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+}
+.navbar-secondary {
+   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+}
+.canvas {
+  position: relative;
+  left: 0;
+  z-index: 1;
+  min-height: 100%;
 }

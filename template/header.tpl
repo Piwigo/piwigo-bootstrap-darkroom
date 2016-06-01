@@ -46,6 +46,7 @@
 {else}
     {combine_css path="themes/bootstrap_darkroom/bootstrap/dist/css/bootstrap.min.css" order=-20}
 {/if}
+    {combine_css path='themes/bootstrap_darkroom/jasny-bootstrap/css/jasny-bootstrap.min.css' order=-15}  
 {foreach from=$themes item=theme}
 {if $theme.load_css}
     {combine_css path="themes/`$theme.id`/theme.css" order=-10}
@@ -77,6 +78,7 @@
 {combine_script id='thumbnails-loader' require='jquery-ajaxmanager' path='themes/default/js/thumbnails.loader.js'}
 {combine_script id='plugin.fixes' require='jquery' path='themes/bootstrap_darkroom/js/plugin_fixes.js'}
 {combine_script id='bootstrap' require='jquery' require='plugin.fixes' path="themes/bootstrap_darkroom/bootstrap/dist/js/bootstrap.min.js"}
+{combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/jasny-bootstrap/js/jasny-bootstrap.min.js'}
 {combine_script id=$themeconf.name require='bootstrap' path="themes/bootstrapdefault/js/theme.js"}
 {get_combined_scripts load='header'}
 
@@ -94,10 +96,10 @@
     <div id="the_page">
 {if $BODY_ID != 'thePicturePage' or $theme_config->picture_page == 'normal'}
         <!-- Bootstrap navbar, moved to the header as variables are missing in menubar.tpl, actual menus remain in menubar.tpl -->
-        <nav class="navbar navbar-default navbar-main" role="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top navbar-main" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menubar-navbar-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -105,7 +107,7 @@
                     </button>
                     <a class="navbar-brand" href="{$U_HOME}">{$GALLERY_TITLE}</a>
                 </div>
-                <div class="collapse navbar-collapse navbar-right" id="menubar-navbar-collapse">
+                <div class="collapse navbar-collapse navbar-right" id="primary-navbar">
 {$MENUBAR}
                 </div>
             </div>
