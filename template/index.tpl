@@ -116,12 +116,11 @@ $('#startSlideshow')[0].search = "";
             </ul>
 </div>
 
-{html_style}
-#the_page { padding-top: 120px; }
-.navbar-secondary { top: 50px; }
-{/html_style}
+{footer_script require='jquery'}{literal}
+$('.navbar-secondary').affix({ offset: {top: 50} });
+{/literal}{/footer_script}
 <div class="canvas">
-<nav class="navbar navbar-default navbar-fixed-top navbar-secondary" role="navigation">
+<nav class="navbar navbar-default navbar-secondary" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#secondary-navmenu" data-recalc="false" data-canvas=".canvas">
@@ -252,7 +251,7 @@ $('#startSlideshow')[0].search = "";
 {include file='infos_errors.tpl'}
 
 <a name="content"></a>
-<div class="container">
+<div id="content-spacer" class="container">
 {if !empty($PLUGIN_INDEX_CONTENT_BEGIN)}{$PLUGIN_INDEX_CONTENT_BEGIN}{/if}
 
 <!--

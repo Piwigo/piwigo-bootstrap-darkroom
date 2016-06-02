@@ -2,8 +2,6 @@
 {if get_device() != 'desktop'}
 {combine_script id='jquery.mobile-events' path='themes/bootstrap_darkroom/js/jquery.mobile-events.min.js' require='jquery'}
 {/if}
-{combine_css path='themes/bootstrap_darkroom/jasny-bootstrap/css/jasny-bootstrap.min.css'}
-{combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/jasny-bootstrap/js/jasny-bootstrap.min.js' load='footer'}
 
 {if !empty($PLUGIN_PICTURE_BEFORE)}{$PLUGIN_PICTURE_BEFORE}{/if}
 
@@ -11,7 +9,7 @@
 
 {include file='infos_errors.tpl'}
 
-<div class="container">
+<div id="content-spacer" class="container">
     {include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
 {if get_device() != 'desktop' }
 {footer_script require="jquery"}{strip}

@@ -52,14 +52,11 @@
     {combine_css path="themes/`$theme.id`/theme.css" order=-10}
 {/if}
 {if !$theme_config_extra->bootswatch}
-    {combine_css path="themes/bootstrap_darkroom/theme-colors.css"}
+    {combine_css path="themes/bootstrap_darkroom/theme-colors.css" order=-5}
 {/if}
 {if !empty($theme.local_head)}{include file=$theme.local_head load_css=$theme.load_css}{/if}
 {/foreach}
 
-{if $theme_config->bootstrap_theme == 'default' and !$theme_config_extra->bootswatch}
-{combine_css path="themes/bootstrap_darkroom/bootstrap/dist/css/bootstrap-theme.min.css" order=0}
-{/if}
 {if file_exists("local/bootstrapdefault/custom.css")}
 {combine_css path="local/bootstrapdefault/custom.css" order=10}
 {/if}
@@ -96,7 +93,7 @@
     <div id="the_page">
 {if $BODY_ID != 'thePicturePage' or $theme_config->picture_page == 'normal'}
         <!-- Bootstrap navbar, moved to the header as variables are missing in menubar.tpl, actual menus remain in menubar.tpl -->
-        <nav class="navbar navbar-default navbar-fixed-top navbar-main" role="navigation">
+        <nav class="navbar navbar-default navbar-main" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-navbar">
