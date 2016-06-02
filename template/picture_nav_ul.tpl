@@ -1,12 +1,3 @@
-    <ul class="nav {$usefor}-nav">
-{if $usefor == "navmenu"}
-{footer_script require='jquery'}
-$(document).ready(function() {
-  $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
-  $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
-});
-{/footer_script}
-{/if}
 {if isset($current.unique_derivatives) && count($current.unique_derivatives)>1}
 {if $usefor == "navbar"}
 {footer_script require='jquery'}{strip}
@@ -121,4 +112,3 @@ $(document).ready(function() {
             </a>
         </li>
 {/if}
-    </ul>

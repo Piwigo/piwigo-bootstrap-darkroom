@@ -5,8 +5,28 @@ $('.navmenu').css('background-color', nav_bg);
 {/footer_script}
 {/if}
 
+{footer_script require='jquery'}
+$('.navmenu').on('show.bs.offcanvas', function() {
+    console.log('show.bs.offcanvas fired');
+    console.log($('ul.navmenu-nav').contents().length);
+    if ($('ul.navmenu-nav').contents().length === 0) {
+        console.log($('ul.navbar-nav').contents());
+        $($('ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
+        $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
+        $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
+    }
+});
+$('.navmenu').on('hidden.bs.offcanvas', function() {
+    if ($('ul.navmenu-nav').contents().length > 0) {
+        $($('ul.navmenu-nav').contents()).appendTo('ul.navbar-nav');
+        $('ul.navmenu-nav').find('.dropdown-menu-right').removeClass('dropdown-menu-right');
+        $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', '');
+    }
+});
+{/footer_script}
+
 <div id="picture-nav" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
-    {include file='picture_nav_ul.tpl' usefor='navmenu'}
+    <ul class="nav navmenu-nav"></ul>
 </div>
 <div class="canvas">
     <nav class="navbar navbar-default navbar-fixed-top navbar-secondary">
@@ -39,7 +59,9 @@ if (!navigator.userAgent.match(/rv:11/)) {
 {/strip}{/footer_script}
             </div>
             <div class="navbar-right navbar-collapse collapse">
-                {include file='picture_nav_ul.tpl' usefor='navbar'}
+                <ul class="nav navbar-nav">
+                    {include file='picture_nav_ul.tpl' usefor='navbar'}
+                </ul>
             </div>
         </div>
     </nav>
