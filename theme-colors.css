@@ -172,7 +172,7 @@ a:active,
     border: 1px solid #2e2e2e;
 }
 .nav-tabs>li>a {
-    background-color: #4f4f4f;
+    background-color: #3c3c3c;
 }
 .nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
     background-color: #2e2e2e;
