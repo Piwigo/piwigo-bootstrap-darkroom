@@ -12,15 +12,24 @@
 </div>
 
 {footer_script require='jquery'}{literal}
-$('.navbar-secondary').affix({ offset: {top: 50} });
+if ($('.jumbotron').length > 0) {
+    var $affix_height = $('.navbar-main').height() + $('.jumbotron').outerHeight();
+    $('.navbar-secondary').affix({ offset: {top: $affix_height } });
+    $('.navmenu').css('top', $affix_height);
+} else {
+    $('.navbar-secondary').affix({ offset: {top: 50} });
+}
+{/literal}
 $('.navmenu').on('show.bs.offcanvas', function() {
-    console.log('show.bs.offcanvas fired');
-    console.log($('ul.navmenu-nav').contents().length);
     if ($('.navbar-secondary ul.navmenu-nav').contents().length === 0) {
-        console.log($('.navbar-secondary ul.navbar-nav').contents());
         $($('.navbar-secondary ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
         $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
+{if $theme_config_extra->bootswatch}
+        $('.navmenu').css('background-color', $('.navbar-secondary').css('background-color'));
+        $('ul.navmenu-nav').find('a').css('color', $('ul.navbar-nav>li>a').css('color'));
+        $('ul.navmenu-nav').find('.active a').css('background-color', $('ul.navbar-nav>.active>a').css('background-color'));
+{/if}
     }
 });
 $('.navmenu').on('hidden.bs.offcanvas', function() {
@@ -30,7 +39,7 @@ $('.navmenu').on('hidden.bs.offcanvas', function() {
         $($('ul.navmenu-nav').contents()).appendTo('.navbar-secondary ul.navbar-nav');
     }
 });
-{/literal}{/footer_script}
+{/footer_script}
 <div class="canvas">
 <nav class="navbar navbar-default navbar-secondary" role="navigation">
     <div class="container">

@@ -1,10 +1,3 @@
-{footer_script require='jquery'}
-$(document).ready(function() {
-  $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
-  $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
-});
-{/footer_script}
-    <ul class="nav {$usefor}-nav">
 {if !empty($image_orders)}
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -106,6 +99,6 @@ $('#startSlideshow')[0].search = "";
 {if !empty($PLUGIN_INDEX_BUTTONS)}{foreach from=$PLUGIN_INDEX_BUTTONS item=button}<li>{$button}</li>{/foreach}{/if}
 {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
 {if ((!empty($CATEGORIES) && !isset($GDThumb)) || (!empty($THUMBNAILS) && !isset($GThumb) && !isset($GDThumb))) && ($theme_config_extra->category_wells == 'never' || ($theme_config_extra->category_wells == 'mobile_only' && get_device() == 'desktop'))}
-                <li id="btn-grid"{if $smarty.cookies.view != 'list'} class="active"{/if}><a href="#"><span class="glyphicon glyphicon-th"></span></a></li>
-                <li id="btn-list"{if $smarty.cookies.view == 'list'} class="active"{/if}><a href="#"><span class="glyphicon glyphicon-th-list"></span></a></li>
+                <li id="btn-grid"{if $smarty.cookies.view != 'list'} class="active"{/if}><a href="javascript:;"><span class="glyphicon glyphicon-th"></span></a></li>
+                <li id="btn-list"{if $smarty.cookies.view == 'list'} class="active"{/if}><a href="javascript:;"><span class="glyphicon glyphicon-th-list"></span></a></li>
 {/if}

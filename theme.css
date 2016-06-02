@@ -36,11 +36,6 @@
   right: 0;
 }
 
-/* Jumbotron */
-.jumbotron {
-  background-color: #2e2e2e;
-}
-
 /* Rating */
 #rating .rateButtonStarFull {
   position: relative;

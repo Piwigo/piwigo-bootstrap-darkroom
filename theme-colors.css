@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
 
+/* Jumbotron */
 .jumbotron {
   background-color: #2e2e2e;
 }
@@ -20,7 +21,7 @@ body {
 .navmenu-default {
   background-image: none !important;
   background-color: #2E2E2E;
-  border-color: #000;
+  border: none;
 }
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
