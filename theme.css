@@ -75,7 +75,7 @@
 
 
 /* Info tabs */
-#infopanel #info-content { margin: 0 10px; }
+.tab-pane { margin: 0 10px; }
 @media (min-width: 768px) {
   #infopanel .dl-horizontal dt {
       width: 220px;
