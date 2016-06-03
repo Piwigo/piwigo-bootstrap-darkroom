@@ -39,12 +39,22 @@ $('.navmenu').on('hidden.bs.offcanvas', function() {
         $($('ul.navmenu-nav').contents()).appendTo('.navbar-secondary ul.navbar-nav');
     }
 });
+if ($('.navbar-main')) {
+  $('.navmenu').css('top', '50px');
+}
+$('.navbar-secondary').on('affix.bs.affix', function() {
+    $('.navmenu').css('top', '');
+});
+$('.navbar-secondary').on('affix-top.bs.affix', function() {
+    if ($('.navbar-main')) {
+       $('.navmenu').css('top', '50px');
+    }
+});
 {/footer_script}
-<div class="canvas">
 <nav class="navbar navbar-default navbar-secondary" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#secondary-navmenu" data-recalc="false" data-canvas=".canvas">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#secondary-navmenu">
                <span class="sr-only">Toggle navigation</span>
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
@@ -64,7 +74,6 @@ $('.navmenu').on('hidden.bs.offcanvas', function() {
         </div>
     </div>
 </nav>
-</div>
 
 {include file='infos_errors.tpl'}
 
