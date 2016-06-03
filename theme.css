@@ -7,21 +7,80 @@
 .ui-loader { display: none; }
 
 /* Main */
+html, body {
+  height: 100%;
+}
 .col-centered {
  float: none;
  margin: 0 auto;
 }
 
 /* Navigation */
-@media (max-width: 460px) {
-  #thePicturePage .navbar-brand,
-  #theCategoryPage .navbar-brand {
+.navbar-secondary {
+   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+   /* enable accel on affix navbar (avoids affix delay on iOS */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+@media (min-width: 769px) and (max-width: 991px) {
+  .navbar-secondary .navbar-header {
+    width: 45%;
+  }
+  .navbar-secondary .navbar-brand {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-secondary .navbar-brand {
     width: 80%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
 }
+
+.affix {
+  top: 0px;
+  width: 100%;
+}
+.navbar {
+  z-index: 103;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  width: 100%;
+}
+.navbar-toggle {
+  float: right;
+  vertical-align: middle;
+}
+@media (min-width: 992px) {
+  .navbar {
+    left: auto;
+  }
+}
+.navmenu {
+   overflow: visible;
+   width: 60px;
+   padding-top: 55px;
+   z-index: 102;
+   font-size: 20px;
+   border: none;
+   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+}
+.canvas {
+  position: relative;
+  left: 0;
+  z-index: 101;
+}
+
+.canvas, .canvas .nav { height: 50px; }
+#content-spacer { padding-top: 30px; }
+#theCategoryPage { padding-left: 0px !important; }
 
 /* Category thumbnails */
 .content-grid .col-inner .caption h4.title {
@@ -166,48 +225,3 @@ video[poster] { object-fit: cover; }
   font-family:"Glyphicons Halflings";
 }
 
-/* Navmenu stuff */
-html, body {
-  height: 100%;
-}
-.canvas, .nav { height: 50px; }
-#content-spacer { padding-top: 30px; }
-#theCategoryPage { padding-left: 0px !important; }
-.affix {
-  top: 0px;
-  width: 100%;
-}
-.navbar {
-  z-index: 103;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
-  width: 100%;
-}
-.navbar-toggle {
-  float: right;
-  vertical-align: middle;
-}
-@media (min-width: 992px) {
-  .navbar {
-    left: auto;
-  }
-}
-.navmenu {
-   overflow: visible;
-   width: 50px;
-   padding-top: 50px;
-   z-index: 102;
-   font-size: 20px;
-   border: none;
-   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
-}
-.navbar-secondary {
-   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
-}
-.canvas {
-  position: relative;
-  left: 0;
-  z-index: 101;
-}
