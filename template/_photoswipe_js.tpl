@@ -229,7 +229,7 @@ function startPhotoSwipe(idx) {
                     css : ({literal}{'position': 'absolute','width':vsize.w, 'height':vsize.h}{/literal})
 
         });
-        v.one('{if get_device() == 'desktop'}click{else}touchstart{/if}', (function(event) {
+        v.one('{if get_device() == 'desktop'}click{else}tap{/if}', (function(event) {
             event.preventDefault();
             var playerCode = '<video id="pswp-video" width="100%" height="auto" autoplay controls>' +
             '<source src="'+vfile+'" type="video/mp4"></source>' +
