@@ -23,12 +23,14 @@ body {
   background-color: #2E2E2E;
   border: none;
 }
-.navbar-default .navbar-toggle:focus,
-.navbar-default .navbar-toggle:hover {
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form { border-color: #4f4f4f; }
+.navbar-default .navbar-toggle { border-color: #4f4f4f; }
+
+.navbar-secondary .navbar-toggle:focus,
+.navbar-secondary .navbar-toggle:hover {
   background-color: #000;
 }
-.navbar-default .navbar-toggle { border-color: #4f4f4f; }
-.navbar-default .navbar-collapse, .navbar-default .navbar-form { border-color: #4f4f4f; }
 
 .navbar-main { background-color: #000; }
 .navbar-main .navbar-toggle:focus,
