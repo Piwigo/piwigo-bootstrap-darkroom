@@ -97,8 +97,8 @@ a:active,
     background-color: #2e2e2e;
     background-image: none !important;
 }
-.dropdown-menu .divider { background-color: #3c3c3c; }
 @media (max-width: 767px) {
+  .dropdown-menu .divider { background-color: #3c3c3c; }
   .navbar-default .navbar-nav .open .dropdown-menu {
     background-color: #2e2e2e;
   }
