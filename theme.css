@@ -75,8 +75,8 @@ html, body {
 }
 
 .nav-wrapper { height: 50px; }
-#thePicturePage #content-spacer { padding-top: 70px; }
-#theCategoryPage #content-spacer { padding-top: 20px; }
+#thePicturePage #content-spacer { padding-top: 80px; }
+#theCategoryPage #content-spacer { padding-top: 30px; }
 #theCategoryPage { padding-left: 0px !important; }
 
 /* Category thumbnails */
