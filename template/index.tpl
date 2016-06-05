@@ -65,6 +65,24 @@ $('.navbar-secondary').on('affix-top.bs.affix', function() {
 {if isset($chronology.TITLE)}
                 {$LEVEL_SEPARATOR}{$chronology.TITLE}
 {/if}
+{footer_script require='jquery'}{strip}
+$(document).ready(function() {
+if (!navigator.userAgent.match(/rv:11/)) {
+ var $nrLevels = $('.navbar-secondary .navbar-brand a').length,
+     $html;
+ while ($nrLevels > 2) {
+   $('.navbar-secondary .navbar-brand a')[0].remove();
+   $nrLevels = $('.navbar-secondary .navbar-brand a').length;
+   $html = $('.navbar-secondary .navbar-brand').html().replace(/^ \/ /, "");
+   if ($nrLevels === 2) {
+      $('.navbar-secondary .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>' + $html);
+   } else {
+      $('.navbar-secondary .navbar-brand').html($html);
+   }
+ }
+}
+});
+{/strip}{/footer_script}
             </div>
         </div>
         <div class="navbar-right navbar-collapse collapse" id="secondary-navbar">
