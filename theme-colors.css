@@ -25,6 +25,11 @@ body {
   border: none;
 }
 
+.navbar-default .navbar-brand { color: #a9a9a9; }
+.navbar-default a.navbar-brand:focus,
+.navbar-default a.navbar-brand:hover {
+  color: #fff;
+}
 .navbar-default .navbar-collapse, .navbar-default .navbar-form { border-color: #4f4f4f; }
 .navbar-default .navbar-toggle { border-color: #4f4f4f; }
 
