@@ -17,7 +17,7 @@ if ($('.jumbotron').length > 0) {
     $('.navbar-secondary').affix({ offset: {top: $affix_height } });
     $('.navmenu').css('top', $affix_height);
 } else {
-    $('.navbar-secondary').affix({ offset: {top: 50} });
+    $('.navbar-secondary').affix({ offset: {top: $('.navbar-main').height()} });
 }
 {/literal}
 $('.navmenu').on('show.bs.offcanvas', function() {
@@ -35,14 +35,14 @@ $('.navmenu').on('hidden.bs.offcanvas', function() {
     }
 });
 if ($('.navbar-main')) {
-  $('.navmenu').css('top', '50px');
+  $('.navmenu').css('top', $('.navbar-main').height());
 }
 $('.navbar-secondary').on('affix.bs.affix', function() {
     $('.navmenu').css('top', '');
 });
 $('.navbar-secondary').on('affix-top.bs.affix', function() {
     if ($('.navbar-main')) {
-       $('.navmenu').css('top', '50px');
+       $('.navmenu').css('top', $('.navbar-main').height());
     }
 });
 {if $theme_config_extra->bootswatch}
