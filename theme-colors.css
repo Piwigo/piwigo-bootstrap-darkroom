@@ -2,7 +2,8 @@
 
 /* Jumbotron */
 .jumbotron {
-  background-color: #2e2e2e;
+  background-color: #000;
+  color: #a9a9a9;
 }
 
 /* Main */
