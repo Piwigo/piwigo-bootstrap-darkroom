@@ -9,14 +9,13 @@ if ($('.jumbotron').length > 0) {
 }
 {/literal}
 $('.navmenu').on('show.bs.offcanvas', function() {
-    console.log('show.bs.offcanvas fired');
-    console.log($('ul.navmenu-nav').contents().length);
     if ($('ul.navmenu-nav').contents().length === 0) {
         console.log($('ul.navbar-nav').contents());
         $($('ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
         $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
     }
+    $('.navmenu').css('background-color', $('.navbar-default').css('background-color'));
 });
 $('.navmenu').on('hidden.bs.offcanvas', function() {
     if ($('ul.navmenu-nav').contents().length > 0) {
