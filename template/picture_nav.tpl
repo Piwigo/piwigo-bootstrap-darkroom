@@ -1,11 +1,13 @@
-{if $theme_config_extra->bootswatch}
 {footer_script require='jquery'}
-var nav_bg = $('.navbar').css('background-color');
-$('.navmenu').css('background-color', nav_bg);
-{/footer_script}
-{/if}
-
-{footer_script require='jquery'}
+{literal}
+if ($('.jumbotron').length > 0) {
+    var $affix_height = $('.navbar-main').height() + $('.jumbotron').outerHeight();
+    $('.navbar-secondary').affix({ offset: {top: $affix_height } });
+    $('.navmenu').css('top', $affix_height);
+} else {
+    $('.navbar-secondary').affix({ offset: {top: 50} });
+}
+{/literal}
 $('.navmenu').on('show.bs.offcanvas', function() {
     console.log('show.bs.offcanvas fired');
     console.log($('ul.navmenu-nav').contents().length);
@@ -25,14 +27,14 @@ $('.navmenu').on('hidden.bs.offcanvas', function() {
 });
 {/footer_script}
 
+
 <div id="picture-nav" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
     <ul class="nav navmenu-nav"></ul>
 </div>
-<div class="canvas">
     <nav class="navbar navbar-default navbar-fixed-top navbar-secondary">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#picture-nav" data-recalc="false" data-canvas=".canvas">
+                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#picture-nav">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -55,6 +57,9 @@ if (!navigator.userAgent.match(/rv:11/)) {
    }
  }
 }
+{if $theme_config_extra->bootswatch}
+        $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
+{/if}
 });
 {/strip}{/footer_script}
             </div>
@@ -65,4 +70,3 @@ if (!navigator.userAgent.match(/rv:11/)) {
             </div>
         </div>
     </nav>
-</div>

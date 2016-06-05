@@ -22,18 +22,7 @@ html, body {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-@media (min-width: 769px) and (max-width: 991px) {
-  .navbar-secondary .navbar-header {
-    width: 45%;
-  }
-  .navbar-secondary .navbar-brand {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-}
-@media (max-width: 768px) {
+@media (max-width: 460px) {
   .navbar-secondary .navbar-brand {
     width: 80%;
     overflow: hidden;
@@ -47,7 +36,6 @@ html, body {
   width: 100%;
 }
 .navbar {
-  z-index: 103;
   border-bottom: none;
   border-left: none;
   border-right: none;
@@ -58,6 +46,8 @@ html, body {
   float: right;
   vertical-align: middle;
 }
+.navbar-main { z-index: 104; }
+.navbar-secondary { z-index: 103; }
 @media (min-width: 992px) {
   .navbar {
     left: auto;
@@ -78,8 +68,9 @@ html, body {
   z-index: 101;
 }
 
-.canvas, .canvas .nav { height: 50px; }
-#content-spacer { padding-top: 30px; }
+.nav-wrapper { height: 50px; }
+#thePicturePage #content-spacer { padding-top: 70px; }
+#theCategoryPage #content-spacer { padding-top: 20px; }
 #theCategoryPage { padding-left: 0px !important; }
 
 /* Category thumbnails */

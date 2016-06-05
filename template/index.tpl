@@ -25,11 +25,6 @@ $('.navmenu').on('show.bs.offcanvas', function() {
         $($('.navbar-secondary ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
         $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
-{if $theme_config_extra->bootswatch}
-        $('.navmenu').css('background-color', $('.navbar-secondary').css('background-color'));
-        $('ul.navmenu-nav').find('a').css('color', $('ul.navbar-nav>li>a').css('color'));
-        $('ul.navmenu-nav').find('.active a').css('background-color', $('ul.navbar-nav>.active>a').css('background-color'));
-{/if}
     }
 });
 $('.navmenu').on('hidden.bs.offcanvas', function() {
@@ -50,7 +45,11 @@ $('.navbar-secondary').on('affix-top.bs.affix', function() {
        $('.navmenu').css('top', '50px');
     }
 });
+{if $theme_config_extra->bootswatch}
+        $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
+{/if}
 {/footer_script}
+<div class="nav-wrapper">
 <nav class="navbar navbar-default navbar-secondary" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -74,6 +73,7 @@ $('.navbar-secondary').on('affix-top.bs.affix', function() {
         </div>
     </div>
 </nav>
+</div>
 
 {include file='infos_errors.tpl'}
 

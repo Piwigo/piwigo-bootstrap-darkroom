@@ -43,6 +43,7 @@
 
 {if $theme_config_extra->bootswatch}
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/{$theme_config_extra->bootswatch_theme}/bootstrap.min.css">
+    {combine_css path="themes/bootstrap_darkroom/bootswatch/navmenu-{$theme_config_extra->bootswatch_theme}.css" order=-5}
 {else}
     {combine_css path="themes/bootstrap_darkroom/bootstrap/dist/css/bootstrap.min.css" order=-20}
 {/if}

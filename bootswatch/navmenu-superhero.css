@@ -1,0 +1,74 @@
+.navmenu-default {
+  background-color: #4e5d6c;
+  border-color: transparent;
+}
+.navmenu-default .navmenu-brand {
+  color: #ebebeb;
+}
+.navmenu-default .navmenu-brand:hover,
+.navmenu-default .navmenu-brand:focus {
+  color: #ebebeb;
+  background-color: transparent;
+}
+.navmenu-default .navmenu-text {
+  color: #ebebeb;
+}
+.navmenu-default .navmenu-nav > li > a {
+  color: #ebebeb;
+}
+.navmenu-default .navmenu-nav > li > a:hover,
+.navmenu-default .navmenu-nav > li > a:focus {
+  color: #ebebeb;
+  background-color: #485563;
+}
+.navmenu-default .navmenu-nav > .active > a,
+.navmenu-default .navmenu-nav > .active > a:hover,
+.navmenu-default .navmenu-nav > .active > a:focus {
+  color: #ebebeb;
+  background-color: #485563;
+}
+.navmenu-default .navmenu-nav > .disabled > a,
+.navmenu-default .navmenu-nav > .disabled > a:hover,
+.navmenu-default .navmenu-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+.navmenu-default .navmenu-toggle {
+  border-color: transparent;
+}
+.navmenu-default .navmenu-toggle:hover,
+.navmenu-default .navmenu-toggle:focus {
+  background-color: #485563;
+}
+.navmenu-default .navmenu-toggle .icon-bar {
+  background-color: #ebebeb;
+}
+.navmenu-default .navmenu-collapse,
+.navmenu-default .navmenu-form {
+  border-color: transparent;
+}
+.navmenu-default .navmenu-nav > .open > a,
+.navmenu-default .navmenu-nav > .open > a:hover,
+.navmenu-default .navmenu-nav > .open > a:focus {
+  background-color: #485563;
+  color: #ebebeb;
+}
+.navmenu-default .navmenu-link {
+  color: #ebebeb;
+}
+.navmenu-default .navmenu-link:hover {
+  color: #ebebeb;
+}
+.navmenu-default .btn-link {
+  color: #ebebeb;
+}
+.navmenu-default .btn-link:hover,
+.navmenu-default .btn-link:focus {
+  color: #ebebeb;
+}
+.navmenu-default .btn-link[disabled]:hover,
+fieldset[disabled] .navmenu-default .btn-link:hover,
+.navmenu-default .btn-link[disabled]:focus,
+fieldset[disabled] .navmenu-default .btn-link:focus {
+  color: #cccccc;
+}
