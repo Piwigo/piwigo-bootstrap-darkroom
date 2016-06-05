@@ -26,7 +26,9 @@ $('.navmenu').on('show.bs.offcanvas', function() {
         $($('.navbar-secondary ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
         $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
+{if $theme_config_extra->bootswatch}
         $('.navmenu').css('background-color', $('.navbar-default').css('background-color'));
+{/if}
     }
 });
 $('.navmenu').on('hidden.bs.offcanvas', function() {

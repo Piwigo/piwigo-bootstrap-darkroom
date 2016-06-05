@@ -15,7 +15,9 @@ $('.navmenu').on('show.bs.offcanvas', function() {
         $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
     }
+{if $theme_config_extra->bootswatch}
     $('.navmenu').css('background-color', $('.navbar-default').css('background-color'));
+{/if}
 });
 $('.navmenu').on('hidden.bs.offcanvas', function() {
     if ($('ul.navmenu-nav').contents().length > 0) {
@@ -25,8 +27,6 @@ $('.navmenu').on('hidden.bs.offcanvas', function() {
     }
 });
 {/footer_script}
-
-
 <div id="picture-nav" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
     <ul class="nav navmenu-nav"></ul>
 </div>
