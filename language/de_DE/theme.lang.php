@@ -36,7 +36,7 @@ $lang['Display the currently selected image in the middle. Works best with infin
 $lang['Enable PhotoSwipe fullscreen slideshow. Disable if you prefer to use Plugins like Fotorama or Piwigo\'s default slideshow.'] = 'Aktiviere die PhotoSwipe Vollbild-Diaschau. Deaktivieren, falls Plugins wie Fotorama oder die Standard-Diaschau von Piwigo bevorzugt werden.';
 $lang['Autoplay interval'] = 'Bildwechsel-Interval';
 $lang['milliseconds'] = 'Millisekunden';
-$lang['Show a jumbotron banner on the categroy pages (disabled by default on mobile devices).'] = 'Zeige einen Jumbotron-Banner auf den Kategorie-Seiten (standardmäßig deaktiviert auf Mobil-Geräten).';
+$lang['Show a jumbotron banner on the categroy pages.'] = 'Zeige einen Jumbotron-Banner auf den Kategorie-Seiten.';
 $lang['Picture information display'] = 'Anzeige der Bild-Informationen';
 $lang['Tabs below the image'] = 'Reiter unter dem Bild';
 $lang['Sidebar (like Boostrap Default)'] = 'Sidebar (wie Boostrap Default)';

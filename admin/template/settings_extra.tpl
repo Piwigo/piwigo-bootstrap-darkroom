@@ -90,7 +90,7 @@
                         <input type="checkbox" name="show_jumbotron"{if $theme_config_extra->show_jumbotron} checked="checked"{/if}>
                         {'Enabled'|@translate}
                     </label>
-                    <span class="info">{'Show a jumbotron banner on the categroy pages (disabled by default on mobile devices).'|@translate}</span>
+                    <span class="info">{'Show a jumbotron banner on the categroy pages.'|@translate}</span>
                 </li>
             </ul>
         </fieldset>
