@@ -92,7 +92,7 @@
 
 <body id="{$BODY_ID}">
     <div id="the_page">
-{if $BODY_ID != 'thePicturePage' or $theme_config->picture_page == 'normal'}
+{if $BODY_ID != 'thePicturePage'}
         <!-- Bootstrap navbar, moved to the header as variables are missing in menubar.tpl, actual menus remain in menubar.tpl -->
         <nav class="navbar navbar-default navbar-main" role="navigation">
             <div class="container">
