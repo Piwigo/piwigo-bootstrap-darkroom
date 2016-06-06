@@ -15,7 +15,6 @@
 })(jQuery);
 
 
-
 /* Batch Downloader START */
 $(document).ready(function() {
   if ($('#batchDownloadLink').next('div#batchDownloadBox').length > 0) {
@@ -29,6 +28,8 @@ $(document).ready(function() {
     $('#batchDownloadBox .switchBoxTitle').addClass('dropdown-header').removeClass('switchBoxTitle');
     $('#batchDownloadBox br').remove();
     $('#batchDownloadBox').addClass('dropdown-menu').removeClass('switchBox');
+  }
+  if ($('.navbar-main dt:contains("Downloads")').length > 0) {
     $('.navbar-main dt:contains("Downloads")').next('dd').appendTo($('.navbar-main dt:contains("Downloads")'));
     $('.navbar-main dt:contains("Downloads")').wrap('<li></li>');
     $('.navbar-main dt:contains("Downloads")').closest('li').addClass('dropdown').attr('id', 'bd_downloads');
