@@ -3,7 +3,7 @@
     <ul class="dropdown-menu dropdown-menu-scrollable" role="menu">
 {assign var='ref_level' value=0}
 {foreach from=$block->data.MENU_CATEGORIES item=cat}
-        <li {if $cat.SELECTED}class="active"{/if}{if $cat.LEVEL > 1} style="padding-left: {$cat.LEVEL * 5}px;"{/if}>
+        <li {if $cat.SELECTED}class="active"{/if}{if $cat.LEVEL > 1} style="padding-left: {($cat.LEVEL -1) * 10}px;"{/if}>
             <a href="{$cat.URL}">{$cat.NAME}
 {if $cat.count_images > 0}
                 <span class="badge" title="{$cat.TITLE}">{$cat.count_images}</span>
