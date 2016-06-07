@@ -37,6 +37,9 @@ body {
 .navbar-secondary .navbar-toggle:hover {
   background-color: #000;
 }
+.navbar-secondary .navbar-brand:hover {
+  color: #a9a9a9;
+}
 
 .navbar-main { background-color: #000; }
 .navbar-main .navbar-toggle:focus,
