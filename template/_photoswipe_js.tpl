@@ -95,7 +95,20 @@ function startPhotoSwipe(idx) {
             closeOnScroll: false,
             closeOnVerticalDrag: false,
             focus: false,
-            history: $history
+            history: $history,
+{if $theme_config->social_enabled}
+            shareButtons: [
+{if $theme_config->social_facebook}{literal}
+                           {id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
+{/literal}{/if}
+{if $theme_config->social_twitter}{literal}
+                           {id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
+{/literal}{/if}
+{if get_device() != 'desktop'}{literal}
+                           {id:'whatsapp', label:'Share via WhatsApp', url:'whatsapp://send?text={{url}}' }
+{/literal}{/if}
+                        ],
+{/if}
         };
         var photoSwipe = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
         var realViewportWidth,
