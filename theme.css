@@ -15,6 +15,9 @@ html, body {
  margin: 0 auto;
 }
 
+.col-inner .caption p { margin: 0 0; }
+.col-inner .caption p.description { margin-top: 10px; }
+
 /* Jumbotron
 @media (max-width: 767px) {
   .jumbotron { display: none; }
