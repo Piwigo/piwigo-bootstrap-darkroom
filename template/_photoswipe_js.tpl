@@ -100,14 +100,18 @@ function startPhotoSwipe(idx) {
 {if $theme_config->social_enabled}
             shareButtons: [
 {if $theme_config->social_facebook}{literal}
-                           {id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
+                           {id:'facebook', label:'<i class="fa fa-facebook"></i> Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
 {/literal}{/if}
 {if $theme_config->social_twitter}{literal}
-                           {id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
+                           {id:'twitter', label:'<i class="fa fa-twitter"></i> Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
 {/literal}{/if}
-{if get_device() != 'desktop'}{literal}
-                           {id:'whatsapp', label:'Share via WhatsApp', url:'whatsapp://send?text={{url}}' }
+{if get_device() == 'mobile'}{literal}
+                           {id:'whatsapp', label:'<i class="fa fa-whatsapp"></i> Share via WhatsApp', url:'whatsapp://send?text={{url}}', download:true},
 {/literal}{/if}
+{literal}
+                           {id:'pinterest', label:'<i class="fa fa-pinterest"></i> Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
+                           {id:'download', label:'<i class="fa fa-cloud-download"></i> Download image', url:'{{raw_image_url}}', download:true}
+{/literal}
                         ],
 {/if}
         };
