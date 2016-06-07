@@ -96,6 +96,7 @@ function startPhotoSwipe(idx) {
             closeOnVerticalDrag: false,
             focus: false,
             history: $history,
+            preload: [1,2],
 {if $theme_config->social_enabled}
             shareButtons: [
 {if $theme_config->social_facebook}{literal}
