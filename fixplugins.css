@@ -102,6 +102,10 @@ ul.thumbnails,
 ul#thumbnails {
   padding-left: 0px;
 }
+ul#thumbnails .gthumb a img.thumbnail {
+  border-radius: 0;
+  background: none;
+}
 #content div.loader {
   display: none;
 }
