@@ -1,5 +1,5 @@
-{combine_css path="themes/bootstrap_darkroom/photoswipe/photoswipe.css"}
-{combine_css path="themes/bootstrap_darkroom/photoswipe/default-skin/default-skin.css"}
+{combine_css path="themes/bootstrap_darkroom/photoswipe/photoswipe.css" order=-11}
+{combine_css path="themes/bootstrap_darkroom/photoswipe/default-skin/default-skin.css" order=-12}
 {combine_script id="photoswipe" require="jquery" path="themes/bootstrap_darkroom/photoswipe/photoswipe.min.js"}
 {combine_script id="photoswipe.ui" require="photoswipe" path="themes/bootstrap_darkroom/photoswipe/photoswipe-ui-default.min.js"}
 {footer_script require='jquery' require="photoswipe.ui"}{strip}
@@ -100,17 +100,20 @@ function startPhotoSwipe(idx) {
 {if $theme_config->social_enabled}
             shareButtons: [
 {if $theme_config->social_facebook}{literal}
-                           {id:'facebook', label:'<i class="fa fa-facebook"></i> Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
+                           {id:'facebook', label:'<i class="fa fa-facebook fa-2x"></i> Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
 {/literal}{/if}
 {if $theme_config->social_twitter}{literal}
-                           {id:'twitter', label:'<i class="fa fa-twitter"></i> Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
+                           {id:'twitter', label:'<i class="fa fa-twitter fa-2x"></i> Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
+{/literal}{/if}
+{if $theme_config->social_google_plus}{literal}
+                           {id:'google', label:'<i class="fa fa-google-plus fa-2x"></i> Share on Google+', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
 {/literal}{/if}
 {if get_device() == 'mobile'}{literal}
-                           {id:'whatsapp', label:'<i class="fa fa-whatsapp"></i> Share via WhatsApp', url:'whatsapp://send?text={{url}}', download:true},
+                           {id:'whatsapp', label:'<i class="fa fa-whatsapp fa-2x"></i> Share via WhatsApp', url:'whatsapp://send?text={{url}}', download:true},
 {/literal}{/if}
 {literal}
-                           {id:'pinterest', label:'<i class="fa fa-pinterest"></i> Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
-                           {id:'download', label:'<i class="fa fa-cloud-download"></i> Download image', url:'{{raw_image_url}}', download:true}
+                           {id:'pinterest', label:'<i class="fa fa-pinterest fa-2x"></i> Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
+                           {id:'download', label:'<i class="fa fa-cloud-download fa-2x"></i> Download image', url:'{{raw_image_url}}', download:true}
 {/literal}
                         ],
 {/if}

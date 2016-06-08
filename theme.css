@@ -190,6 +190,7 @@ html, body {
 .pswp-video-modal video {
     visibility: hidden;
 }
+.pswp--touch .pswp__share-tooltip a { padding: 10px 12px; }
 
 /* Wells */
 .well-categories { margin-bottom: 10px; }
