@@ -3,6 +3,8 @@
 {combine_script id="slick.carousel" require="jquery" path="themes/bootstrap_darkroom/slick/slick.min.js"}
 {footer_script require='jquery' require="slick.carousel"}{strip}
 $(document).ready(function(){
+  var _nr = {sizeOf($thumbnails) % 2};
+  console.log(_nr);
   $('#thumbnailCarousel').slick({
     infinite: {if $theme_config_extra->slick_infinite}true{else}false{/if},
 {if $theme_config_extra->slick_centered}
@@ -11,21 +13,21 @@ $(document).ready(function(){
 {else}
     centerMode: false,
 {/if}
-    slidesToShow: {if sizeOf($thumbnails) <= 7}{sizeOf($thumbnails)}{else}7{/if},
+    slidesToShow: {if sizeOf($thumbnails) <= 7}{if $theme_config_extra->slick_centered && sizeOf($thumbnails) > 2 && (sizeOf($thumbnails) % 2 == 0)}{sizeOf($thumbnails) -1}{else}{sizeOf($thumbnails)}{/if}{else}7{/if},
     slidesToScroll: {if sizeOf($thumbnails) <= 7}{sizeOf($thumbnails) - 1}{else}6{/if},
     lazyLoad: '{if $theme_config_extra->slick_lazyload == "progressive"}progressive{else}ondemand{/if}',
     responsive: [
      {
       breakpoint: 1200,
       settings: {
-       slidesToShow: {if sizeOf($thumbnails) <= 5}{sizeOf($thumbnails)}{else}5{/if},
+       slidesToShow: {if sizeOf($thumbnails) <= 5}{if $theme_config_extra->slick_centered && sizeOf($thumbnails) > 2 && (sizeOf($thumbnails) % 2 == 0)}{sizeOf($thumbnails) -1}{else}{sizeOf($thumbnails)}{/if}{else}5{/if},
        slidesToScroll: {if sizeOf($thumbnails) <= 5}{sizeOf($thumbnails) - 1}{else}4{/if}
       }
      },
      {
       breakpoint: 1024,
       settings: {
-       slidesToShow: {if sizeOf($thumbnails) <= 5}{sizeOf($thumbnails)}{else}5{/if},
+       slidesToShow: {if sizeOf($thumbnails) <= 5}{if $theme_config_extra->slick_centered && sizeOf($thumbnails) > 2 && (sizeOf($thumbnails) % 2 == 0)}{sizeOf($thumbnails) -1}{else}{sizeOf($thumbnails)}{/if}{else}5{/if},
        slidesToScroll: {if sizeOf($thumbnails) <= 5}{sizeOf($thumbnails) - 1}{else}4{/if}
       }
      },
