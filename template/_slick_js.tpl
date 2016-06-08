@@ -11,13 +11,13 @@ $(document).ready(function(){
 {if $theme_config_extra->slick_centered}
     centerMode: true,
     swipeToSlide: true,
-    slidesToShow: {if sizeOf($thumbnails) <= 7}{if sizeOf($thumbnails) > 2 && (sizeOf($thumbnails) % 2 == 0)}{sizeOf($thumbnails) -1}{else}{if sizeOf($thumbnails) == 5}3{else}{sizeOf($thumbnails)}{/if}{/if}{else}7{/if},
+    slidesToShow: {if sizeOf($thumbnails) <= 7}{if sizeOf($thumbnails) > 2 && (sizeOf($thumbnails) % 2 == 0)}{sizeOf($thumbnails) -1}{else}{sizeOf($thumbnails)}{/if}{else}7{/if},
     slidesToScroll: 1,
     responsive: [
      {
       breakpoint: 1200,
       settings: {
-       slidesToShow: {if sizeOf($thumbnails) <= 5}{if sizeOf($thumbnails) > 2 && (sizeOf($thumbnails) % 2 == 0)}{sizeOf($thumbnails) -1}{else}{if sizeOf($thumbnails) == 5}3{else}{sizeOf($thumbnails)}{/if}{/if}{else}5{/if},
+       slidesToShow: {if sizeOf($thumbnails) <= 5}{if sizeOf($thumbnails) > 2 && (sizeOf($thumbnails) % 2 == 0)}{sizeOf($thumbnails) -1}{else}{sizeOf($thumbnails)}{/if}{else}5{/if},
       }
      },
 {else}
