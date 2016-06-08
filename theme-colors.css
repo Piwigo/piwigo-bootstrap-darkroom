@@ -60,6 +60,7 @@ a:active,
 .navmenu-default .navmenu-nav>li>a:hover {
    color: #fff;
    text-decoration: none;
+   outline: none;
 }
 
 .navbar-default .navbar-nav>.open>a,
