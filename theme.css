@@ -18,11 +18,12 @@ html, body {
 .col-inner .caption p { margin: 0 0; }
 .col-inner .caption p.description { margin-top: 10px; }
 
-/* Jumbotron
+/* Jumbotron */
 @media (max-width: 767px) {
-  .jumbotron { display: none; }
+  .jumbotron p { font-size: 16px; }
+  .jumbotron h1 { font-size: 28px; }
 }
-*/
+
 
 /* Navigation */
 .navbar-secondary {
