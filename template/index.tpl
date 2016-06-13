@@ -142,16 +142,10 @@ if (!navigator.userAgent.match(/rv:11/)) {
 {/if}
 {if isset($U_SLIDESHOW)}
                 <li>
-                    {strip}<a href="{$U_SLIDESHOW}#start-slideshow" id="startSlideshow" title="{'slideshow'|@translate}" rel="nofollow">
+                    <a href="{if $theme_config_extra->photoswipe}javascript:;{else}{$U_SLIDESHOW}{/if}" id="startSlideshow" title="{'slideshow'|@translate}" rel="nofollow">
                         <span class="glyphicon glyphicon-play"></span><span class="glyphicon-text">{'slideshow'|@translate}</span>
-                    </a>{/strip}
+                    </a>
                 </li>
-{if $theme_config_extra->photoswipe}
-{* remove ?slideshow handler here *}
-{footer_script require="jquery"}
-$('#startSlideshow')[0].search = "";
-{/footer_script}
-{/if}
 {/if}
 {if isset($U_MODE_FLAT)}
                 <li>
@@ -246,7 +240,7 @@ $('#startSlideshow')[0].search = "";
         <!-- Start of thumbnails -->
         <div id="thumbnails">{$THUMBNAILS}</div>
 {footer_script}{literal}$(document).ready(function(){$('#content img').load(function(){$('#content .col-inner').equalHeights()})});{/literal}{/footer_script}
-{if $theme_config_extra->thumbnail_linkto == "photoswipe" || ($theme_config_extra->thumbnail_linkto == "photoswipe_mobile_only" && get_device() != 'desktop')}
+{if $theme_config_extra->photoswipe}
 {define_derivative name='derivative_params_medium' type=IMG_MEDIUM}
 {define_derivative name='derivative_params_large' type=IMG_LARGE}
 {define_derivative name='derivative_params_xlarge' type=IMG_XLARGE}
@@ -269,8 +263,7 @@ $('#startSlideshow')[0].search = "";
 {/foreach}
 {include file='_photoswipe_js.tpl' selector='#thumbnailCarousel'}
         </div>
-{footer_script require='jquery' require='photoswipe'}
-$('#startSlideshow').attr('href', 'javascript:;');
+{footer_script require='jquery' require='photoswipe'}{strip}
 $('#startSlideshow').on('click touchstart', function() {
    startPhotoSwipe(0);
    $('.pswp__button--autoplay')[0].click();
@@ -296,6 +289,7 @@ function setupPhotoSwipe() {
    });
 }
 
+{if $theme_config_extra->thumbnail_linkto == "photoswipe" || ($theme_config_extra->thumbnail_linkto == "photoswipe_mobile_only" && get_device() != 'desktop')}
 $(document).ready(function() {
    setupPhotoSwipe();
 });
@@ -305,7 +299,8 @@ $(document).ajaxComplete(function() {
    setupPhotoSwipe();
 });
 {/if}
-{/footer_script}
+{/if}
+{/strip}{/footer_script}
 {/if}
 {footer_script require="jquery"}{strip}
 {if !$videojs_enabled && (isset($GThumb) || isset($GDThumb))}
