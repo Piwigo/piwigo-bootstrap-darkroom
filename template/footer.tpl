@@ -33,7 +33,7 @@
         </div>
 {/if}
     </div>
-{if ($theme_config_extra->photoswipe && $BODY_ID == "thePicturePage") || (!empty($THUMBNAILS) && $theme_config_extra->photoswipe)}
+{if ($theme_config_extra->photoswipe && ($BODY_ID == "thePicturePage") || !empty($THUMBNAILS))}
 {include file='_photoswipe_div.tpl'}
 {/if}
 </body>
