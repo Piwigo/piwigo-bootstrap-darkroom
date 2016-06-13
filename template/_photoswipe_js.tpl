@@ -103,16 +103,16 @@ function startPhotoSwipe(idx) {
                            {id:'facebook', label:'<i class="fa fa-facebook fa-2x"></i> Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
 {/literal}{/if}
 {if $theme_config->social_twitter}{literal}
-                           {id:'twitter', label:'<i class="fa fa-twitter fa-2x"></i> Tweet', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
+                           {id:'twitter', label:'<i class="fa fa-twitter fa-2x"></i> Tweet', url:'https://twitter.com/intent/tweet?url={{url}}'},
 {/literal}{/if}
 {if $theme_config->social_google_plus}{literal}
-                           {id:'google', label:'<i class="fa fa-google-plus fa-2x"></i> Share on Google+', url:'https://twitter.com/intent/tweet?text={{text}}&url={{url}}'},
+                           {id:'google', label:'<i class="fa fa-google-plus fa-2x"></i> Share on Google+', url:'https://plus.google.com/share?url={{url}}'},
 {/literal}{/if}
 {if get_device() == 'mobile'}{literal}
                            {id:'whatsapp', label:'<i class="fa fa-whatsapp fa-2x"></i> Share via WhatsApp', url:'whatsapp://send?text={{url}}', download:true},
 {/literal}{/if}
 {literal}
-                           {id:'pinterest', label:'<i class="fa fa-pinterest fa-2x"></i> Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'},
+                           {id:'pinterest', label:'<i class="fa fa-pinterest fa-2x"></i> Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}'},
                            {id:'download', label:'<i class="fa fa-cloud-download fa-2x"></i> Download image', url:'{{raw_image_url}}', download:true}
 {/literal}
                         ],
