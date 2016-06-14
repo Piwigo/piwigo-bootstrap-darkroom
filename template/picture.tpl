@@ -97,19 +97,16 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
 {if !$theme_config_extra->slick_infinite}
-{if $thumbnail.id eq $current.id && !$theme_config_extra->slick_infinite}<div class="text-center thumbnail-active"><a id="thumbnail-active" {else}<div class="text-center"><a{/if} href="{$thumbnail.URL}"
-                               data-index="{$idx}"
-                               data-title="{$thumbnail.TN_TITLE}"
-                               data-src-xlarge="{$derivative_xlarge->get_url()}"
-                               data-size-xlarge="{$derivative_xlarge->get_size_hr()}"
-                               data-src-large="{$derivative_large->get_url()}"
-                               data-size-large="{$derivative_large->get_size_hr()}"
-                               data-src-medium="{$derivative_medium->get_url()}"
-                               data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{/if}>
+{if $thumbnail.id eq $current.id && !$theme_config_extra->slick_infinite}
+   <div class="text-center thumbnail-active">
+{else}
+   <div class="text-center">
+{/if}
+      <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-title="{$thumbnail.TN_TITLE}" {if !$theme_config_extra->slick_infinite}data-src-xlarge="{$derivative_xlarge->get_url()}" data-size-xlarge="{$derivative_xlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{/if}{/if}>
 {else}
    <div class="text-center{if $thumbnail.id eq $current.id} thumbnail-active{/if}"><a href="{$thumbnail.URL}">
 {/if}
-                               <img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a>
+      <img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-responsive"></a>
    </div>
 {assign var=idx value=$idx+1}
 {/foreach}

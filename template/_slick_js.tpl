@@ -3,8 +3,6 @@
 {combine_script id="slick.carousel" require="jquery" path="themes/bootstrap_darkroom/slick/slick.min.js"}
 {footer_script require='jquery' require="slick.carousel"}{strip}
 $(document).ready(function(){
-  var _nr = {sizeOf($thumbnails) % 2};
-  console.log(_nr);
   $('#thumbnailCarousel').slick({
     infinite: {if $theme_config_extra->slick_infinite}true{else}false{/if},
     lazyLoad: '{if $theme_config_extra->slick_lazyload == "progressive"}progressive{else}ondemand{/if}',
@@ -56,7 +54,7 @@ $(document).ready(function(){
       }
     }]
   });
-  var currentThumbnailIndex = $('#thumbnailCarousel .thumbnail-active').data('slick-index');
+  var currentThumbnailIndex = $('#thumbnailCarousel .thumbnail-active a').data('slick-index');
   $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
 
   $('#thumbnailCarousel').show();
