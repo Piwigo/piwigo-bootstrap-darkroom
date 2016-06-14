@@ -71,7 +71,10 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
 
 {if !empty($thumbnails) && ($theme_config_extra->slick_enabled || $theme_config_extra->photoswipe)}
-<!-- Thumbnail DOM -->
+{define_derivative name='derivative_params_square' type=IMG_SQUARE}
+{define_derivative name='derivative_params_medium' type=IMG_MEDIUM}
+{define_derivative name='derivative_params_large' type=IMG_LARGE}
+{define_derivative name='derivative_params_xxlarge' type=IMG_XXLARGE}
 {if $theme_config_extra->slick_enabled && sizeOf($thumbnails) > 1}
   {include file="_slick_js.tpl"}
 {/if}
@@ -86,11 +89,11 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
   <div id="thumbnailCarousel" class="slick-carousel">
 {assign var=idx value=0}
 {foreach from=$thumbnails item=thumbnail}
-{assign var=derivative value=$pwg->derivative($derivative_params_thumb, $thumbnail.src_image)}
+{assign var=derivative value=$pwg->derivative($derivative_params_square, $thumbnail.src_image)}
 {if !$theme_config_extra->slick_infinite}
 {assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
 {assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
-{assign var=derivative_xlarge value=$pwg->derivative($derivative_params_xlarge, $thumbnail.src_image)}
+{assign var=derivative_xxlarge value=$pwg->derivative($derivative_params_xxlarge, $thumbnail.src_image)}
 {/if}
 {if !$derivative->is_cached()}
 {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
@@ -102,7 +105,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {else}
    <div class="text-center">
 {/if}
-      <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-title="{$thumbnail.TN_TITLE}" {if !$theme_config_extra->slick_infinite}data-src-xlarge="{$derivative_xlarge->get_url()}" data-size-xlarge="{$derivative_xlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{/if}{/if}>
+      <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-title="{$thumbnail.TN_TITLE}" {if !$theme_config_extra->slick_infinite}data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{/if}{/if}>
 {else}
    <div class="text-center{if $thumbnail.id eq $current.id} thumbnail-active{/if}"><a href="{$thumbnail.URL}">
 {/if}
@@ -119,8 +122,8 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
 {assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
-{assign var=derivative_xlarge value=$pwg->derivative($derivative_params_xlarge, $thumbnail.src_image)}
-   <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-title="{$thumbnail.TN_TITLE}" data-src-xlarge="{$derivative_xlarge->get_url()}" data-size-xlarge="{$derivative_xlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{/if}></a>
+{assign var=derivative_xxlarge value=$pwg->derivative($derivative_params_xxlarge, $thumbnail.src_image)}
+   <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-title="{$thumbnail.TN_TITLE}" data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{/if}></a>
 {assign var=idx value=$idx+1}
 {/foreach}
 </div>

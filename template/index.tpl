@@ -243,13 +243,13 @@ if (!navigator.userAgent.match(/rv:11/)) {
 {if $theme_config_extra->photoswipe}
 {define_derivative name='derivative_params_medium' type=IMG_MEDIUM}
 {define_derivative name='derivative_params_large' type=IMG_LARGE}
-{define_derivative name='derivative_params_xlarge' type=IMG_XLARGE}
+{define_derivative name='derivative_params_xxlarge' type=IMG_XXLARGE}
         <div id="thumbnailCarousel">
 {assign var=idx value=0}
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
 {assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
-{assign var=derivative_xlarge value=$pwg->derivative($derivative_params_xlarge, $thumbnail.src_image)}
+{assign var=derivative_xxlarge value=$pwg->derivative($derivative_params_xxlarge, $thumbnail.src_image)}
             <a href="{$thumbnail.URL}"
                data-index="{$idx}"
                data-title="{$thumbnail.TN_TITLE}"
@@ -257,8 +257,8 @@ if (!navigator.userAgent.match(/rv:11/)) {
                data-size-medium="{$derivative_medium->get_size_hr()}"
                data-src-large="{$derivative_large->get_url()}"
                data-size-large="{$derivative_large->get_size_hr()}"
-               data-src-xlarge="{$derivative_xlarge->get_url()}"
-               data-size-xlarge="{$derivative_xlarge->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{/if}></a>
+               data-src-xlarge="{$derivative_xxlarge->get_url()}"
+               data-size-xlarge="{$derivative_xxlarge->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{/if}></a>
 {assign var=idx value=$idx+1}
 {/foreach}
 {include file='_photoswipe_js.tpl' selector='#thumbnailCarousel'}
