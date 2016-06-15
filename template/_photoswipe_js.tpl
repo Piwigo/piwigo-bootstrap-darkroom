@@ -49,7 +49,7 @@ function startPhotoSwipe(idx) {
                          $width_medium  = $size_medium[0],
                          $height_medium = $size_medium[1],
                          $href          = $(this).attr('href'),
-                         $title          = '<a href="' + $href + '">' + $(this).data('name') + '</a><ul><li>' + $(this).data('description') + '</li></ul>';
+                         $title          = '<a href="' + $href + '"><div>' + $(this).data('name') + '<ul><li>' + $(this).data('description') + '</li></ul></div></a>';
                      var item = {
                          is_video: false,
                          mediumImage: {

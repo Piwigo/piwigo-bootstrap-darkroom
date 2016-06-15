@@ -82,7 +82,6 @@ function get_all_thumbnails_in_category()
     $tpl_var = array_merge( $row, array(
       'NAME' => $name,
       'TN_ALT' => htmlspecialchars(strip_tags($name)),
-      'TN_TITLE' => get_thumbnail_title($row, $name, $desc),
       'URL' => $url,
       'DESCRIPTION' => $desc,
       'src_image' => new SrcImage($row),
