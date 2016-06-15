@@ -83,7 +83,7 @@ function get_all_thumbnails_in_category()
       'NAME' => $name,
       'TN_ALT' => htmlspecialchars(strip_tags($name)),
       'URL' => $url,
-      'DESCRIPTION' => $desc,
+      'DESCRIPTION' => htmlspecialchars(strip_tags($desc)),
       'src_image' => new SrcImage($row),
       'SIZE' => $row['width'].'x'.$row['height'],
       'PATH' => $row['path'],
