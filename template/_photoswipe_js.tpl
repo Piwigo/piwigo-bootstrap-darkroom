@@ -112,7 +112,7 @@ function startPhotoSwipe(idx) {
                            {id:'whatsapp', label:'<i class="fa fa-whatsapp fa-2x"></i> Share via WhatsApp', url:'whatsapp://send?text={{url}}', download:true},
 {/literal}{/if}
 {literal}
-                           {id:'pinterest', label:'<i class="fa fa-pinterest fa-2x"></i> Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}'},
+                           {id:'pinterest', label:'<i class="fa fa-pinterest fa-2x"></i> Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media=' + window.location + '/../{{raw_image_url}}'},
                            {id:'download', label:'<i class="fa fa-cloud-download fa-2x"></i> Download image', url:'{{raw_image_url}}', download:true}
 {/literal}
                         ],
