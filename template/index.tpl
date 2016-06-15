@@ -26,7 +26,7 @@ $('.navmenu').on('show.bs.offcanvas', function() {
         $($('.navbar-secondary ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
         $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
-{if $theme_config_extra->bootswatch}
+{if $theme_config_extra->bootstrap_theme == 'bootswatch'}
         $('.navmenu').css('background-color', $('.navbar-default').css('background-color'));
 {/if}
     }
@@ -46,7 +46,7 @@ $('.navbar-secondary').on('affix-top.bs.affix', function() {
        $('.navmenu').css('top', $('.navbar-main').height());
     }
 });
-{if $theme_config_extra->bootswatch}
+{if $theme_config_extra->bootstrap_theme == 'bootswatch'}
         $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
 {/if}
 {/footer_script}

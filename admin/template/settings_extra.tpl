@@ -1,25 +1,32 @@
 {combine_css path="themes/bootstrap_darkroom/admin/css/admin.css"}
 {combine_script id='common' load='footer' path='admin/themes/default/js/common.js'}
 <div class="titrePage">
-    <h2>{'Bootstrap Darkroom'|@translate} {$TABSHEET_TITLE}</h2>
+    <h2>Bootstrap Darkroom {$TABSHEET_TITLE}</h2>
 </div>
 <form method="post" class="properties">
     <input type="hidden" name="boostrap_darkroom_settings" value="true" />
     <div id="configContent">
         <fieldset class="mainConf">
-            <legend>{'Theme colors'|@translate}</legend>
+            <legend>{'Bootstrap theme'|@translate}</legend>
             <ul>
                 <li>
-                    <label class="font-checkbox">
-                        <span class="icon-check"></span>
-                        <input type="checkbox" name="bootswatch"{if $theme_config_extra->bootswatch} checked="checked"{/if}>
-                        {'Enabled'|@translate}
-                    </label>
-                    <span class="info">{'Use a Bootswatch Theme. This overrides Darkroom\'s default colors with a theme from'|@translate} <a href="https://bootswatch.com/">https://bootswatch.com</a>!</span>
+                    <label labelfor="bootstrap_theme">{'Color theme'|@translate}</label>
+                    <select name="bootstrap_theme">
+                        <option value="darkroom"{if $theme_config_extra->bootstrap_theme == 'darkroom'} selected="selected"{/if}>Darkroom</option>
+                        <option value="bootswatch"{if $theme_config_extra->bootstrap_theme == 'bootswatch'} selected="selected"{/if}>Bootswatch</option>
+                        <option value="default"{if $theme_config_extra->bootstrap_theme == 'default'} selected="selected"{/if}>Default</option>
+                        <option value="none"{if $theme_config_extra->bootstrap_theme == 'none'} selected="selected"{/if}>{'None'|@translate}</option>
+                    </select>
                 </li>
-            </ul>
+            <ul>
             <label id="bootswatch_theme_label" labelfor="bootswatch_theme">{'Bootswatch theme'|@translate}</label>
             <select id="bootswatch_theme" name="bootswatch_theme"></select>
+            <dl class="dl-horizontal">
+                <dt>Darkroom</dt><dd>{'Bootstrap Darkroom\'s custom dark color theme'|@translate}</dd>
+                <dt>Bootswatch</dt><dd>{'A color theme from'|@translate} <a href="https://bootswatch.com">https://bootswatch.com</a></dd>
+                <dt>Default</dt><dd>{'Bootstrap\'s default theme'|@translate}</dd>
+                <dt>{'None'|@translate}</dt><dd>{'No color theme'|@translate}</dd> 
+            </dl>
         </fieldset>
         <fieldset class="mainConf">
             <legend>Slick Carousel {'Settings'|@translate}</legend>
@@ -95,21 +102,21 @@
             </ul>
         </fieldset>
         <fieldset>
-            <legend>{'Picture information display'|@translate}</legend>
+            <legend>{'Picture page display'|@translate}</legend>
             <ul>
                 <li>
-                    <label labelfor="picture_info">{'Info display position'|@translate}</label>
+                    <label labelfor="picture_info">{'Picture info display position'|@translate}</label>
                     <select name="picture_info">
                         <option value="tabs"{if $theme_config_extra->picture_info == 'tabs'} selected="selected"{/if}>{'Tabs below the image'|@translate}</option>
                         <option value="sidebar"{if $theme_config_extra->picture_info == 'sidebar'} selected="selected"{/if}>{'Sidebar (like Boostrap Default)'|@translate}</option>
                         <option value="disabled"{if $theme_config_extra->picture_info == 'disabled'} selected="selected"{/if}>{'Disabled'|@translate}</option>
                     </select>
+                    <span class="info">{'Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'|@translate}</span>
                 </li>
             </ul>
-            <p>{'Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'|@translate}</p>
         </fieldset>
         <fieldset>
-            <legend>{'Category display'|@translate}</legend>
+            <legend>{'Category page display'|@translate}</legend>
             <ul>
                 <li>
                     <label labelfor="category_wells">{'Display categories as Bootstrap media wells'|@translate}</label>
@@ -118,12 +125,9 @@
                         <option value="always"{if $theme_config_extra->category_wells == 'always'} selected="selected"{/if}>{'Always'|@translate}</option>
                         <option value="mobile_only"{if $theme_config_extra->category_wells == 'mobile_only'} selected="selected"{/if}>{'On mobile devices only'|@translate}</option>
                     </select>
+                    <span class="info">{'This will display categories as media wells with squared thumbnails, similar to the smartpocket mobile theme.'|@translate}</span>
                 </li>
             </ul>
-            <p>{'This will display categories as media wells with squared thumbnails, similar to the smartpocket mobile theme.'|@translate}</p>
-        </fieldset>
-        <fieldset>
-            <legend>{'Thumbnail Link Target'|@translate}</legend>
             <ul>
                 <li>
                     <label labelfor="thumbnail_linkto">{'Link thumbnail to'|@translate}</label>
@@ -157,7 +161,8 @@ function getBootswatchThemes() {
               .val($lname)
               .text($name));
 
-        if ($lname === cur_theme) {           $('option[value=' + $lname + ']').attr('selected', 'selected');
+        if ($lname === cur_theme) {
+           $('option[value=' + $lname + ']').attr('selected', 'selected');
         }
       });
 
@@ -168,19 +173,19 @@ function getBootswatchThemes() {
 }
 
 $(document).ready(function() {
-  if ($('input[name=bootswatch]').is(':checked')) {
+  if ($('select[name=bootstrap_theme]').val() === 'bootswatch') {
     getBootswatchThemes();
   }
-  curr = $('select[name=thumbnail_linkto]').val();
-  if (!$('input[name=photoswipe]').is(':checked') && curr !== 'photoswipe') {
+  link_target = $('select[name=thumbnail_linkto]').val();
+  if (!$('input[name=photoswipe]').is(':checked') && link_target !== 'photoswipe') {
     $('select[name=thumbnail_linkto]').val('picture');
     $('select[name=thumbnail_linkto] option[value=photoswipe]').attr('disabled', 'disabled');
     $('select[name=thumbnail_linkto] option[value=photoswipe_mobile_only]').attr('disabled', 'disabled');
   }
 });
 
-$('input[name=bootswatch]').change(function() {
-  if ($('input[name=bootswatch]').is(':checked')) {
+$('select[name=bootstrap_theme]').change(function() {
+  if ($('select[name=bootstrap_theme]').val() === 'bootswatch') {
     getBootswatchThemes();
   } else {
     select.empty();

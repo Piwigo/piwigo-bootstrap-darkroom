@@ -8,9 +8,10 @@
     <div id="configContent">
         <fieldset class="mainConf">
             <legend>{'Bootstrap theme'|@translate}</legend>
+            <p><em>This setting is overridden by Boostrap Default</em><p>
             <ul>
                 <li>
-                    <select name="bootstrap_theme">
+                    <select name="bootstrap_theme" disabled="disabled">
                         <option value="none"{if $theme_config->bootstrap_theme == 'none'} selected="selected"{/if}>None</option>
                         <option value="default"{if $theme_config->bootstrap_theme == 'default'} selected="selected"{/if}>Default</option>
                     </select>
@@ -19,14 +20,15 @@
         </fieldset>
         <fieldset class="mainConf">
             <legend>{'Picture page display'|@translate}</legend>
+            <p><em>This setting is overridden by Boostrap Default</em><p>
             <ul>
                 <li>
                     <label class="radio">
-                        <input type="radio" name="picture_page" value="normal"{if $theme_config->picture_page == 'normal'} checked="checked"{/if} />
+                        <input type="radio" name="picture_page" value="normal"{if $theme_config->picture_page == 'normal'} checked="checked"{/if} disabled="disabled"/>
                         {'Normal'|@translate}
                     </label>
                     <label class="radio">
-                        <input type="radio" name="picture_page" value="more-space"{if $theme_config->picture_page == 'more-space'} checked="checked"{/if} />
+                        <input type="radio" name="picture_page" value="more-space"{if $theme_config->picture_page == 'more-space'} checked="checked"{/if} disabled="disabled"/>
                         {'More space*'|@translate}
                     </label>
                 </li>

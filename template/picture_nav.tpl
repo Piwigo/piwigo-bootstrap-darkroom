@@ -15,7 +15,7 @@ $('.navmenu').on('show.bs.offcanvas', function() {
         $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
     }
-{if $theme_config_extra->bootswatch}
+{if $theme_config_extra->bootstrap_theme == 'bootswatch'}
     $('.navmenu').css('background-color', $('.navbar-default').css('background-color'));
 {/if}
 });
@@ -56,7 +56,7 @@ if (!navigator.userAgent.match(/rv:11/)) {
    }
  }
 }
-{if $theme_config_extra->bootswatch}
+{if $theme_config_extra->bootstrap_theme == 'bootswatch'}
         $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
 {/if}
 });

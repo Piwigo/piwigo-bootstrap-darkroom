@@ -22,9 +22,13 @@
 // +-----------------------------------------------------------------------+
 $lang['Enabled'] = 'Aktiviert';
 $lang['Disabled'] = 'Deaktiviert';
-$lang['Theme colors'] = 'Farbschema';
-$lang['Use a Bootswatch Theme. This overrides Darkroom\'s default colors with a theme from'] = 'Benutze ein Booswatch Thema. Dies ersetzt die Standard-Farben mit einem Farbschema von';
-$lang['Bootswatch theme'] = 'Booswatch Thema';
+$lang['Color theme'] = 'Farbschema';
+$lang['Bootstrap Darkroom\'s custom dark color theme'] = 'Bootstrap Darkroom\'s dunkles Farbschema';
+$lang['A color theme from'] = 'Ein Farbschema von';
+$lang['Bootstrap\'s default theme'] = 'Das Standard-Farbschema von Bootstrap';
+$lang['No color theme'] = 'Kein spezielles Farbschema';
+$lang['Bootswatch theme'] = 'Bootswatch Thema';
+$lang['Bootstrap theme'] = 'Bootstrap Thema';
 $lang['Enable the slick carousel below the main image on the picture page'] = 'Aktiviere das Slick-Carousel unter dem Hauptbild auf der Foto-Seite';
 $lang['lazyLoad method'] = 'lazyLoad Methode';
 $lang['will load the image as soon as you slide to it'] = 'läd die nächsten Bilder sobald sie angezeigt werden sollen';
@@ -37,17 +41,17 @@ $lang['Enable PhotoSwipe fullscreen slideshow. Disable if you prefer to use Plug
 $lang['Autoplay interval'] = 'Bildwechsel-Interval';
 $lang['milliseconds'] = 'Millisekunden';
 $lang['Show a jumbotron banner on the categroy pages.'] = 'Zeige einen Jumbotron-Banner auf den Kategorie-Seiten.';
-$lang['Picture information display'] = 'Anzeige der Bild-Informationen';
+$lang['Picture page display'] = 'Erscheinungsbild der Foto-Detailseite';
 $lang['Tabs below the image'] = 'Reiter unter dem Bild';
 $lang['Sidebar (like Boostrap Default)'] = 'Sidebar (wie Boostrap Default)';
-$lang['Info display position'] = 'Position der Info-Anzeige';
+$lang['Picture info display position'] = 'Position der Bild-Informationen';
 $lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Hinweis: auf Mobil-Geräten werden immer die Tabs verwendet, da der Knopf für die Sidebar das Hauptbild überlagern würde.';
 $lang['Thumbnail Link Target'] = 'Verlinkung der Vorschaubilder';
 $lang['Link thumbnail to'] = 'Klick auf Vorschaubild öffnet';
 $lang['Picture details page'] = 'Foto-Detailseite';
 $lang['PhotoSwipe Slideshow'] = 'PhotoSwipe Diaschau';
 $lang['Photoswipe Slideshow (Mobile devices only)'] = 'PhotoSwipe Diaschau (nur auf Mobilgeräten)';
-$lang['Category display'] = 'Darstellung der Kategorie-Seiten';
+$lang['Category page display'] = 'Erscheinungsbild der Kategorie-Seiten';
 $lang['Display categories as Bootstrap media wells'] = 'Zeige Kategorien als Bootstrap Media Wells';
 $lang['Never'] = 'Nie';
 $lang['Always'] = 'Immer';

@@ -27,7 +27,6 @@ html, body {
 
 /* Navigation */
 .navbar-secondary {
-   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
    /* enable accel on affix navbar (avoids affix delay on iOS */
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -46,10 +45,6 @@ html, body {
   width: 100%;
 }
 .navbar {
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
   width: 100%;
 }
 .navbar-toggle {

@@ -7,7 +7,7 @@ require_once(PHPWG_THEMES_PATH . 'bootstrapdefault/include/config.php');
 class ExtraConfig {
 
     const CONF_PARAM = 'bootstrap_darkroom';
-    const CONF_VERSION = 7;
+    const CONF_VERSION = 8;
 
     const TYPE_BOOL = 'bool';
     const TYPE_STRING = 'string';
@@ -15,7 +15,7 @@ class ExtraConfig {
 
     const KEY_VERSION = 'conf_version';
 
-    const KEY_BOOTSWATCH = 'bootswatch';
+    const KEY_BOOTSTRAP_THEME = 'bootstrap_theme';
     const KEY_BOOTSWATCH_THEME = 'bootswatch_theme';
     const KEY_SLICK_ENABLED = 'slick_enabled';
     const KEY_SLICK_LAZYLOAD = 'slick_lazyload';
@@ -29,7 +29,7 @@ class ExtraConfig {
     const KEY_CATEGORY_WELLS = 'category_wells';
 
     private $defaults = array(
-        self::KEY_BOOTSWATCH => false,
+        self::KEY_BOOTSTRAP_THEME => 'darkroom',
         self::KEY_BOOTSWATCH_THEME => 'cerulean',
         self::KEY_SLICK_ENABLED => true,
         self::KEY_SLICK_LAZYLOAD => 'ondemand',
@@ -44,7 +44,7 @@ class ExtraConfig {
     );
 
     private $types = array(
-        self::KEY_BOOTSWATCH => self::TYPE_BOOL,
+        self::KEY_BOOTSTRAP_THEME => self::TYPE_STRING,
         self::KEY_BOOTSWATCH_THEME => self::TYPE_STRING,
         self::KEY_SLICK_ENABLED => self::TYPE_BOOL,
         self::KEY_SLICK_LAZYLOAD => self::TYPE_STRING,
