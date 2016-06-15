@@ -1,7 +1,7 @@
 <?php
 /*
 Theme Name: Bootstrap Darkroom
-Version: 1.4.2
+Version: 1.4.3
 Description: A mobile-ready Bootstrap Default child theme with darker colors based on Lightroom, a carousel on the picture page and PhotoSwipe for fullscreen slide-shows
 Theme URI: http://piwigo.org/ext/extension_view.php?eid=831
 Author: Thomas Kuther
