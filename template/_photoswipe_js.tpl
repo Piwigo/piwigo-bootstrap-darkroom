@@ -25,6 +25,7 @@ function startPhotoSwipe(idx) {
                          $title          = '<a href="' + $href + '">' + $(this).data('name') + '</a><ul><li>' + $(this).data('description') + '</li></ul>';
                      var item = {
                          is_video : true,
+                         href     : $href,
                          src      : $src_preview,
                          w        : $width_preview,
                          h        : $height_preview,
@@ -52,6 +53,7 @@ function startPhotoSwipe(idx) {
                          $title          = '<a href="' + $href + '"><div>' + $(this).data('name') + '<ul><li>' + $(this).data('description') + '</li></ul></div></a>';
                      var item = {
                          is_video: false,
+                         href: $href,
                          mediumImage: {
                              src   : $src_medium,
                              w     : $width_medium,
@@ -189,14 +191,20 @@ function startPhotoSwipe(idx) {
         detectVideo(photoSwipe);
 
         photoSwipe.listen('initialZoomInEnd', function() {
-	    curr = photoSwipe.getCurrentIndex();
-            if (curr !== $index && autoplayId == null) {
+	    curr_idx = photoSwipe.getCurrentIndex();
+            if (curr_idx !== $index && autoplayId == null) {
                 photoSwipe.goTo($index);
             }
+            $('.pswp__button--details').on('click touchstart', function() {
+                location.href = photoSwipe.currItem.href
+            });
         });
 
         photoSwipe.listen('afterChange', function() {
             detectVideo(photoSwipe);
+            $('.pswp__button--details').off().on('click touchstart', function() {
+                location.href = photoSwipe.currItem.href
+            });
         });
 
         photoSwipe.listen('beforeChange', function() {

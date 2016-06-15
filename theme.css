@@ -208,14 +208,21 @@ html, body {
 .pswp__ui--idle .pswp__caption { opacity: 0; }
 .pswp__button--autoplay { background: none !important; }
 .pswp__button--autoplay:before {
-  content:"\e072";
-  font-family:"Glyphicons Halflings";
+  content:"\f04b";
+  font-family:"FontAwesome";
   color: #fff;
 }
 .pswp__button--autoplay.stop { background: none !important; }
 .pswp__button--autoplay.stop:before {
-  content:"\e074";
-  font-family:"Glyphicons Halflings";
+  content:"\f04d";
+  font-family:"FontAwesome";
+  color: #fff;
+}
+
+.pswp__button--details { background: none !important; }
+.pswp__button--details:before {
+  content:"\f129";
+  font-family:"FontAwesome";
   color: #fff;
 }
 

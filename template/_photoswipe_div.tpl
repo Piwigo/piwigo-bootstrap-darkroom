@@ -15,6 +15,7 @@
 {/if}
                  <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
                  <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                 <button class="pswp__button pswp__button--details" title="Picture details"></button>
                  <button class="pswp__button pswp__button--autoplay" title="AutoPlay"></button>
                  <div class="pswp__preloader">
                      <div class="pswp__preloader__icn">
