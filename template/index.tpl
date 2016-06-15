@@ -244,24 +244,16 @@ if (!navigator.userAgent.match(/rv:11/)) {
 {define_derivative name='derivative_params_medium' type=IMG_MEDIUM}
 {define_derivative name='derivative_params_large' type=IMG_LARGE}
 {define_derivative name='derivative_params_xxlarge' type=IMG_XXLARGE}
-        <div id="thumbnailCarousel">
+        <div id="photoSwipeData">
 {assign var=idx value=0}
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
 {assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
 {assign var=derivative_xxlarge value=$pwg->derivative($derivative_params_xxlarge, $thumbnail.src_image)}
-            <a href="{$thumbnail.URL}"
-               data-index="{$idx}"
-               data-title="{$thumbnail.TN_TITLE}"
-               data-src-medium="{$derivative_medium->get_url()}"
-               data-size-medium="{$derivative_medium->get_size_hr()}"
-               data-src-large="{$derivative_large->get_url()}"
-               data-size-large="{$derivative_large->get_size_hr()}"
-               data-src-xlarge="{$derivative_xxlarge->get_url()}"
-               data-size-xlarge="{$derivative_xxlarge->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{/if}></a>
+            <a href="{$thumbnail.URL}" data-index="{$idx}" data-name="{$thumbnail.NAME}" data-description="{$thumbnail.DESCRIPTION}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{/if}></a>
 {assign var=idx value=$idx+1}
 {/foreach}
-{include file='_photoswipe_js.tpl' selector='#thumbnailCarousel'}
+{include file='_photoswipe_js.tpl' selector='#photoSwipeData'}
         </div>
 {footer_script require='jquery' require='photoswipe'}{strip}
 $('#startSlideshow').on('click touchstart', function() {

@@ -232,6 +232,27 @@ html, body {
 }
 .pswp--touch .pswp__share-tooltip a { padding: 10px 12px; }
 
+.pswp__caption__center ul {
+    margin: 0;
+    padding: 0;
+}
+.pswp__caption__center li {
+    padding: 0;
+    display: inline-block;
+    margin-right: 5px;
+    color: #666;
+    line-height: 12px;
+}
+.pswp__caption__center li em {
+    font-size: 10px;
+    line-height: 12px;
+}
+
+a.pswp__share--google:hover { 
+    background: #03a9f4;
+￼    color: #fff;
+}
+
 /* Wells */
 .well-categories { margin-bottom: 10px; }
 

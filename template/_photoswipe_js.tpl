@@ -22,7 +22,7 @@ function startPhotoSwipe(idx) {
                          $width_preview  = $size_preview[0],
                          $height_preview = $size_preview[1],
                          $href           = $(this).attr('href'),
-                         $title          = '<div class="text-center"><a href="' + $href + '"><i class="glyphicon glyphicon-info-sign"></i> ' + $(this).data('title') + '</div>';
+                         $title          = '<a href="' + $href + '">' + $(this).data('name') + '</a><ul><li>' + $(this).data('description') + '</li></ul>';
                      var item = {
                          is_video : true,
                          src      : $src_preview,
@@ -49,7 +49,7 @@ function startPhotoSwipe(idx) {
                          $width_medium  = $size_medium[0],
                          $height_medium = $size_medium[1],
                          $href          = $(this).attr('href'),
-                         $title         = '<div class="text-center"><a href="' + $href + '"><i class="glyphicon glyphicon-info-sign"></i> ' + $(this).data('title') + '</div>';
+                         $title          = '<a href="' + $href + '">' + $(this).data('name') + '</a><ul><li>' + $(this).data('description') + '</li></ul>';
                      var item = {
                          is_video: false,
                          mediumImage: {
