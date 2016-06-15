@@ -8,7 +8,7 @@
     <div id="configContent">
         <fieldset class="mainConf">
             <legend>{'Bootstrap theme'|@translate}</legend>
-            <p><em>This setting is overridden by Boostrap Default</em><p>
+            <p><em>This setting is overridden by Bootstrap Default</em><p>
             <ul>
                 <li>
                     <select name="bootstrap_theme" disabled="disabled">
@@ -20,7 +20,7 @@
         </fieldset>
         <fieldset class="mainConf">
             <legend>{'Picture page display'|@translate}</legend>
-            <p><em>This setting is overridden by Boostrap Default</em><p>
+            <p><em>This setting is overridden by Bootstrap Default</em><p>
             <ul>
                 <li>
                     <label class="radio">
