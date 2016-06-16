@@ -232,7 +232,24 @@ if (!navigator.userAgent.match(/rv:11/)) {
 {if !empty($CATEGORIES)}
     <!-- Start of categories -->
 {$CATEGORIES}
-{footer_script}{literal}$(document).ready(function(){$('#content img').load(function(){$('#content .col-inner').equalHeights()})});{/literal}{/footer_script}
+{footer_script}{strip}{literal}
+$(document).ready(function() {
+  $('#content img').load(function(){
+    $('#content .col-inner').equalHeights()
+  })
+});
+var resizeTimer;
+$(window).on('resize', function() {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+    if ($(window).innerWidth() < 768) {
+      $('.col-inner').removeAttr('style');
+    } else {
+      $('.col-inner').equalHeights();
+    }
+  }, 250);
+});
+{/literal}{/strip}{/footer_script}
     <!-- End of categories -->
 {/if}
 

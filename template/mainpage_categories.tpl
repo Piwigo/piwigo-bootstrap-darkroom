@@ -1,7 +1,15 @@
 {footer_script}
     var error_icon = "{$ROOT_URL}{$themeconf.icon_dir}/errors_small.png", max_requests = {$maxRequests};
 {/footer_script}
-{define_derivative name='derivative_params' width=260 height=180 crop=true}
+{* this might sound ridiculous, but we want to fit the thumbnails to 90% of col-xs-12 without them being too blurry *}
+{if get_device() !== 'desktop'}
+{assign var=width value=520}
+{assign var=height value=360}
+{else}
+{assign var=width value=260}
+{assign var=height value=180}
+{/if}
+{define_derivative name='derivative_params' width=$width height=$height crop=true}
 {define_derivative name='derivative_params_square' type=IMG_SQUARE}
 {foreach from=$category_thumbnails item=cat name=cat_loop}
 {if $theme_config_extra->category_wells == 'never' || ($theme_config_extra->category_wells == 'mobile_only' && get_device() == 'desktop')}
@@ -10,12 +18,13 @@
     {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
     {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
+{* this needs a fixed size else it messes up the grid on tablets *}
 {include file="grid_classes.tpl" width=260 height=180}
 <div class="col-outer {if $smarty.cookies.view == 'list'}col-lg-12 col-md-12 col-sm-12 col-xs-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
     <div class="col-inner">
         <a class="col-thumbnail" href="{$cat.URL}">
             <div class="placeholder" style="background: url({$ROOT_URL}{$themeconf.icon_dir}/img_small.png) no-repeat center">
-                <img {strip}{if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrapdefault/img/transparent.png"
+                <img class="img-responsive" {strip}{if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrapdefault/img/transparent.png"
                     data-src="{$derivative->get_url()}"{/if}
                     alt="{$cat.TN_ALT}"
                     title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">{/strip}

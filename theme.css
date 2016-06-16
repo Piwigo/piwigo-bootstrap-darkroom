@@ -79,6 +79,16 @@ html, body {
 #theCategoryPage { padding-left: 0px !important; }
 
 /* Category thumbnails */
+@media (max-width: 767px) {
+  #content .col-inner .col-thumbnail .placeholder {
+    width: 100%;
+    height: auto;
+  }
+  #content .col-inner .col-thumbnail .placeholder img {
+    width: 100%;
+    height: auto;
+  }
+}
 .content-grid .col-inner .caption h4.title {
   position: relative;
 }
