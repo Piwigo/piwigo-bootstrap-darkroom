@@ -80,6 +80,11 @@ html, body {
 
 /* Category thumbnails */
 @media (max-width: 767px) {
+  #content .col-inner {
+    max-width: 520px;
+    float: none;
+    margin: 0 auto;
+  }
   #content .col-inner .col-thumbnail div[class^=placeholder] {
     width: 100%;
     height: auto;
