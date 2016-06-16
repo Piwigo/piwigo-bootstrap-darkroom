@@ -80,11 +80,11 @@ html, body {
 
 /* Category thumbnails */
 @media (max-width: 767px) {
-  #content .col-inner .col-thumbnail .placeholder {
+  #content .col-inner .col-thumbnail div[class^=placeholder] {
     width: 100%;
     height: auto;
   }
-  #content .col-inner .col-thumbnail .placeholder img {
+  #content .col-inner .col-thumbnail div[class^=placeholder] img {
     width: 100%;
     height: auto;
   }
@@ -97,7 +97,7 @@ html, body {
 }
 .content-grid .col-inner .caption h4.title img {
   position: absolute;
-  top: 6px;
+  top: 2px;
   right: 0;
 }
 
