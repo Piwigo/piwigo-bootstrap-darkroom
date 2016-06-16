@@ -46,9 +46,6 @@ $('.navbar-secondary').on('affix-top.bs.affix', function() {
        $('.navmenu').css('top', $('.navbar-main').height());
     }
 });
-{if $theme_config_extra->bootstrap_theme == 'bootswatch'}
-        $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
-{/if}
 {/footer_script}
 <div class="nav-wrapper">
 <nav class="navbar navbar-default navbar-secondary" role="navigation">
@@ -81,6 +78,9 @@ if (!navigator.userAgent.match(/rv:11/)) {
    }
  }
 }
+{if $theme_config_extra->bootstrap_theme == 'bootswatch'}
+   $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
+{/if}
 });
 {/strip}{/footer_script}
             </div>
