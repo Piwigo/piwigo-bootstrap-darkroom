@@ -253,7 +253,9 @@ html, body {
 }
 .pswp--touch .pswp__share-tooltip a { padding: 10px 12px; }
 
-.pswp__caption { opacity: 0.9; }
+.pswp__top-bar, .pswp__caption {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 .pswp__ui--idle .pswp__caption { opacity: 0; }
 @media (min-width: 768px) {
   .pswp__caption__center {
@@ -267,7 +269,7 @@ html, body {
 .pswp__caption__center li {
   padding: 0;
   display: inline-block;
-  margin-right: 7px;
+  margin-right: 5px;
   color: #666;
   line-height: 12px;
 }
