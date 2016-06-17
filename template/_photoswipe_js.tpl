@@ -37,20 +37,31 @@ function startPhotoSwipe(idx) {
                          }
                      };
                    } else {
-                     var $src_xlarge    = $(this).data('src-xlarge'),
-                         $size_xlarge   = $(this).data('size-xlarge').split(' x '),
-                         $width_xlarge  = $size_xlarge[0],
-                         $height_xlarge = $size_xlarge[1],
-                         $src_large     = $(this).data('src-large'),
-                         $size_large    = $(this).data('size-large').split(' x '),
-                         $width_large   = $size_large[0],
-                         $height_large  = $size_large[1],
-                         $src_medium    = $(this).data('src-medium'),
-                         $size_medium   = $(this).data('size-medium').split(' x '),
-                         $width_medium  = $size_medium[0],
-                         $height_medium = $size_medium[1],
-                         $href          = $(this).attr('href'),
-                         $title          = '<a href="' + $href + '"><div>' + $(this).data('name') + '<ul><li>' + $(this).data('description') + '</li></ul></div></a>';
+                     var $src_xlarge     = $(this).data('src-xlarge'),
+                         $size_xlarge    = $(this).data('size-xlarge').split(' x '),
+                         $width_xlarge   = $size_xlarge[0],
+                         $height_xlarge  = $size_xlarge[1],
+                         $src_large      = $(this).data('src-large'),
+                         $size_large     = $(this).data('size-large').split(' x '),
+                         $width_large    = $size_large[0],
+                         $height_large   = $size_large[1],
+                         $src_medium     = $(this).data('src-medium'),
+                         $size_medium    = $(this).data('size-medium').split(' x '),
+                         $width_medium   = $size_medium[0],
+                         $height_medium  = $size_medium[1],
+                         $href           = $(this).attr('href');
+                         $title_exif     = '<ul class="pull-right">';
+{literal}
+                     if ($(this).data('exif-make').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-make') + '</em></li>';}
+                     if ($(this).data('exif-model').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-model') + '</em></li>';}
+                     if ($(this).data('exif-lens').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-lens') + '</em></li>';}
+                     if ($(this).data('exif-shutter-speed').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-shutter-speed') + '</em></li>';}
+                     if ($(this).data('exif-apperture').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-apperture') + '</em></li>';}
+                     if ($(this).data('exif-exposure-time').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-exposure-time') + '</em></li>';}
+                     if ($(this).data('exif-iso').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-iso') + '</em></li>';}
+{/literal}
+                         $title_exif += '</ul>';
+                         $title          = '<a href="' + $href + '"><div>' + $(this).data('name') + '<ul><li>' + $(this).data('description') + '</li></ul>' + $title_exif + '</div></a>';
                      var item = {
                          is_video: false,
                          href: $href,

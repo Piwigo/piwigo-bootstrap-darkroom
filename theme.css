@@ -242,34 +242,38 @@ html, body {
 }
 
 .pswp-video-modal {
-    background: url(img/play-circle-white.png) no-repeat center center;
-    background-size: 128px 128px;
-    height: 100%;
-    width: 320px;
-    margin: 0 auto;
-    cursor: pointer;
+  background: url(img/play-circle-white.png) no-repeat center center;
+  background-size: 128px 128px;
+  height: 100%;
+  width: 320px;
+  margin: 0 auto;
+  cursor: pointer;
 }
 .pswp-video-modal video {
-    visibility: hidden;
+  visibility: hidden;
 }
 .pswp--touch .pswp__share-tooltip a { padding: 10px 12px; }
 
+@media (min-width: 768px) {
+  .pswp__caption__center {
+    max-width: 700px;
+  }
+}
 .pswp__caption__center ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .pswp__caption__center li {
-    padding: 0;
-    display: inline-block;
-    margin-right: 5px;
-    color: #666;
-    line-height: 12px;
+  padding: 0;
+  display: inline-block;
+  margin-right: 7px;
+  color: #666;
+  line-height: 12px;
 }
 .pswp__caption__center li em {
-    font-size: 10px;
-    line-height: 12px;
+  font-size: 12px;
+  line-height: 13px;
 }
-
 a.pswp__share--google:hover { 
     background: #03a9f4;
 ￼    color: #fff;

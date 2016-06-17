@@ -44,6 +44,8 @@ function get_all_thumbnails_in_category()
 {
   global $template, $conf, $user, $page;
 
+  include_once(PHPWG_ROOT_PATH.'/include/functions_metadata.inc.php');
+
   if (!$page['items']) {
     return;
   }
@@ -66,6 +68,17 @@ function get_all_thumbnails_in_category()
   
   $tpl_thumbnails_var = array();
 
+  $exif_mapping = array(
+    'date_creation' => 'DateTimeOriginal',
+    'make'          => 'Make',
+    'model'         => 'Model',
+    'lens'          => 'UndefinedTag:0xA434',
+    'shutter_speed' => 'ExposureTime',
+    'iso'           => 'ISOSpeedRatings',
+    'apperture'     => 'FNumber',
+    'focal_length'  => 'FocalLength',
+  );
+
   foreach ($pictures as $row)
   {    
     $url = duplicate_picture_url(
@@ -78,7 +91,7 @@ function get_all_thumbnails_in_category()
 
     $name = render_element_name($row);
     $desc = render_element_description($row, 'main_page_element_description');
-    
+
     $tpl_var = array_merge( $row, array(
       'NAME' => $name,
       'TN_ALT' => htmlspecialchars(strip_tags($name)),
@@ -87,6 +100,7 @@ function get_all_thumbnails_in_category()
       'src_image' => new SrcImage($row),
       'SIZE' => $row['width'].'x'.$row['height'],
       'PATH' => $row['path'],
+      'EXIF' => get_exif_data($row['path'], $exif_mapping),
     ) );
     
     $tpl_thumbnails_var[] = $tpl_var;
