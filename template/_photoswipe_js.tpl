@@ -49,19 +49,23 @@ function startPhotoSwipe(idx) {
                          $size_medium    = $(this).data('size-medium').split(' x '),
                          $width_medium   = $size_medium[0],
                          $height_medium  = $size_medium[1],
-                         $href           = $(this).attr('href');
-                         $title_exif     = '<ul class="pull-right">';
+                         $href           = $(this).attr('href'),
+                         $title          = '<a href="' + $href + '"><div><div>' + $(this).data('name') + '</div>';
 {literal}
-                     if ($(this).data('exif-make').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-make') + '</em></li>';}
-                     if ($(this).data('exif-model').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-model') + '</em></li>';}
-                     if ($(this).data('exif-lens').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-lens') + '</em></li>';}
-                     if ($(this).data('exif-shutter-speed').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-shutter-speed') + '</em></li>';}
-                     if ($(this).data('exif-apperture').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-apperture') + '</em></li>';}
-                     if ($(this).data('exif-exposure-time').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-exposure-time') + '</em></li>';}
-                     if ($(this).data('exif-iso').length > 0) {$title_exif += '<li><em>' + $(this).data('exif-iso') + '</em></li>';}
+                     if ($(this).data('description').length > 0) {$title += '<ul><li>' + $(this).data('description') + '</li></ul>'; }
 {/literal}
-                         $title_exif += '</ul>';
-                         $title          = '<a href="' + $href + '"><div>' + $(this).data('name') + '<ul><li>' + $(this).data('description') + '</li></ul>' + $title_exif + '</div></a>';
+                         $title         += '<ul class="pull-right">';
+{literal}
+                     if ($(this).data('exif-make').length > 0) {$title += '<li><em>' + $(this).data('exif-make') + '</em></li>';}
+                     if ($(this).data('exif-model').length > 0) {$title += '<li><em>' + $(this).data('exif-model') + '</em></li>';}
+                     if ($(this).data('exif-lens').length > 0) {$title += '<li><em>' + $(this).data('exif-lens') + '</em></li>';}
+                     if ($(this).data('exif-focal-length').length > 0) {$title += '<li><em>' + $(this).data('exif-focal-length') + '</em></li>';}
+                     if ($(this).data('exif-shutter-speed').length > 0) {$title += '<li><em>' + $(this).data('exif-shutter-speed') + '</em></li>';}
+                     if ($(this).data('exif-apperture') > 0) {$title += '<li><em>' + $(this).data('exif-apperture') + '</em></li>';}
+                     if ($(this).data('exif-iso') > 0) {$title += '<li><em>ISO' + $(this).data('exif-iso') + '</em></li>';}
+{/literal}
+                         $title += '</ul>';
+                         $title      += '</div></a>';
                      var item = {
                          is_video: false,
                          href: $href,

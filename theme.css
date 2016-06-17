@@ -220,7 +220,6 @@ html, body {
 }
 
 /* PhotoSwipe */
-.pswp__ui--idle .pswp__caption { opacity: 0; }
 .pswp__button--autoplay { background: none !important; }
 .pswp__button--autoplay:before {
   content:"\f04b";
@@ -254,6 +253,8 @@ html, body {
 }
 .pswp--touch .pswp__share-tooltip a { padding: 10px 12px; }
 
+.pswp__caption { opacity: 0.9; }
+.pswp__ui--idle .pswp__caption { opacity: 0; }
 @media (min-width: 768px) {
   .pswp__caption__center {
     max-width: 700px;
