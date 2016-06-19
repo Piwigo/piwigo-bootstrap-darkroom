@@ -70,3 +70,10 @@ $(window).load(function() {
   $('#downloadSizeLink').off().on('click', function() { $('#downloadSizeLink').dropdown() });
 });
 /* Download by Size END */
+
+/* gdThumb square mode */
+$(document).ready(function() {
+  if ($('ul#thumbnails li.square').length > 0) {
+    $('ul#thumbnails').css({'width':'90%','margin':'0 auto'});
+  }
+});
