@@ -108,6 +108,7 @@ function get_all_thumbnails_in_category()
       'src_image' => new SrcImage($row),
       'SIZE' => $row['width'].'x'.$row['height'],
       'PATH' => $row['path'],
+      'DATE_CREATED' => $row['date_creation'],
     ) );
 
     if ($theme_config->photoswipe_metadata) {
