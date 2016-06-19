@@ -47,7 +47,7 @@
             </div>
         </a>
 {assign var=idx value=$idx+1}
-{if $SHOW_THUMBNAIL_CAPTION }
+{if $theme_config_extra->thumbnail_caption && $SHOW_THUMBNAIL_CAPTION }
         <div class="caption">
             <h4 class="title">
                 <a href="{$thumbnail.URL}" class="ellipsis{if !empty($thumbnail.icon_ts)} recent{/if}">{$thumbnail.NAME}</a>

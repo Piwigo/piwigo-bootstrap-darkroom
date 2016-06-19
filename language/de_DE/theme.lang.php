@@ -57,3 +57,7 @@ $lang['Never'] = 'Nie';
 $lang['Always'] = 'Immer';
 $lang['On mobile devices only'] = 'Nur auf Mobil-Geräten';
 $lang['This will display categories as media wells with squared thumbnails, similar to the smartpocket mobile theme.'] = 'Dies zeigt die Kategorien als media wells mit quadratischen Vorschaubildern, ähnlich dem Smartpocket-Theme';
+$lang['Show basic EXIF metadata'] = 'Zeige wesentliche EXIF-Metadaten';
+$lang['For more information on metadata visit'] = 'Für weitere Informationen zu den Metadaten siehe';
+$lang['Thumbnail page display'] = 'Erscheinungsbild der Vorschau-Seiten';
+$lang['Show image caption'] = 'Zeige Bildunterschrift';

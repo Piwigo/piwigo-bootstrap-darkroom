@@ -92,6 +92,8 @@
                        <input type="checkbox" name="photoswipe_metadata"{if $theme_config_extra->photoswipe_metadata} checked="checked"{/if}>
                        {'Show basic EXIF metadata'|@translate}
                     </label>
+                    <span class="info">{'For more information on metadata visit'|@translate} <a href="https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki/EXIF-Metadata-in-PhotoSwipe">Wiki:EXIF-Metadata-in-PhotoSwipe</a></span>
+                </li>
             </ul>
         </fieldset>
         <fieldset>
@@ -134,7 +136,17 @@
                     <span class="info">{'This will display categories as media wells with squared thumbnails, similar to the smartpocket mobile theme.'|@translate}</span>
                 </li>
             </ul>
+        </fieldset>
+        <fieldset>
+            <legend>{'Thumbnail page display'|@translate}</legend>
             <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="thumbnail_caption"{if $theme_config_extra->thumbnail_caption} checked="checked"{/if}>
+                        {'Show image caption'|@translate}
+                    </label>
+                </li>
                 <li>
                     <label labelfor="thumbnail_linkto">{'Link thumbnail to'|@translate}</label>
                     <select name="thumbnail_linkto">

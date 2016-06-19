@@ -7,7 +7,7 @@ require_once(PHPWG_THEMES_PATH . 'bootstrapdefault/include/config.php');
 class ExtraConfig {
 
     const CONF_PARAM = 'bootstrap_darkroom';
-    const CONF_VERSION = 9;
+    const CONF_VERSION = 10;
 
     const TYPE_BOOL = 'bool';
     const TYPE_STRING = 'string';
@@ -27,6 +27,7 @@ class ExtraConfig {
     const KEY_PHOTOSWIPE_INTERVAL = 'photoswipe_interval';
     const KEY_PHOTOSWIPE_METADATA = 'photoswipe_metadata';
     const KEY_THUMBNAIL_LINKTO = 'thumbnail_linkto';
+    const KEY_THUMBNAIL_CAPTION = 'thumbnail_caption';
     const KEY_CATEGORY_WELLS = 'category_wells';
 
     private $defaults = array(
@@ -42,6 +43,7 @@ class ExtraConfig {
         self::KEY_PHOTOSWIPE_INTERVAL => '3500',
         self::KEY_PHOTOSWIPE_METADATA => false,
         self::KEY_THUMBNAIL_LINKTO => 'picture',
+        self::KEY_THUMBNAIL_CAPTION => true,
         self::KEY_CATEGORY_WELLS => 'never',
     );
 
@@ -58,6 +60,7 @@ class ExtraConfig {
         self::KEY_PHOTOSWIPE_INTERVAL => self::TYPE_NUM,
         self::KEY_PHOTOSWIPE_METADATA => self::TYPE_BOOL,
         self::KEY_THUMBNAIL_LINKTO => self::TYPE_STRING,
+        self::KEY_THUMBNAIL_CAPTION => self::TYPE_BOOL,
         self::KEY_CATEGORY_WELLS => self::TYPE_STRING,
     );
 
