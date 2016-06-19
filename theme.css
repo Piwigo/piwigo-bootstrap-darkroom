@@ -274,12 +274,12 @@ html, body {
   line-height: 12px;
 }
 .pswp__caption__center li em {
-  font-size: 12px;
-  line-height: 13px;
+  font-size: 10px;
+  line-height: 12px;
 }
 a.pswp__share--google:hover { 
-    background: #03a9f4;
-￼    color: #fff;
+  background: #03a9f4;
+￼ color: #fff;
 }
 
 /* Wells */

@@ -68,16 +68,20 @@ function get_all_thumbnails_in_category()
   
   $tpl_thumbnails_var = array();
 
-  $exif_mapping = array(
-    'date_creation' => 'DateTimeOriginal',
-    'make'          => 'Make',
-    'model'         => 'Model',
-    'lens'          => 'UndefinedTag:0xA434',
-    'shutter_speed' => 'ExposureTime',
-    'iso'           => 'ISOSpeedRatings',
-    'apperture'     => 'FNumber',
-    'focal_length'  => 'FocalLength',
-  );
+  if (array_key_exists('bootstrap_darkroom_ps_exif_mapping', $conf)) {
+    $exif_mapping = $conf['bootstrap_darkroom_ps_exif_mapping'];
+  } else {
+    $exif_mapping = array(
+      'date_creation' => 'DateTimeOriginal',
+      'make'          => 'Make',
+      'model'         => 'Model',
+      'lens'          => 'UndefinedTag:0xA434',
+      'shutter_speed' => 'ExposureTime',
+      'iso'           => 'ISOSpeedRatings',
+      'apperture'     => 'FNumber',
+      'focal_length'  => 'FocalLength',
+    );
+  }
 
   foreach ($pictures as $row)
   {    
@@ -103,9 +107,16 @@ function get_all_thumbnails_in_category()
       'EXIF' => get_exif_data($row['path'], $exif_mapping),
     ) );
     
+    //optional replacements
+    if (array_key_exists('bootstrap_darkroom_ps_exif_replacements', $conf)) {
+      foreach ($conf['bootstrap_darkroom_ps_exif_replacements'] as $tag => $replacement) {
+        $tpl_var['EXIF'][$tag] = str_replace($replacement[0], $replacement[1], $tpl_var['EXIF'][$tag]);
+      }
+    }
+ 
     $tpl_thumbnails_var[] = $tpl_var;
   }
-  
+
   $template->assign('thumbnails', $tpl_thumbnails_var);
 
   unset($tpl_thumbnails_var, $pictures);

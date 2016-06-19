@@ -54,6 +54,7 @@ function startPhotoSwipe(idx) {
 {literal}
                      if ($(this).data('description').length > 0) {$title += '<ul><li>' + $(this).data('description') + '</li></ul>'; }
 {/literal}
+{if $theme_config_extra->photoswipe_metadata}
                          $title         += '<ul class="pull-right">';
 {literal}
                      if ($(this).data('exif-make').length > 0) {$title += '<li><em>' + $(this).data('exif-make') + '</em></li>';}
@@ -65,6 +66,7 @@ function startPhotoSwipe(idx) {
                      if ($(this).data('exif-iso') > 0) {$title += '<li><em><i class="fa fa-angle-double-right" aria-hidden="true"></i> ISO' + $(this).data('exif-iso') + '</em></li>';}
 {/literal}
                          $title += '</ul>';
+{/if}
                          $title      += '</div></a>';
                      var item = {
                          is_video: false,

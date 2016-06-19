@@ -86,6 +86,12 @@
                     <label labelfor="photoswipe_interval">{'Autoplay interval'|@translate}</label>
                     <input type="number" name="photoswipe_interval" value="{$theme_config_extra->photoswipe_interval}" min="1000" max="50000"> {'milliseconds'|@translate}
                 </li>
+                <li>
+                    <label class="font-checkbox">
+                       <span class="icon-check"></span>
+                       <input type="checkbox" name="photoswipe_metadata"{if $theme_config_extra->photoswipe_metadata} checked="checked"{/if}>
+                       {'Show basic EXIF metadata'|@translate}
+                    </label>
             </ul>
         </fieldset>
         <fieldset>
