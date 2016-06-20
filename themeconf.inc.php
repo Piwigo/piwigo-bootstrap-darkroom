@@ -119,7 +119,9 @@ function get_all_thumbnails_in_category()
       //optional replacements
       if (array_key_exists('bootstrap_darkroom_ps_exif_replacements', $conf)) {
         foreach ($conf['bootstrap_darkroom_ps_exif_replacements'] as $tag => $replacement) {
-          $tpl_var['EXIF'][$tag] = str_replace($replacement[0], $replacement[1], $tpl_var['EXIF'][$tag]);
+          if (array_key_exists($tag, $tpl_var['EXIF'])) {
+            $tpl_var['EXIF'][$tag] = str_replace($replacement[0], $replacement[1], $tpl_var['EXIF'][$tag]);
+          }
         }
       }
     }
