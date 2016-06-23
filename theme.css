@@ -253,6 +253,7 @@ html, body {
 }
 .pswp--touch .pswp__share-tooltip a { padding: 10px 12px; }
 
+.pswp__ui--fit .pswp__top-bar, .pswp__ui--fit .pswp__caption,
 .pswp__top-bar, .pswp__caption {
   background-color: rgba(0, 0, 0, 0.8);
 }
