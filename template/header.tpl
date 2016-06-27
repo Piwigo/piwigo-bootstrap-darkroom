@@ -45,12 +45,12 @@
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/{$theme_config_extra->bootswatch_theme}/bootstrap.min.css">
     {combine_css path="themes/bootstrap_darkroom/bootswatch/navmenu-{$theme_config_extra->bootswatch_theme}.css" order=-5}
 {else}
-    {combine_css path="themes/bootstrap_darkroom/bootstrap/dist/css/bootstrap.min.css" order=-20}
+    {combine_css path="themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap.min.css" order=-20}
 {/if}
 {if $theme_config_extra->bootstrap_theme == 'default'}
-    {combine_css path="themes/bootstrap_darkroom/bootstrap/dist/css/bootstrap-theme.min.css" order=-18}
+    {combine_css path="themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap-theme.min.css" order=-18}
 {/if}
-    {combine_css path='themes/bootstrap_darkroom/jasny-bootstrap/css/jasny-bootstrap.min.css' order=-15}
+    {combine_css path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css' order=-15}
 {foreach from=$themes item=theme}
 {if $theme.load_css}
     {combine_css path="themes/`$theme.id`/theme.css" order=-10}
@@ -78,8 +78,8 @@
 {combine_script id='jquery-ajaxmanager' require='jquery' path='themes/default/js/plugins/jquery.ajaxmanager.js'}
 {combine_script id='thumbnails-loader' require='jquery-ajaxmanager' path='themes/default/js/thumbnails.loader.js'}
 {combine_script id='plugin.fixes' require='jquery' path='themes/bootstrap_darkroom/js/plugin_fixes.js'}
-{combine_script id='bootstrap' require='jquery' require='plugin.fixes' path="themes/bootstrap_darkroom/bootstrap/dist/js/bootstrap.min.js"}
-{combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/jasny-bootstrap/js/jasny-bootstrap.min.js'}
+{combine_script id='bootstrap' require='jquery' require='plugin.fixes' path="themes/bootstrap_darkroom/components/bootstrap/dist/js/bootstrap.min.js"}
+{combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js'}
 {combine_script id=$themeconf.name require='bootstrap' path="themes/bootstrapdefault/js/theme.js"}
 {get_combined_scripts load='header'}
 
