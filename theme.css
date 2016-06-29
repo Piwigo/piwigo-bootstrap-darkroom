@@ -220,8 +220,14 @@ html, body {
 }
 
 /* Calendar */
+#calendar-select {
+  margin-bottom: 10px;
+}
 #calendar-nav {
   text-align: center;
+}
+#calendar-nav>a {
+  margin-bottom: 10px;
 }
 #calendar-nav-buttons table {
   padding-top: 10px;

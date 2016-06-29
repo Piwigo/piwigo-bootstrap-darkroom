@@ -204,7 +204,7 @@ if (!navigator.userAgent.match(/rv:11/)) {
 {if !empty($PLUGIN_INDEX_CONTENT_BEGIN)}{$PLUGIN_INDEX_CONTENT_BEGIN}{/if}
 
 {if isset($chronology_views)}
-<div class="btn-group">
+<div id="calendar-select" class="btn-group">
     <button id="calendar-view" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {foreach from=$chronology_views item=view}{if $view.SELECTED}{$view.CONTENT}{/if}{/foreach}
         <span class="caret"></span>

@@ -2,21 +2,21 @@
 {foreach from=$chronology_navigation_bars item=bar}
 <div id="calendar-nav" class="well">
 	{if isset($bar.previous)}
-        <div class="btn-group btn-group-sm pull-left" role="group" aria-label="calendar-previous"><a class="btn btn-default" href="{$bar.previous.URL}"><span class="glyphicon glyphicon-menu-left"></span> {$bar.previous.LABEL}</a></div>
+        <a id="calendar-prev" class="btn btn-primary pull-left" href="{$bar.previous.URL}"><span class="glyphicon glyphicon-menu-left"></span> {$bar.previous.LABEL}</a>
 	{/if}
 	{if isset($bar.next)}
-        <div class="btn-group btn-group-sm pull-right" role="group" aria-label="calendar-next"><a class="btn btn-default" href="{$bar.next.URL}">{$bar.next.LABEL} <span class="glyphicon glyphicon-menu-right"></span></a></div>
+        <a id="calendar-next" class="btn btn-primary pull-right" href="{$bar.next.URL}">{$bar.next.LABEL} <span class="glyphicon glyphicon-menu-right"></span></a>
 	{/if}
 	{if empty($bar.items)}
 		&nbsp;
 	{else}
-        <div id="calendar-nav-buttons" class="btn-group">
+        <div id="calendar-nav-buttons" class="btn-group" role=group">
            {if gettype(reset(reset($bar.items))) == 'string' || (!isset($bar.previous) && !isset($bar.next))}
            {foreach from=$bar.items item=item}
            {if !isset($item.URL)}
-           <a class="btn btn-default" disabled="disabled">{$item.LABEL}</a>
+           <a class="btn btn-primary" disabled="disabled">{$item.LABEL}</a>
            {else}
-           <a class="btn btn-default" title="{$item.NB_IMAGES|@translate_dec:'%d photo':'%d photos'}" href="{$item.URL}">{$item.LABEL}</a>
+           <a class="btn btn-primary" title="{$item.NB_IMAGES|@translate_dec:'%d photo':'%d photos'}" href="{$item.URL}">{$item.LABEL}</a>
            {/if}
            {/foreach}
            {else}
@@ -30,7 +30,7 @@
 		{if !isset($item.URL)}
 		<td>{$item.LABEL}</td>
 		{else}
-		<td class="btn-default"><a{if isset($item.NB_IMAGES)} title="{$item.NB_IMAGES|@translate_dec:'%d photo':'%d photos'}"{/if} href="{$item.URL}">{$item.LABEL}</a></td>
+		<td class="btn-primary"><a{if isset($item.NB_IMAGES)} title="{$item.NB_IMAGES|@translate_dec:'%d photo':'%d photos'}"{/if} href="{$item.URL}">{$item.LABEL}</a></td>
 		{/if}
                 {if $i == 6}{assign var=i value=0}
                 </tr>
@@ -53,7 +53,7 @@
         <div class="panel-body">
             <div class="btn-group">
 	      {foreach from=$bar.items item=item}
-  	      <a class="btn btn-default btn-sm" href="{if isset($item.URL)}{$item.URL}{else}#{/if}">{$item.LABEL}{if isset($item.NB_IMAGES)} <span class="badge">{$item.NB_IMAGES}</span>{/if}</a>
+  	      <a class="btn btn-primary btn-sm" href="{if isset($item.URL)}{$item.URL}{else}#{/if}">{$item.LABEL}{if isset($item.NB_IMAGES)} <span class="badge">{$item.NB_IMAGES}</span>{/if}</a>
 	      {/foreach}
         </div>
     </div>
