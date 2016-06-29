@@ -58,10 +58,10 @@ $('.navbar-secondary').on('affix-top.bs.affix', function() {
                <span class="icon-bar"></span>
             </button>
             <div class="navbar-brand">
-                {$TITLE}
 {if isset($chronology.TITLE)}
-                {$LEVEL_SEPARATOR}{$chronology.TITLE}
-{/if}
+                <a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text"> {'Home'|@translate}</span></a>{$LEVEL_SEPARATOR}{$chronology.TITLE}
+{else}
+                {$TITLE}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
 if (!navigator.userAgent.match(/rv:11/)) {
@@ -83,6 +83,7 @@ if (!navigator.userAgent.match(/rv:11/)) {
 {/if}
 });
 {/strip}{/footer_script}
+{/if}
             </div>
         </div>
         <div class="navbar-right navbar-collapse collapse" id="secondary-navbar">
@@ -161,23 +162,28 @@ if (!navigator.userAgent.match(/rv:11/)) {
                     </a>{/strip}
                 </li>
 {/if}
+{if isset($U_MODE_POSTED) || isset($U_MODE_CREATED)}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="fa fa-calendar"></span><span class="glyphicon-text">{'Calendar'|@translate}</span>
+                    </a>
+                    <ul class="dropdown-menu">
 {if isset($U_MODE_POSTED)}
-                <!--
-                <li>
-                    {strip}<a href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
-                        <span class="glyphicon glyphicon-calendar"></span><span class="glyphicon-text">{'Calendar'|@translate}</span>
-                    </a>{/strip}
-                </li>
-                -->
+                        <li>
+                            <a href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
+                                <span class="fa fa-share-alt"></span> {'display a calendar by posted date'|@translate}
+                            </a>
+                        </li>
 {/if}
 {if isset($U_MODE_CREATED)}
-                <!--
-                <li>
-                    {strip}<a href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
-                        <span class="glyphicon glyphicon-calendar"></span><span class="glyphicon-text">{'Calendar'|@translate}</span>
-                    </a>{/strip}
+                        <li>
+                            <a href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
+                                <span class="fa fa-camera-retro"></span> {'display a calendar by creation date'|@translate}
+                            </a>
+                        </li>
+{/if}
+                    </ul>
                 </li>
-                -->
 {/if}
 {if !empty($PLUGIN_INDEX_BUTTONS)}{foreach from=$PLUGIN_INDEX_BUTTONS item=button}<li>{$button}</li>{/foreach}{/if}
 {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
@@ -197,25 +203,23 @@ if (!navigator.userAgent.match(/rv:11/)) {
 <div id="content-spacer" class="container">
 {if !empty($PLUGIN_INDEX_CONTENT_BEGIN)}{$PLUGIN_INDEX_CONTENT_BEGIN}{/if}
 
-<!--
 {if isset($chronology_views)}
-<div class="calendarViews">{'View'|@translate}:
-    <a id="calendarViewSwitchLink" href="#">
+<div class="btn-group">
+    <button id="calendar-view" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {foreach from=$chronology_views item=view}{if $view.SELECTED}{$view.CONTENT}{/if}{/foreach}
-    </a>
-    <div id="calendarViewSwitchBox" class="switchBox">
-        {foreach from=$chronology_views item=view name=loop}{if !$smarty.foreach.loop.first}<br>{/if}
-            <span{if !$view.SELECTED} style="visibility:hidden"{/if}>&#x2714; </span><a href="{$view.VALUE}">{$view.CONTENT}</a>
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="calendar-view">
+        {foreach from=$chronology_views item=view name=loop}
+            <li {if $view.SELECTED} class="active"{/if}><a href="{$view.VALUE}">{$view.CONTENT}</a><li>
         {/foreach}
-    </div>
-    {footer_script}(SwitchBox=window.SwitchBox||[]).push("#calendarViewSwitchLink", "#calendarViewSwitchBox");{/footer_script}
+    </ul>
 </div>
 {/if}
 
 {if isset($FILE_CHRONOLOGY_VIEW)}
     {include file=$FILE_CHRONOLOGY_VIEW}
 {/if}
--->
 
 {if !empty($CONTENT_DESCRIPTION)}
     <h4>

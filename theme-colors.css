@@ -136,10 +136,10 @@ a:active,
 .panel { background-color: #4f4f4f }
 .panel-primary { border-color: #000; }
 .panel-primary>.panel-heading {
-    color: #fff;
-    background-color: #2e2e2e;
-    border-color: #000;
-    background-image: none !important;
+  color: #fff;
+  background-color: #2e2e2e;
+  border-color: #000;
+  background-image: none !important;
 }
 
 /* Wells */
@@ -151,12 +151,12 @@ a:active,
 
 /* Sidebar */
 #sidebar .handle, #sidebar .info {
-    color: #a9a9a9;
-    background-color: #2e2e2e;
-    border-top: 1px solid #2e2e2e;
-    border-bottom: 1px solid #2e2e2e;
-    border-left: 1px solid #2e2e2e;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+  color: #a9a9a9;
+  background-color: #2e2e2e;
+  border-top: 1px solid #2e2e2e;
+  border-bottom: 1px solid #2e2e2e;
+  border-left: 1px solid #2e2e2e;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
 }
 #sidebar .info a { color: #fff; }
 
