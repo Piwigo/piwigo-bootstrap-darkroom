@@ -160,6 +160,16 @@ a:active,
 }
 #sidebar .info a { color: #fff; }
 
+/* Calendar */
+@media screen and (max-width: 767px) {
+  #calendar-table.table-responsive {
+    border: 1px solid #3c3c3c;
+  }
+}
+#calMonth>thead>tr>th {
+  border-bottom: 2px solid #3c3c3c;
+}
+
 /* Pagination */
 .pagination>.active>a,
 .pagination>.active>a:focus,

@@ -224,6 +224,7 @@ html, body {
   margin-bottom: 10px;
 }
 #calendar-nav {
+  min-height: 55px;
   text-align: center;
 }
 #calendar-nav>a {
@@ -232,7 +233,8 @@ html, body {
 #calendar-nav-buttons table {
   padding-top: 10px;
 }
-#calendar-nav-buttons td {
+#calendar-nav-buttons td,
+#calMonth td {
   border-top: none;
 }
 #calendar-nav-buttons td a{
