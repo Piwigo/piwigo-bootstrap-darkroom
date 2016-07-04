@@ -311,6 +311,9 @@ a.pswp__share--google:hover {
   background: #03a9f4;
 ￼ color: #fff;
 }
+#pswp--caption--metadata li {
+  white-space: nowrap;
+}
 
 /* Wells */
 .well-categories { margin-bottom: 10px; }
