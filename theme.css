@@ -242,6 +242,10 @@ html, body {
   width: 100%;
   height: 100%;
 }
+.calendar-month-list li {
+  padding-right: 10px;
+  display: inline-block;
+}
 
 /* PhotoSwipe */
 .pswp__button--autoplay { background: none !important; }

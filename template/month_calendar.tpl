@@ -48,12 +48,12 @@
 {foreach from=$chronology_calendar.calendar_bars item=bar}
 <div class="panel panel-primary">
     <div class="panel-heading"><a href="{$bar.U_HEAD}">{$bar.HEAD_LABEL}</a> <span class="badge">{$bar.NB_IMAGES}</span></div>
-        <div class="panel-body">
-            <div class="btn-group">
-	      {foreach from=$bar.items item=item}
-  	      <a class="btn btn-primary btn-sm" href="{if isset($item.URL)}{$item.URL}{else}#{/if}">{$item.LABEL}{if isset($item.NB_IMAGES)} <span class="badge">{$item.NB_IMAGES}</span>{/if}</a>
-	      {/foreach}
-        </div>
+    <div class="panel-body">
+        <ul class="calendar-month-list">
+        {foreach from=$bar.items item=item}
+  	    <li><a href="{if isset($item.URL)}{$item.URL}{else}#{/if}">{$item.LABEL}{if isset($item.NB_IMAGES)} <span class="badge">{$item.NB_IMAGES}</span>{/if}</a></li>
+	{/foreach}
+        </ul>
     </div>
 </div>
 {/foreach}
