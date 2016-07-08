@@ -71,10 +71,6 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
 
 {if !empty($thumbnails) && ($theme_config_extra->slick_enabled || $theme_config_extra->photoswipe)}
-{define_derivative name='derivative_params_square' type=IMG_SQUARE}
-{define_derivative name='derivative_params_medium' type=IMG_MEDIUM}
-{define_derivative name='derivative_params_large' type=IMG_LARGE}
-{define_derivative name='derivative_params_xxlarge' type=IMG_XXLARGE}
 {if $theme_config_extra->slick_enabled && sizeOf($thumbnails) > 1}
   {include file="_slick_js.tpl"}
 {/if}

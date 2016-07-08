@@ -270,9 +270,6 @@ $(window).on('resize', function() {
         <div id="thumbnails">{$THUMBNAILS}</div>
 {footer_script}{literal}$(document).ready(function(){$('#content img').load(function(){$('#content .col-inner').equalHeights()})});{/literal}{/footer_script}
 {if $theme_config_extra->photoswipe}
-{define_derivative name='derivative_params_medium' type=IMG_MEDIUM}
-{define_derivative name='derivative_params_large' type=IMG_LARGE}
-{define_derivative name='derivative_params_xxlarge' type=IMG_XXLARGE}
         <div id="photoSwipeData">
 {assign var=idx value=0}
 {foreach from=$thumbnails item=thumbnail}
