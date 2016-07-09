@@ -6,7 +6,7 @@
 {if preg_match("/(mp4|m4v)$/", $current.path)}
 <div id="video-modal" class="col-lg-8 col-md-10 col-sm-12 col-centered">
   <div class="embed-responsive embed-responsive-16by9">
-    <video id="video" class="embed-responsive-item" width="100%" height="auto" controls preload="metadata" poster="{$current.selected_derivative->get_url()}">
+    <video id="video" class="embed-responsive-item" width="100%" height="auto" controls preload="auto" poster="{$current.selected_derivative->get_url()}">
       <source src="{$ROOT_URL}{$current.path}" type="video/mp4"></source>
     </video>
   </div>
