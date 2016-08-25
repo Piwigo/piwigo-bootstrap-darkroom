@@ -2,10 +2,10 @@
 {literal}
 if ($('.jumbotron').length > 0) {
     var $affix_height = $('.navbar-main').height() + $('.jumbotron').outerHeight();
-    $('.navbar-secondary').affix({ offset: {top: $affix_height } });
+    $('.navbar-contextual').affix({ offset: {top: $affix_height } });
     $('.navmenu').css('top', $affix_height);
 } else {
-    $('.navbar-secondary').affix({ offset: {top: 50} });
+    $('.navbar-contextual').affix({ offset: {top: 50} });
 }
 {/literal}
 $('.navmenu').on('show.bs.offcanvas', function() {
@@ -27,13 +27,13 @@ $('.navmenu').on('hidden.bs.offcanvas', function() {
     }
 });
 {/footer_script}
-<div id="picture-nav" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
+<div id="navmenu-contextual" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
     <ul class="nav navmenu-nav"></ul>
 </div>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-secondary">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-contextual">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#picture-nav">
+                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#navmenu-contextual">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -43,16 +43,16 @@ $('.navmenu').on('hidden.bs.offcanvas', function() {
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
 if (!navigator.userAgent.match(/rv:11/)) {
- var $nrLevels = $('.navbar-secondary .navbar-brand a').length,
+ var $nrLevels = $('.navbar-contextual .navbar-brand a').length,
      $html;
  while ($nrLevels > 2) {
-   $('.navbar-secondary .navbar-brand a')[0].remove();
-   $nrLevels = $('.navbar-secondary .navbar-brand a').length;
-   $html = $('.navbar-secondary .navbar-brand').html().replace(/^ \/ /, "");
+   $('.navbar-contextual .navbar-brand a')[0].remove();
+   $nrLevels = $('.navbar-contextual .navbar-brand a').length;
+   $html = $('.navbar-contextual .navbar-brand').html().replace(/^ \/ /, "");
    if ($nrLevels === 2) {
-      $('.navbar-secondary .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>{$LEVEL_SEPARATOR}' + $html);
+      $('.navbar-contextual .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>{$LEVEL_SEPARATOR}' + $html);
    } else {
-      $('.navbar-secondary .navbar-brand').html($html);
+      $('.navbar-contextual .navbar-brand').html($html);
    }
  }
 }

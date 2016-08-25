@@ -10,13 +10,13 @@
 {footer_script require='jquery'}
 if ($('.jumbotron').length > 0) {
     var $affix_height = $('.navbar-main').height() + $('.jumbotron').outerHeight();
-    $('.navbar-secondary').affix({literal}{ offset: {top: $affix_height } }{/literal});
+    $('.navbar-contextual').affix({literal}{ offset: {top: $affix_height } }{/literal});
 } else {
-    $('.navbar-secondary').affix({literal}{ offset: {top: $('.navbar-main').height()} }{/literal});
+    $('.navbar-contextual').affix({literal}{ offset: {top: $('.navbar-main').height()} }{/literal});
 }
 $('.navmenu').on('show.bs.offcanvas', function() {
-    if ($('.navbar-secondary ul.navmenu-nav').contents().length === 0) {
-        $($('.navbar-secondary ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
+    if ($('.navbar-contextual ul.navmenu-nav').contents().length === 0) {
+        $($('.navbar-contextual ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
         $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
 {if $theme_config_extra->bootstrap_theme == 'bootswatch'}
@@ -26,7 +26,7 @@ $('.navmenu').on('show.bs.offcanvas', function() {
     $('#the_page').on('touchmove.bs', function(e) {
         e.preventDefault();
     });
-    if ($('.navbar-secondary.affix-top').length > 0 && $('.jumbotron').length > 0) {
+    if ($('.navbar-contextual.affix-top').length > 0 && $('.jumbotron').length > 0) {
         $('.navmenu').css('top', $('.navbar-main').height() + $('.jumbotron').outerHeight() - $(document).scrollTop());
     }
 });
@@ -34,14 +34,14 @@ $('.navmenu').on('hidden.bs.offcanvas', function() {
     if ($('ul.navmenu-nav').contents().length > 0) {
         $('ul.navmenu-nav').find('.dropdown-menu-right').removeClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').removeAttr('aria-haspopup');
-        $($('ul.navmenu-nav').contents()).appendTo('.navbar-secondary ul.navbar-nav');
+        $($('ul.navmenu-nav').contents()).appendTo('.navbar-contextual ul.navbar-nav');
     }
     $('#the_page').off('touchmove.bs');
 });
-$('.navbar-secondary').on('affix.bs.affix', function() {
+$('.navbar-contextual').on('affix.bs.affix', function() {
     $('.navmenu').css('top', '');
 });
-$('.navbar-secondary').on('affix-top.bs.affix', function() {
+$('.navbar-contextual').on('affix-top.bs.affix', function() {
     var nav_top_offset = 0;
     if ($('.navbar-main')) {
        nav_top_offset = $('.navbar-main').height();
@@ -52,14 +52,14 @@ $('.navbar-secondary').on('affix-top.bs.affix', function() {
     $('.navmenu').css('top', nav_top_offset);
 });
 {/footer_script}
-<div id="secondary-navmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
+<div id="navmenu-contextual" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
     <ul class="nav navmenu-nav"></ul>
 </div>
 <div class="nav-wrapper">
-<nav class="navbar navbar-default navbar-secondary" role="navigation">
+<nav class="navbar navbar-default navbar-contextual" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#secondary-navmenu">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#navmenu-contextual">
                <span class="sr-only">Toggle navigation</span>
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
@@ -73,16 +73,16 @@ $('.navbar-secondary').on('affix-top.bs.affix', function() {
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
 if (!navigator.userAgent.match(/rv:11/)) {
- var $nrLevels = $('.navbar-secondary .navbar-brand a').length,
+ var $nrLevels = $('.navbar-contextual .navbar-brand a').length,
      $html;
  while ($nrLevels > 2) {
-   $('.navbar-secondary .navbar-brand a')[0].remove();
-   $nrLevels = $('.navbar-secondary .navbar-brand a').length;
-   $html = $('.navbar-secondary .navbar-brand').html().replace(/^ \/ /, "");
+   $('.navbar-contextual .navbar-brand a')[0].remove();
+   $nrLevels = $('.navbar-contextual .navbar-brand a').length;
+   $html = $('.navbar-contextual .navbar-brand').html().replace(/^ \/ /, "");
    if ($nrLevels === 2) {
-      $('.navbar-secondary .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>' + $html);
+      $('.navbar-contextual .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>' + $html);
    } else {
-      $('.navbar-secondary .navbar-brand').html($html);
+      $('.navbar-contextual .navbar-brand').html($html);
    }
  }
 }

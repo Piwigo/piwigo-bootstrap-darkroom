@@ -101,7 +101,7 @@
         <nav class="navbar navbar-default navbar-main" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menubar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -109,7 +109,7 @@
                     </button>
                     <a class="navbar-brand" href="{$U_HOME}">{$GALLERY_TITLE}</a>
                 </div>
-                <div class="collapse navbar-collapse navbar-right" id="primary-navbar">
+                <div class="collapse navbar-collapse navbar-right" id="navbar-menubar">
 {$MENUBAR}
                 </div>
             </div>

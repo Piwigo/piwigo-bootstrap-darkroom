@@ -24,13 +24,13 @@ html, body {
 
 
 /* Navigation */
-.navbar-secondary {
+.navbar-contextual {
    /* enable accel on affix navbar (avoids affix delay on iOS */
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 @media (max-width: 460px) {
-  .navbar-secondary .navbar-brand {
+  .navbar-contextual .navbar-brand {
     width: 80%;
     overflow: hidden;
     white-space: nowrap;
@@ -50,7 +50,7 @@ html, body {
   vertical-align: middle;
 }
 .navbar-main { z-index: 104; }
-.navbar-secondary { z-index: 103; }
+.navbar-contextual { z-index: 103; }
 @media (min-width: 992px) {
   .navbar {
     left: auto;
