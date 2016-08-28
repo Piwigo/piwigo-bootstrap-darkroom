@@ -154,8 +154,14 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
                 <dd>{$INFO_AUTHOR}</dd>
             </div>
 {/if}
+{if isset($CR_INFO_NAME)}
+            <div id="Copyright" class="imageInfo">
+                <dt>{'Copyright'|@translate}</dt>
+                <dd>{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</dd>
+            </div>    
+{/if}
 {if $display_info.rating_score and isset($rate_summary)}
-        <div id="Average" class="imageInfo">
+            <div id="Average" class="imageInfo">
                 <dt>{'Rating score'|@translate}</dt>
                 <dd>
                 {if $rate_summary.count}
@@ -164,7 +170,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
                         <span id="ratingScore">{'no rate'|@translate}</span> <span id="ratingCount"></span>
                 {/if}
                 </dd>
-        </div>
+            </div>
 {/if}
 
 {if isset($rating)}
