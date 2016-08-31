@@ -154,7 +154,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
                 <dd>{$INFO_AUTHOR}</dd>
             </div>
 {/if}
-{if isset($CR_INFO_NAME)}
+{if isset($CR_INFO_NAME) && !empty($CR_INFO_NAME)}
             <div id="Copyright" class="imageInfo">
                 <dt>{'Copyright'|@translate}</dt>
                 <dd>{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</dd>
