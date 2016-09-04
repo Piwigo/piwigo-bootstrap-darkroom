@@ -299,7 +299,7 @@ function setupPhotoSwipe() {
          } else {
             $pswpIndex = $(this).data('index');
          }
-         $(this).off().on('click tap', function(event) {
+         $(this).off('click tap').on('click tap', function(event) {
             event.preventDefault();
             startPhotoSwipe($pswpIndex);
          });
