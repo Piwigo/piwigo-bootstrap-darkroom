@@ -28,7 +28,7 @@
         background: url({$ROOT_URL}{$themeconf.icon_dir}/img_small.png) no-repeat center;
     }
 </style>
-{assign var=idx value=0}
+{assign var=idx value=0+$START_ID}
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative value=$pwg->derivative($derivative_params, $thumbnail.src_image)}
 {if !$derivative->is_cached()}
