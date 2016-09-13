@@ -322,8 +322,16 @@ $(document).ajaxComplete(function() {
 {/if}
 {footer_script require="jquery"}{strip}
 {if !$videojs_enabled && (isset($GThumb) || isset($GDThumb))}
-$('img.thumbnail[src*="pwg_representative"]').each(function() {
-  $(this).closest('li').append('<i class="fa fa-file-video-o fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
+function addVideoIndicator() {
+  $('img.thumbnail[src*="pwg_representative"]').each(function() {
+    $(this).closest('li').append('<i class="fa fa-file-video-o fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
+  });
+}
+$(document).ready(function() {
+  addVideoIndicator();
+});
+$(document).ajaxComplete(function() {
+  addVideoIndicator();
 });
 {else}
 $('.col-thumbnail').find('img[src*="pwg_representative"]').each(function() {
