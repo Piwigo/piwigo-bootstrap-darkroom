@@ -330,11 +330,18 @@ function startPhotoSwipe(idx) {
         var w = item.videoProperties.w,
             h = item.videoProperties.h,
             vw = vp.x,
-            r,
-            vh;
+            vh = vp.y,
+            r;
+        console.log('video height: ' + h + ', width: ' + w); 
         if (vw < w) {
             r = w/h;
             vh = vw/r;
+            console.log(vp.y + ' vs ' + vh);
+            if (vp.y < h) {
+              console.log('but wait, video is higher than vp.y');
+              vh = vp.y;
+              vw = vh*r;
+            }
             w = vw;
             h = vh;
         }
