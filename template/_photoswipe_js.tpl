@@ -341,6 +341,12 @@ function startPhotoSwipe(idx) {
             }
             w = vw;
             h = vh;
+        } else if (vp.y < h) {
+            r = w/h;
+            vh = vp.y;
+            vw = vh*r;
+            w = vw;
+            h = vh;
         }
 
 	return {
