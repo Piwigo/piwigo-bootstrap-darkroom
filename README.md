@@ -9,11 +9,11 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 * Full screen slideshow view using [PhotoSwipe](http://photoswipe.com)
  * Auto play support (replaces Piwigo default slideshow)
  * Album thumbnails can be linked to PhotoSwipe directly (like smartpocket)
- * Video support inside the slideshow modal
-* Video support on Picture page using native HTML 5 video widget
+* Video support on both the picture page and inside the slideshow, using native HTML 5 video widget
 * 100% mobile ready
  * fully responsive Navbars, Carousel, PhotoSwipe slideshow, video content
  * async/ondemand loading of carousel & PhotoSwipe content, adaptive image size selection, swipe & tap events
+* Various configuration options
  
 
 ### Usage
@@ -22,8 +22,9 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
  * Git clone and move to piwigo/themes/bootstrap_darkroom
  * Download from http://piwigo.org/ext/extension_view.php?eid=831
  * Or just use the Extension Manager
-2. Enable Bootstrap Darkroom
-3. To use it as the standard theme for mobile devices, you need to disable the Smartpocket theme (if enabled). In combination with the recommended plugins and by setting "Thumbnail link target" to "PhotoSwipe" or "PhotoSwipe (mobile devices only)" it will behave like smartpocket (click on thumbnail opens the slideshow, masonry style thumbnail page with ajax loading).
+2. Install the Bootstrap Default theme, too
+3. Enable Bootstrap Darkroom
+4. To use it as the standard theme for mobile devices, you need to disable the Smartpocket theme (if enabled). In combination with the recommended plugins and by setting "Thumbnail link target" to "PhotoSwipe" or "PhotoSwipe (mobile devices only)" it will behave like smartpocket (click on thumbnail opens the slideshow, masonry style thumbnail page with ajax loading).
 
 ### Recommended Plugins
 * [GThumb+](http://piwigo.org/ext/extension_view.php?eid=591) or [gdThumb](http://piwigo.org/ext/extension_view.php?eid=771): this will give you masonry-style thumbnail page.
@@ -35,6 +36,7 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 * On iOS the PhotoSwipe fullscreen mode isn't supported. On iPhone it does work in landscape orientation only, on iPad it doesn't work at all. That's an iOS bug. Works just fine on Android
 * Plugins that add buttons to the Navbar might not (yet) be supported, see [Plugin Support Matrix](https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki/Plugin-Support-Matrix)
 * The Sidebar, if enabled in settings, doesn't play well with Bootswatch Themes. You need to CSS-style the sidebar yourself.
+* Portrait mode videos (e.g. from mobile phones) need to be recoded in actual portrait orientation, rotation tags won't work.
 
 ### Preview
 
