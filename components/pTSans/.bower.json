@@ -1,0 +1,15 @@
+{
+  "name": "pTSans",
+  "main": [
+    "*.ttf",
+    "*.css"
+  ],
+  "_cacheHeaders": {
+    "Content-Type": "application/octet-stream",
+    "Content-Disposition": "attachment; filename=pTSans.zip"
+  },
+  "_source": "https://google-fonts.azurewebsites.net/googleFonts/PT-Sans?family=PT+Sans:400,700",
+  "_target": "*",
+  "_originalSource": "https://google-fonts.azurewebsites.net/googleFonts/PT-Sans?family=PT+Sans:400,700",
+  "_direct": true
+}
