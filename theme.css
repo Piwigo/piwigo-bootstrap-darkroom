@@ -282,6 +282,7 @@ html, body {
 .pswp__ui--fit .pswp__top-bar, .pswp__ui--fit .pswp__caption,
 .pswp__top-bar, .pswp__caption {
   background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1600;
 }
 .pswp__ui--idle .pswp__caption { opacity: 0; }
 @media (min-width: 768px) {
