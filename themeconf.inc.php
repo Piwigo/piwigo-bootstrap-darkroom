@@ -30,8 +30,7 @@ function set_config_values()
 {
   global $template, $pwg_loaded_plugins;
   $template->assign(array(
-                          'rv_tscroller_enabled'=> isset($pwg_loaded_plugins['rv_tscroller']),
-                          'videojs_enabled'=> isset($pwg_loaded_plugins['piwigo-videojs'])
+                          'loaded_plugins' => $GLOBALS['pwg_loaded_plugins']
                          ));
 }
 

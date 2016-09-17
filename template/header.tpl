@@ -83,7 +83,6 @@
 {combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js'}
 {combine_script id=$themeconf.name require='bootstrap' path="themes/bootstrapdefault/js/theme.js"}
 {get_combined_scripts load='header'}
-
     <!--[if lt IE 7]>
     <script type="text/javascript" src="{$ROOT_URL}themes/default/js/pngfix.js"></script>
     <![endif]-->
@@ -133,4 +132,6 @@
 {foreach from=$header_notes item=note}
 {/foreach}
 {/if}
+
+{include file='_plugin_fixes_js.tpl'}
 <!-- End of header.tpl -->

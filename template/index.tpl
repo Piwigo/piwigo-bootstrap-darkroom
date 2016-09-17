@@ -312,7 +312,7 @@ $(document).ready(function() {
    setupPhotoSwipe();
 });
 
-{if $rv_tscroller_enabled}
+{if isset($loaded_plugins['rv_tscroller'])}
 $(document).ajaxComplete(function() {
    setupPhotoSwipe();
 });
@@ -321,7 +321,7 @@ $(document).ajaxComplete(function() {
 {/strip}{/footer_script}
 {/if}
 {footer_script require="jquery"}{strip}
-{if !$videojs_enabled && (isset($GThumb) || isset($GDThumb))}
+{if !isset($loaded_plugins['piwigo-videojs']) && (isset($GThumb) || isset($GDThumb))}
 function addVideoIndicator() {
   $('img.thumbnail[src*="pwg_representative"]').each(function() {
     $(this).closest('li').append('<i class="fa fa-file-video-o fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
@@ -348,7 +348,7 @@ $('.col-thumbnail').find('img[src*="pwg_representative"]').each(function() {
 {if !empty($cats_navbar)}
     {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$cats_navbar}
 {/if}
-{if !empty($thumb_navbar) && !$rv_tscroller_enabled}
+{if !empty($thumb_navbar) && !isset($loaded_plugins['rv_tscroller'])}
     {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$thumb_navbar}
 {/if}
 </div>
