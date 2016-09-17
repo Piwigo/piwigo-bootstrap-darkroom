@@ -50,7 +50,7 @@ $(window).load(function() {
 {/if}
 
 
-{if isset($loaded_plugins['DownloadBySize'])}
+{if isset($loaded_plugins['download_by_size'])}
 {footer_script require='jquery'}
 {literal}
 $(document).ready(function() {
