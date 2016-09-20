@@ -38,6 +38,9 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 * The Sidebar, if enabled in settings, doesn't play well with Bootswatch Themes. You need to CSS-style the sidebar yourself.
 * Portrait mode videos (e.g. from mobile phones) need to be recoded in actual portrait orientation, rotation tags won't work.
 
+### Demo
+A demo is available at https://pwgdemo.kuther.net
+
 ### Preview
 
 ![Preview](https://raw.githubusercontent.com/tkuther/piwigo-bootstrap-darkroom/master/screenshot.png)
