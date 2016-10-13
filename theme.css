@@ -326,6 +326,14 @@ a.pswp__share--google:hover {
 /* Video */
 video[poster] { object-fit: cover; }
 
+/* Picture page nav buttons */
+@media (max-width: 320px) {
+  #navigationButtons span.glyphicon {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
 /*
  * Plugin fixlets
  */
