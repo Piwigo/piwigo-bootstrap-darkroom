@@ -7,10 +7,9 @@
 
 {include file='picture_nav.tpl'}
 
-{include file='infos_errors.tpl'}
-
 <div id="content-spacer" class="container">
-    {include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
+{include file='infos_errors.tpl'}
+{include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
 {if get_device() != 'desktop' }
 {footer_script require="jquery"}{strip}
 $('#theImage img').bind('swipeleft swiperight', function (event) {
