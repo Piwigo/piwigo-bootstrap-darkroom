@@ -3,7 +3,7 @@
   var error_icon = "{$ROOT_URL}{$themeconf.icon_dir}/errors_small.png", max_requests = {$maxRequests};
 {/footer_script}
 {if $derivative_params->type == "thumb"}
-{if get_device() !== 'desktop'}
+{if get_device() == 'mobile'}
 {assign var=width value=520}
 {assign var=height value=360}
 {assign var=rwidth value=260}
