@@ -1,3 +1,17 @@
+{if isset($loaded_plugins['ProtectedAlbums']) && $BODY_ID == 'theCategoryPage'}
+{footer_script require='jquery'}{strip}
+var form = $('#content>form');
+$(form).addClass('form-inline').wrap('<div class="col-sm-12"></div>');
+$(form).find('legend').changeElementType('h4');
+$(form).find('fieldset').changeElementType('div');
+$(form).find('div').addClass('form-group');
+$(form).find('div>input[type="password"]').addClass('form-control');
+$(form).find('div>input[type="submit"]').changeElementType('button');
+$(form).find('button').addClass('btn btn-primary').text('Login');
+$(form).find('label').remove();
+{/strip}{/footer_script}
+{/if}
+
 {if isset($loaded_plugins['user_custom_fields']) && ($BODY_ID == 'theProfilePage' || $BODY_ID == 'theRegisterPage')}
 {footer_script require='jquery'}{strip}
 var ucf_body_id = $('{if $BODY_ID == 'theProfilePage'}#theProfilePage{else}#theRegisterPage{/if}');
