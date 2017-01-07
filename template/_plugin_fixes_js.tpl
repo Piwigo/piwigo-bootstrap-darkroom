@@ -1,7 +1,6 @@
 {if isset($loaded_plugins['user_custom_fields']) && ($BODY_ID == 'theProfilePage' || $BODY_ID == 'theRegisterPage')}
-{footer_script require='jquery'}
+{footer_script require='jquery'}{strip}
 var ucf_body_id = $('{if $BODY_ID == 'theProfilePage'}#theProfilePage{else}#theRegisterPage{/if}');
-{literal}
 $(document).ready(function() {
   $(ucf_body_id).find('fieldset>legend').remove();
   $(ucf_body_id).find('fieldset>ul>li').changeElementType('div');
@@ -12,13 +11,11 @@ $(document).ready(function() {
   var u = $('#theProfilePage form#profile .form-group').first().contents().filter(function() { return this.nodeType == 3; }).eq(1);
   $(u).wrap('<div class="col-sm-4"><p class="form-control-static"></p></div>');
 });
-{/literal}
-{/footer_script}
+{/strip}{/footer_script}
 {/if}
 
 {if isset($loaded_plugins['BatchDownloader'])}
-{footer_script require='jquery'}
-{literal}
+{footer_script require='jquery'}{strip}
 $(document).ready(function() {
   if ($('#batchDownloadLink').next('div#batchDownloadBox').length > 0) {
     $('#batchDownloadLink').closest('li').addClass('dropdown');
@@ -49,14 +46,12 @@ $(window).load(function() {
     $('#batchDownloadLink').off().on('click', function() { $('#downloadSizeLink').dropdown() });
   }
 });
-{/literal}
-{/footer_script}
+{/strip}{/footer_script}
 {/if}
 
 
 {if isset($loaded_plugins['download_by_size'])}
-{footer_script require='jquery'}
-{literal}
+{footer_script require='jquery'}{strip}
 $(document).ready(function() {
   var liDownloadSizeLink = $('#downloadSizeLink').closest('li');
   $('#downloadSizeBox').appendTo(liDownloadSizeLink);
@@ -76,6 +71,5 @@ $(window).load(function() {
   $('#downloadSizeBox').off('mouseleave click');
   $('#downloadSizeLink').off().on('click', function() { $('#downloadSizeLink').dropdown() });
 });
-{/literal}
-{/footer_script}
+{/strip}{/footer_script}
 {/if}

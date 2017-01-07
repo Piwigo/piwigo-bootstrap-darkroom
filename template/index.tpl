@@ -7,7 +7,7 @@
 {/if}
 {if !empty($PLUGIN_INDEX_CONTENT_BEFORE)}{$PLUGIN_INDEX_CONTENT_BEFORE}{/if}
 
-{footer_script require='jquery'}
+{footer_script require='jquery'}{strip}
 if ($('.jumbotron').length > 0) {
     var $affix_height = $('.navbar-main').height() + $('.jumbotron').outerHeight();
     $('.navbar-contextual').affix({literal}{ offset: {top: $affix_height } }{/literal});
@@ -52,7 +52,7 @@ $('.navbar-contextual').on('affix-top.bs.affix', function() {
     }
     $('.navmenu').css('top', nav_top_offset);
 });
-{/footer_script}
+{strip}{/footer_script}
 <div id="navmenu-contextual" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
     <ul class="nav navmenu-nav"></ul>
 </div>
