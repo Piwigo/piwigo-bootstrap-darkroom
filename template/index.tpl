@@ -73,8 +73,6 @@ $('.navbar-contextual').on('affix-top.bs.affix', function() {
                 {$TITLE}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  var $homeLink = $('.navbar-contextual .navbar-brand a')[0];
-  $($homeLink).html('<span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span>');
   if (!navigator.userAgent.match(/rv:11/)) {
     var $nrLevels = $('.navbar-contextual .navbar-brand a').length,
         $html;
@@ -83,7 +81,7 @@ $(document).ready(function() {
       $nrLevels = $('.navbar-contextual .navbar-brand a').length;
       $html = $('.navbar-contextual .navbar-brand').html().replace(/^ \/ /, "");
       if ($nrLevels === 2) {
-        $('.navbar-contextual .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>' + $html);
+        $('.navbar-contextual .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>{$LEVEL_SEPARATOR}' + $html);
       } else {
         $('.navbar-contextual .navbar-brand').html($html);
     }
