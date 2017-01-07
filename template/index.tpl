@@ -29,6 +29,7 @@ $('.navmenu').on('show.bs.offcanvas', function() {
     if ($('.navbar-contextual.affix-top').length > 0 && $('.jumbotron').length > 0) {
         $('.navmenu').css('top', $('.navbar-main').height() + $('.jumbotron').outerHeight() - $(document).scrollTop());
     }
+    $('.navbar-main .collapse').collapse('hide');
 });
 $('.navmenu').on('hidden.bs.offcanvas', function() {
     if ($('ul.navmenu-nav').contents().length > 0) {
