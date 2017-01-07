@@ -245,7 +245,7 @@ $(document).ready(function() {
 {if !empty($CATEGORIES)}
     <!-- Start of categories -->
 {$CATEGORIES}
-{footer_script}{strip}{literal}
+{footer_script}{strip}
 $(document).ready(function() {
   $('#content img').load(function(){
     $('#content .col-inner').equalHeights()
@@ -262,7 +262,7 @@ $(window).on('resize', function() {
     }
   }, 250);
 });
-{/literal}{/strip}{/footer_script}
+{/strip}{/footer_script}
     <!-- End of categories -->
 {/if}
 
