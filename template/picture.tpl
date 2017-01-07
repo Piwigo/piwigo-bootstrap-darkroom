@@ -129,20 +129,20 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
  <div id="infopanel" class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-centered">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs nav-justified" role="tablist">
-{if $theme_config_extra->picture_info == 'tabs' || (get_device() != 'desktop' && !$theme_config_extra->picture_info == 'disabled')}
+{if $theme_config_extra->picture_info == 'tabs' || (get_device() != 'desktop' && !($theme_config_extra->picture_info == 'disabled'))}
     <li role="presentation" class="active"><a href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
 {if isset($metadata)}
     <li role="presentation"><a href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
 {/if}
 {/if}
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <li role="presentation"{if $theme_config_extra->picture_info != 'tabs'} class="active"{/if}><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate}</a></li>
+    <li role="presentation"{if ($theme_config_extra->picture_info == 'disabled') || ( ($theme_config_extra->picture_info != 'tabs') && (get_device() == 'desktop') ) } class="active"{/if}><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate}</a></li>
 {/if}
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-{if $theme_config_extra->picture_info === 'tabs' || (get_device() != 'desktop' && !$theme_config_extra->picture_info == 'disabled')}
+{if $theme_config_extra->picture_info === 'tabs' || (get_device() != 'desktop' && !($theme_config_extra->picture_info == 'disabled'))}
     <div role="tabpanel" class="tab-pane active" id="tab_info">
       <div id="info-content" class="info">
         <dl class="dl-horizontal">
@@ -326,7 +326,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
 <!-- comments -->
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <div role="tabpanel" class="tab-pane{if $theme_config_extra->picture_info != 'tabs'} active{/if}" id="tab_comments">
+    <div role="tabpanel" class="tab-pane{if ($theme_config_extra->picture_info == 'disabled') || ( ($theme_config_extra->picture_info != 'tabs') && (get_device() == 'desktop') ) } active{/if}" id="tab_comments">
 <a name="comments"></a>
 {$shortname = $theme_config->comments_disqus_shortname}
 {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
