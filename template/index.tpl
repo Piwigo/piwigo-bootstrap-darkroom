@@ -73,19 +73,21 @@ $('.navbar-contextual').on('affix-top.bs.affix', function() {
                 {$TITLE}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-if (!navigator.userAgent.match(/rv:11/)) {
- var $nrLevels = $('.navbar-contextual .navbar-brand a').length,
-     $html;
- while ($nrLevels > 2) {
-   $('.navbar-contextual .navbar-brand a')[0].remove();
-   $nrLevels = $('.navbar-contextual .navbar-brand a').length;
-   $html = $('.navbar-contextual .navbar-brand').html().replace(/^ \/ /, "");
-   if ($nrLevels === 2) {
-      $('.navbar-contextual .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>' + $html);
-   } else {
-      $('.navbar-contextual .navbar-brand').html($html);
-   }
- }
+  var $homeLink = $('.navbar-contextual .navbar-brand a')[0];
+  $($homeLink).html('<span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span>');
+  if (!navigator.userAgent.match(/rv:11/)) {
+    var $nrLevels = $('.navbar-contextual .navbar-brand a').length,
+        $html;
+    while ($nrLevels > 2) {
+      $('.navbar-contextual .navbar-brand a')[0].remove();
+      $nrLevels = $('.navbar-contextual .navbar-brand a').length;
+      $html = $('.navbar-contextual .navbar-brand').html().replace(/^ \/ /, "");
+      if ($nrLevels === 2) {
+        $('.navbar-contextual .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>' + $html);
+      } else {
+        $('.navbar-contextual .navbar-brand').html($html);
+    }
+  }
 }
 {if $theme_config_extra->bootstrap_theme == 'bootswatch'}
    $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
