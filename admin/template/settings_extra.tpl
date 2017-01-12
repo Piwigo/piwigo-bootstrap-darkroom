@@ -21,6 +21,7 @@
             <ul>
             <label id="bootswatch_theme_label" labelfor="bootswatch_theme">{'Bootswatch theme'|@translate}</label>
             <select id="bootswatch_theme" name="bootswatch_theme"></select>
+            <div id="bootswatch_preview"></div>
             <dl class="dl-horizontal">
                 <dt>Darkroom</dt><dd>{'Bootstrap Darkroom\'s custom dark color theme'|@translate}</dd>
                 <dt>Bootswatch</dt><dd>{'A color theme from'|@translate} <a href="https://bootswatch.com">https://bootswatch.com</a></dd>
@@ -165,6 +166,7 @@
 {footer_script require="jquery"}
 var select = $("#bootswatch_theme");
 var label = $("#bootswatch_theme_label");
+var preview = $("#bootswatch_preview");
 var cur_theme = '{$theme_config_extra->bootswatch_theme}';
 function getBootswatchThemes() {
     $.getJSON("https://bootswatch.com/api/3.json", function (data) {
@@ -183,11 +185,14 @@ function getBootswatchThemes() {
            $('option[value=' + $lname + ']').attr('selected', 'selected');
         }
       });
+      preview.html('<img src="themes/bootstrap_darkroom/components/bootswatch/' + select.val() + '/thumbnail.png" width="50%" style="padding: 10px 0;"/>');
+      preview.show();
 
     }, "json").fail(function(){
         $(".alert").toggleClass("alert-info alert-danger");
         $(".alert h4").text("Failed to load available Bootswatch Themes!");
     });
+
 }
 
 $(document).ready(function() {
@@ -209,8 +214,13 @@ $('select[name=bootstrap_theme]').change(function() {
     select.empty();
     select.hide();
     label.hide();
+    preview.hide();
   }
 });
+$('select[name=bootswatch_theme]').change(function() {
+    preview.html('<img src="themes/bootstrap_darkroom/components/bootswatch/' + select.val() + '/thumbnail.png" width="50%" style="padding: 10px 0;"/>');
+});
+
 $('input[name=photoswipe]').change(function() {
   curr = $('select[name=thumbnail_linkto]').val();
   if (!$(this).is(':checked') && curr !== 'picture') {

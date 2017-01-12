@@ -27,4 +27,4 @@ span.info { padding-left: 20px; }
 }
 .dl-horizontal dd:after { clear: both; }
 
-#bootswatch_theme, #bootswatch_theme_label { display: none;}
+#bootswatch_theme, #bootswatch_theme_label, #bootswatch_preview { display: none;}
