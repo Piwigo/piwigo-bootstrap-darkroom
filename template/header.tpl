@@ -45,8 +45,8 @@
 {/if}
 
 {if $theme_config_extra->bootstrap_theme == 'bootswatch'}
-    {combine_css path="themes/bootstrap_darkroom/bootswatch/{$theme_config_extra->bootswatch_theme}-bootstrap.min.css" order=-20}
-    {combine_css path="themes/bootstrap_darkroom/bootswatch/{$theme_config_extra->bootswatch_theme}-navmenu.css" order=-5}
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/{$theme_config_extra->bootswatch_theme}/bootstrap.min.css">
+    {combine_css path="themes/bootstrap_darkroom/bootswatch/navmenu-{$theme_config_extra->bootswatch_theme}.css" order=-5}
 {else}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap.min.css" order=-20}
 {/if}
@@ -68,7 +68,7 @@
 {if file_exists("local/bootstrapdefault/custom.css")}
 {combine_css path="local/bootstrapdefault/custom.css" order=10}
 {/if}
-{combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=100}
+{combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=1000000}
 {get_combined_css}
 
 {if isset($U_PREFETCH)}
