@@ -359,3 +359,8 @@ video[poster] { object-fit: cover; }
   font-family:"Glyphicons Halflings";
 }
 
+/* User Collections */
+#collectionsDropdown {
+  padding: 10px;
+  background-color: #fff;
+}
