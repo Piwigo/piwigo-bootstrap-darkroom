@@ -154,3 +154,6 @@ ul#thumbnails .gthumb a img.thumbnail {
   content:"\f006";
   font-family:"FontAwesome";
 }
+
+/* PWG_Stuffs */
+.pwgstuffs-container { padding-top: 20px; }

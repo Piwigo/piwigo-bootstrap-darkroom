@@ -100,7 +100,7 @@ $(document).ready(function() {
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
   var stuffAboveContent = $('.navbar-default').next('.pwgstuffs-container');
-  $(stuffAboveContent).insertBefore('#content-spacer').css('padding-top', '20px');
+  $(stuffAboveContent).insertBefore('#content-spacer');
 });
 {/strip}{/footer_script}
 {/if}
