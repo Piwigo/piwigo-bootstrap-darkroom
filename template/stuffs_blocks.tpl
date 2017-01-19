@@ -1,34 +1,26 @@
 {foreach from=$blocks item=block key=key}
-<div id="stuffs_block_{$block.ID}" class="content">
-  {if isset($block.TITLE)}
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <div class="navbar-brand">
+<div class="container pwgstuffs-container">
+  <div id="stuffs_block_{$block.ID}" class="panel panel-primary">
+    {if isset($block.TITLE)}
+    <div class="panel-heading">
     {if isset($block.TITLE_URL)}
           <a href="{$block.TITLE_URL}">{$block.TITLE}</a>
     {else}
           {$block.TITLE}
     {/if}
-        </div>
-      </div>
-      <div class="navbar-right">
-        <ul class="nav navbar-nav">
-    {if !empty($block.U_EDIT)}
-          <li>
-            <a href="{$block.U_EDIT}" title="{'edit'|translate}">
-              <span class="glyphicon glyphicon-pencil"></span><span class="glyphicon-text">{'edit'|@translate}</span>
-            </a>
-          </li>
-    {/if}
-        </ul>
+      <div class="pull-right">
+      {if !empty($block.U_EDIT)}
+          <a href="{$block.U_EDIT}" title="{'edit'|translate}">
+            <span class="glyphicon glyphicon-pencil"></span><span class="glyphicon-text">{'edit'|@translate}</span>
+          </a>
+      {/if}
       </div>
     </div>
-  </nav>
-  {/if}
+    {/if}
 
-  <div class="container">
-  {include file=$block.TEMPLATE}
+    <div class="panel-body">
+    {include file=$block.TEMPLATE}
+    </div>
   </div>
 </div>
 {/foreach}

@@ -95,3 +95,12 @@ $(document).ready(function() {
 });
 {/strip}{/footer_script}
 {/if}
+
+{if isset($loaded_plugins['PWG_Stuffs'])}
+{footer_script require='jquery'}{strip}
+$(document).ready(function() {
+  var stuffAboveContent = $('.navbar-default').next('.pwgstuffs-container');
+  $(stuffAboveContent).insertBefore('#content-spacer').css('padding-top', '20px');
+});
+{/strip}{/footer_script}
+{/if}
