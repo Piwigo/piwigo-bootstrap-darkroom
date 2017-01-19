@@ -140,4 +140,17 @@ ul#thumbnails .gthumb a img.thumbnail {
 }
 #collectionsDropdown {
   padding: 10px;
+  color: #4f4f4f;
+  background-color: #fff;
+}
+#collectionsDropdown a { color: #4f4f4f; }
+#collectionsDropdown a:hover {
+  color: #262626; 
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+.nav a.addCollection .user-collections-icon { background: none !important }
+.nav a.addCollection .user-collections-icon:before {
+  content:"\f006";
+  font-family:"FontAwesome";
 }

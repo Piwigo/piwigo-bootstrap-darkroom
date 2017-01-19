@@ -13,7 +13,7 @@
   <li class="divider"></li>
 {if $block->data.collections}
   {foreach from=$block->data.collections item=col}{strip}
-		<li>
+    <li>
       <a href="{$col.u_edit}">
         {$col.name}
         &nbsp;<span class="badge" title="{$cat.TITLE}">{$col.nb_images}</span>
@@ -24,7 +24,6 @@
     <li class="divider"></li>
     <li><a href="{$block->data.U_LIST}">{'%d more...'|translate:$block->data.MORE}</a></li>
   {/if}
-	</ul>
 {/if}
   </ul>
 </li>
