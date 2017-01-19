@@ -65,10 +65,10 @@
 {if !empty($theme.local_head)}{include file=$theme.local_head load_css=$theme.load_css}{/if}
 {/foreach}
 
+{combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=9999}
 {if file_exists("local/bootstrapdefault/custom.css")}
-{combine_css path="local/bootstrapdefault/custom.css" order=10}
+{combine_css path="local/bootstrapdefault/custom.css" order=10000}
 {/if}
-{combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=1000000}
 {get_combined_css}
 
 {if isset($U_PREFETCH)}
