@@ -333,34 +333,3 @@ video[poster] { object-fit: cover; }
     margin-right: 15px;
   }
 }
-
-/*
- * Plugin fixlets
- */
-
-/* Openstreetmap Plugin fixlets */
-.pwg-icon-globe {
-  font-family: none !important;
-  line-height: none !important;
-}
-.pwg-icon-globe:before {
-  content:"\e135";
-  font-family:"Glyphicons Halflings";
-}
-
-/* BatchDownloader */
-.batch-downloader-icon {
-  background: none !important;
-  font-family: none !important;
-  line-height: none !important;
-}
-.batch-downloader-icon:before {
-  content:"\e197";
-  font-family:"Glyphicons Halflings";
-}
-
-/* User Collections */
-#collectionsDropdown {
-  padding: 10px;
-  background-color: #fff;
-}

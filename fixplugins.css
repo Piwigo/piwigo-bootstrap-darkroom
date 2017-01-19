@@ -97,6 +97,8 @@
 #languageSwitch {
   display: none;
 }
+
+/* GThumb+ */
 ul.thumbnailCategories,
 ul.thumbnails,
 ul#thumbnails {
@@ -108,4 +110,34 @@ ul#thumbnails .gthumb a img.thumbnail {
 }
 #content div.loader {
   display: none;
+}
+
+/* Openstreetmap Plugin fixlets */
+.pwg-icon-globe {
+  font-family: none !important;
+  line-height: none !important;
+}
+.pwg-icon-globe:before {
+  content:"\e135";
+  font-family:"Glyphicons Halflings";
+}
+
+/* BatchDownloader */
+.batch-downloader-icon {
+  background: none !important;
+  font-family: none !important;
+  line-height: none !important;
+}
+.batch-downloader-icon:before {
+  content:"\e197";
+  font-family:"Glyphicons Halflings";
+}
+
+/* User Collections */
+#thumbnails li .addCollection {
+  background: rgba(0,0,0,0.7);
+  border-radius: 0;
+}
+#collectionsDropdown {
+  padding: 10px;
 }
