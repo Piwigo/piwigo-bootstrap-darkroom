@@ -131,10 +131,10 @@ function get_all_thumbnails_in_category()
   $template->assign('thumbnails', $tpl_thumbnails_var);
 
   $template->assign( array(
-      'derivative_params_square' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_SQUARE) ) ),
-      'derivative_params_medium' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_MEDIUM) ) ),
-      'derivative_params_large' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_LARGE) ) ),
-      'derivative_params_xxlarge' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( pwg_get_session_var('index_deriv', IMG_XXLARGE) ) ),  
+      'derivative_params_square' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( IMG_SQUARE ) ),
+      'derivative_params_medium' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( IMG_MEDIUM ) ),
+      'derivative_params_large' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( IMG_LARGE ) ),
+      'derivative_params_xxlarge' => trigger_change('get_index_derivative_params', ImageStdParams::get_by_type( IMG_XXLARGE ) ),  
   ));
 
   unset($tpl_thumbnails_var, $pictures);
