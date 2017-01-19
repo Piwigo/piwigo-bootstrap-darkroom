@@ -87,3 +87,11 @@ $(window).load(function() {
 });
 {/strip}{/footer_script}
 {/if}
+
+{if isset($loaded_plugins['UserCollections']) && $BODY_ID == 'thePicturePage'}
+{footer_script require='jquery'}{strip}
+$(document).ready(function() {
+  $('#thePicturePage .nav a.addCollection').wrap('<li></li>');
+});
+{/strip}{/footer_script}
+{/if}
