@@ -14,6 +14,7 @@
                     <select name="bootstrap_theme">
                         <option value="darkroom"{if $theme_config_extra->bootstrap_theme == 'darkroom'} selected="selected"{/if}>Darkroom</option>
                         <option value="bootswatch"{if $theme_config_extra->bootstrap_theme == 'bootswatch'} selected="selected"{/if}>Bootswatch</option>
+                        <option value="material"{if $theme_config_extra->bootstrap_theme == 'material'} selected="selected"{/if}>Material</option>
                         <option value="default"{if $theme_config_extra->bootstrap_theme == 'default'} selected="selected"{/if}>Default</option>
                         <option value="none"{if $theme_config_extra->bootstrap_theme == 'none'} selected="selected"{/if}>{'None'|@translate}</option>
                     </select>
@@ -25,6 +26,7 @@
             <dl class="dl-horizontal">
                 <dt>Darkroom</dt><dd>{'Bootstrap Darkroom\'s custom dark color theme'|@translate}</dd>
                 <dt>Bootswatch</dt><dd>{'A color theme from'|@translate} <a href="https://bootswatch.com">https://bootswatch.com</a></dd>
+                <dt>Material</dt><dd>{'The Material theme from'|@translate} <a href="http://fezvrasta.github.io/bootstrap-material-design">http://fezvrasta.github.io/bootstrap-material-design</a></dd>
                 <dt>Default</dt><dd>{'Bootstrap\'s default theme'|@translate}</dd>
                 <dt>{'None'|@translate}</dt><dd>{'No color theme'|@translate}</dd> 
             </dl>

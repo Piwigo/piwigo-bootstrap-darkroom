@@ -1,6 +1,7 @@
 {
    "directory": "components/",
    "ignoredDependencies": [
-      "jquery"
+      "jquery",
+      "bootstrap-sass"
    ]
 }

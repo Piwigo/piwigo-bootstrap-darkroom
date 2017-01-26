@@ -19,7 +19,7 @@ $('.navmenu').on('show.bs.offcanvas', function() {
         $($('.navbar-contextual ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
         $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
-{if $theme_config_extra->bootstrap_theme == 'bootswatch'}
+{if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material'}
         $('.navmenu').css('background-color', $('.navbar-default').css('background-color'));
 {/if}
     }
@@ -87,7 +87,7 @@ $(document).ready(function() {
     }
   }
 }
-{if $theme_config_extra->bootstrap_theme == 'bootswatch'}
+{if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material' }
    $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
 {/if}
 });

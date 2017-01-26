@@ -59,15 +59,26 @@
 {if $theme.load_css}
     {combine_css path="themes/`$theme.id`/theme.css" order=-10}
 {/if}
+{if !empty($theme.local_head)}{include file=$theme.local_head load_css=$theme.load_css}{/if}
+{/foreach}
 {if $theme_config_extra->bootstrap_theme == 'darkroom'}
     {combine_css path="themes/bootstrap_darkroom/theme-colors.css" order=-5}
 {/if}
-{if !empty($theme.local_head)}{include file=$theme.local_head load_css=$theme.load_css}{/if}
-{/foreach}
+{if $theme_config_extra->bootstrap_theme == 'material'}
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" order=-5}
+    {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/ripples.min.css" order=-4}
+    {combine_script id='material.js' require='jquery' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/material.min.js'}
+    {combine_script id='ripples.js' require='jquery' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/ripples.min.js'}
+    {footer_script require="material.js" require="ripples.js"}
+        $.material.init()
+    {/footer_script}
+{/if}
 
 {combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=9999}
 {if file_exists("local/bootstrapdefault/custom.css")}
-{combine_css path="local/bootstrapdefault/custom.css" order=10000}
+    {combine_css path="local/bootstrapdefault/custom.css" order=10000}
 {/if}
 {get_combined_css}
 
