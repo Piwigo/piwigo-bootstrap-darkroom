@@ -1,0 +1,5 @@
+.form-control { color: #555 !important; }
+.form-control::-webkit-input-placeholder { color: #bdbdbd !important; }
+.form-control:-moz-placeholder { color: #bdbdbd !important; }
+.form-control::-moz-placeholder { color: #bdbdbd !important; }
+.form-control:-ms-input-placeholder { color: #bdbdbd !important; }

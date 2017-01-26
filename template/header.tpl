@@ -69,6 +69,7 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" order=-5}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/ripples.min.css" order=-4}
+    {combine_css path="themes/bootstrap_darkroom/theme-colors-material.css" order=-3}
     {combine_script id='material.js' require='jquery' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/material.min.js'}
     {combine_script id='ripples.js' require='jquery' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/ripples.min.js'}
     {footer_script require="material.js" require="ripples.js"}
