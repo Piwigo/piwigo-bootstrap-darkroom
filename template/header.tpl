@@ -65,8 +65,7 @@
     {combine_css path="themes/bootstrap_darkroom/theme-colors.css" order=-5}
 {/if}
 {if $theme_config_extra->bootstrap_theme == 'material'}
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-6}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" order=-5}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/ripples.min.css" order=-4}
     {combine_css path="themes/bootstrap_darkroom/theme-colors-material.css" order=-3}

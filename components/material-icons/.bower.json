@@ -1,0 +1,41 @@
+{
+  "name": "material-icons",
+  "version": "0.1.0",
+  "homepage": "https://materialicons.github.io",
+  "authors": [
+    "Ravindra Marella <mv.ravindra@yahoo.com>"
+  ],
+  "description": "Material icons CSS toolkit <i class=\"mi mi-face\"></i>",
+  "main": "src/stylus/material-icons.styl",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "material-icons",
+    "material-design-icons",
+    "material-design",
+    "iconfont",
+    "icons",
+    "font",
+    "css",
+    "stylus"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.0",
+    "commit": "85278ebf7c22d2e63870ddd725d4afdf3e127d01"
+  },
+  "_source": "https://github.com/materialicons/material-icons.git",
+  "_target": "^0.1.0",
+  "_originalSource": "material-icons",
+  "_direct": true
+}
