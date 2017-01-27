@@ -26,7 +26,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {if $theme_config_extra->bootstrap_theme == 'material'}
 {footer_script require='jquery'}
 $('#content-spacer').wrap('<div class="container well"></div>');
-$('div[id^="theImage"').insertAfter('#content-spacer');
+$('div[id^="theImage"]').insertAfter('#content-spacer');
 {/footer_script}
 {/if}
 </div>
