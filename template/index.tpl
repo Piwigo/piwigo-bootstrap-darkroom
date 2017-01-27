@@ -87,9 +87,6 @@ $(document).ready(function() {
     }
   }
 }
-{if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material' }
-   $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
-{/if}
 });
 {/strip}{/footer_script}
 {/if}

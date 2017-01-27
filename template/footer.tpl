@@ -18,6 +18,11 @@
                 | {'View in'|@translate} : <a href="{$TOGGLE_MOBILE_THEME_URL}">{'Mobile'|@translate}</a> | <b>{'Desktop'|@translate}</b>
 {/if}
 
+{if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material' }
+{footer_script require='jquery'}
+$('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
+{/footer_script}
+{/if}
 {get_combined_scripts load='footer'}
 
 {if isset($footer_elements)}
