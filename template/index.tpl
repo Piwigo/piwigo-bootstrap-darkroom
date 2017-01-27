@@ -52,6 +52,9 @@ $('.navbar-contextual').on('affix-top.bs.affix', function() {
     }
     $('.navmenu').css('top', nav_top_offset);
 });
+{if $theme_config_extra->bootstrap_theme == 'material'}
+$('#content-spacer').addClass('well');
+{/if}
 {strip}{/footer_script}
 <div id="navmenu-contextual" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
     <ul class="nav navmenu-nav"></ul>

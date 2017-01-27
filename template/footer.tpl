@@ -18,7 +18,7 @@
                 | {'View in'|@translate} : <a href="{$TOGGLE_MOBILE_THEME_URL}">{'Mobile'|@translate}</a> | <b>{'Desktop'|@translate}</b>
 {/if}
 
-{if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material' }
+{if ($theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material') && $BODY_ID !== 'thePicturePage' }
 {footer_script require='jquery'}
 $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
 {/footer_script}

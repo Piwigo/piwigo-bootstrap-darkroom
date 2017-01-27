@@ -23,6 +23,12 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 });
 {/strip}{/footer_script}
 {/if}
+{if $theme_config_extra->bootstrap_theme == 'material'}
+{footer_script require='jquery'}
+$('#content-spacer').wrap('<div class="container well"></div>');
+$('div[id^="theImage"').insertAfter('#content-spacer');
+{/footer_script}
+{/if}
 </div>
 
 <div id="theImage">
@@ -33,7 +39,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
   {include file='picture_info_sidebar.tpl'}
 {/if}
 
-<div class="container">
+<div id="theImageComment" class="container">
 {if isset($COMMENT_IMG)}
   <div class="text-center col-lg-10 -col-md-12 col-centered">
     <section id="important-info">
@@ -45,7 +51,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 
 {include file="http_scheme.tpl"}
 {if $theme_config->social_enabled}
-<div class="container">
+<div id="theImageShareButtons" class="container">
     <section id="share">
 {if $theme_config->social_twitter}
         <a href="http://twitter.com/share?text={$current.TITLE}&amp;url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
@@ -79,7 +85,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {if $theme_config_extra->photoswipe && $theme_config_extra->slick_infinite}
   {include file="_photoswipe_js.tpl" selector="#photoSwipeData"}
 {/if}
-<div class="container">
+<div id="theImageCarousel" class="container">
  <div class="col-lg-10 col-md-12 col-centered">
   <div id="thumbnailCarousel" class="slick-carousel">
 {assign var=idx value=0}
@@ -125,7 +131,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
 {/if}
 
-<div class="container">
+<div id="theImageInfos" class="container">
  <div id="infopanel" class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-centered">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs nav-justified" role="tablist">
