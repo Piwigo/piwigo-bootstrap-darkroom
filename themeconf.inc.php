@@ -1,8 +1,8 @@
 <?php
 /*
 Theme Name: Bootstrap Darkroom
-Version: 1.4.13
-Description: A mobile-ready Bootstrap Default child theme with PhotoSwipe slideshow, Slick carousel on picture page, many color styles thanks to Bootswatch and lots of configuration options
+Version: 1.5.0
+Description: A mobile-ready & feature-rich theme based on Boostrap Default, with PhotoSwipe full-screen slideshow, Slick carousel on picture page, many color styles thanks to Bootswatch and lots of configuration options
 Theme URI: http://piwigo.org/ext/extension_view.php?eid=831
 Author: Thomas Kuther
 Author URI: https://https://github.com/tkuther/piwigo-bootstrap-darkroom
