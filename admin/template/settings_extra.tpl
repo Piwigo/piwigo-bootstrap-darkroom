@@ -26,7 +26,7 @@
             <dl class="dl-horizontal">
                 <dt>Darkroom</dt><dd>{'Bootstrap Darkroom\'s custom dark color theme'|@translate}</dd>
                 <dt>Bootswatch</dt><dd>{'A color theme from'|@translate} <a href="https://bootswatch.com">https://bootswatch.com</a></dd>
-                <dt>Material</dt><dd>{'The Material theme from'|@translate} <a href="http://fezvrasta.github.io/bootstrap-material-design">http://fezvrasta.github.io/bootstrap-material-design</a></dd>
+                <dt>Material</dt><dd>Material design {'from'|@translate} <a href="http://fezvrasta.github.io/bootstrap-material-design">http://fezvrasta.github.io/bootstrap-material-design</a></dd>
                 <dt>Default</dt><dd>{'Bootstrap\'s default theme'|@translate}</dd>
                 <dt>{'None'|@translate}</dt><dd>{'No color theme'|@translate}</dd> 
             </dl>

@@ -61,3 +61,4 @@ $lang['Show basic EXIF metadata'] = 'Zeige wesentliche EXIF-Metadaten';
 $lang['For more information on metadata visit'] = 'Für weitere Informationen zu den Metadaten siehe';
 $lang['Thumbnail page display'] = 'Erscheinungsbild der Vorschau-Seiten';
 $lang['Show image caption'] = 'Zeige Bildunterschrift';
+$lang['from'] = 'von';
