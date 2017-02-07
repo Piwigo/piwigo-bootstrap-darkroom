@@ -36,6 +36,7 @@
 {if $theme_config_extra->photoswipe && ($BODY_ID == "thePicturePage" || !empty($THUMBNAILS))}
 {include file='_photoswipe_div.tpl'}
 {/if}
+
 {footer_script require='jquery'}
 $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
 {/footer_script}

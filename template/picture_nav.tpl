@@ -1,4 +1,4 @@
-{footer_script require='jquery'}
+{footer_script require='bootstrap'}
 {literal}
 if ($('.jumbotron').length > 0) {
     var $affix_height = $('.navbar-main').height() + $('.jumbotron').outerHeight();

@@ -43,7 +43,7 @@
 {if isset($U_UP)}
     <link rel="up" title="{'Thumbnails'|@translate}" href="{$U_UP}">
 {/if}
-
+{strip}
 {if $theme_config_extra->bootstrap_theme == 'bootswatch'}
     {combine_css path="themes/bootstrap_darkroom/components/bootswatch/{$theme_config_extra->bootswatch_theme}/bootstrap.min.css" order=-20}
     {combine_css path="themes/bootstrap_darkroom/bootswatch/navmenu-{$theme_config_extra->bootswatch_theme}.css" order=-5}
@@ -75,14 +75,12 @@
     {combine_css path="local/bootstrapdefault/custom.css" order=10000}
 {/if}
 {get_combined_css}
-
 {if isset($U_PREFETCH)}
     <link rel="prefetch" href="{$U_PREFETCH}">
 {/if}
 {if not empty($page_refresh)}
     <meta http-equiv="refresh" content="{$page_refresh.TIME};url={$page_refresh.U_REFRESH}">
 {/if}
-
 {combine_script id='jquery' load='footer'}
 {combine_script id='jquery.ajaxmanager' require='jquery' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
 {combine_script id='thumbnails.loader' require='jquery.ajaxmanager' path='themes/default/js/thumbnails.loader.js' load='footer'}
@@ -97,15 +95,12 @@
         $.material.init()
     {/footer_script}
 {/if}
+{/strip}
 {get_combined_scripts load='header'}
-    <!--[if lt IE 7]>
-    <script type="text/javascript" src="{$ROOT_URL}themes/default/js/pngfix.js"></script>
-    <![endif]-->
-
-    {if not empty($head_elements)}
-        {foreach from=$head_elements item=elt}{$elt}
-        {/foreach}
-    {/if}
+{if not empty($head_elements)}
+    {foreach from=$head_elements item=elt}{$elt}
+    {/foreach}
+{/if}
 </head>
 
 <body id="{$BODY_ID}">
