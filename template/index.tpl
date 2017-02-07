@@ -1,9 +1,9 @@
 <!-- Start of index.tpl -->
-{combine_script id='core.switchbox' require='jquery' path='themes/default/js/switchbox.js'}
-{combine_script id='cookie' require='jquery' path="themes/bootstrapdefault/js/jquery.cookie.js"}
-{combine_script id='equalheights' require='jquery' path="themes/bootstrapdefault/js/jquery.equalheights.js"}
+{combine_script id='core.switchbox' require='jquery' path='themes/default/js/switchbox.js' load='footer'}
+{combine_script id='cookie' require='jquery' path='themes/bootstrapdefault/js/jquery.cookie.js' load='footer'}
+{combine_script id='equalheights' require='jquery' path='themes/bootstrapdefault/js/jquery.equalheights.js' load='footer'}
 {if get_device() != 'desktop'}
-{combine_script id='jquery.mobile-events' path='themes/bootstrap_darkroom/components/jquery-touch-events/src/jquery.mobile-events.min.js' require='jquery'}
+{combine_script id='jquery.mobile-events' path='themes/bootstrap_darkroom/components/jquery-touch-events/src/jquery.mobile-events.min.js' require='jquery' load='footer'}
 {/if}
 {if !empty($PLUGIN_INDEX_CONTENT_BEFORE)}{$PLUGIN_INDEX_CONTENT_BEFORE}{/if}
 
