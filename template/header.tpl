@@ -69,14 +69,8 @@
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" order=-5}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/ripples.min.css" order=-4}
     {combine_css path="themes/bootstrap_darkroom/theme-colors-material.css" order=-3}
-    {combine_script id='material.js' require='jquery' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/material.min.js'}
-    {combine_script id='ripples.js' require='jquery' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/ripples.min.js'}
-    {footer_script require="material.js" require="ripples.js"}
-        $.material.init()
-    {/footer_script}
 {/if}
-
-{combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=9999}
+    {combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=9999}
 {if file_exists("local/bootstrapdefault/custom.css")}
     {combine_css path="local/bootstrapdefault/custom.css" order=10000}
 {/if}
@@ -93,9 +87,16 @@
 {combine_script id='jquery-ajaxmanager' require='jquery' path='themes/default/js/plugins/jquery.ajaxmanager.js'}
 {combine_script id='thumbnails-loader' require='jquery-ajaxmanager' path='themes/default/js/thumbnails.loader.js'}
 {combine_script id='plugin.fixes' require='jquery' path='themes/bootstrap_darkroom/js/plugin_fixes.js'}
-{combine_script id='bootstrap' require='jquery' require='plugin.fixes' path="themes/bootstrapdefault/bootstrap/dist/js/bootstrap.min.js"}
-{combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js'}
-{combine_script id=$themeconf.name require='bootstrap' path="themes/bootstrapdefault/js/theme.js"}
+{combine_script id='bootstrap' require='jquery' require='plugin.fixes' path='themes/bootstrapdefault/bootstrap/dist/js/bootstrap.min.js' load='footer'}
+{combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js' load='footer'}
+{combine_script id=$themeconf.name require='bootstrap' path='themes/bootstrapdefault/js/theme.js' load='footer'}
+{if $theme_config_extra->bootstrap_theme == 'material'}
+    {combine_script id='material.js' require='bootstrap' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/material.min.js' load='footer'}
+    {combine_script id='ripples.js' require='material.js' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/ripples.min.js' load='footer'}
+    {footer_script require='material.js' require='ripples.js'}
+        $.material.init()
+    {/footer_script}
+{/if}
 {get_combined_scripts load='header'}
     <!--[if lt IE 7]>
     <script type="text/javascript" src="{$ROOT_URL}themes/default/js/pngfix.js"></script>
