@@ -19,11 +19,6 @@
 {/if}
 
 {if ($theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material') && $BODY_ID !== 'thePicturePage' }
-{footer_script require='jquery'}
-$('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
-{/footer_script}
-{/if}
-{get_combined_scripts load='footer'}
 
 {if isset($footer_elements)}
 {foreach from=$footer_elements item=v}
@@ -41,5 +36,10 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
 {if $theme_config_extra->photoswipe && ($BODY_ID == "thePicturePage" || !empty($THUMBNAILS))}
 {include file='_photoswipe_div.tpl'}
 {/if}
+{footer_script require='jquery'}
+$('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
+{/footer_script}
+{/if}
+{get_combined_scripts load='footer'}
 </body>
 </html>
