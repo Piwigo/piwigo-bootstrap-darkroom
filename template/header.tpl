@@ -24,8 +24,8 @@
 
     <title>{if $PAGE_TITLE!=l10n('Home') && $PAGE_TITLE!=$GALLERY_TITLE}{$PAGE_TITLE} | {/if}{$GALLERY_TITLE}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{$ROOT_URL}{$themeconf.icon_dir}/favicon.ico">
-    <link rel="icon" sizes="192x192" href="{$ROOT_URL}themes/bootstrap_darkroom/img/logo.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="{$ROOT_URL}themes/bootstrap_darkroom/img/logo.png">
+    <link rel="icon" sizes="192x192" href="{$ROOT_URL}themes/bootstrapdefault/img/logo.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="{$ROOT_URL}themes/bootstrapdefault/img/logo.png">
     <link rel="start" title="{'Home'|@translate}" href="{$U_HOME}" >
     <link rel="search" title="{'Search'|@translate}" href="{$ROOT_URL}search.php">
 {if isset($first.U_IMG)   }
