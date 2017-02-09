@@ -149,10 +149,37 @@ ul#thumbnails .gthumb a img.thumbnail {
   text-decoration: none;
   background-color: #f5f5f5;
 }
-.nav a.addCollection .user-collections-icon { background: none !important }
+.nav .user-collections-icon,
+#theCollectionPage .nav .user-collections-share-icon,
+#theCollectionPage .nav .user-collections-mail-icon,
+#theCollectionPage .nav .user-collections-clear-icon,
+#theCollectionPage .nav .user-collections-delete-icon {
+  background: none !important
+}
 .nav a.addCollection .user-collections-icon:before {
   content:"\f006";
   font-family:"FontAwesome";
+  font-weight: 400;
+}
+#theCollectionPage .user-collections-share-icon:before {
+  content:"\f045";
+  font-family:"FontAwesome";
+  font-weight: 400;
+}
+#theCollectionPage .user-collections-mail-icon:before {
+  content:"\f003";
+  font-family:"FontAwesome";
+  font-weight: 400;
+}
+#theCollectionPage .user-collections-clear-icon:before {
+  content:"\f00d";
+  font-family:"FontAwesome";
+  font-weight: 400;
+}
+#theCollectionPage .user-collections-delete-icon:before {
+  content:"\f014";
+  font-family:"FontAwesome";
+  font-weight: 400;
 }
 
 /* PWG_Stuffs */
