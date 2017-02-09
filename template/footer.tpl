@@ -18,8 +18,6 @@
                 | {'View in'|@translate} : <a href="{$TOGGLE_MOBILE_THEME_URL}">{'Mobile'|@translate}</a> | <b>{'Desktop'|@translate}</b>
 {/if}
 
-{if ($theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material') && $BODY_ID !== 'thePicturePage' }
-
 {if isset($footer_elements)}
 {foreach from=$footer_elements item=v}
 {$v}
@@ -37,6 +35,7 @@
 {include file='_photoswipe_div.tpl'}
 {/if}
 
+{if ($theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material') && $BODY_ID !== 'thePicturePage' && $BODY_ID !== 'theCategoryPage'}
 {footer_script require='jquery'}
 $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
 {/footer_script}
