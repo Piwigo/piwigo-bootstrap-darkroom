@@ -93,6 +93,7 @@ $(window).load(function() {
 $(document).ready(function() {
   $('#thePicturePage .nav a.addCollection').wrap('<li></li>');
   $('#theCollectionPage .navbar .pwg-icon').removeClass('pwg-icon');
+  $('#theCollectionPage input[type="submit"]').addClass('btn btn-primary');
 });
 {/strip}{/footer_script}
 {/if}
