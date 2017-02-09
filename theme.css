@@ -16,6 +16,17 @@ html, body {
 .col-inner .caption p { margin: 0 0; }
 .col-inner .caption p.description { margin-top: 10px; }
 
+@media (min-width: 1800px) {
+  .container {
+    width: 1600px;
+  }
+}
+@media (min-width: 3000px) {  
+  .container { 
+   width: 2800px;
+  }
+}
+
 /* Jumbotron */
 @media (max-width: 767px) {
   .jumbotron p { font-size: 16px; }
