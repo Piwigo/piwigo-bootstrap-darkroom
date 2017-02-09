@@ -6,7 +6,6 @@
 {combine_script id='jquery.mobile-events' path='themes/bootstrap_darkroom/components/jquery-touch-events/src/jquery.mobile-events.min.js' require='jquery' load='footer'}
 {/if}
 {if !empty($PLUGIN_INDEX_CONTENT_BEFORE)}{$PLUGIN_INDEX_CONTENT_BEFORE}{/if}
-
 {footer_script require='jquery'}{strip}
 if ($('.jumbotron').length > 0) {
     var $affix_height = $('.navbar-main').height() + $('.jumbotron').outerHeight();
@@ -79,6 +78,14 @@ $(document).ready(function() {
   if (!navigator.userAgent.match(/rv:11/)) {
     var $nrLevels = $('.navbar-contextual .navbar-brand a').length,
         $html;
+    if ($nrLevels === 1) {
+      $('.navbar-contextual .navbar-brand a')[0].remove();
+    }
+    if ($nrLevels === 2) {
+      $('.navbar-contextual .navbar-brand a')[0].remove();
+      $html = $('.navbar-contextual .navbar-brand').html().replace(/^ \/ /, "");
+      $('.navbar-contextual .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>{$LEVEL_SEPARATOR}' + $html);
+    }
     while ($nrLevels > 2) {
       $('.navbar-contextual .navbar-brand a')[0].remove();
       $nrLevels = $('.navbar-contextual .navbar-brand a').length;
