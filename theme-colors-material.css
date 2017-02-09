@@ -8,6 +8,10 @@ input:-webkit-autofill {
   border-bottom: 2px solid #009688 !important;
 }
 
+.navbar-contextual .navbar-brand a {
+  color: rgba(255, 255, 255, 0.843137);
+}
+
 .navmenu .navmenu-nav > li > a {
   color: inherit;
 }
