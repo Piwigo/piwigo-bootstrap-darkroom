@@ -88,10 +88,11 @@ $(window).load(function() {
 {/strip}{/footer_script}
 {/if}
 
-{if isset($loaded_plugins['UserCollections']) && $BODY_ID == 'thePicturePage'}
+{if isset($loaded_plugins['UserCollections']) && ($BODY_ID == 'thePicturePage' || $BODY_ID == 'theCollectionPage')}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
   $('#thePicturePage .nav a.addCollection').wrap('<li></li>');
+  $('#theCollectionPage .navbar .pwg-icon').removeClass('pwg-icon');
 });
 {/strip}{/footer_script}
 {/if}
