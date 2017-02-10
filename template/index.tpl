@@ -73,27 +73,13 @@ $('#content-spacer').addClass('well');
                 <a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text"> {'Home'|@translate}</span></a>{$LEVEL_SEPARATOR}{$chronology.TITLE}
 {else}
                 {$TITLE}
+{if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material'}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  if (!navigator.userAgent.match(/rv:11/)) {
-    var $nrLevels = $('.navbar-contextual .navbar-brand a').length,
-        $html;
-    while ($nrLevels > 2) {
-      $('.navbar-contextual .navbar-brand a')[0].remove();
-      $nrLevels = $('.navbar-contextual .navbar-brand a').length;
-      $html = $('.navbar-contextual .navbar-brand').html().replace(/^ \/ /, "");
-      if ($nrLevels === 2) {
-        $('.navbar-contextual .navbar-brand').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'Home'|@translate}</span></a>{$LEVEL_SEPARATOR}' + $html);
-      } else {
-        $('.navbar-contextual .navbar-brand').html($html);
-    }
-  }
-}
-{if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material'}
  $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
-{/if}
 });
 {/strip}{/footer_script}
+{/if}
 {/if}
             </div>
         </div>

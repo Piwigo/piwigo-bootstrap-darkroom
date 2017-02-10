@@ -151,24 +151,71 @@ add_event_handler('loc_after_page_header', 'strip_breadcrumbs');
 function strip_breadcrumbs() {
   global $template;
 
-  $title = $template->get_template_vars('TITLE');
-  $sep = $template->get_template_vars('LEVEL_SEPERATOR');
   $u_home = $template->get_template_vars('U_HOME');
+  $l_sep = $template->get_template_vars('LEVEL_SEPARATOR');
+  $title = $template->get_template_vars('TITLE');
+  if (empty($title)) {
+    $title = $template->get_template_vars('SECTION_TITLE');
+  }
+  if (!empty($title)) {
+    $splt = strpos($title, "[");
+    if ($splt) {
+      $title_links = substr($title, 0, $splt);
+      $title_count = substr($title, $splt, strlen($title));
+      $title = $title_links;
+    }
 
-  $dom = new DOMDocument;
-  $dom->loadHTML($title);
+    $dom = new DOMDocument;
+    $dom->encoding = 'utf-8';
+    $dom->loadHTML(utf8_decode($title));
 
-  $nr_links = $dom->getElementsByTagName('a')->length;
-  $home_link_orig = $dom->getElementsByTagName('a')->item(0);
-  $home_link_content = '<a href="' . $u_home . '" title="' . $home_link_orig->nodeValue . '"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">' . $home_link_orig->nodeValue . '</span></a >';
-  if ($nr_links == 1) {
-    $title_new = $home_link_content;
-  } elseif ($nr_links > 1) {
-    $home_link_orig->parentNode->removeChild($home_link_orig);
-    $home_link_new = $dom->saveHTML();
-    $title_new = $home_link_content . $home_link_new;
-  }  
-  $template->assign('TITLE', $title_new);
+    $nr_links = $dom->getElementsByTagName('a')->length;
+    $home_link_orig = $dom->getElementsByTagName('a')->item(0);
+    $home_link_content = '<a href="' . $u_home . '" title="' . $home_link_orig->nodeValue . '"><span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">' . $home_link_orig->nodeValue . '</span></a >';
+    if ($nr_links == 1) {
+      $title_new = $home_link_content;
+    } elseif ($nr_links == 2) {
+      $home_link_orig->parentNode->removeChild($home_link_orig);
+      $home_link_new = $dom->saveHTML();
+      $title_new = $home_link_content . $home_link_new;
+    } else {
+      $home_link_orig->parentNode->removeChild($home_link_orig);
+      $home_link_orig = $dom->getElementsByTagName('a')->item(0);
+      while ($nr_links > 2) {
+        $nr_links = $nr_links - 1;
+        $home_link_orig->parentNode->removeChild($home_link_orig);
+        $home_link_orig = $dom->getElementsByTagName('a')->item(0);
+        $home_link_new = $dom->saveHTML();
+        $home_link_new = preg_replace('@'.$l_sep.$l_sep.'@', $l_sep, $home_link_new);
+      }
+      $title_new = $home_link_content . $home_link_new;
+    }
+    if (empty($template->get_template_vars('SECTION_TITLE'))) {
+      $template->assign('TITLE', $title_new);
+    } else {
+      $template->assign('SECTION_TITLE', $title_new);
+    }
+  } else {
+    //no idea if there is a "global" handle...
+    $template->set_prefilter('tags', 'replace_home_link');
+    $template->set_prefilter('about', 'replace_home_link');
+    $template->set_prefilter('search', 'replace_home_link');
+    $template->set_prefilter('register', 'replace_home_link');
+    $template->set_prefilter('profile', 'replace_home_link');
+    $template->set_prefilter('identification', 'replace_home_link');
+    $template->set_prefilter('password', 'replace_home_link');
+    $template->set_prefilter('comments', 'replace_home_link');
+  }
+}
+
+function replace_home_link($content, &$smarty) {
+  $search = '<div class="navbar-brand"><a href="{$U_HOME}">{\'Home\'|@translate}</a>';
+  $replace = '<div class="navbar-brand"><a href="{$U_HOME}" title="{"Home"|@translate}">
+              <span class="glyphicon glyphicon-home"></span>
+              <span class="glyphicon-text">{"Home"|@translate}</span>
+              </a>';
+
+  return str_replace($search, $replace, $content);
 }
 
 // register video files
