@@ -154,8 +154,9 @@ function strip_breadcrumbs() {
   $u_home = $template->get_template_vars('U_HOME');
   $l_sep = $template->get_template_vars('LEVEL_SEPARATOR');
   $title = $template->get_template_vars('TITLE');
+  $section_title = $template->get_template_vars('SECTION_TITLE');
   if (empty($title)) {
-    $title = $template->get_template_vars('SECTION_TITLE');
+    $title = $section_title;
   }
   if (!empty($title)) {
     $splt = strpos($title, "[");
@@ -192,7 +193,7 @@ function strip_breadcrumbs() {
       }
       $title_new = $home_link_content . $home_link_new;
     }
-    if (empty($template->get_template_vars('SECTION_TITLE'))) {
+    if (empty($section_title)) {
       $template->assign('TITLE', $title_new);
     } else {
       $template->assign('SECTION_TITLE', $title_new);
