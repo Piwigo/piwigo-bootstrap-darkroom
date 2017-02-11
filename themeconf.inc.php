@@ -182,8 +182,6 @@ function strip_breadcrumbs() {
       $home_link_new = $dom->saveHTML();
       $title_new = $home_link_content . $home_link_new;
     } else {
-      $home_link_orig->parentNode->removeChild($home_link_orig);
-      $home_link_orig = $dom->getElementsByTagName('a')->item(0);
       while ($nr_links > 2) {
         $nr_links = $nr_links - 1;
         $home_link_orig->parentNode->removeChild($home_link_orig);
