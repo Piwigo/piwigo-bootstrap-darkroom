@@ -4,7 +4,7 @@
 </div>
 <div id="configContent" style="margin: 0 auto; max-width: 420px">
     <h3>{'Bootstrap Darkroom'|@translate}</h3>
-    <h4>{'Version'|@translate}: 1.5.2</h4>
+    <h4>{'Version'|@translate}: 1.5.3</h4>
     <h5>{'By'|@translate}: <a href="https://github.com/tkuther/piwigo-bootstrap-darkroom">Thomas Kuther</a></h5>
     <h5>{'Based on Bootstrap Default by'|@translate}: <a href="https://philio.me">Phil Bayfield</a></h5>
 
