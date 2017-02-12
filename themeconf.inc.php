@@ -167,9 +167,8 @@ function strip_breadcrumbs() {
     }
 
     $dom = new DOMDocument;
-    $dom->encoding = 'utf-8';
     $int_err = libxml_use_internal_errors(true);
-    $dom->loadHTML(utf8_decode($title));
+    $dom->loadHTML(mb_convert_encoding($title, 'HTML-ENTITIES', 'UTF-8'));
     libxml_use_internal_errors($int_err);
 
     $nr_links = $dom->getElementsByTagName('a')->length;
