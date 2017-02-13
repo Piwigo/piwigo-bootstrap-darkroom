@@ -22,6 +22,8 @@
             <ul>
             <label id="bootswatch_theme_label" labelfor="bootswatch_theme">{'Bootswatch theme'|@translate}</label>
             <select id="bootswatch_theme" name="bootswatch_theme"></select>
+            <label id="material_color_label" labelfor="material_color">{'Material color'|@translate}</label>
+            <select id="material_color" name="material_color"></select>
             <div id="bootswatch_preview"></div>
             <dl class="dl-horizontal">
                 <dt>Darkroom</dt><dd>{'Bootstrap Darkroom\'s custom dark color theme'|@translate}</dd>
@@ -197,9 +199,31 @@ function getBootswatchThemes() {
 
 }
 
+var select_material = $("#material_color");
+var label_material = $("#material_color_label");
+function getMaterialColors() {
+  var colors = ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'light-blue', 'cyan', 'teal', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey'];
+  var lcolor = colors.length;
+  var cur_color = '{$theme_config_extra->material_color}';
+  select_material.show();
+  label_material.show();
+  for (var i = 0; i < lcolor; i++) {
+    select_material.append($("<option />")
+          .val(colors[i])
+          .text(colors[i]));
+
+    if (colors[i] === cur_color) {
+      $('option[value=' + colors[i] + ']').attr('selected', 'selected');
+    }
+  }
+}
+
 $(document).ready(function() {
   if ($('select[name=bootstrap_theme]').val() === 'bootswatch') {
     getBootswatchThemes();
+  }
+  if ($('select[name=bootstrap_theme]').val() === 'material') {
+    getMaterialColors();
   }
   link_target = $('select[name=thumbnail_linkto]').val();
   if (!$('input[name=photoswipe]').is(':checked') && link_target !== 'photoswipe') {
@@ -207,6 +231,7 @@ $(document).ready(function() {
     $('select[name=thumbnail_linkto] option[value=photoswipe]').attr('disabled', 'disabled');
     $('select[name=thumbnail_linkto] option[value=photoswipe_mobile_only]').attr('disabled', 'disabled');
   }
+
 });
 
 $('select[name=bootstrap_theme]').change(function() {
@@ -217,6 +242,13 @@ $('select[name=bootstrap_theme]').change(function() {
     select.hide();
     label.hide();
     preview.hide();
+  }
+  if ($('select[name=bootstrap_theme]').val() === 'material') {
+    getMaterialColors();
+  } else {
+    select_material.empty();
+    select_material.hide();
+    label_material.hide();
   }
 });
 $('select[name=bootswatch_theme]').change(function() {

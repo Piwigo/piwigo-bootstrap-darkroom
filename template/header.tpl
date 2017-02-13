@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-{if isset($meta_ref) }
+{if isset($meta_ref)}
 {if isset($INFO_AUTHOR)}
     <meta name="author" content="{$INFO_AUTHOR|@strip_tags:false|@replace:'"':' '}">
 {/if}
@@ -66,9 +66,15 @@
 {/if}
 {if $theme_config_extra->bootstrap_theme == 'material'}
     {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-6}
+{if $theme_config_extra->material_color == 'teal'}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" order=-5}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/ripples.min.css" order=-4}
+{else}
+    {combine_css path="themes/bootstrap_darkroom/material-colors/material-{$theme_config_extra->material_color}/bootstrap-material-design.min.css" order=-5}
+    {combine_css path="themes/bootstrap_darkroom/material-colors/material-{$theme_config_extra->material_color}/ripples.min.css" order=-5}
+{/if}
     {combine_css path="themes/bootstrap_darkroom/theme-colors-material.css" order=-3}
+    
 {/if}
     {combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=9999}
 {if file_exists("local/bootstrapdefault/custom.css")}

@@ -7,7 +7,7 @@ require_once(PHPWG_THEMES_PATH . 'bootstrapdefault/include/config.php');
 class ExtraConfig {
 
     const CONF_PARAM = 'bootstrap_darkroom';
-    const CONF_VERSION = 10;
+    const CONF_VERSION = 11;
 
     const TYPE_BOOL = 'bool';
     const TYPE_STRING = 'string';
@@ -17,6 +17,7 @@ class ExtraConfig {
 
     const KEY_BOOTSTRAP_THEME = 'bootstrap_theme';
     const KEY_BOOTSWATCH_THEME = 'bootswatch_theme';
+    const KEY_MATERIAL_COLOR = 'material_color';
     const KEY_SLICK_ENABLED = 'slick_enabled';
     const KEY_SLICK_LAZYLOAD = 'slick_lazyload';
     const KEY_SLICK_INFINITE = 'slick_infinite';
@@ -33,6 +34,7 @@ class ExtraConfig {
     private $defaults = array(
         self::KEY_BOOTSTRAP_THEME => 'darkroom',
         self::KEY_BOOTSWATCH_THEME => 'cerulean',
+        self::KEY_MATERIAL_COLOR => 'teal',
         self::KEY_SLICK_ENABLED => true,
         self::KEY_SLICK_LAZYLOAD => 'ondemand',
         self::KEY_SLICK_INFINITE => false,
@@ -50,6 +52,7 @@ class ExtraConfig {
     private $types = array(
         self::KEY_BOOTSTRAP_THEME => self::TYPE_STRING,
         self::KEY_BOOTSWATCH_THEME => self::TYPE_STRING,
+        self::KEY_MATERIAL_COLOR => self::TYPE_STRING,
         self::KEY_SLICK_ENABLED => self::TYPE_BOOL,
         self::KEY_SLICK_LAZYLOAD => self::TYPE_STRING,
         self::KEY_SLICK_INFINITE => self::TYPE_BOOL,
