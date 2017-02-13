@@ -177,10 +177,6 @@ function strip_breadcrumbs() {
     if ($nr_links == 1) {
       $title_new = $home_link_content;
     } elseif ($nr_links == 2) {
-      if (!empty($section_title)) {
-        $home_link_orig->parentNode->removeChild($home_link_orig);
-        $home_link_orig = $dom->getElementsByTagName('a')->item(0);
-      }
       $home_link_orig->parentNode->removeChild($home_link_orig);
       $home_link_new = $dom->saveHTML();
       $title_new = $home_link_content . $home_link_new;
