@@ -1,0 +1,104 @@
+.form-control { color: #555 !important; }
+.form-control::-webkit-input-placeholder { color: #bdbdbd !important; }
+.form-control:-moz-placeholder { color: #bdbdbd !important; }
+.form-control::-moz-placeholder { color: #bdbdbd !important; }
+.form-control:-ms-input-placeholder { color: #bdbdbd !important; }
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  border-bottom: 2px solid #009688 !important;
+}
+
+.navbar-contextual .navbar-brand a {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.navmenu .navmenu-nav > li > a {
+  color: inherit;
+}
+.navmenu .navmenu-nav > li > a:hover,
+.navmenu .navmenu-nav > li > a:focus {
+  color: inherit;
+  background-color: transparent;
+}
+.navmenu .navmenu-nav > .active > a,
+.navmenu .navmenu-nav > .active > a:hover,
+.navmenu .navmenu-nav > .active > a:focus {
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.navmenu .navmenu-nav > .disabled > a,
+.navmenu .navmenu-nav > .disabled > a:hover,
+.navmenu .navmenu-nav > .disabled > a:focus {
+  color: inherit;
+  background-color: transparent;
+  opacity: 0.9;
+}
+.navmenu .navmenu-nav > .open > a,
+.navmenu .navmenu-nav > .open > a:hover,
+.navmenu .navmenu-nav > .open > a:focus {
+  background-color: transparent;
+  color: inherit;
+}
+
+.navmenu-default .navmenu-nav>.dropdown>a .caret,
+.navmenu-default .navmenu-nav>.dropdown>a:hover .caret,
+.navmenu-default .navmenu-nav>.dropdown>a:focus .caret {
+  color: rgba(0, 0, 0, 0.87);
+  border-top-color: rgba(0, 0, 0, 0.87);
+  border-bottom-color: rgba(0, 0, 0, 0.87);
+}
+.navmenu.navmenu-default {
+  background-color: #009688;
+  color: rgba(0, 0, 0, 0.87);
+}
+.navmenu.navmenu-default .navmenu-form .form-group input.form-control::-moz-placeholder,
+.navmenu.navmenu-default .navmenu-form input.form-control::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.87);
+}
+.navmenu.navmenu-default .navmenu-form .form-group input.form-control:-ms-input-placeholder,
+.navmenu.navmenu-default .navmenu-form input.form-control:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.87);
+}
+.navmenu.navmenu-default .navmenu-form .form-group input.form-control::-webkit-input-placeholder,
+.navmenu.navmenu-default .navmenu-form input.form-control::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.87);
+}
+.navmenu.navmenu-default .dropdown-menu {
+  border-radius: 2px;
+}
+.navmenu.navmenu-default .dropdown-menu li > a {
+  font-size: 16px;
+  padding: 13px 16px;
+}
+.navmenu.navmenu-default .dropdown-menu li > a:hover,
+.navmenu.navmenu-default .dropdown-menu li > a:focus {
+  color: #009688;
+  background-color: #eeeeee;
+}
+.navmenu.navmenu-default .dropdown-menu .active > a {
+  background-color: #009688;
+  color: rgba(0, 0, 0, 0.87);
+}
+.navmenu.navmenu-default .dropdown-menu .active > a:hover,
+.navmenu.navmenu-default .dropdown-menu .active > a:focus {
+  color: rgba(0, 0, 0, 0.87);
+}
+.navmenu.navmenu-default .navmenu-form .form-group input.form-control::-moz-placeholder,
+.navmenu.navmenu-default .navmenu-form input.form-control::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.87);
+}
+.navmenu.navmenu-default .navmenu-form .form-group input.form-control:-ms-input-placeholder,
+.navmenu.navmenu-default .navmenu-form input.form-control:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.87);
+}
+.navmenu.navmenu-default .navmenu-form .form-group input.form-control::-webkit-input-placeholder,
+.navmenu.navmenu-default .navmenu-form input.form-control::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.87);
+}
+.navmenu.navmenu-default .dropdown-menu {
+  border-radius: 2px;
+}
+.navmenu.navmenu-default .dropdown-menu li > a {
+  font-size: 16px;
+  padding: 13px 16px;
+}

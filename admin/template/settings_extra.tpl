@@ -25,7 +25,7 @@
             <label id="material_color_label" labelfor="material_color">{'Material color'|@translate}</label>
             <select id="material_color" name="material_color"></select>
             <div id="bootswatch_preview"></div>
-            <dl class="dl-horizontal">
+            <dl id="boostrap_theme_descr" class="dl-horizontal">
                 <dt>Darkroom</dt><dd>{'Bootstrap Darkroom\'s custom dark color theme'|@translate}</dd>
                 <dt>Bootswatch</dt><dd>{'A color theme from'|@translate} <a href="https://bootswatch.com">https://bootswatch.com</a></dd>
                 <dt>Material</dt><dd>Material design {'from'|@translate} <a href="http://fezvrasta.github.io/bootstrap-material-design">http://fezvrasta.github.io/bootstrap-material-design</a></dd>

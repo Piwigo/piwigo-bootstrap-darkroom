@@ -69,12 +69,12 @@
 {if $theme_config_extra->material_color == 'teal'}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" order=-5}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/ripples.min.css" order=-4}
-    {combine_css path="themes/bootstrap_darkroom/theme-colors-material.css" order=-3}
+    {combine_css path="themes/bootstrap_darkroom/css/material-colors/teal/navmenu.css" order=-3}
 {else}
     {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config_extra->material_color}/bootstrap-material-design.min.css" order=-5}
     {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config_extra->material_color}/ripples.min.css" order=-5}
+    {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config_extra->material_color}/navmenu.css" order=-5}
 {/if}
-    
 {/if}
     {combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=9999}
 {if file_exists("local/bootstrapdefault/custom.css")}

@@ -7,6 +7,8 @@
 /* Main */
 html, body {
   height: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 .col-centered {
  float: none;
@@ -66,6 +68,9 @@ html, body {
   .navbar {
     left: auto;
   }
+}
+.navbar-default {
+   font-weight: 400;
 }
 .navmenu {
    overflow: visible;
