@@ -46,7 +46,7 @@
 {strip}
 {if $theme_config_extra->bootstrap_theme == 'bootswatch'}
     {combine_css path="themes/bootstrap_darkroom/components/bootswatch/{$theme_config_extra->bootswatch_theme}/bootstrap.min.css" order=-20}
-    {combine_css path="themes/bootstrap_darkroom/bootswatch/navmenu-{$theme_config_extra->bootswatch_theme}.css" order=-5}
+    {combine_css path="themes/bootstrap_darkroom/css/bootswatch/navmenu-{$theme_config_extra->bootswatch_theme}.css" order=-5}
 {else}
     {combine_css path="themes/bootstrapdefault/bootstrap/dist/css/bootstrap.min.css" order=-20}
 {/if}
@@ -69,11 +69,11 @@
 {if $theme_config_extra->material_color == 'teal'}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" order=-5}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/ripples.min.css" order=-4}
-{else}
-    {combine_css path="themes/bootstrap_darkroom/material-colors/material-{$theme_config_extra->material_color}/bootstrap-material-design.min.css" order=-5}
-    {combine_css path="themes/bootstrap_darkroom/material-colors/material-{$theme_config_extra->material_color}/ripples.min.css" order=-5}
-{/if}
     {combine_css path="themes/bootstrap_darkroom/theme-colors-material.css" order=-3}
+{else}
+    {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config_extra->material_color}/bootstrap-material-design.min.css" order=-5}
+    {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config_extra->material_color}/ripples.min.css" order=-5}
+{/if}
     
 {/if}
     {combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=9999}
