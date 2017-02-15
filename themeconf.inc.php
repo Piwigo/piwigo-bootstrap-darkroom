@@ -45,10 +45,10 @@ function get_all_thumbnails_in_category()
 
   include_once(PHPWG_ROOT_PATH.'/include/functions_metadata.inc.php');
 
-  if (!$page['items']) {
+  if (!$page['items'] || !$page['category']) {
     return;
   }
-  
+
   // select all pictures for this category
   $query = '
   SELECT *
