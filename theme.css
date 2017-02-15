@@ -64,6 +64,9 @@ html, body {
 }
 .navbar-main { z-index: 104; }
 .navbar-contextual { z-index: 103; }
+.navbar-collapse.collapse.in .navbar-form {
+  margin: 10px 0 10px;
+}
 @media (min-width: 992px) {
   .navbar {
     left: auto;
