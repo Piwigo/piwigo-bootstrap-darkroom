@@ -115,6 +115,26 @@
             </ul>
         </fieldset>
         <fieldset>
+            <legend>{'Site logo'|@translate}</legend>
+            <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="logo_image_enabled"{if $theme_config_extra->logo_image_enabled} checked="checked"{/if}>
+                        {'Enabled'|@translate}
+                    </label>
+                    <span class="info">{'Display a site logo image instead of plain text'|@translate}</span>
+                </li>
+                <li>
+                    <label>
+                        {'Path'|@translate}
+                        <input type="text" name="logo_image_path"size="50" placeholder="{if $theme_config_extra->logo_image_path !== ''}{$theme_config_extra->logo_image_path}{else}relative/path/to/image{/if}">
+                    </label>
+                    <span class="info">{'The path to the image, relative to your Piwigo installation folder'|@translate}</span>
+                </li>
+            </ul>
+        </fieldset>	
+        <fieldset>
             <legend>{'Picture page display'|@translate}</legend>
             <ul>
                 <li>

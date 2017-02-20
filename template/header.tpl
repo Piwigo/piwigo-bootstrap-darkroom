@@ -127,7 +127,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+{if $theme_config_extra->logo_image_enabled && $theme_config_extra->logo_image_path !== ''}
+                    <a class="navbar-left" href="{$U_HOME}"><img class="responsive" src="{$ROOT_URL}{$theme_config_extra->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>
+{else}
                     <a class="navbar-brand" href="{$U_HOME}">{$GALLERY_TITLE}</a>
+{/if}
                 </div>
                 <div class="collapse navbar-collapse navbar-right" id="navbar-menubar">
 {$MENUBAR}
