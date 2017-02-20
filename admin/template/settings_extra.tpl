@@ -128,7 +128,7 @@
                 <li>
                     <label>
                         {'Path'|@translate}
-                        <input type="text" name="logo_image_path"size="50" placeholder="{if $theme_config_extra->logo_image_path !== ''}{$theme_config_extra->logo_image_path}{else}relative/path/to/image{/if}">
+                        <input type="text" name="logo_image_path"size="50" {if $theme_config_extra->logo_image_path != ""}value="{$theme_config_extra->logo_image_path}"{else}placeholder="relative/path/to/image"{/if}>
                     </label>
                     <span class="info">{'The path to the image, relative to your Piwigo installation folder'|@translate}</span>
                 </li>
