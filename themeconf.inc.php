@@ -191,9 +191,18 @@ function strip_breadcrumbs() {
         $home_link_orig->parentNode->removeChild($home_link_orig);
         $home_link_orig = $dom->getElementsByTagName('a')->item(0);
         $home_link_new = $dom->saveHTML();
-        $home_link_new = preg_replace('@'.$l_sep.$l_sep.'@', $l_sep, $home_link_new);
+        if (!empty($section_title)) {
+          $home_link_new = preg_replace('@'.$l_sep.'@', '', $home_link_new);
+        } else {
+          $home_link_new = preg_replace('@'.$l_sep.$l_sep.'@', $l_sep, $home_link_new);
+          $home_link_new = preg_replace('@'.$l_sep.$l_sep.'@', $l_sep, $home_link_new);
+        }
       }
-      $title_new = $home_link_content . $home_link_new;
+      if (!empty($section_title)) {
+        $title_new = $home_link_content . $l_sep . $home_link_new;
+      } else {
+        $title_new = $home_link_content . $home_link_new;
+      }
     }
     if (empty($section_title)) {
       $template->assign('TITLE', $title_new);
