@@ -28,7 +28,7 @@
     <link rel="apple-touch-icon" sizes="192x192" href="{$ROOT_URL}themes/bootstrapdefault/img/logo.png">
     <link rel="start" title="{'Home'|@translate}" href="{$U_HOME}" >
     <link rel="search" title="{'Search'|@translate}" href="{$ROOT_URL}search.php">
-{if isset($first.U_IMG)   }
+{if isset($first.U_IMG)}
     <link rel="first" title="{'First'|@translate}" href="{$first.U_IMG}">
 {/if}
 {if isset($previous.U_IMG)}
@@ -43,6 +43,16 @@
 {if isset($U_UP)}
     <link rel="up" title="{'Thumbnails'|@translate}" href="{$U_UP}">
 {/if}
+{if isset($U_PREFETCH)}
+    <link rel="prefetch" href="{$U_PREFETCH}">
+{/if}
+{if isset($U_CANONICAL)}
+    <link rel="canonical" href="{$U_CANONICAL}">
+{/if}
+{if not empty($page_refresh)}
+    <meta http-equiv="refresh" content="{$page_refresh.TIME};url={$page_refresh.U_REFRESH}">
+{/if}
+
 {strip}
 {if $theme_config_extra->bootstrap_theme == 'bootswatch'}
     {combine_css path="themes/bootstrap_darkroom/components/bootswatch/{$theme_config_extra->bootswatch_theme}/bootstrap.min.css" order=-20}
@@ -81,12 +91,6 @@
     {combine_css path="local/bootstrapdefault/custom.css" order=10000}
 {/if}
 {get_combined_css}
-{if isset($U_PREFETCH)}
-    <link rel="prefetch" href="{$U_PREFETCH}">
-{/if}
-{if not empty($page_refresh)}
-    <meta http-equiv="refresh" content="{$page_refresh.TIME};url={$page_refresh.U_REFRESH}">
-{/if}
 {if $BODY_ID == 'theAdditionalPage'}
 {assign var=loc value="header"}
 {else}
