@@ -28,9 +28,10 @@ pwg_set_session_var('show_metadata', true);
 add_event_handler('init', 'set_config_values');
 function set_config_values()
 {
-  global $template, $pwg_loaded_plugins;
+  global $template, $pwg_loaded_plugins, $conf;
   $template->assign(array(
-                          'loaded_plugins' => $GLOBALS['pwg_loaded_plugins']
+                          'loaded_plugins' => $GLOBALS['pwg_loaded_plugins'],
+                          'meta_ref_enabled' => $conf['meta_ref']
                          ));
 }
 
