@@ -45,7 +45,7 @@ function get_all_thumbnails_in_category()
 
   include_once(PHPWG_ROOT_PATH.'/include/functions_metadata.inc.php');
 
-  if (!$page['items'] || ($page['section'] == 'categories' && !$page['category'])) {
+  if (!$page['items'] || ($page['section'] == 'categories' && !isset($page['category']))) {
     return;
   }
 
