@@ -1,7 +1,7 @@
 <?php
 /*
 Theme Name: Bootstrap Darkroom
-Version: 1.5.4
+Version: 1.5.5
 Description: A mobile-ready & feature-rich theme based on Boostrap Default, with PhotoSwipe full-screen slideshow, Slick carousel on picture page, many color styles thanks to Bootswatch and lots of configuration options
 Theme URI: http://piwigo.org/ext/extension_view.php?eid=831
 Author: Thomas Kuther
@@ -195,6 +195,7 @@ function strip_breadcrumbs() {
           $home_link_new = preg_replace('@'.$l_sep.'@', '', $home_link_new);
         } else {
           $home_link_new = preg_replace('@'.$l_sep.$l_sep.'@', $l_sep, $home_link_new);
+          // yes, twice. Don't ask..
           $home_link_new = preg_replace('@'.$l_sep.$l_sep.'@', $l_sep, $home_link_new);
         }
       }
