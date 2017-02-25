@@ -2,7 +2,7 @@
  * jQuery Mobile Events
  * by Ben Major
  *
- * Copyright 2011-2017, Ben Major
+ * Copyright 2011-2015, Ben Major
  * Licensed under the MIT License:
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,8 +35,9 @@
     // The reason that we need to do this is because Chrome annoyingly
     // purports support for touch events even if the underlying hardware
     // does not!
-    var touchCapable = ('ontouchstart' in window),
-	
+    var agent = navigator.userAgent.toLowerCase(),
+        isChromeDesktop = (agent.indexOf('chrome') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0 && agent.indexOf('android') < 0),
+
         settings = {
             tap_pixel_range: 5,
             swipe_h_threshold: 50,
@@ -44,14 +45,14 @@
             taphold_threshold: 750,
             doubletap_int: 500,
 
-            touch_capable: touchCapable,
+            touch_capable: ('ontouchstart' in window && !isChromeDesktop),
             orientation_support: ('orientation' in window && 'onorientationchange' in window),
 
-            startevent:  (touchCapable) ? 'touchstart' : 'mousedown',
-            endevent:    (touchCapable) ? 'touchend' : 'mouseup',
-            moveevent:   (touchCapable) ? 'touchmove' : 'mousemove',
-            tapevent:    (touchCapable) ? 'tap' : 'click',
-            scrollevent: (touchCapable) ? 'touchmove' : 'scroll',
+            startevent:  (('ontouchstart' in window && !isChromeDesktop) ? 'touchstart' : 'mousedown'),
+            endevent:    (('ontouchstart' in window && !isChromeDesktop) ? 'touchend' : 'mouseup'),
+            moveevent:   (('ontouchstart' in window && !isChromeDesktop) ? 'touchmove' : 'mousemove'),
+            tapevent:    ('ontouchstart' in window && !isChromeDesktop) ? 'tap' : 'click',
+            scrollevent: ('ontouchstart' in window && !isChromeDesktop) ? 'touchmove' : 'scroll',
 
             hold_timer: null,
             tap_timer: null
@@ -212,11 +213,6 @@
 
                     end_x = start_pos.x;
                     end_y = start_pos.y;
-                    
-                    // Get the element's threshold:
-                    
-                    var ele_threshold = ($this.parent().data('threshold')) ? $this.parent().data('threshold') : $this.data('threshold'),
-                        threshold = (typeof ele_threshold !== 'undefined' && ele_threshold !== false && parseInt(ele_threshold)) ? parseInt(ele_threshold) : settings.taphold_threshold; 
 
                     settings.hold_timer = window.setTimeout(function () {
 
@@ -251,7 +247,7 @@
                             $this.data('callee1', tapHoldFunc1);
                             triggerCustomEvent(thisObject, 'taphold', e, touchData);
                         }
-                    }, threshold);
+                    }, settings.taphold_threshold);
 
                     return true;
                 }

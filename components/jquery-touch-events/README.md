@@ -23,8 +23,19 @@ As explained, the events are each triggered by native touch events, or alternati
 
 After almost 2 years in public beta, I am pleased to announce that the library is now officially launched as **version 1.0.0**. I'll be updating the version history over time with digests of fixes, features and improvements:
 
-+ **Version 1.0.5** (2015-11-13
-  + Fixed a major bug where the reproted `offset` position of events was incorrect when inside of a parent element. 
++ **Version 1.0.8** (2017-02-01)
+  + Fixes a bug where certain instances of Chrome on touch devices did not correctly fire events.
+  + Added license info to minified script.
+
++ **Version 1.0.7** (2017-02-01)
+  + Added threshold support for `taphold`
+
++ **Version 1.0.6** (2016-11-16)
+  + Added slop factor for `singletap`
+  + Fixed a bug where `offset()` was sometimes called on `null` (instead of `window`).
+  
++ **Version 1.0.5** (2015-11-13)
+  + Fixed a major bug where the reported `offset` position of events was incorrect when inside of a parent element. 
 
 + **Version 1.0.4** (2015-11-12)
   + Regressed from `MSPointerEvent` for compatibility with IE11 and Edge
@@ -57,13 +68,19 @@ Once you have downloaded the JS files from the master branch, you should include
 <script type="text/javascript" src="path/to/jquery.mobile-events.min.js"></script>
 ```
 
+The awesome guys over at cdnjs have kindly added the library to their CDN so you can include it as follows directly into your application:
+
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>
+```
+
 Alternatively, you can also install jQuery-touch-events using Bower as follows:
 
 ```
 $ bower install jquery-touch-events
 ```
 
-Alternatively, you can also install jQuery-touch-events using NPM as follows:
+jQuery Touch Events can also be installed using NPM as follows:
 
 ```
 $ npm install git+https://github.com/benmajor/jQuery-Touch-Events.git
@@ -220,7 +237,7 @@ Each event provides different callback data. The following shows the numerous da
 
 `yAmount` - number of pixels the swipe occupied on the Y-axis (returned regardless of direction).
 
-`startEvent` - Object containing the same data as a `tap` event, but captured when swiping begins.
+`startEvnt` - Object containing the same data as a `tap` event, but captured when swiping begins.
 
 `endEvent` - Object containing the same data as a `tap` event, but captured when swiping is complete.
 
@@ -235,6 +252,11 @@ The value you define is the difference in pixels that the user must move before 
 ``data-xthreshold`` defines the horizontal threshold.
 
 ``data-ythreshold`` defines the vertical threshold.
+
+**Update as of 1.0.7:**
+Following requests from users and contributors, as of 1.0.7 it is now possible to also define the `doubletap` threshold via jQuery's `data-` attributes as follows:
+
+``data-threshold`` defines the amount of time (in milliseconds) after which the `doubletap` event is fired on the target element.
 
 ## 7. Utility Functions:
 
