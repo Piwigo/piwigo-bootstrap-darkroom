@@ -133,7 +133,19 @@
                     <span class="info">{'The path to the image, relative to your Piwigo installation folder'|@translate}</span>
                 </li>
             </ul>
-        </fieldset>	
+        </fieldset>
+        <fieldset>
+            <legend>{'Quick search'|@translate}</legend>
+            <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="quicksearch_navbar"{if $theme_config_extra->quicksearch_navbar} checked="checked"{/if}>
+                        {'Quick search'|@translate} {'directly in the navigation bar'|@translate}
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
         <fieldset>
             <legend>{'Picture page display'|@translate}</legend>
             <ul>

@@ -32,6 +32,7 @@ class ExtraConfig {
     const KEY_CATEGORY_WELLS = 'category_wells';
     const KEY_LOGO_IMAGE_ENABLED = 'logo_image_enabled';
     const KEY_LOGO_IMAGE_PATH = 'logo_image_path';
+    const KEY_QUICKSEARCH_NAVBAR = 'quicksearch_navbar';
 
     private $defaults = array(
         self::KEY_BOOTSTRAP_THEME => 'darkroom',
@@ -50,7 +51,8 @@ class ExtraConfig {
         self::KEY_THUMBNAIL_CAPTION => true,
         self::KEY_CATEGORY_WELLS => 'never',
         self::KEY_LOGO_IMAGE_ENABLED => false,
-        self::KEY_LOGO_IMAGE_PATH => ''
+        self::KEY_LOGO_IMAGE_PATH => '',
+        self::KEY_QUICKSEARCH_NAVBAR => false
     );
 
     private $types = array(
@@ -70,7 +72,8 @@ class ExtraConfig {
         self::KEY_THUMBNAIL_CAPTION => self::TYPE_BOOL,
         self::KEY_CATEGORY_WELLS => self::TYPE_STRING,
         self::KEY_LOGO_IMAGE_ENABLED => self::TYPE_BOOL,
-        self::KEY_LOGO_IMAGE_PATH => self::TYPE_STRING
+        self::KEY_LOGO_IMAGE_PATH => self::TYPE_STRING,
+        self::KEY_QUICKSEARCH_NAVBAR => self::TYPE_BOOL
     );
 
     private $config = array();

@@ -64,8 +64,17 @@ html, body {
 }
 .navbar-main { z-index: 104; }
 .navbar-contextual { z-index: 103; }
+
 .navbar-collapse.collapse.in .navbar-form {
   margin: 10px 0 10px;
+}
+@media (min-width: 768px) {
+  #navbar-menubar>#quicksearch {
+    float: left;
+  }
+  #navbar-menubar>#quicksearch input[type="text"] {
+    width: 100px;
+  }
 }
 @media (min-width: 992px) {
   .navbar {

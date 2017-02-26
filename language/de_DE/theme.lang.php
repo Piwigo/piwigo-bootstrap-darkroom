@@ -65,3 +65,4 @@ $lang['from'] = 'von';
 $lang['Site logo'] = 'Logo der Seite';
 $lang['Display a site logo image instead of plain text'] = 'Zeige ein Logo-Bild anstatt des Textes';
 $lang['The path to the image, relative to your Piwigo installation folder'] = 'Der Pfad zur Bilddatei, relativ zum Piwigo-Installationsverzeichnis';
+$lang['directly in the navigation bar'] = 'direkt in der Navigationsleiste';

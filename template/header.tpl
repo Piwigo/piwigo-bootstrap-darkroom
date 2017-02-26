@@ -138,6 +138,13 @@
 {/if}
                 </div>
                 <div class="collapse navbar-collapse navbar-right" id="navbar-menubar">
+{if $theme_config_extra->quicksearch_navbar}
+                <form class="navbar-form" role="search" action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
+                    <div class="form-group">
+                        <input type="text" name="q" id="qsearchInput" class="form-control" placeholder="{'Quick search'|@translate}" />
+                    </div>
+                </form>
+{/if}
 {$MENUBAR}
                 </div>
             </div>
