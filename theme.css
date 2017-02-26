@@ -65,6 +65,7 @@ html, body {
 .navbar-main { z-index: 104; }
 .navbar-contextual { z-index: 103; }
 
+.navbar-collapse.collapsing .navbar-form,
 .navbar-collapse.collapse.in .navbar-form {
   margin: 10px 0 10px;
 }
