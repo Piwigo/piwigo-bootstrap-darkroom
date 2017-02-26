@@ -12,9 +12,7 @@ class ThemeController {
     }
 
     public function init() {
-        add_event_handler('loc_begin_page_header', array($this, 'assignConfig'));
-        add_event_handler('loc_begin_index_category_thumbnails', array($this, 'assignConfig'));
-        add_event_handler('loc_begin_index_thumbnails', array($this, 'assignConfig'));
+        add_event_handler('init', array($this, 'assignConfig'));
     }
 
     public function assignConfig() {
