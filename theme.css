@@ -83,7 +83,7 @@ html, body {
   }
 }
 @media (max-width: 991px) {
-  #navbar-menubar ul>li>a {
+  #navbar-menubar ul>li>a.dropdown-toggle {
     padding-left: 4px;
   }
 }
