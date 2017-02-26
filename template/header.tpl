@@ -91,7 +91,7 @@
     {combine_css path="local/bootstrapdefault/custom.css" order=10000}
 {/if}
 {get_combined_css}
-{if $BODY_ID == 'theAdditionalPage'}
+{if $BODY_ID == 'theAdditionalPage' || $BODY_ID == 'theHomePage'}
 {assign var=loc value="header"}
 {else}
 {assign var=loc value="footer"} 
