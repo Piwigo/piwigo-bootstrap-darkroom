@@ -81,6 +81,9 @@ html, body {
   .navbar {
     left: auto;
   }
+  #navbar-menubar>#quicksearch input[type="text"] {
+    width: 150px;
+  }
 }
 @media (max-width: 991px) {
   #navbar-menubar ul>li>a.dropdown-toggle {
