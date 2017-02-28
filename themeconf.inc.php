@@ -15,6 +15,7 @@ $themeconf = array(
     'parent' => 'bootstrapdefault',
     'load_parent_css' => true,
     'load_parent_local_head' => true,
+    'local_head' => 'local_head.tpl',
     'url' => 'https://kuther.net/'
 );
 
