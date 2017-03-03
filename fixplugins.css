@@ -184,3 +184,6 @@ ul#thumbnails .gthumb a img.thumbnail {
 
 /* LanguageSwitch */
 #languageSwitch .pwg-icon { top: -2px; }
+
+/* SocialConnect */
+#oAuthQuickconnect legend { font-size: 14px; }

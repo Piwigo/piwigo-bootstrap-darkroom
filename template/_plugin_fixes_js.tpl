@@ -1,3 +1,12 @@
+{if isset($loaded_plugins['oAuth'])}
+{footer_script require='jquery'}{strip}
+$(document).ready(function() {
+  $('#navbar-menubar>.nav>dd>#quickconnect').attr('id', 'oAuthQuickconnect');
+  $('#oAuthQuickconnect').closest('dd').appendTo('#identificationDropdown>.dropdown-menu');
+  $('#oAuthQuickconnect').closest('dd').changeElementType('li');
+});
+{/strip}{/footer_script}
+{/if}
 {if isset($loaded_plugins['language_switch'])}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
