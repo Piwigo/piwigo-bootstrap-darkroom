@@ -4,11 +4,15 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 
 ### Features
 
-* Choose color themes from [Bootswatch](https://bootswatch.com), or use the included dark color scheme based on Lightroom's colors (default).
-* Configurable carousel album navigation on the picture page using [slick slider](http://kenwheeler.github.io/slick/)
+* Various color styles and sub-themes
+ * [Bootswatch](https://bootswatch.com) support
+ * [Material Design](http://fezvrasta.github.io/bootstrap-material-design/) included
+ * A custom dark color scheme based on Lightroom® colors (the default)
 * Full screen slideshow view using [PhotoSwipe](http://photoswipe.com)
- * Auto play support (replaces Piwigo default slideshow)
+ * Supports auto play
+ * Supports HTML5 video
  * Album thumbnails can be linked to PhotoSwipe directly (like smartpocket)
+* Configurable carousel album navigation on the picture page using [slick slider](http://kenwheeler.github.io/slick/)
 * Video support on both the picture page and inside the slideshow, using native HTML 5 video widget
 * 100% mobile ready
  * fully responsive Navbars, Carousel, PhotoSwipe slideshow, video content
@@ -26,6 +30,14 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 3. Enable Bootstrap Darkroom
 4. To use it as the standard theme for mobile devices, you need to disable the Smartpocket theme (if enabled). In combination with the recommended plugins and by setting "Thumbnail link target" to "PhotoSwipe" or "PhotoSwipe (mobile devices only)" it will behave like smartpocket (click on thumbnail opens the slideshow, masonry style thumbnail page with ajax loading).
 
+### Demo
+A demo is available at https://pwgdemo.kuther.net
+
+### Documentation
+* [Github Wiki](https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki)
+* [Forum thread](http://piwigo.org/forum/viewtopic.php?id=26624)
+* [Issue tracker](https://github.com/tkuther/piwigo-bootstrap-darkroom/issues)
+
 ### Recommended Plugins
 * [GThumb+](http://piwigo.org/ext/extension_view.php?eid=591) or [gdThumb](http://piwigo.org/ext/extension_view.php?eid=771): this will give you masonry-style thumbnail page.
 * [RV Thumbnail Scroller](http://piwigo.org/ext/extension_view.php?eid=493): this one will load items on the thumbnails page as they are requested using ajax. HIGHLY recommended for mobile devices.
@@ -37,9 +49,6 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 * Plugins that add buttons to the Navbar might not (yet) be supported, see [Plugin Support Matrix](https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki/Plugin-Support-Matrix)
 * The Sidebar, if enabled in settings, doesn't play well with Bootswatch Themes. You need to CSS-style the sidebar yourself.
 * Portrait mode videos (e.g. from mobile phones) need to be recoded in actual portrait orientation, rotation tags won't work.
-
-### Demo
-A demo is available at https://pwgdemo.kuther.net
 
 ### Preview
 
