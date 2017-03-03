@@ -1,10 +1,10 @@
 {if isset($loaded_plugins['language_switch'])}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  $('#languageSwitch').appendTo('#secondary-navbar>ul.nav');
-  $('#languageSwitch').addClass('dropdown');
+  $('#languageSwitch').appendTo('#navbar-menubar>ul.nav').addClass('dropdown');
   $('#languageSwitchLink').addClass('dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown').attr('href', '#').attr('id', 'languageSwitchToggle');
   $('#languageSwitchToggle .pwg-button-text').after('<span class="caret"></span>');
+  $('#languageSwitchToggle .pwg-button-text').remove();
   $('#languageSwitchBox').changeElementType('ul');
   $('#languageSwitchBox').removeClass('switchBox').addClass('dropdown-menu dropdown-menu-scrollable').attr('role', 'menu').attr('id', 'languageDropdown');
   $('#languageDropdown a').wrap('<li></li>');
