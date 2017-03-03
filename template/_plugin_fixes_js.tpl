@@ -2,6 +2,7 @@
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
   $('#navbar-menubar>.nav>dd>#quickconnect').attr('id', 'oAuthQuickconnect');
+  $('#oAuthQuickconnect legend').addClass('dropdown-header').appendTo('#identificationDropdown>.dropdown-menu').changeElementType('li');
   $('#oAuthQuickconnect').closest('dd').appendTo('#identificationDropdown>.dropdown-menu');
   $('#oAuthQuickconnect').closest('dd').changeElementType('li');
 });
