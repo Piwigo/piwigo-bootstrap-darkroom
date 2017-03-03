@@ -69,6 +69,12 @@ html, body {
 .navbar-collapse.collapse.in .navbar-form {
   margin: 10px 0 10px;
 }
+@media (max-width: 767px) {
+  .navbar-form {
+    border-top: none;
+    border-bottom: none;
+  }
+}
 @media (min-width: 768px) {
   #navbar-menubar>#quicksearch {
     float: left;
@@ -369,4 +375,9 @@ video[poster] { object-fit: cover; }
     margin-left: 15px;
     margin-right: 15px;
   }
+}
+
+/* Language Switch */
+[class*="langflag-text-"] {
+  background-position: 0 50px !important;
 }
