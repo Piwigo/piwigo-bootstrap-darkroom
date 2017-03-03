@@ -91,7 +91,7 @@
     {combine_css path="local/bootstrapdefault/custom.css" order=10000}
 {/if}
 {get_combined_css}
-{if $BODY_ID == 'theAdditionalPage' || $BODY_ID == 'theHomePage'}
+{if $BODY_ID == 'theAdditionalPage' || $BODY_ID == 'theHomePage' || $bootstrap_darkroom_core_js_in_header == true }
 {assign var=loc value="header"}
 {else}
 {assign var=loc value="footer"} 

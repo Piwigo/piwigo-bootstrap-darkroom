@@ -34,6 +34,11 @@ function set_config_values()
                           'loaded_plugins' => $GLOBALS['pwg_loaded_plugins'],
                           'meta_ref_enabled' => $conf['meta_ref']
                          ));
+  if (array_key_exists('bootstrap_darkroom_core_js_in_header', $conf)) {
+    $template->assign('bootstrap_darkroom_core_js_in_header', $conf['bootstrap_darkroom_core_js_in_header']);
+  } else {
+    $template->assign('bootstrap_darkroom_core_js_in_header', false);
+  }
 }
 
 // needed for the carousel and photoswipe
