@@ -42,6 +42,9 @@ html, body {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+.navbar-contextual .navbar-right ul.nav {
+  white-space: nowrap;
+}
 @media (max-width: 460px) {
   .navbar-contextual .navbar-brand {
     width: 80%;

@@ -102,7 +102,10 @@ $(window).load(function() {
 {if isset($loaded_plugins['UserCollections']) && ($BODY_ID == 'thePicturePage' || $BODY_ID == 'theCollectionPage')}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  $('#thePicturePage .nav a.addCollection').wrap('<li></li>');
+  $('#thePicturePage .nav a.addCollection').wrap('<li id="collectionsDropdownBS" class="dropdown"></li>').removeClass('pwg-button pwg-state-default').addClass('dropdown-toggle');
+  $('#thePicturePage #collectionsDropdown').appendTo('#collectionsDropdownBS');
+  $('#thePicturePage #collectionsDropdownBS .user-collections-icon').removeClass('pwg-icon');
+  $('#thePicturePage #collectionsDropdownBS .pwg-button-text').remove();
   $('#theCollectionPage .navbar .pwg-icon').removeClass('pwg-icon');
   $('#theCollectionPage input[type="submit"]').addClass('btn btn-primary');
 });
