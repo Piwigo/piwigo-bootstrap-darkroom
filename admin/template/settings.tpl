@@ -8,7 +8,7 @@
     <div id="configContent">
         <fieldset class="mainConf">
             <legend>{'Bootstrap theme'|@translate}</legend>
-            <p><em>This setting is overridden by Bootstrap Darkroom</em><p>
+            <p><em>{'This setting is overridden by Bootstrap Darkroom'|@translate}</em><p>
             <ul>
                 <li>
                     <select name="bootstrap_theme" disabled="disabled">
@@ -20,7 +20,7 @@
         </fieldset>
         <fieldset class="mainConf">
             <legend>{'Picture page display'|@translate}</legend>
-            <p><em>This setting is overridden by Bootstrap Darkroom</em><p>
+            <p><em>{'This setting is overridden by Bootstrap Darkroom'|@translate}</em><p>
             <ul>
                 <li>
                     <label class="radio">
@@ -34,7 +34,7 @@
                 </li>
             </ul>
             <br />
-            <span>* Hides the top menu and jumbotron containing the page title and banner</span>
+            <span>* {'Hides the top menu and jumbotron containing the page title and banner'|@translate}</span>
         </fieldset>
         <fieldset class="mainConf">
             <legend>{'Social integration'|@translate}</legend>

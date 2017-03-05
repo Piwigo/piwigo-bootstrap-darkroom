@@ -19,7 +19,7 @@
     <p>{'Documentation'|@translate}: <a href="https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki" target="_blank">https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki</a>
     </p>
 
-    <p>If you find any issues, please report them to the <a href="https://github.com/tkuther/piwigo-bootstrap-darkroom/issues">Issue tracker</a>
+    <p>{'If you find any issues, please report them to the'|@translate} <a href="https://github.com/tkuther/piwigo-bootstrap-darkroom/issues">{'Issue tracker'|@translate}</a>
     </p>
 
     <p><a href="https://github.com/tkuther/piwigo-bootstrap-darkroom/issues"

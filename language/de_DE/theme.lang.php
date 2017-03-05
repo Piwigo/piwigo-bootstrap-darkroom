@@ -66,3 +66,15 @@ $lang['Site logo'] = 'Logo der Seite';
 $lang['Display a site logo image instead of plain text'] = 'Zeige ein Logo-Bild anstatt des Textes';
 $lang['The path to the image, relative to your Piwigo installation folder'] = 'Der Pfad zur Bilddatei, relativ zum Piwigo-Installationsverzeichnis';
 $lang['directly in the navigation bar'] = 'direkt in der Navigationsleiste';
+$lang['This setting is overridden by Bootstrap Darkroom'] = 'Diese Einstellung wird durch Bootstrap Darkroom überschrieben.';
+$lang['Hides the top menu and jumbotron containing the page title and banner'] = 'Verbirgt das Top-Menü und den Jumbotron-Banner.';
+$lang['Social integration'] = 'Social Integration';
+$lang['Basic'] = 'Basic';
+$lang['HTML 5 canvas'] = 'HTML 5 canvas';
+$lang['By'] = 'Von';
+$lang['Based on Bootstrap Default by'] = 'Basierend auf Bootstrap Default von';
+$lang['A mobile-ready theme based on Boostrap Default'] = 'Ein mobil-taugliches und funktionsreiches Thema basierend auf Boostrap Default.';
+$lang['If you find any issues, please report them to the'] = 'Probleme und Fehler bitte melden über den';
+$lang['Issue tracker'] = 'Bug Tracker.';
+$lang['Bug reports and features requests'] = 'Fehlerberichte und Änderungswünsche';
+?>
