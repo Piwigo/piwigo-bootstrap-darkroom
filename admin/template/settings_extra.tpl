@@ -172,6 +172,13 @@
                     </select>
                     <span class="info">{'This will display categories as media wells with squared thumbnails, similar to the smartpocket mobile theme.'|@translate}</span>
                 </li>
+                <li>
+                    <label class="font-checkbox">
+                       <span class="icon-check"></span>
+                       <input type="checkbox" name="cat_descriptions"{if $theme_config_extra->cat_descriptions} checked=checked{/if}>
+                       {'Display category description in grid view'|@translate}
+                    </label>
+                </li>
             </ul>
         </fieldset>
         <fieldset>

@@ -43,6 +43,11 @@
             <p>{$cat.CAPTION_NB_IMAGES}</p>
 {if not empty($cat.DESCRIPTION)}
             <div class="description">{$cat.DESCRIPTION}</div>
+{if $theme_config_extra->cat_descriptions}
+{html_style}
+.content-grid .col-inner .caption .description { display: block; }
+{/html_style}
+{/if}
 {/if}
         </div>
     </div>
