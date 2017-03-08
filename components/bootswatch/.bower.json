@@ -39,15 +39,14 @@
     "html5shiv": "~3.7.0",
     "respond": "~1.4.2"
   },
-  "version": "3.3.7",
-  "_release": "3.3.7",
+  "_release": "95a134434f",
   "_resolution": {
-    "type": "version",
-    "tag": "v3.3.7",
-    "commit": "4b0d3762f309326a6d66fa4ea18945a7fc11f8ef"
+    "type": "branch",
+    "branch": "gh-pages",
+    "commit": "95a134434fd0955182e9a938b5e50624e8e143c6"
   },
   "_source": "https://github.com/thomaspark/bootswatch.git",
-  "_target": "^3.3.7",
+  "_target": "gh-pages",
   "_originalSource": "bootswatch",
   "_direct": true
 }
