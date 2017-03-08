@@ -235,7 +235,7 @@ $(document).ready(function() {
 {$CATEGORIES}
 {footer_script}{strip}
 $(document).ready(function() {
-  $('#content img').load(function(){
+  $(window).load(function(){
     $('#content .col-inner').equalHeights()
   })
 });
