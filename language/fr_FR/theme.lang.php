@@ -24,7 +24,7 @@ $lang['Enabled'] = 'Activé';
 $lang['Disabled'] = 'Désactivé';
 $lang['Color theme'] = 'Thème';
 $lang['Bootstrap Darkroom\'s custom dark color theme'] = 'Bootstrap Darkroom custom de couleur sombre';
-$lang['A color theme from'] = 'Un thème de';
+$lang['A color theme from'] = 'Un thème de ';
 $lang['Bootstrap\'s default theme'] = 'Le thème standard de Bootstrap';
 $lang['No color theme'] = 'Aucun thème';
 $lang['Bootswatch theme'] = 'Thème Bootswatch';
@@ -77,4 +77,3 @@ $lang['A mobile-ready theme based on Boostrap Default'] = 'Un thème "mobile-rea
 $lang['If you find any issues, please report them to the'] = 'Si vous rencontrez des problèmes, veuillez les signaler sur le';
 $lang['Issue tracker'] = 'Bug Tracker.';
 $lang['Bug reports and features requests'] = 'Rapports de bugs et demandes de fonctionnalités';
-?>
