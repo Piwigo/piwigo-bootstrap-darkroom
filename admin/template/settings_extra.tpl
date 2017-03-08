@@ -24,7 +24,7 @@
             <select id="bootswatch_theme" name="bootswatch_theme"></select>
             <label id="material_color_label" labelfor="material_color">{'Material color'|@translate}</label>
             <select id="material_color" name="material_color"></select>
-            <div id="bootswatch_preview"></div>
+            <div id="theme_preview"></div>
             <dl id="boostrap_theme_descr" class="dl-horizontal">
                 <dt>Darkroom</dt><dd>{'Bootstrap Darkroom\'s custom dark color theme'|@translate}</dd>
                 <dt>Bootswatch</dt><dd>{'A color theme from'|@translate} <a href="https://bootswatch.com">https://bootswatch.com</a></dd>
@@ -207,20 +207,22 @@
     </p>
 </form>
 {footer_script require="jquery"}
-var select = $("#bootswatch_theme");
-var label = $("#bootswatch_theme_label");
-var preview = $("#bootswatch_preview");
+var select_bootswatch = $("#bootswatch_theme");
+var label_bootswatch = $("#bootswatch_theme_label");
+var select_material = $("#material_color");
+var label_material = $("#material_color_label");
+var preview = $("#theme_preview");
 var cur_theme = '{$theme_config_extra->bootswatch_theme}';
 function getBootswatchThemes() {
     $.getJSON("https://bootswatch.com/api/3.json", function (data) {
       var themes = data.themes;
-      select.show();
-      label.show();
+      select_bootswatch.show();
+      label_bootswatch.show();
 
       themes.forEach(function(value, index){
         $name = value.name;
         $lname = $name.toLowerCase();
-        select.append($("<option />")
+        select_bootswatch.append($("<option />")
               .val($lname)
               .text($name));
 
@@ -228,7 +230,7 @@ function getBootswatchThemes() {
            $('option[value=' + $lname + ']').attr('selected', 'selected');
         }
       });
-      preview.html('<img src="themes/bootstrap_darkroom/components/bootswatch/' + select.val() + '/thumbnail.png" width="50%" style="padding: 10px 0;"/>');
+      preview.html('<img src="themes/bootstrap_darkroom/components/bootswatch/' + select_bootswatch.val() + '/thumbnail.png" width="50%" style="padding: 10px 0;"/>');
       preview.show();
 
     }, "json").fail(function(){
@@ -238,14 +240,13 @@ function getBootswatchThemes() {
 
 }
 
-var select_material = $("#material_color");
-var label_material = $("#material_color_label");
 function getMaterialColors() {
   var colors = ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'light-blue', 'cyan', 'teal', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey'];
   var lcolor = colors.length;
   var cur_color = '{$theme_config_extra->material_color}';
   select_material.show();
   label_material.show();
+  
   for (var i = 0; i < lcolor; i++) {
     select_material.append($("<option />")
           .val(colors[i])
@@ -255,15 +256,21 @@ function getMaterialColors() {
       $('option[value=' + colors[i] + ']').attr('selected', 'selected');
     }
   }
+
+  preview.html('<img src="themes/bootstrap_darkroom/admin/img/material-' + select_material.val() + '.png" style="padding: 10px 0;"/>');
+  preview.show();
 }
 
 $(document).ready(function() {
   if ($('select[name=bootstrap_theme]').val() === 'bootswatch') {
     getBootswatchThemes();
-  }
-  if ($('select[name=bootstrap_theme]').val() === 'material') {
+  } else if ($('select[name=bootstrap_theme]').val() === 'material') {
     getMaterialColors();
+  } else {
+    preview.html('<img src="themes/bootstrap_darkroom/admin/img/' + $('select[name=bootstrap_theme]').val() + '.png" style="padding: 10px 0;"/>');
+    preview.show();
   }
+ 
   link_target = $('select[name=thumbnail_linkto]').val();
   if (!$('input[name=photoswipe]').is(':checked') && link_target !== 'photoswipe') {
     $('select[name=thumbnail_linkto]').val('picture');
@@ -277,21 +284,26 @@ $('select[name=bootstrap_theme]').change(function() {
   if ($('select[name=bootstrap_theme]').val() === 'bootswatch') {
     getBootswatchThemes();
   } else {
-    select.empty();
-    select.hide();
-    label.hide();
+    select_bootswatch.empty();
+    select_bootswatch.hide();
+    label_bootswatch.hide();
     preview.hide();
-  }
-  if ($('select[name=bootstrap_theme]').val() === 'material') {
-    getMaterialColors();
-  } else {
-    select_material.empty();
-    select_material.hide();
-    label_material.hide();
+    if ($('select[name=bootstrap_theme]').val() === 'material') {
+      getMaterialColors();
+    } else {
+      select_material.empty();
+      select_material.hide();
+      label_material.hide();
+      preview.html('<img src="themes/bootstrap_darkroom/admin/img/' + $('select[name=bootstrap_theme]').val() + '.png" style="padding: 10px 0;"/>');
+      preview.show();
+    }
   }
 });
-$('select[name=bootswatch_theme]').change(function() {
-    preview.html('<img src="themes/bootstrap_darkroom/components/bootswatch/' + select.val() + '/thumbnail.png" width="50%" style="padding: 10px 0;"/>');
+$(select_bootswatch).change(function() {
+    preview.html('<img src="themes/bootstrap_darkroom/components/bootswatch/' + select_bootswatch.val() + '/thumbnail.png" width="50%" style="padding: 10px 0;"/>');
+});
+$(select_material).change(function() {
+    preview.html('<img src="themes/bootstrap_darkroom/admin/img/material-' + select_material.val() + '.png" style="padding: 10px 0;"/>');
 });
 
 $('input[name=photoswipe]').change(function() {
