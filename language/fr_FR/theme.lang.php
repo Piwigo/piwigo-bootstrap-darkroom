@@ -77,4 +77,3 @@ $lang['A mobile-ready theme based on Boostrap Default'] = 'Un thème "mobile-rea
 $lang['If you find any issues, please report them to the'] = 'Si vous rencontrez des problèmes, veuillez les signaler sur le';
 $lang['Issue tracker'] = 'Bug Tracker.';
 $lang['Bug reports and features requests'] = 'Rapports de bugs et demandes de fonctionnalités';
-?>
