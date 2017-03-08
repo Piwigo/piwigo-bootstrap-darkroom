@@ -56,4 +56,5 @@ $lang['A mobile-ready theme based on Boostrap Default'] = 'A mobile-ready theme 
 $lang['If you find any issues, please report them to the'] = 'If you find any issues, please report them to the';
 $lang['Issue tracker'] = 'Issue tracker';
 $lang['Bug reports and features requests'] = 'Bug reports and features requests';
+$lang['Display category description in grid view'] = 'Display category description in grid view';
 ?>
