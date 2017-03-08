@@ -42,7 +42,7 @@
 {/if}
             <p>{$cat.CAPTION_NB_IMAGES}</p>
 {if not empty($cat.DESCRIPTION)}
-            <p class="description">{$cat.DESCRIPTION}</p>
+            <div class="description">{$cat.DESCRIPTION}</div>
 {/if}
         </div>
     </div>

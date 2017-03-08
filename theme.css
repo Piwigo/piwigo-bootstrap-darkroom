@@ -16,7 +16,7 @@ html, body {
 }
 
 .col-inner .caption p { margin: 0 0; }
-.col-inner .caption p.description { margin-top: 10px; }
+.col-inner .caption .description { margin-top: 10px; }
 
 @media (min-width: 1800px) {
   .container {
