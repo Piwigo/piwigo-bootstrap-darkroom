@@ -23,3 +23,5 @@
 $lang['Disabled'] = 'Atspējots';
 $lang['Basic'] = 'Pamata';
 $lang['Always'] = 'Vienmēr';
+$lang['Enabled'] = 'Iespējots';
+$lang['Autoplay interval'] = 'Autorādīšans intervāls';
