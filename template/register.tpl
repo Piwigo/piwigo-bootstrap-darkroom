@@ -4,6 +4,11 @@
             <div class="navbar-brand"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Registration'|@translate}</a></div>
         </div>
     </div>
+    <div class="navbar-right">
+       <ul class="nav navbar-nav">
+             {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
+       </ul>
+    </div>
 </nav>
 
 {include file='infos_errors.tpl'}

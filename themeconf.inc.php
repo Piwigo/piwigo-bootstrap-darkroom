@@ -39,6 +39,15 @@ function set_config_values()
   } else {
     $template->assign('bootstrap_darkroom_core_js_in_header', false);
   }
+
+  if (isset($pwg_loaded_plugins['language_switch'])) {
+    add_event_handler('loc_end_search', 'language_controler_flags', 95 );
+    add_event_handler('loc_end_identification', 'language_controler_flags', 95 );
+    add_event_handler('loc_end_tags', 'language_controler_flags', 95 );
+    add_event_handler('loc_begin_about', 'language_controler_flags', 95 );
+    add_event_handler('loc_end_register', 'language_controler_flags', 95 );
+    add_event_handler('loc_end_password', 'language_controler_flags', 95 );
+  }
 }
 
 // needed for the carousel and photoswipe
