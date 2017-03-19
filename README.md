@@ -38,9 +38,9 @@ A demo is available at https://pwgdemo.kuther.net
 * [Forum thread](http://piwigo.org/forum/viewtopic.php?id=26624)
 * [Issue tracker](https://github.com/tkuther/piwigo-bootstrap-darkroom/issues)
 
-### Recommended Plugins
-* [GThumb+](http://piwigo.org/ext/extension_view.php?eid=591) or [gdThumb](http://piwigo.org/ext/extension_view.php?eid=771): this will give you masonry-style thumbnail page.
-* [RV Thumbnail Scroller](http://piwigo.org/ext/extension_view.php?eid=493): this one will load items on the thumbnails page as they are requested using ajax. HIGHLY recommended for mobile devices.
+### Recommended Plugins for best mobile user experience
+* [GThumb+](http://piwigo.org/ext/extension_view.php?eid=591) or [gdThumb](http://piwigo.org/ext/extension_view.php?eid=771): this will give you masonry-style thumbnail pages that make most use of valuable space.
+* [RV Thumbnail Scroller](http://piwigo.org/ext/extension_view.php?eid=493): this one will load items on the thumbnails page as they are requested using ajax, ideal for swiping through albums while keeping the initial page load size small. Avoids pagination.
 
 ### Known issues
 
