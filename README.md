@@ -5,18 +5,18 @@ A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Phil
 ### Features
 
 * Various color styles and sub-themes
- * [Bootswatch](https://bootswatch.com) support
- * [Material Design](http://fezvrasta.github.io/bootstrap-material-design/) included
- * A custom dark color scheme based on Lightroom® colors (the default)
+  * [Bootswatch](https://bootswatch.com) support
+  * [Material Design](http://fezvrasta.github.io/bootstrap-material-design/) included
+  * A custom dark color scheme based on Lightroom® colors (the default)
 * Full screen slideshow view using [PhotoSwipe](http://photoswipe.com)
- * Supports auto play
- * Supports HTML5 video
- * Album thumbnails can be linked to PhotoSwipe directly (like smartpocket)
+  * Supports auto play
+  * Supports HTML5 video
+  * Album thumbnails can be linked to PhotoSwipe directly (like smartpocket)
 * Configurable carousel album navigation on the picture page using [slick slider](http://kenwheeler.github.io/slick/)
 * Video support on both the picture page and inside the slideshow, using native HTML 5 video widget
 * 100% mobile ready
- * fully responsive Navbars, Carousel, PhotoSwipe slideshow, video content
- * async/ondemand loading of carousel & PhotoSwipe content, adaptive image size selection, swipe & tap events
+  * fully responsive Navbars, Carousel, PhotoSwipe slideshow, video content
+  * async/ondemand loading of carousel & PhotoSwipe content, adaptive image size selection, swipe & tap events
 * Various configuration options
  
 
