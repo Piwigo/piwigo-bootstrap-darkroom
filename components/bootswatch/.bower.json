@@ -39,11 +39,11 @@
     "html5shiv": "~3.7.0",
     "respond": "~1.4.2"
   },
-  "_release": "95a134434f",
+  "_release": "d46f62e500",
   "_resolution": {
     "type": "branch",
     "branch": "gh-pages",
-    "commit": "95a134434fd0955182e9a938b5e50624e8e143c6"
+    "commit": "d46f62e50000889f4be6028ccd0553bb32f5e20a"
   },
   "_source": "https://github.com/thomaspark/bootswatch.git",
   "_target": "gh-pages",
