@@ -1,0 +1,32 @@
+{
+  "name": "bootstrap_darkroom",
+  "homepage": "https://github.com/tkuther/piwigo-bootstrap-darkroom",
+  "authors": [
+    "Thomas Kuther <github@kuther.net>"
+  ],
+  "description": "Bootstrap Darkroom theme for Piwigo photo gallery",
+  "main": "",
+  "license": "Apache-2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "0.5.10",
+    "bootswatch": "gh-pages",
+    "font-awesome": "fontawesome#^4.6.3",
+    "jasny-bootstrap": "^3.1.3",
+    "jquery-touch-events": "^1.0.8",
+    "material-icons": "^0.1.0",
+    "photoswipe": "https://github.com/dimsemenov/PhotoSwipe.git#^4.1.1",
+    "pTSans": "https://google-fonts.azurewebsites.net/googleFonts/PT-Sans?family=PT+Sans:400,700",
+    "roboto": "https://google-fonts.azurewebsites.net/googleFonts/Roboto?family=Roboto:300,400,500,700",
+    "slick-carousel": "^1.6.0",
+    "jquery": "^2.2"
+  }
+}
