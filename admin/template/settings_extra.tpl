@@ -283,6 +283,9 @@ $(document).ready(function() {
 $('select[name=bootstrap_theme]').change(function() {
   if ($('select[name=bootstrap_theme]').val() === 'bootswatch') {
     getBootswatchThemes();
+    select_material.empty();
+    select_material.hide();
+    label_material.hide();
   } else {
     select_bootswatch.empty();
     select_bootswatch.hide();
