@@ -17,7 +17,7 @@ $lang['Endlessly scroll through album images'] = 'Endlessly scroll through album
 $lang['Center mode'] = 'Center mode';
 $lang['Display the currently selected image in the middle. Works best with infinite looping enabled.'] = 'Display the currently selected image in the middle. Works best with infinite looping enabled.';
 $lang['Enable PhotoSwipe fullscreen slideshow. Disable if you prefer to use Plugins like Fotorama or Piwigo\'s default slideshow.'] = 'Enable PhotoSwipe fullscreen slideshow. Disable if you prefer to use Plugins like Fotorama or Piwigo\'s default slideshow.';
-$lang['Autoplay interval'] = 'Atoplay interval';
+$lang['Autoplay interval'] = 'Autoplay interval';
 $lang['milliseconds'] = 'milliseconds';
 $lang['Show a jumbotron banner on the categroy pages.'] = 'Show a jumbotron banner on the categroy pages.';
 $lang['Picture page display'] = 'Picture page display';
@@ -57,4 +57,3 @@ $lang['If you find any issues, please report them to the'] = 'If you find any is
 $lang['Issue tracker'] = 'Issue tracker';
 $lang['Bug reports and features requests'] = 'Bug reports and features requests';
 $lang['Display category description in grid view'] = 'Display category description in grid view';
-?>
