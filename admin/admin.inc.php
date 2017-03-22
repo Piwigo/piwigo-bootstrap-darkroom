@@ -5,6 +5,7 @@ if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
 // Includes
 include_once(PHPWG_ROOT_PATH . 'admin/include/tabsheet.class.php');
 require_once(PHPWG_THEMES_PATH . 'bootstrap_darkroom/include/config.php');
+require_once(PHPWG_THEMES_PATH . 'bootstrap_darkroom/admin/include/Parsedown.php');
 
 load_language('theme.lang', PHPWG_THEMES_PATH.'bootstrap_darkroom/');
 
@@ -24,6 +25,9 @@ if (!in_array($page['tab'], array(TAB_SETTINGS, TAB_SETTINGS_EXTRA, TAB_ABOUT)))
 $themeconfig = new \BootstrapDefault\Config();
 $themeconfig_extra = new \BootstrapDarkroom\ExtraConfig();
 
+// Fetch the template.
+global $template;
+
 // Save settings
 if ($page['tab'] == TAB_SETTINGS) {
     if (isset($_POST['boostrapdefault_settings'])) {
@@ -37,7 +41,12 @@ if ($page['tab'] == TAB_SETTINGS_EXTRA) {
         $themeconfig_extra->save();
     }
 }
-
+if ($page['tab'] == TAB_ABOUT) {
+    $rmd = PHPWG_THEMES_PATH . 'bootstrap_darkroom/README.md';
+    $parsedown = new Parsedown();
+    $content = $parsedown->text(file_get_contents($rmd));
+    $template->assign('rmd', $content);
+}
 
 // TabSheet
 $tabsheet = new tabsheet();
@@ -48,8 +57,6 @@ $tabsheet->add(TAB_ABOUT, l10n('About'), ADMIN_PATH . '&tab=' . TAB_ABOUT);
 $tabsheet->select($page['tab']);
 $tabsheet->assign();
 
-// Fetch the template.
-global $template;
 
 // Add our template to the global template
 $template->set_filenames(
