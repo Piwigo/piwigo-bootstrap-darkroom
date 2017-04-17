@@ -23,7 +23,7 @@
     "jasny-bootstrap": "^3.1.3",
     "jquery-touch-events": "^1.0.8",
     "material-icons": "^0.1.0",
-    "photoswipe": "https://github.com/dimsemenov/PhotoSwipe.git#^4.1.1",
+    "photoswipe": "https://github.com/dimsemenov/PhotoSwipe.git#^4.1",
     "pTSans": "https://google-fonts.azurewebsites.net/googleFonts/PT-Sans?family=PT+Sans:400,700",
     "roboto": "https://google-fonts.azurewebsites.net/googleFonts/Roboto?family=Roboto:300,400,500,700",
     "slick-carousel": "^1.6.0",
