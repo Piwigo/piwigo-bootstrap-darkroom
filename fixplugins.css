@@ -181,3 +181,6 @@ ul#thumbnails .gthumb a img.thumbnail {
 
 /* PWG_Stuffs */
 .pwgstuffs-container { padding-top: 20px; }
+
+/* RV Autocomplete */
+ul.ui-autocomplete { z-index: 150; }
