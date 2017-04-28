@@ -12,10 +12,11 @@
                     <input class="form-control" type="text" name="username" id="username" value="" placeholder="{'Username'|@translate}">
                     <input class="form-control" type="password" name="password" id="password" placeholder="{'Password'|@translate}">
                     {if $AUTHORIZE_REMEMBERING}
-                    <label for="remember_me">
-                        <input type="checkbox" name="remember_me" id="remember_me" value="1"> {'Auto login'|@translate}
-                    </label>
-                    <br />
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="remember_me" id="remember_me" value="1">{/strip} {'Auto login'|@translate}{strip}
+                        </label>
+                    </div>
                     {/if}
                     <input type="hidden" name="redirect" value="{$smarty.server.REQUEST_URI|@urlencode}">
                     <input class="btn btn-primary" type="submit" name="login" value="{'Login'|@translate}">
