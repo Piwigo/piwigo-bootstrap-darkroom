@@ -86,7 +86,7 @@
     {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config_extra->material_color}/navmenu.css" order=-5}
 {/if}
 {/if}
-    {combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=9999}
+    {combine_css path="themes/bootstrap_darkroom/css/fixplugins.css" order=9999}
 {if file_exists("local/bootstrapdefault/custom.css")}
     {combine_css path="local/bootstrapdefault/custom.css" order=10000}
 {/if}
