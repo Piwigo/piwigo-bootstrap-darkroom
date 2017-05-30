@@ -7,6 +7,7 @@
         <li class="divider"></li>
 	{/if}
     {if isset($U_LOGIN)}
+        <li>
             <form class="navbar-form" method="post" action="{$U_LOGIN}" id="quickconnect">
                 <div class="form-group">
                     <input class="form-control" type="text" name="username" id="username" value="" placeholder="{'Username'|@translate}">
@@ -34,7 +35,8 @@
                     -->
                 </div>
             </form>
-            <li class="divider"></li>
+         </li>
+         <li class="divider"></li>
     {/if}
 	{if isset($U_REGISTER)}
 	    <li><a href="{$U_REGISTER}" title="{'Create a new account'|@translate}" rel="nofollow">{'Register'|@translate}</a></li>
