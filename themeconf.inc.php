@@ -186,6 +186,7 @@ function strip_breadcrumbs() {
     $int_err = libxml_use_internal_errors(true);
     $dom->loadHTML(mb_convert_encoding($title, 'HTML-ENTITIES', 'UTF-8'));
     libxml_use_internal_errors($int_err);
+    $dom->removeChild($dom->doctype);
 
     $nr_links = $dom->getElementsByTagName('a')->length;
     $home_link_orig = $dom->getElementsByTagName('a')->item(0);
@@ -220,6 +221,7 @@ function strip_breadcrumbs() {
         $title_new = $home_link_content . $home_link_new;
       }
     }
+    $title_new = preg_replace('~<(/?(?:html|body))[^>]*>\s*~i', '', $title_new);
     if (empty($section_title)) {
       $template->assign('TITLE', $title_new);
     } else {
