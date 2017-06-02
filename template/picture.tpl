@@ -152,12 +152,12 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
     <div role="tabpanel" class="tab-pane active" id="tab_info">
       <div id="info-content" class="info table-responsive">
         <table class="table table-condensed">
-            <colgroup>
-                <col class="col-xs-4">
-                <col class="col-xs-4">
-            </colgroup>
-{if $display_info.author and isset($INFO_AUTHOR)}
+          <colgroup>
+             <col class="col-xs-4">
+             <col class="col-xs-4">
+          </colgroup>
           <tbody>
+{if $display_info.author and isset($INFO_AUTHOR)}
             <tr id="Author" class="imageInfo">
                 <th scope="row">{'Author'|@translate}</th>
                 <td>{$INFO_AUTHOR}</td>
