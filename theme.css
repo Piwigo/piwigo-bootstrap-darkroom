@@ -369,8 +369,12 @@ a.pswp__share--google:hover {
 /* Sidebar */
 #sidebar { z-index: 100; }
 
-/* Video */
+/* Video 
 video[poster] { object-fit: cover; }
+*/
+.embed-responsive-9by16 {
+  padding-bottom: 177.78%;
+}
 
 /* Picture page nav buttons */
 @media (max-width: 320px) {

@@ -4,8 +4,13 @@
     {footer_script}var error_icon = "{$ROOT_URL}{$themeconf.icon_dir}/errors_small.png"{/footer_script}
 {/if}
 {if preg_match("/(mp4|m4v)$/", $current.path)}
+{if $current.height < $current.width}
 <div id="video-modal" class="col-lg-8 col-md-10 col-sm-12 col-centered">
   <div class="embed-responsive embed-responsive-16by9">
+{else}
+<div id="video-modal" class="col-lg-3 col-md-5 col-sm-6 col-xs-8 col-centered">
+  <div class="embed-responsive embed-responsive-9by16">
+{/if}
     <video id="video" class="embed-responsive-item" width="100%" height="auto" controls preload="auto" poster="{$current.selected_derivative->get_url()}">
       <source src="{$ROOT_URL}{$current.path}" type="video/mp4"></source>
     </video>
