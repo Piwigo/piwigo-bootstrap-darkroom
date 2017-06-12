@@ -158,34 +158,35 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
           </colgroup>
           <tbody>
 {if $display_info.author and isset($INFO_AUTHOR)}
-            <tr id="Author" class="imageInfo">
+            <tr>
                 <th scope="row">{'Author'|@translate}</th>
-                <td>{$INFO_AUTHOR}</td>
+                <td><div id="Author" class="imageInfo"{$INFO_AUTHOR}</div></td>
             </tr>
 {/if}
 {if isset($CR_INFO_NAME) && !empty($CR_INFO_NAME)}
-            <tr id="Copyright" class="imageInfo">
+            <tr>
                 <th scope="row">{'Copyright'|@translate}</th>
-                <td>{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</td>
+                <td><div id="Copyright" class="imageInfo">{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</div></td>
             </tr>
 {/if}
 {if $display_info.rating_score and isset($rate_summary)}
-            <tr id="Average" class="imageInfo">
+            <tr>
                 <th scope="row">{'Rating score'|@translate}</th>
-                <td>
+                <td><div id="Average" class="imageInfo">
                 {if $rate_summary.count}
                         <span id="ratingScore">{$rate_summary.score}</span> <span id="ratingCount">({$rate_summary.count|@translate_dec:'%d rate':'%d rates'})</span>
                 {else}
                         <span id="ratingScore">{'no rate'|@translate}</span> <span id="ratingCount"></span>
                 {/if}
-                </td>
+                </div></td>
             </tr>
 {/if}
 
 {if isset($rating)}
-            <tr id="rating" class="imageInfo">
+            <tr>
                 <th scope="row" id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</th>
                 <td>
+                    <div id="rating" class="imageInfo">
                         <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
                         <div>
                         {foreach from=$rating.marks item=mark name=rate_loop}
@@ -223,61 +224,64 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
                         {/strip}
                         </div>
                         </form>
+                    </div>
                 </td>
             </tr>
 {/if}
 {if $display_info.created_on and isset($INFO_CREATION_DATE)}
-            <tr id="datecreate" class="imageInfo">
+            <tr>
                 <th scope="row">{'Created on'|@translate}</th>
-                <td>{$INFO_CREATION_DATE}</td>
+                <td><div id="datecreate" class="imageInfo">{$INFO_CREATION_DATE}</div></td>
             </tr>
 {/if}
 {if $display_info.posted_on}
-            <tr id="datepost" class="imageInfo">
+            <tr>
                 <th scope="row">{'Posted on'|@translate}</th>
-                <td>{$INFO_POSTED_DATE}</td>
+                <td><div id="datepost" class="imageInfo">{$INFO_POSTED_DATE}</div></td>
             </tr>
 {/if}
 {if $display_info.visits}
-            <tr id="visits" class="imageInfo">
+            <tr>
                 <th scope="row">{'Visits'|@translate}</th>
-                <td>{$INFO_VISITS}</td>
+                <td><div id="visits" class="imageInfo">{$INFO_VISITS}</div></td>
             </tr>
 {/if}
 {if $display_info.dimensions and isset($INFO_DIMENSIONS)}
-            <tr id="Dimensions" class="imageInfo">
+            <tr>
                 <th scope="row">{'Dimensions'|@translate}</th>
-                <td>{$INFO_DIMENSIONS}</td>
+                <td><div id="Dimensions" class="imageInfo">{$INFO_DIMENSIONS}</div></td>
             </tr>
 {/if}
 {if $display_info.file}
-            <tr id="File" class="imageInfo">
+            <tr>
                 <th scope="row">{'File'|@translate}</th>
-                <td>{$INFO_FILE}</td>
+                <td><div id="File" class="imageInfo">{$INFO_FILE}</div></td>
             </tr>
 {/if}
 {if $display_info.filesize and isset($INFO_FILESIZE)}
-            <tr id="Filesize" class="imageInfo">
+            <tr>
                 <th scope="row">{'Filesize'|@translate}</th>
-                <td>{$INFO_FILESIZE}</td>
+                <td><div id="Filesize" class="imageInfo">{$INFO_FILESIZE}</div></td>
             </tr>
 {/if}
 {if $display_info.tags and isset($related_tags)}
-            <tr id="Tags" class="imageInfo">
+            <tr>
                 <th scope="row">{'Tags'|@translate}</th>
                 <td>
+                  <div id="Tags" class="imageInfo">
                     {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a href="{$tag.URL}">{$tag.name}</a>{/foreach}
+                  <div>
                 </td>
             </tr>
 {/if}
 {if $display_info.categories and isset($related_categories)}
-            <tr id="Categories" class="imageInfo">
+            <tr>
                 <th scope="row">{'Albums'|@translate}</th>
-                <td>
+                <td><div id="Categories" class="imageInfo">
 {foreach from=$related_categories item=cat name=cat_loop}
                 {if !$smarty.foreach.cat_loop.first}<br />{/if}{$cat}
 {/foreach}
-                </td>
+                </div></td>
             </tr>
 {/if}
 {if $display_info.privacy_level and isset($available_permission_levels)}
@@ -299,9 +303,10 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
     }
     (SwitchBox=window.SwitchBox||[]).push("#privacyLevelLink", "#privacyLevelBox");
 {/strip}{/footer_script}
-            <tr id="Privacy" class="imageInfo">
+            <tr>
                 <th scope="row">{'Who can see this photo?'|@translate}</dt>
                 <td>
+                  <div id="Privacy" class="imageInfo">
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
                             {$available_permission_levels[$current.level]}
@@ -313,6 +318,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 {/foreach}
                         </ul>
                     </div>
+                  </div>
                 </td>
             </tr>
 {/if}
