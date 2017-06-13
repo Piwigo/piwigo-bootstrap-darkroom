@@ -160,7 +160,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 {if $display_info.author and isset($INFO_AUTHOR)}
             <tr>
                 <th scope="row">{'Author'|@translate}</th>
-                <td><div id="Author" class="imageInfo"{$INFO_AUTHOR}</div></td>
+                <td><div id="Author" class="imageInfo">{$INFO_AUTHOR}</div></td>
             </tr>
 {/if}
 {if isset($CR_INFO_NAME) && !empty($CR_INFO_NAME)}
