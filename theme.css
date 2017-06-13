@@ -369,9 +369,9 @@ a.pswp__share--google:hover {
 /* Sidebar */
 #sidebar { z-index: 100; }
 
-/* Video 
-video[poster] { object-fit: cover; }
-*/
+/* Video */
+#thePicturePage .embed-responsive-16by9 video[poster] { object-fit: cover; }
+
 .embed-responsive-9by16 {
   padding-bottom: 177.78%;
 }
