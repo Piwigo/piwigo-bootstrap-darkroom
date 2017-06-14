@@ -79,5 +79,3 @@ $lang['Issue tracker'] = 'Bug Tracker.';
 $lang['Bug reports and features requests'] = 'Fehlerberichte und Änderungswünsche';
 $lang['Display category description in grid view'] = 'Zeige die Album-Beschreibung auch in der Grid-Ansicht';
 $lang['Fullscreen'] = 'Vollbild';
-?>
-
