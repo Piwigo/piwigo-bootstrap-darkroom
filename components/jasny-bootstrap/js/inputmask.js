@@ -1,7 +1,7 @@
 /* ===========================================================
  * Bootstrap: inputmask.js v3.1.0
  * http://jasny.github.io/bootstrap/javascript/#inputmask
- * 
+ *
  * Based on Masked Input plugin by Josh Bush (digitalbush.com)
  * ===========================================================
  * Copyright 2012-2014 Arnold Daniels
@@ -30,14 +30,14 @@
 
   var Inputmask = function (element, options) {
     if (isAndroid) return // No support because caret positioning doesn't work on Android
-    
+
     this.$element = $(element)
     this.options = $.extend({}, Inputmask.DEFAULTS, options)
     this.mask = String(this.options.mask)
-    
+
     this.init()
     this.listen()
-        
+
     this.checkVal() //Perform initial check for existing values
   }
 
@@ -48,6 +48,7 @@
       '9': "[0-9]",
       'a': "[A-Za-z]",
       'w': "[A-Za-z0-9]",
+      'h': "[A-Fa-f0-9]",
       '*': "."
     }
   }
@@ -56,7 +57,7 @@
     var defs = this.options.definitions
     var len = this.mask.length
 
-    this.tests = [] 
+    this.tests = []
     this.partialPosition = this.mask.length
     this.firstNonMaskPos = null
 
@@ -85,11 +86,11 @@
       }).join('')
     }, this))
   }
-    
+
   Inputmask.prototype.listen = function() {
     if (this.$element.attr("readonly")) return
 
-    var pasteEventName = (isIE ? 'paste' : 'input') + ".mask"
+    var pasteEventName = (isIE ? 'paste' : 'input') + ".bs.inputmask"
 
     this.$element
       .on("unmask.bs.inputmask", $.proxy(this.unmask, this))
@@ -129,19 +130,19 @@
         end = begin + range.text.length
       }
       return {
-        begin: begin, 
+        begin: begin,
         end: end
       }
     }
   }
-  
+
   Inputmask.prototype.seekNext = function(pos) {
     var len = this.mask.length
     while (++pos <= len && !this.tests[pos]);
 
     return pos
   }
-  
+
   Inputmask.prototype.seekPrev = function(pos) {
     while (--pos >= 0 && !this.tests[pos]);
 
@@ -185,13 +186,13 @@
 
   Inputmask.prototype.unmask = function() {
     this.$element
-      .unbind(".mask")
-      .removeData("inputmask")
+      .unbind(".bs.inputmask")
+      .removeData("bs.inputmask")
   }
 
   Inputmask.prototype.focusEvent = function() {
     this.focusText = this.$element.val()
-    var len = this.mask.length 
+    var len = this.mask.length
     var pos = this.checkVal()
     this.writeBuffer()
 
@@ -209,8 +210,10 @@
 
   Inputmask.prototype.blurEvent = function() {
     this.checkVal()
-    if (this.$element.val() !== this.focusText)
+    if (this.$element.val() !== this.focusText) {
       this.$element.trigger('change')
+      this.$element.trigger('input')
+    }
   }
 
   Inputmask.prototype.keydownEvent = function(e) {
@@ -321,17 +324,17 @@
     return (this.partialPosition ? i : this.firstNonMaskPos)
   }
 
-  
+
   // INPUTMASK PLUGIN DEFINITION
   // ===========================
 
   var old = $.fn.inputmask
-  
+
   $.fn.inputmask = function (options) {
     return this.each(function () {
       var $this = $(this)
       var data = $this.data('bs.inputmask')
-      
+
       if (!data) $this.data('bs.inputmask', (data = new Inputmask(this, options)))
     })
   }

@@ -8,6 +8,10 @@
   }
 }
 
+.offcanvas {
+  @include offcanvas;
+}
+
 @media (max-width: $screen-xs-max) {
   .offcanvas-xs {
     @include offcanvas;
@@ -45,4 +49,16 @@
   bottom: 0px !important;
   right: 0px !important;
   opacity: 0 !important;
+}
+
+.modal-backdrop.allow-navbar {
+  z-index: 1029;
+}
+
+.limit-backdrop {
+  overflow: hidden!important;
+
+  .modal-backdrop {
+    position: absolute;
+  }
 }

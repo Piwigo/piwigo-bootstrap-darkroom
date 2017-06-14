@@ -1,1 +1,3 @@
 local_head.tpl
+components/jasny-bootstrap/node_modules
+components/jasny-bootstrap/docs

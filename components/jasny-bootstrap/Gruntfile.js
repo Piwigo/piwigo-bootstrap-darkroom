@@ -64,7 +64,7 @@ module.exports = function (grunt) {
 
     jscs: {
       options: {
-        config: 'js/.jscs.json',
+        config: 'js/.jscsrc'
       },
       grunt: {
         src: ['Gruntfile.js', 'grunt/*.js']
@@ -256,9 +256,9 @@ module.exports = function (grunt) {
           pretty: true,
           data: function () {
             var filePath = path.join(__dirname, 'less/build/variables.less');
-            var fileContent = fs.readFileSync(filePath, {encoding: 'utf8'});
+            var fileContent = fs.readFileSync(filePath, { encoding: 'utf8' });
             var parser = new BsLessdocParser(fileContent);
-            return {sections: parser.parseFile()};
+            return { sections: parser.parseFile() };
           }
         },
         files: {
@@ -276,7 +276,9 @@ module.exports = function (grunt) {
         reset: true,
         relaxerror: [
           'Bad value X-UA-Compatible for attribute http-equiv on element meta.',
-          'Element img is missing required attribute src.'
+          'Element img is missing required attribute src.',
+          'This interface to HTML5 document checking is deprecated.',
+          '\\& did not start a character reference. \\(\\& probably should have been escaped as \\&amp;.\\)'
         ]
       },
       files: {
@@ -303,10 +305,12 @@ module.exports = function (grunt) {
       versionNumber: {
         src: ['*.js', '*.md', '*.json', '*.yml', 'js/*.js'],
         overwrite: true,
-        replacements: [{
-          from: grunt.option('oldver'),
-          to: grunt.option('newver')
-        }]
+        replacements: [
+          {
+            from: grunt.option('oldver'),
+            to: grunt.option('newver')
+          }
+        ]
       }
     },
 
@@ -333,7 +337,7 @@ module.exports = function (grunt) {
 
 
   // These plugins provide necessary tasks.
-  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+  require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
 
   // Docs HTML validation task
   grunt.registerTask('validate-html', ['jekyll', 'validation']);
@@ -342,7 +346,7 @@ module.exports = function (grunt) {
   var testSubtasks = [];
   // Skip core tests if running a different subset of the test suite
   if (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'core') {
-    testSubtasks = testSubtasks.concat(['dist-css', 'csslint', 'jshint', 'jscs', 'qunit', 'build-customizer-html']);
+    testSubtasks = testSubtasks.concat(['dist-css', 'csslint', 'jshint', 'qunit', 'build-customizer-html']);
   }
   // Skip HTML validation if running a different subset of the test suite
   if (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'validate-html') {
@@ -374,7 +378,7 @@ module.exports = function (grunt) {
 
   // Documentation task.
   grunt.registerTask('docs', ['jekyll', 'dist-docs']);
-  
+
   // Version numbering task.
   // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
   // This can be overzealous, so its changes should always be manually reviewed!
