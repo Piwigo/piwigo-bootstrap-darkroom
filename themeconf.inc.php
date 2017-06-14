@@ -190,7 +190,7 @@ function strip_breadcrumbs() {
 
     $nr_links = $dom->getElementsByTagName('a')->length;
     $home_link_orig = $dom->getElementsByTagName('a')->item(0);
-    $home_link_content = '<a href="' . $u_home . '" title="' . $home_link_orig->nodeValue . '"><i class="fa fa-home" aria-hidden="true"></i></a >';
+    $home_link_content = '<a href="' . $u_home . '" title="' . $home_link_orig->nodeValue . '"><i class="fa fa-home" aria-hidden="true"></i></a > ';
     if ($nr_links == 1) {
       $title_new = $home_link_content;
     } elseif ($nr_links == 2) {
