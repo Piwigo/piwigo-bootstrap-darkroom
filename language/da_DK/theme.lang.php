@@ -78,3 +78,4 @@ $lang['Display the currently selected image in the middle. Works best with infin
 $lang['Enable PhotoSwipe fullscreen slideshow. Disable if you prefer to use Plugins like Fotorama or Piwigo\'s default slideshow.'] = 'Aktiver PhotoSwipe-fuldskærmsslideshow. Deaktiver hvis du foretrækker at anvende plugins så som Fotorama eller Piwigos standardslideshow.';
 $lang['A color theme from'] = 'Et farvetema fra';
 $lang['Display category description in grid view'] = 'Vis albumbeskrivelse i gittervisning';
+$lang['Fullscreen'] = 'Hele skærmen';
