@@ -10,24 +10,10 @@
 .navmenu,
 .navbar-offcanvas {
   width: $navmenu-width;
-  height: auto;
+  height: 100%;
   border-width: 1px;
   border-style: solid;
   border-radius: $border-radius-base;
-}
-// Fixed iphone with disableScrolling
-.lockIphone {
-  position: fixed;
-  overflow: hidden;
-  height: 100%;
-  -webkit-overflow-scrolling: auto;
-}
-// Fix the bug for bootstrap 3.2.0 (https://github.com/jasny/bootstrap/issues/355)
-.navbar-fixed-top,
-.navbar-fixed-bottom {
-  -webkit-transform: none;
-  -o-transform: none;
-  transform: none;
 }
 
 .navmenu-fixed-left,
@@ -36,8 +22,6 @@
   position: fixed;
   z-index: $zindex-navmenu-fixed;
   top: 0;
-  bottom: 0;
-  overflow-y: auto;
   border-radius: 0;
 }
 .navmenu-fixed-left,
@@ -45,6 +29,8 @@
   left: 0;
   right: auto;
   border-width: 0 1px 0 0;
+  bottom: 0;
+  overflow-y: auto;
 }
 .navmenu-fixed-right,
 .navbar-offcanvas {
@@ -64,10 +50,6 @@
     border: none;
     @include box-shadow(none);
     border-radius: 0;
-
-    li > a {
-      white-space: normal;
-    }
   }
 }
 

@@ -18,17 +18,12 @@
     width: 100%;
     direction: ltr;
     cursor: pointer;
-
-    &::-webkit-file-upload-button {
-      cursor: pointer;
-    }
   }
 }
 
 .fileinput {
   margin-bottom: 9px;
   display: inline-block;
-  max-width: 100vw;
   .form-control {
     padding-top: 7px;
     padding-bottom: 5px;
@@ -50,50 +45,27 @@
   .btn {
     vertical-align: middle;
   }
-  .form-group {
-    overflow: hidden;
-    .fileinput-filename {
-      width: 90%;
-      width: calc(100% - 20px);
-    }
-  }
 }
 .fileinput-exists .fileinput-new,
 .fileinput-new .fileinput-exists {
   display: none;
 }
-
-//close X button alignment
-.fileinput-exists.close {
-  float: none;
-}
-
 .fileinput-inline .fileinput-controls {
   display: inline;
 }
 
 .fileinput-filename {
+  vertical-align: middle;
   display: inline-block;
   overflow: hidden;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 65%;
 }
-
 .form-control .fileinput-filename {
   vertical-align: bottom;
-  white-space: nowrap;
-  width: 100%;
-  max-width: 100%;
-  position: absolute;
-  left: 0;
-  padding-left: 30px;
 }
 
 .fileinput.input-group {
     display: table;
-
+    
     > * {
         position: relative;
         z-index: 2;

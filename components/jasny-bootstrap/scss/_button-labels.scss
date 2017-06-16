@@ -36,12 +36,3 @@
 .btn-xs .btn-label {
   @include button-label-size(1px, 5px, $border-radius-small);
 }
-//Fix bootstrap grouped buttons
-.btn-group {
-    .btn-labeled:not(:first-child) .btn-label:not(.btn-label-right) {
-      @include border-left-radius(0px);
-    }   
-    .btn-labeled:not(:last-child) .btn-label.btn-label-right {
-      @include border-right-radius(0px);
-    } 
-}

@@ -22,37 +22,30 @@
   var Rowlink = function (element, options) {
     this.$element = $(element)
     this.options = $.extend({}, Rowlink.DEFAULTS, options)
-
-    this.$element.on('click.bs.rowlink mouseup.bs.rowlink', 'td:not(.rowlink-skip)', $.proxy(this.click, this))
+    
+    this.$element.on('click.bs.rowlink', 'td:not(.rowlink-skip)', $.proxy(this.click, this))
   }
 
   Rowlink.DEFAULTS = {
     target: "a"
   }
 
-  Rowlink.prototype.click = function(e, ctrlKey) {
+  Rowlink.prototype.click = function(e) {
     var target = $(e.currentTarget).closest('tr').find(this.options.target)[0]
-
-    if (typeof target === 'undefined' || $(e.target)[0] === target) return
-    if (e.type === 'mouseup' && e.which !== 2) return
-
+    if ($(e.target)[0] === target) return
+    
     e.preventDefault();
-    ctrlKey = ctrlKey || e.ctrlKey || (e.type === 'mouseup' && e.which === 2)
-
-    if (!ctrlKey && target.click) {
+    
+    if (target.click) {
       target.click()
     } else if (document.createEvent) {
-      var evt = new MouseEvent("click", {
-          view: window,
-          bubbles: true,
-          cancelable: true,
-          ctrlKey: ctrlKey
-       });
+      var evt = document.createEvent("MouseEvents"); 
+      evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null); 
       target.dispatchEvent(evt);
     }
   }
 
-
+  
   // ROWLINK PLUGIN DEFINITION
   // ===========================
 
@@ -81,16 +74,13 @@
   // ROWLINK DATA-API
   // ==================
 
-  $(document).on('click.bs.rowlink.data-api mouseup.bs.rowlink.data-api', '[data-link="row"]', function (e) {
-    if (e.type === 'mouseup' && e.which !== 2) return
+  $(document).on('click.bs.rowlink.data-api', '[data-link="row"]', function (e) {
     if ($(e.target).closest('.rowlink-skip').length !== 0) return
-
+    
     var $this = $(this)
     if ($this.data('bs.rowlink')) return
     $this.rowlink($this.data())
-
-    var ctrlKey = e.ctrlKey || e.which === 2
-    $(e.target).trigger('click.bs.rowlink', [ctrlKey])
+    $(e.target).trigger('click.bs.rowlink')
   })
-
+  
 }(window.jQuery);
