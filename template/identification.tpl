@@ -23,13 +23,13 @@
                 <div class="form-group">
                     <label for="username" class="col-sm-2 control-label">{'Username'|@translate}</label>
                     <div class="col-sm-4">
-                        <input tabindex="1" class="form-control" type="text" name="username" id="username" maxlength="40" placeholder="{'Username'|@translate}">
+                        <input tabindex="1" class="form-control" type="text" name="username" id="username" placeholder="{'Username'|@translate}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="password" class="col-sm-2 control-label">{'Password'|@translate}</label>
                     <div class="col-sm-4">
-                        <input tabindex="2" class="form-control" type="password" name="password" id="password" maxlength="25" placeholder="{'Password'|@translate}">
+                        <input tabindex="2" class="form-control" type="password" name="password" id="password" placeholder="{'Password'|@translate}">
                     </div>
                 </div>
 {if $authorize_remembering }
