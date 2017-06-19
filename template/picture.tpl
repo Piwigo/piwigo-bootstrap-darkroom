@@ -270,7 +270,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
                 <td>
                   <div id="Tags" class="imageInfo">
                     {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a href="{$tag.URL}">{$tag.name}</a>{/foreach}
-                  <div>
+                  </div>
                 </td>
             </tr>
 {/if}
