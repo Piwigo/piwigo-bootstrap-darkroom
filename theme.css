@@ -312,6 +312,10 @@ html, body {
   color: #fff;
 }
 
+.pswp__button {
+  z-index: 2000;
+}
+
 .pswp-video-modal {
   background: url(img/play-circle-white.png) no-repeat center center;
   background-size: 128px 128px;
