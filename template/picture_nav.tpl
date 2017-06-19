@@ -10,7 +10,6 @@ if ($('.jumbotron').length > 0) {
 {/literal}
 $('.navmenu').on('show.bs.offcanvas', function() {
     if ($('ul.navmenu-nav').contents().length === 0) {
-        console.log($('ul.navbar-nav').contents());
         $($('ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
         $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
