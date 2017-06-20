@@ -142,7 +142,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 {/if}
 {/if}
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <li role="presentation"{if $theme_config_extra->picture_info == 'disabled' || ($theme_config_extra->picture_info != 'tabs' && get_device() == 'desktop')} class="active"{/if}><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate}</a></li>
+    <li role="presentation"{if $theme_config_extra->picture_info == 'disabled' || ($theme_config_extra->picture_info != 'tabs' && get_device() == 'desktop')} class="active"{/if}><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge">{$COMMENT_COUNT}</span></a></li>
 {/if}
   </ul>
 
@@ -368,7 +368,6 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 {/strip}
 {/footer_script}
 {else}
-            {if $theme_config_extra->picture_info == 'tabs'}<h4>{'Comments'|@translate}</h4>{/if}
             <div class="tabbable">
                 <ul class="nav nav-pills">
 {if $COMMENT_COUNT > 0}
