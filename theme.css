@@ -123,6 +123,10 @@ html, body {
 #theCategoryPage { padding-left: 0px !important; }
 
 /* Category thumbnails */
+#content {
+  min-height: 100px;
+}
+
 @media (max-width: 767px) {
   #content .col-inner {
     max-width: 520px;
