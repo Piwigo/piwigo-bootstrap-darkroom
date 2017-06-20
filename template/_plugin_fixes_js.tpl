@@ -1,3 +1,11 @@
+{if isset($loaded_plugins['AdditionalPages']) && $BODY_ID == "theAdditionalPage"}
+{footer_script require='jquery'}{strip}
+$(document).ready(function() {
+  $('.navbar-contextual .navbar-brand a[href="{$U_HOME}"').html('<a href="{$U_HOME}" title="{'Home'|@translate}"><i class="fa fa-home" aria-hidden="true"></i></a>');
+});                                                                                                                                                                                                   
+{/strip}{/footer_script}
+{/if}
+
 {if isset($loaded_plugins['piwigo-openstreetmap']) && $BODY_ID == "thePicturePage"}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
