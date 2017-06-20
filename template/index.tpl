@@ -87,7 +87,7 @@ $(document).ready(function() {
             <ul class="nav navbar-nav">
 {if !empty($image_orders)}
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
                         <span class="glyphicon glyphicon-sort"></span><span class="glyphicon-text">{'Sort order'|@translate}</span><span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
@@ -99,7 +99,7 @@ $(document).ready(function() {
 {/if}
 {if !empty($image_derivatives)}
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
                         <span class="glyphicon glyphicon-picture"></span><span class="glyphicon-text">{'Photo sizes'|@translate}</span><span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">

@@ -65,8 +65,8 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
     }
 {/strip}{/footer_script}
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <span class="glyphicon glyphicon-picture"></span><span class="glyphicon-text">{'Photo sizes'|@translate}</span><span class="caret"></span>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
+              <span class="glyphicon glyphicon-picture"></span><span class="glyphicon-text">{'Photo sizes'|@translate}</span><span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
 {foreach from=$current.unique_derivatives item=derivative key=derivative_type}
