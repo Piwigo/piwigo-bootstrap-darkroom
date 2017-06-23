@@ -58,3 +58,5 @@ $lang['Issue tracker'] = 'Issue tracker';
 $lang['Bug reports and features requests'] = 'Bug reports and features requests';
 $lang['Display category description in grid view'] = 'Display category description in grid view';
 $lang['Fullscreen'] = 'Fullscreen';
+$lang['Grid view'] = 'Grid view';
+$lang['List view'] = 'List view';

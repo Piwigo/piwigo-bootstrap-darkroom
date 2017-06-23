@@ -165,7 +165,7 @@ $(document).ready(function() {
 {/if}
 {if isset($U_MODE_POSTED) || isset($U_MODE_CREATED)}
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{'Calendar'|@translate}">
                         <span class="fa fa-calendar"></span><span class="glyphicon-text">{'Calendar'|@translate}</span>
                     </a>
                     <ul class="dropdown-menu">
@@ -189,8 +189,8 @@ $(document).ready(function() {
 {if !empty($PLUGIN_INDEX_BUTTONS)}{foreach from=$PLUGIN_INDEX_BUTTONS item=button}<li>{$button}</li>{/foreach}{/if}
 {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
 {if ((!empty($CATEGORIES) && !isset($GDThumb)) || (!empty($THUMBNAILS) && !isset($GThumb) && !isset($GDThumb))) && ($theme_config_extra->category_wells == 'never' || ($theme_config_extra->category_wells == 'mobile_only' && get_device() == 'desktop'))}
-                <li id="btn-grid"{if $smarty.cookies.view != 'list'} class="active"{/if}><a href="javascript:;"><span class="glyphicon glyphicon-th"></span></a></li>
-                <li id="btn-list"{if $smarty.cookies.view == 'list'} class="active"{/if}><a href="javascript:;"><span class="glyphicon glyphicon-th-list"></span></a></li>
+                <li id="btn-grid"{if $smarty.cookies.view != 'list'} class="active"{/if}><a href="javascript:;" title="{'Grid view'|@translate}"><span class="glyphicon glyphicon-th"></span></a></li>
+                <li id="btn-list"{if $smarty.cookies.view == 'list'} class="active"{/if}><a href="javascript:;" title="{'List view'|@translate}"><span class="glyphicon glyphicon-th-list"></span></a></li>
 {/if}
             </ul>
         </div>
