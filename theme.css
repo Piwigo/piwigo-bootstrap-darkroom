@@ -121,6 +121,7 @@ html, body {
 #thePicturePage #content-spacer { padding-top: 80px; }
 #theCategoryPage #content-spacer { padding-top: 20px; }
 #theCategoryPage { padding-left: 0px !important; }
+#theCategoryPage h4.title { line-height: 1.2em;}
 
 /* Category thumbnails */
 #content {
