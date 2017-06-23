@@ -72,7 +72,7 @@ $lang['The path to the image, relative to your Piwigo installation folder'] = 'C
 $lang['Picture page display'] = 'Attēla lapas attēlojums';
 $lang['For more information on metadata visit'] = '
 Lai iegūtu vairāk informāciju par metadatiem, apmeklējiet';
-$lang['Bug reports and features requests'] = 'Kļūdu ziņojumi un funkciju pieprasījumi';
+$lang['Bug reports and feature requests'] = 'Kļūdu ziņojumi un funkciju pieprasījumi';
 $lang['This will display categories as media wells with squared thumbnails, similar to the smartpocket mobile theme.'] = 'Tas attēlos kategorijas kā mediju krātuves ar kvadrātveida sīktēliem, līdzīgi kā smartpocket mobilās tēmas.';
 $lang['loads all images one after another when the page loads (use carefully!)'] = 'ielādē visus attēlus vienu pēc otra, kad lapa ielādējas (lietot uzmanīgi!)';
 $lang['Thumbnail page display'] = 'Sīktēlu lapas atainojums';

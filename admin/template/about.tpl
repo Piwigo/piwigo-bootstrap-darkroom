@@ -23,6 +23,6 @@
     </p>
 
     <p><a href="https://github.com/tkuther/piwigo-bootstrap-darkroom/issues"
-          target="_blank">{'Bug reports and features requests'|@translate}</a>
+          target="_blank">{'Bug reports and feature requests'|@translate}</a>
     </p>
 </div>
