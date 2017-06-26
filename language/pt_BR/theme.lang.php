@@ -78,3 +78,4 @@ $lang['Based on Bootstrap Default by'] = 'Com base em Bootstrap Padrão de';
 $lang['Always'] = 'Sempre';
 $lang['A mobile-ready theme based on Boostrap Default'] = 'Um tema preparado para dispositivos móveis baseado no Bootstrap Padrão';
 $lang['A color theme from'] = 'Uma cor de tema de';
+$lang['Fullscreen'] = 'Tela cheia';
