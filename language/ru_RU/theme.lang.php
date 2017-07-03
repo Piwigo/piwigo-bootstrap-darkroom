@@ -78,3 +78,4 @@ $lang['Category page display'] = 'Отображение страницы кат
 $lang['Center mode'] = 'Режим центрирования';
 $lang['Disabled'] = 'Отключено';
 $lang['Display a site logo image instead of plain text'] = 'Отображение логотипа сайта вместо обычного текста';
+$lang['Fullscreen'] = 'Во весь экран';
