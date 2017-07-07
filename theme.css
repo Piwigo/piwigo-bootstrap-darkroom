@@ -123,6 +123,16 @@ html, body {
 #theCategoryPage { padding-left: 0px !important; }
 #theCategoryPage h4.title { line-height: 1.2em;}
 
+/* replace the home link in navbar */
+.navbar-brand a:first-child {
+  font-size: 0;
+}
+.navbar-brand a:first-child:before {
+  content: "\f015";
+  font-family: FontAwesome;
+  font-size: 18px;
+}
+
 /* Category thumbnails */
 #content {
   min-height: 100px;
