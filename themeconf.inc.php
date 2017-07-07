@@ -221,6 +221,10 @@ function strip_breadcrumbs() {
       } else {
         $template->assign('SECTION_TITLE', $title_new);
       }
+    } else {
+      if ($splt) {
+        $template->assign('TITLE', $title_links);
+      }
     }
   }
 }
