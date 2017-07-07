@@ -227,17 +227,9 @@ function strip_breadcrumbs() {
     } else {
       $template->assign('SECTION_TITLE', $title_new);
     }
-  } else {
-    //no idea if there is a "global" handle...
-    $template->set_prefilter('tags', 'replace_home_link');
-    $template->set_prefilter('about', 'replace_home_link');
-    $template->set_prefilter('search', 'replace_home_link');
-    $template->set_prefilter('register', 'replace_home_link');
-    $template->set_prefilter('profile', 'replace_home_link');
-    $template->set_prefilter('identification', 'replace_home_link');
-    $template->set_prefilter('password', 'replace_home_link');
-    $template->set_prefilter('comments', 'replace_home_link');
   }
+
+  $template->smarty->registerFilter('pre', "replace_home_link");
 }
 
 function replace_home_link($content, &$smarty) {
