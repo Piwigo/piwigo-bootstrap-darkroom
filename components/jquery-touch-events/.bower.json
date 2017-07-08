@@ -1,6 +1,6 @@
 {
   "name": "jquery-touch-events",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "src/jquery.mobile-events.js",
   "ignore": [
     "bower.json"
@@ -9,14 +9,14 @@
     "jquery": ">=1.7.0"
   },
   "homepage": "https://github.com/benmajor/jQuery-Touch-Events",
-  "_release": "1.0.8",
+  "_release": "1.0.9",
   "_resolution": {
     "type": "version",
-    "tag": "1.0.8",
-    "commit": "e16041cbb359d1a53d828278dd78ca658c02ba33"
+    "tag": "1.0.9",
+    "commit": "1f5ad5910c4f9d35c80f5a950356d55512795ab3"
   },
   "_source": "https://github.com/benmajor/jQuery-Touch-Events.git",
-  "_target": "^1.0.8",
+  "_target": "^1.0.9",
   "_originalSource": "jquery-touch-events",
   "_direct": true
 }
