@@ -1,0 +1,135 @@
+.slick {
+  width: 500px;
+  position: relative;
+  background: #0F0F0F;
+  font-family: Calibri, Candara, Arial, sans-serif;
+  box-shadow: 0px 0px 2px 2px #aaa; }
+  .slick .slick-content {
+    width: inherit;
+    text-align: center; }
+    .slick .slick-content img {
+      width: inherit;
+      display: block; }
+  .slick .slick-bottom {
+    height: 30px;
+    width: inherit;
+    color: #DDD;
+    background: #0F0F0F;
+    line-height: 21px; }
+    .slick .slick-bottom .slick-controls {
+      padding-top: 5px; }
+      .slick .slick-bottom .slick-controls img {
+        width: 20px;
+        margin-left: 5px;
+        opacity: 0.7;
+        -webkit-transition: opacity 0.2s ease-in-out;
+        -moz-transition: opacity 0.2s ease-in-out;
+        -ms-transition: opacity 0.2s ease-in-out;
+        -o-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out; }
+        .slick .slick-bottom .slick-controls img:hover {
+          opacity: 1;
+          -webkit-transition: opacity 0.2s ease-in-out;
+          -moz-transition: opacity 0.2s ease-in-out;
+          -ms-transition: opacity 0.2s ease-in-out;
+          -o-transition: opacity 0.2s ease-in-out;
+          transition: opacity 0.2s ease-in-out; }
+    .slick .slick-bottom .slick-no {
+      float: right;
+      padding-right: 10px;
+      position: relative;
+      padding-top: 5px; }
+      .slick .slick-bottom .slick-no .skip {
+        width: 16px;
+        text-align: right;
+        height: 20px;
+        margin-right: 3px;
+        padding: 1px 2px 0px 0px;
+        border: 1px solid #666;
+        background: #1E1E1E;
+        color: #DDD;
+        position: absolute;
+        left: -20px;
+        top: 5px;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+        .slick .slick-bottom .slick-no .skip:hover, .slick .slick-bottom .slick-no .skip:active, .slick .slick-bottom .slick-no .skip:focus {
+          background: #DDD;
+          color: black;
+          outline: none;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -ms-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out; }
+      .slick .slick-bottom .slick-no .fullscr {
+        padding-left: 10px;
+        width: 20px;
+        cursor: pointer;
+        opacity: 0.7;
+        -webkit-transition: opacity 0.2s ease-in-out;
+        -moz-transition: opacity 0.2s ease-in-out;
+        -ms-transition: opacity 0.2s ease-in-out;
+        -o-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out; }
+        .slick .slick-bottom .slick-no .fullscr:hover {
+          opacity: 1;
+          -webkit-transition: opacity 0.2s ease-in-out;
+          -moz-transition: opacity 0.2s ease-in-out;
+          -ms-transition: opacity 0.2s ease-in-out;
+          -o-transition: opacity 0.2s ease-in-out;
+          transition: opacity 0.2s ease-in-out; }
+      .slick .slick-bottom .slick-no div {
+        float: left;
+        font-size: 0.9em; }
+        .slick .slick-bottom .slick-no div:nth-child(1) span {
+          padding-left: 3px; }
+  .slick .length {
+    height: 1px;
+    width: 37%;
+    background: #7F8C8D; }
+  .slick .overlay-controls .overlay-next {
+    height: calc(100% - 35px);
+    width: 50%;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .slick .overlay-controls .overlay-prev {
+    height: calc(100% - 35px);
+    width: 50%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.fullscreen-width {
+  width: initial;
+  border: none;
+  box-shadow: none;
+  height: 100%; }
+  .fullscreen-width .slick-content {
+    width: initial;
+    height: calc(100% - 35px); }
+    .fullscreen-width .slick-content img {
+      width: initial;
+      height: 100%; }
+  .fullscreen-width .length {
+    height: 2px; }
+
+.fullscreen-height {
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  height: initial; }
+  .fullscreen-height .slick-content {
+    width: initial;
+    height: initial; }
+    .fullscreen-height .slick-content img {
+      width: initial;
+      height: 100%; }
+  .fullscreen-height .length {
+    height: 2px; }

@@ -26,7 +26,7 @@
     "photoswipe": "https://github.com/dimsemenov/PhotoSwipe.git#^4.1",
     "pTSans": "https://google-fonts.azurewebsites.net/googleFonts/PT-Sans?family=PT+Sans:400,700",
     "roboto": "https://google-fonts.azurewebsites.net/googleFonts/Roboto?family=Roboto:300,400,500,700",
-    "slick-carousel": "^1.6.0",
+    "slick-carousel": "https://github.com/tkuther/slick.git#piwigo-patches",
     "jquery": "^2.2"
   }
 }

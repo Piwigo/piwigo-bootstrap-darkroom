@@ -1,0 +1,5 @@
+{
+	"name": "slick",
+	"version": "1.0.1",
+	"main": "dist/slick.js"
+}

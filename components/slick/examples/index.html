@@ -1,0 +1,84 @@
+<head>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="../src/screenfull.js"></script>
+	<script src="../src/slick.js"></script>
+</head>
+
+<!-- Main Container. Class goes in Slick constructor call -->
+<div class="slick">
+
+	<!-- This will containt the images -->
+	<div class="slick-content">
+	</div>
+	
+	<!-- Part of default theme. slick.js doesn't ask for it -->
+	<div class="overlay-controls">
+		<a href="#" class='overlay-prev'></a>
+		<a href="#" class='overlay-next'></a>
+	</div>
+	
+	
+	<!-- This contains the controls -->
+	<div class="slick-bottom">
+		<!-- If it's there, it's width will be set to percentage completed -->
+		<div class="length"></div>
+
+		<div class="slick-no">
+			<div>
+				<input type="text" class="current-no skip">/<span class="total"></span>
+			</div>
+			<div>
+				<img src="img/fullscreen.png" alt="" class="fullscr">
+			</div>
+		</div>
+		<div class="slick-controls">
+			<a href="#" class="prev"><img src="img/backward.png" alt=""></a>
+			<a href="#" class="next"><img src="img/forward.png" alt=""></a>
+		</div>
+	</div>
+
+</div>
+
+<script>
+	config = {
+		source: 'slide/slick-*.jpg',
+		start: 0,
+		end: 5,
+	};
+
+	slick = new Slick('.slick', config);
+
+	$('.overlay-next').click(function(){
+		Slick.next(slick);
+	})
+	$('.overlay-prev').click(function(){
+		Slick.prev(slick);
+	})
+	
+	$('.fullscr').click(function () {
+		if (screenfull.enabled) {
+			screenfull.toggle($('.slick')[0]);
+			if(!$('.slick.fullscreen').exists()){
+				// Needed because of a Chrome quirk. 
+				setTimeout(function(){
+					if($(window).width() > $(window).height()){
+						$('.slick').addClass('fullscreen-width');
+					}
+					else{
+						$('.slick').addClass('fullscreen-height');
+					}
+					$('.slick .slick-bottom').width($('.slick-content img.current').width()).css('margin', 'auto');
+				}, 100);
+			}
+		}
+	});
+	screenfull.onchange = function(){
+		// Undoing changes done through setTimeout above
+		if(!screenfull.isFullscreen){
+			$('.slick .slick-bottom').width('inherit').css('margin', 'auto');
+			$('.slick').removeClass('fullscreen-height');
+			$('.slick').removeClass('fullscreen-width');
+		};		
+	}
+</script>

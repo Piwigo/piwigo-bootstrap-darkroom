@@ -1,0 +1,30 @@
+{
+  "name": "slick.js",
+  "version": "1.0.1",
+  "description": "Browser module - Embed presentations when you can't use SpeakerDeck or SlideShare.",
+  "keywords": [
+    "browser",
+    "presentations"
+  ],
+  "homepage": "https://github.com/shashankmehta/slick.js",
+  "license": "MIT",
+  "author": {
+    "name": "Shashank Mehta",
+    "email": "me@shashankmehta.in",
+    "url": "http://shashankmehta.in"
+  },
+  "files": [
+    "dist/slick.js"
+  ],
+  "main": "dist/slick.js",
+  "repository": "shashankmehta/slick.js",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-uglify": "~0.2.4"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
