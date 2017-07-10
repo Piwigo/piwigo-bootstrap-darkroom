@@ -79,3 +79,5 @@ $lang['Enable PhotoSwipe fullscreen slideshow. Disable if you prefer to use Plug
 $lang['A color theme from'] = 'Et farvetema fra';
 $lang['Display category description in grid view'] = 'Vis albumbeskrivelse i gittervisning';
 $lang['Fullscreen'] = 'Hele skærmen';
+$lang['Grid view'] = 'Gittervisning';
+$lang['List view'] = 'Listevisning';
