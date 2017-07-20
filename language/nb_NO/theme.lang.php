@@ -78,3 +78,6 @@ $lang['Display a site logo image instead of plain text'] = 'Vis nettside logo so
 $lang['Display categories as Bootstrap media wells'] = 'Vis kategorier som Bootstrap medie brønner';
 $lang['Display category description in grid view'] = 'Vis kategori beskrivelse i rutenettvisning';
 $lang['Display the currently selected image in the middle. Works best with infinite looping enabled.'] = 'Vis valgte bilde i midten. Fungerer best med uendelig looping aktivert';
+$lang['Fullscreen'] = 'Full skjerm';
+$lang['Grid view'] = 'Rutenett visning';
+$lang['List view'] = 'Listevisning';
