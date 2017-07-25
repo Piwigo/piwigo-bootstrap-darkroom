@@ -79,3 +79,5 @@ $lang['Center mode'] = '中心模式';
 $lang['Color theme'] = '颜色主题';
 $lang['Disabled'] = '已禁用';
 $lang['Display a site logo image instead of plain text'] = '显示网站logo，而不是文本';
+$lang['Grid view'] = '网格视图';
+$lang['List view'] = '列表视图';

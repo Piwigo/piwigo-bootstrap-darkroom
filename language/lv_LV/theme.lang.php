@@ -79,3 +79,6 @@ $lang['Thumbnail page display'] = 'Sīktēlu lapas atainojums';
 $lang['lazyLoad method'] = 'lazyLoad metode';
 $lang['will load the image as soon as you slide to it'] = 'attēls tiks ielādēts tiklīdz uzvadīsit uz tā kursoru';
 $lang['Category page display'] = 'Kategorijas lapas atainojums';
+$lang['List view'] = 'Saraksta skats';
+$lang['Grid view'] = 'Režģa skats';
+$lang['Fullscreen'] = 'Pilnekrāna režīms';
