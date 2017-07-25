@@ -1,6 +1,3 @@
-<li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{'Menu'|@translate} <span class="caret"></span></a>
-    <ul class="dropdown-menu" role="menu">
 {if isset($block->data.qsearch) and  $block->data.qsearch==true and !$theme_config_extra->quicksearch_navbar}
       <li>
         <form class="navbar-form" role="search" action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
@@ -20,5 +17,3 @@
       </li>
 {/if}
 {/foreach}
-    </ul>
-</li>
