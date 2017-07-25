@@ -72,6 +72,11 @@ html, body {
 .navbar-collapse.collapse.in .navbar-form {
   margin: 10px 0 10px;
 }
+
+.navbar-form .checkbox {
+  margin-bottom: 5px;
+}
+
 @media (max-width: 767px) {
   .navbar-form {
     border-top: none;
