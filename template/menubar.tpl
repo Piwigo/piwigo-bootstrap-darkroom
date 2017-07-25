@@ -19,6 +19,12 @@
 {$block->raw_content}
 {/if}
 {/foreach}
-{include file=$blocks.mbIdentification->template}
+
+{* use foreach again for plugin compatibility, no idea why $blocks.mbIdentification->template breaks SocialConnect, for example *}
+{foreach from=$blocks key=id item=block}
+{if not empty($block->template) && $id == "mbIdentification"}
+{include file=$block->template|@get_extent:$id }
+{/if}
+{/foreach}
             </ul>
             <!-- End of menubar.tpl -->
