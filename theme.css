@@ -399,6 +399,9 @@ a.pswp__share--google:hover {
 .embed-responsive-9by16 {
   padding-bottom: 177.78%;
 }
+.embed-responsive-4by3 {
+  padding-bottom: 75%;
+}
 
 /* Picture page nav buttons */
 @media (max-width: 320px) {
