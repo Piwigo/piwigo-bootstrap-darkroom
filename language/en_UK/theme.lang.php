@@ -60,3 +60,4 @@ $lang['Display category description in grid view'] = 'Display category descripti
 $lang['Fullscreen'] = 'Fullscreen';
 $lang['Grid view'] = 'Grid view';
 $lang['List view'] = 'List view';
+$lang['Discover'] = 'Discover';

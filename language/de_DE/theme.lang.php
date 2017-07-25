@@ -81,3 +81,4 @@ $lang['Display category description in grid view'] = 'Zeige die Album-Beschreibu
 $lang['Fullscreen'] = 'Vollbild';
 $lang['Grid view'] = 'Kachel-Ansicht';
 $lang['List view'] = 'Listen-Ansicht';
+$lang['Discover'] = 'Entdecken';
