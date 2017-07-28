@@ -153,7 +153,7 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
 {/strip}{/footer_script}
         <li>
             <a href="{$U_CADDIE}" onclick="addToCadie(this, '{$ROOT_URL}', {$current.id}); return false;" title="{'Add to caddie'|@translate}" rel="nofollow">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
             </a>
         </li>
 {/if}
