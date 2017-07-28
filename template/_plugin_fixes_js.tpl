@@ -1,7 +1,7 @@
 {if isset($loaded_plugins['rv_gmaps']) && $BODY_ID == "thePicturePage"}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  $('.pwg-icon-map').closest('a').wrap('<li></li>');
+  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').removeClass('pwg-state-default pwg-button').wrap('<li></li>');
   $('#map').wrap('<div id="mapContainer" class="container"></div>');
   $('#mapPicture').prependTo('#mapContainer');
 });
