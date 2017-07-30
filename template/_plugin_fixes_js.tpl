@@ -7,6 +7,13 @@ $(document).ready(function() {
 });
 {/strip}{/footer_script}
 {/if}
+{if isset($loaded_plugins['rv_gmaps']) && $BODY_ID == "theCategoryPage"}
+{footer_script require='jquery'}{strip}
+$(document).ready(function() {
+  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').removeClass('pwg-state-default pwg-button');
+});
+{/strip}{/footer_script}
+{/if}
 
 {if isset($loaded_plugins['piwigo-openstreetmap']) && $BODY_ID == "thePicturePage"}
 {footer_script require='jquery'}{strip}
