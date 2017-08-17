@@ -1,7 +1,7 @@
 <?php
 /*
 Theme Name: Bootstrap Darkroom
-Version: 1.5.8
+Version: 1.5.19
 Description: A mobile-ready & feature-rich theme based on Boostrap Default, with PhotoSwipe full-screen slideshow, Slick carousel on picture page, many color styles thanks to Bootswatch and lots of configuration options
 Theme URI: http://piwigo.org/ext/extension_view.php?eid=831
 Author: Thomas Kuther
@@ -186,17 +186,13 @@ function strip_breadcrumbs() {
     $int_err = libxml_use_internal_errors(true);
     $dom->loadHTML(mb_convert_encoding($title, 'HTML-ENTITIES', 'UTF-8'));
     libxml_use_internal_errors($int_err);
+    $dom->removeChild($dom->doctype);
 
     $nr_links = $dom->getElementsByTagName('a')->length;
     $home_link_orig = $dom->getElementsByTagName('a')->item(0);
-    $home_link_content = '<a href="' . $u_home . '" title="' . $home_link_orig->nodeValue . '"><i class="fa fa-home" aria-hidden="true"></i></a >';
-    if ($nr_links == 1) {
+    $home_link_content = '<a href="' . $u_home . '" title="' . $home_link_orig->nodeValue . '"><i class="fa fa-home" aria-hidden="true"></i></a > ';
       $title_new = $home_link_content;
-    } elseif ($nr_links == 2) {
-      $home_link_orig->parentNode->removeChild($home_link_orig);
-      $home_link_new = $dom->saveHTML();
-      $title_new = $home_link_content . $home_link_new;
-    } else {
+    if ($nr_links > 2) {
       if (!empty($section_title)) {
         $home_link_orig->parentNode->removeChild($home_link_orig);
         $home_link_orig = $dom->getElementsByTagName('a')->item(0);
@@ -219,32 +215,18 @@ function strip_breadcrumbs() {
       } else {
         $title_new = $home_link_content . $home_link_new;
       }
-    }
-    if (empty($section_title)) {
-      $template->assign('TITLE', $title_new);
+      $title_new = preg_replace('~<(/?(?:html|body))[^>]*>\s*~i', '', $title_new);
+      if (empty($section_title)) {
+        $template->assign('TITLE', $title_new);
+      } else {
+        $template->assign('SECTION_TITLE', $title_new);
+      }
     } else {
-      $template->assign('SECTION_TITLE', $title_new);
+      if ($splt) {
+        $template->assign('TITLE', $title_links);
+      }
     }
-  } else {
-    //no idea if there is a "global" handle...
-    $template->set_prefilter('tags', 'replace_home_link');
-    $template->set_prefilter('about', 'replace_home_link');
-    $template->set_prefilter('search', 'replace_home_link');
-    $template->set_prefilter('register', 'replace_home_link');
-    $template->set_prefilter('profile', 'replace_home_link');
-    $template->set_prefilter('identification', 'replace_home_link');
-    $template->set_prefilter('password', 'replace_home_link');
-    $template->set_prefilter('comments', 'replace_home_link');
   }
-}
-
-function replace_home_link($content, &$smarty) {
-  $search = '<div class="navbar-brand"><a href="{$U_HOME}">{\'Home\'|@translate}</a>';
-  $replace = '<div class="navbar-brand"><a href="{$U_HOME}" title="{"Home"|@translate}">
-              <i class="fa fa-home" aria-hidden="true"></i>
-              </a>';
-
-  return str_replace($search, $replace, $content);
 }
 
 // register video files

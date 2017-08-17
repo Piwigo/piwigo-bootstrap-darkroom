@@ -40,10 +40,7 @@
     <div class="col-inner">
         <a class="col-thumbnail" href="{$thumbnail.URL}" data-index="{$idx}">
             <div class="placeholder-{$width}">
-                <img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrapdefault/img/transparent.png"
-                     data-src="{$derivative->get_url()}"{/if}
-                     alt="{$thumbnail.TN_ALT}"
-                     title="{$thumbnail.TN_TITLE}">
+                <img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrapdefault/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}">
             </div>
         </a>
 {assign var=idx value=$idx+1}

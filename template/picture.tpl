@@ -142,7 +142,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 {/if}
 {/if}
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <li role="presentation"{if $theme_config_extra->picture_info == 'disabled' || ($theme_config_extra->picture_info != 'tabs' && get_device() == 'desktop')} class="active"{/if}><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate}</a></li>
+    <li role="presentation"{if $theme_config_extra->picture_info == 'disabled' || ($theme_config_extra->picture_info != 'tabs' && get_device() == 'desktop')} class="active"{/if}><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge">{$COMMENT_COUNT}</span></a></li>
 {/if}
   </ul>
 
@@ -150,38 +150,43 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
   <div class="tab-content">
 {if $theme_config_extra->picture_info === 'tabs' || (get_device() != 'desktop' && $theme_config_extra->picture_info != 'disabled')}
     <div role="tabpanel" class="tab-pane active" id="tab_info">
-      <div id="info-content" class="info">
-        <dl class="dl-horizontal">
-            <h4>{'Information'|@translate}</h4>
+      <div id="info-content" class="info table-responsive">
+        <table class="table table-condensed">
+          <colgroup>
+             <col class="col-xs-4">
+             <col class="col-xs-4">
+          </colgroup>
+          <tbody>
 {if $display_info.author and isset($INFO_AUTHOR)}
-            <div id="Author" class="imageInfo">
-                <dt>{'Author'|@translate}</dt>
-                <dd>{$INFO_AUTHOR}</dd>
-            </div>
+            <tr>
+                <th scope="row">{'Author'|@translate}</th>
+                <td><div id="Author" class="imageInfo">{$INFO_AUTHOR}</div></td>
+            </tr>
 {/if}
 {if isset($CR_INFO_NAME) && !empty($CR_INFO_NAME)}
-            <div id="Copyright" class="imageInfo">
-                <dt>{'Copyright'|@translate}</dt>
-                <dd>{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</dd>
-            </div>    
+            <tr>
+                <th scope="row">{'Copyright'|@translate}</th>
+                <td><div id="Copyright" class="imageInfo">{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</div></td>
+            </tr>
 {/if}
 {if $display_info.rating_score and isset($rate_summary)}
-            <div id="Average" class="imageInfo">
-                <dt>{'Rating score'|@translate}</dt>
-                <dd>
+            <tr>
+                <th scope="row">{'Rating score'|@translate}</th>
+                <td><div id="Average" class="imageInfo">
                 {if $rate_summary.count}
                         <span id="ratingScore">{$rate_summary.score}</span> <span id="ratingCount">({$rate_summary.count|@translate_dec:'%d rate':'%d rates'})</span>
                 {else}
                         <span id="ratingScore">{'no rate'|@translate}</span> <span id="ratingCount"></span>
                 {/if}
-                </dd>
-            </div>
+                </div></td>
+            </tr>
 {/if}
 
 {if isset($rating)}
-        <div id="rating" class="imageInfo">
-                <dt id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</dt>
-                <dd>
+            <tr>
+                <th scope="row" id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</th>
+                <td>
+                    <div id="rating" class="imageInfo">
                         <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
                         <div>
                         {foreach from=$rating.marks item=mark name=rate_loop}
@@ -219,62 +224,65 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
                         {/strip}
                         </div>
                         </form>
-                </dd>
-        </div>
+                    </div>
+                </td>
+            </tr>
 {/if}
 {if $display_info.created_on and isset($INFO_CREATION_DATE)}
-            <div id="datecreate" class="imageInfo">
-                <dt>{'Created on'|@translate}</dt>
-                <dd>{$INFO_CREATION_DATE}</dd>
-            </div>
+            <tr>
+                <th scope="row">{'Created on'|@translate}</th>
+                <td><div id="datecreate" class="imageInfo">{$INFO_CREATION_DATE}</div></td>
+            </tr>
 {/if}
 {if $display_info.posted_on}
-            <div id="datepost" class="imageInfo">
-                <dt>{'Posted on'|@translate}</dt>
-                <dd>{$INFO_POSTED_DATE}</dd>
-            </div>
+            <tr>
+                <th scope="row">{'Posted on'|@translate}</th>
+                <td><div id="datepost" class="imageInfo">{$INFO_POSTED_DATE}</div></td>
+            </tr>
 {/if}
 {if $display_info.visits}
-            <div id="visits" class="imageInfo">
-                <dt>{'Visits'|@translate}</dt>
-                <dd>{$INFO_VISITS}</dd>
-            </div>
+            <tr>
+                <th scope="row">{'Visits'|@translate}</th>
+                <td><div id="visits" class="imageInfo">{$INFO_VISITS}</div></td>
+            </tr>
 {/if}
 {if $display_info.dimensions and isset($INFO_DIMENSIONS)}
-            <div id="Dimensions" class="imageInfo">
-                <dt>{'Dimensions'|@translate}</dt>
-                <dd>{$INFO_DIMENSIONS}</dd>
-            </div>
+            <tr>
+                <th scope="row">{'Dimensions'|@translate}</th>
+                <td><div id="Dimensions" class="imageInfo">{$INFO_DIMENSIONS}</div></td>
+            </tr>
 {/if}
 {if $display_info.file}
-            <div id="File" class="imageInfo">
-                <dt>{'File'|@translate}</dt>
-                <dd>{$INFO_FILE}</dd>
-            </div>
+            <tr>
+                <th scope="row">{'File'|@translate}</th>
+                <td><div id="File" class="imageInfo">{$INFO_FILE}</div></td>
+            </tr>
 {/if}
 {if $display_info.filesize and isset($INFO_FILESIZE)}
-            <div id="Filesize" class="imageInfo">
-                <dt>{'Filesize'|@translate}</dt>
-                <dd>{$INFO_FILESIZE}</dd>
-            </div>
+            <tr>
+                <th scope="row">{'Filesize'|@translate}</th>
+                <td><div id="Filesize" class="imageInfo">{$INFO_FILESIZE}</div></td>
+            </tr>
 {/if}
 {if $display_info.tags and isset($related_tags)}
-            <div id="Tags" class="imageInfo">
-                <dt>{'Tags'|@translate}</dt>
-                <dd>
+            <tr>
+                <th scope="row">{'Tags'|@translate}</th>
+                <td>
+                  <div id="Tags" class="imageInfo">
                     {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a href="{$tag.URL}">{$tag.name}</a>{/foreach}
-                </dd>
-            </div>
+                  </div>
+                </td>
+            </tr>
 {/if}
 {if $display_info.categories and isset($related_categories)}
-            <div id="Categories" class="imageInfo">
-                <dt>{'Albums'|@translate}</dt>
-                <dd>
+            <tr>
+                <th scope="row">{'Albums'|@translate}</th>
+                <td><div id="Categories" class="imageInfo">
 {foreach from=$related_categories item=cat name=cat_loop}
                 {if !$smarty.foreach.cat_loop.first}<br />{/if}{$cat}
 {/foreach}
-                </dd>
-            </div>
+                </div></td>
+            </tr>
 {/if}
 {if $display_info.privacy_level and isset($available_permission_levels)}
 {combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
@@ -295,9 +303,10 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
     }
     (SwitchBox=window.SwitchBox||[]).push("#privacyLevelLink", "#privacyLevelBox");
 {/strip}{/footer_script}
-            <div id="Privacy" class="imageInfo">
-                <dt>{'Who can see this photo?'|@translate}</dt>
-                <dd>
+            <tr>
+                <th scope="row">{'Who can see this photo?'|@translate}</dt>
+                <td>
+                  <div id="Privacy" class="imageInfo">
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
                             {$available_permission_levels[$current.level]}
@@ -309,24 +318,35 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 {/foreach}
                         </ul>
                     </div>
-                </dd>
-            </div>
+                  </div>
+                </td>
+            </tr>
 {/if}
-        </dl>
+          </tbody>
+        </table>
       </div>
     </div>
 <!-- metadata -->
 {if isset($metadata)}
     <div role="tabpanel" class="tab-pane" id="tab_metadata">
-      <dl class="dl-horizontal">
+        <div class="table-responsive">
+            <table class="table table-condensed">
+                <colgroup>
+                    <col class="col-xs-4">
+                    <col class="col-xs-4">
+                </colgroup>
+                <tbody>
 {foreach from=$metadata item=meta}
-            <h4>{$meta.TITLE}</h4>
 {foreach from=$meta.lines item=value key=label}
-            <dt>{$label}</dt>
-            <dd>{$value}</dd>
+                    <tr>
+                        <th scope="row">{$label}</th>
+                        <td>{$value}</td>
+                    </tr>
 {/foreach}
 {/foreach}
-      </dl>
+                </tbody>
+            </table>
+        </div>
     </div>
 {/if}
 {/if}
@@ -348,7 +368,6 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 {/strip}
 {/footer_script}
 {else}
-            {if $theme_config_extra->picture_info == 'tabs'}<h4>{'Comments'|@translate}</h4>{/if}
             <div class="tabbable">
                 <ul class="nav nav-pills">
 {if $COMMENT_COUNT > 0}

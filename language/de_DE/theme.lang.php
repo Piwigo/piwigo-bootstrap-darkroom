@@ -76,6 +76,9 @@ $lang['Based on Bootstrap Default by'] = 'Basierend auf Bootstrap Default von';
 $lang['A mobile-ready theme based on Boostrap Default'] = 'Ein mobil-taugliches und funktionsreiches Thema basierend auf Boostrap Default.';
 $lang['If you find any issues, please report them to the'] = 'Probleme und Fehler bitte melden über den';
 $lang['Issue tracker'] = 'Bug Tracker.';
-$lang['Bug reports and features requests'] = 'Fehlerberichte und Änderungswünsche';
+$lang['Bug reports and feature requests'] = 'Fehlerberichte und Änderungswünsche';
 $lang['Display category description in grid view'] = 'Zeige die Album-Beschreibung auch in der Grid-Ansicht';
-?>
+$lang['Fullscreen'] = 'Vollbild';
+$lang['Grid view'] = 'Kachel-Ansicht';
+$lang['List view'] = 'Listen-Ansicht';
+$lang['Discover'] = 'Entdecken';

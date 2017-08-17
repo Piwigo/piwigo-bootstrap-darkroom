@@ -25,10 +25,14 @@ $('.navmenu').on('show.bs.offcanvas', function() {
     $('#the_page').on('touchmove.bs', function(e) {
         e.preventDefault();
     });
-    if ($('.navbar-contextual.affix-top').length > 0 && $('.jumbotron').length > 0) {
-        $('.navmenu').css('top', $('.navbar-main').height() + $('.jumbotron').outerHeight() - $(document).scrollTop());
-    }
     $('.navbar-main .collapse').collapse('hide');
+    if ($('.navbar-contextual.affix-top').length > 0) {
+        var navmenu_top = $('.navbar-contextual').height();
+        if ($('.jumbotron').length > 0) {
+            navmenu_top = navmenu_top + $('.jumbotron').outerHeight() - $(document).scrollTop();
+        }
+        $('.navmenu').css('top', navmenu_top);
+    }
 });
 $('.navmenu').on('hidden.bs.offcanvas', function() {
     if ($('ul.navmenu-nav').contents().length > 0) {
@@ -59,7 +63,7 @@ $('#content-spacer').addClass('well');
     <ul class="nav navmenu-nav"></ul>
 </div>
 <div class="nav-wrapper">
-<nav class="navbar navbar-default navbar-contextual" role="navigation">
+<nav class="navbar navbar-default navbar-contextual">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#navmenu-contextual">
@@ -87,7 +91,7 @@ $(document).ready(function() {
             <ul class="nav navbar-nav">
 {if !empty($image_orders)}
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
                         <span class="glyphicon glyphicon-sort"></span><span class="glyphicon-text">{'Sort order'|@translate}</span><span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
@@ -99,8 +103,8 @@ $(document).ready(function() {
 {/if}
 {if !empty($image_derivatives)}
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-picture"></span><span class="glyphicon-text">{'Photo sizes'|@translate}</span><span class="caret"></span>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
+                        <i class="fa fa-picture-o" aria-hidden="true"></i><span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
 {foreach from=$image_derivatives item=image_derivative name=loop}
@@ -112,21 +116,21 @@ $(document).ready(function() {
 {if isset($favorite)}
                 <li>
                     <a href="{$favorite.U_FAVORITE}" title="{'Delete all photos from your favorites'|@translate}" rel="nofollow">
-                        <span class="glyphicon glyphicon-heart"></span><span class="glyphicon-text">{'Delete all photos from your favorites'|@translate}</span>
+                        <i class="fa fa-heartbeat" aria-hidden="true"></i>
                     </a>
                 </li>
 {/if}
 {if isset($U_EDIT)}
                 <li>
                     <a href="{$U_EDIT}" title="{'Edit album'|@translate}">
-                        <span class="glyphicon glyphicon-pencil"></span><span class="glyphicon-text">{'Edit'|@translate}</span>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
                     </a>
                 </li>
 {/if}
 {if isset($U_CADDIE)}
                 <li>
                     <a href="{$U_CADDIE}" title="{'Add to caddie'|@translate}">
-                        <span class="glyphicon glyphicon-plus-sign"></span><span class="glyphicon-text">{'Caddie'|@translate}</span>
+                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                     </a>
                 </li>
 {/if}
@@ -134,48 +138,48 @@ $(document).ready(function() {
 {combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
                 <li>
                     <a href="{$U_SEARCH_RULES}" onclick="bd_popup(this.href); return false;" title="{'Search rules'|@translate}" rel="nofollow">
-                        <span class="glyphicon glyphicon-search"></span><span class="glyphicon-text">(?)</span>
+                        <i class="fa fa-search" aria-hidden="true"></i>
                     </a>
                 </li>
 {/if}
 {if isset($U_SLIDESHOW)}
                 <li>
                     <a href="{if $theme_config_extra->photoswipe}javascript:;{else}{$U_SLIDESHOW}{/if}" id="startSlideshow" title="{'slideshow'|@translate}" rel="nofollow">
-                        <span class="glyphicon glyphicon-play"></span><span class="glyphicon-text">{'slideshow'|@translate}</span>
+                        <i class="fa fa-play" aria-hidden="true"></i>
                     </a>
                 </li>
 {/if}
 {if isset($U_MODE_FLAT)}
                 <li>
                     {strip}<a href="{$U_MODE_FLAT}" title="{'display all photos in all sub-albums'|@translate}" rel="nofollow">
-                        <span class="glyphicon glyphicon-th-large"></span><span class="glyphicon-text">{'display all photos in all sub-albums'|@translate}</span>
+                        <i class="fa fa-th-large" aria-hidden="true"></i>
                     </a>{/strip}
                 </li>
 {/if}
 {if isset($U_MODE_NORMAL)}
                 <li>
                     {strip}<a href="{$U_MODE_NORMAL}" title="{'return to normal view mode'|@translate}">
-                        <span class="glyphicon glyphicon-home"></span><span class="glyphicon-text">{'return to normal view mode'|@translate}</span>
+                        <i class="fa fa-home" aria-hidden="true"></i>
                     </a>{/strip}
                 </li>
 {/if}
 {if isset($U_MODE_POSTED) || isset($U_MODE_CREATED)}
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="fa fa-calendar"></span><span class="glyphicon-text">{'Calendar'|@translate}</span>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{'Calendar'|@translate}">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdown-menu">
 {if isset($U_MODE_POSTED)}
                         <li>
                             <a href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
-                                <span class="fa fa-share-alt"></span> {'display a calendar by posted date'|@translate}
+                                <i class="fa fa-share-alt" aria-hidden="true"></i> {'display a calendar by posted date'|@translate}
                             </a>
                         </li>
 {/if}
 {if isset($U_MODE_CREATED)}
                         <li>
                             <a href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
-                                <span class="fa fa-camera-retro"></span> {'display a calendar by creation date'|@translate}
+                                <i class="fa fa-camera-retro" aria-hidden="true"></i> {'display a calendar by creation date'|@translate}
                             </a>
                         </li>
 {/if}
@@ -185,8 +189,8 @@ $(document).ready(function() {
 {if !empty($PLUGIN_INDEX_BUTTONS)}{foreach from=$PLUGIN_INDEX_BUTTONS item=button}<li>{$button}</li>{/foreach}{/if}
 {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
 {if ((!empty($CATEGORIES) && !isset($GDThumb)) || (!empty($THUMBNAILS) && !isset($GThumb) && !isset($GDThumb))) && ($theme_config_extra->category_wells == 'never' || ($theme_config_extra->category_wells == 'mobile_only' && get_device() == 'desktop'))}
-                <li id="btn-grid"{if $smarty.cookies.view != 'list'} class="active"{/if}><a href="javascript:;"><span class="glyphicon glyphicon-th"></span></a></li>
-                <li id="btn-list"{if $smarty.cookies.view == 'list'} class="active"{/if}><a href="javascript:;"><span class="glyphicon glyphicon-th-list"></span></a></li>
+                <li id="btn-grid"{if $smarty.cookies.view != 'list'} class="active"{/if}><a href="javascript:;" title="{'Grid view'|@translate}"><i class="fa fa-th"></i></a></li>
+                <li id="btn-list"{if $smarty.cookies.view == 'list'} class="active"{/if}><a href="javascript:;" title="{'List view'|@translate}"><i class="fa fa-th-list"></i></a></li>
 {/if}
             </ul>
         </div>

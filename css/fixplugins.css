@@ -115,8 +115,8 @@ ul#thumbnails .gthumb a img.thumbnail {
   line-height: none !important;
 }
 .pwg-icon-globe:before {
-  content:"\e135";
-  font-family:"Glyphicons Halflings";
+  content:""\f0ac"";
+  font-family:"FontAwesome";
 }
 
 /* BatchDownloader */
@@ -126,8 +126,8 @@ ul#thumbnails .gthumb a img.thumbnail {
   line-height: none !important;
 }
 .batch-downloader-icon:before {
-  content:"\e197";
-  font-family:"Glyphicons Halflings";
+  content:"\f0ed";
+  font-family:"FontAwesome";
 }
 
 /* User Collections */
@@ -181,3 +181,9 @@ ul#thumbnails .gthumb a img.thumbnail {
 
 /* PWG_Stuffs */
 .pwgstuffs-container { padding-top: 20px; }
+
+/* RV Autocomplete */
+ul.ui-autocomplete { z-index: 150; }
+
+/* Extended Description */
+ul.thumbnailCategories { padding-top: 20px; }

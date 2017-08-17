@@ -1,6 +1,6 @@
 {combine_css path="themes/bootstrapdefault/selectize.js/dist/css/selectize.bootstrap2.css"}
-{combine_script id='jquery.selectize' load='footer' path="themes/bootstrapdefault/selectize.js/dist/js/standalone/selectize.min.js"}
-{footer_script}
+{combine_script id='jquery.selectize' load='footer' require='jquery' path="themes/bootstrapdefault/selectize.js/dist/js/standalone/selectize.min.js"}
+{footer_script require='jquery'}
     jQuery(document).ready(function() {
     jQuery("#authors, #tags, #categories").each(function() {
     jQuery(this).selectize({

@@ -72,7 +72,7 @@
 {if !empty($theme.local_head)}{include file=$theme.local_head load_css=$theme.load_css}{/if}
 {/foreach}
 {if $theme_config_extra->bootstrap_theme == 'darkroom'}
-    {combine_css path="themes/bootstrap_darkroom/theme-colors.css" order=-5}
+    {combine_css path="themes/bootstrap_darkroom/css/darkroom-colors.css" order=-5}
 {/if}
 {if $theme_config_extra->bootstrap_theme == 'material'}
     {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-6}
@@ -86,7 +86,7 @@
     {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config_extra->material_color}/navmenu.css" order=-5}
 {/if}
 {/if}
-    {combine_css path="themes/bootstrap_darkroom/fixplugins.css" order=9999}
+    {combine_css path="themes/bootstrap_darkroom/css/fixplugins.css" order=9999}
 {if file_exists("local/bootstrapdefault/custom.css")}
     {combine_css path="local/bootstrapdefault/custom.css" order=10000}
 {/if}
@@ -99,8 +99,8 @@
 {combine_script id='jquery' path='themes/bootstrap_darkroom/components/jquery/dist/jquery.min.js' load=$loc}
 {combine_script id='jquery.ajaxmanager' require='jquery' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
 {combine_script id='thumbnails.loader' require='jquery.ajaxmanager' path='themes/default/js/thumbnails.loader.js' load='footer'}
-{combine_script id='plugin.fixes' require='jquery' path='themes/bootstrap_darkroom/js/plugin_fixes.js' load='footer'}
-{combine_script id='bootstrap' require='jquery' require='plugin.fixes' path='themes/bootstrapdefault/bootstrap/dist/js/bootstrap.min.js' load=$loc}
+{combine_script id='darkroom.common' require='jquery' path='themes/bootstrap_darkroom/js/common.js' load='footer'}
+{combine_script id='bootstrap' require='jquery' path='themes/bootstrapdefault/bootstrap/dist/js/bootstrap.min.js' load=$loc}
 {combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js' load='footer'}
 {combine_script id=$themeconf.name require='bootstrap' path='themes/bootstrapdefault/js/theme.js' load='footer'}
 {if $theme_config_extra->bootstrap_theme == 'material'}

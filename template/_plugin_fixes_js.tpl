@@ -1,3 +1,33 @@
+{if isset($loaded_plugins['rv_gmaps']) && $BODY_ID == "thePicturePage"}
+{footer_script require='jquery'}{strip}
+$(document).ready(function() {
+  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').removeClass('pwg-state-default pwg-button').wrap('<li></li>');
+  $('#map').wrap('<div id="mapContainer" class="container"></div>');
+  $('#mapPicture').prependTo('#mapContainer');
+});
+{/strip}{/footer_script}
+{/if}
+{if isset($loaded_plugins['rv_gmaps']) && $BODY_ID == "theCategoryPage"}
+{footer_script require='jquery'}{strip}
+$(document).ready(function() {
+  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').removeClass('pwg-state-default pwg-button');
+});
+{/strip}{/footer_script}
+{/if}
+
+{if isset($loaded_plugins['piwigo-openstreetmap']) && $BODY_ID == "thePicturePage"}
+{footer_script require='jquery'}{strip}
+$(document).ready(function() {
+  var n = $('#map-info').closest('tr');
+  $('#map-info').changeElementType('tr');
+  $('#map-info>dt').changeElementType('th');
+  $('#map-info>th').attr("scope", "row");
+  $('#map-info>dd').changeElementType('td');
+  $('#map-info').insertBefore(n);
+});
+{/strip}{/footer_script}
+{/if}
+
 {if isset($loaded_plugins['oAuth'])}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {

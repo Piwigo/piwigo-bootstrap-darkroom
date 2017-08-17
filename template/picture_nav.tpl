@@ -10,7 +10,6 @@ if ($('.jumbotron').length > 0) {
 {/literal}
 $('.navmenu').on('show.bs.offcanvas', function() {
     if ($('ul.navmenu-nav').contents().length === 0) {
-        console.log($('ul.navbar-nav').contents());
         $($('ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
         $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
         $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
@@ -39,7 +38,7 @@ $('.navmenu').on('hidden.bs.offcanvas', function() {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a> [{$PHOTO}]</div>
+                <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a> <small>[{$PHOTO}]</small></div>
 {if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material'}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
@@ -66,8 +65,8 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
     }
 {/strip}{/footer_script}
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <span class="glyphicon glyphicon-picture"></span><span class="glyphicon-text">{'Photo sizes'|@translate}</span><span class="caret"></span>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
+              <i class="fa fa-picture-o" aria-hidden="true"></i><span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
 {foreach from=$current.unique_derivatives item=derivative key=derivative_type}
@@ -88,15 +87,15 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
 {/if}
 {if isset($U_SLIDESHOW_START)}
         <li>
-            <a href="{if $theme_config_extra->photoswipe}javascript:;{else}{$U_SLIDESHOW_START}{/if}" title="{'Slideshow'|@translate}" id="startSlideshow" rel="nofollow">
-                <span class="glyphicon glyphicon-play"></span><span class="glyphicon-text">{'Slideshow'|@translate}</span>
+            <a href="{if $theme_config_extra->photoswipe}javascript:;{else}{$U_SLIDESHOW_START}{/if}" title="{'slideshow'|@translate}" id="startSlideshow" rel="nofollow">
+                <i class="fa fa-play" aria-hidden="true"></i>
             </a>
         </li>
 {/if}
 {if isset($U_METADATA)}
         <li>
             <a href="{$U_METADATA}" title="{'Show file metadata'|@translate}" rel="nofollow">
-                <span class="glyphicon glyphicon-camera"></span><span class="glyphicon-text">{'Show file metadata'|@translate}</span>
+                <i class="fa fa-camera-retro" aria-hidden="true"></i>
             </a>
         </li>
 {/if}
@@ -104,12 +103,12 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
 {if empty($current.formats)}
         <li>
             <a id="downloadSwitchLink" href="{$current.U_DOWNLOAD}" title="{'Download this file'|@translate}" class="pwg-state-default pwg-button" rel="nofollow">
-                <span class="glyphicon glyphicon-download-alt"></span><span class="glyphicon-text">{'Download'|@translate}</span>
+                <i class="fa fa-download" aria-hidden="true"></i>
             </a>
 {else}
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-                <span class="glyphicon glyphicon-download-alt"></span><span class="glyphicon-text">{'Download'|@translate}</span><span class="caret"></span>
+                <i class="fa fa-download" aria-hidden="true"></i><span class="caret"></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
   {foreach from=$current.formats item=format}
@@ -119,26 +118,24 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
 {/if} {* has formats *}
         </li>
 {/if}
-{if isset($PLUGIN_PICTURE_BUTTONS)}{foreach from=$PLUGIN_PICTURE_BUTTONS item=button}{$button}{/foreach}{/if}
-{if isset($PLUGIN_PICTURE_ACTIONS)}{$PLUGIN_PICTURE_ACTIONS}{/if}
 {if isset($favorite)}
         <li>
-            <a href="{$favorite.U_FAVORITE}" title="{if $favorite.IS_FAVORITE}{'Delete this photo from your favorites'|@translate}{else}{'Add this photo to your favorites'|@translate}{/if}" rel="nofollow">
-                <span class="glyphicon glyphicon-heart{if !$favorite.IS_FAVORITE}-empty{/if}"></span><span class="glyphicon-text">{'Favorites'|@translate}</span>
+            <a href="{$favorite.U_FAVORITE}" title="{if $favorite.IS_FAVORITE}{'delete this photo from your favorites'|@translate}{else}{'add this photo to your favorites'|@translate}{/if}" rel="nofollow">
+                <i class="fa fa-heart{if !$favorite.IS_FAVORITE}-o{/if}"></i>
             </a>
         </li>
 {/if}
 {if isset($U_SET_AS_REPRESENTATIVE)}
         <li>
-            <a id="cmdSetRepresentative" href="{$U_SET_AS_REPRESENTATIVE}" title="{'Set as album representative'|@translate}" rel="nofollow">
-                <span class="glyphicon glyphicon-link"></span><span class="glyphicon-text">{'representative'|@translate}</span>
+            <a id="cmdSetRepresentative" href="{$U_SET_AS_REPRESENTATIVE}" title="{'set as album representative'|@translate}" rel="nofollow">
+                <i class="fa fa-link" aria-hidden="true"></i>
             </a>
         </li>
 {/if}
 {if isset($U_PHOTO_ADMIN)}
         <li>
             <a id="cmdEditPhoto" href="{$U_PHOTO_ADMIN}" title="{'Modify information'|@translate}" rel="nofollow">
-                <span class="glyphicon glyphicon-pencil"></span><span class="glyphicon-text">{'Edit'|@translate}</span>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
             </a>
         </li>
 {/if}
@@ -156,10 +153,12 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
 {/strip}{/footer_script}
         <li>
             <a href="{$U_CADDIE}" onclick="addToCadie(this, '{$ROOT_URL}', {$current.id}); return false;" title="{'Add to caddie'|@translate}" rel="nofollow">
-                <span class="glyphicon glyphicon-plus-sign"></span><span class="pwg-button-text">{'Caddie'|@translate}</span>
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
             </a>
         </li>
 {/if}
+{if isset($PLUGIN_PICTURE_BUTTONS)}{foreach from=$PLUGIN_PICTURE_BUTTONS item=button}{$button}{/foreach}{/if}
+{if isset($PLUGIN_PICTURE_ACTIONS)}{$PLUGIN_PICTURE_ACTIONS}{/if}
                 </ul>
             </div>
         </div>

@@ -34,15 +34,14 @@
     "tests",
     "website"
   ],
-  "version": "4.1.1",
-  "_release": "4.1.1",
+  "version": "4.1.2",
+  "_release": "4.1.2",
   "_resolution": {
     "type": "version",
-    "tag": "v4.1.1",
-    "commit": "41ff96cb8e88ef6f884c388db9f2a6d5e9d3b77a"
+    "tag": "v4.1.2",
+    "commit": "b6fdb82ed0b5b635c0943098f3046581a02ead77"
   },
   "_source": "https://github.com/dimsemenov/PhotoSwipe.git",
-  "_target": "^4.1.1",
-  "_originalSource": "https://github.com/dimsemenov/PhotoSwipe.git",
-  "_direct": true
+  "_target": "^4.1",
+  "_originalSource": "https://github.com/dimsemenov/PhotoSwipe.git"
 }
