@@ -415,3 +415,37 @@ a.pswp__share--google:hover {
 [class*="langflag-text-"] {
   background-position: 0 50px !important;
 }
+
+/* Quicksearch in navbar */
+@media (min-width: 768px) {
+  #navbar-menubar>#quicksearch {
+    position: relative;
+    padding-right: 0px;
+  }
+
+  #navbar-menubar>#quicksearch input {
+    text-indent: 10px;
+  }
+
+  #navbar-menubar>#quicksearch input[type="text"] {
+    background: 14px;
+    width: 14px !important;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+  }
+
+  #navbar-menubar>#quicksearch input[type="text"]:focus {
+    background: none;
+    width: 150px !important;
+  }
+}
+@media (max-width: 767px) {
+  #navbar-menubar>#quicksearch>.fa-search {
+    display: none;
+  }
+}

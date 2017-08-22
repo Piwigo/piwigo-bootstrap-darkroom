@@ -140,10 +140,18 @@
                 <div class="collapse navbar-collapse navbar-right" id="navbar-menubar">
 {if $theme_config_extra->quicksearch_navbar}
                 <form class="navbar-form" role="search" action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
+                    <i class="fa fa-search"></i>
                     <div class="form-group">
                         <input type="text" name="q" id="qsearchInput" class="form-control" placeholder="{'Search'|@translate}" />
                     </div>
                 </form>
+{footer_script require='jquery'}
+var qsearch_icon = $('#navbar-menubar>#quicksearch>.fa-search');
+var qsearch_text = $('#navbar-menubar>#quicksearch #qsearchInput');
+$(qsearch_icon).click(function () {
+  $(qsearch_text).focus();
+});
+{/footer_script}
 {/if}
 {$MENUBAR}
                 </div>
