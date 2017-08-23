@@ -58,12 +58,12 @@
     {combine_css path="themes/bootstrap_darkroom/components/bootswatch/{$theme_config_extra->bootswatch_theme}/bootstrap.min.css" order=-20}
     {combine_css path="themes/bootstrap_darkroom/css/bootswatch/navmenu-{$theme_config_extra->bootswatch_theme}.css" order=-5}
 {else}
-    {combine_css path="themes/bootstrapdefault/bootstrap/dist/css/bootstrap.min.css" order=-20}
+    {combine_css path="themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap.min.css" order=-20}
 {/if}
 {if $theme_config_extra->bootstrap_theme == 'default'}
-    {combine_css path="themes/bootstrapdefault/bootstrap/dist/css/bootstrap-theme.min.css" order=-18}
+    {combine_css path="themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap-theme.min.css" order=-18}
 {/if}
-    {combine_css path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css' order=-15}
+{*    {combine_css path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css' order=-15} *}
     {combine_css path='themes/bootstrap_darkroom/components/font-awesome/css/font-awesome.min.css' order=-14}
 {foreach from=$themes item=theme}
 {if $theme.load_css}
@@ -100,8 +100,9 @@
 {combine_script id='jquery.ajaxmanager' require='jquery' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
 {combine_script id='thumbnails.loader' require='jquery.ajaxmanager' path='themes/default/js/thumbnails.loader.js' load='footer'}
 {combine_script id='darkroom.common' require='jquery' path='themes/bootstrap_darkroom/js/common.js' load='footer'}
-{combine_script id='bootstrap' require='jquery' path='themes/bootstrapdefault/bootstrap/dist/js/bootstrap.min.js' load=$loc}
-{combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js' load='footer'}
+{combine_script id='popper.js' require='jquery' path='themes/bootstrap_darkroom/components/popper.js/dist/umd/popper.min.js' load=$loc}
+{combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/components/bootstrap/dist/js/bootstrap.min.js' load=$loc}
+{* {combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js' load='footer'} *}
 {combine_script id=$themeconf.name require='bootstrap' path='themes/bootstrapdefault/js/theme.js' load='footer'}
 {if $theme_config_extra->bootstrap_theme == 'material'}
     {combine_script id='material.js' require='bootstrap' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/material.min.js' load='footer'}
@@ -121,30 +122,24 @@
 <body id="{$BODY_ID}">
     <div id="the_page">
 {if $BODY_ID != 'thePicturePage'}
-        <!-- Bootstrap navbar, moved to the header as variables are missing in menubar.tpl, actual menus remain in menubar.tpl -->
-        <nav class="navbar navbar-default navbar-main" role="navigation">
+        <nav class="navbar navbar-expand-lg navbar-main">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menubar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
 {if $theme_config_extra->logo_image_enabled && $theme_config_extra->logo_image_path !== ''}
-                    <a class="navbar-brand" href="{$U_HOME}"><img class="responsive" src="{$ROOT_URL}{$theme_config_extra->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>
+                <a class="navbar-brand" href="{$U_HOME}"><img class="responsive" src="{$ROOT_URL}{$theme_config_extra->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>
 {else}
-                    <a class="navbar-brand" href="{$U_HOME}">{$GALLERY_TITLE}</a>
+                <a class="navbar-brand" href="{$U_HOME}">{$GALLERY_TITLE}</a>
 {/if}
-                </div>
-                <div class="collapse navbar-collapse navbar-right" id="navbar-menubar">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-menubar" aria-controls="navbar-menubar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-menubar">
 {if $theme_config_extra->quicksearch_navbar}
-                <form class="navbar-form" role="search" action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
+                  <form class="navbar-form" role="search" action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
                     <i class="fa fa-search"></i>
                     <div class="form-group">
                         <input type="text" name="q" id="qsearchInput" class="form-control" placeholder="{'Search'|@translate}" />
                     </div>
-                </form>
+                  </form>
 {footer_script require='jquery'}
 var qsearch_icon = $('#navbar-menubar>#quicksearch>.fa-search');
 var qsearch_text = $('#navbar-menubar>#quicksearch #qsearchInput');

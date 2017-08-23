@@ -28,5 +28,9 @@
     "roboto": "https://google-fonts.azurewebsites.net/googleFonts/Roboto?family=Roboto:300,400,500,700",
     "slick-carousel": "https://github.com/tkuther/slick.git#piwigo-patches",
     "jquery": "^2.2"
+  },
+  "resolutions": {
+    "bootstrap": "4.0.0-beta",
+    "jquery": "3.2.1"
   }
 }

@@ -6,13 +6,8 @@
 {combine_script id='jquery.mobile-events' path='themes/bootstrap_darkroom/components/jquery-touch-events/src/jquery.mobile-events.min.js' require='jquery' load='footer'}
 {/if}
 {if !empty($PLUGIN_INDEX_CONTENT_BEFORE)}{$PLUGIN_INDEX_CONTENT_BEFORE}{/if}
-{footer_script require='jquery'}{strip}
-if ($('.jumbotron').length > 0) {
-    var $affix_height = $('.navbar-main').height() + $('.jumbotron').outerHeight();
-    $('.navbar-contextual').affix({literal}{ offset: {top: $affix_height } }{/literal});
-} else {
-    $('.navbar-contextual').affix({literal}{ offset: {top: $('.navbar-main').height()} }{/literal});
-}
+{*
+{footer_script require='jquery' require='bootstrap'}
 $('.navmenu').on('show.bs.offcanvas', function() {
     if ($('.navbar-contextual ul.navmenu-nav').contents().length === 0) {
         $($('.navbar-contextual ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
@@ -58,25 +53,22 @@ $('.navbar-contextual').on('affix-top.bs.affix', function() {
 {if $theme_config_extra->bootstrap_theme == 'material'}
 $('#content-spacer').addClass('well');
 {/if}
-{strip}{/footer_script}
+{/footer_script}
 <div id="navmenu-contextual" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
     <ul class="nav navmenu-nav"></ul>
 </div>
+*}
 <div class="nav-wrapper">
-<nav class="navbar navbar-default navbar-contextual">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#navmenu-contextual">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
+    <nav class="navbar navbar-expand-lg navbar-contextual">
+        <div class="container">
+            <button type="button" class="navbar-toggler" data-toggle="offcanvas" data-target="#navmenu-contextual" aria-controls="navbar-nubar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-brand">
 {if isset($chronology.TITLE)}
                 <a href="{$U_HOME}" title="{'Home'|@translate}"><i class="fa fa-home" aria-hidden="true"></i></a>{$LEVEL_SEPARATOR}{$chronology.TITLE}
 {else}
-                {$TITLE}
+                    {$TITLE}
 {if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material'}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
@@ -86,116 +78,115 @@ $(document).ready(function() {
 {/if}
 {/if}
             </div>
-        </div>
-        <div class="navbar-right navbar-collapse collapse" id="secondary-navbar">
-            <ul class="nav navbar-nav">
+            <div class="navbar-collapse collapse justify-content-end" id="secondary-navbar">
+                <ul class="navbar-nav">
 {if !empty($image_orders)}
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
-                        <span class="glyphicon glyphicon-sort"></span><span class="glyphicon-text">{'Sort order'|@translate}</span><span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
+                            <span class="glyphicon glyphicon-sort"></span><span class="glyphicon-text">{'Sort order'|@translate}</span><span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
 {foreach from=$image_orders item=image_order name=loop}
-                        <li{if $image_order.SELECTED} class="active"{/if}><a href="{$image_order.URL}" rel="nofollow">{$image_order.DISPLAY}</a></li>
+                            <li{if $image_order.SELECTED} class="active"{/if}><a href="{$image_order.URL}" rel="nofollow">{$image_order.DISPLAY}</a></li>
 {/foreach}
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
 {/if}
 {if !empty($image_derivatives)}
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
-                        <i class="fa fa-picture-o" aria-hidden="true"></i><span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
+                            <i class="fa fa-picture-o" aria-hidden="true"></i><span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
 {foreach from=$image_derivatives item=image_derivative name=loop}
-                        <li{if $image_derivative.SELECTED} class="active"{/if}><a href="{$image_derivative.URL}" rel="nofollow">{$image_derivative.DISPLAY}</a></li>
+                            <li{if $image_derivative.SELECTED} class="active"{/if}><a href="{$image_derivative.URL}" rel="nofollow">{$image_derivative.DISPLAY}</a></li>
 {/foreach}
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
 {/if}
 {if isset($favorite)}
-                <li>
-                    <a href="{$favorite.U_FAVORITE}" title="{'Delete all photos from your favorites'|@translate}" rel="nofollow">
-                        <i class="fa fa-heartbeat" aria-hidden="true"></i>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{$favorite.U_FAVORITE}" title="{'Delete all photos from your favorites'|@translate}" rel="nofollow">
+                            <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                        </a>
+                    </li>
 {/if}
 {if isset($U_EDIT)}
-                <li>
-                    <a href="{$U_EDIT}" title="{'Edit album'|@translate}">
-                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{$U_EDIT}" title="{'Edit album'|@translate}">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
+                    </li>
 {/if}
 {if isset($U_CADDIE)}
-                <li>
-                    <a href="{$U_CADDIE}" title="{'Add to caddie'|@translate}">
-                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{$U_CADDIE}" title="{'Add to caddie'|@translate}">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        </a>
+                    </li>
 {/if}
 {if isset($U_SEARCH_RULES)}
 {combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
-                <li>
-                    <a href="{$U_SEARCH_RULES}" onclick="bd_popup(this.href); return false;" title="{'Search rules'|@translate}" rel="nofollow">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{$U_SEARCH_RULES}" onclick="bd_popup(this.href); return false;" title="{'Search rules'|@translate}" rel="nofollow">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
+                    </li>
 {/if}
 {if isset($U_SLIDESHOW)}
-                <li>
-                    <a href="{if $theme_config_extra->photoswipe}javascript:;{else}{$U_SLIDESHOW}{/if}" id="startSlideshow" title="{'slideshow'|@translate}" rel="nofollow">
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{if $theme_config_extra->photoswipe}javascript:;{else}{$U_SLIDESHOW}{/if}" id="startSlideshow" title="{'slideshow'|@translate}" rel="nofollow">
+                            <i class="fa fa-play" aria-hidden="true"></i>
+                        </a>
+                    </li>
 {/if}
 {if isset($U_MODE_FLAT)}
-                <li>
-                    {strip}<a href="{$U_MODE_FLAT}" title="{'display all photos in all sub-albums'|@translate}" rel="nofollow">
-                        <i class="fa fa-th-large" aria-hidden="true"></i>
-                    </a>{/strip}
-                </li>
+                    <li class="nav-item">
+                        {strip}<a class="nav-link" href="{$U_MODE_FLAT}" title="{'display all photos in all sub-albums'|@translate}" rel="nofollow">
+                            <i class="fa fa-th-large" aria-hidden="true"></i>
+                        </a>{/strip}
+                    </li>
 {/if}
 {if isset($U_MODE_NORMAL)}
-                <li>
-                    {strip}<a href="{$U_MODE_NORMAL}" title="{'return to normal view mode'|@translate}">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                    </a>{/strip}
-                </li>
+                    <li class="nav-item">
+                        {strip}<a class="nav-link" href="{$U_MODE_NORMAL}" title="{'return to normal view mode'|@translate}">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                        </a>{/strip}
+                    </li>
 {/if}
 {if isset($U_MODE_POSTED) || isset($U_MODE_CREATED)}
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{'Calendar'|@translate}">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                    </a>
-                    <ul class="dropdown-menu">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Calendar'|@translate}">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu">
 {if isset($U_MODE_POSTED)}
-                        <li>
-                            <a href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
-                                <i class="fa fa-share-alt" aria-hidden="true"></i> {'display a calendar by posted date'|@translate}
-                            </a>
-                        </li>
+                            <li>
+                                <a href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
+                                    <i class="fa fa-share-alt" aria-hidden="true"></i> {'display a calendar by posted date'|@translate}
+                                </a>
+                            </li>
 {/if}
 {if isset($U_MODE_CREATED)}
-                        <li>
-                            <a href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
-                                <i class="fa fa-camera-retro" aria-hidden="true"></i> {'display a calendar by creation date'|@translate}
-                            </a>
-                        </li>
+                            <li>
+                                <a href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
+                                    <i class="fa fa-camera-retro" aria-hidden="true"></i> {'display a calendar by creation date'|@translate}
+                                </a>
+                            </li>
 {/if}
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
 {/if}
 {if !empty($PLUGIN_INDEX_BUTTONS)}{foreach from=$PLUGIN_INDEX_BUTTONS item=button}<li>{$button}</li>{/foreach}{/if}
 {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
 {if ((!empty($CATEGORIES) && !isset($GDThumb)) || (!empty($THUMBNAILS) && !isset($GThumb) && !isset($GDThumb))) && ($theme_config_extra->category_wells == 'never' || ($theme_config_extra->category_wells == 'mobile_only' && get_device() == 'desktop'))}
-                <li id="btn-grid"{if $smarty.cookies.view != 'list'} class="active"{/if}><a href="javascript:;" title="{'Grid view'|@translate}"><i class="fa fa-th"></i></a></li>
-                <li id="btn-list"{if $smarty.cookies.view == 'list'} class="active"{/if}><a href="javascript:;" title="{'List view'|@translate}"><i class="fa fa-th-list"></i></a></li>
+                    <li id="btn-grid" class="nav-item{if $smarty.cookies.view != 'list'} active{/if}"><a class="nav-link" href="javascript:;" title="{'Grid view'|@translate}"><i class="fa fa-th"></i></a></li>
+                    <li id="btn-list" class="nav-item{if $smarty.cookies.view == 'list'} active{/if}"><a class="nav-link" href="javascript:;" title="{'List view'|@translate}"><i class="fa fa-th-list"></i></a></li>
 {/if}
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 </div>
 
 {include file='infos_errors.tpl'}
@@ -237,6 +228,7 @@ $(document).ready(function() {
 {if !empty($CATEGORIES)}
     <!-- Start of categories -->
 {$CATEGORIES}
+{*
 {footer_script}{strip}
 $(document).ready(function() {
   $(window).load(function(){
@@ -255,6 +247,7 @@ $(window).on('resize', function() {
   }, 250);
 });
 {/strip}{/footer_script}
+*}
     <!-- End of categories -->
 {/if}
 

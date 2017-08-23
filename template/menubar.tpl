@@ -1,5 +1,5 @@
             <!-- Start of menubar.tpl -->
-            <ul class="nav navbar-nav">
+            <ul class="navbar-nav ml-auto">
 {assign var="discover_menu_exists" value=false}
 {foreach from=$blocks key=id item=block}
 {if not empty($block->template)}
@@ -7,7 +7,7 @@
 {include file=$block->template|@get_extent:$id }
 {/if}
 {if $discover_menu_exists == false && ($id == "mbSpecials" or $id == "mbMenu")}
-<li class="dropdown">                                                                                                                                                   
+<li class="nav-item dropdown">                                                                                                                                                   
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{'Discover'|@translate} <span class="caret"></span></a>                                                  
     <ul class="dropdown-menu" role="menu">
     {if not empty($blocks.mbMenu->template)}

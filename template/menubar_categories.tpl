@@ -1,4 +1,4 @@
-<li class="dropdown">
+<li class="nav-item dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{'Albums'|@translate} <span class="caret"></span></a>
     <ul class="dropdown-menu dropdown-menu-scrollable" role="menu">
 {assign var='ref_level' value=0}

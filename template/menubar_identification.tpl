@@ -1,4 +1,4 @@
-<li class="dropdown" id="identificationDropdown">
+<li class="nav-item dropdown" id="identificationDropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{if isset($USERNAME)}<i class="fa fa-user"></i> {$USERNAME}{else}{'Login'|@translate}{/if} <span class="caret"></span></a>
     <ul class="dropdown-menu" role="menu">
 {strip}

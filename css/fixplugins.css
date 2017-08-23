@@ -15,6 +15,7 @@
   margin-top: 0;
   margin-left: 10px;
 }
+/*
 .btn-group-lg > .btn {
   padding: 10px 16px;
   font-size: 18px;
@@ -80,6 +81,7 @@
 .modal-footer:after {
   clear: both;
 }
+*/
 .pwg-icon {
   position: relative;
   top: 1px;
