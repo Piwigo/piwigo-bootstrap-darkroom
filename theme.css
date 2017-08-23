@@ -421,6 +421,12 @@ a.pswp__share--google:hover {
   #navbar-menubar>#quicksearch {
     position: relative;
     padding-right: 0px;
+
+  }
+
+  #navbar-menubar>#quicksearch input.form-control {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   #navbar-menubar>#quicksearch input {
@@ -429,7 +435,7 @@ a.pswp__share--google:hover {
 
   #navbar-menubar>#quicksearch input[type="text"] {
     background: 14px;
-    width: 14px !important;
+    width: 1px !important;
     border: none !important;
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;

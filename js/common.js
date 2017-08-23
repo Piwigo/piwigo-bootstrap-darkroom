@@ -16,6 +16,6 @@
 
 /* common issue */
 $(document).ready(function () {
-  $('#navbar-menubar .navbar-form').css({'color': $('.dropdown-menu>li>a').css('color')});
+  $('#navbar-menubar .navbar-form').css({'color': $('.navbar-default .navbar-nav>li>a').css('color')});
 });
 
