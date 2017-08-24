@@ -38,7 +38,7 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
         document.cookie = 'picture_deriv='+typeSave+';path={$COOKIE_PATH}';
     }
 {/strip}{/footer_script}
-                <li class="inav-item dropdown">
+                <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
                         <i class="fa fa-picture-o" aria-hidden="true"></i><span class="caret"></span>
                     </a>
