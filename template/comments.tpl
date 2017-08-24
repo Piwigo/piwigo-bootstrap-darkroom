@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-expand-lg">
+<nav class="navbar navbar-contextual navbar-expand-lg">
     <div class="container">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'User comments'|@translate}</a></div>
     </div>
@@ -11,11 +11,11 @@
 {else}
 <div class="container">
     <form action="{$F_ACTION}" method="get" class="form-horizontal">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card">
+            <h4 class="card-header">
                 {'Filter'|@translate}
-            </div>
-            <div class="panel-body">
+            </h4>
+            <div class="card-body">
                 <div class="form-group">
                     <label for="keyword" class="col-sm-2 control-label">{'Keyword'|@translate}</label>
                     <div class="col-sm-4">
@@ -45,11 +45,11 @@
                 </div>
             </div>
         </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card my-md-3">
+            <h4 class="card-header">
                 {'Display'|@translate}
-            </div>
-            <div class="panel-body">
+            </h4>
+            <div class="card-body">
                 <div class="form-group">
                     <label for="sort_by" class="col-sm-2 control-label">{'Sort by'|@translate}</label>
                     <div class="col-sm-4 html-options">

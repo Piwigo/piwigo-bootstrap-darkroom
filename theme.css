@@ -61,12 +61,12 @@ html, body {
 .navbar {
   width: 100%;
 }
-.navbar-toggle {
-  float: right;
-  vertical-align: middle;
-}
 .navbar-main { z-index: 104; }
-.navbar-contextual { z-index: 103; }
+.navbar-contextual { 
+  z-index: 103;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
 
 .navbar-collapse.collapsing .navbar-form,
 .navbar-collapse.collapse.in .navbar-form {
@@ -103,9 +103,6 @@ html, body {
   #navbar-menubar ul>li>a.dropdown-toggle {
     padding-left: 4px;
   }
-}
-.navbar-default {
-   font-weight: 400;
 }
 .navmenu {
    overflow: visible;

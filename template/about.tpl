@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navbar-contextual">
     <div class="container">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'About'|@translate}</a></div>
         <ul class="navbar-nav justify-content-end">
@@ -10,11 +10,9 @@
 {include file='infos_errors.tpl'}
 
 <div class="container">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            {'About'|@translate}
-        </div>
-        <div class="panel-body">
+    <div class="card">
+        <h4 class="card-header">{'About'|@translate}</h4>
+        <div class="card-body">
 {$ABOUT_MESSAGE}
 {if isset($THEME_ABOUT) }
             <ul>

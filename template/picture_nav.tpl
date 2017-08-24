@@ -8,7 +8,7 @@ if ($('.jumbotron').length > 0) {
 }
 {/literal}
 {/footer_script}*}
-<nav class="navbar navbar-default fixed-top navbar-contextual navbar-expand-lg">
+<nav class="navbar navbar-contextual navbar-expand-lg fixed-top">
     <div class="container">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span>
