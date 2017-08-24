@@ -11,21 +11,17 @@
     });
 {/footer_script}
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-expand-lg">
     <div class="container">
-        <div class="navbar-header">
-            <div class="navbar-brand"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Search'|@translate}</a></div>
-        </div>
-        <div class="navbar-right">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="{$U_HELP}" onclick="bd_popup(this.href); return false;" title="{'Help'|@translate}">
-                        <span class="glyphicon glyphicon-question-sign"></span><span class="glyphicon-text">{'Help'|@translate}</span>
-                    </a>
-                </li>
+        <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Search'|@translate}</a></div>
+        <ul class="navbar-nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="{$U_HELP}" onclick="bd_popup(this.href); return false;" title="{'Help'|@translate}">
+                    <i class="fa fa-question" aria-hidden="true"></i>
+                </a>
+            </li>
 {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
-            </ul>
-        </div>
+        </ul>
     </div>
 </nav>
 

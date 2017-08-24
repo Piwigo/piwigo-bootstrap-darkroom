@@ -1,27 +1,23 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-expand-lg">
     <div class="container">
-        <div class="navbar-header">
-            <div class="navbar-brand"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Tags'|@translate}</a></div>
-        </div>
-        <div class="navbar-right">
-            <ul class="nav navbar-nav">
+        <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Tags'|@translate}</a></div>
+        <ul class="navbar-nav justify-content-end">
 {if $display_mode == 'letters'}
-                <li>
-                    <a href="{$U_CLOUD}" title="{'show tag cloud'|@translate}">
-                        <span class="glyphicon glyphicon-cloud"></span><span class="glyphicon-text">{'Cloud'|@translate}</span>
-                    </a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{$U_CLOUD}" title="{'show tag cloud'|@translate}">
+                    <i class="fa fa-cloud" aria-hidden="true"></i>
+                </a>
+            </li>
 {/if}
 {if $display_mode == 'cloud'}
-                <li>
-                    <a href="{$U_LETTERS}" title="{'group by letters'|@translate}" rel="nofollow">
-                        <span class="glyphicon glyphicon-sort-by-alphabet"></span><span class="glyphicon-text">{'Letters'|@translate}</span>
-                    </a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{$U_LETTERS}" title="{'group by letters'|@translate}" rel="nofollow">
+                    <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+                </a>
+            </li>
 {/if}
 {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
-            </ul>
-        </div>
+        </ul>
     </div>
 </nav>
 

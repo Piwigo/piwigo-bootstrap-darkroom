@@ -1,4 +1,4 @@
-{footer_script require='bootstrap'}
+{*{footer_script require='bootstrap'}
 {literal}
 if ($('.jumbotron').length > 0) {
     var $affix_height = $('.navbar-main').height() + $('.jumbotron').outerHeight();
@@ -7,8 +7,8 @@ if ($('.jumbotron').length > 0) {
     $('.navbar-contextual').affix({ offset: {top: 50} });
 }
 {/literal}
-{/footer_script}
-<nav class="navbar navbar-default navbar-fixed-top navbar-contextual navbar-expand-lg">
+{/footer_script}*}
+<nav class="navbar navbar-default fixed-top navbar-contextual navbar-expand-lg">
     <div class="container">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span>

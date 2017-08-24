@@ -136,13 +136,13 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
   <!-- Nav tabs -->
   <ul class="nav nav-tabs nav-justified" role="tablist">
 {if $theme_config_extra->picture_info == 'tabs' || (get_device() != 'desktop' && $theme_config_extra->picture_info != 'disabled')}
-    <li role="presentation" class="active"><a href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
+    <li role="presentation" class="nav-item active"><a class="nav-link" href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
 {if isset($metadata)}
-    <li role="presentation"><a href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
+    <li role="presentation" class="nav-item"><a class="nav-link" href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
 {/if}
 {/if}
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <li role="presentation"{if $theme_config_extra->picture_info == 'disabled' || ($theme_config_extra->picture_info != 'tabs' && get_device() == 'desktop')} class="active"{/if}><a href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge">{$COMMENT_COUNT}</span></a></li>
+    <li role="presentation" class="nav-item{if $theme_config_extra->picture_info == 'disabled' || ($theme_config_extra->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}"><a class="nav-link" href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge badge-secondary">{$COMMENT_COUNT}</span></a></li>
 {/if}
   </ul>
 

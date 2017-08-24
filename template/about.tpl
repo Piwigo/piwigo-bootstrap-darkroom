@@ -1,13 +1,9 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-expand-lg">
     <div class="container">
-        <div class="navbar-header">
-            <div class="navbar-brand"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'About'|@translate}</a></div>
-        </div>
-    </div>
-    <div class="navbar-right">
-       <ul class="nav navbar-nav">
+        <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'About'|@translate}</a></div>
+        <ul class="navbar-nav justify-content-end">
              {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
-       </ul>
+        </ul>
     </div>
 </nav>
 
