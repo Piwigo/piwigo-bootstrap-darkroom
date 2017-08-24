@@ -42,8 +42,21 @@ html, body {
 
 
 /* Navigation */
-.navbar-contextual {
-   /* enable accel on affix navbar (avoids affix delay on iOS */
+.affix {
+  top: 0px;
+  width: 100%;
+}
+.navbar {
+  width: 100%;
+  padding: 0 1rem;
+}
+.navbar>.container>.navbar-collapse>.navbar-nav>.nav-item>.nav-link { padding: .8rem }
+
+.navbar-main { z-index: 104; }
+.navbar-contextual { 
+  z-index: 103;
+  font-weight: 400;
+  margin-bottom: 2rem;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
@@ -57,20 +70,6 @@ html, body {
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-}
-
-.affix {
-  top: 0px;
-  width: 100%;
-}
-.navbar {
-  width: 100%;
-}
-.navbar-main { z-index: 104; }
-.navbar-contextual { 
-  z-index: 103;
-  font-weight: 400;
-  margin-bottom: 2rem;
 }
 
 .navbar-collapse.collapsing .navbar-form,
