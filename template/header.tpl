@@ -125,12 +125,12 @@
         <nav class="navbar navbar-expand-lg navbar-main">
             <div class="container">
 {if $theme_config_extra->logo_image_enabled && $theme_config_extra->logo_image_path !== ''}
-                <a class="navbar-brand" href="{$U_HOME}"><img class="responsive" src="{$ROOT_URL}{$theme_config_extra->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>
+                <a class="navbar-brand mr-auto" href="{$U_HOME}"><img class="responsive" src="{$ROOT_URL}{$theme_config_extra->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>
 {else}
-                <a class="navbar-brand" href="{$U_HOME}">{$GALLERY_TITLE}</a>
+                <a class="navbar-brand mr-auto" href="{$U_HOME}">{$GALLERY_TITLE}</a>
 {/if}
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-menubar" aria-controls="navbar-menubar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-menubar">
 {if $theme_config_extra->quicksearch_navbar}

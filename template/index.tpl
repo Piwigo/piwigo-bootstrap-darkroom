@@ -6,65 +6,17 @@
 {combine_script id='jquery.mobile-events' path='themes/bootstrap_darkroom/components/jquery-touch-events/src/jquery.mobile-events.min.js' require='jquery' load='footer'}
 {/if}
 {if !empty($PLUGIN_INDEX_CONTENT_BEFORE)}{$PLUGIN_INDEX_CONTENT_BEFORE}{/if}
-{*
-{footer_script require='jquery' require='bootstrap'}
-$('.navmenu').on('show.bs.offcanvas', function() {
-    if ($('.navbar-contextual ul.navmenu-nav').contents().length === 0) {
-        $($('.navbar-contextual ul.navbar-nav').contents()).appendTo('ul.navmenu-nav');
-        $('ul.navmenu-nav').find('.dropdown-menu').addClass('dropdown-menu-right');
-        $('ul.navmenu-nav').find('.dropdown-toggle').attr('aria-haspopup', 'true');
-{if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material'}
-        $('.navmenu').css('background-color', $('.navbar-default').css('background-color'));
-{/if}
-    }
-    $('#the_page').on('touchmove.bs', function(e) {
-        e.preventDefault();
-    });
-    $('.navbar-main .collapse').collapse('hide');
-    if ($('.navbar-contextual.affix-top').length > 0) {
-        var navmenu_top = $('.navbar-contextual').height();
-        if ($('.jumbotron').length > 0) {
-            navmenu_top = navmenu_top + $('.jumbotron').outerHeight() - $(document).scrollTop();
-        }
-        $('.navmenu').css('top', navmenu_top);
-    }
-});
-$('.navmenu').on('hidden.bs.offcanvas', function() {
-    if ($('ul.navmenu-nav').contents().length > 0) {
-        $('ul.navmenu-nav').find('.dropdown-menu-right').removeClass('dropdown-menu-right');
-        $('ul.navmenu-nav').find('.dropdown-toggle').removeAttr('aria-haspopup');
-        $($('ul.navmenu-nav').contents()).appendTo('.navbar-contextual ul.navbar-nav');
-    }
-    $('#the_page').off('touchmove.bs');
-});
-$('.navbar-contextual').on('affix.bs.affix', function() {
-    $('.navmenu').css('top', '');
-});
-$('.navbar-contextual').on('affix-top.bs.affix', function() {
-    var nav_top_offset = 0;
-    if ($('.navbar-main')) {
-       nav_top_offset = $('.navbar-main').height();
-    }
-    if ($('.jumbotron').length > 0) {
-       nav_top_offset = nav_top_offset + $('.jumbotron').outerHeight();
-    }
-    $('.navmenu').css('top', nav_top_offset);
-});
 {if $theme_config_extra->bootstrap_theme == 'material'}
-$('#content-spacer').addClass('well');
-{/if}
+{footer_script require='jquery' require='bootstrap'}
+$(document).ready(function () {
+  $('#content-spacer').addClass('well');
+});
 {/footer_script}
-<div id="navmenu-contextual" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
-    <ul class="nav navmenu-nav"></ul>
-</div>
-*}
+{/if}
 <div class="nav-wrapper">
     <nav class="navbar navbar-expand-lg navbar-contextual">
         <div class="container">
-            <button type="button" class="navbar-toggler" data-toggle="offcanvas" data-target="#navmenu-contextual" aria-controls="navbar-nubar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-brand">
+            <div class="navbar-brand mr-auto">
 {if isset($chronology.TITLE)}
                 <a href="{$U_HOME}" title="{'Home'|@translate}"><i class="fa fa-home" aria-hidden="true"></i></a>{$LEVEL_SEPARATOR}{$chronology.TITLE}
 {else}
@@ -78,16 +30,19 @@ $(document).ready(function() {
 {/if}
 {/if}
             </div>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
             <div class="navbar-collapse collapse justify-content-end" id="secondary-navbar">
                 <ul class="navbar-nav">
 {if !empty($image_orders)}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
-                            <span class="glyphicon glyphicon-sort"></span><span class="glyphicon-text">{'Sort order'|@translate}</span><span class="caret"></span>
+                            <i class="fa fa-sort" aria-hidden="true"></i><span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
 {foreach from=$image_orders item=image_order name=loop}
-                            <li{if $image_order.SELECTED} class="active"{/if}><a href="{$image_order.URL}" rel="nofollow">{$image_order.DISPLAY}</a></li>
+                            <li class="nav-item{if $image_order.SELECTED} active{/if}"><a class="nav-link" href="{$image_order.URL}" rel="nofollow">{$image_order.DISPLAY}</a></li>
 {/foreach}
                         </ul>
                     </li>
@@ -99,7 +54,7 @@ $(document).ready(function() {
                         </a>
                         <ul class="dropdown-menu" role="menu">
 {foreach from=$image_derivatives item=image_derivative name=loop}
-                            <li{if $image_derivative.SELECTED} class="active"{/if}><a href="{$image_derivative.URL}" rel="nofollow">{$image_derivative.DISPLAY}</a></li>
+                            <li class="nav-item{if $image_derivative.SELECTED} active{/if}"><a class="nav-link" href="{$image_derivative.URL}" rel="nofollow">{$image_derivative.DISPLAY}</a></li>
 {/foreach}
                         </ul>
                     </li>
@@ -161,15 +116,15 @@ $(document).ready(function() {
                         </a>
                         <ul class="dropdown-menu">
 {if isset($U_MODE_POSTED)}
-                            <li>
-                                <a href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
                                     <i class="fa fa-share-alt" aria-hidden="true"></i> {'display a calendar by posted date'|@translate}
                                 </a>
                             </li>
 {/if}
 {if isset($U_MODE_CREATED)}
-                            <li>
-                                <a href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
                                     <i class="fa fa-camera-retro" aria-hidden="true"></i> {'display a calendar by creation date'|@translate}
                                 </a>
                             </li>

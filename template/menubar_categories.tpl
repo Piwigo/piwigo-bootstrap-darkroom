@@ -1,10 +1,10 @@
 <li class="nav-item dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{'Albums'|@translate} <span class="caret"></span></a>
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Albums'|@translate} <span class="caret"></span></a>
     <ul class="dropdown-menu dropdown-menu-scrollable" role="menu">
 {assign var='ref_level' value=0}
 {foreach from=$block->data.MENU_CATEGORIES item=cat}
-        <li {if $cat.SELECTED}class="active"{/if}{if $cat.LEVEL > 1} style="padding-left: {($cat.LEVEL -1) * 10}px;"{/if}>
-            <a href="{$cat.URL}">{$cat.NAME}
+        <li class="nav-item{if $cat.SELECTED} active{/if}"{if $cat.LEVEL > 1} style="padding-left: {($cat.LEVEL -1) * 10}px;"{/if}>
+            <a class="nav-link" href="{$cat.URL}">{$cat.NAME}
 {if $cat.count_images > 0}
                 <span class="badge" title="{$cat.TITLE}">{$cat.count_images}</span>
 {/if}
@@ -15,6 +15,6 @@
         </li>
 {/foreach}
         <li class="divider"></li>
-        <li><a href="#">{$block->data.NB_PICTURE|@translate_dec:'%d photo':'%d photos'}</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">{$block->data.NB_PICTURE|@translate_dec:'%d photo':'%d photos'}</a></li>
     </ul>
 </li>

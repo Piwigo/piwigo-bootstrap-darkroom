@@ -1,5 +1,5 @@
 <li class="nav-item dropdown" id="identificationDropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{if isset($USERNAME)}<i class="fa fa-user"></i> {$USERNAME}{else}{'Login'|@translate}{/if} <span class="caret"></span></a>
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{if isset($USERNAME)}<i class="fa fa-user"></i> {$USERNAME}{else}{'Login'|@translate}{/if} <span class="caret"></span></a>
     <ul class="dropdown-menu" role="menu">
 {strip}
     {if isset($USERNAME)}
@@ -27,16 +27,16 @@
          <li class="divider"></li>
     {/if}
     {if isset($U_REGISTER)}
-         <li><a href="{$U_REGISTER}" title="{'Create a new account'|@translate}" rel="nofollow">{'Register'|@translate}</a></li>
+         <li class="nav-item"><a class="nav-link" href="{$U_REGISTER}" title="{'Create a new account'|@translate}" rel="nofollow">{'Register'|@translate}</a></li>
     {/if}
     {if isset($U_LOGOUT)}
-        <li><a href="{$U_LOGOUT}">{'Logout'|@translate}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{$U_LOGOUT}">{'Logout'|@translate}</a></li>
     {/if}
     {if isset($U_PROFILE)}
-        <li><a href="{$U_PROFILE}" title="{'customize the appareance of the gallery'|@translate}">{'Customize'|@translate}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{$U_PROFILE}" title="{'customize the appareance of the gallery'|@translate}">{'Customize'|@translate}</a></li>
     {/if}
     {if isset($U_ADMIN)}
-        <li><a href="{$U_ADMIN}" title="{'available for administrators only'|@translate}">{'Administration'|@translate}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{$U_ADMIN}" title="{'available for administrators only'|@translate}">{'Administration'|@translate}</a></li>
     {/if}
 {/strip}
     </ul>
