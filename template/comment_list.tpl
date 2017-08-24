@@ -31,7 +31,7 @@
             </a>
 {else}
 {include file="http_scheme.tpl"}
-            <img class="gravatar" src="//www.gravatar.com/avatar/{$comment.EMAIL|trim|strtolower|md5}?d={$http_scheme}://{$smarty.server.HTTP_HOST}/{get_gallery_home_url()}themes/bootstrapdefault/img/user.png" />
+            <img class="gravatar" src="//www.gravatar.com/avatar/{$comment.EMAIL|trim|strtolower|md5}?d={$http_scheme}://{$smarty.server.HTTP_HOST}/{get_gallery_home_url()}themes/bootstrapi_darkroom/img/user.png" />
 {/if}
         </div>
         <div class="description">

@@ -197,7 +197,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
                         {/if}
                         {/foreach}
                         {strip}{combine_script id='core.scripts' path='themes/default/js/scripts.js' load='async'}
-                        {combine_script id='rating' require='core.scripts' path='themes/bootstrapdefault/js/rating.js' load='async'}
+                        {combine_script id='rating' require='core.scripts' path='themes/bootstrap_darkroom/js/rating.js' load='async'}
                         {footer_script require='jquery'}
                                 var _pwgRatingAutoQueue = _pwgRatingAutoQueue||[];
                                 _pwgRatingAutoQueue.push( {ldelim}rootUrl: '{$ROOT_URL}', image_id: {$current.id},

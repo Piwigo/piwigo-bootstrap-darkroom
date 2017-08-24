@@ -24,8 +24,8 @@
 
     <title>{if $PAGE_TITLE!=l10n('Home') && $PAGE_TITLE!=$GALLERY_TITLE}{$PAGE_TITLE} | {/if}{$GALLERY_TITLE}</title>
     <link rel="shortcut icon" type="image/x-icon" href="{$ROOT_URL}{$themeconf.icon_dir}/favicon.ico">
-    <link rel="icon" sizes="192x192" href="{$ROOT_URL}themes/bootstrapdefault/img/logo.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="{$ROOT_URL}themes/bootstrapdefault/img/logo.png">
+    <link rel="icon" sizes="192x192" href="{$ROOT_URL}themes/bootstrap_darkroom/img/logo.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="{$ROOT_URL}themes/bootstrap_darkroom/img/logo.png">
     <link rel="start" title="{'Home'|@translate}" href="{$U_HOME}" >
     <link rel="search" title="{'Search'|@translate}" href="{$ROOT_URL}search.php">
 {if isset($first.U_IMG)}
@@ -103,7 +103,7 @@
 {combine_script id='popper.js' require='jquery' path='themes/bootstrap_darkroom/components/popper.js/dist/umd/popper.min.js' load=$loc}
 {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/components/bootstrap/dist/js/bootstrap.min.js' load=$loc}
 {* {combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js' load='footer'} *}
-{combine_script id=$themeconf.name require='bootstrap' path='themes/bootstrapdefault/js/theme.js' load='footer'}
+{combine_script id=$themeconf.name require='bootstrap' path='themes/bootstrap_darkroom/js/theme.js' load='footer'}
 {if $theme_config_extra->bootstrap_theme == 'material'}
     {combine_script id='material.js' require='bootstrap' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/material.min.js' load='footer'}
     {combine_script id='ripples.js' require='material.js' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/ripples.min.js' load='footer'}
