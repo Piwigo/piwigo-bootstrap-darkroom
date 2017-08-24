@@ -12,11 +12,11 @@
 {if $action ne 'none'}
 <div class="container">
     <form id="lostPassword" action="{$form_action}?action={$action}{if isset($key)}&amp;key={$key}{/if}" method="post" class="form-horizontal">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card">
+            <h4 class="card-header">
                 {'Forgot your password?'|@translate}
-            </div>
-            <div class="panel-body">
+            </h4>
+            <div class="card-body">
                 <input type="hidden" name="pwg_token" value="{$PWG_TOKEN}">
 {if $action eq 'lost'}
                 <div>

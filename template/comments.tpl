@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div class="card my-md-3">
+        <div class="card my-3">
             <h4 class="card-header">
                 {'Display'|@translate}
             </h4>

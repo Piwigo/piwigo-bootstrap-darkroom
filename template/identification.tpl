@@ -11,11 +11,11 @@
 
 <div class="container">
     <form action="{$F_LOGIN_ACTION}" method="post" name="login_form" class="form-horizontal">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card">
+            <h4 class="card-header">
                 {'Connection settings'|@translate}
-            </div>
-            <div class="panel-body">
+            </h4>
+            <div class="card-body">
                 <div class="form-group">
                     <label for="username" class="col-sm-2 control-label">{'Username'|@translate}</label>
                     <div class="col-sm-4">

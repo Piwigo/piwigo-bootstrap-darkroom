@@ -1,10 +1,10 @@
 <div class="container">
     <form method="post" name="profile" action="{$F_ACTION}" id="profile" class="form-horizontal">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card">
+            <h4 class="card-header">
                 {'Registration'|@translate}
-            </div>
-            <div class="panel-body">
+            </h4>
+            <div class="card-body">
               <fieldset>
 {if isset($loaded_plugins['user_custom_fields'])}
 {$UCF_PROFILE_ADD}
@@ -54,11 +54,11 @@
             </div>
         </div>
 {if $ALLOW_USER_CUSTOMIZATION}
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card my-3">
+            <h4 class="card-header">
                 {'Preferences'|@translate}
-            </div>
-            <div class="panel-body">
+            </h4>
+            <div class="card-body">
                 <div class="form-group">
                     <label for="nb_image_page" class="col-sm-2 control-label">{'Number of photos per page'|@translate}</label>
                     <div class="col-sm-1">

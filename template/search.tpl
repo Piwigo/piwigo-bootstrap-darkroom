@@ -29,11 +29,11 @@
 
 <div class="container">
     <form method="post" name="search" action="{$F_SEARCH_ACTION}">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card">
+            <h4 class="card-header">
                 {'Search for words'|@translate}
-            </div>
-            <div class="panel-body">
+            </h4>
+            <div class="card-body">
                 <div class="row">
                     <div class="col-lg-7 col-md-9 col-sm-12 col-xs-12">
                         <input type="text" id="search_allwords" name="search_allwords" class="form-control" />
@@ -67,11 +67,11 @@
             </div>
         </div>
 {if count($AUTHORS)>=1}
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card mt-3">
+            <h4 class="card-header">
                 {'Search for Author'|@translate}
-            </div>
-            <div class="panel-body">
+            </h4>
+            <div class="card-body">
                 <div class="row">
                     <div class="col-lg-7 col-md-9 col-sm-12 col-xs-12">
                         <select id="authors" placeholder="{'Type in a search term'|translate}" name="authors[]" multiple>
@@ -85,11 +85,11 @@
         </div>
 {/if}
 {if isset($TAGS)}
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card mt-md-3">
+            <h4 class="card-header">
                 {'Search tags'|@translate}
-            </div>
-            <div class="panel-body">
+            </h4>
+            <div class="card-body">
                 <div class="row">
                     <div class="col-lg-7 col-md-9 col-sm-12 col-xs-12">
                         <select id="tags" placeholder="{'Type in a search term'|translate}" name="tags[]" multiple>
@@ -110,11 +110,11 @@
             </div>
         </div>
 {/if}
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card mt-3">
+            <h4 class="card-header">
                 {'Search by date'|@translate}
-            </div>
-            <div class="panel-body">
+            </h4>
+            <div class="card-body">
                 <label>{'Kind of date'|@translate}</label>
                 <div class="form-group radio">
                     <label class="radio-inline">
@@ -156,11 +156,11 @@
                  </div>
             </div>
         </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
+        <div class="card my-3">
+            <h4 class="card-header">
                 {'Search in albums'|@translate}
-            </div>
-            <div class="panel-body">
+            </h4>
+            <div class="card-body">
                 <div class="row">
                     <div class="col-lg-7 col-md-9 col-sm-12 col-xs-12">
                         <select id="categories" name="cat[]" multiple>

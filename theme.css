@@ -10,6 +10,11 @@ html, body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+
+#the_page {
+  height: 100%;
+}
+
 .col-centered {
  float: none;
  margin: 0 auto;

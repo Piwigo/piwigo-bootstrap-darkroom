@@ -12,11 +12,11 @@
 {include file='infos_errors.tpl'}
 
 <div class="container">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
+    <div class="card">
+        <h4 class="card-header">
             {'Notification'|@translate}
-        </div>
-        <div class="panel-body notification">
+        </h4>
+        <div class="card-body notification">
             <p>{'The RSS notification feed provides notification on news from this website : new photos, updated albums, new comments. Use a RSS feed reader.'|@translate}</p>
             <p><a href="{$U_FEED_IMAGE_ONLY}">{'Photos only RSS feed'|@translate}</a></p>
             <p><a href="{$U_FEED}">{'Complete RSS feed (photos, comments)'|@translate}</a></p>

@@ -14,7 +14,7 @@ body {
 }
 
 /* Navbar & Navmenu*/
-.navbar-main .navbar-header {
+.navbar-main .navbar-brand {
   font-weight: bold;
 }
 
@@ -132,10 +132,12 @@ a:active,
 /* Buttons */
 .btn-default { outline: none !important; }
 
-/* Panels */
-.panel { background-color: #4f4f4f }
-.panel-primary { border-color: #2e2e2e; }
-.panel-primary>.panel-heading {
+/* Cards */
+.card { 
+  background-color: #4f4f4f;
+  border-color: #2e2e2e;
+}
+.card>.card-header {
   color: #fff;
   background-color: #2e2e2e;
   border-color: #2e2e2e;
