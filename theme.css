@@ -405,10 +405,14 @@ a.pswp__share--google:hover {
 }
 
 /* Picture page nav buttons */
+#navigationButtons i.fa {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 @media (max-width: 320px) {
-  #navigationButtons span.glyphicon {
-    margin-left: 15px;
-    margin-right: 15px;
+  #navigationButtons i.fa {
+    margin-left: .7rem;
+    margin-right: .7rem;
   }
 }
 
