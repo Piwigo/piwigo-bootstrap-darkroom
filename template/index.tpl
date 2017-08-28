@@ -42,7 +42,7 @@ $(document).ready(function() {
                         </a>
                         <ul class="dropdown-menu" role="menu">
 {foreach from=$image_orders item=image_order name=loop}
-                            <li class="nav-item{if $image_order.SELECTED} active{/if}"><a class="nav-link" href="{$image_order.URL}" rel="nofollow">{$image_order.DISPLAY}</a></li>
+                            <li class="dropdown-item{if $image_order.SELECTED} active{/if}"><a href="{$image_order.URL}" rel="nofollow">{$image_order.DISPLAY}</a></li>
 {/foreach}
                         </ul>
                     </li>
@@ -54,7 +54,7 @@ $(document).ready(function() {
                         </a>
                         <ul class="dropdown-menu" role="menu">
 {foreach from=$image_derivatives item=image_derivative name=loop}
-                            <li class="nav-item{if $image_derivative.SELECTED} active{/if}"><a class="nav-link" href="{$image_derivative.URL}" rel="nofollow">{$image_derivative.DISPLAY}</a></li>
+                            <li class="dropdown-item{if $image_derivative.SELECTED} active{/if}"><a href="{$image_derivative.URL}" rel="nofollow">{$image_derivative.DISPLAY}</a></li>
 {/foreach}
                         </ul>
                     </li>
@@ -116,15 +116,15 @@ $(document).ready(function() {
                         </a>
                         <ul class="dropdown-menu">
 {if isset($U_MODE_POSTED)}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
+                            <li class="dropdown-item">
+                                <a href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
                                     <i class="fa fa-share-alt" aria-hidden="true"></i> {'display a calendar by posted date'|@translate}
                                 </a>
                             </li>
 {/if}
 {if isset($U_MODE_CREATED)}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
+                            <li class="dropdown-item">
+                                <a href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
                                     <i class="fa fa-camera-retro" aria-hidden="true"></i> {'display a calendar by creation date'|@translate}
                                 </a>
                             </li>

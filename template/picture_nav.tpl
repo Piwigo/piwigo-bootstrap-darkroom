@@ -44,16 +44,16 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
                     </a>
                     <ul class="dropdown-menu" role="menu">
 {foreach from=$current.unique_derivatives item=derivative key=derivative_type}
-                        <li id="derivative{$derivative->get_type()}" class="nav-item derivative-li{if $derivative->get_type() == $current.selected_derivative->get_type()} active{/if}">
-                            <a class="nav-link" href="javascript:changeImgSrc('{$derivative->get_url()|@escape:javascript}','{$derivative_type}','{$derivative->get_type()}')" rel="nofollow">
+                        <li id="derivative{$derivative->get_type()}" class="dropdown-item derivative-li{if $derivative->get_type() == $current.selected_derivative->get_type()} active{/if}">
+                            <a href="javascript:changeImgSrc('{$derivative->get_url()|@escape:javascript}','{$derivative_type}','{$derivative->get_type()}')" rel="nofollow">
                                 {$derivative->get_type()|@translate}<span class="derivativeSizeDetails"> ({$derivative->get_size_hr()})</span>
                             </a>
                         </li>
 {/foreach}
 {if isset($U_ORIGINAL)}
 {combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:phpWGOpenWindow('{$U_ORIGINAL}','xxx','scrollbars=yes,toolbar=no,status=no,resizable=yes')" rel="nofollow">{'Original'|@translate}</a>
+                        <li class="dropdown-item">
+                            <a href="javascript:phpWGOpenWindow('{$U_ORIGINAL}','xxx','scrollbars=yes,toolbar=no,status=no,resizable=yes')" rel="nofollow">{'Original'|@translate}</a>
                         </li>
 {/if}
                     </ul>
@@ -86,7 +86,7 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$current.formats item=format}
-                        <li class="nav-item"><a class="nav-link" href="{$format.download_url}" rel="nofollow">{$format.label}<span class="downloadformatDetails"> ({$format.filesize})</span></a></li>
+                        <li class="dropdown-item"><a href="{$format.download_url}" rel="nofollow">{$format.label}<span class="downloadformatDetails"> ({$format.filesize})</span></a></li>
   {/foreach}
                     </ul>
 {/if} {* has formats *}
