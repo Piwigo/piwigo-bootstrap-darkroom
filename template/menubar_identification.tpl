@@ -4,10 +4,10 @@
 {strip}
     {if isset($USERNAME)}
         <li class="dropdown-header">{'Hello'|@translate} {$USERNAME}!</li>
-        <li class="divider"></li>
+        <li class="dropdown-divider"></li>
     {/if}
     {if isset($U_LOGIN)}
-        <li>
+        <li class="dropdown-item">
             <form class="navbar-form" method="post" action="{$U_LOGIN}" id="quickconnect">
                 <div class="form-group">
                     <input class="form-control" type="text" name="username" id="username" value="" placeholder="{'Username'|@translate}">
@@ -24,19 +24,19 @@
                 <button type="submit" class="btn btn-primary" name="login">{'Login'|@translate}</button>
             </form>
          </li>
-         <li class="divider"></li>
+         <li class="dropdown-divider"></li>
     {/if}
     {if isset($U_REGISTER)}
-         <li class="nav-item"><a class="nav-link" href="{$U_REGISTER}" title="{'Create a new account'|@translate}" rel="nofollow">{'Register'|@translate}</a></li>
+         <li class="dropdown-item"><a href="{$U_REGISTER}" title="{'Create a new account'|@translate}" rel="nofollow">{'Register'|@translate}</a></li>
     {/if}
     {if isset($U_LOGOUT)}
-        <li class="nav-item"><a class="nav-link" href="{$U_LOGOUT}">{'Logout'|@translate}</a></li>
+        <li class="dropdown-item"><a href="{$U_LOGOUT}">{'Logout'|@translate}</a></li>
     {/if}
     {if isset($U_PROFILE)}
-        <li class="nav-item"><a class="nav-link" href="{$U_PROFILE}" title="{'customize the appareance of the gallery'|@translate}">{'Customize'|@translate}</a></li>
+        <li class="dropdown-item"><a href="{$U_PROFILE}" title="{'customize the appareance of the gallery'|@translate}">{'Customize'|@translate}</a></li>
     {/if}
     {if isset($U_ADMIN)}
-        <li class="nav-item"><a class="nav-link" href="{$U_ADMIN}" title="{'available for administrators only'|@translate}">{'Administration'|@translate}</a></li>
+        <li class="dropdown-item"><a href="{$U_ADMIN}" title="{'available for administrators only'|@translate}">{'Administration'|@translate}</a></li>
     {/if}
 {/strip}
     </ul>

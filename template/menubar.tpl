@@ -15,7 +15,7 @@
     {/if}
     {if not empty($blocks.mbSpecials->template)}
     {if not empty($blocks.mbMenu->template)}
-    <li role="separator" class="divider"></li>
+    <li class="dropdown-divider"></li>
     {/if}
     {include file=$blocks.mbSpecials->template}
     {/if}
