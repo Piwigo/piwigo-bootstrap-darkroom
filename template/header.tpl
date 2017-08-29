@@ -65,6 +65,7 @@
 {/if}
 {*    {combine_css path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css' order=-15} *}
     {combine_css path='themes/bootstrap_darkroom/components/font-awesome/css/font-awesome.min.css' order=-14}
+    {combine_css path='themes/bootstrap_darkroom/css/bootstrapdefault-theme.css' order=-9}
 {foreach from=$themes item=theme}
 {if $theme.load_css}
     {combine_css path="themes/`$theme.id`/theme.css" order=-10}

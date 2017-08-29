@@ -30,8 +30,8 @@
                 </div>
                 <div class="form-group">
                     <label for="cat" class="col-sm-2 control-label">{'Album'|@translate}</label>
-                    <div class="col-sm-4 html-options">
-                        <select name="cat" id="cat">
+                    <div class="col-sm-4">
+                        <select name="cat" id="cat" class="form-control">
                             <option value="0">------------</option>
 {html_options options=$categories selected=$categories_selected}
                         </select>
@@ -39,8 +39,10 @@
                 </div>
                 <div class="form-group">
                     <label for="since" class="col-sm-2 control-label">{'Since'|@translate}</label>
-                    <div class="col-sm-4 html-options">
-{html_options name=since options=$since_options selected=$since_options_selected}
+                    <div class="col-sm-4">
+                        <select name="since" class="form-control">
+{html_options options=$since_options selected=$since_options_selected}
+                        </select>
                     </div>
                 </div>
             </div>
@@ -52,20 +54,26 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="sort_by" class="col-sm-2 control-label">{'Sort by'|@translate}</label>
-                    <div class="col-sm-4 html-options">
-{html_options name=sort_by options=$sort_by_options selected=$sort_by_options_selected}
+                    <div class="col-sm-4">
+                        <select class="form-control" name="sort_by">
+{html_options options=$sort_by_options selected=$sort_by_options_selected}
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="sort_order" class="col-sm-2 control-label">{'Sort order'|@translate}</label>
-                    <div class="col-sm-4 html-options">
-{html_options name=sort_order options=$sort_order_options selected=$sort_order_options_selected}
+                    <div class="col-sm-4">
+                        <select class="form-control" name="sort_order">
+{html_options options=$sort_order_options selected=$sort_order_options_selected}
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="items_number" class="col-sm-2 control-label">{'Number of items'|@translate}</label>
-                    <div class="col-sm-4 html-options">
-                        {html_options name=items_number options=$item_number_options selected=$item_number_options_selected}
+                    <div class="col-sm-4">
+                        <select class="form-control" name="items_number">
+{html_options options=$item_number_options selected=$item_number_options_selected}
+                        </select>
                     </div>
                 </div>
             </div>

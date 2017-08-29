@@ -13,7 +13,7 @@ require_once(PHPWG_THEMES_PATH . 'bootstrap_darkroom/include/config.php');
 $themeconf = array(
     'name' => 'bootstrap_darkroom',
     'parent' => 'bootstrapdefault',
-    'load_parent_css' => true,
+    'load_parent_css' => false,
     'load_parent_local_head' => true,
     'local_head' => 'local_head.tpl',
     'url' => 'https://kuther.net/'
