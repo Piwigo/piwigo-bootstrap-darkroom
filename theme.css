@@ -63,12 +63,16 @@ html, body {
 .navbar-contextual .navbar-right ul.nav {
   white-space: nowrap;
 }
-@media (max-width: 460px) {
+@media (max-width: 767px) {
   .navbar-contextual .navbar-brand {
     width: 80%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+  .navbar-form {
+    border-top: none;
+    border-bottom: none;
   }
 }
 
@@ -81,12 +85,6 @@ html, body {
   margin-bottom: 5px;
 }
 
-@media (max-width: 767px) {
-  .navbar-form {
-    border-top: none;
-    border-bottom: none;
-  }
-}
 @media (min-width: 768px) {
   #navbar-menubar>#quicksearch {
     float: left;
@@ -406,8 +404,8 @@ a.pswp__share--google:hover {
 
 /* Picture page nav buttons */
 #navigationButtons i.fa {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 @media (max-width: 320px) {
   #navigationButtons i.fa {

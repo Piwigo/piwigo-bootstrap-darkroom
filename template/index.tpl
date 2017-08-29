@@ -173,7 +173,7 @@ $(document).ready(function() {
         {$CONTENT_DESCRIPTION}
     </h4>
 {/if}
-    <div id="content" class="{if $theme_config_extra->category_wells == 'never' || ($theme_config_extra->category_wells == 'mobile_only' && get_device() == 'desktop')}row{if $smarty.cookies.view == 'list'} content-list{else} content-grid{/if}{/if}">
+    <div id="content" class="{if $smarty.cookies.view == 'list'}content-list{else}content-grid{/if}{if empty($THUMBNAILS)} row{/if}">
 {if !empty($CONTENT)}
     <!-- Start of content -->
     {$CONTENT}
@@ -208,7 +208,7 @@ $(window).on('resize', function() {
 
 {if !empty($THUMBNAILS)}
         <!-- Start of thumbnails -->
-        <div id="thumbnails">{$THUMBNAILS}</div>
+        <div id="thumbnails" class="row">{$THUMBNAILS}</div>
 {footer_script}{literal}$(document).ready(function(){$('#content img').load(function(){$('#content .col-inner').equalHeights()})});{/literal}{/footer_script}
 {if $theme_config_extra->photoswipe}
         <div id="photoSwipeData">

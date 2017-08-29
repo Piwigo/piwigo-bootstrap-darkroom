@@ -10,10 +10,10 @@ if ($('.jumbotron').length > 0) {
 {/footer_script}*}
 <nav class="navbar navbar-contextual navbar-expand-lg fixed-top">
     <div class="container">
+        <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a> <small>[{$PHOTO}]</small></div>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span>
         </button>
-        <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a> <small>[{$PHOTO}]</small></div>
 {if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material'}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {

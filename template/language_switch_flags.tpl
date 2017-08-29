@@ -5,7 +5,7 @@
     </a>
     <ul class="dropdown-menu dropdown-menu-scrollable" role="menu">
 {foreach from=$lang_switch.flags item=flag name=f}
-        <li class="nav-item{if $lang_switch.Active.code==$flag.code} active{/if}">
+        <li class="dropdown-item{if $lang_switch.Active.code==$flag.code} active{/if}">
             <a href="{$flag.url}">
 {if $lang_info.direction=="ltr"}
                 <span class="pwg-icon langflag-{$flag.code}">&nbsp;</span><span class="langflag-text-ltf">{$flag.title}</span>
