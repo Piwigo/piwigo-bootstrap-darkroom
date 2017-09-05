@@ -96,7 +96,7 @@ $(document).ready(function() {
     $('#bd_downloads ul').find('span').each(function() { $(this).appendTo($(this).prev('a')); });
   }
 });
-$(window).load(function() {
+$(window).on('load', function() {
   if ($('#batchDownloadLink').next('ul#batchDownloadBox').length > 0) {
     $('#batchDownloadLink').off().on('click', function() { $('#downloadSizeLink').dropdown() });
   }
@@ -122,7 +122,7 @@ $(document).ready(function() {
   $('#downloadSizeBox').addClass('dropdown-menu').removeClass('switchBox');
 });
 
-$(window).load(function() {
+$(window).on('load', function() {
   $('#downloadSizeBox').off('mouseleave click');
   $('#downloadSizeLink').off().on('click', function() { $('#downloadSizeLink').dropdown() });
 });
