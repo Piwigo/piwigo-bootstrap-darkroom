@@ -1,5 +1,5 @@
             <!-- Start of menubar.tpl -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav{if !$theme_config->quicksearch_navbar} ml-auto{/if}">
 {assign var="discover_menu_exists" value=false}
 {foreach from=$blocks key=id item=block}
 {if not empty($block->template)}

@@ -120,7 +120,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-menubar">
 {if $theme_config->quicksearch_navbar}
-                  <form class="navbar-form" role="search" action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
+                  <form class="form-inline navbar-form ml-auto" role="search" action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
                     <i class="fa fa-search"></i>
                     <div class="form-group">
                         <input type="text" name="q" id="qsearchInput" class="form-control" placeholder="{'Search'|@translate}" />
