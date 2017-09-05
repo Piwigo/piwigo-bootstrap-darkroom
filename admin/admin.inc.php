@@ -11,19 +11,20 @@ load_language('theme.lang', PHPWG_THEMES_PATH.'bootstrap_darkroom/');
 // Constants
 define('THEME_ID', basename(dirname(dirname(__FILE__))));
 define('ADMIN_PATH',   get_root_url() . 'admin.php?page=theme&theme=' . THEME_ID);
-define('TAB_SETTINGS', 'settings');
+define('TAB_APPEARANCE', 'appearance');
+define('TAB_COMPONENTS', 'components');
 define('TAB_ABOUT', 'about');
 
 // Get current tab
-$page['tab'] = isset($_GET['tab']) ? $_GET['tab'] : $page['tab'] = TAB_SETTINGS;
-if (!in_array($page['tab'], array(TAB_SETTINGS, TAB_ABOUT))) {
-    $page['tab'] = TAB_SETTINGS;
+$page['tab'] = isset($_GET['tab']) ? $_GET['tab'] : $page['tab'] = TAB_APPEARANCE;
+if (!in_array($page['tab'], array(TAB_APPEARANCE, TAB_COMPONENTS, TAB_ABOUT))) {
+    $page['tab'] = TAB_APPEARANCE;
 }
 
 $themeconfig = new \BootstrapDarkroom\Config();
 
 // Save settings
-if ($page['tab'] == TAB_SETTINGS) {
+if (in_array($page['tab'], array(TAB_APPEARANCE, TAB_COMPONENTS))) {
     if (isset($_POST['boostrap_darkroom_settings'])) {
         $themeconfig->fromPost($_POST);
         $themeconfig->save();
@@ -32,7 +33,8 @@ if ($page['tab'] == TAB_SETTINGS) {
 // TabSheet
 $tabsheet = new tabsheet();
 $tabsheet->set_id('bsdark');
-$tabsheet->add(TAB_SETTINGS, 'Bootstrap Darkroom ' . l10n('Settings'), ADMIN_PATH . '&tab=' . TAB_SETTINGS);
+$tabsheet->add(TAB_APPEARANCE, l10n('Appearance'), ADMIN_PATH . '&tab=' . TAB_APPEARANCE);
+$tabsheet->add(TAB_COMPONENTS, l10n('Components'), ADMIN_PATH . '&tab=' . TAB_COMPONENTS);
 $tabsheet->add(TAB_ABOUT, l10n('About'), ADMIN_PATH . '&tab=' . TAB_ABOUT);
 $tabsheet->select($page['tab']);
 $tabsheet->assign();
