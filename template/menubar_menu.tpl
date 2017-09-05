@@ -12,7 +12,7 @@
 {if is_array($link)}
       <li class="dropdown-item">
           <a href="{$link.URL}" title="{$link.TITLE}"{if isset($link.REL)} {$link.REL}{/if}>{$link.NAME}
-              {if isset($link.COUNTER)}<span class="badge">{$link.COUNTER}</span>{/if}
+              {if isset($link.COUNTER)}<span class="badge badge-primary">{$link.COUNTER}</span>{/if}
           </a>
       </li>
 {/if}
