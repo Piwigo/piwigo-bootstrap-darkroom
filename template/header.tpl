@@ -57,11 +57,11 @@
 {if $theme_config_extra->bootstrap_theme == 'bootswatch'}
     {combine_css path="themes/bootstrap_darkroom/components/bootswatch/{$theme_config_extra->bootswatch_theme}/bootstrap.min.css" order=-20}
     {combine_css path="themes/bootstrap_darkroom/css/bootswatch/navmenu-{$theme_config_extra->bootswatch_theme}.css" order=-5}
+{elseif $theme_config_extra->bootstrap_theme == 'material'}
+    {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-17}
+    {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" order=-5}
 {else}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap.min.css" order=-20}
-{/if}
-{if $theme_config_extra->bootstrap_theme == 'default'}
-    {combine_css path="themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap-theme.min.css" order=-18}
 {/if}
 {*    {combine_css path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css' order=-15} *}
     {combine_css path='themes/bootstrap_darkroom/components/font-awesome/css/font-awesome.min.css' order=-14}
@@ -74,14 +74,6 @@
 {/foreach}
 {if $theme_config_extra->bootstrap_theme == 'darkroom'}
     {combine_css path="themes/bootstrap_darkroom/css/darkroom-colors.css" order=-5}
-{/if}
-{if $theme_config_extra->bootstrap_theme == 'material'}
-    {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-6}
- {if $theme_config_extra->material_color == 'teal'}
-    {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" order=-5}
-{else}
-    {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config_extra->material_color}/bootstrap-material-design.min.css" order=-5}
- {/if}
 {/if}
     {combine_css path="themes/bootstrap_darkroom/css/fixplugins.css" order=9999}
 {if file_exists("local/bootstrapdefault/custom.css")}
