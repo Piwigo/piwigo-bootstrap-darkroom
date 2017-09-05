@@ -4,9 +4,9 @@
 {footer_script require='jquery' require="slick.carousel"}{strip}
 $(document).ready(function(){
   $('#thumbnailCarousel').slick({
-    infinite: {if $theme_config_extra->slick_infinite}true{else}false{/if},
-    lazyLoad: '{if $theme_config_extra->slick_lazyload == "progressive"}progressive{else}ondemand{/if}',
-{if $theme_config_extra->slick_centered}
+    infinite: {if $theme_config->slick_infinite}true{else}false{/if},
+    lazyLoad: '{if $theme_config->slick_lazyload == "progressive"}progressive{else}ondemand{/if}',
+{if $theme_config->slick_centered}
     centerMode: true,
     swipeToSlide: true,
     slidesToShow: {if sizeOf($thumbnails) <= 7}{if sizeOf($thumbnails) > 2 && (sizeOf($thumbnails) % 2 == 0)}{sizeOf($thumbnails) -1}{else}{sizeOf($thumbnails)}{/if}{else}7{/if},

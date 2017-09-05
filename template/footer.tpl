@@ -31,11 +31,11 @@
         </div>
 {/if}
     </div>
-{if $theme_config_extra->photoswipe && ($BODY_ID == "thePicturePage" || !empty($THUMBNAILS))}
+{if $theme_config->photoswipe && ($BODY_ID == "thePicturePage" || !empty($THUMBNAILS))}
 {include file='_photoswipe_div.tpl'}
 {/if}
 
-{if ($theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material') && $BODY_ID !== 'thePicturePage' && $BODY_ID !== 'theCategoryPage'}
+{if ($theme_config->bootstrap_theme == 'bootswatch' || $theme_config->bootstrap_theme == 'material') && $BODY_ID !== 'thePicturePage' && $BODY_ID !== 'theCategoryPage'}
 {footer_script require='jquery'}
 $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
 {/footer_script}

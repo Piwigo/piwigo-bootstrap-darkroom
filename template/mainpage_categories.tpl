@@ -12,7 +12,7 @@
 {define_derivative name='derivative_params' width=$width height=$height crop=true}
 {define_derivative name='derivative_params_square' type=IMG_SQUARE}
 {foreach from=$category_thumbnails item=cat name=cat_loop}
-{if $theme_config_extra->category_wells == 'never' || ($theme_config_extra->category_wells == 'mobile_only' && get_device() == 'desktop')}
+{if $theme_config->category_wells == 'never' || ($theme_config->category_wells == 'mobile_only' && get_device() == 'desktop')}
 {assign var=derivative value=$pwg->derivative($derivative_params, $cat.representative.src_image)}
 {if !$derivative->is_cached()}
     {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
@@ -40,7 +40,7 @@
             <p>{$cat.CAPTION_NB_IMAGES}</p>
 {if not empty($cat.DESCRIPTION)}
             <div class="description">{$cat.DESCRIPTION}</div>
-{if $theme_config_extra->cat_descriptions}
+{if $theme_config->cat_descriptions}
 {html_style}
 .content-grid .col-inner .caption .description { display: block; }
 {/html_style}

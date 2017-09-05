@@ -14,7 +14,7 @@ if ($('.jumbotron').length > 0) {
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span>
         </button>
-{if $theme_config_extra->bootstrap_theme == 'bootswatch' || $theme_config_extra->bootstrap_theme == 'material'}
+{if $theme_config->bootstrap_theme == 'bootswatch' || $theme_config->bootstrap_theme == 'material'}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
 $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
@@ -61,7 +61,7 @@ $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-bra
 {/if}
 {if isset($U_SLIDESHOW_START)}
                 <li class="nav-item">
-                    <a class="nav-link" href="{if $theme_config_extra->photoswipe}javascript:;{else}{$U_SLIDESHOW_START}{/if}" title="{'slideshow'|@translate}" id="startSlideshow" rel="nofollow">
+                    <a class="nav-link" href="{if $theme_config->photoswipe}javascript:;{else}{$U_SLIDESHOW_START}{/if}" title="{'slideshow'|@translate}" id="startSlideshow" rel="nofollow">
                         <i class="fa fa-play" aria-hidden="true"></i>
                     </a>
                 </li>

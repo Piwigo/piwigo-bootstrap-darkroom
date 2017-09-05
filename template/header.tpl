@@ -54,10 +54,10 @@
 {/if}
 
 {strip}
-{if $theme_config_extra->bootstrap_theme == 'bootswatch'}
-    {combine_css path="themes/bootstrap_darkroom/components/bootswatch/{$theme_config_extra->bootswatch_theme}/bootstrap.min.css" order=-20}
-    {combine_css path="themes/bootstrap_darkroom/css/bootswatch/navmenu-{$theme_config_extra->bootswatch_theme}.css" order=-5}
-{elseif $theme_config_extra->bootstrap_theme == 'material'}
+{if $theme_config->bootstrap_theme == 'bootswatch'}
+    {combine_css path="themes/bootstrap_darkroom/components/bootswatch/{$theme_config->bootswatch_theme}/bootstrap.min.css" order=-20}
+    {combine_css path="themes/bootstrap_darkroom/css/bootswatch/navmenu-{$theme_config->bootswatch_theme}.css" order=-5}
+{elseif $theme_config->bootstrap_theme == 'material'}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" order=-20}
     {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-19}
 {else}
@@ -65,14 +65,14 @@
 {/if}
 {*    {combine_css path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css' order=-15} *}
     {combine_css path='themes/bootstrap_darkroom/components/font-awesome/css/font-awesome.min.css' order=-14}
-    {combine_css path='themes/bootstrap_darkroom/css/bootstrapdefault-theme.css' order=-9}
+    {combine_css path='themes/bootstrap_darkroom/css/bootstrapdefault-theme.css' order=-11}
 {foreach from=$themes item=theme}
 {if $theme.load_css}
     {combine_css path="themes/`$theme.id`/theme.css" order=-10}
 {/if}
 {if !empty($theme.local_head)}{include file=$theme.local_head load_css=$theme.load_css}{/if}
 {/foreach}
-{if $theme_config_extra->bootstrap_theme == 'darkroom'}
+{if $theme_config->bootstrap_theme == 'darkroom'}
     {combine_css path="themes/bootstrap_darkroom/css/darkroom-colors.css" order=-5}
 {/if}
     {combine_css path="themes/bootstrap_darkroom/css/fixplugins.css" order=9999}
@@ -92,7 +92,7 @@
 {combine_script id='popper.js' require='jquery' path='themes/bootstrap_darkroom/components/popper.js/dist/umd/popper.min.js' load=$loc}
 {* {combine_script id='jasny.boostrap' require='bootstrap' path='themes/bootstrap_darkroom/components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js' load='footer'} *}
 {combine_script id=$themeconf.name require='bootstrap' path='themes/bootstrap_darkroom/js/theme.js' load='footer'}
-{if $theme_config_extra->bootstrap_theme == 'material'}
+{if $theme_config->bootstrap_theme == 'material'}
     {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/bootstrap-material-design.min.js' load=$loc}
 {else}
     {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/components/bootstrap/dist/js/bootstrap.min.js' load=$loc}
@@ -110,8 +110,8 @@
 {if $BODY_ID != 'thePicturePage'}
         <nav class="navbar navbar-expand-lg navbar-main">
             <div class="container">
-{if $theme_config_extra->logo_image_enabled && $theme_config_extra->logo_image_path !== ''}
-                <a class="navbar-brand mr-auto" href="{$U_HOME}"><img class="responsive" src="{$ROOT_URL}{$theme_config_extra->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>
+{if $theme_config->logo_image_enabled && $theme_config->logo_image_path !== ''}
+                <a class="navbar-brand mr-auto" href="{$U_HOME}"><img class="responsive" src="{$ROOT_URL}{$theme_config->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>
 {else}
                 <a class="navbar-brand mr-auto" href="{$U_HOME}">{$GALLERY_TITLE}</a>
 {/if}
@@ -119,7 +119,7 @@
                     <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-menubar">
-{if $theme_config_extra->quicksearch_navbar}
+{if $theme_config->quicksearch_navbar}
                   <form class="navbar-form" role="search" action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
                     <i class="fa fa-search"></i>
                     <div class="form-group">
@@ -140,7 +140,7 @@ $(qsearch_icon).click(function () {
         </nav>
 {/if}
 
-{if !isset($slideshow) && $BODY_ID != 'thePicturePage' && $theme_config_extra->show_jumbotron}
+{if !isset($slideshow) && $BODY_ID != 'thePicturePage' && $theme_config->show_jumbotron}
         <div class="jumbotron">
             <div class="container">
                 <div id="theHeader">{$PAGE_BANNER}</div>

@@ -1,17 +1,15 @@
 <?php
 namespace BootstrapDarkroom;
 
-use BoostrapDefault\Config;
-require_once(PHPWG_THEMES_PATH . 'bootstrapdefault/include/config.php');
-
-class ExtraConfig {
+class Config {
 
     const CONF_PARAM = 'bootstrap_darkroom';
-    const CONF_VERSION = 13;
+    const CONF_VERSION = 14;
 
     const TYPE_BOOL = 'bool';
     const TYPE_STRING = 'string';
     const TYPE_NUM = 'numeric';
+    const TYPE_FILE = 'file';
 
     const KEY_VERSION = 'conf_version';
 
@@ -35,6 +33,18 @@ class ExtraConfig {
     const KEY_QUICKSEARCH_NAVBAR = 'quicksearch_navbar';
     const KEY_CAT_DESCRIPTIONS = 'cat_descriptions';
 
+    const KEY_SOCIAL_ENABLED = 'social_enabled';
+    const KEY_SOCIAL_TWITTER = 'social_twitter';
+    const KEY_SOCIAL_FACEBOOK = 'social_facebook';
+    const KEY_SOCIAL_GOOGLE_PLUS = 'social_google_plus';
+                                                                                                                                                                                                   
+    const KEY_COMMENTS_TYPE = 'comments_type';
+    const KEY_COMMENTS_DISQUS_SHORTNAME = 'comments_disqus_shortname';
+                                                                                                                                                                                                   
+    const KEY_TAG_CLOUD_TYPE = 'tag_cloud_type';
+                                                                                                                                                                                                   
+    const KEY_CUSTOM_CSS = 'custom_css';
+
     private $defaults = array(
         self::KEY_BOOTSTRAP_THEME => 'darkroom',
         self::KEY_BOOTSWATCH_THEME => 'cerulean',
@@ -54,7 +64,15 @@ class ExtraConfig {
         self::KEY_LOGO_IMAGE_ENABLED => false,
         self::KEY_LOGO_IMAGE_PATH => '',
         self::KEY_QUICKSEARCH_NAVBAR => false,
-        self::KEY_CAT_DESCRIPTIONS => false
+        self::KEY_CAT_DESCRIPTIONS => false,
+        self::KEY_SOCIAL_ENABLED => true,
+        self::KEY_SOCIAL_TWITTER => true,
+        self::KEY_SOCIAL_FACEBOOK => true,
+        self::KEY_SOCIAL_GOOGLE_PLUS => true,
+        self::KEY_COMMENTS_TYPE => 'piwigo',
+        self::KEY_COMMENTS_DISQUS_SHORTNAME => null,
+        self::KEY_TAG_CLOUD_TYPE => 'basic',
+        self::KEY_CUSTOM_CSS => null,
     );
 
     private $types = array(
@@ -76,7 +94,15 @@ class ExtraConfig {
         self::KEY_LOGO_IMAGE_ENABLED => self::TYPE_BOOL,
         self::KEY_LOGO_IMAGE_PATH => self::TYPE_STRING,
         self::KEY_QUICKSEARCH_NAVBAR => self::TYPE_BOOL,
-        self::KEY_CAT_DESCRIPTIONS => self::TYPE_BOOL
+        self::KEY_CAT_DESCRIPTIONS => self::TYPE_BOOL,
+        self::KEY_SOCIAL_ENABLED => self::TYPE_BOOL,
+        self::KEY_SOCIAL_TWITTER => self::TYPE_BOOL,
+        self::KEY_SOCIAL_FACEBOOK => self::TYPE_BOOL,
+        self::KEY_SOCIAL_GOOGLE_PLUS => self::TYPE_BOOL,
+        self::KEY_COMMENTS_TYPE => self::TYPE_STRING,
+        self::KEY_COMMENTS_DISQUS_SHORTNAME => self::TYPE_STRING,
+        self::KEY_TAG_CLOUD_TYPE => self::TYPE_STRING,
+        self::KEY_CUSTOM_CSS => self::TYPE_FILE,
     );
 
     private $config = array();
@@ -107,6 +133,10 @@ class ExtraConfig {
         $this->save();
     }
 
+    private function initFiles() {
+        $this->files[self::KEY_CUSTOM_CSS] = PHPWG_ROOT_PATH . PWG_LOCAL_DIR . 'bootstrap_darkroom/custom.css';
+    }
+
     public function __set($key, $value) {
         if (array_key_exists($key, $this->defaults)) {
             switch ($this->types[$key]) {
@@ -119,6 +149,9 @@ class ExtraConfig {
                 case self::TYPE_NUM:
                     $this->config[$key] = is_numeric($value) ? $value : $this->defaults[$key];
                     break;
+                case self::TYPE_FILE:
+                    $this->saveFile($key, $value);
+                    break;
             }
         }
     }
@@ -130,6 +163,8 @@ class ExtraConfig {
                 case self::TYPE_BOOL:
                 case self::TYPE_NUM:
                     return $this->config[$key];
+                case self::TYPE_FILE:
+                    return $this->loadFile($key);
             }
         } else {
             return null;
@@ -156,6 +191,27 @@ class ExtraConfig {
             if (isset($config[$key])) {
                 $this->config[$key] = $config[$key];
             }
+        }
+    }
+    private function saveFile($key, $content) {
+        $file = $this->files[$key];
+        $dir = dirname($file);
+        if (!file_exists($dir)) {
+            mkdir($dir, 0755, true);
+        }
+        if (empty($content) && file_exists($file)) {
+            unlink($file);
+        } else {
+            file_put_contents($file, $content);
+        }
+    }
+                                                                                                                                                                                                   
+    private function loadFile($key) {
+        $file = $this->files[$key];
+        if (file_exists($file)) {
+            return file_get_contents($file);
+        } else {
+            return null;
         }
     }
 }

@@ -83,7 +83,7 @@ function get_all_thumbnails_in_category()
   
   $tpl_thumbnails_var = array();
 
-  $theme_config = $template->get_template_vars('theme_config_extra');
+  $theme_config = $template->get_template_vars('theme_config');
 
   if ($theme_config->photoswipe_metadata) {
     if (array_key_exists('bootstrap_darkroom_ps_exif_mapping', $conf)) {

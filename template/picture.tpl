@@ -23,7 +23,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 });
 {/strip}{/footer_script}
 {/if}
-{if $theme_config_extra->bootstrap_theme == 'material'}
+{if $theme_config->bootstrap_theme == 'material'}
 {footer_script require='jquery'}
 $('#content-spacer').removeClass('container').wrap('<div class="container well"></div>');
 $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer');
@@ -35,7 +35,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
     {$ELEMENT_CONTENT}
 </div>
 
-{if $theme_config_extra->picture_info == 'sidebar' && get_device() == 'desktop'}
+{if $theme_config->picture_info == 'sidebar' && get_device() == 'desktop'}
   {include file='picture_info_sidebar.tpl'}
 {/if}
 
@@ -75,14 +75,14 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 </div>
 {/if}
 
-{if !empty($thumbnails) && ($theme_config_extra->slick_enabled || $theme_config_extra->photoswipe)}
-{if $theme_config_extra->slick_enabled && sizeOf($thumbnails) > 1}
+{if !empty($thumbnails) && ($theme_config->slick_enabled || $theme_config->photoswipe)}
+{if $theme_config->slick_enabled && sizeOf($thumbnails) > 1}
   {include file="_slick_js.tpl"}
 {/if}
-{if $theme_config_extra->photoswipe && !$theme_config_extra->slick_infinite}
+{if $theme_config->photoswipe && !$theme_config->slick_infinite}
   {include file="_photoswipe_js.tpl" selector="#thumbnailCarousel"}
 {/if}
-{if $theme_config_extra->photoswipe && $theme_config_extra->slick_infinite}
+{if $theme_config->photoswipe && $theme_config->slick_infinite}
   {include file="_photoswipe_js.tpl" selector="#photoSwipeData"}
 {/if}
 <div id="theImageCarousel" class="container">
@@ -91,7 +91,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 {assign var=idx value=0}
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative value=$pwg->derivative($derivative_params_square, $thumbnail.src_image)}
-{if !$theme_config_extra->slick_infinite}
+{if !$theme_config->slick_infinite}
 {assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
 {assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
 {assign var=derivative_xxlarge value=$pwg->derivative($derivative_params_xxlarge, $thumbnail.src_image)}
@@ -100,13 +100,13 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
 {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
-{if !$theme_config_extra->slick_infinite}
-{if $thumbnail.id eq $current.id && !$theme_config_extra->slick_infinite}
+{if !$theme_config->slick_infinite}
+{if $thumbnail.id eq $current.id && !$theme_config->slick_infinite}
    <div class="text-center thumbnail-active">
 {else}
    <div class="text-center">
 {/if}
-      <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-name="{$thumbnail.NAME}" data-description="{$thumbnail.DESCRIPTION}" {if !$theme_config_extra->slick_infinite}data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{else}{if $theme_config_extra->photoswipe_metadata} data-exif-make="{$thumbnail.EXIF.make}" data-exif-model="{$thumbnail.EXIF.model}" data-exif-lens="{$thumbnail.EXIF.lens}" data-exif-iso="{$thumbnail.EXIF.iso}" data-exif-apperture="{$thumbnail.EXIF.apperture}" data-exif-shutter-speed="{$thumbnail.EXIF.shutter_speed}" data-exif-focal-length="{$thumbnail.EXIF.focal_length}" data-date-created="{$thumbnail.DATE_CREATED}"{/if}{/if}{/if}>
+      <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-name="{$thumbnail.NAME}" data-description="{$thumbnail.DESCRIPTION}" {if !$theme_config->slick_infinite}data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{else}{if $theme_config->photoswipe_metadata} data-exif-make="{$thumbnail.EXIF.make}" data-exif-model="{$thumbnail.EXIF.model}" data-exif-lens="{$thumbnail.EXIF.lens}" data-exif-iso="{$thumbnail.EXIF.iso}" data-exif-apperture="{$thumbnail.EXIF.apperture}" data-exif-shutter-speed="{$thumbnail.EXIF.shutter_speed}" data-exif-focal-length="{$thumbnail.EXIF.focal_length}" data-date-created="{$thumbnail.DATE_CREATED}"{/if}{/if}{/if}>
 {else}
    <div class="text-center{if $thumbnail.id eq $current.id} thumbnail-active{/if}"><a href="{$thumbnail.URL}">
 {/if}
@@ -117,14 +117,14 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
   </div>
  </div>
 </div>
-{if $theme_config_extra->slick_infinite}
+{if $theme_config->slick_infinite}
 <div id="photoSwipeData">
 {assign var=idx value=0}
 {foreach from=$thumbnails item=thumbnail}
 {assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
 {assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
 {assign var=derivative_xxlarge value=$pwg->derivative($derivative_params_xxlarge, $thumbnail.src_image)}
-   <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-name="{$thumbnail.NAME}" data-description="{$thumbnail.DESCRIPTION}" data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{else}{if $theme_config_extra->photoswipe_metadata} data-exif-make="{$thumbnail.EXIF.make}" data-exif-model="{$thumbnail.EXIF.model}" data-exif-lens="{$thumbnail.EXIF.lens}" data-exif-iso="{$thumbnail.EXIF.iso}" data-exif-apperture="{$thumbnail.EXIF.apperture}" data-exif-shutter-speed="{$thumbnail.EXIF.shutter_speed}" data-exif-focal-length="{$thumbnail.EXIF.focal_length}" data-date-created="{$thumbnail.DATE_CREATED}"{/if}{/if}></a>
+   <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-name="{$thumbnail.NAME}" data-description="{$thumbnail.DESCRIPTION}" data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{else}{if $theme_config->photoswipe_metadata} data-exif-make="{$thumbnail.EXIF.make}" data-exif-model="{$thumbnail.EXIF.model}" data-exif-lens="{$thumbnail.EXIF.lens}" data-exif-iso="{$thumbnail.EXIF.iso}" data-exif-apperture="{$thumbnail.EXIF.apperture}" data-exif-shutter-speed="{$thumbnail.EXIF.shutter_speed}" data-exif-focal-length="{$thumbnail.EXIF.focal_length}" data-date-created="{$thumbnail.DATE_CREATED}"{/if}{/if}></a>
 {assign var=idx value=$idx+1}
 {/foreach}
 </div>
@@ -135,20 +135,20 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
  <div id="infopanel" class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-centered">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs nav-justified" role="tablist">
-{if $theme_config_extra->picture_info == 'tabs' || (get_device() != 'desktop' && $theme_config_extra->picture_info != 'disabled')}
+{if $theme_config->picture_info == 'tabs' || (get_device() != 'desktop' && $theme_config->picture_info != 'disabled')}
     <li role="presentation" class="nav-item active"><a class="nav-link" href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
 {if isset($metadata)}
     <li role="presentation" class="nav-item"><a class="nav-link" href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
 {/if}
 {/if}
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <li role="presentation" class="nav-item{if $theme_config_extra->picture_info == 'disabled' || ($theme_config_extra->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}"><a class="nav-link" href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge badge-secondary">{$COMMENT_COUNT}</span></a></li>
+    <li role="presentation" class="nav-item{if $theme_config->picture_info == 'disabled' || ($theme_config->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}"><a class="nav-link" href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge badge-secondary">{$COMMENT_COUNT}</span></a></li>
 {/if}
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-{if $theme_config_extra->picture_info === 'tabs' || (get_device() != 'desktop' && $theme_config_extra->picture_info != 'disabled')}
+{if $theme_config->picture_info === 'tabs' || (get_device() != 'desktop' && $theme_config->picture_info != 'disabled')}
     <div role="tabpanel" class="tab-pane active" id="tab_info">
       <div id="info-content" class="info table-responsive">
         <table class="table table-condensed">
@@ -352,7 +352,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 {/if}
 <!-- comments -->
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <div role="tabpanel" class="tab-pane{if $theme_config_extra->picture_info == 'disabled' || ($theme_config_extra->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}" id="tab_comments">
+    <div role="tabpanel" class="tab-pane{if $theme_config->picture_info == 'disabled' || ($theme_config->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}" id="tab_comments">
 <a name="comments"></a>
 {$shortname = $theme_config->comments_disqus_shortname}
 {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
