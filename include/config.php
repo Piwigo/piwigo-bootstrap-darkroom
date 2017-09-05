@@ -107,8 +107,13 @@ class Config {
 
     private $config = array();
 
+    private $files = array();
+
     public function __construct() {
         global $conf;
+
+        // Initialise the files array
+        $this->initFiles();
 
         // Create initial config if necessary
         if (!isset($conf[self::CONF_PARAM])) {
