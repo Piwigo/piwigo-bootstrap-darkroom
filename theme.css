@@ -35,6 +35,9 @@ html, body {
 }
 
 /* Jumbotron */
+.jumbotron {
+  border-radius: 0;
+}
 @media (max-width: 767px) {
   .jumbotron p { font-size: 16px; }
   .jumbotron h1 { font-size: 28px; }
@@ -106,6 +109,13 @@ html, body {
     padding-left: 4px;
   }
 }
+
+.navbar-contextual .navbar-brand a,
+.navbar-contextual .navbar-brand a:hover,
+.navbar-contextual .navbar-brand a:focus {
+   color: inherit;
+}
+
 .navmenu {
    overflow: visible;
    width: 60px;
@@ -121,7 +131,6 @@ html, body {
   z-index: 101;
 }
 
-.nav-wrapper { height: 50px; }
 #thePicturePage #content-spacer { padding-top: 80px; }
 #theCategoryPage #content-spacer { padding-top: 20px; }
 #theCategoryPage { padding-left: 0px !important; }

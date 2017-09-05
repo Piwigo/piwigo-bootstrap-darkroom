@@ -2,6 +2,8 @@
    "directory": "components/",
    "ignoredDependencies": [
       "bootstrap",
-      "bootstrap-sass"
+      "bootstrap-sass",
+      "microplugin",
+      "sifter"
    ]
 }
