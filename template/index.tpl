@@ -13,8 +13,7 @@ $(document).ready(function () {
 });
 {/footer_script}
 {/if}
-<div class="nav-wrapper">
-    <nav class="navbar navbar-expand-lg navbar-contextual">
+    <nav class="navbar navbar-expand-lg navbar-contextual sticky-top">
         <div class="container">
             <div class="navbar-brand mr-auto">
 {if isset($chronology.TITLE)}
@@ -142,7 +141,6 @@ $(document).ready(function() {
             </div>
         </div>
     </nav>
-</div>
 
 {include file='infos_errors.tpl'}
 
