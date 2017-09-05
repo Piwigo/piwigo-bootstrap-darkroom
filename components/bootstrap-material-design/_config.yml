@@ -1,50 +1,58 @@
-baseurl: "/bootstrap-material-design"
-#url: "http://fezvrasta.github.io"
-url: "http://rosskevin.github.io"
-
-include:
-  - .nojekyll
-
-gems: ['jekyll-less']
-
-sass:
-    sass_dir: sass
-
 # Dependencies
 markdown:         kramdown
 highlighter:      rouge
+
+kramdown:
+  auto_ids: true
 
 # Permalinks
 permalink:        pretty
 
 # Server
-source:           docs
-destination:      _gh_pages
-host:             0.0.0.0
+source:           .
+destination:      ./_gh_pages
 port:             9001
-url:              http://fezvrasta.github.io/bootstrap-material-design
+baseurl:          "/bootstrap-material-design"
+url:              https://fezvrasta.github.io
 encoding:         UTF-8
+exclude:          [.git, .github, assets/scss/, build, js, node_modules, nuget, scss, vendor, bower.json, composer.json, Gemfile, Gemfile.lock, Gruntfile.js, package.js, package.json, package-lock.json, sache.json]
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-toc
+
+# Social
+title: Bootstrap Material Design
+description: The most popular HTML, CSS, and JS Material Design library in the world.
+twitter: FezVrasta
+authors: Federico Zivolo and Bootstrap contributors
+social_logo_path: /assets/brand/bootstrap-social-logo.png
+social_image_path: /assets/brand/bootstrap-social.png
 
 # Custom vars
-current_version:  0.4.1
-repo:             https://github.com/fezvrasta/bootstrap-material-design
-#sass_repo:        https://github.com/fezvrasta/bootstrap-material-design-sass
+current_version:  4.0.0-beta.3
+docs_version:     4.0
+repo:             https://github.com/FezVrasta/bootstrap-material-design
+slack:            https://bootstrap-slack.herokuapp.com
 
 download:
-  source:         https://github.com/fezvrasta/bootstrap-material-design/archive/v0.4.1.zip
-  dist:           https://github.com/fezvrasta/bootstrap-material-design/releases/download/v0.4.1/bootstrap-0.4.1-dist.zip
-#  sass:           https://github.com/fezvrasta/bootstrap-material-design-sass/archive/v0.4.1.tar.gz
+  source:         https://github.com/FezVrasta/bootstrap-material-design/releases
+  dist:           https://github.com/FezVrasta/bootstrap-material-design/releases
 
-#blog:             http://blog.getbootstrap.com
-#expo:             http://expo.getbootstrap.com
-#
-#cdn:
-#  # See https://www.srihash.org for info on how to generate the hashes
-#  css:            https://maxcdn.bootstrapcdn.com/bootstrap/0.4.1/css/bootstrap.min.css
-#  css_hash:       "sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-#  css_theme:      https://maxcdn.bootstrapcdn.com/bootstrap/0.4.1/css/bootstrap-theme.min.css
-#  css_theme_hash: "sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX"
-#  js:             https://maxcdn.bootstrapcdn.com/bootstrap/0.4.1/js/bootstrap.min.js
-#  js_hash:        "sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+blog:             https://blog.getbootstrap.com
+expo:             https://expo.getbootstrap.com
+mkp:              https://www.creative-tim.com/product/material-kit-pro?affiliate_id=87385
+mdp:              https://www.creative-tim.com/product/material-dashboard-pro?affiliate_id=87385
 
-
+cdn:
+  # See https://www.srihash.org for info on how to generate the hashes
+  css:            https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/css/bootstrap-material-design.min.css
+  css_hash:       "sha384-k5bjxeyx3S5yJJNRD1eKUMdgxuvfisWKku5dwHQq9Q/Lz6H8CyL89KF52ICpX4cL"
+  js:             https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/js/bootstrap-material-design.js
+  js_hash:        "sha384-hC7RwS0Uz+TOt6rNG8GX0xYCJ2EydZt1HeElNwQqW+3udRol4XwyBfISrNDgQcGA"
+  jquery:         https://code.jquery.com/jquery-3.2.1.slim.min.js
+  jquery_hash:    "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  popper:         https://unpkg.com/popper.js@1.12.5/dist/umd/popper.js
+  popper_hash:    "sha384-KlVcf2tswD0JOTQnzU4uwqXcbAy57PvV48YUiLjqpk/MJ2wExQhg9tuozn5A1iVw"
+  snackbar:       https://cdn.rawgit.com/FezVrasta/snackbarjs/1.1.0/dist/snackbar.min.js

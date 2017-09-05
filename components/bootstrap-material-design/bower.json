@@ -1,45 +1,29 @@
 {
   "name": "bootstrap-material-design",
-  "homepage": "http://fezvrasta.github.io/bootstrap-material-design",
-  "authors": [
-    "Federico Zivolo <info@mywebexpression.com>"
-  ],
-  "description": "Material Design theme for Bootstrap 3",
-  "main": [
-    "dist/css/bootstrap-material-design.css",
-    "dist/js/material.js",
-    "dist/css/ripples.css",
-    "dist/js/ripples.js"
-  ],
-  "ignore": [
-    "test",
-    "screenshots",
-    "demo",
-    ".editorconfig",
-    ".gitignore",
-    ".jshintrc",
-    ".travis.yml",
-    "CONTRIBUTING.md",
-    "Gruntfile.json",
-    "index.html",
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "description": "Material Design for Bootstrap 4",
   "keywords": [
     "material",
     "design",
     "bootstrap",
-    "theme",
-    "google",
-    "android"
+    "css",
+    "js",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
   ],
-  "license": "https://github.com/FezVrasta/bootstrap-material-design/blob/master/LICENSE.md",
+  "homepage": "http://fezvrasta.github.io/bootstrap-material-design",
+  "license": "MIT",
+  "moduleType": "globals",
+  "main": [
+    "scss/_core.scss",
+    "dist/js/bootstrap-material-design.js"
+  ],
   "dependencies": {
     "jquery": "^2.2",
-    "bootstrap": "~3.3.6",
-    "bootstrap-sass": "~3.3.6"
+    "popper.js": "^1.10.11",
+    "bootstrap": "v4-dev"
   }
 }
