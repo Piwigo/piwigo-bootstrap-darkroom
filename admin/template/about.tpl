@@ -1,4 +1,4 @@
-{combine_css path="themes/bootstrap_darkroom/admin/css/admin.css"}
+{combine_css path="themes/bootstrapdefault/admin/css/admin.css"}
 <div class="titrePage">
     <h2>{'Bootstrap Darkroom'|@translate} {$TABSHEET_TITLE}</h2>
 </div>
