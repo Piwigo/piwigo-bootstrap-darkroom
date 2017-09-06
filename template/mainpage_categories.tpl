@@ -62,12 +62,12 @@
       <div class="media-body">
         <h4 class="mt-0 mb-1">{$cat.NAME}</h4>
 {if isset($cat.INFO_DATES) }
-          <p>{$cat.INFO_DATES}</p>
+        <p>{$cat.INFO_DATES}</p>
 {/if}
-          <p>{$cat.CAPTION_NB_IMAGES}</p>
 {if not empty($cat.DESCRIPTION)}
-          <p class="description">{$cat.DESCRIPTION}</p>
+        <p class="description">{$cat.DESCRIPTION}</p>
 {/if}
+        <p><small>{$cat.CAPTION_NB_IMAGES}</small></p>
       </div>
   </div>
  </div>
