@@ -55,24 +55,22 @@
     {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
     {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
-<a class="w-100" href="{$cat.URL}">
-  <div class="card">
-      <div class="col-lg-4">
-         <img class="card-img-left" {if $derivative_square->is_cached()}src="{$derivative_square->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative_square->get_url()}"{/if} alt="{$cat.TN_ALT}">
-      </div>
-      <div class="card-body col-lg-8">
-        <h4 class="card-title">{$cat.NAME}</h4>
-        <div class="card-text">
+<a class="w-100 mb-2" href="{$cat.URL}">
+ <div class="card card-body bg-dark">
+  <div class="media">
+      <img class="d-flex mr-3" {if $derivative_square->is_cached()}src="{$derivative_square->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative_square->get_url()}"{/if} alt="{$cat.TN_ALT}">
+      <div class="media-body">
+        <h4 class="mt-0 mb-1">{$cat.NAME}</h4>
 {if isset($cat.INFO_DATES) }
-            <p>{$cat.INFO_DATES}</p>
+          <p>{$cat.INFO_DATES}</p>
 {/if}
-            <p>{$cat.CAPTION_NB_IMAGES}</p>
+          <p>{$cat.CAPTION_NB_IMAGES}</p>
 {if not empty($cat.DESCRIPTION)}
-            <p class="description">{$cat.DESCRIPTION}</p>
+          <p class="description">{$cat.DESCRIPTION}</p>
 {/if}
-        </div>
       </div>
   </div>
+ </div>
 </a>
 {/if}
 {/foreach}

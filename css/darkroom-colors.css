@@ -150,11 +150,13 @@ a:active,
 }
 
 /* Wells */
-.well {
-  background-color: #3c3c3c;
-  border-color: #000 !important;
-  background-image: none !important;
+.card.bg-dark {
+  background-color: #3c3c3c !important;
 }
+.card.bg-dark img {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+}
+  
 
 /* Sidebar */
 #sidebar .handle, #sidebar .info {
@@ -240,6 +242,9 @@ a:active,
     border-bottom: none;
   }
 }
+
+/* Various */
+#quickconnect label { color: #4f4f4f; }
 
 /*
  * Plugin fixlets
