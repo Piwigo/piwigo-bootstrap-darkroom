@@ -44,6 +44,9 @@ html, body {
 .jumbotron {
   border-radius: 0;
 }
+.jumbotron h1 {
+  font-size: 49px;
+}
 @media (max-width: 767px) {
   .jumbotron p { font-size: 16px; }
   .jumbotron h1 { font-size: 28px; }

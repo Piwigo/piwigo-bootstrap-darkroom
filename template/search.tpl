@@ -36,30 +36,30 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-7 col-md-9 col-sm-12 col-xs-12">
-                        <input type="text" id="search_allwords" name="search_allwords" class="form-control" />
+                        <input type="text" id="search_allwords" name="search_allwords" class="form-control mb-3" />
                     </div>
                 </div>
                 <div class="form-group radio">
-                    <label class="radio-inline">
-                        <input type="radio" name="mode" value="AND" checked="checked">{'Search for all terms'|@translate}
+                    <label class="radio-inline mr-3">
+                        <input type="radio" name="mode" value="AND" checked="checked" class="mr-1">{'Search for all terms'|@translate}
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="mode" value="OR">{'Search for any term'|@translate}
+                        <input type="radio" name="mode" value="OR" class="mr-1">{'Search for any term'|@translate}
                     </label>
                 </div>
                 <label>{'Apply on properties'|translate}</label>
                 <div class="form-group checkbox">
-                    <label class="checkbox-inline">
+                    <label class="checkbox-inline mr-2">
                         <input type="checkbox" name="fields[]" value="name" checked="checked"> {'Photo title'|translate}
                     </label>
-                    <label class="checkbox-inline">
+                    <label class="checkbox-inline mr-2">
                         <input type="checkbox" name="fields[]" value="comment" checked="checked"> {'Photo description'|translate}
                     </label>
-                    <label class="checkbox-inline">
+                    <label class="checkbox-inline mr-2">
                         <input type="checkbox" name="fields[]" value="file" checked="checked"> {'File name'|translate}
                     </label>
 {if isset($TAGS)}
-                    <label class="checkbox-inline">
+                    <label class="checkbox-inline mr-2">
                         <input type="checkbox" name="search_in_tags" value="tags"> {'Tags'|translate}
                     </label>
 {/if}
@@ -90,7 +90,7 @@
                 {'Search tags'|@translate}
             </h4>
             <div class="card-body">
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-lg-7 col-md-9 col-sm-12 col-xs-12">
                         <select id="tags" placeholder="{'Type in a search term'|translate}" name="tags[]" multiple>
 {foreach from=$TAGS item=tag}
@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 <div class="form-group radio">
-                    <label class="radio-inline">
+                    <label class="radio-inline mr-3">
                         <input type="radio" name="tag_mode" value="AND" checked="checked"> {'All tags'|@translate}
                     </label>
                     <label class="radio-inline">
@@ -117,7 +117,7 @@
             <div class="card-body">
                 <label>{'Kind of date'|@translate}</label>
                 <div class="form-group radio">
-                    <label class="radio-inline">
+                    <label class="radio-inline mr-3">
                         <input type="radio" name="date_type" value="date_creation" checked="checked"> {'Creation date'|@translate}
                     </label>
                     <label class="radio-inline">
@@ -137,7 +137,7 @@
                     </select>
                     <input id="start_year" name="start_year" type="text" size="4" maxlength="4" class="form-control">
                     <input id="start_linked_date" name="start_linked_date" type="hidden" size="10" disabled="disabled">
-                    <a class="date_today" href="#" onClick="document.getElementById('start_day').value={$smarty.now|date_format:"%d"};document.getElementById('start_month').value={$smarty.now|date_format:"%m"};document.getElementById('start_year').value={$smarty.now|date_format:"%Y"};return false;">{'today'|@translate}</a>
+                    <a class="date_today ml-2" href="#" onClick="document.getElementById('start_day').value={$smarty.now|date_format:"%d"};document.getElementById('start_month').value={$smarty.now|date_format:"%m"};document.getElementById('start_year').value={$smarty.now|date_format:"%Y"};return false;">{'today'|@translate}</a>
                 </div>
                 <label>{'End-Date'|@translate}</label>
                 <div class="form-group form-inline">
@@ -152,7 +152,7 @@
                     </select>
                     <input id="end_year" name="end_year" type="text" size="4" maxlength="4" class="form-control">
                     <input id="end_linked_date" name="end_linked_date" type="hidden" size="10" disabled="disabled">
-                    <a class="date_today" href="#" onClick="document.getElementById('end_day').value={$smarty.now|date_format:"%d"};document.getElementById('end_month').value={$smarty.now|date_format:"%m"};document.getElementById('end_year').value={$smarty.now|date_format:"%Y"};return false;">{'today'|@translate}</a>
+                    <a class="date_today ml-2" href="#" onClick="document.getElementById('end_day').value={$smarty.now|date_format:"%d"};document.getElementById('end_month').value={$smarty.now|date_format:"%m"};document.getElementById('end_year').value={$smarty.now|date_format:"%Y"};return false;">{'today'|@translate}</a>
                  </div>
             </div>
         </div>
@@ -161,7 +161,7 @@
                 {'Search in albums'|@translate}
             </h4>
             <div class="card-body">
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-lg-7 col-md-9 col-sm-12 col-xs-12">
                         <select id="categories" name="cat[]" multiple>
 {html_options options=$category_options selected=$category_options_selected}

@@ -10,7 +10,7 @@
         <li class="dropdown-header">
             <form class="navbar-form" method="post" action="{$U_LOGIN}" id="quickconnect">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="username" id="username" value="" placeholder="{'Username'|@translate}">
+                    <input class="form-control mb-2" type="text" name="username" id="username" value="" placeholder="{'Username'|@translate}">
                     <input class="form-control" type="password" name="password" id="password" placeholder="{'Password'|@translate}">
                 </div>
                 {if $AUTHORIZE_REMEMBERING}

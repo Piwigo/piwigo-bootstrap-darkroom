@@ -141,7 +141,7 @@ $(qsearch_icon).click(function () {
 {/if}
 
 {if !isset($slideshow) && $BODY_ID != 'thePicturePage' && $theme_config->show_jumbotron}
-        <div class="jumbotron">
+        <div class="jumbotron mb-0">
             <div class="container">
                 <div id="theHeader">{$PAGE_BANNER}</div>
             </div>

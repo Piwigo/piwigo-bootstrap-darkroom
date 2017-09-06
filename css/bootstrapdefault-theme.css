@@ -15,50 +15,6 @@
   margin-top: 0;
   margin-left: 10px;
 }
-.btn-group-lg > .btn {
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.3333333;
-  border-radius: 6px;
-}
-.btn-group-sm > .btn {
-  padding: 5px 10px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 3px;
-}
-.btn-group-xs > .btn {
-  padding: 1px 5px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 3px;
-}
-div#the_page {
-  position: relative;
-  overflow-x: hidden;
-}
-#quickconnect .form-control {
-  margin-bottom: 10px;
-}
-.navbar-form-desktop {
-  display: none;
-}
-.navbar-main {
-  margin-bottom: 0px;
-}
-.navbar .navbar-right {
-  margin-right: 0;
-}
-.jumbotron {
-  margin-bottom: 0px;
-}
-@media screen and (min-width: 768px) {
-  .jumbotron h1,
-  .jumbotron .h1 {
-    font-size: 49px;
-  }
-}
-
 .html-radios-inline label {
   position: relative;
   display: inline-block;
