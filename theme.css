@@ -9,6 +9,7 @@ html, body {
   height: 100%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
 }
 
 #the_page {
@@ -34,6 +35,11 @@ html, body {
   }
 }
 
+#thePicturePage #content-spacer { padding-top: 80px; }
+#theCategoryPage #content-spacer { padding-top: 20px; }
+#theCategoryPage { padding-left: 0px !important; }
+#theCategoryPage h4.title { line-height: 1.2em;}
+
 /* Jumbotron */
 .jumbotron {
   border-radius: 0;
@@ -45,10 +51,6 @@ html, body {
 
 
 /* Navigation */
-.affix {
-  top: 0px;
-  width: 100%;
-}
 .navbar {
   width: 100%;
   padding: 0 1rem;
@@ -88,6 +90,8 @@ html, body {
   margin-bottom: 5px;
 }
 
+#identificationDropdown .dropdown-menu { min-width: 12rem; }
+
 @media (min-width: 768px) {
   #navbar-menubar>#quicksearch {
     float: left;
@@ -97,9 +101,6 @@ html, body {
   }
 }
 @media (min-width: 992px) {
-  .navbar {
-    left: auto;
-  }
   #navbar-menubar>#quicksearch input[type="text"] {
     width: 150px;
   }
@@ -130,11 +131,6 @@ html, body {
   left: 0;
   z-index: 101;
 }
-
-#thePicturePage #content-spacer { padding-top: 80px; }
-#theCategoryPage #content-spacer { padding-top: 20px; }
-#theCategoryPage { padding-left: 0px !important; }
-#theCategoryPage h4.title { line-height: 1.2em;}
 
 /* replace the home link in navbar */
 .navbar-brand a:first-child {
