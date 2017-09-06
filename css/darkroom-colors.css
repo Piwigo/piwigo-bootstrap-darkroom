@@ -39,7 +39,7 @@ body {
   color: #a9a9a9;
 }
 
-.navbar-main { background-color: #000; }
+.navbar-main.bg-primary { background-color: #000 !important;}
 .navbar-main .navbar-toggle:focus,
 .navbar-main .navbar-toggle:hover {
   background-color: #2E2E2E;
@@ -49,10 +49,15 @@ body {
 }
 
 .navbar-contextual {
-  background-image: none !important;
-  background-color: #2E2E2E;
   border: none;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+
+  .bg-primary {
+    background-color: #2E2E2E !important;
+  }
+}
+.navbar-contextual.bg-primary {
+  background-color: #2E2E2E !important;
 }
 
 a,

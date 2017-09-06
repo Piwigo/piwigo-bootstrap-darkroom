@@ -7,7 +7,7 @@
         <li class="dropdown-divider"></li>
     {/if}
     {if isset($U_LOGIN)}
-        <li class="dropdown-item">
+        <li class="dropdown-header">
             <form class="navbar-form" method="post" action="{$U_LOGIN}" id="quickconnect">
                 <div class="form-group">
                     <input class="form-control" type="text" name="username" id="username" value="" placeholder="{'Username'|@translate}">

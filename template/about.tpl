@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-contextual">
+<nav class="navbar navbar-expand-lg navbar-contextual navbar-dark bg-primary sticky-top">
     <div class="container">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'About'|@translate}</a></div>
         <ul class="navbar-nav justify-content-end">

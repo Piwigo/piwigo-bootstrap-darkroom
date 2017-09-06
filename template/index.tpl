@@ -13,7 +13,7 @@ $(document).ready(function () {
 });
 {/footer_script}
 {/if}
-    <nav class="navbar navbar-expand-lg navbar-contextual sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-contextual navbar-dark bg-primary sticky-top">
         <div class="container">
             <div class="navbar-brand mr-auto">
 {if isset($chronology.TITLE)}

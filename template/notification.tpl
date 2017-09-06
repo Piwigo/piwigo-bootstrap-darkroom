@@ -3,7 +3,7 @@
 <link rel="alternate" type="application/rss+xml" title="{'Complete RSS feed (photos, comments)'|@translate}" href="{$U_FEED}"> 
 {/html_head}
 
-<nav class="navbar navbar-contextual navbar-expand-lg">
+<nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-primary sticky-top">
     <div class="container">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Notification'|@translate}</a></div>
     </div>

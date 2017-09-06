@@ -57,7 +57,7 @@
 {if $theme_config->bootstrap_theme == 'bootswatch'}
     {combine_css path="themes/bootstrap_darkroom/components/bootswatch/{$theme_config->bootswatch_theme}/bootstrap.min.css" order=-20}
 {elseif $theme_config->bootstrap_theme == 'material'}
-    {combine_css path="themes/bootstrap_darkroom/components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css" order=-20}
+    {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config->material_color}/bootstrap-material-design.min.css" order=-20}
     {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-19}
 {else}
     {combine_css path="themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap.min.css" order=-20}
@@ -105,7 +105,7 @@
 <body id="{$BODY_ID}">
     <div id="the_page">
 {if $BODY_ID != 'thePicturePage'}
-        <nav class="navbar navbar-expand-lg navbar-main">
+        <nav class="navbar navbar-expand-lg navbar-main navbar-dark bg-primary">
             <div class="container">
 {if $theme_config->logo_image_enabled && $theme_config->logo_image_path !== ''}
                 <a class="navbar-brand mr-auto" href="{$U_HOME}"><img class="responsive" src="{$ROOT_URL}{$theme_config->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>

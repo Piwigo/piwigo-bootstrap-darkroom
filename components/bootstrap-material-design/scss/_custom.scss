@@ -26,19 +26,30 @@ $grays: (
   900: $gray-900
 ) !default;
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
+$blue:        #007bff !default;
+$indigo:      #6610f2 !default;
+$purple:      #6f42c1 !default;
+$pink:        #e83e8c !default;
+$red:         #dc3545 !default;
+$orange:      #fd7e14 !default;
+$yellow:      #ffc107 !default;
+$green:       #28a745 !default;
+//$teal:       #20c997 !default;
+$teal:        #009688 !default;
+$cyan:        #17a2b8 !default;
+
+
+$deep-purple: #673ab7 !default;
+$light-blue:  #03a9f4 !default;
+$light-green: #8bc34a !default;
+$lime:        #cddc39 !default;
+$amber:       #ffc107 !default;
+$deep-orange: #ff5722 !default;
+$brown:       #795548 !default;
+$grey:        #9e9e9e !default;
 
 $theme-colors: (
-  primary: $teal,
+  primary: $indigo,
   secondary: $gray-600,
   success: $green,
   info: $cyan,

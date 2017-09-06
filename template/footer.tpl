@@ -35,9 +35,9 @@
 {include file='_photoswipe_div.tpl'}
 {/if}
 
-{if ($theme_config->bootstrap_theme == 'bootswatch' || $theme_config->bootstrap_theme == 'material') && $BODY_ID !== 'thePicturePage' && $BODY_ID !== 'theCategoryPage'}
-{footer_script require='jquery'}
-$('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
+{if $theme_config->bootstrap_theme == 'material'}
+{footer_script require='bootstrap'}
+ $('body').bootstrapMaterialDesign();
 {/footer_script}
 {/if}
 {get_combined_scripts load='footer'}

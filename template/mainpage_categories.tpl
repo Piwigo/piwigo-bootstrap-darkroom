@@ -20,7 +20,7 @@
 {/if}
 {* this needs a fixed size else it messes up the grid on tablets *}
 {include file="grid_classes.tpl" width=260 height=180}
-<div class="col-outer {if $smarty.cookies.view == 'list'}col-lg-12 col-md-12 col-sm-12 col-xs-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
+<div class="col-outer {if $smarty.cookies.view == 'list'}col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
     <div class="col-inner">
         <a class="col-thumbnail" href="{$cat.URL}">
             <div class="placeholder" style="background: url({$ROOT_URL}{$themeconf.icon_dir}/img_small.png) no-repeat center">
@@ -55,23 +55,23 @@
     {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
     {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
-<a href="{$cat.URL}">
-  <div class="well well-sm well-categories">
-    <div class="media">
-      <div class="media-left">
-          <img class="media-object" {if $derivative_square->is_cached()}src="{$derivative_square->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative_square->get_url()}"{/if} alt="{$cat.TN_ALT}">
+<a class="w-100" href="{$cat.URL}">
+  <div class="card">
+      <div class="col-lg-4">
+         <img class="card-img-left" {if $derivative_square->is_cached()}src="{$derivative_square->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative_square->get_url()}"{/if} alt="{$cat.TN_ALT}">
       </div>
-      <div class="media-body">
-        <h4 class="media-heading">{$cat.NAME}</h4>
+      <div class="card-body col-lg-8">
+        <h4 class="card-title">{$cat.NAME}</h4>
+        <div class="card-text">
 {if isset($cat.INFO_DATES) }
-        <p>{$cat.INFO_DATES}</p>
+            <p>{$cat.INFO_DATES}</p>
 {/if}
-        <p>{$cat.CAPTION_NB_IMAGES}</p>
+            <p>{$cat.CAPTION_NB_IMAGES}</p>
 {if not empty($cat.DESCRIPTION)}
-        <p class="description">{$cat.DESCRIPTION}</p>
+            <p class="description">{$cat.DESCRIPTION}</p>
 {/if}
+        </div>
       </div>
-    </div>
   </div>
 </a>
 {/if}
