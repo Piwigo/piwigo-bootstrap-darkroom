@@ -50,12 +50,12 @@ ul.tabs li {
   cursor: pointer;
 }
 ul.tabs li.current {
-  background: #ededed;
+  background: #e3e3e3; 
   color: #222;
 }
 .tab-content{
   display: none;
-  background: #ededed;
+  background: #e3e3e3;
   padding: 15px;
 }
 .tab-content.current{ display: inherit; }

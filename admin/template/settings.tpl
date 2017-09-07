@@ -7,6 +7,7 @@
 <ul class="tabs">
   <li class="tab-link current" data-tab="appearance">{'Appearance'|@translate}</li>
   <li class="tab-link" data-tab="components">{'Components'|@translate}</li>
+  <li class="tab-link" data-tab="social-integration">{'Social Integration'|@translate}</li>
 </ul>
   
 
@@ -39,7 +40,88 @@
                 <dt>{'None'|@translate}</dt><dd>{'No color theme'|@translate}</dd> 
             </dl>
         </fieldset>
+        <fieldset>
+            <legend>{'Site logo'|@translate}</legend>
+            <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="logo_image_enabled"{if $theme_config->logo_image_enabled} checked="checked"{/if}>
+                        {'Enabled'|@translate}
+                    </label>
+                    <span class="info">{'Display a site logo image instead of plain text'|@translate}</span>
+                </li>
+                <li>
+                    <label>
+                        {'Path'|@translate}
+                        <input type="text" name="logo_image_path"size="50" {if $theme_config->logo_image_path != ""}value="{$theme_config->logo_image_path}"{else}placeholder="relative/path/to/image"{/if}>
+                    </label>
+                    <span class="info">{'The path to the image, relative to your Piwigo installation folder'|@translate}</span>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>{'Picture page display'|@translate}</legend>
+            <ul>
+                <li>
+                    <label labelfor="picture_info">{'Picture info display position'|@translate}</label>
+                    <select name="picture_info">
+                        <option value="tabs"{if $theme_config->picture_info == 'tabs'} selected="selected"{/if}>{'Tabs below the image'|@translate}</option>
+                        <option value="sidebar"{if $theme_config->picture_info == 'sidebar'} selected="selected"{/if}>{'Sidebar (like Boostrap Default)'|@translate}</option>
+                        <option value="disabled"{if $theme_config->picture_info == 'disabled'} selected="selected"{/if}>{'Disabled'|@translate}</option>
+                    </select>
+                    <span class="info">{'Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'|@translate}</span>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>{'Category page display'|@translate}</legend>
+            <ul>
+                <li>
+                    <label labelfor="category_wells">{'Display categories as Bootstrap media wells'|@translate}</label>
+                    <select name="category_wells">
+                        <option value="never"{if $theme_config->category_wells == 'never'} selected="selected"{/if}>{'Never'|@translate}</option>
+                        <option value="always"{if $theme_config->category_wells == 'always'} selected="selected"{/if}>{'Always'|@translate}</option>
+                        <option value="mobile_only"{if $theme_config->category_wells == 'mobile_only'} selected="selected"{/if}>{'On mobile devices only'|@translate}</option>
+                    </select>
+                    <span class="info">{'This will display categories as media wells with squared thumbnails, similar to the smartpocket mobile theme.'|@translate}</span>
+                </li>
+                <li>
+                    <label class="font-checkbox">
+                       <span class="icon-check"></span>
+                       <input type="checkbox" name="cat_descriptions"{if $theme_config->cat_descriptions} checked=checked{/if}>
+                       {'Display category description in grid view'|@translate}
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>{'Thumbnail page display'|@translate}</legend>
+            <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="thumbnail_caption"{if $theme_config->thumbnail_caption} checked="checked"{/if}>
+                        {'Show image caption'|@translate}
+                    </label>
+                </li>
+                <li>
+                    <label labelfor="thumbnail_linkto">{'Link thumbnail to'|@translate}</label>
+                    <select name="thumbnail_linkto">
+                        <option value="picture"{if $theme_config->thumbnail_linkto == 'picture'} selected="selected"{/if}>{'Picture details page'|@translate}</option>
+                        <option value="photoswipe"{if $theme_config->thumbnail_linkto == 'photoswipe'} selected="selected"{/if}>{'PhotoSwipe Slideshow'|@translate}</option>
+                        <option value="photoswipe_mobile_only"{if $theme_config->thumbnail_linkto == 'photoswipe_mobile_only'} selected="selected"{/if}>{'Photoswipe Slideshow (Mobi
+le devices only)'|@translate}</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset class="mainConf">
+            <legend>{'Custom CSS'|@translate}</legend>
+            <textarea name="custom_css" cols="80" rows="10">{if $theme_config->custom_css}{$theme_config->custom_css}{/if}</textarea>
+        </fieldset>
       </div>
+
       <div id="components" class="tab-content">
         <fieldset class="mainConf">
             <legend>Slick Carousel {'Settings'|@translate}</legend>
@@ -123,26 +205,6 @@
             </ul>
         </fieldset>
         <fieldset>
-            <legend>{'Site logo'|@translate}</legend>
-            <ul>
-                <li>
-                    <label class="font-checkbox">
-                        <span class="icon-check"></span>
-                        <input type="checkbox" name="logo_image_enabled"{if $theme_config->logo_image_enabled} checked="checked"{/if}>
-                        {'Enabled'|@translate}
-                    </label>
-                    <span class="info">{'Display a site logo image instead of plain text'|@translate}</span>
-                </li>
-                <li>
-                    <label>
-                        {'Path'|@translate}
-                        <input type="text" name="logo_image_path"size="50" {if $theme_config->logo_image_path != ""}value="{$theme_config->logo_image_path}"{else}placeholder="relative/path/to/image"{/if}>
-                    </label>
-                    <span class="info">{'The path to the image, relative to your Piwigo installation folder'|@translate}</span>
-                </li>
-            </ul>
-        </fieldset>
-        <fieldset>
             <legend>{'Quick search'|@translate}</legend>
             <ul>
                 <li>
@@ -150,94 +212,6 @@
                         <span class="icon-check"></span>
                         <input type="checkbox" name="quicksearch_navbar"{if $theme_config->quicksearch_navbar} checked="checked"{/if}>
                         {'Quick search'|@translate} {'directly in the navigation bar'|@translate}
-                    </label>
-                </li>
-            </ul>
-        </fieldset>
-        <fieldset>
-            <legend>{'Picture page display'|@translate}</legend>
-            <ul>
-                <li>
-                    <label labelfor="picture_info">{'Picture info display position'|@translate}</label>
-                    <select name="picture_info">
-                        <option value="tabs"{if $theme_config->picture_info == 'tabs'} selected="selected"{/if}>{'Tabs below the image'|@translate}</option>
-                        <option value="sidebar"{if $theme_config->picture_info == 'sidebar'} selected="selected"{/if}>{'Sidebar (like Boostrap Default)'|@translate}</option>
-                        <option value="disabled"{if $theme_config->picture_info == 'disabled'} selected="selected"{/if}>{'Disabled'|@translate}</option>
-                    </select>
-                    <span class="info">{'Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'|@translate}</span>
-                </li>
-            </ul>
-        </fieldset>
-        <fieldset>
-            <legend>{'Category page display'|@translate}</legend>
-            <ul>
-                <li>
-                    <label labelfor="category_wells">{'Display categories as Bootstrap media wells'|@translate}</label>
-                    <select name="category_wells">
-                        <option value="never"{if $theme_config->category_wells == 'never'} selected="selected"{/if}>{'Never'|@translate}</option>
-                        <option value="always"{if $theme_config->category_wells == 'always'} selected="selected"{/if}>{'Always'|@translate}</option>
-                        <option value="mobile_only"{if $theme_config->category_wells == 'mobile_only'} selected="selected"{/if}>{'On mobile devices only'|@translate}</option>
-                    </select>
-                    <span class="info">{'This will display categories as media wells with squared thumbnails, similar to the smartpocket mobile theme.'|@translate}</span>
-                </li>
-                <li>
-                    <label class="font-checkbox">
-                       <span class="icon-check"></span>
-                       <input type="checkbox" name="cat_descriptions"{if $theme_config->cat_descriptions} checked=checked{/if}>
-                       {'Display category description in grid view'|@translate}
-                    </label>
-                </li>
-            </ul>
-        </fieldset>
-        <fieldset>
-            <legend>{'Thumbnail page display'|@translate}</legend>
-            <ul>
-                <li>
-                    <label class="font-checkbox">
-                        <span class="icon-check"></span>
-                        <input type="checkbox" name="thumbnail_caption"{if $theme_config->thumbnail_caption} checked="checked"{/if}>
-                        {'Show image caption'|@translate}
-                    </label>
-                </li>
-                <li>
-                    <label labelfor="thumbnail_linkto">{'Link thumbnail to'|@translate}</label>
-                    <select name="thumbnail_linkto">
-                        <option value="picture"{if $theme_config->thumbnail_linkto == 'picture'} selected="selected"{/if}>{'Picture details page'|@translate}</option>
-                        <option value="photoswipe"{if $theme_config->thumbnail_linkto == 'photoswipe'} selected="selected"{/if}>{'PhotoSwipe Slideshow'|@translate}</option>
-                        <option value="photoswipe_mobile_only"{if $theme_config->thumbnail_linkto == 'photoswipe_mobile_only'} selected="selected"{/if}>{'Photoswipe Slideshow (Mobile devices only)'|@translate}</option>
-                    </select>
-                </li>
-            </ul>
-        </fieldset>
-        <fieldset class="mainConf">
-            <legend>{'Social integration'|@translate}</legend>
-            <ul>
-                <li>
-                    <label class="font-checkbox">
-                        <span class="icon-check"></span>
-                        <input type="checkbox" name="social_enabled"{if $theme_config->social_enabled} checked="checked"{/if}>
-                        {'Enabled'|@translate}
-                    </label>
-                </li>
-                <li id="social_twitter">
-                    <label class="font-checkbox">
-                        <span class="icon-check"></span>
-                        <input type="checkbox" name="social_twitter"{if $theme_config->social_twitter}  checked="checked"{/if}>
-                        {'Twitter'|@translate}
-                    </label>
-                </li>
-                <li id="social_facebook">
-                    <label class="font-checkbox">
-                        <span class="icon-check"></span>
-                        <input type="checkbox" name="social_facebook"{if $theme_config->social_facebook}  checked="checked"{/if}>
-                        {'Facebook'|@translate}
-                    </label>
-                </li>
-                <li id="social_google_plus">
-                    <label class="font-checkbox">
-                        <span class="icon-check"></span>
-                        <input type="checkbox" name="social_google_plus"{if $theme_config->social_google_plus}  checked="checked"{/if}>
-                        {'Google+'|@translate}
                     </label>
                 </li>
             </ul>
@@ -276,9 +250,41 @@
                 </li>
             </ul>
         </fieldset>
+      </div>
+
+      <div id="social-integration" class="tab-content">  
         <fieldset class="mainConf">
-            <legend>{'Custom CSS'|@translate}</legend>
-            <textarea name="custom_css" cols="80" rows="10">{if $theme_config->custom_css}{$theme_config->custom_css}{/if}</textarea>
+            <legend>{'Social integration'|@translate}</legend>
+            <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="social_enabled"{if $theme_config->social_enabled} checked="checked"{/if}>
+                        {'Enabled'|@translate}
+                    </label>
+                </li>
+                <li id="social_twitter">
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="social_twitter"{if $theme_config->social_twitter}  checked="checked"{/if}>
+                        {'Twitter'|@translate}
+                    </label>
+                </li>
+                <li id="social_facebook">
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="social_facebook"{if $theme_config->social_facebook}  checked="checked"{/if}>
+                        {'Facebook'|@translate}
+                    </label>
+                </li>
+                <li id="social_google_plus">
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="social_google_plus"{if $theme_config->social_google_plus}  checked="checked"{/if}>
+                        {'Google+'|@translate}
+                    </label>
+                </li>
+            </ul>
         </fieldset>
       </div>
     </div>
