@@ -1,0 +1,19 @@
+// Extra social colors
+
+$social-colors: (
+ "facebook": #3B5998,
+ "twitter": #55ACEE,
+ "gplus": #DD4B39,
+ "youtube": #ED302F,
+ "pinterest": #C61118,
+ "instagram": #2E5E86,
+ "github": #333,
+ "vk": #4C75A3,
+ "email": #4B515D
+);
+
+@each $name, $color in $social-colors {
+   .social-#{$name} {
+      background-color: $color !important;
+   }
+}
