@@ -1,0 +1,14 @@
+// Nav overrides
+.nav-tabs {
+  .nav-link {
+    @include hover-focus {
+      background-color: $gray-dark-3;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-tabs.nav-link {
+    border-bottom: none;
+  }
+}

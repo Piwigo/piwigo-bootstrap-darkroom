@@ -130,3 +130,11 @@ $pagination-active-border-color:       $gray-dark-2 !default;
 $pagination-disabled-color:            $gray-600 !default;
 $pagination-disabled-bg:               lighten($pagination-active-bg, 10%) !default;
 $pagination-disabled-border-color:     $pagination-disabled-bg !default;
+
+// Tabs
+$nav-tabs-border-color:                $gray-dark-3 !default;
+
+$nav-tabs-link-active-color:           $body-color !default;
+$nav-tabs-link-active-bg:              $gray-dark-3 !default;
+$nav-tabs-link-active-border-color:    $gray-dark-3 !default;
+$nav-tabs-link-hover-border-color:     $gray-dark-3 !default;

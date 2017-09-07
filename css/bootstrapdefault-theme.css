@@ -315,18 +315,3 @@ fieldset[disabled] .html-radios-inline label {
     outline: 1px solid #777777;
   }
 }
-@media (min-width: 992px) {
-  .navbar-form-desktop {
-    display: block;
-  }
-}
-
-#collectionsDropdown {
-  padding: 10px;
-  background-color: #fff;
-}
-
-.user-collections-icon {
-  width:16px;
-  height:16px;
-}

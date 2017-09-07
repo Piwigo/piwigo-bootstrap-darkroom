@@ -3172,7 +3172,7 @@ tbody.collapse.show {
 }
 
 .nav-tabs {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #3c3c3c;
 }
 
 .nav-tabs .nav-item {
@@ -3186,7 +3186,7 @@ tbody.collapse.show {
 }
 
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-  border-color: #e9ecef #e9ecef #ddd;
+  border-color: #3c3c3c #3c3c3c #3c3c3c;
 }
 
 .nav-tabs .nav-link.disabled {
@@ -3197,9 +3197,9 @@ tbody.collapse.show {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
-  background-color: #4f4f4f;
-  border-color: #ddd #ddd #4f4f4f;
+  color: #dbdbdb;
+  background-color: #3c3c3c;
+  border-color: #3c3c3c #3c3c3c #3c3c3c;
 }
 
 .nav-tabs .dropdown-menu {
@@ -8183,6 +8183,16 @@ a.text-dark:focus, a.text-dark:hover {
   visibility: hidden !important;
 }
 
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+  background-color: #3c3c3c;
+}
+
+@media (max-width: 767px) {
+  .nav-tabs.nav-link {
+    border-bottom: none;
+  }
+}
+
 .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
   color: #fff;
 }
@@ -8242,5 +8252,17 @@ a.text-dark:focus, a.text-dark:hover {
 
 .social-email {
   background-color: #4B515D !important;
+}
+
+#navigationButtons > i {
+  color: #3c3c3c;
+}
+
+#quickconnect label {
+  color: #4f4f4f;
+}
+
+.leaflet-control a {
+  color: #4f4f4f !important;
 }
 /*# sourceMappingURL=bootstrap-darkroom.css.map */
