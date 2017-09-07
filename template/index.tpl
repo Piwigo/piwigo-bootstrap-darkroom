@@ -113,7 +113,7 @@ $(document).ready(function() {
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Calendar'|@translate}">
                             <i class="fa fa-calendar" aria-hidden="true"></i>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-right">
 {if isset($U_MODE_POSTED)}
                             <li class="dropdown-item">
                                 <a href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
@@ -167,9 +167,9 @@ $(document).ready(function() {
 {/if}
 
 {if !empty($CONTENT_DESCRIPTION)}
-    <h4>
-        {$CONTENT_DESCRIPTION}
-    </h4>
+    <div class="d-flex justify-content-center mb-3">
+        <h5>{$CONTENT_DESCRIPTION}</h5>
+    </div>
 {/if}
     <div id="content" class="{if $smarty.cookies.view == 'list'}content-list{else}content-grid{/if}{if empty($THUMBNAILS)} row{/if}">
 {if !empty($CONTENT)}

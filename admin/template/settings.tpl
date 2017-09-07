@@ -3,9 +3,17 @@
 <div class="titrePage">
     <h2>Bootstrap Darkroom {$TABSHEET_TITLE}</h2>
 </div>
+
+<ul class="tabs">
+  <li class="tab-link current" data-tab="appearance">{'Appearance'|@translate}</li>
+  <li class="tab-link" data-tab="components">{'Components'|@translate}</li>
+</ul>
+  
+
 <form method="post" class="properties">
     <input type="hidden" name="boostrap_darkroom_settings" value="true" />
     <div id="configContent">
+      <div id="appearance" class="tab-content current">
         <fieldset class="mainConf">
             <legend>{'Bootstrap theme'|@translate}</legend>
             <ul>
@@ -31,6 +39,8 @@
                 <dt>{'None'|@translate}</dt><dd>{'No color theme'|@translate}</dd> 
             </dl>
         </fieldset>
+      </div>
+      <div id="components" class="tab-content">
         <fieldset class="mainConf">
             <legend>Slick Carousel {'Settings'|@translate}</legend>
             <ul>
@@ -270,30 +280,43 @@
             <legend>{'Custom CSS'|@translate}</legend>
             <textarea name="custom_css" cols="80" rows="10">{if $theme_config->custom_css}{$theme_config->custom_css}{/if}</textarea>
         </fieldset>
+      </div>
     </div>
     <p class="formButtons">
         <input type="submit" name="submit" value="{'Save Settings'|@translate}">
     </p>
 </form>
 {footer_script require="jquery"}
-    (function(){
-        var targets = {                                                                                                                                                                            
-            'input[name="social_enabled"]': ['#social_twitter', '#social_facebook', '#social_google_plus'],
-            '#comments_radio_disqus': ['#comments_type_disqus'],
-        };
+(function(){
+    var targets = {                                                                                                                                                                            
+        'input[name="social_enabled"]': ['#social_twitter', '#social_facebook', '#social_google_plus'],
+        '#comments_radio_disqus': ['#comments_type_disqus'],
+    };
+                                                                                                                                                                                               
+    for (selector in targets) {
+        for (target of targets[selector]) {
+            jQuery(target).toggle(jQuery(selector).is(':checked'));                                                                                                                            
                                                                                                                                                                                                    
-        for (selector in targets) {
-            for (target of targets[selector]) {
-                jQuery(target).toggle(jQuery(selector).is(':checked'));                                                                                                                            
-                                                                                                                                                                                                   
-                (function(target){                                                                                                                                                                 
-                    jQuery(selector).on('change', function() {                                                                                                                                     
-                        jQuery(target).toggle($(this).is(':checked'));                                                                                                                             
-                    });
-                })(target);                                                                                                                                                                        
-            }                                                                                                                                                                                      
-        };                                                                                                                                                                                         
-    }());
+            (function(target){                                                                                                                                                                 
+                jQuery(selector).on('change', function() {                                                                                                                                     
+                    jQuery(target).toggle($(this).is(':checked'));                                                                                                                             
+                });
+            })(target);                                                                                                                                                                        
+        }                                                                                                                                                                                      
+    };                                                                                                                                                                                         
+}());
+
+$(document).ready(function(){
+  $('ul.tabs li').click(function(){
+    var tab_id = $(this).attr('data-tab');
+
+    $('ul.tabs li').removeClass('current');
+    $('.tab-content').removeClass('current');
+
+    $(this).addClass('current');
+    $("#"+tab_id).addClass('current');
+  })
+})
 
 
 var select_bootswatch = $("#bootswatch_theme");

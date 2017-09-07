@@ -36,3 +36,26 @@ span.info { padding-left: 20px; }
 #material_color_label {
   display: none;
 }
+
+ul.tabs{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+ul.tabs li {
+  background: none;
+  color: #777;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+ul.tabs li.current {
+  background: #ededed;
+  color: #222;
+}
+.tab-content{
+  display: none;
+  background: #ededed;
+  padding: 15px;
+}
+.tab-content.current{ display: inherit; }
