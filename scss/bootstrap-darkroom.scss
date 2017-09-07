@@ -1,11 +1,11 @@
 // Bootstrap Darkroom
 @import "variables";
 @import "../components/bootstrap/scss/bootstrap";
-@import "nav";
-@import "navbar";
-@import "jumbotron";
-@import "dropdown";
-@import "media";
-@import "social-colors";
-@import "piwigo-components";
-@import "piwigo-plugins";
+@import "darkroom-colors/nav";
+@import "darkroom-colors/navbar";
+@import "darkroom-colors/jumbotron";
+@import "darkroom-colors/dropdown";
+@import "darkroom-colors/media";
+@import "darkroom-colors/social-colors";
+@import "darkroom-colors/piwigo-components";
+@import "darkroom-colors/piwigo-plugins";

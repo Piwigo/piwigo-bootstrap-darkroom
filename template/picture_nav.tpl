@@ -1,26 +1,9 @@
-{*{footer_script require='bootstrap'}
-{literal}
-if ($('.jumbotron').length > 0) {
-    var $affix_height = $('.navbar-main').height() + $('.jumbotron').outerHeight();
-    $('.navbar-contextual').affix({ offset: {top: $affix_height } });
-} else {
-    $('.navbar-contextual').affix({ offset: {top: 50} });
-}
-{/literal}
-{/footer_script}*}
 <nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
-        <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a> <small>[{$PHOTO}]</small></div>
+        <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a></div>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span>
         </button>
-{if $theme_config->bootstrap_theme == 'bootswatch' || $theme_config->bootstrap_theme == 'material'}
-{footer_script require='jquery'}{strip}
-$(document).ready(function() {
-$('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
-});
-{/strip}{/footer_script}
-{/if}
         <div class="navbar-collapse collapse justify-content-end" id="secondary-navbar">
             <ul class="navbar-nav">
 {if isset($current.unique_derivatives) && count($current.unique_derivatives)>1}

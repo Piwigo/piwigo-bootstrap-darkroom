@@ -20,7 +20,7 @@
   },
   "style": "css/bootstrap-darkroom.css",
   "sass": "scss/bootstrap-darkroom.scss",
-  "license": "MIT",
+  "license": "APACHE-2.0",
   "dependencies": {},
   "peerDependencies": {
     "jquery": ">=1.9.1",
