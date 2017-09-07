@@ -85,13 +85,13 @@ $font-family-sans-serif: "PT Sans", "Helvetica Neue", Arial, sans-serif !default
 $link-color:            $gray !default;
 $link-decoration:       none !default;
 $link-hover-color:      $white !default;
+$link-hover-decoration: none !default;
 
 // Navbar links
 $navbar-dark-color:                 $link-color !default;
 $navbar-dark-hover-color:           $white !default;
 $navbar-dark-active-color:          $link-color !default;
 $navbar-dark-disabled-color:        rgba($white,.25) !default;
-$link-hover-decoration: none !default;
 
 // Jumbotron
 $jumbotron-bg:            $black !default;
@@ -114,3 +114,19 @@ $dropdown-link-disabled-color:   $gray-600 !default;
 $card-cap-bg:              $gray-dark-2 !default;
 $card-bg:                  $gray-light-1 !default;
 $card-border-color:        $gray-dark-2 !default;
+
+// Pagination
+$pagination-bg:                        $gray-dark-3 !default;
+$pagination-border-color:              theme-color("primary") !default;
+
+$pagination-hover-color:               $white !default;
+$pagination-hover-bg:                  $gray-dark-2 !default;
+$pagination-hover-border-color:        $gray-dark-2 !default;
+
+$pagination-active-color:              $white !default;
+$pagination-active-bg:                 $gray-dark-2 !default;
+$pagination-active-border-color:       $gray-dark-2 !default;
+
+$pagination-disabled-color:            $gray-600 !default;
+$pagination-disabled-bg:               lighten($pagination-active-bg, 10%) !default;
+$pagination-disabled-border-color:     $pagination-disabled-bg !default;
