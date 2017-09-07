@@ -7,7 +7,7 @@
 
 {$PICTURE_NAV}
 
-<div id="content-spacer" class="container">
+<div class="container">
 {include file='infos_errors.tpl'}
 {include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
 {if get_device() != 'desktop' }

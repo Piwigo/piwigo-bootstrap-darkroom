@@ -13,7 +13,7 @@ $(document).ready(function () {
 });
 {/footer_script}
 {/if}
-    <nav class="navbar navbar-expand-lg navbar-contextual navbar-dark bg-primary sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-contextual navbar-dark bg-primary sticky-top mb-5">
         <div class="container">
             <div class="navbar-brand mr-auto">
 {if isset($chronology.TITLE)}
@@ -145,7 +145,7 @@ $(document).ready(function() {
 {include file='infos_errors.tpl'}
 
 <a name="content"></a>
-<div id="content-spacer" class="container">
+<div class="container">
 {if !empty($PLUGIN_INDEX_CONTENT_BEGIN)}{$PLUGIN_INDEX_CONTENT_BEGIN}{/if}
 
 {if isset($chronology_views)}

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-primary fixed-top">
+<nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-primary fixed-top mb-5">
     <div class="container">
         <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a></div>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">

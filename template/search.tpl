@@ -11,7 +11,7 @@
     });
 {/footer_script}
 
-<nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-primary sticky-top">
+<nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-primary sticky-top mb-5">
     <div class="container">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Search'|@translate}</a></div>
         <ul class="navbar-nav justify-content-end">

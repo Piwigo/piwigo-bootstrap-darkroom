@@ -256,14 +256,6 @@ html, body {
   }
 }
 
-#thePicturePage #content-spacer {
-  padding-top: 5rem;
-}
-
-#theCategoryPage #content-spacer {
-  padding-top: 2rem;
-}
-
 #theCategoryPage {
   padding-left: 0px !important;
 }
@@ -588,11 +580,7 @@ html, body {
   padding: 10px 0 !important;
 }
 
-#important-info #rating {
-  float: right;
-}
-
-#important-info #rating .rateButtonStarFull {
+#rating .rateButtonStarFull {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -605,11 +593,11 @@ html, body {
   cursor: pointer;
 }
 
-#important-info #rating .rateButtonStarFull:before {
+#rating .rateButtonStarFull:before {
   content: "\f005";
 }
 
-#important-info #rating .rateButtonStarEmpty {
+#rating .rateButtonStarEmpty {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -622,7 +610,7 @@ html, body {
   cursor: pointer;
 }
 
-#important-info #rating .rateButtonStarEmpty:before {
+#rating .rateButtonStarEmpty:before {
   content: "\f006";
 }
 
