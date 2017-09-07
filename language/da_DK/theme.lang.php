@@ -81,3 +81,4 @@ $lang['Display category description in grid view'] = 'Vis albumbeskrivelse i git
 $lang['Fullscreen'] = 'Hele skærmen';
 $lang['Grid view'] = 'Gittervisning';
 $lang['List view'] = 'Listevisning';
+$lang['Discover'] = 'Opdag';
