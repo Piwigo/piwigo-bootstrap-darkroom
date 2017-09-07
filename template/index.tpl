@@ -220,14 +220,14 @@ $(window).on('resize', function() {
 {/foreach}
 {include file='_photoswipe_js.tpl' selector='#photoSwipeData'}
         </div>
-{footer_script require='jquery' require='photoswipe'}{strip}
+{footer_script require='jquery' require='photoswipe'}
 $('#startSlideshow').on('click touchstart', function() {
    startPhotoSwipe(0);
    $('.pswp__button--autoplay')[0].click();
 });
 
 function setupPhotoSwipe() {
-   $('#thumbnails').find("a:has(img[class=thumbnail])").each(function(_index) {
+   $('#thumbnails').find("a:has(img)").each(function(_index) {
       var $pswpIndex;
       if ($(this).find('img').length > 0) {
          var _href = $(this).href;
@@ -246,7 +246,7 @@ function setupPhotoSwipe() {
    });
 }
 
-{if $theme_config->thumbnail_linkto == "photoswipe" || ($theme_config->thumbnail_linkto == "photoswipe_mobile_only" && get_device() != 'desktop')}
+{if $theme_config->thumbnail_linkto == 'photoswipe' || ($theme_config->thumbnail_linkto == 'photoswipe_mobile_only' && get_device() != 'desktop')}
 $(document).ready(function() {
    setupPhotoSwipe();
 });
@@ -257,7 +257,7 @@ $(document).ajaxComplete(function() {
 });
 {/if}
 {/if}
-{/strip}{/footer_script}
+{/footer_script}
 {/if}
 {footer_script require="jquery"}{strip}
 {if !isset($loaded_plugins['piwigo-videojs']) && (isset($GThumb) || isset($GDThumb))}
