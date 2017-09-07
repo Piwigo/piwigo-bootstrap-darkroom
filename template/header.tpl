@@ -60,23 +60,18 @@
     {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config->material_color}/bootstrap-material-design.min.css" order=-20}
     {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-19}
 {elseif $theme_config->bootstrap_theme == 'darkroom'}
-    {combine_css path='themes/bootstrap_darkroom/css/bootstrap-darkroom.css' order=-20}
+    {combine_css path='themes/bootstrap_darkroom/css/bootstrap-darkroom.min.css' order=-20}
     {combine_css path="themes/bootstrap_darkroom/components/pTSans/pTSans.css" order=-19}
 {else}
     {combine_css path='themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap.min.css' order=-20}
 {/if}
     {combine_css path='themes/bootstrap_darkroom/components/font-awesome/css/font-awesome.min.css' order=-14}
-    {combine_css path='themes/bootstrap_darkroom/css/bootstrapdefault-theme.css' order=-11}
 {foreach from=$themes item=theme}
 {if $theme.load_css}
     {combine_css path="themes/`$theme.id`/theme.css" order=-10}
 {/if}
 {if !empty($theme.local_head)}{include file=$theme.local_head load_css=$theme.load_css}{/if}
 {/foreach}
-{*{if $theme_config->bootstrap_theme == 'darkroom'}
-    {combine_css path="themes/bootstrap_darkroom/css/darkroom-colors.css" order=-5}
-{/if}*}
-    {combine_css path="themes/bootstrap_darkroom/css/fixplugins.css" order=9999}
 {if file_exists("local/bootstrapdefault/custom.css")}
     {combine_css path="local/bootstrapdefault/custom.css" order=10000}
 {/if}

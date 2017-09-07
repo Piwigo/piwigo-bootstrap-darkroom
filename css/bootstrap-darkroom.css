@@ -8218,42 +8218,6 @@ a.text-dark:focus, a.text-dark:hover {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 
-.social-facebook {
-  background-color: #3B5998 !important;
-}
-
-.social-twitter {
-  background-color: #55ACEE !important;
-}
-
-.social-gplus {
-  background-color: #DD4B39 !important;
-}
-
-.social-youtube {
-  background-color: #ED302F !important;
-}
-
-.social-pinterest {
-  background-color: #C61118 !important;
-}
-
-.social-instagram {
-  background-color: #2E5E86 !important;
-}
-
-.social-github {
-  background-color: #333 !important;
-}
-
-.social-vk {
-  background-color: #4C75A3 !important;
-}
-
-.social-email {
-  background-color: #4B515D !important;
-}
-
 #navigationButtons > i {
   color: #3c3c3c;
 }
