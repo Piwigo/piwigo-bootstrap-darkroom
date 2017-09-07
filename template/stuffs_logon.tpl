@@ -1,5 +1,5 @@
 {include file='infos_errors.tpl'}
-<div class="col-lg-6 col-centered">
+<div class="col-lg-6 mx-auto">
     <form action="{$block.F_LOGIN_ACTION}" method="post" name="login_form" class="form-horizontal">
         <div class="panel panel-primary">
             <div class="panel-heading">

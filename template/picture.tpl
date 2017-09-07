@@ -41,7 +41,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 
 <div id="theImageComment" class="container">
 {if isset($COMMENT_IMG)}
-  <div class="text-center col-lg-10 -col-md-12 col-centered">
+  <div class="text-center col-lg-10 -col-md-12 mx-auto">
     <section id="important-info">
         <h4 class="imageComment">{$COMMENT_IMG}</h4>
     </section>
@@ -86,7 +86,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
   {include file="_photoswipe_js.tpl" selector="#photoSwipeData"}
 {/if}
 <div id="theImageCarousel" class="container">
- <div class="col-lg-10 col-md-12 col-centered">
+ <div class="col-lg-10 col-md-12 mx-auto">
   <div id="thumbnailCarousel" class="slick-carousel">
 {assign var=idx value=0}
 {foreach from=$thumbnails item=thumbnail}
@@ -132,7 +132,7 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 {/if}
 
 <div id="theImageInfos" class="container">
- <div id="infopanel" class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-centered">
+ <div id="infopanel" class="col-lg-8 col-md-10 col-sm-12 col-xs-12 mx-auto">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs nav-justified" role="tablist">
 {if $theme_config->picture_info == 'tabs' || (get_device() != 'desktop' && $theme_config->picture_info != 'disabled')}

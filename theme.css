@@ -18,11 +18,6 @@ html, body {
   overflow-x: hidden;
 }
 
-.col-centered {
- float: none;
- margin: 0 auto;
-}
-
 .col-inner .caption p { margin: 0 0; }
 .col-inner .caption .description { margin-top: 10px; }
 
