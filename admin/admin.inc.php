@@ -32,7 +32,7 @@ if ($page['tab'] == TAB_SETTINGS) {
 // TabSheet
 $tabsheet = new tabsheet();
 $tabsheet->set_id('bsdark');
-$tabsheet->add(TAB_SETTINGS, 'Bootstrap Darkroom ' . l10n('Settings'), ADMIN_PATH . '&tab=' . TAB_SETTINGS);
+$tabsheet->add(TAB_SETTINGS, l10n('Settings'), ADMIN_PATH . '&tab=' . TAB_SETTINGS);
 $tabsheet->add(TAB_ABOUT, l10n('About'), ADMIN_PATH . '&tab=' . TAB_ABOUT);
 $tabsheet->select($page['tab']);
 $tabsheet->assign();
