@@ -18,9 +18,6 @@ html, body {
   overflow-x: hidden;
 }
 
-.col-inner .caption p { margin: 0 0; }
-.col-inner .caption .description { margin-top: 10px; }
-
 @media (min-width: 1800px) {
   .container {
     width: 1600px;
@@ -32,8 +29,8 @@ html, body {
   }
 }
 
-#thePicturePage #content-spacer { padding-top: 80px; }
-#theCategoryPage #content-spacer { padding-top: 20px; }
+#thePicturePage #content-spacer { padding-top: 5rem; }
+#theCategoryPage #content-spacer { padding-top: 1rem; }
 #theCategoryPage { padding-left: 0px !important; }
 #theCategoryPage h4.title { line-height: 1.2em;}
 
@@ -158,6 +155,9 @@ html, body {
   top: 2px;
   right: 0;
 }
+
+.col-inner .caption p { margin: 0 0; }
+.col-inner .caption .description { margin-top: 10px; }
 
 /* Rating */
 #rating .rateButtonStarFull {
