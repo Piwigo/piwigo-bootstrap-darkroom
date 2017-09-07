@@ -1,0 +1,56 @@
+// Tag cloud
+#tagCloud span {
+  margin: 5px;
+}
+#tagCloud .tagLevel5 {
+  font-size: 150% !important;
+}
+#tagCloud .tagLevel4 {
+  font-size: 140% !important;
+}
+#tagCloud .tagLevel3 {
+  font-size: 120% !important;
+}
+#tagCloud .tagLevel2 {
+  font-size: 100% !important;
+}
+#tagCloud .tagLevel1 {
+  font-size: 90% !important;
+}
+#tagCloudCanvas {
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+}
+#tagCloudCanvas span {
+  display: none;
+}
+#tagCloudGradientStart {
+  display: none;
+  color: #ccc;
+}
+#tagCloudGradientEnd {
+  display: none;
+  color: #337ab7;
+}
+#tagLetters {
+  padding-left: 2px;
+  padding-right: 7px;
+}
+#tagLetters *,
+#tagLetters *:before,
+#tagLetters *:after {
+  box-sizing: border-box !important;
+}
+#tagLetters .row {
+  -moz-column-width: 17em;
+  -webkit-column-width: 17em;
+  -moz-column-gap: -1em;
+  -webkit-column-gap: -1em;
+}
+#tagLetters .menu-category {
+  display: inline-block;
+  margin: 0.26rem;
+  padding: 1rem;
+  width: 100%;
+}

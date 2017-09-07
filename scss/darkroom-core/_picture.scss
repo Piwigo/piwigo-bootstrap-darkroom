@@ -1,0 +1,73 @@
+// Picture page
+
+// Info tabs
+#theImageInfos {
+  .tab-pane { 
+    margin: 10px 10px;
+  }
+
+  .table-responsive {
+    border: none;
+  }
+
+  .table>tbody>tr>td,
+  .table>tbody>tr>th {
+    border-top: none;
+  }
+
+  .table>tbody>tr>th {
+    text-align: right;
+  }
+}
+
+// Slick Carousel
+#thumbnailCarousel {
+  display: none; /* hide initially until page is loaded */
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+}
+.slick-slide img { display: inherit !important; }
+.slick-slide, .slick-slide *{ outline: none !important; }
+.slick-list { padding: 10px 0 !important; }
+
+// Rating
+#important-info {
+  #rating {
+    float: right;
+    
+    .rateButtonStarFull {
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      cursor: pointer;
+
+      &:before {
+        content: "\f005";
+      }
+    }
+
+    .rateButtonStarEmpty {
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      font-family: 'FontAwesome';
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      cursor: pointer;
+
+      &:before {
+        content: "\f006";
+      }
+    }
+  }
+}
+
