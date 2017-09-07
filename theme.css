@@ -164,7 +164,7 @@ html, body {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Glyphicons Halflings';
+  font-family: 'FontAwesome';
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -173,13 +173,13 @@ html, body {
   cursor: pointer;
 }
 #rating .rateButtonStarFull:before {
-  content: "\e006";
+  content: "\f005";
 }
 #rating .rateButtonStarEmpty {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Glyphicons Halflings';
+  font-family: 'FontAwesome';
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -188,7 +188,7 @@ html, body {
   cursor: pointer;
 }
 #rating .rateButtonStarEmpty:before {
-  content: "\e007";
+  content: "\f006";
 }
 
 
