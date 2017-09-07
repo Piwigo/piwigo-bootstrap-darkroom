@@ -281,7 +281,7 @@ $('#startSlideshow').on('click touchstart', function() {
 });
 
 function setupPhotoSwipe() {
-   $('#thumbnails').find("a:has(img[class=thumbnail])").each(function(_index) {
+   $('#thumbnails').find("a:has(img)").each(function(_index) {
       var $pswpIndex;
       if ($(this).find('img').length > 0) {
          var _href = $(this).href;
