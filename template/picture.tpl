@@ -5,9 +5,11 @@
 
 {if !empty($PLUGIN_PICTURE_BEFORE)}{$PLUGIN_PICTURE_BEFORE}{/if}
 
+<div class="mb-5">
 {$PICTURE_NAV}
+</div>
 
-<div class="container">
+<div class="container pt-4">
 {include file='infos_errors.tpl'}
 {include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
 {if get_device() != 'desktop' }
@@ -22,12 +24,6 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
    }
 });
 {/strip}{/footer_script}
-{/if}
-{if $theme_config->bootstrap_theme == 'material'}
-{footer_script require='jquery'}
-$('#content-spacer').removeClass('container').wrap('<div class="container well"></div>');
-$('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer');
-{/footer_script}
 {/if}
 </div>
 
