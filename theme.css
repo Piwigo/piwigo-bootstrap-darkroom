@@ -117,21 +117,6 @@ html, body {
    color: inherit;
 }
 
-.navmenu {
-   overflow: visible;
-   width: 60px;
-   padding-top: 55px;
-   z-index: 102;
-   font-size: 20px;
-   border: none;
-   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
-}
-.canvas {
-  position: relative;
-  left: 0;
-  z-index: 101;
-}
-
 /* replace the home link in navbar */
 .navbar-brand a:first-child {
   font-size: 0;
