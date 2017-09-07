@@ -150,11 +150,11 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
   <div class="tab-content">
 {if $theme_config->picture_info === 'tabs' || (get_device() != 'desktop' && $theme_config->picture_info != 'disabled')}
     <div role="tabpanel" class="tab-pane active" id="tab_info">
-      <div id="info-content" class="info table-responsive">
-        <table class="table table-condensed">
+      <div id="info-content" class="info">
+        <table class="table table-sm table-responsive">
           <colgroup>
-             <col class="col-xs-4">
-             <col class="col-xs-4">
+             <col class="w-50">
+             <col class="w-50">
           </colgroup>
           <tbody>
 {if $display_info.author and isset($INFO_AUTHOR)}
@@ -329,11 +329,11 @@ $('div[id^="theImage"]').removeClass('container').insertAfter('#content-spacer')
 <!-- metadata -->
 {if isset($metadata)}
     <div role="tabpanel" class="tab-pane" id="tab_metadata">
-        <div class="table-responsive">
-            <table class="table table-condensed">
+        <div id="metadata" class="info">
+            <table class="table table-sm table-responsive">
                 <colgroup>
-                    <col class="col-xs-4">
-                    <col class="col-xs-4">
+                    <col class="w-50">
+                    <col class="w-50">
                 </colgroup>
                 <tbody>
 {foreach from=$metadata item=meta}
