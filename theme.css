@@ -359,6 +359,10 @@ html, body {
   }
 }
 
+.navbar-main .dropdown-menu {
+  z-index: 1030;
+}
+
 .navbar-contextual .navbar-brand a,
 .navbar-contextual .navbar-brand a:hover,
 .navbar-contextual .navbar-brand a:focus {
