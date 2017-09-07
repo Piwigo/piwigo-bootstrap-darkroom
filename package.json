@@ -1,0 +1,37 @@
+{
+  "name": "piwigo-bootstrap-darkroom",
+  "description": "A Piwigo theme based on Bootstrap 4",
+  "version": "2.0.0-alpha",
+  "keywords": [
+    "piwigo",
+    "gallery"
+  ],
+  "homepage": "https://thub.com/tkuther/piwigo-bootstrap-darkroom",
+  "author": "Thomas Kuther",
+  "contributors": [
+    "Phil Bayfield",
+    "Piwigo Translators"
+  ],
+  "scripts": {
+    "css": "npm-run-all css-compile css-prefix css-minify",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-darkroom.scss css/bootstrap-darkroom.css",
+    "css-prefix": "postcss --config components/bootstrap/build/postcss.config.js --replace css/bootstrap-darkroom.css",
+    "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output css/bootstrap-darkroom.min.css css/bootstrap-darkroom.css"
+  },
+  "style": "css/bootstrap-darkroom.css",
+  "sass": "scss/bootstrap-darkroom.scss",
+  "license": "MIT",
+  "dependencies": {},
+  "peerDependencies": {
+    "jquery": ">=1.9.1",
+    "popper.js": "^1.11.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "clean-css-cli": "^4.1.6",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "postcss-cli": "^4.1.0",
+    "uglify-js": "^3.0.24"
+  }
+}

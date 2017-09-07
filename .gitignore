@@ -1,1 +1,3 @@
 local_head.tpl
+node_modules/
+npm-debug.log
