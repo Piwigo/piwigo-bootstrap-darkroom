@@ -27,7 +27,7 @@
                 <img class="img-responsive" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
             </div>
         </a>
-        <div class="caption">
+        <div class="caption mt-2">
             <h4 class="title">
                 <a href="{$cat.URL}" class="ellipsis{if !empty($cat.icon_ts)} recent{/if}">{$cat.NAME}</a>
 {if !empty($cat.icon_ts)}

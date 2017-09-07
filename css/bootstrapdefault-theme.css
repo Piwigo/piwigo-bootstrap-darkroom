@@ -49,17 +49,7 @@ fieldset[disabled] .html-radios-inline label {
   float: none;
   margin-right: 0px;
 }
-.content-grid .col-inner .caption h3.title {
-  position: relative;
-}
-.content-grid .col-inner .caption h3.title a.recent {
-  padding-right: 16px;
-}
-.content-grid .col-inner .caption h3.title img {
-  position: absolute;
-  top: 6px;
-  right: 0;
-}
+
 .content-grid .col-inner .caption .description {
   display: none;
 }
@@ -90,10 +80,6 @@ fieldset[disabled] .html-radios-inline label {
 }
 #navigationButtons a {
   text-decoration: none;
-}
-#navigationButtons span.glyphicon {
-  margin-left: 25px;
-  margin-right: 25px;
 }
 #slideshow #navigationButtons {
   margin-top: 20px;
