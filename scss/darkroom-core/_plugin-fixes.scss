@@ -1,20 +1,3 @@
-.thumbnail > img,
-.thumbnail a > img,
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-.html-radios-inline input[type=radio] {
-  position: absolute;
-  margin-left: -20px;
-  margin-top: 4px \9;
-}
-.html-radios-inline label + label {
-  margin-top: 0;
-  margin-left: 10px;
-}
 .pwg-icon {
   position: relative;
   top: 1px;
@@ -126,3 +109,9 @@ ul.ui-autocomplete { z-index: 150; }
 
 /* Extended Description */
 ul.thumbnailCategories { padding-top: 20px; }
+
+/* Language Switch */
+/* Language Switch */
+[class*="langflag-text-"] {
+  background-position: 0 50px !important;
+}

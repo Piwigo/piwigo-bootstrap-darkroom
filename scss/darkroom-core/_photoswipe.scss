@@ -1,0 +1,76 @@
+// PhotoSwipe
+.pswp__button--autoplay { background: none !important; }
+.pswp__button--autoplay:before {
+  content:"\f04b";
+  font-family:"FontAwesome";
+  color: #fff;
+}
+.pswp__button--autoplay.stop { background: none !important; }
+.pswp__button--autoplay.stop:before {
+  content:"\f04d";
+  font-family:"FontAwesome";
+  color: #fff;
+}
+
+.pswp__button--details { background: none !important; }
+.pswp__button--details:before {
+  content:"\f129";
+  font-family:"FontAwesome";
+  color: #fff;
+}
+
+.pswp__button {
+  z-index: 2000;
+}
+
+.pswp-video-modal {
+  background: url(img/play-circle-white.png) no-repeat center center;
+  background-size: 128px 128px;
+  height: 100%;
+  width: 320px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.pswp-video-modal video {
+  visibility: hidden;
+}
+.pswp--touch .pswp__share-tooltip a { padding: 10px 12px; }
+
+.pswp__ui--fit .pswp__top-bar, .pswp__ui--fit .pswp__caption,
+.pswp__top-bar, .pswp__caption {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.pswp__ui--idle .pswp__caption { opacity: 0; }
+@media (min-width: 768px) {
+  .pswp__caption__center {
+    max-width: 640px;
+  }
+}
+.pswp__caption__center ul {
+  margin: 0;
+  padding: 0;
+}
+.pswp__caption__center li {
+  padding: 0;
+  display: inline-block;
+  color: #666;
+  line-height: 12px;
+}
+.pswp__caption__center li em {
+  font-size: 10px;
+  line-height: 12px;
+}
+@media (min-width: 768px) {
+  .pswp__caption__center li em {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+a.pswp__share--google:hover {
+  background: #03a9f4;
+  color: #fff;
+}
+#pswp--caption--metadata li {
+  white-space: nowrap;
+}
+

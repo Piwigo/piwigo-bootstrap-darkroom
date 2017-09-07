@@ -229,6 +229,15 @@ function strip_breadcrumbs() {
   }
 }
 
+// register additional template files
+add_event_handler('loc_end_picture', 'register_picture_templates');
+function register_picture_templates() {
+  global $template;
+
+  $template->set_filenames(array('picture_nav'=>'picture_nav.tpl'));
+  $template->assign_var_from_handle('PICTURE_NAV', 'picture_nav');
+}
+
 // register video files
 $video_ext = array('mp4','m4v');
 $conf['file_ext'] = array_merge ($conf['file_ext'], $video_ext, array_map('strtoupper', $video_ext));

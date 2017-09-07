@@ -5,7 +5,7 @@
 
 {if !empty($PLUGIN_PICTURE_BEFORE)}{$PLUGIN_PICTURE_BEFORE}{/if}
 
-{include file='picture_nav.tpl'}
+{$PICTURE_NAV}
 
 <div id="content-spacer" class="container">
 {include file='infos_errors.tpl'}
