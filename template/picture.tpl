@@ -14,9 +14,9 @@
 {footer_script require="jquery"}{strip}
 $('#theImage img').bind('swipeleft swiperight', function (event) {
    if (event.type == 'swipeleft') {
-       $('#navigationButtons a#navNextPicture span').click();
+       $('#navigationButtons a#navNextPicture i').click();
    } else if (event.type == 'swiperight') {
-       $('#navigationButtons a#navPrevPicture span').click(); 
+       $('#navigationButtons a#navPrevPicture i').click(); 
    } else { 
        return;
    }
