@@ -1,7 +1,7 @@
 {if isset($loaded_plugins['rv_gmaps']) && $BODY_ID == "thePicturePage"}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').removeClass('pwg-state-default pwg-button').wrap('<li></li>');
+  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').removeClass('pwg-state-default pwg-button').wrap('<li class="nav-item"></li>');
   $('#map').wrap('<div id="mapContainer" class="container"></div>');
   $('#mapPicture').prependTo('#mapContainer');
 });
@@ -73,11 +73,11 @@ $(document).ready(function() {
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
   if ($('#batchDownloadLink').next('div#batchDownloadBox').length > 0) {
-    $('#batchDownloadLink').closest('li').addClass('dropdown');
-    $('#batchDownloadLink').addClass('dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown').attr('href', '#');
+    $('#batchDownloadLink').closest('li').addClass('nav-item dropdown');
+    $('#batchDownloadLink').addClass('nav-link dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown').attr('href', '#');
     $('#batchDownloadLink .pwg-button-text').after('<span class="caret"></span>');
     $('#batchDownloadBox').changeElementType('ul');
-    $('#batchDownloadBox a').wrap('<li></li>');
+    $('#batchDownloadBox a').wrap('<li class="dropdown-item"></li>');
     $('#batchDownloadBox').attr('role', 'menu').attr('style', '');
     $('#batchDownloadBox .switchBoxTitle').changeElementType('li');
     $('#batchDownloadBox .switchBoxTitle').addClass('dropdown-header').removeClass('switchBoxTitle');
@@ -86,13 +86,14 @@ $(document).ready(function() {
   }
   if ($('.navbar-main dt:contains("Downloads")').length > 0) {
     $('.navbar-main dt:contains("Downloads")').next('dd').appendTo($('.navbar-main dt:contains("Downloads")'));
-    $('.navbar-main dt:contains("Downloads")').wrap('<li></li>');
+    $('.navbar-main dt:contains("Downloads")').wrap('<li class="nav-item"></li>');
     $('.navbar-main dt:contains("Downloads")').closest('li').addClass('dropdown').attr('id', 'bd_downloads');
     $('.navbar-main dt:contains("Downloads")').changeElementType('a');
-    $('#bd_downloads>a').addClass('dropdown-toggle').attr('data-toggle', 'dropdown').append('<span class="caret"></span>');
+    $('#bd_downloads>a').addClass('nav-link dropdown-toggle').attr('data-toggle', 'dropdown').append('<span class="caret"></span>');
     $('#bd_downloads dd ul').appendTo('#bd_downloads');
     $('#bd_downloads dd').remove();
     $('#bd_downloads ul').addClass('dropdown-menu');
+    $('#bd_downloads ul>li').addClass('dropdown-item');
     $('#bd_downloads ul').find('span').each(function() { $(this).appendTo($(this).prev('a')); });
   }
 });
