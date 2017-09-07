@@ -22,7 +22,7 @@
                     <label labelfor="bootstrap_theme">{'Color theme'|@translate}</label>
                     <select name="bootstrap_theme">
                         <option value="darkroom"{if $theme_config->bootstrap_theme == 'darkroom'} selected="selected"{/if}>Darkroom</option>
-                        <option value="bootswatch"{if $theme_config->bootstrap_theme == 'bootswatch'} selected="selected"{/if}>Bootswatch</option>
+                        <option value="bootswatch"{if $theme_config->bootstrap_theme == 'bootswatch'} selected="selected"{/if} disabled>Bootswatch</option>
                         <option value="material"{if $theme_config->bootstrap_theme == 'material'} selected="selected"{/if}>Material</option>
                         <option value="none"{if $theme_config->bootstrap_theme == 'none'} selected="selected"{/if}>{'None'|@translate}</option>
                     </select>
@@ -263,21 +263,21 @@ le devices only)'|@translate}</option>
                         {'Enabled'|@translate}
                     </label>
                 </li>
-                <li id="social_twitter">
+                <li id="social_twitter" class="ident">
                     <label class="font-checkbox">
                         <span class="icon-check"></span>
                         <input type="checkbox" name="social_twitter"{if $theme_config->social_twitter}  checked="checked"{/if}>
                         {'Twitter'|@translate}
                     </label>
                 </li>
-                <li id="social_facebook">
+                <li id="social_facebook" class="ident">
                     <label class="font-checkbox">
                         <span class="icon-check"></span>
                         <input type="checkbox" name="social_facebook"{if $theme_config->social_facebook}  checked="checked"{/if}>
                         {'Facebook'|@translate}
                     </label>
                 </li>
-                <li id="social_google_plus">
+                <li id="social_google_plus" class="ident">
                     <label class="font-checkbox">
                         <span class="icon-check"></span>
                         <input type="checkbox" name="social_google_plus"{if $theme_config->social_google_plus}  checked="checked"{/if}>

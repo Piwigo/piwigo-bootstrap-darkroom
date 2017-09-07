@@ -59,3 +59,7 @@ ul.tabs li.current {
   padding: 15px;
 }
 .tab-content.current{ display: inherit; }
+
+.ident {
+   margin-left: 3rem;
+}
