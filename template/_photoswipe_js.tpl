@@ -305,11 +305,11 @@ function startPhotoSwipe(idx) {
                     event = state ? 'FullscreenOn' : 'FullscreenOff',
                     holder_height = item.h;
                 if (event === 'FullscreenOn') {
-                    $('#the_page').hide();
+                    {* $('#the_page').hide(); *}
                     $('body').css('height', window.screen.height);
                     $('.pswp-video-modal').css('height', window.screen.height);
                 } else {
-                    $('#the_page').show();
+                    {* $('#the_page').show(); *}
                     $('body').css('height', '');
                     $('.pswp-video-modal').css('height', holder_height);
                 }

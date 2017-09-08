@@ -30,7 +30,6 @@
 {$debug.QUERIES_LIST}
         </div>
 {/if}
-    </div>
 {if $theme_config->photoswipe && ($BODY_ID == "thePicturePage" || !empty($THUMBNAILS))}
 {include file='_photoswipe_div.tpl'}
 {/if}

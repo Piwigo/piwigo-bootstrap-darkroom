@@ -198,13 +198,6 @@ html, body {
   height: 100%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -webkit-overflow-scrolling: touch;
-}
-
-#the_page {
-  height: 100%;
-  position: relative;
-  overflow-x: hidden;
 }
 
 @media (min-width: 1800px) {

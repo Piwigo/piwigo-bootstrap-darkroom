@@ -101,7 +101,6 @@
 </head>
 
 <body id="{$BODY_ID}">
-    <div id="the_page">
 {if $BODY_ID != 'thePicturePage'}
         <nav class="navbar navbar-expand-lg navbar-main navbar-dark bg-primary">
             <div class="container">
