@@ -1,18 +1,3 @@
-/* OLD STUFF from bootstrapdefault, needs to be verified */
-.thumbnail > img,
-.thumbnail a > img,
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-.copyright {
-  padding: 30px;
-}
-#thePopuphelpPage .jumbotron {
-  display: none;
-}
 /* Win Phone 8.1 + fix */
 @-ms-viewport       { width: device-width; }
 
@@ -35,8 +20,6 @@ html, body {
    width: 2800px;
   }
 }
-
-#theCategoryPage { padding-left: 0px !important; }
 
 /* Jumbotron */
 .jumbotron {
@@ -97,3 +80,12 @@ html, body {
 /* Wells */
 .well-categories { margin-bottom: 10px; }
 
+/* Copyright container */
+.copyright {
+  padding: 30px;
+}
+
+/* Help popup */
+#thePopuphelpPage .jumbotron {
+  display: none;
+}
