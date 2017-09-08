@@ -256,6 +256,9 @@ html, body {
     border: none !important;
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
     transition: all 0.7s ease 0s;
   }
   #navbar-menubar > #quicksearch input[type="text"]:focus {
@@ -275,6 +278,9 @@ html, body {
 }
 
 #content .col-outer {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
@@ -962,4 +968,5 @@ ul.thumbnailCategories {
 [class*="langflag-text-"] {
   background-position: 0 50px !important;
 }
+
 /*# sourceMappingURL=theme.css.map */
