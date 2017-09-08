@@ -524,7 +524,7 @@
             $("#" + canvasID).css("visibility", "hidden");
             $("#" + canvasID).css("display", "none");
             $("#" + canvasID).css("position", "relative");
-            $("#" + canvasID).css("z-index", 10000);
+            $("#" + canvasID).css("z-index", 1000);
             $("#" + canvasID).width(options.width);
             $("#" + canvasID).height(options.height);
             $("#" + canvasID).offset({ top: options.top, left: options.left });
