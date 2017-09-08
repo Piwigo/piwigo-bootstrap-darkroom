@@ -1,5 +1,28 @@
 // Picture page
 
+
+// the image
+#theImage {
+  position: relative;
+  overflow-x: hidden;
+  text-align: center;
+}
+#theImage img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Share buttons
+#share {
+  font-size: 2.5em;
+  text-align: center;
+}
+#share a {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+}
+
 // Info tabs
 #theImageInfos {
   .tab-pane { 
@@ -67,3 +90,41 @@
   }
 }
 
+// Picture nav buttons
+#navigationButtons {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.6em;
+
+  a {
+    text-decoration: none;
+  }
+
+  i.fa {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+
+    @media (max-width: 320px) {
+      margin-left: .7rem;
+      margin-right: .7rem;
+    }
+  }
+}
+
+#slideshow #navigationButtons {
+  margin-top: 20px;
+}
+
+// Video
+#thePicturePage {
+  .embed-responsive-16by9 video[poster] {
+    object-fit: cover;
+  }
+  // additional aspect ratios                                                                                                                                                              
+  .embed-responsive-9by16 {
+    padding-bottom: 177.78%;
+  }
+  .embed-responsive-4by3 {
+    padding-bottom: 75%;
+  }
+}
