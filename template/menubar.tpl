@@ -1,5 +1,5 @@
-            <!-- Start of menubar.tpl -->
-            <ul class="navbar-nav{if !$theme_config->quicksearch_navbar} ml-auto{/if}">
+<!-- Start of menubar.tpl -->
+<ul class="navbar-nav{if !$theme_config->quicksearch_navbar} ml-auto{/if}">
 {assign var="discover_menu_exists" value=false}
 {foreach from=$blocks key=id item=block}
 {if not empty($block->template)}
@@ -7,20 +7,20 @@
 {include file=$block->template|@get_extent:$id }
 {/if}
 {if $discover_menu_exists == false && ($id == "mbSpecials" or $id == "mbMenu")}
-<li class="nav-item dropdown">                                                                                                                                                   
-    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Discover'|@translate} <span class="caret"></span></a>
-    <ul class="dropdown-menu" role="menu">
-    {if not empty($blocks.mbMenu->template)}
-    {include file=$blocks.mbMenu->template}
-    {/if}
-    {if not empty($blocks.mbSpecials->template)}
-    {if not empty($blocks.mbMenu->template)}
-    <li class="dropdown-divider"></li>
-    {/if}
-    {include file=$blocks.mbSpecials->template}
-    {/if}
-    </ul>
-</li>
+    <li class="nav-item dropdown">                                                                                                                                                   
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Discover'|@translate} <span class="caret"></span></a>
+        <div class="dropdown-menu" role="menu">
+        {if not empty($blocks.mbMenu->template)}
+        {include file=$blocks.mbMenu->template}
+        {/if}
+        {if not empty($blocks.mbSpecials->template)}
+        {if not empty($blocks.mbMenu->template)}
+            <div class="dropdown-divider"></div>
+        {/if}
+        {include file=$blocks.mbSpecials->template}
+        {/if}
+        </div>
+    </li>
 {assign var="discover_menu_exists" value=true}
 {/if}
 {else}
@@ -34,5 +34,5 @@
 {include file=$block->template|@get_extent:$id }
 {/if}
 {/foreach}
-            </ul>
-            <!-- End of menubar.tpl -->
+</ul>
+<!-- End of menubar.tpl -->

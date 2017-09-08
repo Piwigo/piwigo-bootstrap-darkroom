@@ -1,10 +1,8 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{$block->get_title()} <span class="caret"></span></a>
-  <ul class="dropdown-menu dropdown-menu-scrollable" role="menu">
+  <div class="dropdown-menu dropdown-menu-scrollable" role="menu">
 {foreach from=$block->data item=data}
-    <li class="dropdown-item">
-        <a href="{$data.URL}">{$data.LABEL}</a>
-    </li>
+    <a class="dropdown-item" href="{$data.URL}">{$data.LABEL}</a>
 {/foreach}
-  </ul>
+  </div>
 </li>

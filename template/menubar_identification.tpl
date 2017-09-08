@@ -1,13 +1,13 @@
 <li class="nav-item dropdown" id="identificationDropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{if isset($USERNAME)}<i class="fa fa-user"></i> {$USERNAME}{else}{'Login'|@translate}{/if} <span class="caret"></span></a>
-    <ul class="dropdown-menu" role="menu">
+    <div class="dropdown-menu" role="menu">
 {strip}
     {if isset($USERNAME)}
-        <li class="dropdown-header">{'Hello'|@translate} {$USERNAME}!</li>
-        <li class="dropdown-divider"></li>
+        <div class="dropdown-header">{'Hello'|@translate} {$USERNAME}!</div>
+        <div class="dropdown-divider"></div>
     {/if}
     {if isset($U_LOGIN)}
-        <li class="dropdown-header">
+        <div class="dropdown-header">
             <form class="navbar-form" method="post" action="{$U_LOGIN}" id="quickconnect">
                 <div class="form-group">
                     <input class="form-control mb-2" type="text" name="username" id="username" value="" placeholder="{'Username'|@translate}">
@@ -23,20 +23,20 @@
                 <input type="hidden" name="redirect" value="{$smarty.server.REQUEST_URI|@urlencode}">
                 <button type="submit" class="btn btn-primary" name="login">{'Login'|@translate}</button>
             </form>
-         </li>
-         <li class="dropdown-divider"></li>
+         </div>
+         <div class="dropdown-divider"></div>
     {/if}
     {if isset($U_REGISTER)}
-         <li class="dropdown-item"><a href="{$U_REGISTER}" title="{'Create a new account'|@translate}" rel="nofollow">{'Register'|@translate}</a></li>
+         <a class="dropdown-item" href="{$U_REGISTER}" title="{'Create a new account'|@translate}" rel="nofollow">{'Register'|@translate}</a>
     {/if}
     {if isset($U_LOGOUT)}
-        <li class="dropdown-item"><a href="{$U_LOGOUT}">{'Logout'|@translate}</a></li>
+        <a class="dropdown-item" href="{$U_LOGOUT}">{'Logout'|@translate}</a>
     {/if}
     {if isset($U_PROFILE)}
-        <li class="dropdown-item"><a href="{$U_PROFILE}" title="{'customize the appareance of the gallery'|@translate}">{'Customize'|@translate}</a></li>
+        <a class="dropdown-item" href="{$U_PROFILE}" title="{'customize the appareance of the gallery'|@translate}">{'Customize'|@translate}</a>
     {/if}
     {if isset($U_ADMIN)}
-        <li class="dropdown-item"><a href="{$U_ADMIN}" title="{'available for administrators only'|@translate}">{'Administration'|@translate}</a></li>
+        <a class="dropdown-item" href="{$U_ADMIN}" title="{'available for administrators only'|@translate}">{'Administration'|@translate}</a>
     {/if}
 {/strip}
     </ul>
