@@ -1,10 +1,17 @@
 // Navbars
+.navbar-expand-lg {
+  .navbar-nav {
+    .nav-link {
+      padding-left: .8rem;
+      padding-right: .8rem;
+    }
+  }
+}
 
 .navbar {
   width: 100%;
   padding: 0 1rem;
                                                                                                                                                                     
-  .container>.navbar-collapse>.navbar-nav>.nav-item>.nav-link { padding: .8rem }
                                                                                                                                                                     
   .navbar-main { z-index: 104; }
                                                                                                                                                                     

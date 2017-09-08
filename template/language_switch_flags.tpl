@@ -3,7 +3,7 @@
         <span class="pwg-icon langflag-{$lang_switch.Active.code}">&nbsp;</span><span class="pwg-button-text">{'Language'|@translate}</span>
         <span class="caret"></span>
     </a>
-    <div class="dropdown-menu dropdown-menu-scrollable" role="menu">
+    <div class="dropdown-menu dropdown-menu-right dropdown-menu-scrollable" role="menu">
 {foreach from=$lang_switch.flags item=flag name=f}
         <a class="dropdown-item{if $lang_switch.Active.code==$flag.code} active{/if}" href="{$flag.url}">
 {if $lang_info.direction=="ltr"}

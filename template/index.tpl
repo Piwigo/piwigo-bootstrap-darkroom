@@ -1,5 +1,4 @@
 <!-- Start of index.tpl -->
-{combine_script id='core.switchbox' require='jquery' path='themes/default/js/switchbox.js' load='footer'}
 {combine_script id='cookie' require='jquery' path='themes/bootstrap_darkroom/js/jquery.cookie.js' load='footer'}
 {combine_script id='equalheights' require='jquery' path='themes/bootstrap_darkroom/js/jquery.equalheights.js' load='footer'}
 {if get_device() != 'desktop'}
@@ -39,11 +38,11 @@ $(document).ready(function() {
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
                             <i class="fa fa-sort" aria-hidden="true"></i><span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" role="menu">
+                        <div class="dropdown-menu" role="menu">
 {foreach from=$image_orders item=image_order name=loop}
-                            <li class="dropdown-item{if $image_order.SELECTED} active{/if}"><a href="{$image_order.URL}" rel="nofollow">{$image_order.DISPLAY}</a></li>
+                            <a class="dropdown-item{if $image_order.SELECTED} active{/if}" href="{$image_order.URL}" rel="nofollow">{$image_order.DISPLAY}</a>
 {/foreach}
-                        </ul>
+                        </div>
                     </li>
 {/if}
 {if !empty($image_derivatives)}
@@ -51,11 +50,11 @@ $(document).ready(function() {
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
                             <i class="fa fa-picture-o" aria-hidden="true"></i><span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" role="menu">
+                        <div class="dropdown-menu" role="menu">
 {foreach from=$image_derivatives item=image_derivative name=loop}
-                            <li class="dropdown-item{if $image_derivative.SELECTED} active{/if}"><a href="{$image_derivative.URL}" rel="nofollow">{$image_derivative.DISPLAY}</a></li>
+                            <a class="dropdown-item{if $image_derivative.SELECTED} active{/if}" href="{$image_derivative.URL}" rel="nofollow">{$image_derivative.DISPLAY}</a>
 {/foreach}
-                        </ul>
+                        </div>
                     </li>
 {/if}
 {if isset($favorite)}
@@ -113,22 +112,18 @@ $(document).ready(function() {
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Calendar'|@translate}">
                             <i class="fa fa-calendar" aria-hidden="true"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-right">
+                        <div class="dropdown-menu dropdown-menu-right">
 {if isset($U_MODE_POSTED)}
-                            <li class="dropdown-item">
-                                <a href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
-                                    <i class="fa fa-share-alt" aria-hidden="true"></i> {'display a calendar by posted date'|@translate}
-                                </a>
-                            </li>
+                            <a class="dropdown-item" href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
+                                <i class="fa fa-share-alt" aria-hidden="true"></i> {'display a calendar by posted date'|@translate}
+                            </a>
 {/if}
 {if isset($U_MODE_CREATED)}
-                            <li class="dropdown-item">
-                                <a href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
-                                    <i class="fa fa-camera-retro" aria-hidden="true"></i> {'display a calendar by creation date'|@translate}
-                                </a>
-                            </li>
+                            <a class="dropdown-item" href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
+                                <i class="fa fa-camera-retro" aria-hidden="true"></i> {'display a calendar by creation date'|@translate}
+                            </a>
 {/if}
-                        </ul>
+                        </div>
                     </li>
 {/if}
 {if !empty($PLUGIN_INDEX_BUTTONS)}{foreach from=$PLUGIN_INDEX_BUTTONS item=button}<li>{$button}</li>{/foreach}{/if}

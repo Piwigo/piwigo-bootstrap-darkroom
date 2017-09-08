@@ -76,13 +76,12 @@ $(document).ready(function() {
     $('#batchDownloadLink').closest('li').addClass('nav-item dropdown');
     $('#batchDownloadLink').addClass('nav-link dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown').attr('href', '#');
     $('#batchDownloadLink .pwg-button-text').after('<span class="caret"></span>');
-    $('#batchDownloadBox').changeElementType('ul');
-    $('#batchDownloadBox a').wrap('<li class="dropdown-item"></li>');
+    $('#batchDownloadBox').off();
+    $('#batchDownloadBox a').addClass('dropdown-item');
     $('#batchDownloadBox').attr('role', 'menu').attr('style', '');
-    $('#batchDownloadBox .switchBoxTitle').changeElementType('li');
     $('#batchDownloadBox .switchBoxTitle').addClass('dropdown-header').removeClass('switchBoxTitle');
     $('#batchDownloadBox br').remove();
-    $('#batchDownloadBox').addClass('dropdown-menu dropdown-menu-right').removeClass('switchBox');
+    $('#batchDownloadBox').addClass('dropdown-menu dropdown-menu-right').removeClass('switchBox').attr('id', 'batchDownloadBox2');
   }
   if ($('.navbar-main dt:contains("Downloads")').length > 0) {
     $('.navbar-main dt:contains("Downloads")').next('dd').appendTo($('.navbar-main dt:contains("Downloads")'));
@@ -98,7 +97,7 @@ $(document).ready(function() {
   }
 });
 $(window).on('load', function() {
-  if ($('#batchDownloadLink').next('ul#batchDownloadBox').length > 0) {
+  if ($('#batchDownloadLink').next('div#batchDownloadBox2').length > 0) {
     $('#batchDownloadLink').off().on('click', function() { $('#downloadSizeLink').dropdown() });
   }
 });

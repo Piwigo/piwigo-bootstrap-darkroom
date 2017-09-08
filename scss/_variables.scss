@@ -98,7 +98,7 @@ $jumbotron-bg:            $black !default;
 
 // Components
 $component-active-color: $white !default;
-$component-active-bg:    theme-color("primary") !default;
+$component-active-bg:    $gray-dark-3 !default;
 
 // Dropdowns
 $dropdown-link-color:            $gray-light-1 !default;
@@ -117,7 +117,7 @@ $card-border-color:        $gray-dark-2 !default;
 
 // Pagination
 $pagination-bg:                        $gray-dark-3 !default;
-$pagination-border-color:              theme-color("primary") !default;
+$pagination-border-color:              $gray-dark-3 !default;
 
 $pagination-hover-color:               $white !default;
 $pagination-hover-bg:                  $gray-dark-2 !default;

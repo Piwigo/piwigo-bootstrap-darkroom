@@ -2617,7 +2617,7 @@ tbody.collapse.show {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: theme-color("primary");
+  background-color: #3c3c3c;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
@@ -3215,7 +3215,7 @@ tbody.collapse.show {
 .nav-pills .nav-link.active,
 .show > .nav-pills .nav-link {
   color: #fff;
-  background-color: theme-color("primary");
+  background-color: #3c3c3c;
 }
 
 .nav-fill .nav-item {
@@ -3919,7 +3919,7 @@ tbody.collapse.show {
   line-height: 1.25;
   color: #9e9e9e;
   background-color: #3c3c3c;
-  border: 1px solid theme-color("primary");
+  border: 1px solid #3c3c3c;
 }
 
 .page-link:focus, .page-link:hover {
@@ -4348,8 +4348,8 @@ tbody.collapse.show {
 .list-group-item.active {
   z-index: 2;
   color: #fff;
-  background-color: theme-color("primary");
-  border-color: theme-color("primary");
+  background-color: #3c3c3c;
+  border-color: #3c3c3c;
 }
 
 .list-group-flush .list-group-item {
