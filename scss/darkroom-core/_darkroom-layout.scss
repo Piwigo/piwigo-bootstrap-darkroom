@@ -32,47 +32,8 @@ fieldset[disabled] .html-radios-inline label {
 .form-horizontal .html-radios-inline {
   padding-top: 6px;
 }
-#content .col-outer {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-#content .col-inner .col-thumbnail .placeholder {
-  width: 260px;
-  height: 180px;
-}
-.content-grid .col-outer {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.content-grid .col-inner .col-thumbnail {
-  float: none;
-  margin-right: 0px;
-}
-
-.content-grid .col-inner .caption .description {
-  display: none;
-}
-.content-list .col-outer {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.content-list .col-inner .col-thumbnail {
-  float: left;
-  margin-right: 20px;
-}
-.content-list .col-inner .caption .description {
-  display: block;
-}
 .copyright {
   padding: 30px;
-}
-.ellipsis {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 #theImage {
   position: relative;
@@ -307,41 +268,6 @@ html, body {
   font-family: FontAwesome;
   font-size: 18px;
 }
-
-/* Category thumbnails */
-#content {
-  min-height: 100px;
-}
-
-@media (max-width: 767px) {
-  #content .col-inner {
-    max-width: 520px;
-    float: none;
-    margin: 0 auto;
-  }
-  #content .col-inner .col-thumbnail div[class^=placeholder] {
-    width: 100%;
-    height: auto;
-  }
-  #content .col-inner .col-thumbnail div[class^=placeholder] img {
-    width: 100%;
-    height: auto;
-  }
-}
-.content-grid .col-inner .caption h4.title {
-  position: relative;
-}
-.content-grid .col-inner .caption h4.title a.recent {
-  padding-right: 16px;
-}
-.content-grid .col-inner .caption h4.title img {
-  position: absolute;
-  top: 2px;
-  right: 0;
-}
-
-.col-inner .caption p { margin: 0 0; }
-.col-inner .caption .description { margin-top: 10px; }
 
 /* Shadows */
 #theImage {

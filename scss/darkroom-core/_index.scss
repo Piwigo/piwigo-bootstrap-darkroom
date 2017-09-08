@@ -1,0 +1,92 @@
+// Index page (category thumbnails)
+#content {
+  min-height: 100px;
+
+  .col-outer {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .col-inner {
+    @media (max-width: 767px) {
+      max-width: 520px;
+      float: none;
+      margin: 0 auto;
+
+      .col-thumbnail div[class^=placeholder] {
+        width: 100%;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .col-thumbnail {
+      .placeholder {
+        width: 260px;
+        height: 180px;
+      }
+    }
+  }
+}
+
+.content-grid {
+  .col-outer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .col-inner {
+    .col-thumbnail {
+      float: none;
+      margin-right: 0px;
+    }
+    .caption .description {
+      display: none;
+    }
+    .caption h4.title {
+      position: relative;
+
+      a.recent {
+        padding-right: 16px;
+      }
+
+      img {
+        position: absolute;
+        top: 2px;
+        right: 0;
+      }
+    }
+  }
+}
+
+.content-list {
+  .col-outer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .col-inner {
+    .col-thumbnail {
+      float: left;
+      margin-right: 20px;
+    }
+    .caption {
+      .description {
+        margin-top: 10px;
+        display: block;
+      }
+
+      p { margin: 0 0; }
+    }
+  }
+}
+
+.ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
