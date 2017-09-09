@@ -1,0 +1,27 @@
+// Bootstrap Darkroom
+@import "variables";
+
+$bmd-navbar-link-font-size: 1rem !default;
+
+@import "../components/bootstrap-material-design/scss/bootstrap-material-design";
+@import "darkroom-colors/nav";
+@import "darkroom-colors/jumbotron";
+@import "darkroom-colors/dropdown";
+@import "darkroom-colors/media";
+@import "darkroom-colors/card";
+@import "darkroom-colors/piwigo-components";
+@import "darkroom-colors/piwigo-plugins";
+
+.navbar-main {
+  box-shadow: none;
+}
+.navbar-form .bmd-form-group {
+  display: block !important;
+}
+.nav-link {
+  text-transform: none;
+}
+
+.dropdown-menu {
+  min-width: 15rem;
+}

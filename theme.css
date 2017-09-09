@@ -120,12 +120,15 @@ html, body {
   padding: 0 1rem;
 }
 
-.navbar .navbar-main {
-  z-index: 104;
+.navbar.navbar-main {
+  z-index: 2;
 }
 
-.navbar .navbar-contextual {
-  z-index: 103;
+.navbar.navbar-main .dropdown-menu {
+  z-index: 1030;
+}
+
+.navbar.navbar-contextual {
   font-weight: 400;
   margin-bottom: 2rem;
   -webkit-transform: translate3d(0, 0, 0);
@@ -133,7 +136,7 @@ html, body {
 }
 
 @media (max-width: 767px) {
-  .navbar .navbar-contextual .navbar-brand {
+  .navbar.navbar-contextual .navbar-brand {
     width: 80%;
     overflow: hidden;
     white-space: nowrap;
@@ -141,9 +144,9 @@ html, body {
   }
 }
 
-.navbar .navbar-contextual .navbar-brand a,
-.navbar .navbar-contextual .navbar-brand a:hover,
-.navbar .navbar-contextual .navbar-brand a:focus {
+.navbar.navbar-contextual .navbar-brand a,
+.navbar.navbar-contextual .navbar-brand a:hover,
+.navbar.navbar-contextual .navbar-brand a:focus {
   color: inherit;
 }
 
@@ -153,8 +156,8 @@ html, body {
   }
 }
 
-.navbar .navbar-collapse .collapsing .navbar-form,
-.navbar .navbar-collapse .collapse.in .navbar-form {
+.navbar .navbar-collapse.collapsing .navbar-form,
+.navbar .navbar-collapse.collapse.in .navbar-form {
   margin: 10px 0 10px;
 }
 
@@ -192,10 +195,6 @@ html, body {
   #navbar-menubar ul > li > a.dropdown-toggle {
     padding-left: 4px;
   }
-}
-
-.navbar-main .dropdown-menu {
-  z-index: 1030;
 }
 
 /* replace the home link in navbar */
@@ -252,7 +251,7 @@ html, body {
     overflow-x: hidden;
   }
   .dropdown-menu-scrollable::-webkit-scrollbar {
-    width: 1em;
+    width: .5rem;
   }
   .dropdown-menu-scrollable::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);

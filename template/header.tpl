@@ -86,12 +86,12 @@
 {combine_script id='thumbnails.loader' require='jquery.ajaxmanager' path='themes/default/js/thumbnails.loader.js' load='footer'}
 {combine_script id='darkroom.common' require='jquery' path='themes/bootstrap_darkroom/js/common.js' load='footer'}
 {combine_script id='popper.js' require='jquery' path='themes/bootstrap_darkroom/components/popper.js/dist/umd/popper.min.js' load=$loc}
-{combine_script id=$themeconf.name require='bootstrap' path='themes/bootstrap_darkroom/js/theme.js' load='footer'}
 {if $theme_config->bootstrap_theme == 'material'}
     {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/bootstrap-material-design.min.js' load=$loc}
 {else}
     {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/components/bootstrap/dist/js/bootstrap.min.js' load=$loc}
 {/if}
+{combine_script id=$themeconf.name require='bootstrap' path='themes/bootstrap_darkroom/js/theme.js' load='footer'}
 {/strip}
 {get_combined_scripts load='header'}
 {if not empty($head_elements)}

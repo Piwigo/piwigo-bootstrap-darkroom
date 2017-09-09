@@ -8232,16 +8232,6 @@ a.text-dark:focus, a.text-dark:hover {
   visibility: hidden !important;
 }
 
-.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-  background-color: #3c3c3c;
-}
-
-@media (max-width: 767px) {
-  .nav-tabs.nav-link {
-    border-bottom: none;
-  }
-}
-
 .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
   color: #fff;
 }
@@ -8253,6 +8243,16 @@ a.text-dark:focus, a.text-dark:hover {
 .navbar-contextual {
   background-color: #2e2e2e !important;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+  background-color: #3c3c3c;
+}
+
+@media (max-width: 767px) {
+  .nav-tabs.nav-link {
+    border-bottom: none;
+  }
 }
 
 .jumbotron {

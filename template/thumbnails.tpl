@@ -40,30 +40,30 @@
      <div class="card card-thumbnail">
         <a href="{$thumbnail.URL}" data-index="{$idx}">
             <img class="card-img-top" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}">
+        </a>
 {assign var=idx value=$idx+1}
 {if $theme_config->thumbnail_caption && $SHOW_THUMBNAIL_CAPTION }
-            <div class="card-body">
-                <h4 class="card-title">
-                    <a href="{$thumbnail.URL}" class="ellipsis{if !empty($thumbnail.icon_ts)} recent{/if}">{$thumbnail.NAME}</a>
+        <div class="card-body">
+            <h6 class="card-title">
+                <a href="{$thumbnail.URL}" class="ellipsis{if !empty($thumbnail.icon_ts)} recent{/if}">{$thumbnail.NAME}</a>
 {if !empty($thumbnail.icon_ts)}
-                    <img title="{$thumbnail.icon_ts.TITLE}" src="{$ROOT_URL}{$themeconf.icon_dir}/recent.png" alt="(!)">
+                <img title="{$thumbnail.icon_ts.TITLE}" src="{$ROOT_URL}{$themeconf.icon_dir}/recent.png" alt="(!)">
 {/if}
-                </h4>
+            </h6>
 {if isset($thumbnail.NB_COMMENTS)}
-                <div class="card-text">
-                    <p class="{if 0==$thumbnail.NB_COMMENTS}zero {/if}nb-comments">
-                        {$pwg->l10n_dec('%d comment', '%d comments',$thumbnail.NB_COMMENTS)}
-                    </p>
+            <div class="card-text">
+                <p class="{if 0==$thumbnail.NB_COMMENTS}zero {/if}nb-comments">
+                    {$pwg->l10n_dec('%d comment', '%d comments',$thumbnail.NB_COMMENTS)}
+                </p>
 {/if}
 {if isset($thumbnail.NB_HITS)}
-                    <p class="{if 0==$thumbnail.NB_HITS}zero {/if}nb-hits">
-                        {$pwg->l10n_dec('%d view', '%d views',$thumbnail.NB_HITS)}
-                    </p>
-                </div>
-{/if}
+                <p class="{if 0==$thumbnail.NB_HITS}zero {/if}nb-hits">
+                    {$pwg->l10n_dec('%d view', '%d views',$thumbnail.NB_HITS)}
+                </p>
             </div>
 {/if}
-        </a>
+        </div>
+{/if}
     </div>
 </div>
 {/foreach}
