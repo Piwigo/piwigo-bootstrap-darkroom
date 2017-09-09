@@ -105,7 +105,7 @@
         <nav class="navbar navbar-expand-lg navbar-main navbar-dark bg-primary">
             <div class="container">
 {if $theme_config->logo_image_enabled && $theme_config->logo_image_path !== ''}
-                <a class="navbar-brand mr-auto" href="{$U_HOME}"><img class="responsive" src="{$ROOT_URL}{$theme_config->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>
+                <a class="navbar-brand mr-auto" href="{$U_HOME}"><img class="img-fluid" src="{$ROOT_URL}{$theme_config->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>
 {else}
                 <a class="navbar-brand mr-auto" href="{$U_HOME}">{$GALLERY_TITLE}</a>
 {/if}

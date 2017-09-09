@@ -24,7 +24,7 @@
     <div class="col-inner">
         <a class="col-thumbnail" href="{$cat.URL}">
             <div class="placeholder" style="background: url({$ROOT_URL}{$themeconf.icon_dir}/img_small.png) no-repeat center">
-                <img class="img-responsive" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
+                <img class="img-fluid" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
             </div>
         </a>
         <div class="caption mt-2">

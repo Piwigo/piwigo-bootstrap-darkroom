@@ -87,7 +87,7 @@
                 <div class="calDate">{$day.DAY}</div>
                 <div class="calImg">
                     <a href="{$day.U_IMG_LINK}">
-                        <img class="img-responsive" src="{$day.IMAGE}" alt="{$day.IMAGE_ALT}" title="{$day.NB_ELEMENTS|@translate_dec:'%d photo':'%d photos'}">
+                        <img class="img-fluid" src="{$day.IMAGE}" alt="{$day.IMAGE_ALT}" title="{$day.NB_ELEMENTS|@translate_dec:'%d photo':'%d photos'}">
                     </a>
                 </div>
             {else}
