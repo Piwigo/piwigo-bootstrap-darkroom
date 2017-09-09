@@ -4,7 +4,7 @@ size menu is enabled in child theme *}
 {assign var=width_lg value=970}
 {assign var=width_md value=750}
 {assign var=width_sm value=540}
-{assign var=col_padding value=15}
+{assign var=col_padding value={$col_padding|default:'15'}}
 
 {assign var=col_class value=""}
 

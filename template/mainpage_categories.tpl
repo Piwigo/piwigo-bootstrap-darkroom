@@ -21,33 +21,21 @@
 {* this needs a fixed size else it messes up the grid on tablets *}
 {include file="grid_classes.tpl" width=260 height=180}
 <div class="col-outer {if $smarty.cookies.view == 'list'}col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
-    <div class="col-inner">
-        <a class="col-thumbnail" href="{$cat.URL}">
-            <div class="placeholder" style="background: url({$ROOT_URL}{$themeconf.icon_dir}/img_small.png) no-repeat center">
-                <img class="img-fluid" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
-            </div>
-        </a>
-        <div class="caption mt-2">
-            <h4 class="title">
-                <a href="{$cat.URL}" class="ellipsis{if !empty($cat.icon_ts)} recent{/if}">{$cat.NAME}</a>
-{if !empty($cat.icon_ts)}
-                <img title="{$cat.icon_ts.TITLE}" src="{$ROOT_URL}{$themeconf.icon_dir}/recent{if $cat.icon_ts.IS_CHILD_DATE}_by_child{/if}.png" alt="(!)">
+  <div class="card card-thumbnail">
+    <img class="card-img-top" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
+    <div class="card-body">
+      <h4 class="card-title"><a href="{$cat.URL}" class="ellipsis{if !empty($cat.icon_ts)} recent{/if}">{$cat.NAME}</a></h4>
+      <div class="card-text">
+{if not empty($cat.DESCRIPTION)}
+            <div class="description">{$cat.DESCRIPTION}</div>
 {/if}
-            </h4>
 {if isset($cat.INFO_DATES) }
             <p>{$cat.INFO_DATES}</p>
 {/if}
-            <p>{$cat.CAPTION_NB_IMAGES}</p>
-{if not empty($cat.DESCRIPTION)}
-            <div class="description">{$cat.DESCRIPTION}</div>
-{if $theme_config->cat_descriptions}
-{html_style}
-.content-grid .col-inner .caption .description { display: block; }
-{/html_style}
-{/if}
-{/if}
-        </div>
+      </div>
     </div>
+    <div class="card-footer text-muted">{$cat.CAPTION_NB_IMAGES}</div>
+  </div>
 </div>
 {else}
 {assign var=derivative_square value=$pwg->derivative($derivative_params_square, $cat.representative.src_image)}
@@ -74,4 +62,3 @@
 </a>
 {/if}
 {/foreach}
-

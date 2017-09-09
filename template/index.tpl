@@ -176,11 +176,10 @@ $(document).ready(function() {
 {if !empty($CATEGORIES)}
     <!-- Start of categories -->
 {$CATEGORIES}
-{*
 {footer_script}{strip}
 $(document).ready(function() {
   $(window).load(function(){
-    $('#content .col-inner').equalHeights()
+    $('#content .col-outer .card').equalHeights()
   })
 });
 var resizeTimer;
@@ -188,14 +187,13 @@ $(window).on('resize', function() {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(function() {
     if ($(window).innerWidth() < 768) {
-      $('.col-inner').removeAttr('style');
+      $('.col-outer .card').removeAttr('style');
     } else {
-      $('.col-inner').equalHeights();
+      $('.col-outer .card').equalHeights();
     }
   }, 250);
 });
 {/strip}{/footer_script}
-*}
     <!-- End of categories -->
 {/if}
 
