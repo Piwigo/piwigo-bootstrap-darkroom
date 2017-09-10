@@ -22,7 +22,7 @@
 {include file="grid_classes.tpl" width=260 height=180}
 <div class="col-outer {if $smarty.cookies.view == 'list'}col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
   <div class="card card-thumbnail">
-    <a href="{$cat.URL}">
+    <a href="{$cat.URL}"{if $theme_config->bootstrap_theme == 'material'} class="ripple"{/if}>
       <img class="card-img-top" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
     </a>
     <div class="card-body">
