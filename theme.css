@@ -121,7 +121,7 @@ html, body {
 }
 
 .navbar.navbar-main {
-  z-index: 100;
+  z-index: 1030;
 }
 
 .navbar.navbar-main .dropdown-menu {
