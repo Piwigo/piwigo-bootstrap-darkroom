@@ -676,7 +676,7 @@ a.pswp__share--google:hover {
 
 /* Bootstrap carousel fading animation */
 /* the fading animation */
-.carousel-fade .carousel-inner .item {
+.carousel-fade .carousel-inner .carousel-item {
   opacity: 0;
   transition-property: opacity;
 }
@@ -697,26 +697,27 @@ a.pswp__share--google:hover {
   opacity: 1;
 }
 
-.carousel-fade .carousel-control {
+.carousel-fade .carousel-control-prev,
+.carousel-fade .carousel-control-next {
   z-index: 2;
 }
 
 @media all and (transform-3d), (-webkit-transform-3d) {
-  .carousel-fade .carousel-inner > .item.next,
-  .carousel-fade .carousel-inner > .item.active.right {
+  .carousel-fade .carousel-inner > .carousel-item.next,
+  .carousel-fade .carousel-inner > .carousel-item.active.right {
     opacity: 0;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
-  .carousel-fade .carousel-inner > .item.prev,
-  .carousel-fade .carousel-inner > .item.active.left {
+  .carousel-fade .carousel-inner > .carousel-item.prev,
+  .carousel-fade .carousel-inner > .carousel-item.active.left {
     opacity: 0;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
-  .carousel-fade .carousel-inner > .item.next.left,
-  .carousel-fade .carousel-inner > .item.prev.right,
-  .carousel-fade .carousel-inner > .item.active {
+  .carousel-fade .carousel-inner > .carousel-item.next.left,
+  .carousel-fade .carousel-inner > .carousel-item.prev.right,
+  .carousel-fade .carousel-inner > .carousel-item.active {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
