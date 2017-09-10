@@ -5,11 +5,9 @@
 
 {if !empty($PLUGIN_PICTURE_BEFORE)}{$PLUGIN_PICTURE_BEFORE}{/if}
 
-<div class="mb-5">
 {$PICTURE_NAV}
-</div>
 
-<div class="container pt-4">
+<div class="container">
 {include file='infos_errors.tpl'}
 {include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
 {if get_device() != 'desktop' }
