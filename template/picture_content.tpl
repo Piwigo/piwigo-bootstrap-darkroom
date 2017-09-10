@@ -5,7 +5,6 @@
 {/if}
 {if preg_match("/(mp4|m4v)$/", $current.path)}
 {if $current.height < $current.width}
-{$current.height / $current.width * 100}
 <div id="video-modal" class="col-lg-8 col-md-10 col-sm-12 mx-auto">
 {if $current.height / $current.width * 100 < 60}
   <div class="embed-responsive embed-responsive-16by9">
