@@ -124,10 +124,6 @@ html, body {
   z-index: 1030;
 }
 
-.navbar.navbar-main .dropdown-menu {
-  z-index: 1030;
-}
-
 .navbar.navbar-contextual {
   font-weight: 400;
   margin-bottom: 2rem;
