@@ -19,7 +19,7 @@
   "dependencies": {
     "bootstrap-material-design": "4.0.0-beta.3",
     "bootswatch": "gh-pages",
-    "font-awesome": "fontawesome#~4.6.3",
+    "font-awesome": "fontawesome#~4",
     "jquery-touch-events": "~1.0.8",
     "material-icons": "^0.1.0",
     "photoswipe": "https://github.com/dimsemenov/PhotoSwipe.git#^4.1",

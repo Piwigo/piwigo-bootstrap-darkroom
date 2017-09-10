@@ -16,6 +16,6 @@
     "commit": "1f5ad5910c4f9d35c80f5a950356d55512795ab3"
   },
   "_source": "https://github.com/benmajor/jQuery-Touch-Events.git",
-  "_target": "^1.0.8",
+  "_target": "~1.0.8",
   "_originalSource": "jquery-touch-events"
 }
