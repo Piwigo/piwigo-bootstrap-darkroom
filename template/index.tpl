@@ -131,12 +131,12 @@ $(document).ready(function() {
 {if ((!empty($CATEGORIES) && !isset($GDThumb)) || (!empty($THUMBNAILS) && !isset($GThumb) && !isset($GDThumb))) && ($theme_config->category_wells == 'never' || ($theme_config->category_wells == 'mobile_only' && get_device() == 'desktop'))}
                     <li id="btn-grid" class="nav-item{if $smarty.cookies.view != 'list'} active{/if}">
                         <a class="nav-link" href="javascript:;" title="{'Grid view'|@translate}">
-                            <i class="fa fa-th"><span class="d-xl-none d-lg-none ml-4">{'Grid view'|@translate}</span></i>
+                            <i class="fa fa-th"></i><span class="d-xl-none d-lg-none ml-4">{'Grid view'|@translate}</span>
                         </a>
                     </li>
                     <li id="btn-list" class="nav-item{if $smarty.cookies.view == 'list'} active{/if}">
                         <a class="nav-link" href="javascript:;" title="{'List view'|@translate}">
-                            <i class="fa fa-th-list"><span class="d-xl-none d-lg-none ml-4">{'List view'|@translate}</span></i>
+                            <i class="fa fa-th-list"></i><span class="d-xl-none d-lg-none ml-4">{'List view'|@translate}</span>
                         </a>
                     </li>
 {/if}
@@ -153,7 +153,7 @@ $(document).ready(function() {
 
 {if isset($chronology_views)}
 <div id="calendar-select" class="btn-group">
-    <button id="calendar-view" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button id="calendar-view" type="button" class="btn btn-primary btn-raised dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {foreach from=$chronology_views item=view}{if $view.SELECTED}{$view.CONTENT}{/if}{/foreach}
         <span class="caret"></span>
     </button>

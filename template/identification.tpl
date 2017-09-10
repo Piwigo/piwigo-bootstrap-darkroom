@@ -42,7 +42,7 @@
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <input type="hidden" name="redirect" value="{$U_REDIRECT|@urlencode}">
-                        <input tabindex="4" type="submit" name="login" value="{'Submit'|@translate}" class="btn btn-default btn-primary">
+                        <input tabindex="4" type="submit" name="login" value="{'Submit'|@translate}" class="btn btn-primary btn-raised">
                     </div>
                 </div>
                 <div class="form-group">

@@ -14280,6 +14280,10 @@ h6 {
   text-transform: none;
 }
 
+.navbar-contextual.sticky-top {
+  z-index: 1020;
+}
+
 .dropdown-menu {
   min-width: 15rem;
 }
@@ -14288,5 +14292,10 @@ h6 {
   .dropdown-menu {
     display: none;
   }
+}
+
+.radio label,
+.checkbox label {
+  color: inherit;
 }
 /*# sourceMappingURL=bootstrap-material-design.css.map */

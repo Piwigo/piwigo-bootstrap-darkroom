@@ -48,7 +48,7 @@ $(form).find('fieldset').changeElementType('div');
 $(form).find('div').addClass('form-group');
 $(form).find('div>input[type="password"]').addClass('form-control');
 $(form).find('div>input[type="submit"]').changeElementType('button');
-$(form).find('button').addClass('btn btn-primary').text('Login');
+$(form).find('button').addClass('btn btn-primary btn-raised').text('Login');
 $(form).find('label').remove();
 {/strip}{/footer_script}
 {/if}

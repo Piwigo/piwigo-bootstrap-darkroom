@@ -57,8 +57,8 @@
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <input type="hidden" name="key" value="{$F_KEY}" >
-                        <input type="submit" name="submit" value="{'Register'|@translate}" class="btn btn-default btn-primary">
-                        <input type="reset" value="{'Reset'|@translate}" class="btn btn-default">
+                        <input type="submit" name="submit" value="{'Register'|@translate}" class="btn btn-primary btn-raised">
+                        <input type="reset" value="{'Reset'|@translate}" class="btn btn-primary btn-raised">
                     </div>
                 </div>
             </div>

@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-        <input type="submit" value="{'Filter and display'|@translate}" class="btn btn-default">
+        <input type="submit" value="{'Filter and display'|@translate}" class="btn btn-primary btn-raised">
     </form>
 </div>
 

@@ -45,8 +45,8 @@
 {if !$ALLOW_USER_CUSTOMIZATION}
                 <div class="form-group row">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <input class="btn btn-default" type="submit" name="validate" value="{'Submit'|@translate}">
-                        <input class="btn btn-default" type="reset" name="reset" value="{'Reset'|@translate}">
+                        <input class="btn btn-primary btn-raised" type="submit" name="validate" value="{'Submit'|@translate}">
+                        <input class="btn btn-primary btn-raised" type="reset" name="reset" value="{'Reset'|@translate}">
                     </div>
                 </div>
 {/if}
@@ -110,9 +110,9 @@
             </div>
         </div>
 
-        <input class="btn btn-default btn-primary" type="submit" name="validate" value="{'Submit'|@translate}">
-        <input class="btn btn-default" type="reset" name="reset" value="{'Reset'|@translate}">
-        <input class="btn btn-default" type="submit" name="reset_to_default" value="{'Reset to default values'|@translate}">
+        <input class="btn btn-primary btn-raised" type="submit" name="validate" value="{'Submit'|@translate}">
+        <input class="btn btn-info btn-raised" type="reset" name="reset" value="{'Reset'|@translate}">
+        <input class="btn btn-warning btn-raised" type="submit" name="reset_to_default" value="{'Reset to default values'|@translate}">
 {/if}
         <input type="hidden" name="redirect" value="{$REDIRECT}">
         <input type="hidden" name="pwg_token" value="{$PWG_TOKEN}">
