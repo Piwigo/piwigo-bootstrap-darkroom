@@ -187,18 +187,14 @@ $(document).ready(function() {
 {footer_script}{strip}
 $(document).ready(function() {
   $(window).load(function(){
-    $('#content .col-outer .card').equalHeights()
+    $('#content .col-outer .card').equalHeights();
   })
 });
 var resizeTimer;
 $(window).on('resize', function() {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(function() {
-    if ($(window).innerWidth() < 768) {
-      $('.col-outer .card').removeAttr('style');
-    } else {
-      $('.col-outer .card').equalHeights();
-    }
+    $('.col-outer .card').removeAttr('style').equalHeights();
   }, 250);
 });
 {/strip}{/footer_script}
