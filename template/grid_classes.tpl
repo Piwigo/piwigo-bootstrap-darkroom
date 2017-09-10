@@ -61,7 +61,7 @@ size menu is enabled in child theme *}
 {/if}
 
 {* For phones just use 1 column *}
-{$col_class = $col_class|cat:" col-xs-12"}
+{$col_class = $col_class|cat:" col-12"}
 
 {* Assign to parent *}
 {assign var=col_class value=$col_class scope=parent}
