@@ -1,6 +1,7 @@
 #!/bin/bash
 
 pushd components/bootstrap-material-design
+  npm install
   npm run build:js
   for i in blue indigo purple pink red orange yellow green teal cyan deep-purple light-blue light-green lime amber deep-orange brown grey; do
     sed -i -e "s@primary:.*@primary:\ \$${i}\,@g" scss/_custom.scss

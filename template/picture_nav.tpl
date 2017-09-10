@@ -45,14 +45,14 @@
 {if isset($U_SLIDESHOW_START)}
                 <li class="nav-item">
                     <a class="nav-link" href="{if $theme_config->photoswipe}javascript:;{else}{$U_SLIDESHOW_START}{/if}" title="{'slideshow'|@translate}" id="startSlideshow" rel="nofollow">
-                        <i class="fa fa-play" aria-hidden="true"></i>
+                        <i class="fa fa-play" aria-hidden="true"><span class="d-xl-none d-lg-none ml-4 text-capitalize">{'slideshow'|@translate}</span></i>
                     </a>
                 </li>
 {/if}
 {if isset($U_METADATA)}
                 <li class="nav-item">
                     <a class="nav-link" href="{$U_METADATA}" title="{'Show file metadata'|@translate}" rel="nofollow">
-                        <i class="fa fa-camera-retro" aria-hidden="true"></i>
+                        <i class="fa fa-camera-retro" aria-hidden="true"><span class="d-xl-none d-lg-none ml-4">{'Show file metadata'|@translate}</span></i>
                     </a>
                 </li>
 {/if}
@@ -60,12 +60,12 @@
 {if empty($current.formats)}
                 <li class="nav-item">
                     <a class="nav-link" id="downloadSwitchLink" href="{$current.U_DOWNLOAD}" title="{'Download this file'|@translate}" class="pwg-state-default pwg-button" rel="nofollow">
-                        <i class="fa fa-download" aria-hidden="true"></i>
+                        <i class="fa fa-download" aria-hidden="true"><span class="d-xl-none d-lg-none ml-4">{'Download this file'|@translate}</span></i>
                     </a>
 {else}
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-                        <i class="fa fa-download" aria-hidden="true"></i><span class="caret"></span>
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" title="{'Download this file'|@translate}">
+                        <i class="fa fa-download" aria-hidden="true"><span class="d-xl-none d-lg-none ml-4">{'Download this file'|@translate}</span></i><span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$current.formats item=format}
@@ -78,21 +78,21 @@
 {if isset($favorite)}
                 <li class="nav-item">
                     <a class="nav-link" href="{$favorite.U_FAVORITE}" title="{if $favorite.IS_FAVORITE}{'delete this photo from your favorites'|@translate}{else}{'add this photo to your favorites'|@translate}{/if}" rel="nofollow">
-                        <i class="fa fa-heart{if !$favorite.IS_FAVORITE}-o{/if}"></i>
+                        <i class="fa fa-heart{if !$favorite.IS_FAVORITE}-o{/if}"><span class="d-xl-none d-lg-none ml-4">{if $favorite.IS_FAVORITE}{'delete this photo from your favorites'|@translate}{else}{'add this photo to your favorites'|@translate}{/if}</span></i>
                     </a>
                 </li>
 {/if}
 {if isset($U_SET_AS_REPRESENTATIVE)}
                 <li class="nav-item">
                     <a class="nav-link" id="cmdSetRepresentative" href="{$U_SET_AS_REPRESENTATIVE}" title="{'set as album representative'|@translate}" rel="nofollow">
-                        <i class="fa fa-link" aria-hidden="true"></i>
+                        <i class="fa fa-link" aria-hidden="true"><span class="d-xl-none d-lg-none ml-4">{'set as album representative'|@translate}</span></i>
                     </a>
                 </li>
 {/if}
 {if isset($U_PHOTO_ADMIN)}
                 <li class="nav-item">
                     <a class="nav-link" id="cmdEditPhoto" href="{$U_PHOTO_ADMIN}" title="{'Modify information'|@translate}" rel="nofollow">
-                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                        <i class="fa fa-pencil" aria-hidden="true"><span class="d-xl-none d-lg-none ml-4">{'Modify information'|@translate}</span></i>
                     </a>
                 </li>
 {/if}
@@ -110,7 +110,7 @@
 {/strip}{/footer_script}
                 <li class="nav-item">
                     <a class="nav-link" href="{$U_CADDIE}" onclick="addToCadie(this, '{$ROOT_URL}', {$current.id}); return false;" title="{'Add to caddie'|@translate}" rel="nofollow">
-                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        <i class="fa fa-shopping-basket" aria-hidden="true"><span class="d-xl-none d-lg-none ml-4">{'Add to caddie'|@translate}</span></i>
                     </a>
                 </li>
 {/if}

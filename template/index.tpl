@@ -129,8 +129,16 @@ $(document).ready(function() {
 {if !empty($PLUGIN_INDEX_BUTTONS)}{foreach from=$PLUGIN_INDEX_BUTTONS item=button}<li>{$button}</li>{/foreach}{/if}
 {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
 {if ((!empty($CATEGORIES) && !isset($GDThumb)) || (!empty($THUMBNAILS) && !isset($GThumb) && !isset($GDThumb))) && ($theme_config->category_wells == 'never' || ($theme_config->category_wells == 'mobile_only' && get_device() == 'desktop'))}
-                    <li id="btn-grid" class="nav-item{if $smarty.cookies.view != 'list'} active{/if}"><a class="nav-link" href="javascript:;" title="{'Grid view'|@translate}"><i class="fa fa-th"></i></a></li>
-                    <li id="btn-list" class="nav-item{if $smarty.cookies.view == 'list'} active{/if}"><a class="nav-link" href="javascript:;" title="{'List view'|@translate}"><i class="fa fa-th-list"></i></a></li>
+                    <li id="btn-grid" class="nav-item{if $smarty.cookies.view != 'list'} active{/if}">
+                        <a class="nav-link" href="javascript:;" title="{'Grid view'|@translate}">
+                            <i class="fa fa-th"><span class="d-xl-none d-lg-none ml-4">{'Grid view'|@translate}</span></i>
+                        </a>
+                    </li>
+                    <li id="btn-list" class="nav-item{if $smarty.cookies.view == 'list'} active{/if}">
+                        <a class="nav-link" href="javascript:;" title="{'List view'|@translate}">
+                            <i class="fa fa-th-list"><span class="d-xl-none d-lg-none ml-4">{'List view'|@translate}</span></i>
+                        </a>
+                    </li>
 {/if}
                 </ul>
             </div>
