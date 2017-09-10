@@ -14,7 +14,7 @@
 
   // raise above .sticky-top
   &.navbar-main {
-    z-index: 2;
+    z-index: 100;
 
     .dropdown-menu { z-index: 1030; }
   }
