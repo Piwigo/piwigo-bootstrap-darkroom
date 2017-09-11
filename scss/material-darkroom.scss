@@ -21,6 +21,9 @@ $bmd-navbar-link-font-size: 1rem !default;
 .nav-link {
   text-transform: none;
 }
+.navbar-contextual.sticky-top {
+  z-index: 1020;
+}
 
 .dropdown-menu {
   min-width: 15rem;
@@ -29,4 +32,14 @@ $bmd-navbar-link-font-size: 1rem !default;
   @media (max-width: 767px) {
     display: none;
   }
+  .dropdown-item {
+    max-width: 100%;
+  }
+}
+
+.radio label,
+.checkbox label,
+select.form-control,
+input[type=text].form-control {
+  color: inherit;
 }

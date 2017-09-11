@@ -302,7 +302,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
                 <td>
                   <div id="Privacy" class="imageInfo">
                     <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
+                        <button class="btn btn-secondary btn-raised dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
                             {$available_permission_levels[$current.level]}
                             <span class="caret"></span>
                         </button>
@@ -403,7 +403,7 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                                 <textarea class="form-control" name="content" id="contentid" rows="5" cols="50">{$comment_add.CONTENT}</textarea>
                             </div>
                             <input type="hidden" name="key" value="{$comment_add.KEY}">
-                            <button type="submit" class="btn btn-default">{'Submit'|@translate}</button>
+                            <button type="submit" class="btn btn-primary btn-raised">{'Submit'|@translate}</button>
                         </form>
                     </div>
 {/if}

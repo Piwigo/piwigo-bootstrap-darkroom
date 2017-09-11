@@ -77,7 +77,7 @@
                 <input type="hidden" name="key" value="{$comment.KEY}">
                 <input type="hidden" name="pwg_token" value="{$comment.PWG_TOKEN}">
                 <input type="hidden" name="image_id" value="{$comment.IMAGE_ID|@default:$current.id}">
-                <button type="submit" class="btn btn-default">{'Submit'|@translate}</button>
+                <button type="submit" class="btn btn-primary btn-raised">{'Submit'|@translate}</button>
             </form>
             {else}
             <blockquote><div>{$comment.CONTENT}</div></blockquote>

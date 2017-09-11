@@ -153,8 +153,15 @@ html, body {
 }
 
 .navbar .navbar-collapse.collapsing .navbar-form,
-.navbar .navbar-collapse.collapse.in .navbar-form {
+.navbar .navbar-collapse.collapse.show .navbar-form {
   margin: 10px 0 10px;
+}
+
+.navbar .navbar-collapse.collapsing .navbar-form .form-group,
+.navbar .navbar-collapse.collapsing .navbar-form .form-group input,
+.navbar .navbar-collapse.collapse.show .navbar-form .form-group,
+.navbar .navbar-collapse.collapse.show .navbar-form .form-group input {
+  width: 100%;
 }
 
 @media (max-width: 767px) {

@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <input type="submit" name="submit" value="{'Change my password'|@translate}" class="btn btn-default btn-primary">
+                        <input type="submit" name="submit" value="{'Change my password'|@translate}" class="btn btn-primary btn-raised">
                     </div>
                 </div>
 {elseif $action eq 'reset'}
@@ -52,7 +52,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <input type="submit" name="submit" value="{'Submit'|@translate}" class="btn btn-default btn-primary">
+                        <input type="submit" name="submit" value="{'Submit'|@translate}" class="btn btn-primary btn-raised">
                     </div>
                 </div>
 {/if}

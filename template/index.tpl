@@ -153,7 +153,7 @@ $(document).ready(function() {
 
 {if isset($chronology_views)}
 <div id="calendar-select" class="btn-group">
-    <button id="calendar-view" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button id="calendar-view" type="button" class="btn btn-primary btn-raised dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {foreach from=$chronology_views item=view}{if $view.SELECTED}{$view.CONTENT}{/if}{/foreach}
         <span class="caret"></span>
     </button>
@@ -187,18 +187,14 @@ $(document).ready(function() {
 {footer_script}{strip}
 $(document).ready(function() {
   $(window).load(function(){
-    $('#content .col-outer .card').equalHeights()
+    $('#content .col-outer .card').equalHeights();
   })
 });
 var resizeTimer;
 $(window).on('resize', function() {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(function() {
-    if ($(window).innerWidth() < 768) {
-      $('.col-outer .card').removeAttr('style');
-    } else {
-      $('.col-outer .card').equalHeights();
-    }
+    $('.col-outer .card').removeAttr('style').equalHeights();
   }, 250);
 });
 {/strip}{/footer_script}

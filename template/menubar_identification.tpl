@@ -21,7 +21,7 @@
                 </div>
                 {/if}
                 <input type="hidden" name="redirect" value="{$smarty.server.REQUEST_URI|@urlencode}">
-                <button type="submit" class="btn btn-primary" name="login">{'Login'|@translate}</button>
+                <button type="submit" class="btn btn-primary btn-raised" name="login">{'Login'|@translate}</button>
             </form>
          </div>
          <div class="dropdown-divider"></div>

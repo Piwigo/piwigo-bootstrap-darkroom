@@ -2,13 +2,8 @@
     var error_icon = "{$ROOT_URL}{$themeconf.icon_dir}/errors_small.png", max_requests = {$maxRequests};
 {/footer_script}
 {* this might sound ridiculous, but we want to fit the thumbnails to 90% of col-xs-12 without them being too blurry *}
-{if get_device() !== 'desktop'}
 {assign var=width value=520}
 {assign var=height value=360}
-{else}
-{assign var=width value=260}
-{assign var=height value=180}
-{/if}
 {define_derivative name='derivative_params' width=$width height=$height crop=true}
 {define_derivative name='derivative_params_square' type=IMG_SQUARE}
 {foreach from=$category_thumbnails item=cat name=cat_loop}
@@ -20,7 +15,7 @@
 {/if}
 {* this needs a fixed size else it messes up the grid on tablets *}
 {include file="grid_classes.tpl" width=260 height=180}
-<div class="col-outer {if $smarty.cookies.view == 'list'}col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
+<div class="col-outer mt-5 {if $smarty.cookies.view == 'list'}col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
   <div class="card card-thumbnail">
     <a href="{$cat.URL}"{if $theme_config->bootstrap_theme == 'material'} class="ripple"{/if}>
       <img class="card-img-top" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
