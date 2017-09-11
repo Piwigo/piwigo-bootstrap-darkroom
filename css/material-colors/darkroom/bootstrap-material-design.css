@@ -14239,6 +14239,10 @@ h6 {
   color: #4f4f4f;
 }
 
+.dropdown-item.active a {
+  color: #fff;
+}
+
 .media img {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
@@ -14294,8 +14298,16 @@ h6 {
   }
 }
 
+.dropdown-menu .dropdown-item {
+  max-width: 100%;
+}
+
 .radio label,
-.checkbox label {
+.checkbox label,
+select.form-control,
+select.custom-file-control,
+input[type=text].form-control,
+input[type=text].custom-file-control {
   color: inherit;
 }
 /*# sourceMappingURL=bootstrap-material-design.css.map */

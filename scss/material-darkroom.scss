@@ -32,9 +32,14 @@ $bmd-navbar-link-font-size: 1rem !default;
   @media (max-width: 767px) {
     display: none;
   }
+  .dropdown-item {
+    max-width: 100%;
+  }
 }
 
 .radio label,
-.checkbox label {
+.checkbox label,
+select.form-control,
+input[type=text].form-control {
   color: inherit;
 }

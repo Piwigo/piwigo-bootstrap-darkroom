@@ -2,13 +2,8 @@
     var error_icon = "{$ROOT_URL}{$themeconf.icon_dir}/errors_small.png", max_requests = {$maxRequests};
 {/footer_script}
 {* this might sound ridiculous, but we want to fit the thumbnails to 90% of col-xs-12 without them being too blurry *}
-{if get_device() !== 'desktop'}
 {assign var=width value=520}
 {assign var=height value=360}
-{else}
-{assign var=width value=260}
-{assign var=height value=180}
-{/if}
 {define_derivative name='derivative_params' width=$width height=$height crop=true}
 {define_derivative name='derivative_params_square' type=IMG_SQUARE}
 {foreach from=$category_thumbnails item=cat name=cat_loop}

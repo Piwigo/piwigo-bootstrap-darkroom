@@ -97,7 +97,7 @@
             </h4>
             <div class="card-body">
                 <div class="form-group mb-3">
-                    <select id="tags" placeholder="{'Type in a search term'|@translate}" name="tags[]" multiple>
+                    <select class="form-control" id="tags" placeholder="{'Type in a search term'|@translate}" name="tags[]" multiple>
 {foreach from=$TAGS item=tag}
                         <option value="{$tag.id}">{$tag.name} ({$tag.counter|translate_dec:'%d photo':'%d photos'})</option>
 {/foreach}
@@ -135,35 +135,35 @@
                 <label>{'Date'|@translate}</label>
                 <div class="form-group">
                   <div class="form-inline">
-                    <select id="start_day" name="start_day" class="form-control">
+                    <select id="start_day" name="start_day" class="form-control mr-3">
                         <option value="0">--</option>
 {section name=day start=1 loop=32}
                         <option value="{$smarty.section.day.index}" {if $smarty.section.day.index==$START_DAY_SELECTED}selected="selected"{/if}>{$smarty.section.day.index}</option>
 {/section}
                     </select>
-                    <select id="start_month" name="start_month" class="form-control">
+                    <select id="start_month" name="start_month" class="form-control mr-3">
 {html_options options=$month_list selected=$START_MONTH_SELECTED}
                     </select>
-                    <input id="start_year" name="start_year" type="text" size="4" maxlength="4" class="form-control">
+                    <input id="start_year" name="start_year" type="text" size="4" maxlength="4" class="form-control" placeholder="{'Year'|@translate}">
                     <input id="start_linked_date" name="start_linked_date" type="hidden" size="10" disabled="disabled">
-                    <a class="date_today ml-2" href="#" onClick="document.getElementById('start_day').value={$smarty.now|date_format:"%d"};document.getElementById('start_month').value={$smarty.now|date_format:"%m"};document.getElementById('start_year').value={$smarty.now|date_format:"%Y"};return false;">{'today'|@translate}</a>
+                    <a class="date_today ml-3 btn btn-sm btn-info" href="#" onClick="document.getElementById('start_day').value={$smarty.now|date_format:"%d"};document.getElementById('start_month').value={$smarty.now|date_format:"%m"};document.getElementById('start_year').value={$smarty.now|date_format:"%Y"};return false;">{'today'|@translate}</a>
                   </div>
                 </div>
                 <label>{'End-Date'|@translate}</label>
                 <div class="form-group">
                   <div class="form-inline">
-                    <select id="end_day" name="end_day" class="form-control">
+                    <select id="end_day" name="end_day" class="form-control mr-3">
                         <option value="0">--</option>
 {section name=day start=1 loop=32}
                         <option value="{$smarty.section.day.index}" {if $smarty.section.day.index==$END_DAY_SELECTED}selected="selected"{/if}>{$smarty.section.day.index}</option>
 {/section}
                     </select>
-                    <select id="end_month" name="end_month" class="form-control">
+                    <select id="end_month" name="end_month" class="form-control mr-3">
 {html_options options=$month_list selected=$END_MONTH_SELECTED}
                     </select>
-                    <input id="end_year" name="end_year" type="text" size="4" maxlength="4" class="form-control">
+                    <input id="end_year" name="end_year" type="text" size="4" maxlength="4" class="form-control" placeholder="{'Year'|@translate}">
                     <input id="end_linked_date" name="end_linked_date" type="hidden" size="10" disabled="disabled">
-                    <a class="date_today ml-2" href="#" onClick="document.getElementById('end_day').value={$smarty.now|date_format:"%d"};document.getElementById('end_month').value={$smarty.now|date_format:"%m"};document.getElementById('end_year').value={$smarty.now|date_format:"%Y"};return false;">{'today'|@translate}</a>
+                    <a class="date_today ml-3 btn btn-sm btn-info" href="#" onClick="document.getElementById('end_day').value={$smarty.now|date_format:"%d"};document.getElementById('end_month').value={$smarty.now|date_format:"%m"};document.getElementById('end_year').value={$smarty.now|date_format:"%Y"};return false;">{'today'|@translate}</a>
                  </div>
               </div>
             </div>
@@ -175,7 +175,7 @@
             <div class="card-body">
                 <div class="row mb-3">
                     <div class="col-lg-7 col-md-9 col-sm-12 col-xs-12">
-                        <select id="categories" name="cat[]" multiple>
+                        <select class="form-control" id="categories" name="cat[]" multiple>
 {html_options options=$category_options selected=$category_options_selected}
                         </select>
                     </div>
@@ -190,7 +190,7 @@
             </div>
         </div>
         <input type="submit" name="submit" value="{'Submit'|@translate}" class="btn btn-primary btn-raised">
-        <input type="reset" value="{'Reset'|@translate}" class="btn btn-warning btn-raised">
+        <input type="reset" value="{'Reset'|@translate}" class="btn btn-info btn-raised">
     </form>
 </div>
 
