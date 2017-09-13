@@ -37,9 +37,20 @@ $bmd-navbar-link-font-size: 1rem !default;
   }
 }
 
+
 .radio label,
 .checkbox label,
 select.form-control,
 input[type=text].form-control {
   color: inherit;
+}
+
+.navbar-form {
+  input[type=text].form-control {
+    color: #fff;
+
+    @include media-breakpoint-up(lg) {
+       color: #000;
+    }
+  }
 }

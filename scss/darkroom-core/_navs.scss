@@ -24,7 +24,7 @@
     transform: translate3d(0, 0, 0);
                                                                                                                                                                     
     .navbar-brand {
-      @media (max-width: 767px) {
+      @include media-breakpoint-down(sm) {
         width: 80%;
         overflow: hidden;
         white-space: nowrap;
@@ -39,7 +39,7 @@
   }
 
   .navbar-collapse {
-    @media (min-width: 768px) {
+    @include media-breakpoint-up(md) {
       padding-right: 0;
     }
 
@@ -55,7 +55,7 @@
   }
 
   .navbar-form {
-    @media (max-width: 767px) {
+    @include media-breakpoint-down(sm) {
       border-top: none;
       border-bottom: none;
     }
@@ -67,7 +67,7 @@
 
 #identificationDropdown .dropdown-menu { min-width: 12rem; }
                                                                                                                                                                     
-@media (min-width: 768px) {
+@include media-breakpoint-up(md) {
   #navbar-menubar>#quicksearch {
     float: left;
   }
@@ -97,7 +97,7 @@
 }
 
 /* Quicksearch in navbar */
-@media (min-width: 768px) {
+@include media-breakpoint-up(md) {
   #navbar-menubar>#quicksearch {
     position: relative;
     padding-right: 0px;
@@ -130,14 +130,14 @@
     width: 150px !important;
   }
 }
-@media (max-width: 767px) {
+@include media-breakpoint-down(sm) {
   #navbar-menubar>#quicksearch>.fa-search {
     display: none;
   }
 }
 
 // Scrollable dropdowns
-@media (min-width: 768px) {
+@include media-breakpoint-up(md) {
   .dropdown-menu-scrollable {
     height: auto;
     max-height: 300px;

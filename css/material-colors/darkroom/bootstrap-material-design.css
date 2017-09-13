@@ -14310,4 +14310,14 @@ input[type=text].form-control,
 input[type=text].custom-file-control {
   color: inherit;
 }
+
+.navbar-form input[type=text].form-control, .navbar-form input[type=text].custom-file-control {
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  .navbar-form input[type=text].form-control, .navbar-form input[type=text].custom-file-control {
+    color: #000;
+  }
+}
 /*# sourceMappingURL=bootstrap-material-design.css.map */

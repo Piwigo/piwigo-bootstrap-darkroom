@@ -332,8 +332,10 @@ html, body {
   border-top: none;
 }
 
-#theImageInfos .table > tbody > tr > th {
-  text-align: right;
+@media (min-width: 992px) {
+  #theImageInfos .table > tbody > tr > th {
+    text-align: right;
+  }
 }
 
 #thumbnailCarousel {

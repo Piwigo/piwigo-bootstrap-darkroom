@@ -12,7 +12,7 @@ $(document).ready(function () {
 });
 {/footer_script}
 {/if}
-    <nav class="navbar navbar-expand-lg navbar-contextual navbar-dark bg-primary sticky-top mb-5">
+    <nav class="navbar navbar-expand-lg navbar-contextual navbar-dark bg-primary sticky-top {if $theme_config->bootstrap_theme == 'material'}mb-5{else}mb-3{/if}">
         <div class="container">
             <div class="navbar-brand mr-auto">
 {if isset($chronology.TITLE)}
@@ -170,7 +170,7 @@ $(document).ready(function() {
 {/if}
 
 {if !empty($CONTENT_DESCRIPTION)}
-    <div class="d-flex justify-content-center mb-3">
+    <div class="d-flex justify-content-center py-3">
         <h5>{$CONTENT_DESCRIPTION}</h5>
     </div>
 {/if}

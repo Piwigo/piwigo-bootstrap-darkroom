@@ -128,15 +128,15 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 <div id="theImageInfos" class="container">
  <div id="infopanel" class="col-lg-8 col-md-10 col-sm-12 col-xs-12 mx-auto">
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs nav-justified" role="tablist">
+  <ul class="nav nav-tabs nav-justified flex-column flex-sm-row" role="tablist">
 {if $theme_config->picture_info == 'tabs' || (get_device() != 'desktop' && $theme_config->picture_info != 'disabled')}
-    <li class="nav-item"><a class="nav-link active" href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
+    <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link active" href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
 {if isset($metadata)}
-    <li class="nav-item"><a class="nav-link" href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
+    <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link" href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
 {/if}
 {/if}
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <li class="nav-item{if $theme_config->picture_info == 'disabled' || ($theme_config->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}"><a class="nav-link" href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge badge-secondary">{$COMMENT_COUNT}</span></a></li>
+    <li class="nav-item{if $theme_config->picture_info == 'disabled' || ($theme_config->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}"><a class="flex-sm-fill text-sm-center nav-link" href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge badge-secondary">{$COMMENT_COUNT}</span></a></li>
 {/if}
   </ul>
 

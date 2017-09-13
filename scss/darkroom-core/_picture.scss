@@ -38,8 +38,10 @@
     border-top: none;
   }
 
-  .table>tbody>tr>th {
-    text-align: right;
+  @include media-breakpoint-up(lg) {
+    .table>tbody>tr>th {
+      text-align: right;
+    }
   }
 }
 

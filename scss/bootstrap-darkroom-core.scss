@@ -1,4 +1,8 @@
 // Core layout (without any color definitions)
+@import "../components/bootstrap/scss/functions";
+@import "../components/bootstrap/scss/variables";
+@import "../components/bootstrap/scss/mixins/breakpoints";
+@import "../components/bootstrap/scss/mixins/grid-framework";
 @import "darkroom-core/base";
 @import "darkroom-core/navs";
 @import "darkroom-core/index";
