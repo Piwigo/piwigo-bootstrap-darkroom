@@ -194,10 +194,6 @@ html, body {
   }
 }
 
-#navbar-menubar ul > li > a.dropdown-toggle {
-  padding-left: 4px;
-}
-
 /* replace the home link in navbar */
 .navbar-brand a:first-child {
   font-size: 0;
