@@ -1,7 +1,4 @@
 $(document).ready(function() {
-    // Any plugin buttons using pwg-icon class should also use glyphicon class for correct display
-    //$('.pwg-icon').addClass('glyphicon');
-
     // Grid view button click
     $('#btn-grid').click(function() {
         if ($(this).hasClass('active')) {
@@ -68,8 +65,30 @@ $(document).ready(function() {
         });
     }
 
+    // common issue, still needed in v4?
+    $('#navbar-menubar .navbar-form').css({'color': $('.navbar-nav>li>a').css('color')});
 });
 
+/* help popup */
 function bd_popup(url) {
     window.open(url, 'bd_popup', 'alwaysRaised=yes,dependent=yes,toolbar=no,height=420,width=500,menubar=no,resizable=yes,scrollbars=yes,status=no');
 }
+
+
+/* changeElementType: this function changes element types. e.g. <div> to <ul> */
+(function($) {
+    $.fn.changeElementType = function(newType) {
+        var attrs = {};
+        if (!(this[0] && this[0].attributes))
+            return;
+
+        $.each(this[0].attributes, function(idx, attr) {
+            attrs[attr.nodeName] = attr.nodeValue;
+        });
+        this.replaceWith(function() {
+            return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+    }
+})(jQuery);
+
+
