@@ -29,7 +29,7 @@ $bmd-navbar-link-font-size: 1rem !default;
   min-width: 15rem;
 
   // work around broken collapsed navbar
-  @media (max-width: 767px) {
+  @include media-breakpoint-down(md) {
     display: none;
   }
   .dropdown-item {

@@ -14292,7 +14292,7 @@ h6 {
   min-width: 15rem;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .dropdown-menu {
     display: none;
   }

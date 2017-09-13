@@ -67,7 +67,7 @@
 
 #identificationDropdown .dropdown-menu { min-width: 12rem; }
                                                                                                                                                                     
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
   #navbar-menubar>#quicksearch {
     float: left;
   }
@@ -75,12 +75,12 @@
     width: 100px;
   }
 }
-@media (min-width: 992px) {
+@include media-breakpoint-up(xl) {
   #navbar-menubar>#quicksearch input[type="text"] {
     width: 150px;
   }
 }
-@media (max-width: 991px) {
+@include media-breakpoint-down(xl) {
   #navbar-menubar ul>li>a.dropdown-toggle {
     padding-left: 4px;
   }
@@ -97,7 +97,7 @@
 }
 
 /* Quicksearch in navbar */
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
   #navbar-menubar>#quicksearch {
     position: relative;
     padding-right: 0px;
@@ -130,7 +130,7 @@
     width: 150px !important;
   }
 }
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
   #navbar-menubar>#quicksearch>.fa-search {
     display: none;
   }

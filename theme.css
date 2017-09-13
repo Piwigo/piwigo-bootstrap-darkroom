@@ -179,7 +179,7 @@ html, body {
   min-width: 12rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   #navbar-menubar > #quicksearch {
     float: left;
   }
@@ -188,16 +188,14 @@ html, body {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   #navbar-menubar > #quicksearch input[type="text"] {
     width: 150px;
   }
 }
 
-@media (max-width: 991px) {
-  #navbar-menubar ul > li > a.dropdown-toggle {
-    padding-left: 4px;
-  }
+#navbar-menubar ul > li > a.dropdown-toggle {
+  padding-left: 4px;
 }
 
 /* replace the home link in navbar */
@@ -212,7 +210,7 @@ html, body {
 }
 
 /* Quicksearch in navbar */
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   #navbar-menubar > #quicksearch {
     position: relative;
     padding-right: 0px;
@@ -241,7 +239,7 @@ html, body {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   #navbar-menubar > #quicksearch > .fa-search {
     display: none;
   }
