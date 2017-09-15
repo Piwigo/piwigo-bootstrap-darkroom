@@ -358,7 +358,7 @@ function getBootswatchThemes() {
 }
 
 function getMaterialColors() {
-  var colors = ['darkroom', 'red', 'pink', 'purple', 'deep-purple', 'indigo', 'light-blue', 'cyan', 'teal', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey'];
+  var colors = ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'light-blue', 'cyan', 'teal', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey', 'material-darkroom'];
   var lcolor = colors.length;
   var cur_color = '{$theme_config->material_color}';
   select_material.show();
