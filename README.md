@@ -1,37 +1,39 @@
 Piwigo Bootstrap Darkroom
 -------------------
-A mobile-ready Piwigo theme based on [Bootstrap Default](https://github.com/Philio/bootstrapdefault) by Phil Bayfield.
+A mobile-ready Piwigo theme based on [Bootstrap 4](https://getbootstrap.com)
+
+Initially this theme was based on the Bootstrap Default theme by Phil Bayfield, the old version can be found in the bootstrap-v3 branch.
 
 ### Features
 
-* Various color styles and sub-themes
+* Various color styles
   * [Bootswatch](https://bootswatch.com) support
   * [Material Design](http://fezvrasta.github.io/bootstrap-material-design/) included
   * A custom dark color scheme based on Lightroom® colors (the default)
+* Video support using native HTML 5 video widget
 * Full screen slideshow view using [PhotoSwipe](http://photoswipe.com)
   * Supports auto play
   * Supports HTML5 video
   * Album thumbnails can be linked to PhotoSwipe directly (like smartpocket)
 * Configurable carousel album navigation on the picture page using [slick slider](http://kenwheeler.github.io/slick/)
-* Video support on both the picture page and inside the slideshow, using native HTML 5 video widget
 * 100% mobile ready
   * fully responsive Navbars, Carousel, PhotoSwipe slideshow, video content
   * async/ondemand loading of carousel & PhotoSwipe content, adaptive image size selection, swipe & tap events
 * Various configuration options
+* Easy customization using SASS
  
 
 ### Usage
 
-1. Installation. Use one of:
+1. Installation:
  * Git clone and move to piwigo/themes/bootstrap_darkroom
  * Download from http://piwigo.org/ext/extension_view.php?eid=831
  * Or just use the Extension Manager
-2. Install the Bootstrap Default theme, too
-3. Enable Bootstrap Darkroom
-4. To use it as the standard theme for mobile devices, you need to disable the Smartpocket theme (if enabled). In combination with the recommended plugins and by setting "Thumbnail link target" to "PhotoSwipe" or "PhotoSwipe (mobile devices only)" it will behave like smartpocket (click on thumbnail opens the slideshow, masonry style thumbnail page with ajax loading).
+2. Enable Bootstrap Darkroom
+3. To use it as the standard theme for mobile devices, you need to disable the Smartpocket theme (if enabled). In combination with the recommended plugins and by setting "Thumbnail link target" to "PhotoSwipe" or "PhotoSwipe (mobile devices only)" it will behave like smartpocket (click on thumbnail opens the slideshow, masonry style thumbnail page with ajax loading).
 
 ### Demo
-A demo is available at https://pwgdemo.kuther.net
+A demo is available at https://pwdemo.kuther.net
 
 ### Documentation
 * [Github Wiki](https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki)
@@ -54,10 +56,18 @@ A demo is available at https://pwgdemo.kuther.net
 
 ![Preview](https://raw.githubusercontent.com/tkuther/piwigo-bootstrap-darkroom/master/screenshot.png)
 
+### Components
+
+* [Bootstrap 4](https://getbootstrap.com)
+* [Bootstrap Material Design](https://fezvrasta.github.io/bootstrap-material-design/)
+* [PhotoSwipe](http://photoswipe.com/)
+* [Slick](http://kenwheeler.github.io/slick/)
+* [jQuery-Touch-Events](https://github.com/benmajor/jQuery-Touch-Events)
+
 ### License
 
 ```
-Copyright 2016 Thomas Kuther
+Copyright 2017 Thomas Kuther
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
