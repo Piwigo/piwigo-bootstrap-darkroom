@@ -17,21 +17,21 @@
 {include file="grid_classes.tpl" width=260 height=180}
 <div class="col-outer mt-5 {if $smarty.cookies.view == 'list'}col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
   <div class="card card-thumbnail">
-    <a href="{$cat.URL}"{if $theme_config->bootstrap_theme == 'material'} class="ripple"{/if}>
+    <a href="{$cat.URL}"{if $theme_config->bootstrap_theme == 'material'} class="ripple h-100"{/if}>
       <img class="card-img-top" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
-    </a>
-    <div class="card-body">
-      <h4 class="card-title"><a href="{$cat.URL}" class="ellipsis{if !empty($cat.icon_ts)} recent{/if}">{$cat.NAME}</a></h4>
-      <div class="card-text">
+      <div class="card-body">
+        <h4 class="card-title ellipsis{if !empty($cat.icon_ts)} recent{/if}">{$cat.NAME}</h4>
+        <div class="card-text">
 {if not empty($cat.DESCRIPTION)}
             <div class="description">{$cat.DESCRIPTION}</div>
 {/if}
 {if isset($cat.INFO_DATES) }
             <p>{$cat.INFO_DATES}</p>
 {/if}
+        </div>
       </div>
-    </div>
-    <div class="card-footer text-muted">{$cat.CAPTION_NB_IMAGES}</div>
+      <div class="card-footer text-muted">{$cat.CAPTION_NB_IMAGES}</div>
+    </a>
   </div>
 </div>
 {else}

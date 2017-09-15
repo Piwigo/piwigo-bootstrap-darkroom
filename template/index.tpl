@@ -187,14 +187,14 @@ $(document).ready(function() {
 {footer_script}{strip}
 $(document).ready(function() {
   $(window).load(function(){
-    $('#content .col-outer .card').equalHeights();
+    $('#content .col-outer .card-body').equalHeights();
   })
 });
 var resizeTimer;
 $(window).on('resize', function() {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(function() {
-    $('.col-outer .card').removeAttr('style').equalHeights();
+    $('#content .col-outer .card-body').removeAttr('style').equalHeights();
   }, 250);
 });
 {/strip}{/footer_script}
