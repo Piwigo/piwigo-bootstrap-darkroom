@@ -59,6 +59,9 @@
 {elseif $theme_config->bootstrap_theme == 'material'}
     {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config->material_color}/bootstrap-material-design.min.css" order=-20}
     {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-19}
+  {if $theme_config->material_color == 'material-darkroom'}
+    {combine_css path="themes/bootstrap_darkroom/components/pTSans/pTSans.css" order=-19}
+  {/if}
 {elseif $theme_config->bootstrap_theme == 'darkroom'}
     {combine_css path='themes/bootstrap_darkroom/css/bootstrap-darkroom.min.css' order=-20}
     {combine_css path="themes/bootstrap_darkroom/components/pTSans/pTSans.css" order=-19}
