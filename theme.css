@@ -14,6 +14,10 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @media (min-width: 1800px) {
   .container {
     width: 1600px;
