@@ -54,12 +54,12 @@ $deep-orange: #ff5722 !default;
 $brown:       #795548 !default;
 
 // Darkroom colors
-$gray:         #9e9e9e !default;
-$gray-light-1: #4f4f4f !default;
-$gray-light-2: #a9a9a9 !default;
-$gray-dark-1:  #dbdbdb !default;
-$gray-dark-2:  #2e2e2e !default;
-$gray-dark-3:  #3c3c3c !default;
+$gray-lighter-2:  #dbdbdb !default;
+$gray-lighter-1:  #a9a9a9 !default;
+$gray:            #9e9e9e !default;
+$gray-darker-1:   #4f4f4f !default;
+$gray-darker-2:   #3c3c3c !default;
+$gray-darker-3:   #2e2e2e !default;
 
 // Theme colors
 $theme-colors: (
@@ -70,13 +70,13 @@ $theme-colors: (
   warning: $yellow,
   danger: $red,
   light: $gray-100,
-  dark: $gray-dark-3
+  dark: $gray-darker-2
 ) !default;
 
 
 // Body
-$body-bg:       $gray-light-1 !default;
-$body-color:    $gray-dark-1 !default;
+$body-bg:       $gray-darker-1 !default;
+$body-color:    $gray-lighter-2 !default;
 
 // Font
 $font-family-sans-serif: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
@@ -98,10 +98,10 @@ $jumbotron-bg:            $black !default;
 
 // Components
 $component-active-color: $white !default;
-$component-active-bg:    $gray-dark-3 !default;
+$component-active-bg:    $gray-darker-2 !default;
 
 // Dropdowns
-$dropdown-link-color:            $gray-light-1 !default;
+$dropdown-link-color:            $gray-darker-1 !default;
 $dropdown-link-hover-color:      darken($gray-900, 5%) !default;
 $dropdown-link-hover-bg:         $gray-200 !default;
 
@@ -111,31 +111,31 @@ $dropdown-link-active-bg:        $component-active-bg !default;
 $dropdown-link-disabled-color:   $gray-600 !default;
 
 // Cards
-$card-cap-bg:              $gray-dark-2 !default;
-$card-bg:                  $gray-light-1 !default;
-$card-border-color:        $gray-dark-2 !default;
+$card-cap-bg:              $gray-darker-3 !default;
+$card-bg:                  $gray-darker-1 !default;
+$card-border-color:        $gray-darker-3 !default;
 $card-border-radius:       .125rem !default;
 
 // Pagination
-$pagination-bg:                        $gray-dark-3 !default;
-$pagination-border-color:              $gray-dark-3 !default;
+$pagination-bg:                        $gray-darker-2 !default;
+$pagination-border-color:              $gray-darker-2 !default;
 
 $pagination-hover-color:               $white !default;
-$pagination-hover-bg:                  $gray-dark-2 !default;
-$pagination-hover-border-color:        $gray-dark-2 !default;
+$pagination-hover-bg:                  $gray-darker-3 !default;
+$pagination-hover-border-color:        $gray-darker-3 !default;
 
 $pagination-active-color:              $white !default;
-$pagination-active-bg:                 $gray-dark-2 !default;
-$pagination-active-border-color:       $gray-dark-2 !default;
+$pagination-active-bg:                 $gray-darker-3 !default;
+$pagination-active-border-color:       $gray-darker-3 !default;
 
 $pagination-disabled-color:            $gray-600 !default;
 $pagination-disabled-bg:               lighten($pagination-active-bg, 10%) !default;
 $pagination-disabled-border-color:     $pagination-disabled-bg !default;
 
 // Tabs
-$nav-tabs-border-color:                $gray-dark-3 !default;
+$nav-tabs-border-color:                $gray-darker-2 !default;
 
 $nav-tabs-link-active-color:           $body-color !default;
-$nav-tabs-link-active-bg:              $gray-dark-3 !default;
-$nav-tabs-link-active-border-color:    $gray-dark-3 !default;
-$nav-tabs-link-hover-border-color:     $gray-dark-3 !default;
+$nav-tabs-link-active-bg:              $gray-darker-2 !default;
+$nav-tabs-link-active-border-color:    $gray-darker-2 !default;
+$nav-tabs-link-hover-border-color:     $gray-darker-2 !default;

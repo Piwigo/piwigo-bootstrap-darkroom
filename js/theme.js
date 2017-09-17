@@ -10,18 +10,15 @@ $(document).ready(function() {
         $('#content')
             .removeClass('content-list')
             .addClass('content-grid')
-            .height('auto')
             .find('.col-outer').each(function() {
                 $(this).removeClass('col-lg-12 col-md-12 col-sm-12 col-xs-12')
                     .addClass($(this).data('grid-classes'))
                     .one(
                         'webkitTransitionEnd',
                         function () {
-                            $('#content').find('.col-inner').equalHeights();
+                            $('#content').find('.card-body').removeAttr('style').equalHeights();
                         })
-            })
-            .find('.col-inner')
-                .height('auto');
+            });
     });
 
     // List view button click
@@ -39,18 +36,20 @@ $(document).ready(function() {
             .find('.col-outer').each(function() {
                 $(this).removeClass($(this).data('grid-classes'))
                     .addClass('col-lg-12 col-md-12 col-sm-12 col-xs-12')
-                    .find('.card').addClass('card-body')
-                    .find('.card-img-top').removeClass('card-img-top').addClass('float-left w-25 h-100 img-fluid mr-5')
-                    .find('.card>.card-body').removeClass('card-body')
                     .one(
                     'webkitTransitionEnd',
                     function () {
-                        $('#content').find('.card').equalHeights();
+                        $('#content').find('.card-body').equalHeights();
                     })
-            })
-            .find('.card')
-                .height('auto');
+            });
     });
+
+//    $(window).resize(function() {
+//      $('.content-list').find('.col-outer').each(function() {
+//        $(this).find('.card-body').css('min-height', $(this).find('.card-img-top').height() - $(this).find('.card-footer').outerHeight());
+//        console.log($(this).find('.card-img-top').height() - $(this).find('.card-footer').outerHeight());
+//      });
+//    });
 
     // Side bar
     var sidebar = $("#sidebar");
