@@ -1,0 +1,24 @@
+// Picture info sidebar
+#sidebar {
+ .handle {
+    background-color: $gray-darker-2 !important;
+    border-top: 1px solid $gray-darker-2 !important;
+    border-bottom: 1px solid $gray-darker-2 !important;
+    border-left: 1px solid $gray-darker-2 !important;
+
+    a {
+      color: #fff;
+
+      &:hover, &:focus {
+        color: #eee;
+      }
+    }
+  }
+  
+  .info {
+    background-color: $gray-darker-2 !important;
+    border-top: 1px solid $gray-darker-2 !important;
+    border-bottom: 1px solid $gray-darker-2 !important;
+    border-left: 1px solid $gray-darker-2 !important;
+  }
+}

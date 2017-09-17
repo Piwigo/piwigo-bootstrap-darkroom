@@ -484,13 +484,12 @@ html, body {
 #sidebar .handle {
   margin-top: 30px;
   float: right;
-  background-color: #ccc;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
+  background-color: #007bff;
+  border-top: 1px solid #007bff;
+  border-bottom: 1px solid #007bff;
+  border-left: 1px solid #007bff;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  box-shadow: -5px 0 10px 0px #dddddd;
 }
 
 #sidebar .handle a {
@@ -509,15 +508,14 @@ html, body {
 
 #sidebar .info {
   float: right;
-  background-color: #eeeeee;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
+  background-color: #007bff;
+  border-top: 1px solid #007bff;
+  border-bottom: 1px solid #007bff;
+  border-left: 1px solid #007bff;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   width: 250px;
   padding: 20px;
-  box-shadow: -5px 0 10px 0px #dddddd;
 }
 
 #sidebar .info dl {
