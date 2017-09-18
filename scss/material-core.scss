@@ -1,0 +1,39 @@
+// Material core overrides
+
+$bmd-navbar-link-font-size: 1rem !default;
+
+@import "../components/bootstrap-material-design/scss/bootstrap-material-design";
+
+.navbar-main {
+  box-shadow: none;
+}
+.navbar-form .bmd-form-group {
+  display: block !important;
+}
+.nav-link {
+  text-transform: none;
+}
+.navbar-contextual.sticky-top {
+  z-index: 1020;
+}
+
+.dropdown-menu {
+  min-width: 15rem;
+
+  // work around broken collapsed navbar
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+  .dropdown-item {
+    max-width: 100%;
+  }
+}
+
+
+.radio label,
+.checkbox label,
+select.form-control,
+input[type=text].form-control {
+  color: inherit;
+}
+
