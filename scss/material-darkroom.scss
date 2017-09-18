@@ -3,6 +3,15 @@
 @import "variables-darkroom";
 @import "material-core";
 
+@import "darkroom-colors/nav";
+@import "darkroom-colors/jumbotron";
+@import "darkroom-colors/dropdown";
+@import "darkroom-colors/media";
+@import "darkroom-colors/card";
+@import "darkroom-colors/picture-info-sidebar";
+@import "darkroom-colors/piwigo-components";
+@import "darkroom-colors/piwigo-plugins";
+
 .navbar-form {
   input[type=text].form-control {
     color: #fff;

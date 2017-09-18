@@ -82,7 +82,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     {include file="_photoswipe_js.tpl" selector="#photoSwipeData"}
   {/if}
   <div id="theImageCarousel" class="row mx-0">
-    <div class="col-lg-10 col-md-12">
+    <div class="col-lg-10 col-md-12i mx-auto">
       <div id="thumbnailCarousel" class="slick-carousel">
   {assign var=idx value=0}
   {foreach from=$thumbnails item=thumbnail}

@@ -4066,7 +4066,7 @@ tbody.collapse.show {
       flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #4f4f4f;
+  background-color: #2e2e2e;
   background-clip: border-box;
   border: 1px solid #2e2e2e;
   border-radius: 0.125rem;
@@ -14245,6 +14245,107 @@ select.custom-file-control,
 input[type=text].form-control,
 input[type=text].custom-file-control {
   color: inherit;
+}
+
+.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
+  color: #fff;
+}
+
+.navbar-main .navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-contextual {
+  background-color: #2e2e2e !important;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+  background-color: #3c3c3c;
+}
+
+@media (max-width: 991px) {
+  .nav-tabs.nav-link {
+    border-bottom: none;
+  }
+  .dropdown-divider {
+    background-color: #3c3c3c;
+  }
+  .navbar-collapse.show .dropdown-menu {
+    background-color: #4f4f4f;
+  }
+  .navbar-collapse.show .dropdown-menu .dropdown-item {
+    color: #a9a9a9;
+  }
+  .navbar-collapse.show .dropdown-menu .dropdown-item:hover, .navbar-collapse.show .dropdown-menu .dropdown-item:focus {
+    background-color: #dbdbdb;
+    color: #000;
+  }
+}
+
+.jumbotron {
+  color: #9e9e9e;
+}
+
+.dropdown-item a {
+  color: #4f4f4f;
+}
+
+.dropdown-item.active a {
+  color: #fff;
+}
+
+.media img {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  border: 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card-thumbnail .card-body, .card-thumbnail .card-footer {
+  background-color: #2e2e2e;
+}
+
+.card-thumbnail .card-footer {
+  font-size: .8rem;
+}
+
+#sidebar .handle {
+  background-color: #3c3c3c !important;
+  border-top: 1px solid #3c3c3c !important;
+  border-bottom: 1px solid #3c3c3c !important;
+  border-left: 1px solid #3c3c3c !important;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .handle a {
+  color: #fff;
+}
+
+#sidebar .handle a:hover, #sidebar .handle a:focus {
+  color: #eee;
+}
+
+#sidebar .info {
+  background-color: #3c3c3c !important;
+  border-top: 1px solid #3c3c3c !important;
+  border-bottom: 1px solid #3c3c3c !important;
+  border-left: 1px solid #3c3c3c !important;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#navigationButtons > i {
+  color: #3c3c3c;
+}
+
+#quickconnect label {
+  color: #4f4f4f;
+}
+
+.leaflet-control a {
+  color: #4f4f4f !important;
 }
 
 .navbar-form input[type=text].form-control, .navbar-form input[type=text].custom-file-control {

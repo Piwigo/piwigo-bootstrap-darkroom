@@ -1,0 +1,33 @@
+// Material Deep-Purple Style
+@import "variables";
+
+// import base colors
+@import "variables/colors";
+
+// override Bootstrap's theme colors
+$theme-colors: (
+  primary: $deep-purple-700,
+  secondary: $deep-purple,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $deep-purple-200,
+  dark: $deep-purple-900
+) !default;
+
+$link-decoration:         none !default;
+$link-hover-decoration:   none !default;
+
+@import "material-core";
+
+.dropdown-item.active a {
+  color: inherit;
+}
+.card-footer {
+  border-top: none;
+
+  &.text-muted {
+    font-size: 0.75rem;
+  }
+}
