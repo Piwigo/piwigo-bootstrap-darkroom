@@ -1,0 +1,40 @@
+// Bootstrap overrides
+// Options
+$enable-shadows:            true !default;
+
+// Colors and color maps from bootstrap. Need to be copied here so they are defined.
+$white:  #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:  #000 !default;
+
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+) !default;
+
+// full Material palette
+@import "components/bootstrap-material-design/scss/variables/colors";
+
+// Darkroom colors
+$gray-lighter-2:  #dbdbdb !default;
+$gray-lighter-1:  #a9a9a9 !default;
+$gray:            #9e9e9e !default;
+$gray-darker-1:   #4f4f4f !default;
+$gray-darker-2:   #3c3c3c !default;
+$gray-darker-3:   #2e2e2e !default;
+

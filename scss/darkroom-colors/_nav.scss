@@ -27,8 +27,23 @@
   }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
   .nav-tabs.nav-link {
     border-bottom: none;
+  }
+
+  // verify these
+  .dropdown-divider { background-color: $gray-darker-2; }
+  .navbar-collapse.show .dropdown-menu {
+    background-color: $gray-darker-1;
+
+    .dropdown-item {
+      color: $gray-lighter-1;
+
+      &:hover, &:focus {
+        background-color: $gray-lighter-2;
+        color: $black;
+      }
+    }
   }
 }
