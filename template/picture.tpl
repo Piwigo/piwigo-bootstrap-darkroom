@@ -9,7 +9,10 @@
 
 <div class="container">
 {include file='infos_errors.tpl'}
-{include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
+
+  <div class="row justify-content-center">
+    {include file='picture_nav_buttons.tpl'|@get_extent:'picture_nav_buttons'}
+  </div>
 {if get_device() != 'desktop' }
 {footer_script require="jquery"}{strip}
 $('#theImage img').bind('swipeleft swiperight', function (event) {
@@ -23,29 +26,28 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 });
 {/strip}{/footer_script}
 {/if}
-</div>
 
-<div id="theImage">
+  <div id="theImage" class="row justify-content-center">
     {$ELEMENT_CONTENT}
-</div>
+  </div>
 
 {if $theme_config->picture_info == 'sidebar' && get_device() == 'desktop'}
   {include file='picture_info_sidebar.tpl'}
 {/if}
 
-<div id="theImageComment" class="container">
+  <div id="theImageComment" class="row justify-content-center">
 {if isset($COMMENT_IMG)}
-  <div class="text-center col-lg-10 -col-md-12 mx-auto">
-    <section id="important-info">
+    <div class="text-center col-lg-10 -col-md-12 mx-auto">
+      <section id="important-info">
         <h4 class="imageComment">{$COMMENT_IMG}</h4>
-    </section>
-  </div>
+      </section>
+    </div>
 {/if}
-</div>
+  </div>
 
 {include file="http_scheme.tpl"}
 {if $theme_config->social_enabled}
-<div id="theImageShareButtons" class="container">
+  <div id="theImageShareButtons" class="row justify-content-center">
     <section id="share">
 {if $theme_config->social_twitter}
         <a href="http://twitter.com/share?text={$current.TITLE}&amp;url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
@@ -66,120 +68,119 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
         </a>
 {/if}
     </section>
-</div>
+  </div>
 {/if}
 
 {if !empty($thumbnails) && ($theme_config->slick_enabled || $theme_config->photoswipe)}
-{if $theme_config->slick_enabled && sizeOf($thumbnails) > 1}
-  {include file="_slick_js.tpl"}
-{/if}
-{if $theme_config->photoswipe && !$theme_config->slick_infinite}
-  {include file="_photoswipe_js.tpl" selector="#thumbnailCarousel"}
-{/if}
-{if $theme_config->photoswipe && $theme_config->slick_infinite}
-  {include file="_photoswipe_js.tpl" selector="#photoSwipeData"}
-{/if}
-<div id="theImageCarousel" class="container">
- <div class="col-lg-10 col-md-12 mx-auto">
-  <div id="thumbnailCarousel" class="slick-carousel">
-{assign var=idx value=0}
-{foreach from=$thumbnails item=thumbnail}
-{assign var=derivative value=$pwg->derivative($derivative_params_square, $thumbnail.src_image)}
-{if !$theme_config->slick_infinite}
-{assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
-{assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
-{assign var=derivative_xxlarge value=$pwg->derivative($derivative_params_xxlarge, $thumbnail.src_image)}
-{/if}
-{if !$derivative->is_cached()}
-{combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
-{combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
-{/if}
-{if !$theme_config->slick_infinite}
-{if $thumbnail.id eq $current.id && !$theme_config->slick_infinite}
-   <div class="text-center thumbnail-active">
-{else}
-   <div class="text-center">
-{/if}
-      <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-name="{$thumbnail.NAME}" data-description="{$thumbnail.DESCRIPTION}" {if !$theme_config->slick_infinite}data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{else}{if $theme_config->photoswipe_metadata} data-exif-make="{$thumbnail.EXIF.make}" data-exif-model="{$thumbnail.EXIF.model}" data-exif-lens="{$thumbnail.EXIF.lens}" data-exif-iso="{$thumbnail.EXIF.iso}" data-exif-apperture="{$thumbnail.EXIF.apperture}" data-exif-shutter-speed="{$thumbnail.EXIF.shutter_speed}" data-exif-focal-length="{$thumbnail.EXIF.focal_length}" data-date-created="{$thumbnail.DATE_CREATED}"{/if}{/if}{/if}>
-{else}
-   <div class="text-center{if $thumbnail.id eq $current.id} thumbnail-active{/if}"><a href="{$thumbnail.URL}">
-{/if}
-      <img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-fluid"></a>
-   </div>
-{assign var=idx value=$idx+1}
-{/foreach}
+  {if $theme_config->slick_enabled && sizeOf($thumbnails) > 1}
+    {include file="_slick_js.tpl"}
+  {/if}
+  {if $theme_config->photoswipe && !$theme_config->slick_infinite}
+    {include file="_photoswipe_js.tpl" selector="#thumbnailCarousel"}
+  {/if}
+  {if $theme_config->photoswipe && $theme_config->slick_infinite}
+    {include file="_photoswipe_js.tpl" selector="#photoSwipeData"}
+  {/if}
+  <div id="theImageCarousel" class="row">
+    <div class="col-lg-10 col-md-12 mx-auto">
+      <div id="thumbnailCarousel" class="slick-carousel">
+  {assign var=idx value=0}
+  {foreach from=$thumbnails item=thumbnail}
+  {assign var=derivative value=$pwg->derivative($derivative_params_square, $thumbnail.src_image)}
+  {if !$theme_config->slick_infinite}
+    {assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
+    {assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
+    {assign var=derivative_xxlarge value=$pwg->derivative($derivative_params_xxlarge, $thumbnail.src_image)}
+  {/if}
+  {if !$derivative->is_cached()}
+    {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
+    {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
+  {/if}
+  {if !$theme_config->slick_infinite}
+        <div class="text-center{if $thumbnail.id eq $current.id && !$theme_config->slick_infinite} thumbnail-active{/if}">
+          <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-name="{$thumbnail.NAME}" data-description="{$thumbnail.DESCRIPTION}" {if !$theme_config->slick_infinite}data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{else}{if $theme_config->photoswipe_metadata} data-exif-make="{$thumbnail.EXIF.make}" data-exif-model="{$thumbnail.EXIF.model}" data-exif-lens="{$thumbnail.EXIF.lens}" data-exif-iso="{$thumbnail.EXIF.iso}" data-exif-apperture="{$thumbnail.EXIF.apperture}" data-exif-shutter-speed="{$thumbnail.EXIF.shutter_speed}" data-exif-focal-length="{$thumbnail.EXIF.focal_length}" data-date-created="{$thumbnail.DATE_CREATED}"{/if}{/if}{/if}>
+  {else}
+        <div class="text-center{if $thumbnail.id eq $current.id} thumbnail-active{/if}"><a href="{$thumbnail.URL}">
+  {/if}
+          <img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}" class="img-fluid"></a>
+        </div>
+  {assign var=idx value=$idx+1}
+  {/foreach}
+      </div>
+    </div>
   </div>
- </div>
-</div>
-{if $theme_config->slick_infinite}
-<div id="photoSwipeData">
-{assign var=idx value=0}
-{foreach from=$thumbnails item=thumbnail}
-{assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
-{assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
-{assign var=derivative_xxlarge value=$pwg->derivative($derivative_params_xxlarge, $thumbnail.src_image)}
-   <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-name="{$thumbnail.NAME}" data-description="{$thumbnail.DESCRIPTION}" data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{else}{if $theme_config->photoswipe_metadata} data-exif-make="{$thumbnail.EXIF.make}" data-exif-model="{$thumbnail.EXIF.model}" data-exif-lens="{$thumbnail.EXIF.lens}" data-exif-iso="{$thumbnail.EXIF.iso}" data-exif-apperture="{$thumbnail.EXIF.apperture}" data-exif-shutter-speed="{$thumbnail.EXIF.shutter_speed}" data-exif-focal-length="{$thumbnail.EXIF.focal_length}" data-date-created="{$thumbnail.DATE_CREATED}"{/if}{/if}></a>
+
+  {if $theme_config->slick_infinite}
+  <div id="photoSwipeData">
+    {assign var=idx value=0}
+    {foreach from=$thumbnails item=thumbnail}
+    {assign var=derivative_medium value=$pwg->derivative($derivative_params_medium, $thumbnail.src_image)}
+    {assign var=derivative_large value=$pwg->derivative($derivative_params_large, $thumbnail.src_image)}
+    {assign var=derivative_xxlarge value=$pwg->derivative($derivative_params_xxlarge, $thumbnail.src_image)}
+    <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-name="{$thumbnail.NAME}" data-description="{$thumbnail.DESCRIPTION}" data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{else}{if $theme_config->photoswipe_metadata} data-exif-make="{$thumbnail.EXIF.make}" data-exif-model="{$thumbnail.EXIF.model}" data-exif-lens="{$thumbnail.EXIF.lens}" data-exif-iso="{$thumbnail.EXIF.iso}" data-exif-apperture="{$thumbnail.EXIF.apperture}" data-exif-shutter-speed="{$thumbnail.EXIF.shutter_speed}" data-exif-focal-length="{$thumbnail.EXIF.focal_length}" data-date-created="{$thumbnail.DATE_CREATED}"{/if}{/if}></a>
 {assign var=idx value=$idx+1}
-{/foreach}
-</div>
-{/if}
+    {/foreach}
+  </div>
+  {/if}
 {/if}
 
-<div id="theImageInfos" class="container">
- <div id="infopanel" class="col-lg-8 col-md-10 col-sm-12 col-xs-12 mx-auto">
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs nav-justified flex-column flex-sm-row" role="tablist">
+  <div id="theImageInfos" class="row">
+    <div id="infopanel" class="col-lg-8 col-md-10 col-12 mx-auto">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs nav-justified flex-column flex-sm-row" role="tablist">
 {if $theme_config->picture_info == 'tabs' || (get_device() != 'desktop' && $theme_config->picture_info != 'disabled')}
-    <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link active" href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
+        <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link active" href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
 {if isset($metadata)}
-    <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link" href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
+        <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link" href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
 {/if}
 {/if}
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <li class="nav-item{if $theme_config->picture_info == 'disabled' || ($theme_config->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}"><a class="flex-sm-fill text-sm-center nav-link" href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge badge-secondary">{$COMMENT_COUNT}</span></a></li>
+        <li class="nav-item{if $theme_config->picture_info == 'disabled' || ($theme_config->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}"><a class="flex-sm-fill text-sm-center nav-link" href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge badge-secondary">{$COMMENT_COUNT}</span></a></li>
 {/if}
-  </ul>
+      </ul>
 
-  <!-- Tab panes -->
-  <div class="tab-content">
+      <!-- Tab panes -->
+      <div class="tab-content">
 {if $theme_config->picture_info === 'tabs' || (get_device() != 'desktop' && $theme_config->picture_info != 'disabled')}
-    <div role="tabpanel" class="tab-pane active" id="tab_info">
-      <div id="info-content" class="info">
-        <table class="table table-sm table-responsive">
-          <colgroup>
-             <col class="w-50">
-             <col class="w-50">
-          </colgroup>
-          <tbody>
+        <div role="tabpanel" class="tab-pane active" id="tab_info">
+          <div id="info-content" class="info">
+            <table class="table table-sm table-responsive">
+              <colgroup>
+                <col class="w-50">
+                <col class="w-50">
+              </colgroup>
+              <tbody>
 {if $display_info.author and isset($INFO_AUTHOR)}
-            <tr>
-                <th scope="row">{'Author'|@translate}</th>
-                <td><div id="Author" class="imageInfo">{$INFO_AUTHOR}</div></td>
-            </tr>
+                <tr>
+                  <th scope="row">{'Author'|@translate}</th>
+                  <td><div id="Author" class="imageInfo">{$INFO_AUTHOR}</div></td>
+                </tr>
 {/if}
 {if isset($CR_INFO_NAME) && !empty($CR_INFO_NAME)}
-            <tr>
-                <th scope="row">{'Copyright'|@translate}</th>
-                <td><div id="Copyright" class="imageInfo">{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</div></td>
-            </tr>
+                <tr>
+                  <th scope="row">{'Copyright'|@translate}</th>
+                  <td><div id="Copyright" class="imageInfo">{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</div></td>
+                </tr>
 {/if}
 {if $display_info.rating_score and isset($rate_summary)}
-            <tr>
-                <th scope="row">{'Rating score'|@translate}</th>
-                <td><div id="Average" class="imageInfo">
-                {if $rate_summary.count}
-                        <span id="ratingScore">{$rate_summary.score}</span> <span id="ratingCount">({$rate_summary.count|@translate_dec:'%d rate':'%d rates'})</span>
-                {else}
-                        <span id="ratingScore">{'no rate'|@translate}</span> <span id="ratingCount"></span>
-                {/if}
-                </div></td>
-            </tr>
+                <tr>
+                  <th scope="row">{'Rating score'|@translate}</th>
+                  <td>
+                    <div id="Average" class="imageInfo">
+                    {if $rate_summary.count}
+                      <span id="ratingScore">{$rate_summary.score}</span> <span id="ratingCount">({$rate_summary.count|@translate_dec:'%d rate':'%d rates'})</span>
+                    {else}
+                      <span id="ratingScore">{'no rate'|@translate}</span> <span id="ratingCount"></span>
+                    {/if}
+                    </div>
+                  </td>
+                </tr>
 {/if}
 
 {if isset($rating)}
-            <tr>
-                <th scope="row" id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</th>
-                <td>
+                <tr>
+                  <th scope="row" id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</th>
+                  <td>
                     <div id="rating" class="imageInfo">
                         <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
                         <div>
@@ -219,64 +220,66 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
                         </div>
                         </form>
                     </div>
-                </td>
-            </tr>
+                  </td>
+                </tr>
 {/if}
 {if $display_info.created_on and isset($INFO_CREATION_DATE)}
-            <tr>
-                <th scope="row">{'Created on'|@translate}</th>
-                <td><div id="datecreate" class="imageInfo">{$INFO_CREATION_DATE}</div></td>
-            </tr>
+                <tr>
+                  <th scope="row">{'Created on'|@translate}</th>
+                  <td><div id="datecreate" class="imageInfo">{$INFO_CREATION_DATE}</div></td>
+                </tr>
 {/if}
 {if $display_info.posted_on}
-            <tr>
-                <th scope="row">{'Posted on'|@translate}</th>
-                <td><div id="datepost" class="imageInfo">{$INFO_POSTED_DATE}</div></td>
-            </tr>
+                <tr>
+                  <th scope="row">{'Posted on'|@translate}</th>
+                  <td><div id="datepost" class="imageInfo">{$INFO_POSTED_DATE}</div></td>
+                </tr>
 {/if}
 {if $display_info.visits}
-            <tr>
-                <th scope="row">{'Visits'|@translate}</th>
-                <td><div id="visits" class="imageInfo">{$INFO_VISITS}</div></td>
-            </tr>
+                <tr>
+                  <th scope="row">{'Visits'|@translate}</th>
+                  <td><div id="visits" class="imageInfo">{$INFO_VISITS}</div></td>
+                </tr>
 {/if}
 {if $display_info.dimensions and isset($INFO_DIMENSIONS)}
-            <tr>
-                <th scope="row">{'Dimensions'|@translate}</th>
-                <td><div id="Dimensions" class="imageInfo">{$INFO_DIMENSIONS}</div></td>
-            </tr>
+                <tr>
+                  <th scope="row">{'Dimensions'|@translate}</th>
+                  <td><div id="Dimensions" class="imageInfo">{$INFO_DIMENSIONS}</div></td>
+                </tr>
 {/if}
 {if $display_info.file}
-            <tr>
-                <th scope="row">{'File'|@translate}</th>
-                <td><div id="File" class="imageInfo">{$INFO_FILE}</div></td>
-            </tr>
+                <tr>
+                  <th scope="row">{'File'|@translate}</th>
+                  <td><div id="File" class="imageInfo">{$INFO_FILE}</div></td>
+                </tr>
 {/if}
 {if $display_info.filesize and isset($INFO_FILESIZE)}
-            <tr>
-                <th scope="row">{'Filesize'|@translate}</th>
-                <td><div id="Filesize" class="imageInfo">{$INFO_FILESIZE}</div></td>
-            </tr>
+                <tr>
+                  <th scope="row">{'Filesize'|@translate}</th>
+                  <td><div id="Filesize" class="imageInfo">{$INFO_FILESIZE}</div></td>
+                </tr>
 {/if}
 {if $display_info.tags and isset($related_tags)}
-            <tr>
-                <th scope="row">{'Tags'|@translate}</th>
-                <td>
-                  <div id="Tags" class="imageInfo">
-                    {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a href="{$tag.URL}">{$tag.name}</a>{/foreach}
-                  </div>
-                </td>
-            </tr>
+                <tr>
+                  <th scope="row">{'Tags'|@translate}</th>
+                  <td>
+                    <div id="Tags" class="imageInfo">
+                      {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a href="{$tag.URL}">{$tag.name}</a>{/foreach}
+                    </div>
+                  </td>
+                </tr>
 {/if}
 {if $display_info.categories and isset($related_categories)}
-            <tr>
-                <th scope="row">{'Albums'|@translate}</th>
-                <td><div id="Categories" class="imageInfo">
+                <tr>
+                  <th scope="row">{'Albums'|@translate}</th>
+                  <td>
+                    <div id="Categories" class="imageInfo">
 {foreach from=$related_categories item=cat name=cat_loop}
-                {if !$smarty.foreach.cat_loop.first}<br />{/if}{$cat}
+                    {if !$smarty.foreach.cat_loop.first}<br />{/if}{$cat}
 {/foreach}
-                </div></td>
-            </tr>
+                    </div>
+                  </td>
+                </tr>
 {/if}
 {if $display_info.privacy_level and isset($available_permission_levels)}
 {combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
@@ -295,62 +298,63 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
         }
     );
     }
-    (SwitchBox=window.SwitchBox||[]).push("#privacyLevelLink", "#privacyLevelBox");
 {/strip}{/footer_script}
-            <tr>
-                <th scope="row">{'Who can see this photo?'|@translate}</dt>
-                <td>
-                  <div id="Privacy" class="imageInfo">
-                    <div class="dropdown">
+                <tr>
+                  <th scope="row">{'Who can see this photo?'|@translate}</dt>
+                  <td>
+                    <div id="Privacy" class="imageInfo">
+                      <div class="dropdown">
                         <button class="btn btn-secondary btn-raised dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
                             {$available_permission_levels[$current.level]}
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownPermissions">
 {foreach from=$available_permission_levels item=label key=level}
-                            <li id="permission-{$level}" role="presentation" class="permission-li {if $current.level == $level} active{/if}"><a role="menuitem" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
+                            <li id="permission-{$level}" role="presentation" class="dropdown-item permission-li {if $current.level == $level} active{/if}"><a class="dropdown-link" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
 {/foreach}
                         </ul>
+                      </div>
                     </div>
-                  </div>
-                </td>
-            </tr>
+                  </td>
+                </tr>
 {/if}
-          </tbody>
-        </table>
-      </div>
-    </div>
-<!-- metadata -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- metadata -->
 {if isset($metadata)}
-    <div role="tabpanel" class="tab-pane" id="tab_metadata">
-        <div id="metadata" class="info">
+        <div role="tabpanel" class="tab-pane" id="tab_metadata">
+          <div id="metadata" class="info">
             <table class="table table-sm table-responsive">
-                <colgroup>
-                    <col class="w-50">
-                    <col class="w-50">
-                </colgroup>
-                <tbody>
+              <colgroup>
+                <col class="w-50">
+                <col class="w-50">
+              </colgroup>
+              <tbody>
 {foreach from=$metadata item=meta}
 {foreach from=$meta.lines item=value key=label}
-                    <tr>
-                        <th scope="row">{$label}</th>
-                        <td>{$value}</td>
-                    </tr>
+                <tr>
+                  <th scope="row">{$label}</th>
+                  <td>{$value}</td>
+                </tr>
 {/foreach}
 {/foreach}
-                </tbody>
+              </tbody>
             </table>
+          </div>
         </div>
-    </div>
 {/if}
 {/if}
-<!-- comments -->
+
+        <!-- comments -->
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <div role="tabpanel" class="tab-pane{if $theme_config->picture_info == 'disabled' || ($theme_config->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}" id="tab_comments">
-<a name="comments"></a>
+        <div role="tabpanel" class="tab-pane{if $theme_config->picture_info == 'disabled' || ($theme_config->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}" id="tab_comments">
+          <a name="comments"></a>
 {$shortname = $theme_config->comments_disqus_shortname}
 {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
-       <div id="disqus_thread"></div>
+          <div id="disqus_thread"></div>
 {footer_script}{strip}
 var disqus_shortname = '{/strip}{$shortname}{strip}';
 
@@ -362,64 +366,66 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 {/strip}
 {/footer_script}
 {else}
-            <div class="tabbable">
-                <ul class="nav nav-pills">
+          <div class="tabbable">
+            <ul class="nav nav-pills">
 {if $COMMENT_COUNT > 0}
-                    <li class="active"><a href="#viewcomments" data-toggle="tab">{$COMMENT_COUNT|@translate_dec:'%d comment':'%d comments'}</a></li>
+              <li class="active"><a href="#viewcomments" data-toggle="tab">{$COMMENT_COUNT|@translate_dec:'%d comment':'%d comments'}</a></li>
 {/if}
 {if isset($comment_add)}
-                    <li{if $COMMENT_COUNT == 0} class="active"{/if}><a href="#addcomment" data-toggle="tab">{'Add a comment'|@translate}</a></li>
+              <li{if $COMMENT_COUNT == 0} class="active"{/if}><a href="#addcomment" data-toggle="tab">{'Add a comment'|@translate}</a></li>
 {/if}
-                </ul>
-                <div class="tab-content">
+            </ul>
+            <div class="tab-content">
 {if $COMMENT_COUNT > 0}
-                    <div id="viewcomments" class="tab-pane active">
+              <div id="viewcomments" class="tab-pane active">
 {include file='comment_list.tpl'}
-                    </div>
+              </div>
 {/if}
 {if isset($comment_add)}
-                    <div id="addcomment" class="tab-pane{if $COMMENT_COUNT == 0} active{/if}">
-                        <form method="post" action="{$comment_add.F_ACTION}">
+              <div id="addcomment" class="tab-pane{if $COMMENT_COUNT == 0} active{/if}">
+                <form method="post" action="{$comment_add.F_ACTION}">
 {if $comment_add.SHOW_AUTHOR}
-                            <div class="form-group">
-                                <label for="author">{'Author'|@translate}{if $comment_add.AUTHOR_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
-                                <input class="form-control" type="text" name="author" id="author" value="{$comment_add.AUTHOR}">
-                            </div>
+                  <div class="form-group">
+                    <label for="author">{'Author'|@translate}{if $comment_add.AUTHOR_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
+                    <input class="form-control" type="text" name="author" id="author" value="{$comment_add.AUTHOR}">
+                  </div>
 {/if}
 {if $comment_add.SHOW_EMAIL}
-                            <div class="form-group">
-                                <label for="email">{'Email address'|@translate}{if $comment_add.EMAIL_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
-                                <input class="form-control" type="text" name="email" id="email" value="{$comment_add.EMAIL}">
-                            </div>
+                  <div class="form-group">
+                    <label for="email">{'Email address'|@translate}{if $comment_add.EMAIL_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
+                    <input class="form-control" type="text" name="email" id="email" value="{$comment_add.EMAIL}">
+                  </div>
 {/if}
 {if $comment_add.SHOW_WEBSITE}
-                            <div class="form-group">
-                                <label for="website_url">{'Website'|@translate} :</label>
-                                <input class="form-control" type="text" name="website_url" id="website_url" value="{$comment_add.WEBSITE_URL}">
-                            </div>
+                  <div class="form-group">
+                    <label for="website_url">{'Website'|@translate} :</label>
+                    <input class="form-control" type="text" name="website_url" id="website_url" value="{$comment_add.WEBSITE_URL}">
+                  </div>
 {/if}
-                            <div class="form-group">
-                                <label for="contentid">{'Comment'|@translate} ({'mandatory'|@translate}) :</label>
-                                <textarea class="form-control" name="content" id="contentid" rows="5" cols="50">{$comment_add.CONTENT}</textarea>
-                            </div>
-                            <input type="hidden" name="key" value="{$comment_add.KEY}">
-                            <button type="submit" class="btn btn-primary btn-raised">{'Submit'|@translate}</button>
-                        </form>
-                    </div>
+                  <div class="form-group">
+                    <label for="contentid">{'Comment'|@translate} ({'mandatory'|@translate}) :</label>
+                    <textarea class="form-control" name="content" id="contentid" rows="5" cols="50">{$comment_add.CONTENT}</textarea>
+                  </div>
+                  <input type="hidden" name="key" value="{$comment_add.KEY}">
+                  <button type="submit" class="btn btn-primary btn-raised">{'Submit'|@translate}</button>
+                </form>
+              </div>
 {/if}
-                </div>
             </div>
+          </div>
 {/if}
+        </div>
+{/if}
+      </div>
     </div>
-{/if}
   </div>
- </div>
-</div>
 
 {if !empty($navbar) }
-<div class="container">
-{include file='navigation_bar.tpl' fragment='comments'|@get_extent:'navbar'}
-</div>
+  <div class="row">
+    {include file='navigation_bar.tpl' fragment='comments'|@get_extent:'navbar'}
+  </div>
 {/if}
 
 {if !empty($PLUGIN_PICTURE_AFTER)}{$PLUGIN_PICTURE_AFTER}{/if}
+
+</div>

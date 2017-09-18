@@ -14260,6 +14260,28 @@ h6 {
   font-size: .8rem;
 }
 
+#sidebar .handle {
+  background-color: #3c3c3c !important;
+  border-top: 1px solid #3c3c3c !important;
+  border-bottom: 1px solid #3c3c3c !important;
+  border-left: 1px solid #3c3c3c !important;
+}
+
+#sidebar .handle a {
+  color: #fff;
+}
+
+#sidebar .handle a:hover, #sidebar .handle a:focus {
+  color: #eee;
+}
+
+#sidebar .info {
+  background-color: #3c3c3c !important;
+  border-top: 1px solid #3c3c3c !important;
+  border-bottom: 1px solid #3c3c3c !important;
+  border-left: 1px solid #3c3c3c !important;
+}
+
 #navigationButtons > i {
   color: #3c3c3c;
 }

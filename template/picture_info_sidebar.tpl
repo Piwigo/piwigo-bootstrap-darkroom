@@ -148,13 +148,13 @@
                 <dt>{'Who can see this photo?'|@translate}</dt>
                 <dd>
                     <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
+                        <button class="btn btn-primary dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
                             {$available_permission_levels[$current.level]}
                             <span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownPermissions">
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownPermissions">
 {foreach from=$available_permission_levels item=label key=level}
-                            <li id="permission-{$level}" role="presentation" class="permission-li {if $current.level == $level} active{/if}"><a role="menuitem" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
+                            <li id="permission-{$level}" role="presentation" class="dropdown-item permission-li {if $current.level == $level} active{/if}"><a class="dropdown-link" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
 {/foreach}
                         </ul>
                     </div>

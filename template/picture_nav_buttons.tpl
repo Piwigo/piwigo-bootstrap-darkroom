@@ -1,4 +1,4 @@
-<div id="navigationButtons" class="py-3">
+<div id="navigationButtons" class="col-12 py-3">
 {if $DISPLAY_NAV_BUTTONS or isset($slideshow)}
 {if isset($slideshow)}
 {if isset($slideshow.U_INC_PERIOD)}
