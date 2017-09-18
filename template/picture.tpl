@@ -27,7 +27,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/strip}{/footer_script}
 {/if}
 
-  <div id="theImage" class="row justify-content-center">
+  <div id="theImage" class="row justify-content-center mb-3">
     {$ELEMENT_CONTENT}
   </div>
 
@@ -35,7 +35,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
   {include file='picture_info_sidebar.tpl'}
 {/if}
 
-  <div id="theImageComment" class="row justify-content-center">
+  <div id="theImageComment" class="row justify-content-center mb-3">
 {if isset($COMMENT_IMG)}
     <div class="text-center col-lg-10 -col-md-12 mx-auto">
       <section id="important-info">
@@ -81,8 +81,8 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
   {if $theme_config->photoswipe && $theme_config->slick_infinite}
     {include file="_photoswipe_js.tpl" selector="#photoSwipeData"}
   {/if}
-  <div id="theImageCarousel" class="row">
-    <div class="col-lg-10 col-md-12 mx-auto">
+  <div id="theImageCarousel" class="row mx-0">
+    <div class="col-lg-10 col-md-12">
       <div id="thumbnailCarousel" class="slick-carousel">
   {assign var=idx value=0}
   {foreach from=$thumbnails item=thumbnail}
