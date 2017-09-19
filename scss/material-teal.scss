@@ -5,8 +5,8 @@
 
 // override Bootstrap's theme colors
 $theme-colors: (
-  primary: $teal-700,
-  secondary: $teal-400,
+  primary: #004c40,
+  secondary: #00796b,
   success: $green,
   info: $cyan,
   warning: $yellow,
@@ -18,13 +18,14 @@ $theme-colors: (
 $link-decoration:         none !default;
 $link-hover-decoration:   none !default;
 
-$jumbotron-bg:            theme-color('secondary');
+$jumbotron-bg:            #00796b;
+$body-bg:                 #f5f5f6;
 
 // now, import top-level material
 @import "material-core";
 
 .navbar-contextual {
-  background-color: theme-color('secondary');
+  background-color: #48a999 !important;
 }
 
 .dropdown-item.active a {
