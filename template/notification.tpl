@@ -4,14 +4,14 @@
 {/html_head}
 
 <nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-secondary sticky-top mb-5">
-    <div class="container">
+    <div class="container{if $theme_config->fluid_width}-fluid{/if}">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Notification'|@translate}</a></div>
     </div>
 </nav>
 
 {include file='infos_errors.tpl'}
 
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <div class="card">
         <h4 class="card-header">
             {'Notification'|@translate}

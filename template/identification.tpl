@@ -1,5 +1,5 @@
 <nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-secondary sticky-top mb-5">
-    <div class="container">
+    <div class="container{if $theme_config->fluid_width}-fluid{/if}">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Identification'|@translate}</a></div>
         <ul class="navbar-nav justify-content-end">
              {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
@@ -9,7 +9,7 @@
 
 {include file='infos_errors.tpl'}
 
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <form action="{$F_LOGIN_ACTION}" method="post" name="login_form" class="form-horizontal">
         <div class="card">
             <h4 class="card-header">

@@ -7,7 +7,7 @@
 <ul class="tabs">
   <li class="tab-link current" data-tab="appearance">{'Appearance'|@translate}</li>
   <li class="tab-link" data-tab="components">{'Components'|@translate}</li>
-  <li class="tab-link" data-tab="social-integration">{'Social Integration'|@translate}</li>
+  <li class="tab-link" data-tab="social-integration">{'Social Media Integration'|@translate}</li>
 </ul>
   
 
@@ -39,6 +39,19 @@
                 <dt>Material</dt><dd>Material design {'from'|@translate} <a href="http://fezvrasta.github.io/bootstrap-material-design">http://fezvrasta.github.io/bootstrap-material-design</a></dd>
                 <dt>{'None'|@translate}</dt><dd>{'No color theme'|@translate}</dd> 
             </dl>
+        </fieldset>
+        <fieldset>
+            <legend>{'Full width layout'|@translate}</legend>
+            <ul>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="fluid_width"{if $theme_config->fluid_width} checked="checked"{/if}>
+                        {'Enabled'|@translate}
+                    </label>
+                    <span class="info">{'Use full width containers that span the entire width of the viewport'|@translate}</span>
+                </li>
+            </ul>
         </fieldset>
         <fieldset>
             <legend>{'Site logo'|@translate}</legend>

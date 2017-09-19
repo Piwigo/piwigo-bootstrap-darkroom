@@ -13,7 +13,7 @@ $(document).ready(function () {
 {/footer_script}
 {/if}
     <nav class="navbar navbar-expand-lg navbar-contextual navbar-dark bg-secondary sticky-top {if $theme_config->bootstrap_theme == 'material'}mb-5{else}mb-3{/if}">
-        <div class="container">
+        <div class="container{if $theme_config->fluid_width}-fluid{/if}">
             <div class="navbar-brand mr-auto">
 {if isset($chronology.TITLE)}
                 <a href="{$U_HOME}" title="{'Home'|@translate}"><i class="fa fa-home" aria-hidden="true"></i></a>{$LEVEL_SEPARATOR}{$chronology.TITLE}
@@ -147,22 +147,21 @@ $(document).ready(function() {
 
 {include file='infos_errors.tpl'}
 
-<a name="content"></a>
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {if !empty($PLUGIN_INDEX_CONTENT_BEGIN)}{$PLUGIN_INDEX_CONTENT_BEGIN}{/if}
 
 {if isset($chronology_views)}
-<div id="calendar-select" class="btn-group">
-    <button id="calendar-view" type="button" class="btn btn-primary btn-raised dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {foreach from=$chronology_views item=view}{if $view.SELECTED}{$view.CONTENT}{/if}{/foreach}
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="calendar-view">
-        {foreach from=$chronology_views item=view name=loop}
-            <li {if $view.SELECTED} class="active"{/if}><a href="{$view.VALUE}">{$view.CONTENT}</a><li>
-        {/foreach}
-    </ul>
-</div>
+    <div id="calendar-select" class="btn-group">
+        <button id="calendar-view" type="button" class="btn btn-primary btn-raised dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {foreach from=$chronology_views item=view}{if $view.SELECTED}{$view.CONTENT}{/if}{/foreach}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="calendar-view">
+            {foreach from=$chronology_views item=view name=loop}
+                <li {if $view.SELECTED} class="active"{/if}><a href="{$view.VALUE}">{$view.CONTENT}</a><li>
+            {/foreach}
+        </ul>
+    </div>
 {/if}
 
 {if isset($FILE_CHRONOLOGY_VIEW)}
@@ -280,7 +279,7 @@ $('.col-thumbnail').find('img[src*="pwg_representative"]').each(function() {
     </div>
 </div>
 {if !empty($cats_navbar) || !empty($thumb_navbar)}
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {if !empty($cats_navbar)}
     {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$cats_navbar}
 {/if}
@@ -291,7 +290,7 @@ $('.col-thumbnail').find('img[src*="pwg_representative"]').each(function() {
 {/if}
 
 {if !empty($category_search_results)}
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <h3 class="category_search_results">{'Album results for'|@translate} <em><strong>{$QUERY_SEARCH}</strong></em></h3>
     <p>
         <em><strong>
@@ -305,7 +304,7 @@ $('.col-thumbnail').find('img[src*="pwg_representative"]').each(function() {
 {/if}
 
 {if !empty($tag_search_results)}
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <h3 class="tag_search_results">{'Tag results for'|@translate} <em><strong>{$QUERY_SEARCH}</strong></em></h3>
     <p>
         <em><strong>
@@ -318,7 +317,7 @@ $('.col-thumbnail').find('img[src*="pwg_representative"]').each(function() {
 </div>
 {/if}
 
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {if !empty($PLUGIN_INDEX_CONTENT_END)}{$PLUGIN_INDEX_CONTENT_END}{/if}
 </div>
 

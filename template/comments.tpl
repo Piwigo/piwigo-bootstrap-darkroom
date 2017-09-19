@@ -1,5 +1,5 @@
 <nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-secondary sticky-top mb-5">
-    <div class="container">
+    <div class="container{if $theme_config->fluid_width}-fluid{/if}">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'User comments'|@translate}</a></div>
     </div>
 </nav>
@@ -9,7 +9,7 @@
 {$shortname = $theme_config->comments_disqus_shortname}
 {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
 {else}
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <form action="{$F_ACTION}" method="get" class="form-horizontal">
         <div class="card">
             <h4 class="card-header">
@@ -84,7 +84,7 @@
 
 {if isset($comments)}
 <a name="comments"></a>
-<div class="container comment-search">
+<div class="container{if $theme_config->fluid_width}-fluid{/if} comment-search">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
 {include file='comment_list.tpl' comment_derivative_params=$derivative_params}
@@ -94,7 +94,7 @@
 {/if}
 
 {if !empty($navbar) }
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {include file='navigation_bar.tpl' fragment='comments'|@get_extent:'navbar'}
 </div>
 {/if}

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-contextual navbar-dark bg-secondary sticky-top mb-5">
-    <div class="container">
+    <div class="container{if $theme_config->fluid_width}-fluid{/if}">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'About'|@translate}</a></div>
         <ul class="navbar-nav justify-content-end">
              {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
@@ -9,7 +9,7 @@
 
 {include file='infos_errors.tpl'}
 
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <div class="card">
         <h4 class="card-header">{'About'|@translate}</h4>
         <div class="card-body">

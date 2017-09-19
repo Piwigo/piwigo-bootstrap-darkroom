@@ -2,7 +2,7 @@
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
   $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').removeClass('pwg-state-default pwg-button').wrap('<li class="nav-item"></li>');
-  $('#map').wrap('<div id="mapContainer" class="container"></div>');
+  $('#map').wrap('<div id="mapContainer" class="container{if $theme_config->fluid_width}-fluid{/if}"></div>');
   $('#mapPicture').prependTo('#mapContainer');
 });
 {/strip}{/footer_script}

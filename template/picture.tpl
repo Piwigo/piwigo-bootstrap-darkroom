@@ -7,7 +7,7 @@
 
 {$PICTURE_NAV}
 
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {include file='infos_errors.tpl'}
 
   <div class="row justify-content-center">

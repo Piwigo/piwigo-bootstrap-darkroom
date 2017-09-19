@@ -1,8 +1,8 @@
 {foreach from=$blocks item=block key=key}
-<div id="stuffs_block_{$block.ID}" class="container pwgstuffs-container">
+<div id="stuffs_block_{$block.ID}" class="container{if $theme_config->fluid_width}-fluid{/if} pwgstuffs-container">
   {if isset($block.TITLE)}
   <nav class="navbar navbar-default pwgstuffs-navbar">
-    <div class="container-fluid">
+    <div class="container{if $theme_config->fluid_width}-fluid{/if}">
       <div class="navbar-header">
         {if isset($block.TITLE_URL)}
           <a class="navbar-brand" href="{$block.TITLE_URL}">{$block.TITLE}</a>

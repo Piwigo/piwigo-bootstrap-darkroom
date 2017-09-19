@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <form method="post" name="profile" action="{$F_ACTION}" id="profile" class="form-horizontal">
         <div class="card">
             <h4 class="card-header">

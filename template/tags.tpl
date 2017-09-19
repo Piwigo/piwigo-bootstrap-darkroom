@@ -1,5 +1,5 @@
 <nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-secondary sticky-top mb-5">
-    <div class="container">
+    <div class="container{if $theme_config->fluid_width}-fluid{/if}">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Tags'|@translate}</a></div>
         <ul class="navbar-nav justify-content-end">
 {if $display_mode == 'letters'}
@@ -24,7 +24,7 @@
 {include file='infos_errors.tpl'}
 
 {if $display_mode == 'cloud' and isset($tags)}
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {if $theme_config->tag_cloud_type == 'basic'}
     <div id="tagCloud">
 {foreach from=$tags item=tag}
@@ -66,7 +66,7 @@
 {/if}
 
 {if $display_mode == 'letters' and isset($letters)}
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <div id="tagLetters">
         <div class="menu row">
 {foreach from=$letters item=letter}
@@ -82,4 +82,4 @@
 </div>
 {/if}
 
-</div> <!-- content -->
+</div>

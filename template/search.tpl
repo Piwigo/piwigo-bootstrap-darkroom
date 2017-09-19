@@ -12,7 +12,7 @@
 {/footer_script}
 
 <nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-secondary sticky-top mb-5">
-    <div class="container">
+    <div class="container{if $theme_config->fluid_width}-fluid{/if}">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Search'|@translate}</a></div>
         <ul class="navbar-nav justify-content-end">
             <li class="nav-item">
@@ -27,7 +27,7 @@
 
 {include file='infos_errors.tpl'}
 
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <form method="post" name="search" action="{$F_SEARCH_ACTION}">
         <div class="card">
             <h4 class="card-header">

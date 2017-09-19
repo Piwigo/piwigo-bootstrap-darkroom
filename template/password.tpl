@@ -1,5 +1,5 @@
 <nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-secondary sticky-top mb-5">
-    <div class="container">
+    <div class="container{if $theme_config->fluid_width}-fluid{/if}">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{$title}</a></div>
         <ul class="nav navbar-nav">
              {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
@@ -10,7 +10,7 @@
 {include file='infos_errors.tpl'}
 
 {if $action ne 'none'}
-<div class="container">
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <form id="lostPassword" action="{$form_action}?action={$action}{if isset($key)}&amp;key={$key}{/if}" method="post" class="form-horizontal">
         <div class="card">
             <h4 class="card-header">
