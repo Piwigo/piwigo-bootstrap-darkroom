@@ -37,3 +37,7 @@ input[type=text].form-control {
   color: inherit;
 }
 
+.slick-prev:before,
+.slick-next:before {
+  color: theme-color('primary'); 
+}
