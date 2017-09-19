@@ -3,6 +3,7 @@
    "ignoredDependencies": [
       "bootstrap",
       "bootstrap-sass",
+      "tether",
       "microplugin",
       "sifter"
    ]

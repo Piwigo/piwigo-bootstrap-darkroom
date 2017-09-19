@@ -1717,16 +1717,16 @@ pre code {
 .table-secondary,
 .table-secondary > th,
 .table-secondary > td {
-  background-color: #d4c8eb;
+  background-color: #dbd0ee;
 }
 
 .table-hover .table-secondary:hover {
-  background-color: #c5b5e4;
+  background-color: #cdbde7;
 }
 
 .table-hover .table-secondary:hover > td,
 .table-hover .table-secondary:hover > th {
-  background-color: #c5b5e4;
+  background-color: #cdbde7;
 }
 
 .table-success,
@@ -2360,31 +2360,31 @@ fieldset[disabled] a.custom-file-control::before {
 
 .btn-secondary {
   color: #fff;
-  background-color: #673ab7;
-  border-color: #673ab7;
+  background-color: #7e57c2;
+  border-color: #7e57c2;
   box-shadow: none;
 }
 
 .btn-secondary:hover {
   color: #fff;
-  background-color: #57319a;
-  border-color: #512e90;
+  background-color: #6a41b2;
+  border-color: #643da9;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
-  box-shadow: none, 0 0 0 3px rgba(103, 58, 183, 0.5);
+  box-shadow: none, 0 0 0 3px rgba(126, 87, 194, 0.5);
 }
 
 .btn-secondary.disabled, .btn-secondary:disabled {
-  background-color: #673ab7;
-  border-color: #673ab7;
+  background-color: #7e57c2;
+  border-color: #7e57c2;
 }
 
 .btn-secondary:active, .btn-secondary.active,
 .show > .btn-secondary.dropdown-toggle {
-  background-color: #57319a;
+  background-color: #6a41b2;
   background-image: none;
-  border-color: #512e90;
+  border-color: #643da9;
   box-shadow: none;
 }
 
@@ -2598,32 +2598,32 @@ fieldset[disabled] a.custom-file-control::before {
 }
 
 .btn-outline-secondary {
-  color: #673ab7;
+  color: #7e57c2;
   background-color: transparent;
   background-image: none;
-  border-color: #673ab7;
+  border-color: #7e57c2;
 }
 
 .btn-outline-secondary:hover {
   color: #fff;
-  background-color: #673ab7;
-  border-color: #673ab7;
+  background-color: #7e57c2;
+  border-color: #7e57c2;
 }
 
 .btn-outline-secondary:focus, .btn-outline-secondary.focus {
-  box-shadow: 0 0 0 3px rgba(103, 58, 183, 0.5);
+  box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.5);
 }
 
 .btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
-  color: #673ab7;
+  color: #7e57c2;
   background-color: transparent;
 }
 
 .btn-outline-secondary:active, .btn-outline-secondary.active,
 .show > .btn-outline-secondary.dropdown-toggle {
   color: #fff;
-  background-color: #673ab7;
-  border-color: #673ab7;
+  background-color: #7e57c2;
+  border-color: #7e57c2;
 }
 
 .btn-outline-success {
@@ -4374,7 +4374,7 @@ tbody.collapse.show {
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: #e9ecef;
+  background-color: theme-color("secondary");
   border-radius: 0.3rem;
 }
 
@@ -4428,17 +4428,17 @@ tbody.collapse.show {
 }
 
 .alert-secondary {
-  color: #361e5f;
-  background-color: #e1d8f1;
-  border-color: #d4c8eb;
+  color: #422d65;
+  background-color: #e5ddf3;
+  border-color: #dbd0ee;
 }
 
 .alert-secondary hr {
-  border-top-color: #c5b5e4;
+  border-top-color: #cdbde7;
 }
 
 .alert-secondary .alert-link {
-  color: #201238;
+  color: #2b1d42;
 }
 
 .alert-success {
@@ -4687,27 +4687,27 @@ button.list-group-item-primary.active {
 }
 
 .list-group-item-secondary {
-  color: #361e5f;
-  background-color: #d4c8eb;
+  color: #422d65;
+  background-color: #dbd0ee;
 }
 
 a.list-group-item-secondary,
 button.list-group-item-secondary {
-  color: #361e5f;
+  color: #422d65;
 }
 
 a.list-group-item-secondary:focus, a.list-group-item-secondary:hover,
 button.list-group-item-secondary:focus,
 button.list-group-item-secondary:hover {
-  color: #361e5f;
-  background-color: #c5b5e4;
+  color: #422d65;
+  background-color: #cdbde7;
 }
 
 a.list-group-item-secondary.active,
 button.list-group-item-secondary.active {
   color: #fff;
-  background-color: #361e5f;
-  border-color: #361e5f;
+  background-color: #422d65;
+  border-color: #422d65;
 }
 
 .list-group-item-success {
@@ -4918,13 +4918,13 @@ button.close {
 
 .badge-secondary {
   color: #fff;
-  background-color: #673ab7;
+  background-color: #7e57c2;
 }
 
 .badge-secondary[href]:focus, .badge-secondary[href]:hover {
   color: #fff;
   text-decoration: none;
-  background-color: #512e90;
+  background-color: #643da9;
 }
 
 .badge-success {
@@ -5660,11 +5660,11 @@ a.bg-primary:focus, a.bg-primary:hover {
 }
 
 .bg-secondary {
-  background-color: #673ab7 !important;
+  background-color: #7e57c2 !important;
 }
 
 a.bg-secondary:focus, a.bg-secondary:hover {
-  background-color: #512e90 !important;
+  background-color: #643da9 !important;
 }
 
 .bg-success {
@@ -5752,7 +5752,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 }
 
 .border-secondary {
-  border-color: #673ab7 !important;
+  border-color: #7e57c2 !important;
 }
 
 .border-success {
@@ -8268,11 +8268,11 @@ a.text-primary:focus, a.text-primary:hover {
 }
 
 .text-secondary {
-  color: #673ab7 !important;
+  color: #7e57c2 !important;
 }
 
 a.text-secondary:focus, a.text-secondary:hover {
-  color: #512e90 !important;
+  color: #643da9 !important;
 }
 
 .text-success {
@@ -14247,6 +14247,10 @@ input[type=text].custom-file-control {
   color: inherit;
 }
 
+.navbar-contextual {
+  background-color: #7e57c2;
+}
+
 .dropdown-item.active a {
   color: inherit;
 }
@@ -14257,5 +14261,31 @@ input[type=text].custom-file-control {
 
 .card-footer.text-muted, .card-footer.bmd-help {
   font-size: 0.75rem;
+}
+
+#sidebar .handle {
+  color: #fff;
+  background-color: #7e57c2 !important;
+  border-top: 1px solid #7e57c2 !important;
+  border-bottom: 1px solid #7e57c2 !important;
+  border-left: 1px solid #7e57c2 !important;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .handle a {
+  color: #fff;
+}
+
+#sidebar .handle a:hover, #sidebar .handle a:focus {
+  color: #eee;
+}
+
+#sidebar .info {
+  color: #fff;
+  background-color: #7e57c2 !important;
+  border-top: 1px solid #7e57c2 !important;
+  border-bottom: 1px solid #7e57c2 !important;
+  border-left: 1px solid #7e57c2 !important;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=bootstrap-material-design.css.map */

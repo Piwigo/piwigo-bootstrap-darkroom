@@ -53,9 +53,9 @@ $(document).ready(function() {
 
     // Side bar
     var sidebar = $("#sidebar");
-    var theImage = $('#theImage')
-    if (sidebar.length && theImage.length) {
-        sidebar.css('top', (theImage.offset().top + 1) + 'px');
+    var navigationButtons = $('#navigationButtons')
+    if (sidebar.length && navigationButtons.length) {
+        sidebar.css('top', (navigationButtons.offset().top + 1) + 'px');
         $('#info-link').click(function () {
             var sidebar = $('#sidebar');
             if (parseInt(sidebar.css('right')) < 0) {

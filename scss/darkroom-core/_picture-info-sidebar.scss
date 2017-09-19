@@ -6,12 +6,12 @@
   z-index: 100;
 
  .handle {
-    margin-top: 30px;
+    margin-top: 10px;
     float: right;
-    background-color: theme-color('primary');
-    border-top: 1px solid theme-color('primary');
-    border-bottom: 1px solid theme-color('primary');
-    border-left: 1px solid theme-color('primary');
+    background-color: theme-color('secondary');
+    border-top: 1px solid theme-color('secondary');
+    border-bottom: 1px solid theme-color('secondary');
+    border-left: 1px solid theme-color('secondary');
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 
@@ -32,10 +32,10 @@
   
   .info {
     float: right;
-    background-color: theme-color('primary');
-    border-top: 1px solid theme-color('primary');
-    border-bottom: 1px solid theme-color('primary');
-    border-left: 1px solid theme-color('primary');
+    background-color: theme-color('secondary');
+    border-top: 1px solid theme-color('secondary');
+    border-bottom: 1px solid theme-color('secondary');
+    border-left: 1px solid theme-color('secondary');
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     width: 250px;

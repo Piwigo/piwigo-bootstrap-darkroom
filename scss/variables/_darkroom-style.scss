@@ -1,5 +1,8 @@
 // Darkroom color style
 
+// Options
+$enable-shadows:  true !default;
+
 // define Darkroom colors
 $gray-lighter-2:  #dbdbdb !default;
 $gray-lighter-1:  #a9a9a9 !default;
@@ -8,16 +11,16 @@ $gray-darker-1:   #4f4f4f !default;
 $gray-darker-2:   #3c3c3c !default;
 $gray-darker-3:   #2e2e2e !default;
 
-// redefine some of bootrap's
+// redefine some of bootstrap's
 $gray-600: $gray-lighter-1;
 
 // import base colors
-@import "variables/colors";
+@import "colors";
 
 // override Bootstrap's theme colors
 $theme-colors: (
   primary: $black,
-  secondary: $gray-600,
+  secondary: $gray-darker-3,
   success: $green,
   info: $cyan,
   warning: $yellow,

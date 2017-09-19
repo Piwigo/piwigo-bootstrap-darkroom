@@ -1,4 +1,4 @@
-<nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-primary sticky-top {if $theme_config->bootstrap_theme == 'material'}mb-5{else}mb-3{/if}">
+<nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-secondary sticky-top {if $theme_config->bootstrap_theme == 'material'}mb-5{else}mb-3{/if}">
     <div class="container">
         <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a></div>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">

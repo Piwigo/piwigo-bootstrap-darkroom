@@ -12,7 +12,7 @@ $(document).ready(function () {
 });
 {/footer_script}
 {/if}
-    <nav class="navbar navbar-expand-lg navbar-contextual navbar-dark bg-primary sticky-top {if $theme_config->bootstrap_theme == 'material'}mb-5{else}mb-3{/if}">
+    <nav class="navbar navbar-expand-lg navbar-contextual navbar-dark bg-secondary sticky-top {if $theme_config->bootstrap_theme == 'material'}mb-5{else}mb-3{/if}">
         <div class="container">
             <div class="navbar-brand mr-auto">
 {if isset($chronology.TITLE)}

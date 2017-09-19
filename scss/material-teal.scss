@@ -5,14 +5,14 @@
 
 // override Bootstrap's theme colors
 $theme-colors: (
-  primary: $deep-purple-700,
-  secondary: $deep-purple-400,
+  primary: $teal-700,
+  secondary: $teal-400,
   success: $green,
   info: $cyan,
   warning: $yellow,
   danger: $red,
-  light: $deep-purple-200,
-  dark: $deep-purple-900
+  light: $teal-200,
+  dark: $teal-900
 ) !default;
 
 $link-decoration:         none !default;
