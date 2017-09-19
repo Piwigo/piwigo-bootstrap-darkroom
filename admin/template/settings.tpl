@@ -314,7 +314,7 @@
 {footer_script require="jquery"}
 (function(){
     var targets = {                                                                                                                                                                            
-        'input[name="social_enabled"]': ['#social_twitter', '#social_facebook', '#social_google_plus'],
+        'input[name="social_enabled"]': ['#social_twitter', '#social_facebook', '#social_google_plus', '#social_pinterest'],
         '#comments_radio_disqus': ['#comments_type_disqus'],
     };
                                                                                                                                                                                                
