@@ -296,6 +296,13 @@
                         {'Google+'|@translate}
                     </label>
                 </li>
+                <li id="social_pinterest" class="ident">
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="social_pinterest"{if $theme_config->social_pinterest}  checked="checked"{/if}>
+                        {'Pinterest'|@translate}
+                    </label>
+                </li>
             </ul>
         </fieldset>
       </div>

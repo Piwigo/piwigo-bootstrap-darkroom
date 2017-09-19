@@ -67,6 +67,12 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
             <i class="fa fa-google-plus"></i>
         </a>
 {/if}
+{if $theme_config->social_pinterest}
+        <a href="http://www.pinterest.com/pin/create/button/?url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}&media={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}/../{$current.selected_derivative->get_url()}"
+           onclick="window.open(this.href, 'pinterest-share', 'width=490,height=530');return false;" title="Pin it!">
+            <i class="fa fa-pinterest"></i>
+        </a>
+{/if}
     </section>
   </div>
 {/if}

@@ -38,6 +38,7 @@ class Config {
     const KEY_SOCIAL_TWITTER = 'social_twitter';
     const KEY_SOCIAL_FACEBOOK = 'social_facebook';
     const KEY_SOCIAL_GOOGLE_PLUS = 'social_google_plus';
+    const KEY_SOCIAL_PINTEREST = 'social_pinterest';
                                                                                                                                                                                                    
     const KEY_COMMENTS_TYPE = 'comments_type';
     const KEY_COMMENTS_DISQUS_SHORTNAME = 'comments_disqus_shortname';
@@ -71,6 +72,7 @@ class Config {
         self::KEY_SOCIAL_TWITTER => true,
         self::KEY_SOCIAL_FACEBOOK => true,
         self::KEY_SOCIAL_GOOGLE_PLUS => true,
+        self::KEY_SOCIAL_PINTEREST => true,
         self::KEY_COMMENTS_TYPE => 'piwigo',
         self::KEY_COMMENTS_DISQUS_SHORTNAME => null,
         self::KEY_TAG_CLOUD_TYPE => 'basic',
@@ -102,6 +104,7 @@ class Config {
         self::KEY_SOCIAL_TWITTER => self::TYPE_BOOL,
         self::KEY_SOCIAL_FACEBOOK => self::TYPE_BOOL,
         self::KEY_SOCIAL_GOOGLE_PLUS => self::TYPE_BOOL,
+        self::KEY_SOCIAL_PINTEREST => self::TYPE_BOOL,
         self::KEY_COMMENTS_TYPE => self::TYPE_STRING,
         self::KEY_COMMENTS_DISQUS_SHORTNAME => self::TYPE_STRING,
         self::KEY_TAG_CLOUD_TYPE => self::TYPE_STRING,
