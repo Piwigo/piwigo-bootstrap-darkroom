@@ -2863,6 +2863,38 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+.fade {
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+
+.fade.show {
+  opacity: 1;
+}
+
+.collapse {
+  display: none;
+}
+
+.collapse.show {
+  display: block;
+}
+
+tr.collapse.show {
+  display: table-row;
+}
+
+tbody.collapse.show {
+  display: table-row-group;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
 .dropup,
 .dropdown {
   position: relative;
@@ -4843,6 +4875,122 @@ button.close {
   background: transparent;
   border: 0;
   -webkit-appearance: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.125rem;
+}
+
+.badge:empty {
+  display: none;
+}
+
+.btn .badge, .custom-file-control::before .badge {
+  position: relative;
+  top: -1px;
+}
+
+.badge-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+
+.badge-primary {
+  color: #fff;
+  background-color: #004c40;
+}
+
+.badge-primary[href]:focus, .badge-primary[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #001915;
+}
+
+.badge-secondary {
+  color: #fff;
+  background-color: #00796b;
+}
+
+.badge-secondary[href]:focus, .badge-secondary[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #00463e;
+}
+
+.badge-success {
+  color: #fff;
+  background-color: #4caf50;
+}
+
+.badge-success[href]:focus, .badge-success[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #3d8b40;
+}
+
+.badge-info {
+  color: #fff;
+  background-color: #00bcd4;
+}
+
+.badge-info[href]:focus, .badge-info[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #008fa1;
+}
+
+.badge-warning {
+  color: #111;
+  background-color: #ffeb3b;
+}
+
+.badge-warning[href]:focus, .badge-warning[href]:hover {
+  color: #111;
+  text-decoration: none;
+  background-color: #ffe608;
+}
+
+.badge-danger {
+  color: #fff;
+  background-color: #f44336;
+}
+
+.badge-danger[href]:focus, .badge-danger[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #ea1c0d;
+}
+
+.badge-light {
+  color: #111;
+  background-color: #80cbc4;
+}
+
+.badge-light[href]:focus, .badge-light[href]:hover {
+  color: #111;
+  text-decoration: none;
+  background-color: #5cbcb3;
+}
+
+.badge-dark {
+  color: #fff;
+  background-color: #004d40;
+}
+
+.badge-dark[href]:focus, .badge-dark[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #001a16;
 }
 
 .modal-open {
