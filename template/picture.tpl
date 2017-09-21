@@ -131,161 +131,158 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
 
   <div id="theImageInfos" class="row">
-    <div id="infopanel" class="col-lg-8 col-md-10 col-12 mx-auto">
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs nav-justified flex-column flex-sm-row" role="tablist">
-{if $theme_config->picture_info == 'tabs' || (get_device() != 'desktop' && $theme_config->picture_info != 'disabled')}
-        <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link active" href="#tab_info" aria-controls="tab_info" role="tab" data-toggle="tab">{'Information'|@translate}</a></li>
-{if isset($metadata)}
-        <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link" href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
-{/if}
-{/if}
-{if isset($comment_add) || $COMMENT_COUNT > 0}
-        <li class="nav-item{if $theme_config->picture_info == 'disabled' || ($theme_config->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}"><a class="flex-sm-fill text-sm-center nav-link" href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge badge-secondary">{$COMMENT_COUNT}</span></a></li>
-{/if}
-      </ul>
-
-      <!-- Tab panes -->
-      <div class="tab-content">
-{if $theme_config->picture_info === 'tabs' || (get_device() != 'desktop' && $theme_config->picture_info != 'disabled')}
-        <div role="tabpanel" class="tab-pane active" id="tab_info">
-          <div id="info-content" class="info">
-            <table class="table table-sm table-responsive">
-              <colgroup>
-                <col class="w-50">
-                <col class="w-50">
-              </colgroup>
-              <tbody>
+    <div id="infopanel" class="col-lg-6 col-12">
+      <!-- Picture infos -->
+     <div class="card card-body mb-2">
+      <h4 class="card-title">{'Information'|@translate}</h4>
+      <div id="info-content" class="d-flex flex-column">
+{if $theme_config->picture_info != 'disabled'}
 {if $display_info.author and isset($INFO_AUTHOR)}
-                <tr>
-                  <th scope="row">{'Author'|@translate}</th>
-                  <td><div id="Author" class="imageInfo">{$INFO_AUTHOR}</div></td>
-                </tr>
+        <div id="Author" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-4">{'Author'|@translate}</dd>
+            <dd class="col-sm-8">{$INFO_AUTHOR}</dd>
+          </dl>
+        </div>
 {/if}
 {if isset($CR_INFO_NAME) && !empty($CR_INFO_NAME)}
-                <tr>
-                  <th scope="row">{'Copyright'|@translate}</th>
-                  <td><div id="Copyright" class="imageInfo">{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</div></td>
-                </tr>
+        <div id="Copyright" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-4">{'Copyright'|@translate}</dd>
+            <dd class="col-sm-8">{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</dt>
+          </dl>
+        </div>
 {/if}
 {if $display_info.rating_score and isset($rate_summary)}
-                <tr>
-                  <th scope="row">{'Rating score'|@translate}</th>
-                  <td>
-                    <div id="Average" class="imageInfo">
-                    {if $rate_summary.count}
-                      <span id="ratingScore">{$rate_summary.score}</span> <span id="ratingCount">({$rate_summary.count|@translate_dec:'%d rate':'%d rates'})</span>
-                    {else}
-                      <span id="ratingScore">{'no rate'|@translate}</span> <span id="ratingCount"></span>
-                    {/if}
-                    </div>
-                  </td>
-                </tr>
+        <div id="Average" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-4">{'Rating score'|@translate}</dd>
+            <dd class="col-sm-8">
+              {if $rate_summary.count}
+                <span id="ratingScore">{$rate_summary.score}</span> <span id="ratingCount">({$rate_summary.count|@translate_dec:'%d rate':'%d rates'})</span>
+              {else}
+                <span id="ratingScore">{'no rate'|@translate}</span> <span id="ratingCount"></span>
+              {/if}
+            </dt>
+          </dl>
+        </div>
 {/if}
 
 {if isset($rating)}
-                <tr>
-                  <th scope="row" id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</th>
-                  <td>
-                    <div id="rating" class="imageInfo">
-                        <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
-                        <div>
-                        {foreach from=$rating.marks item=mark name=rate_loop}
-                        {if isset($rating.USER_RATE) && $mark==$rating.USER_RATE}
-                                <span class="rateButtonStarFull" data-value="{$mark}"></span>
-                        {else}
-                                <span class="rateButtonStarEmpty" data-value="{$mark}"></span>
-                        {/if}
-                        {/foreach}
-                        {strip}{combine_script id='core.scripts' path='themes/default/js/scripts.js' load='async'}
-                        {combine_script id='rating' require='core.scripts' path='themes/bootstrap_darkroom/js/rating.js' load='async'}
-                        {footer_script require='jquery'}
-                                var _pwgRatingAutoQueue = _pwgRatingAutoQueue||[];
-                                _pwgRatingAutoQueue.push( {ldelim}rootUrl: '{$ROOT_URL}', image_id: {$current.id},
-                                        onSuccess : function(rating) {ldelim}
-                                                var e = document.getElementById("updateRate");
-                                                if (e) e.innerHTML = "{'Update your rating'|@translate|@escape:'javascript'}";
-                                                e = document.getElementById("ratingScore");
-                                                if (e) e.innerHTML = rating.score;
-                                                e = document.getElementById("ratingCount");
-                                                if (e) {ldelim}
-                                                        if (rating.count == 1) {ldelim}
-                                                                e.innerHTML = "({'%d rate'|@translate|@escape:'javascript'})".replace( "%d", rating.count);
-                                                        {rdelim} else {ldelim}
-                                                                e.innerHTML = "({'%d rates'|@translate|@escape:'javascript'})".replace( "%d", rating.count);
-                                                        {rdelim}
-                                                {rdelim}
-                                                $('#averageRate').find('span').each(function() {ldelim}
-                                                        $(this).addClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarFull' : 'rateButtonStarEmpty');
-                                                        $(this).removeClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarEmpty' : 'rateButtonStarFull');
-                                                {rdelim});
-                                        {rdelim}
-                                {rdelim});
-                        {/footer_script}
-                        {/strip}
-                        </div>
-                        </form>
-                    </div>
-                  </td>
-                </tr>
+        <div id="rating" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-4" id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</dt>
+            <dd class="col-sm-8">
+              <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
+                <div>
+                  {foreach from=$rating.marks item=mark name=rate_loop}
+                  {if isset($rating.USER_RATE) && $mark==$rating.USER_RATE}
+                  <span class="rateButtonStarFull" data-value="{$mark}"></span>
+                  {else}
+                  <span class="rateButtonStarEmpty" data-value="{$mark}"></span>
+                  {/if}
+                  {/foreach}
+                  {strip}{combine_script id='core.scripts' path='themes/default/js/scripts.js' load='async'}
+                  {combine_script id='rating' require='core.scripts' path='themes/bootstrap_darkroom/js/rating.js' load='async'}
+                  {footer_script require='jquery'}
+                           var _pwgRatingAutoQueue = _pwgRatingAutoQueue||[];
+                           _pwgRatingAutoQueue.push( {ldelim}rootUrl: '{$ROOT_URL}', image_id: {$current.id},
+                                    onSuccess : function(rating) {ldelim}
+                                           var e = document.getElementById("updateRate");
+                                           if (e) e.innerHTML = "{'Update your rating'|@translate|@escape:'javascript'}";
+                                           e = document.getElementById("ratingScore");
+                                           if (e) e.innerHTML = rating.score;
+                                           e = document.getElementById("ratingCount");
+                                           if (e) {ldelim}
+                                                   if (rating.count == 1) {ldelim}
+                                                           e.innerHTML = "({'%d rate'|@translate|@escape:'javascript'})".replace( "%d", rating.count);
+                                                   {rdelim} else {ldelim}
+                                                           e.innerHTML = "({'%d rates'|@translate|@escape:'javascript'})".replace( "%d", rating.count);
+                                                   {rdelim}
+                                           {rdelim}
+                                           $('#averageRate').find('span').each(function() {ldelim}
+                                                   $(this).addClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarFull' : 'rateButtonStarEmpty');
+                                                   $(this).removeClass(rating.average > $(this).data('value') - 0.5 ? 'rateButtonStarEmpty' : 'rateButtonStarFull');
+                                           {rdelim});
+                                   {rdelim}
+                           {rdelim});
+                  {/footer_script}
+                  {/strip}
+                </div>
+              </form>
+            </dt>
+          </dl>
+        </div>
 {/if}
 {if $display_info.created_on and isset($INFO_CREATION_DATE)}
-                <tr>
-                  <th scope="row">{'Created on'|@translate}</th>
-                  <td><div id="datecreate" class="imageInfo">{$INFO_CREATION_DATE}</div></td>
-                </tr>
+        <div id="datecreate" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-4">{'Created on'|@translate}</dd>
+            <dd class="col-sm-8">{$INFO_CREATION_DATE}</dt>
+          </dl>
+        </div>
 {/if}
 {if $display_info.posted_on}
-                <tr>
-                  <th scope="row">{'Posted on'|@translate}</th>
-                  <td><div id="datepost" class="imageInfo">{$INFO_POSTED_DATE}</div></td>
-                </tr>
+        <div id="datepost" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-4">{'Posted on'|@translate}</dd>
+            <dd class="col-sm-8">{$INFO_POSTED_DATE}</dt>
+          </dl>
+        </div>
 {/if}
 {if $display_info.visits}
-                <tr>
-                  <th scope="row">{'Visits'|@translate}</th>
-                  <td><div id="visits" class="imageInfo">{$INFO_VISITS}</div></td>
-                </tr>
+        <div id="visits" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-4">{'Visits'|@translate}</dd>
+            <dd class="col-sm-8">{$INFO_VISITS}</dt>
+          </dl>
+        </div>
 {/if}
 {if $display_info.dimensions and isset($INFO_DIMENSIONS)}
-                <tr>
-                  <th scope="row">{'Dimensions'|@translate}</th>
-                  <td><div id="Dimensions" class="imageInfo">{$INFO_DIMENSIONS}</div></td>
-                </tr>
+        <div id="Dimensions" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-3">{'Dimensions'|@translate}</dt>
+            <dd class="col-sm-9">{$INFO_DIMENSIONS}</dd>
+          </dl>
+        </div>
 {/if}
 {if $display_info.file}
-                <tr>
-                  <th scope="row">{'File'|@translate}</th>
-                  <td><div id="File" class="imageInfo">{$INFO_FILE}</div></td>
-                </tr>
+        <div id="File" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-3">{'File'|@translate}</dt>
+            <dd class="col-sm-8">{$INFO_FILE}</dt>
+          </dl>
+        </div>
 {/if}
 {if $display_info.filesize and isset($INFO_FILESIZE)}
-                <tr>
-                  <th scope="row">{'Filesize'|@translate}</th>
-                  <td><div id="Filesize" class="imageInfo">{$INFO_FILESIZE}</div></td>
-                </tr>
+        <div id="Filesize" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-4">{'Filesize'|@translate}</dd>
+            <dd class="col-sm-8">{$INFO_FILESIZE}</dt>
+          </dl>
+        </div>
 {/if}
 {if $display_info.tags and isset($related_tags)}
-                <tr>
-                  <th scope="row">{'Tags'|@translate}</th>
-                  <td>
-                    <div id="Tags" class="imageInfo">
-                      {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a href="{$tag.URL}">{$tag.name}</a>{/foreach}
-                    </div>
-                  </td>
-                </tr>
+        <div id="Tags" class="imageInfo">
+          <dl class="row mb-0"> 
+            <dt class="col-sm-4">{'Tags'|@translate}</dd>
+            <dd class="col-sm-8">
+              {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a href="{$tag.URL}">{$tag.name}</a>{/foreach}
+            </dt>
+          </dl>
+        </div>
 {/if}
 {if $display_info.categories and isset($related_categories)}
-                <tr>
-                  <th scope="row">{'Albums'|@translate}</th>
-                  <td>
-                    <div id="Categories" class="imageInfo">
-{foreach from=$related_categories item=cat name=cat_loop}
-                    {if !$smarty.foreach.cat_loop.first}<br />{/if}{$cat}
-{/foreach}
-                    </div>
-                  </td>
-                </tr>
+        <div id="Categories" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-4">{'Albums'|@translate}</dd>
+            <dd class="col-sm-8">
+            {foreach from=$related_categories item=cat name=cat_loop}
+            {if !$smarty.foreach.cat_loop.first}<br />{/if}{$cat}
+            {/foreach}
+            </dt>
+          </dl>
+        </div>
 {/if}
 {if $display_info.privacy_level and isset($available_permission_levels)}
 {combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
@@ -305,62 +302,58 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     );
     }
 {/strip}{/footer_script}
-                <tr>
-                  <th scope="row">{'Who can see this photo?'|@translate}</dt>
-                  <td>
-                    <div id="Privacy" class="imageInfo">
-                      <div class="dropdown">
-                        <button class="btn btn-secondary btn-raised dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
-                            {$available_permission_levels[$current.level]}
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownPermissions">
+        <div id="Privacy" class="imageInfo">
+          <dl class="row mb-0">
+            <dt class="col-sm-4">{'Who can see this photo?'|@translate}</dt>
+            <dd class="col-sm-8">
+              <div class="dropdown">
+                <button class="btn btn-secondary btn-raised dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
+                  {$available_permission_levels[$current.level]}
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownPermissions">
 {foreach from=$available_permission_levels item=label key=level}
-                            <li id="permission-{$level}" role="presentation" class="dropdown-item permission-li {if $current.level == $level} active{/if}"><a class="dropdown-link" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
+                  <li id="permission-{$level}" role="presentation" class="dropdown-item permission-li {if $current.level == $level} active{/if}"><a class="dropdown-link" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
 {/foreach}
-                        </ul>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-{/if}
-              </tbody>
-            </table>
-          </div>
+                </ul>
+              </div>
+            </dt>
+          </dl>
         </div>
+       </div>
+{/if}
+      </div>
+    </div>
 
-        <!-- metadata -->
+    <!-- metadata -->
 {if isset($metadata)}
-        <div role="tabpanel" class="tab-pane" id="tab_metadata">
-          <div id="metadata" class="info">
-            <table class="table table-sm table-responsive">
-              <colgroup>
-                <col class="w-50">
-                <col class="w-50">
-              </colgroup>
-              <tbody>
+    <div class="col-lg-6 col-12">
+     <div class="card card-body mb-2">
+      <h4 class="card-title">{'EXIF Metadata'|@translate}</h4>
+      <div id="metadata" class="d-flex flex-column">
 {foreach from=$metadata item=meta}
 {foreach from=$meta.lines item=value key=label}
-                <tr>
-                  <th scope="row">{$label}</th>
-                  <td>{$value}</td>
-                </tr>
-{/foreach}
-{/foreach}
-              </tbody>
-            </table>
-          </div>
+        <div>
+          <dl class="row mb-0">
+            <dt class="col-sm-4">{$label}</dd>
+            <dd class="col-sm-8">{$value}</dt>
+          </dl>
         </div>
+{/foreach}
+{/foreach}
+      </div>
+     </div>
+    </div>
 {/if}
 {/if}
+  </div>
 
-        <!-- comments -->
+  <!-- comments -->
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-        <div role="tabpanel" class="tab-pane{if $theme_config->picture_info == 'disabled' || ($theme_config->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}" id="tab_comments">
-          <a name="comments"></a>
+  <div class="row justify-content-center">
 {$shortname = $theme_config->comments_disqus_shortname}
-{if $theme_config->comments_type == 'disqus' and !empty($shortname)}
-          <div id="disqus_thread"></div>
+  {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
+    <div id="disqus_thread"></div>
 {footer_script}{strip}
 var disqus_shortname = '{/strip}{$shortname}{strip}';
 
@@ -371,59 +364,54 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 })();
 {/strip}
 {/footer_script}
-{else}
-          <div class="tabbable">
-            <ul class="nav nav-pills">
-{if $COMMENT_COUNT > 0}
-              <li class="active"><a href="#viewcomments" data-toggle="tab">{$COMMENT_COUNT|@translate_dec:'%d comment':'%d comments'}</a></li>
-{/if}
-{if isset($comment_add)}
-              <li{if $COMMENT_COUNT == 0} class="active"{/if}><a href="#addcomment" data-toggle="tab">{'Add a comment'|@translate}</a></li>
-{/if}
-            </ul>
-            <div class="tab-content">
-{if $COMMENT_COUNT > 0}
-              <div id="viewcomments" class="tab-pane active">
-{include file='comment_list.tpl'}
-              </div>
-{/if}
-{if isset($comment_add)}
-              <div id="addcomment" class="tab-pane{if $COMMENT_COUNT == 0} active{/if}">
-                <form method="post" action="{$comment_add.F_ACTION}">
-{if $comment_add.SHOW_AUTHOR}
-                  <div class="form-group">
-                    <label for="author">{'Author'|@translate}{if $comment_add.AUTHOR_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
-                    <input class="form-control" type="text" name="author" id="author" value="{$comment_add.AUTHOR}">
-                  </div>
-{/if}
-{if $comment_add.SHOW_EMAIL}
-                  <div class="form-group">
-                    <label for="email">{'Email address'|@translate}{if $comment_add.EMAIL_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
-                    <input class="form-control" type="text" name="email" id="email" value="{$comment_add.EMAIL}">
-                  </div>
-{/if}
-{if $comment_add.SHOW_WEBSITE}
-                  <div class="form-group">
-                    <label for="website_url">{'Website'|@translate} :</label>
-                    <input class="form-control" type="text" name="website_url" id="website_url" value="{$comment_add.WEBSITE_URL}">
-                  </div>
-{/if}
-                  <div class="form-group">
-                    <label for="contentid">{'Comment'|@translate} ({'mandatory'|@translate}) :</label>
-                    <textarea class="form-control" name="content" id="contentid" rows="5" cols="50">{$comment_add.CONTENT}</textarea>
-                  </div>
-                  <input type="hidden" name="key" value="{$comment_add.KEY}">
-                  <button type="submit" class="btn btn-primary btn-raised">{'Submit'|@translate}</button>
-                </form>
-              </div>
-{/if}
-            </div>
-          </div>
-{/if}
-        </div>
-{/if}
+  {else}
+    <div class="col-12 col-lg-10">
+      <ul class="nav nav-pills">
+    {if $COMMENT_COUNT > 0}
+        <li class="active"><a href="#viewcomments" data-toggle="tab">{$COMMENT_COUNT|@translate_dec:'%d comment':'%d comments'}</a></li>
+    {/if}
+    {if isset($comment_add)}
+        <li{if $COMMENT_COUNT == 0} class="active"{/if}><a href="#addcomment" data-toggle="tab">{'Add a comment'|@translate}</a></li>
+    {/if}
+      </ul>
+    {if $COMMENT_COUNT > 0}
+      <div id="viewcomments" class="tab-pane active">
+        {include file='comment_list.tpl'}
       </div>
+    {/if}
+    {if isset($comment_add)}
+      <div id="addcomment" class="tab-pane{if $COMMENT_COUNT == 0} active{/if}">
+        <form method="post" action="{$comment_add.F_ACTION}">
+      {if $comment_add.SHOW_AUTHOR}
+          <div class="form-group">
+            <label for="author">{'Author'|@translate}{if $comment_add.AUTHOR_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
+            <input class="form-control" type="text" name="author" id="author" value="{$comment_add.AUTHOR}">
+          </div>
+      {/if}
+      {if $comment_add.SHOW_EMAIL}
+          <div class="form-group">
+            <label for="email">{'Email address'|@translate}{if $comment_add.EMAIL_MANDATORY} ({'mandatory'|@translate}){/if} :</label>
+            <input class="form-control" type="text" name="email" id="email" value="{$comment_add.EMAIL}">
+          </div>
+      {/if}
+      {if $comment_add.SHOW_WEBSITE}
+          <div class="form-group">
+            <label for="website_url">{'Website'|@translate} :</label>
+            <input class="form-control" type="text" name="website_url" id="website_url" value="{$comment_add.WEBSITE_URL}">
+          </div>
+      {/if}
+          <div class="form-group">
+            <label for="contentid">{'Comment'|@translate} ({'mandatory'|@translate}) :</label>
+            <textarea class="form-control" name="content" id="contentid" rows="5" cols="50">{$comment_add.CONTENT}</textarea>
+          </div>
+          <input type="hidden" name="key" value="{$comment_add.KEY}">
+          <button type="submit" class="btn btn-primary btn-raised">{'Submit'|@translate}</button>
+        </form>
+      </div>
+    {/if}
     </div>
+  {/if}
+{/if}
   </div>
 
 {if !empty($navbar) }

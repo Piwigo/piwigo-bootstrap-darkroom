@@ -15,19 +15,6 @@ $(document).ready(function() {
 {/strip}{/footer_script}
 {/if}
 
-{if isset($loaded_plugins['piwigo-openstreetmap']) && $BODY_ID == "thePicturePage" && $theme_config->picture_info != 'sidebar'}
-{footer_script require='jquery'}{strip}
-$(document).ready(function() {
-  var n = $('#map-info').closest('tr');
-  $('#map-info').changeElementType('tr');
-  $('#map-info>dt').changeElementType('th');
-  $('#map-info>th').attr("scope", "row");
-  $('#map-info>dd').changeElementType('td');
-  $('#map-info').insertBefore(n);
-});
-{/strip}{/footer_script}
-{/if}
-
 {if isset($loaded_plugins['oAuth'])}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
