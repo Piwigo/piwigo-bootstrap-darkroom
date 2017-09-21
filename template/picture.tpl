@@ -88,7 +88,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     {include file="_photoswipe_js.tpl" selector="#photoSwipeData"}
   {/if}
   <div id="theImageCarousel" class="row mx-0">
-    <div class="col-lg-10 col-md-12i mx-auto">
+    <div class="col-lg-10 col-md-12 mx-auto">
       <div id="thumbnailCarousel" class="slick-carousel">
   {assign var=idx value=0}
   {foreach from=$thumbnails item=thumbnail}
@@ -326,11 +326,10 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
         </div>
       </div>
     </div>
-  </div>
 {/if}
 
     <!-- metadata -->
-    <div class="col-lg-6 col-12">
+    <div id="metadata" class="col-lg-6 col-12">
 {if isset($metadata)}
       <div class="card">
         <div class="card-body mb-2">
@@ -353,7 +352,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     </div>
    <!-- comments -->
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <div class="col-lg-6 col-12">
+    <div id="comments" class="col-lg-6 col-12">
 {$shortname = $theme_config->comments_disqus_shortname}
   {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
       <div id="disqus_thread"></div>
