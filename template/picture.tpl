@@ -134,57 +134,58 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {if $theme_config->picture_info != 'disabled'}
     <div id="infopanel" class="col-lg-6 col-12">
       <!-- Picture infos -->
-     <div class="card card-body mb-2">
-      <h4 class="card-title">{'Information'|@translate}</h4>
-      <div id="info-content" class="d-flex flex-column">
+      <div class="card">
+        <div class="card-body mb-2">
+          <h4 class="card-title">{'Information'|@translate}</h4>
+          <div id="info-content" class="d-flex flex-column">
 {if $display_info.author and isset($INFO_AUTHOR)}
-        <div id="Author" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-4">{'Author'|@translate}</dd>
-            <dd class="col-sm-8">{$INFO_AUTHOR}</dd>
-          </dl>
-        </div>
+            <div id="Author" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-4">{'Author'|@translate}</dt>
+                <dd class="col-sm-8">{$INFO_AUTHOR}</dd>
+              </dl>
+            </div>
 {/if}
 {if isset($CR_INFO_NAME) && !empty($CR_INFO_NAME)}
-        <div id="Copyright" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-4">{'Copyright'|@translate}</dd>
-            <dd class="col-sm-8">{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</dt>
-          </dl>
-        </div>
+            <div id="Copyright" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-4">{'Copyright'|@translate}</dt>
+                <dd class="col-sm-8">{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</dd>
+              </dl>
+            </div>
 {/if}
 {if $display_info.rating_score and isset($rate_summary)}
-        <div id="Average" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-4">{'Rating score'|@translate}</dd>
-            <dd class="col-sm-8">
-              {if $rate_summary.count}
-                <span id="ratingScore">{$rate_summary.score}</span> <span id="ratingCount">({$rate_summary.count|@translate_dec:'%d rate':'%d rates'})</span>
-              {else}
-                <span id="ratingScore">{'no rate'|@translate}</span> <span id="ratingCount"></span>
-              {/if}
-            </dt>
-          </dl>
-        </div>
+            <div id="Average" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-4">{'Rating score'|@translate}</dt>
+                <dd class="col-sm-8">
+                  {if $rate_summary.count}
+                    <span id="ratingScore">{$rate_summary.score}</span> <span id="ratingCount">({$rate_summary.count|@translate_dec:'%d rate':'%d rates'})</span>
+                  {else}
+                    <span id="ratingScore">{'no rate'|@translate}</span> <span id="ratingCount"></span>
+                  {/if}
+                </dd>
+              </dl>
+            </div>
 {/if}
 
 {if isset($rating)}
-        <div id="rating" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-4" id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</dt>
-            <dd class="col-sm-8">
-              <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
-                <div>
-                  {foreach from=$rating.marks item=mark name=rate_loop}
-                  {if isset($rating.USER_RATE) && $mark==$rating.USER_RATE}
-                  <span class="rateButtonStarFull" data-value="{$mark}"></span>
-                  {else}
-                  <span class="rateButtonStarEmpty" data-value="{$mark}"></span>
-                  {/if}
-                  {/foreach}
-                  {strip}{combine_script id='core.scripts' path='themes/default/js/scripts.js' load='async'}
-                  {combine_script id='rating' require='core.scripts' path='themes/bootstrap_darkroom/js/rating.js' load='async'}
-                  {footer_script require='jquery'}
+            <div id="rating" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-4" id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</dt>
+                <dd class="col-sm-8">
+                  <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
+                    <div>
+                      {foreach from=$rating.marks item=mark name=rate_loop}
+                      {if isset($rating.USER_RATE) && $mark==$rating.USER_RATE}
+                      <span class="rateButtonStarFull" data-value="{$mark}"></span>
+                      {else}
+                      <span class="rateButtonStarEmpty" data-value="{$mark}"></span>
+                      {/if}
+                      {/foreach}
+                      {strip}{combine_script id='core.scripts' path='themes/default/js/scripts.js' load='async'}
+                      {combine_script id='rating' require='core.scripts' path='themes/bootstrap_darkroom/js/rating.js' load='async'}
+                      {footer_script require='jquery'}
                            var _pwgRatingAutoQueue = _pwgRatingAutoQueue||[];
                            _pwgRatingAutoQueue.push( {ldelim}rootUrl: '{$ROOT_URL}', image_id: {$current.id},
                                     onSuccess : function(rating) {ldelim}
@@ -206,83 +207,83 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
                                            {rdelim});
                                    {rdelim}
                            {rdelim});
-                  {/footer_script}
-                  {/strip}
-                </div>
-              </form>
-            </dt>
-          </dl>
-        </div>
+                      {/footer_script}
+                      {/strip}
+                    </div>
+                  </form>
+                </dd>
+              </dl>
+            </div>
 {/if}
 {if $display_info.created_on and isset($INFO_CREATION_DATE)}
-        <div id="datecreate" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-4">{'Created on'|@translate}</dd>
-            <dd class="col-sm-8">{$INFO_CREATION_DATE}</dt>
-          </dl>
-        </div>
+            <div id="datecreate" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-4">{'Created on'|@translate}</dt>
+                <dd class="col-sm-8">{$INFO_CREATION_DATE}</dd>
+              </dl>
+            </div>
 {/if}
 {if $display_info.posted_on}
-        <div id="datepost" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-4">{'Posted on'|@translate}</dd>
-            <dd class="col-sm-8">{$INFO_POSTED_DATE}</dt>
-          </dl>
-        </div>
+            <div id="datepost" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-4">{'Posted on'|@translate}</dt>
+                <dd class="col-sm-8">{$INFO_POSTED_DATE}</dd>
+              </dl>
+            </div>
 {/if}
 {if $display_info.visits}
-        <div id="visits" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-4">{'Visits'|@translate}</dd>
-            <dd class="col-sm-8">{$INFO_VISITS}</dt>
-          </dl>
-        </div>
+            <div id="visits" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-4">{'Visits'|@translate}</dt>
+                <dd class="col-sm-8">{$INFO_VISITS}</dd>
+              </dl>
+            </div>
 {/if}
 {if $display_info.dimensions and isset($INFO_DIMENSIONS)}
-        <div id="Dimensions" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-3">{'Dimensions'|@translate}</dt>
-            <dd class="col-sm-9">{$INFO_DIMENSIONS}</dd>
-          </dl>
-        </div>
+            <div id="Dimensions" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-3">{'Dimensions'|@translate}</dt>
+                <dd class="col-sm-9">{$INFO_DIMENSIONS}</dd>
+              </dl>
+            </div>
 {/if}
 {if $display_info.file}
-        <div id="File" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-3">{'File'|@translate}</dt>
-            <dd class="col-sm-8">{$INFO_FILE}</dt>
-          </dl>
-        </div>
+            <div id="File" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-3">{'File'|@translate}</dt>
+                <dd class="col-sm-8">{$INFO_FILE}</dd>
+              </dl>
+            </div>
 {/if}
 {if $display_info.filesize and isset($INFO_FILESIZE)}
-        <div id="Filesize" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-4">{'Filesize'|@translate}</dd>
-            <dd class="col-sm-8">{$INFO_FILESIZE}</dt>
-          </dl>
-        </div>
+            <div id="Filesize" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-4">{'Filesize'|@translate}</dt>
+                <dd class="col-sm-8">{$INFO_FILESIZE}</dd>
+              </dl>
+            </div>
 {/if}
 {if $display_info.tags and isset($related_tags)}
-        <div id="Tags" class="imageInfo">
-          <dl class="row mb-0"> 
-            <dt class="col-sm-4">{'Tags'|@translate}</dd>
-            <dd class="col-sm-8">
-              {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a href="{$tag.URL}">{$tag.name}</a>{/foreach}
-            </dt>
-          </dl>
-        </div>
+            <div id="Tags" class="imageInfo">
+              <dl class="row mb-0"> 
+                <dt class="col-sm-4">{'Tags'|@translate}</dt>
+                <dd class="col-sm-8">
+                  {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a href="{$tag.URL}">{$tag.name}</a>{/foreach}
+                </dd>
+              </dl>
+            </div>
 {/if}
 {if $display_info.categories and isset($related_categories)}
-        <div id="Categories" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-4">{'Albums'|@translate}</dd>
-            <dd class="col-sm-8">
-            {foreach from=$related_categories item=cat name=cat_loop}
-            {if !$smarty.foreach.cat_loop.first}<br />{/if}{$cat}
-            {/foreach}
-            </dt>
-          </dl>
-        </div>
+            <div id="Categories" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-4">{'Albums'|@translate}</dt>
+                <dd class="col-sm-8">
+                {foreach from=$related_categories item=cat name=cat_loop}
+                {if !$smarty.foreach.cat_loop.first}<br />{/if}{$cat}
+                {/foreach}
+                </dd>
+              </dl>
+            </div>
 {/if}
 {if $display_info.privacy_level and isset($available_permission_levels)}
 {combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
@@ -302,48 +303,52 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     );
     }
 {/strip}{/footer_script}
-        <div id="Privacy" class="imageInfo">
-          <dl class="row mb-0">
-            <dt class="col-sm-4">{'Who can see this photo?'|@translate}</dt>
-            <dd class="col-sm-8">
-              <div class="dropdown">
-                <button class="btn btn-secondary btn-raised dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
-                  {$available_permission_levels[$current.level]}
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownPermissions">
+            <div id="Privacy" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-4">{'Who can see this photo?'|@translate}</dt>
+                <dd class="col-sm-8">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary btn-raised dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
+                      {$available_permission_levels[$current.level]}
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownPermissions">
 {foreach from=$available_permission_levels item=label key=level}
-                  <li id="permission-{$level}" role="presentation" class="dropdown-item permission-li {if $current.level == $level} active{/if}"><a class="dropdown-link" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
+                      <li id="permission-{$level}" role="presentation" class="dropdown-item permission-li {if $current.level == $level} active{/if}"><a class="dropdown-link" tabindex="-1" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a></li>
 {/foreach}
-                </ul>
-              </div>
-            </dt>
-          </dl>
-        </div>
-       </div>
+                    </ul>
+                  </div>
+                </dd>
+              </dl>
+            </div>
 {/if}
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 {/if}
 
     <!-- metadata -->
     <div class="col-lg-6 col-12">
 {if isset($metadata)}
-     <div class="card card-body mb-2">
-      <h4 class="card-title">{'EXIF Metadata'|@translate}</h4>
-      <div id="metadata" class="d-flex flex-column">
+      <div class="card">
+        <div class="card-body mb-2">
+          <h4 class="card-title">{'EXIF Metadata'|@translate}</h4>
+          <div id="metadata" class="d-flex flex-column">
 {foreach from=$metadata item=meta}
 {foreach from=$meta.lines item=value key=label}
-        <div>
-          <dl class="row mb-0">
-            <dt class="col-sm-4">{$label}</dd>
-            <dd class="col-sm-8">{$value}</dt>
-          </dl>
+            <div>
+              <dl class="row mb-0">
+                <dt class="col-sm-4">{$label}</dt>
+                <dd class="col-sm-8">{$value}</dd>
+              </dl>
+            </div>
+{/foreach}
+{/foreach}
+          </div>
         </div>
-{/foreach}
-{/foreach}
       </div>
-     </div>
 {/if}
     </div>
    <!-- comments -->
