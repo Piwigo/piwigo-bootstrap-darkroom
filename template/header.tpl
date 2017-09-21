@@ -69,6 +69,7 @@
     {combine_css path='themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap.min.css' order=-20}
 {/if}
     {combine_css path='themes/bootstrap_darkroom/components/font-awesome/css/font-awesome.min.css' order=-14}
+    {combine_css path='themes/bootstrap_darkroom/components/photography-icons/css/Photography-Icons.css' order=-13}
 {foreach from=$themes item=theme}
 {if $theme.load_css}
     {combine_css path="themes/`$theme.id`/theme.css" order=-10}
