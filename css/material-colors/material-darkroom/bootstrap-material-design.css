@@ -723,7 +723,7 @@ template {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   font-family: inherit;
   font-weight: 400;
   line-height: 1.1;
@@ -826,7 +826,7 @@ mark,
 }
 
 .blockquote {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-size: 1.25rem;
 }
 
@@ -861,7 +861,7 @@ mark,
 }
 
 .figure-img {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   line-height: 1;
 }
 
@@ -1648,7 +1648,7 @@ pre code {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   background-color: transparent;
 }
 
@@ -2863,6 +2863,38 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+.fade {
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+
+.fade.show {
+  opacity: 1;
+}
+
+.collapse {
+  display: none;
+}
+
+.collapse.show {
+  display: block;
+}
+
+tr.collapse.show {
+  display: table-row;
+}
+
+tbody.collapse.show {
+  display: table-row-group;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
 .dropup,
 .dropdown {
   position: relative;
@@ -2917,7 +2949,7 @@ input[type="button"].btn-block {
 
 .dropdown-divider {
   height: 0;
-  margin: 0.25rem 0;
+  margin: 0.5rem 0;
   overflow: hidden;
   border-top: 1px solid #e9ecef;
 }
@@ -3628,7 +3660,7 @@ input[type="button"].btn-block {
       align-items: center;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .navbar > .container,
@@ -3647,7 +3679,7 @@ input[type="button"].btn-block {
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
@@ -4843,6 +4875,122 @@ button.close {
   background: transparent;
   border: 0;
   -webkit-appearance: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.125rem;
+}
+
+.badge:empty {
+  display: none;
+}
+
+.btn .badge, .custom-file-control::before .badge {
+  position: relative;
+  top: -1px;
+}
+
+.badge-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+
+.badge-primary {
+  color: #fff;
+  background-color: #000;
+}
+
+.badge-primary[href]:focus, .badge-primary[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: black;
+}
+
+.badge-secondary {
+  color: #fff;
+  background-color: #2e2e2e;
+}
+
+.badge-secondary[href]:focus, .badge-secondary[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #151515;
+}
+
+.badge-success {
+  color: #fff;
+  background-color: #4caf50;
+}
+
+.badge-success[href]:focus, .badge-success[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #3d8b40;
+}
+
+.badge-info {
+  color: #fff;
+  background-color: #00bcd4;
+}
+
+.badge-info[href]:focus, .badge-info[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #008fa1;
+}
+
+.badge-warning {
+  color: #111;
+  background-color: #ffeb3b;
+}
+
+.badge-warning[href]:focus, .badge-warning[href]:hover {
+  color: #111;
+  text-decoration: none;
+  background-color: #ffe608;
+}
+
+.badge-danger {
+  color: #fff;
+  background-color: #f44336;
+}
+
+.badge-danger[href]:focus, .badge-danger[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #ea1c0d;
+}
+
+.badge-light {
+  color: #111;
+  background-color: #a9a9a9;
+}
+
+.badge-light[href]:focus, .badge-light[href]:hover {
+  color: #111;
+  text-decoration: none;
+  background-color: #909090;
+}
+
+.badge-dark {
+  color: #fff;
+  background-color: #3c3c3c;
+}
+
+.badge-dark[href]:focus, .badge-dark[href]:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #232323;
 }
 
 .modal-open {
@@ -6718,123 +6866,123 @@ a.bg-dark:focus, a.bg-dark:hover {
 }
 
 .m-1 {
-  margin: 0.125rem !important;
+  margin: 0.25rem !important;
 }
 
 .mt-1,
 .my-1 {
-  margin-top: 0.125rem !important;
+  margin-top: 0.25rem !important;
 }
 
 .mr-1,
 .mx-1 {
-  margin-right: 0.125rem !important;
+  margin-right: 0.25rem !important;
 }
 
 .mb-1,
 .my-1 {
-  margin-bottom: 0.125rem !important;
+  margin-bottom: 0.25rem !important;
 }
 
 .ml-1,
 .mx-1 {
-  margin-left: 0.125rem !important;
+  margin-left: 0.25rem !important;
 }
 
 .m-2 {
-  margin: 0.25rem !important;
+  margin: 0.5rem !important;
 }
 
 .mt-2,
 .my-2 {
-  margin-top: 0.25rem !important;
+  margin-top: 0.5rem !important;
 }
 
 .mr-2,
 .mx-2 {
-  margin-right: 0.25rem !important;
+  margin-right: 0.5rem !important;
 }
 
 .mb-2,
 .my-2 {
-  margin-bottom: 0.25rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .ml-2,
 .mx-2 {
-  margin-left: 0.25rem !important;
+  margin-left: 0.5rem !important;
 }
 
 .m-3 {
-  margin: 0.5rem !important;
+  margin: 1rem !important;
 }
 
 .mt-3,
 .my-3 {
-  margin-top: 0.5rem !important;
+  margin-top: 1rem !important;
 }
 
 .mr-3,
 .mx-3 {
-  margin-right: 0.5rem !important;
+  margin-right: 1rem !important;
 }
 
 .mb-3,
 .my-3 {
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .ml-3,
 .mx-3 {
-  margin-left: 0.5rem !important;
+  margin-left: 1rem !important;
 }
 
 .m-4 {
-  margin: 0.75rem !important;
+  margin: 1.5rem !important;
 }
 
 .mt-4,
 .my-4 {
-  margin-top: 0.75rem !important;
+  margin-top: 1.5rem !important;
 }
 
 .mr-4,
 .mx-4 {
-  margin-right: 0.75rem !important;
+  margin-right: 1.5rem !important;
 }
 
 .mb-4,
 .my-4 {
-  margin-bottom: 0.75rem !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .ml-4,
 .mx-4 {
-  margin-left: 0.75rem !important;
+  margin-left: 1.5rem !important;
 }
 
 .m-5 {
-  margin: 1.5rem !important;
+  margin: 3rem !important;
 }
 
 .mt-5,
 .my-5 {
-  margin-top: 1.5rem !important;
+  margin-top: 3rem !important;
 }
 
 .mr-5,
 .mx-5 {
-  margin-right: 1.5rem !important;
+  margin-right: 3rem !important;
 }
 
 .mb-5,
 .my-5 {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 3rem !important;
 }
 
 .ml-5,
 .mx-5 {
-  margin-left: 1.5rem !important;
+  margin-left: 3rem !important;
 }
 
 .p-0 {
@@ -6862,123 +7010,123 @@ a.bg-dark:focus, a.bg-dark:hover {
 }
 
 .p-1 {
-  padding: 0.125rem !important;
+  padding: 0.25rem !important;
 }
 
 .pt-1,
 .py-1 {
-  padding-top: 0.125rem !important;
+  padding-top: 0.25rem !important;
 }
 
 .pr-1,
 .px-1 {
-  padding-right: 0.125rem !important;
+  padding-right: 0.25rem !important;
 }
 
 .pb-1,
 .py-1 {
-  padding-bottom: 0.125rem !important;
+  padding-bottom: 0.25rem !important;
 }
 
 .pl-1,
 .px-1 {
-  padding-left: 0.125rem !important;
+  padding-left: 0.25rem !important;
 }
 
 .p-2 {
-  padding: 0.25rem !important;
+  padding: 0.5rem !important;
 }
 
 .pt-2,
 .py-2 {
-  padding-top: 0.25rem !important;
+  padding-top: 0.5rem !important;
 }
 
 .pr-2,
 .px-2 {
-  padding-right: 0.25rem !important;
+  padding-right: 0.5rem !important;
 }
 
 .pb-2,
 .py-2 {
-  padding-bottom: 0.25rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
 .pl-2,
 .px-2 {
-  padding-left: 0.25rem !important;
+  padding-left: 0.5rem !important;
 }
 
 .p-3 {
-  padding: 0.5rem !important;
+  padding: 1rem !important;
 }
 
 .pt-3,
 .py-3 {
-  padding-top: 0.5rem !important;
+  padding-top: 1rem !important;
 }
 
 .pr-3,
 .px-3 {
-  padding-right: 0.5rem !important;
+  padding-right: 1rem !important;
 }
 
 .pb-3,
 .py-3 {
-  padding-bottom: 0.5rem !important;
+  padding-bottom: 1rem !important;
 }
 
 .pl-3,
 .px-3 {
-  padding-left: 0.5rem !important;
+  padding-left: 1rem !important;
 }
 
 .p-4 {
-  padding: 0.75rem !important;
+  padding: 1.5rem !important;
 }
 
 .pt-4,
 .py-4 {
-  padding-top: 0.75rem !important;
+  padding-top: 1.5rem !important;
 }
 
 .pr-4,
 .px-4 {
-  padding-right: 0.75rem !important;
+  padding-right: 1.5rem !important;
 }
 
 .pb-4,
 .py-4 {
-  padding-bottom: 0.75rem !important;
+  padding-bottom: 1.5rem !important;
 }
 
 .pl-4,
 .px-4 {
-  padding-left: 0.75rem !important;
+  padding-left: 1.5rem !important;
 }
 
 .p-5 {
-  padding: 1.5rem !important;
+  padding: 3rem !important;
 }
 
 .pt-5,
 .py-5 {
-  padding-top: 1.5rem !important;
+  padding-top: 3rem !important;
 }
 
 .pr-5,
 .px-5 {
-  padding-right: 1.5rem !important;
+  padding-right: 3rem !important;
 }
 
 .pb-5,
 .py-5 {
-  padding-bottom: 1.5rem !important;
+  padding-bottom: 3rem !important;
 }
 
 .pl-5,
 .px-5 {
-  padding-left: 1.5rem !important;
+  padding-left: 3rem !important;
 }
 
 .m-auto {
@@ -7026,99 +7174,99 @@ a.bg-dark:focus, a.bg-dark:hover {
     margin-left: 0 !important;
   }
   .m-sm-1 {
-    margin: 0.125rem !important;
+    margin: 0.25rem !important;
   }
   .mt-sm-1,
   .my-sm-1 {
-    margin-top: 0.125rem !important;
+    margin-top: 0.25rem !important;
   }
   .mr-sm-1,
   .mx-sm-1 {
-    margin-right: 0.125rem !important;
+    margin-right: 0.25rem !important;
   }
   .mb-sm-1,
   .my-sm-1 {
-    margin-bottom: 0.125rem !important;
+    margin-bottom: 0.25rem !important;
   }
   .ml-sm-1,
   .mx-sm-1 {
-    margin-left: 0.125rem !important;
+    margin-left: 0.25rem !important;
   }
   .m-sm-2 {
-    margin: 0.25rem !important;
+    margin: 0.5rem !important;
   }
   .mt-sm-2,
   .my-sm-2 {
-    margin-top: 0.25rem !important;
+    margin-top: 0.5rem !important;
   }
   .mr-sm-2,
   .mx-sm-2 {
-    margin-right: 0.25rem !important;
+    margin-right: 0.5rem !important;
   }
   .mb-sm-2,
   .my-sm-2 {
-    margin-bottom: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .ml-sm-2,
   .mx-sm-2 {
-    margin-left: 0.25rem !important;
+    margin-left: 0.5rem !important;
   }
   .m-sm-3 {
-    margin: 0.5rem !important;
+    margin: 1rem !important;
   }
   .mt-sm-3,
   .my-sm-3 {
-    margin-top: 0.5rem !important;
+    margin-top: 1rem !important;
   }
   .mr-sm-3,
   .mx-sm-3 {
-    margin-right: 0.5rem !important;
+    margin-right: 1rem !important;
   }
   .mb-sm-3,
   .my-sm-3 {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
   }
   .ml-sm-3,
   .mx-sm-3 {
-    margin-left: 0.5rem !important;
+    margin-left: 1rem !important;
   }
   .m-sm-4 {
-    margin: 0.75rem !important;
+    margin: 1.5rem !important;
   }
   .mt-sm-4,
   .my-sm-4 {
-    margin-top: 0.75rem !important;
+    margin-top: 1.5rem !important;
   }
   .mr-sm-4,
   .mx-sm-4 {
-    margin-right: 0.75rem !important;
+    margin-right: 1.5rem !important;
   }
   .mb-sm-4,
   .my-sm-4 {
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 1.5rem !important;
   }
   .ml-sm-4,
   .mx-sm-4 {
-    margin-left: 0.75rem !important;
+    margin-left: 1.5rem !important;
   }
   .m-sm-5 {
-    margin: 1.5rem !important;
+    margin: 3rem !important;
   }
   .mt-sm-5,
   .my-sm-5 {
-    margin-top: 1.5rem !important;
+    margin-top: 3rem !important;
   }
   .mr-sm-5,
   .mx-sm-5 {
-    margin-right: 1.5rem !important;
+    margin-right: 3rem !important;
   }
   .mb-sm-5,
   .my-sm-5 {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 3rem !important;
   }
   .ml-sm-5,
   .mx-sm-5 {
-    margin-left: 1.5rem !important;
+    margin-left: 3rem !important;
   }
   .p-sm-0 {
     padding: 0 !important;
@@ -7140,99 +7288,99 @@ a.bg-dark:focus, a.bg-dark:hover {
     padding-left: 0 !important;
   }
   .p-sm-1 {
-    padding: 0.125rem !important;
+    padding: 0.25rem !important;
   }
   .pt-sm-1,
   .py-sm-1 {
-    padding-top: 0.125rem !important;
+    padding-top: 0.25rem !important;
   }
   .pr-sm-1,
   .px-sm-1 {
-    padding-right: 0.125rem !important;
+    padding-right: 0.25rem !important;
   }
   .pb-sm-1,
   .py-sm-1 {
-    padding-bottom: 0.125rem !important;
+    padding-bottom: 0.25rem !important;
   }
   .pl-sm-1,
   .px-sm-1 {
-    padding-left: 0.125rem !important;
+    padding-left: 0.25rem !important;
   }
   .p-sm-2 {
-    padding: 0.25rem !important;
+    padding: 0.5rem !important;
   }
   .pt-sm-2,
   .py-sm-2 {
-    padding-top: 0.25rem !important;
+    padding-top: 0.5rem !important;
   }
   .pr-sm-2,
   .px-sm-2 {
-    padding-right: 0.25rem !important;
+    padding-right: 0.5rem !important;
   }
   .pb-sm-2,
   .py-sm-2 {
-    padding-bottom: 0.25rem !important;
+    padding-bottom: 0.5rem !important;
   }
   .pl-sm-2,
   .px-sm-2 {
-    padding-left: 0.25rem !important;
+    padding-left: 0.5rem !important;
   }
   .p-sm-3 {
-    padding: 0.5rem !important;
+    padding: 1rem !important;
   }
   .pt-sm-3,
   .py-sm-3 {
-    padding-top: 0.5rem !important;
+    padding-top: 1rem !important;
   }
   .pr-sm-3,
   .px-sm-3 {
-    padding-right: 0.5rem !important;
+    padding-right: 1rem !important;
   }
   .pb-sm-3,
   .py-sm-3 {
-    padding-bottom: 0.5rem !important;
+    padding-bottom: 1rem !important;
   }
   .pl-sm-3,
   .px-sm-3 {
-    padding-left: 0.5rem !important;
+    padding-left: 1rem !important;
   }
   .p-sm-4 {
-    padding: 0.75rem !important;
+    padding: 1.5rem !important;
   }
   .pt-sm-4,
   .py-sm-4 {
-    padding-top: 0.75rem !important;
+    padding-top: 1.5rem !important;
   }
   .pr-sm-4,
   .px-sm-4 {
-    padding-right: 0.75rem !important;
+    padding-right: 1.5rem !important;
   }
   .pb-sm-4,
   .py-sm-4 {
-    padding-bottom: 0.75rem !important;
+    padding-bottom: 1.5rem !important;
   }
   .pl-sm-4,
   .px-sm-4 {
-    padding-left: 0.75rem !important;
+    padding-left: 1.5rem !important;
   }
   .p-sm-5 {
-    padding: 1.5rem !important;
+    padding: 3rem !important;
   }
   .pt-sm-5,
   .py-sm-5 {
-    padding-top: 1.5rem !important;
+    padding-top: 3rem !important;
   }
   .pr-sm-5,
   .px-sm-5 {
-    padding-right: 1.5rem !important;
+    padding-right: 3rem !important;
   }
   .pb-sm-5,
   .py-sm-5 {
-    padding-bottom: 1.5rem !important;
+    padding-bottom: 3rem !important;
   }
   .pl-sm-5,
   .px-sm-5 {
-    padding-left: 1.5rem !important;
+    padding-left: 3rem !important;
   }
   .m-sm-auto {
     margin: auto !important;
@@ -7276,99 +7424,99 @@ a.bg-dark:focus, a.bg-dark:hover {
     margin-left: 0 !important;
   }
   .m-md-1 {
-    margin: 0.125rem !important;
+    margin: 0.25rem !important;
   }
   .mt-md-1,
   .my-md-1 {
-    margin-top: 0.125rem !important;
+    margin-top: 0.25rem !important;
   }
   .mr-md-1,
   .mx-md-1 {
-    margin-right: 0.125rem !important;
+    margin-right: 0.25rem !important;
   }
   .mb-md-1,
   .my-md-1 {
-    margin-bottom: 0.125rem !important;
+    margin-bottom: 0.25rem !important;
   }
   .ml-md-1,
   .mx-md-1 {
-    margin-left: 0.125rem !important;
+    margin-left: 0.25rem !important;
   }
   .m-md-2 {
-    margin: 0.25rem !important;
+    margin: 0.5rem !important;
   }
   .mt-md-2,
   .my-md-2 {
-    margin-top: 0.25rem !important;
+    margin-top: 0.5rem !important;
   }
   .mr-md-2,
   .mx-md-2 {
-    margin-right: 0.25rem !important;
+    margin-right: 0.5rem !important;
   }
   .mb-md-2,
   .my-md-2 {
-    margin-bottom: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .ml-md-2,
   .mx-md-2 {
-    margin-left: 0.25rem !important;
+    margin-left: 0.5rem !important;
   }
   .m-md-3 {
-    margin: 0.5rem !important;
+    margin: 1rem !important;
   }
   .mt-md-3,
   .my-md-3 {
-    margin-top: 0.5rem !important;
+    margin-top: 1rem !important;
   }
   .mr-md-3,
   .mx-md-3 {
-    margin-right: 0.5rem !important;
+    margin-right: 1rem !important;
   }
   .mb-md-3,
   .my-md-3 {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
   }
   .ml-md-3,
   .mx-md-3 {
-    margin-left: 0.5rem !important;
+    margin-left: 1rem !important;
   }
   .m-md-4 {
-    margin: 0.75rem !important;
+    margin: 1.5rem !important;
   }
   .mt-md-4,
   .my-md-4 {
-    margin-top: 0.75rem !important;
+    margin-top: 1.5rem !important;
   }
   .mr-md-4,
   .mx-md-4 {
-    margin-right: 0.75rem !important;
+    margin-right: 1.5rem !important;
   }
   .mb-md-4,
   .my-md-4 {
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 1.5rem !important;
   }
   .ml-md-4,
   .mx-md-4 {
-    margin-left: 0.75rem !important;
+    margin-left: 1.5rem !important;
   }
   .m-md-5 {
-    margin: 1.5rem !important;
+    margin: 3rem !important;
   }
   .mt-md-5,
   .my-md-5 {
-    margin-top: 1.5rem !important;
+    margin-top: 3rem !important;
   }
   .mr-md-5,
   .mx-md-5 {
-    margin-right: 1.5rem !important;
+    margin-right: 3rem !important;
   }
   .mb-md-5,
   .my-md-5 {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 3rem !important;
   }
   .ml-md-5,
   .mx-md-5 {
-    margin-left: 1.5rem !important;
+    margin-left: 3rem !important;
   }
   .p-md-0 {
     padding: 0 !important;
@@ -7390,99 +7538,99 @@ a.bg-dark:focus, a.bg-dark:hover {
     padding-left: 0 !important;
   }
   .p-md-1 {
-    padding: 0.125rem !important;
+    padding: 0.25rem !important;
   }
   .pt-md-1,
   .py-md-1 {
-    padding-top: 0.125rem !important;
+    padding-top: 0.25rem !important;
   }
   .pr-md-1,
   .px-md-1 {
-    padding-right: 0.125rem !important;
+    padding-right: 0.25rem !important;
   }
   .pb-md-1,
   .py-md-1 {
-    padding-bottom: 0.125rem !important;
+    padding-bottom: 0.25rem !important;
   }
   .pl-md-1,
   .px-md-1 {
-    padding-left: 0.125rem !important;
+    padding-left: 0.25rem !important;
   }
   .p-md-2 {
-    padding: 0.25rem !important;
+    padding: 0.5rem !important;
   }
   .pt-md-2,
   .py-md-2 {
-    padding-top: 0.25rem !important;
+    padding-top: 0.5rem !important;
   }
   .pr-md-2,
   .px-md-2 {
-    padding-right: 0.25rem !important;
+    padding-right: 0.5rem !important;
   }
   .pb-md-2,
   .py-md-2 {
-    padding-bottom: 0.25rem !important;
+    padding-bottom: 0.5rem !important;
   }
   .pl-md-2,
   .px-md-2 {
-    padding-left: 0.25rem !important;
+    padding-left: 0.5rem !important;
   }
   .p-md-3 {
-    padding: 0.5rem !important;
+    padding: 1rem !important;
   }
   .pt-md-3,
   .py-md-3 {
-    padding-top: 0.5rem !important;
+    padding-top: 1rem !important;
   }
   .pr-md-3,
   .px-md-3 {
-    padding-right: 0.5rem !important;
+    padding-right: 1rem !important;
   }
   .pb-md-3,
   .py-md-3 {
-    padding-bottom: 0.5rem !important;
+    padding-bottom: 1rem !important;
   }
   .pl-md-3,
   .px-md-3 {
-    padding-left: 0.5rem !important;
+    padding-left: 1rem !important;
   }
   .p-md-4 {
-    padding: 0.75rem !important;
+    padding: 1.5rem !important;
   }
   .pt-md-4,
   .py-md-4 {
-    padding-top: 0.75rem !important;
+    padding-top: 1.5rem !important;
   }
   .pr-md-4,
   .px-md-4 {
-    padding-right: 0.75rem !important;
+    padding-right: 1.5rem !important;
   }
   .pb-md-4,
   .py-md-4 {
-    padding-bottom: 0.75rem !important;
+    padding-bottom: 1.5rem !important;
   }
   .pl-md-4,
   .px-md-4 {
-    padding-left: 0.75rem !important;
+    padding-left: 1.5rem !important;
   }
   .p-md-5 {
-    padding: 1.5rem !important;
+    padding: 3rem !important;
   }
   .pt-md-5,
   .py-md-5 {
-    padding-top: 1.5rem !important;
+    padding-top: 3rem !important;
   }
   .pr-md-5,
   .px-md-5 {
-    padding-right: 1.5rem !important;
+    padding-right: 3rem !important;
   }
   .pb-md-5,
   .py-md-5 {
-    padding-bottom: 1.5rem !important;
+    padding-bottom: 3rem !important;
   }
   .pl-md-5,
   .px-md-5 {
-    padding-left: 1.5rem !important;
+    padding-left: 3rem !important;
   }
   .m-md-auto {
     margin: auto !important;
@@ -7526,99 +7674,99 @@ a.bg-dark:focus, a.bg-dark:hover {
     margin-left: 0 !important;
   }
   .m-lg-1 {
-    margin: 0.125rem !important;
+    margin: 0.25rem !important;
   }
   .mt-lg-1,
   .my-lg-1 {
-    margin-top: 0.125rem !important;
+    margin-top: 0.25rem !important;
   }
   .mr-lg-1,
   .mx-lg-1 {
-    margin-right: 0.125rem !important;
+    margin-right: 0.25rem !important;
   }
   .mb-lg-1,
   .my-lg-1 {
-    margin-bottom: 0.125rem !important;
+    margin-bottom: 0.25rem !important;
   }
   .ml-lg-1,
   .mx-lg-1 {
-    margin-left: 0.125rem !important;
+    margin-left: 0.25rem !important;
   }
   .m-lg-2 {
-    margin: 0.25rem !important;
+    margin: 0.5rem !important;
   }
   .mt-lg-2,
   .my-lg-2 {
-    margin-top: 0.25rem !important;
+    margin-top: 0.5rem !important;
   }
   .mr-lg-2,
   .mx-lg-2 {
-    margin-right: 0.25rem !important;
+    margin-right: 0.5rem !important;
   }
   .mb-lg-2,
   .my-lg-2 {
-    margin-bottom: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .ml-lg-2,
   .mx-lg-2 {
-    margin-left: 0.25rem !important;
+    margin-left: 0.5rem !important;
   }
   .m-lg-3 {
-    margin: 0.5rem !important;
+    margin: 1rem !important;
   }
   .mt-lg-3,
   .my-lg-3 {
-    margin-top: 0.5rem !important;
+    margin-top: 1rem !important;
   }
   .mr-lg-3,
   .mx-lg-3 {
-    margin-right: 0.5rem !important;
+    margin-right: 1rem !important;
   }
   .mb-lg-3,
   .my-lg-3 {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
   }
   .ml-lg-3,
   .mx-lg-3 {
-    margin-left: 0.5rem !important;
+    margin-left: 1rem !important;
   }
   .m-lg-4 {
-    margin: 0.75rem !important;
+    margin: 1.5rem !important;
   }
   .mt-lg-4,
   .my-lg-4 {
-    margin-top: 0.75rem !important;
+    margin-top: 1.5rem !important;
   }
   .mr-lg-4,
   .mx-lg-4 {
-    margin-right: 0.75rem !important;
+    margin-right: 1.5rem !important;
   }
   .mb-lg-4,
   .my-lg-4 {
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 1.5rem !important;
   }
   .ml-lg-4,
   .mx-lg-4 {
-    margin-left: 0.75rem !important;
+    margin-left: 1.5rem !important;
   }
   .m-lg-5 {
-    margin: 1.5rem !important;
+    margin: 3rem !important;
   }
   .mt-lg-5,
   .my-lg-5 {
-    margin-top: 1.5rem !important;
+    margin-top: 3rem !important;
   }
   .mr-lg-5,
   .mx-lg-5 {
-    margin-right: 1.5rem !important;
+    margin-right: 3rem !important;
   }
   .mb-lg-5,
   .my-lg-5 {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 3rem !important;
   }
   .ml-lg-5,
   .mx-lg-5 {
-    margin-left: 1.5rem !important;
+    margin-left: 3rem !important;
   }
   .p-lg-0 {
     padding: 0 !important;
@@ -7640,99 +7788,99 @@ a.bg-dark:focus, a.bg-dark:hover {
     padding-left: 0 !important;
   }
   .p-lg-1 {
-    padding: 0.125rem !important;
+    padding: 0.25rem !important;
   }
   .pt-lg-1,
   .py-lg-1 {
-    padding-top: 0.125rem !important;
+    padding-top: 0.25rem !important;
   }
   .pr-lg-1,
   .px-lg-1 {
-    padding-right: 0.125rem !important;
+    padding-right: 0.25rem !important;
   }
   .pb-lg-1,
   .py-lg-1 {
-    padding-bottom: 0.125rem !important;
+    padding-bottom: 0.25rem !important;
   }
   .pl-lg-1,
   .px-lg-1 {
-    padding-left: 0.125rem !important;
+    padding-left: 0.25rem !important;
   }
   .p-lg-2 {
-    padding: 0.25rem !important;
+    padding: 0.5rem !important;
   }
   .pt-lg-2,
   .py-lg-2 {
-    padding-top: 0.25rem !important;
+    padding-top: 0.5rem !important;
   }
   .pr-lg-2,
   .px-lg-2 {
-    padding-right: 0.25rem !important;
+    padding-right: 0.5rem !important;
   }
   .pb-lg-2,
   .py-lg-2 {
-    padding-bottom: 0.25rem !important;
+    padding-bottom: 0.5rem !important;
   }
   .pl-lg-2,
   .px-lg-2 {
-    padding-left: 0.25rem !important;
+    padding-left: 0.5rem !important;
   }
   .p-lg-3 {
-    padding: 0.5rem !important;
+    padding: 1rem !important;
   }
   .pt-lg-3,
   .py-lg-3 {
-    padding-top: 0.5rem !important;
+    padding-top: 1rem !important;
   }
   .pr-lg-3,
   .px-lg-3 {
-    padding-right: 0.5rem !important;
+    padding-right: 1rem !important;
   }
   .pb-lg-3,
   .py-lg-3 {
-    padding-bottom: 0.5rem !important;
+    padding-bottom: 1rem !important;
   }
   .pl-lg-3,
   .px-lg-3 {
-    padding-left: 0.5rem !important;
+    padding-left: 1rem !important;
   }
   .p-lg-4 {
-    padding: 0.75rem !important;
+    padding: 1.5rem !important;
   }
   .pt-lg-4,
   .py-lg-4 {
-    padding-top: 0.75rem !important;
+    padding-top: 1.5rem !important;
   }
   .pr-lg-4,
   .px-lg-4 {
-    padding-right: 0.75rem !important;
+    padding-right: 1.5rem !important;
   }
   .pb-lg-4,
   .py-lg-4 {
-    padding-bottom: 0.75rem !important;
+    padding-bottom: 1.5rem !important;
   }
   .pl-lg-4,
   .px-lg-4 {
-    padding-left: 0.75rem !important;
+    padding-left: 1.5rem !important;
   }
   .p-lg-5 {
-    padding: 1.5rem !important;
+    padding: 3rem !important;
   }
   .pt-lg-5,
   .py-lg-5 {
-    padding-top: 1.5rem !important;
+    padding-top: 3rem !important;
   }
   .pr-lg-5,
   .px-lg-5 {
-    padding-right: 1.5rem !important;
+    padding-right: 3rem !important;
   }
   .pb-lg-5,
   .py-lg-5 {
-    padding-bottom: 1.5rem !important;
+    padding-bottom: 3rem !important;
   }
   .pl-lg-5,
   .px-lg-5 {
-    padding-left: 1.5rem !important;
+    padding-left: 3rem !important;
   }
   .m-lg-auto {
     margin: auto !important;
@@ -7776,99 +7924,99 @@ a.bg-dark:focus, a.bg-dark:hover {
     margin-left: 0 !important;
   }
   .m-xl-1 {
-    margin: 0.125rem !important;
+    margin: 0.25rem !important;
   }
   .mt-xl-1,
   .my-xl-1 {
-    margin-top: 0.125rem !important;
+    margin-top: 0.25rem !important;
   }
   .mr-xl-1,
   .mx-xl-1 {
-    margin-right: 0.125rem !important;
+    margin-right: 0.25rem !important;
   }
   .mb-xl-1,
   .my-xl-1 {
-    margin-bottom: 0.125rem !important;
+    margin-bottom: 0.25rem !important;
   }
   .ml-xl-1,
   .mx-xl-1 {
-    margin-left: 0.125rem !important;
+    margin-left: 0.25rem !important;
   }
   .m-xl-2 {
-    margin: 0.25rem !important;
+    margin: 0.5rem !important;
   }
   .mt-xl-2,
   .my-xl-2 {
-    margin-top: 0.25rem !important;
+    margin-top: 0.5rem !important;
   }
   .mr-xl-2,
   .mx-xl-2 {
-    margin-right: 0.25rem !important;
+    margin-right: 0.5rem !important;
   }
   .mb-xl-2,
   .my-xl-2 {
-    margin-bottom: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .ml-xl-2,
   .mx-xl-2 {
-    margin-left: 0.25rem !important;
+    margin-left: 0.5rem !important;
   }
   .m-xl-3 {
-    margin: 0.5rem !important;
+    margin: 1rem !important;
   }
   .mt-xl-3,
   .my-xl-3 {
-    margin-top: 0.5rem !important;
+    margin-top: 1rem !important;
   }
   .mr-xl-3,
   .mx-xl-3 {
-    margin-right: 0.5rem !important;
+    margin-right: 1rem !important;
   }
   .mb-xl-3,
   .my-xl-3 {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
   }
   .ml-xl-3,
   .mx-xl-3 {
-    margin-left: 0.5rem !important;
+    margin-left: 1rem !important;
   }
   .m-xl-4 {
-    margin: 0.75rem !important;
+    margin: 1.5rem !important;
   }
   .mt-xl-4,
   .my-xl-4 {
-    margin-top: 0.75rem !important;
+    margin-top: 1.5rem !important;
   }
   .mr-xl-4,
   .mx-xl-4 {
-    margin-right: 0.75rem !important;
+    margin-right: 1.5rem !important;
   }
   .mb-xl-4,
   .my-xl-4 {
-    margin-bottom: 0.75rem !important;
+    margin-bottom: 1.5rem !important;
   }
   .ml-xl-4,
   .mx-xl-4 {
-    margin-left: 0.75rem !important;
+    margin-left: 1.5rem !important;
   }
   .m-xl-5 {
-    margin: 1.5rem !important;
+    margin: 3rem !important;
   }
   .mt-xl-5,
   .my-xl-5 {
-    margin-top: 1.5rem !important;
+    margin-top: 3rem !important;
   }
   .mr-xl-5,
   .mx-xl-5 {
-    margin-right: 1.5rem !important;
+    margin-right: 3rem !important;
   }
   .mb-xl-5,
   .my-xl-5 {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 3rem !important;
   }
   .ml-xl-5,
   .mx-xl-5 {
-    margin-left: 1.5rem !important;
+    margin-left: 3rem !important;
   }
   .p-xl-0 {
     padding: 0 !important;
@@ -7890,99 +8038,99 @@ a.bg-dark:focus, a.bg-dark:hover {
     padding-left: 0 !important;
   }
   .p-xl-1 {
-    padding: 0.125rem !important;
+    padding: 0.25rem !important;
   }
   .pt-xl-1,
   .py-xl-1 {
-    padding-top: 0.125rem !important;
+    padding-top: 0.25rem !important;
   }
   .pr-xl-1,
   .px-xl-1 {
-    padding-right: 0.125rem !important;
+    padding-right: 0.25rem !important;
   }
   .pb-xl-1,
   .py-xl-1 {
-    padding-bottom: 0.125rem !important;
+    padding-bottom: 0.25rem !important;
   }
   .pl-xl-1,
   .px-xl-1 {
-    padding-left: 0.125rem !important;
+    padding-left: 0.25rem !important;
   }
   .p-xl-2 {
-    padding: 0.25rem !important;
+    padding: 0.5rem !important;
   }
   .pt-xl-2,
   .py-xl-2 {
-    padding-top: 0.25rem !important;
+    padding-top: 0.5rem !important;
   }
   .pr-xl-2,
   .px-xl-2 {
-    padding-right: 0.25rem !important;
+    padding-right: 0.5rem !important;
   }
   .pb-xl-2,
   .py-xl-2 {
-    padding-bottom: 0.25rem !important;
+    padding-bottom: 0.5rem !important;
   }
   .pl-xl-2,
   .px-xl-2 {
-    padding-left: 0.25rem !important;
+    padding-left: 0.5rem !important;
   }
   .p-xl-3 {
-    padding: 0.5rem !important;
+    padding: 1rem !important;
   }
   .pt-xl-3,
   .py-xl-3 {
-    padding-top: 0.5rem !important;
+    padding-top: 1rem !important;
   }
   .pr-xl-3,
   .px-xl-3 {
-    padding-right: 0.5rem !important;
+    padding-right: 1rem !important;
   }
   .pb-xl-3,
   .py-xl-3 {
-    padding-bottom: 0.5rem !important;
+    padding-bottom: 1rem !important;
   }
   .pl-xl-3,
   .px-xl-3 {
-    padding-left: 0.5rem !important;
+    padding-left: 1rem !important;
   }
   .p-xl-4 {
-    padding: 0.75rem !important;
+    padding: 1.5rem !important;
   }
   .pt-xl-4,
   .py-xl-4 {
-    padding-top: 0.75rem !important;
+    padding-top: 1.5rem !important;
   }
   .pr-xl-4,
   .px-xl-4 {
-    padding-right: 0.75rem !important;
+    padding-right: 1.5rem !important;
   }
   .pb-xl-4,
   .py-xl-4 {
-    padding-bottom: 0.75rem !important;
+    padding-bottom: 1.5rem !important;
   }
   .pl-xl-4,
   .px-xl-4 {
-    padding-left: 0.75rem !important;
+    padding-left: 1.5rem !important;
   }
   .p-xl-5 {
-    padding: 1.5rem !important;
+    padding: 3rem !important;
   }
   .pt-xl-5,
   .py-xl-5 {
-    padding-top: 1.5rem !important;
+    padding-top: 3rem !important;
   }
   .pr-xl-5,
   .px-xl-5 {
-    padding-right: 1.5rem !important;
+    padding-right: 3rem !important;
   }
   .pb-xl-5,
   .py-xl-5 {
-    padding-bottom: 1.5rem !important;
+    padding-bottom: 3rem !important;
   }
   .pl-xl-5,
   .px-xl-5 {
-    padding-left: 1.5rem !important;
+    padding-left: 3rem !important;
   }
   .m-xl-auto {
     margin: auto !important;
@@ -8302,7 +8450,7 @@ button:focus {
   transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: box-shadow, transform;
   color: rgba(0, 0, 0, 0.87);
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8344,7 +8492,7 @@ button:focus {
 
 .open > .btn.dropdown-toggle.bmd-btn-icon, .open > .dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.dropdown-toggle.bmd-btn-icon:hover, .open > .dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8352,18 +8500,18 @@ button:focus {
 }
 
 .btn.disabled:focus, .disabled.custom-file-control:focus::before, .btn.disabled.focus, .disabled.focus.custom-file-control::before, .btn:disabled:focus, .custom-file-control:disabled:focus::before, .btn:disabled.focus, .custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .btn.disabled:hover, .disabled.custom-file-control:hover::before, .btn:disabled:hover, .custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn, .bg-inverse .custom-file-control::before {
   color: rgba(0, 0, 0, 0.87);
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8401,7 +8549,7 @@ button:focus {
 
 .open > .bg-inverse .btn.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8409,12 +8557,12 @@ button:focus {
 }
 
 .bg-inverse .btn.disabled:focus, .bg-inverse .disabled.custom-file-control:focus::before, .bg-inverse .btn.disabled.focus, .bg-inverse .disabled.focus.custom-file-control::before, .bg-inverse .btn:disabled:focus, .bg-inverse .custom-file-control:disabled:focus::before, .bg-inverse .btn:disabled.focus, .bg-inverse .custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.disabled:hover, .bg-inverse .disabled.custom-file-control:hover::before, .bg-inverse .btn:disabled:hover, .bg-inverse .custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8424,7 +8572,7 @@ button:focus {
 
 .btn.btn-primary, .btn-primary.custom-file-control::before {
   color: #009688;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8462,7 +8610,7 @@ button:focus {
 
 .open > .btn.btn-primary.dropdown-toggle.bmd-btn-icon, .open > .btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-primary.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8470,18 +8618,18 @@ button:focus {
 }
 
 .btn.btn-primary.disabled:focus, .btn-primary.disabled.custom-file-control:focus::before, .btn.btn-primary.disabled.focus, .btn-primary.disabled.focus.custom-file-control::before, .btn.btn-primary:disabled:focus, .btn-primary.custom-file-control:disabled:focus::before, .btn.btn-primary:disabled.focus, .btn-primary.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .btn.btn-primary.disabled:hover, .btn-primary.disabled.custom-file-control:hover::before, .btn.btn-primary:disabled:hover, .btn-primary.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-primary, .bg-inverse .btn-primary.custom-file-control::before {
   color: #009688;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8519,7 +8667,7 @@ button:focus {
 
 .open > .bg-inverse .btn.btn-primary.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-primary.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-primary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8527,12 +8675,12 @@ button:focus {
 }
 
 .bg-inverse .btn.btn-primary.disabled:focus, .bg-inverse .btn-primary.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-primary.disabled.focus, .bg-inverse .btn-primary.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-primary:disabled:focus, .bg-inverse .btn-primary.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-primary:disabled.focus, .bg-inverse .btn-primary.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-primary.disabled:hover, .bg-inverse .btn-primary.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-primary:disabled:hover, .bg-inverse .btn-primary.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8542,7 +8690,7 @@ button:focus {
 
 .btn.btn-secondary, .btn-secondary.custom-file-control::before {
   color: rgba(0, 0, 0, 0.87);
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8580,7 +8728,7 @@ button:focus {
 
 .open > .btn.btn-secondary.dropdown-toggle.bmd-btn-icon, .open > .btn-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-secondary.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8588,18 +8736,18 @@ button:focus {
 }
 
 .btn.btn-secondary.disabled:focus, .btn-secondary.disabled.custom-file-control:focus::before, .btn.btn-secondary.disabled.focus, .btn-secondary.disabled.focus.custom-file-control::before, .btn.btn-secondary:disabled:focus, .btn-secondary.custom-file-control:disabled:focus::before, .btn.btn-secondary:disabled.focus, .btn-secondary.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .btn.btn-secondary.disabled:hover, .btn-secondary.disabled.custom-file-control:hover::before, .btn.btn-secondary:disabled:hover, .btn-secondary.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-secondary, .bg-inverse .btn-secondary.custom-file-control::before {
   color: rgba(0, 0, 0, 0.87);
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8637,7 +8785,7 @@ button:focus {
 
 .open > .bg-inverse .btn.btn-secondary.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-secondary.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8645,12 +8793,12 @@ button:focus {
 }
 
 .bg-inverse .btn.btn-secondary.disabled:focus, .bg-inverse .btn-secondary.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-secondary.disabled.focus, .bg-inverse .btn-secondary.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-secondary:disabled:focus, .bg-inverse .btn-secondary.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-secondary:disabled.focus, .bg-inverse .btn-secondary.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-secondary.disabled:hover, .bg-inverse .btn-secondary.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-secondary:disabled:hover, .bg-inverse .btn-secondary.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8660,7 +8808,7 @@ button:focus {
 
 .btn.btn-info, .btn-info.custom-file-control::before {
   color: #03a9f4;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8698,7 +8846,7 @@ button:focus {
 
 .open > .btn.btn-info.dropdown-toggle.bmd-btn-icon, .open > .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8706,18 +8854,18 @@ button:focus {
 }
 
 .btn.btn-info.disabled:focus, .btn-info.disabled.custom-file-control:focus::before, .btn.btn-info.disabled.focus, .btn-info.disabled.focus.custom-file-control::before, .btn.btn-info:disabled:focus, .btn-info.custom-file-control:disabled:focus::before, .btn.btn-info:disabled.focus, .btn-info.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .btn.btn-info.disabled:hover, .btn-info.disabled.custom-file-control:hover::before, .btn.btn-info:disabled:hover, .btn-info.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-info, .bg-inverse .btn-info.custom-file-control::before {
   color: #03a9f4;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8755,7 +8903,7 @@ button:focus {
 
 .open > .bg-inverse .btn.btn-info.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8763,12 +8911,12 @@ button:focus {
 }
 
 .bg-inverse .btn.btn-info.disabled:focus, .bg-inverse .btn-info.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-info.disabled.focus, .bg-inverse .btn-info.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-info:disabled:focus, .bg-inverse .btn-info.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-info:disabled.focus, .bg-inverse .btn-info.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-info.disabled:hover, .bg-inverse .btn-info.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-info:disabled:hover, .bg-inverse .btn-info.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8778,7 +8926,7 @@ button:focus {
 
 .btn.btn-success, .btn-success.custom-file-control::before {
   color: #4caf50;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8816,7 +8964,7 @@ button:focus {
 
 .open > .btn.btn-success.dropdown-toggle.bmd-btn-icon, .open > .btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-success.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8824,18 +8972,18 @@ button:focus {
 }
 
 .btn.btn-success.disabled:focus, .btn-success.disabled.custom-file-control:focus::before, .btn.btn-success.disabled.focus, .btn-success.disabled.focus.custom-file-control::before, .btn.btn-success:disabled:focus, .btn-success.custom-file-control:disabled:focus::before, .btn.btn-success:disabled.focus, .btn-success.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .btn.btn-success.disabled:hover, .btn-success.disabled.custom-file-control:hover::before, .btn.btn-success:disabled:hover, .btn-success.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-success, .bg-inverse .btn-success.custom-file-control::before {
   color: #4caf50;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8873,7 +9021,7 @@ button:focus {
 
 .open > .bg-inverse .btn.btn-success.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-success.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-success.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8881,12 +9029,12 @@ button:focus {
 }
 
 .bg-inverse .btn.btn-success.disabled:focus, .bg-inverse .btn-success.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-success.disabled.focus, .bg-inverse .btn-success.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-success:disabled:focus, .bg-inverse .btn-success.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-success:disabled.focus, .bg-inverse .btn-success.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-success.disabled:hover, .bg-inverse .btn-success.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-success:disabled:hover, .bg-inverse .btn-success.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8896,7 +9044,7 @@ button:focus {
 
 .btn.btn-warning, .btn-warning.custom-file-control::before {
   color: #ff5722;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8934,7 +9082,7 @@ button:focus {
 
 .open > .btn.btn-warning.dropdown-toggle.bmd-btn-icon, .open > .btn-warning.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-warning.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-warning.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8942,18 +9090,18 @@ button:focus {
 }
 
 .btn.btn-warning.disabled:focus, .btn-warning.disabled.custom-file-control:focus::before, .btn.btn-warning.disabled.focus, .btn-warning.disabled.focus.custom-file-control::before, .btn.btn-warning:disabled:focus, .btn-warning.custom-file-control:disabled:focus::before, .btn.btn-warning:disabled.focus, .btn-warning.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .btn.btn-warning.disabled:hover, .btn-warning.disabled.custom-file-control:hover::before, .btn.btn-warning:disabled:hover, .btn-warning.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-warning, .bg-inverse .btn-warning.custom-file-control::before {
   color: #ff5722;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -8991,7 +9139,7 @@ button:focus {
 
 .open > .bg-inverse .btn.btn-warning.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-warning.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-warning.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-warning.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -8999,12 +9147,12 @@ button:focus {
 }
 
 .bg-inverse .btn.btn-warning.disabled:focus, .bg-inverse .btn-warning.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-warning.disabled.focus, .bg-inverse .btn-warning.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-warning:disabled:focus, .bg-inverse .btn-warning.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-warning:disabled.focus, .bg-inverse .btn-warning.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-warning.disabled:hover, .bg-inverse .btn-warning.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-warning:disabled:hover, .bg-inverse .btn-warning.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -9014,7 +9162,7 @@ button:focus {
 
 .btn.btn-danger, .btn-danger.custom-file-control::before {
   color: #f44336;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -9052,7 +9200,7 @@ button:focus {
 
 .open > .btn.btn-danger.dropdown-toggle.bmd-btn-icon, .open > .btn-danger.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-danger.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-danger.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -9060,18 +9208,18 @@ button:focus {
 }
 
 .btn.btn-danger.disabled:focus, .btn-danger.disabled.custom-file-control:focus::before, .btn.btn-danger.disabled.focus, .btn-danger.disabled.focus.custom-file-control::before, .btn.btn-danger:disabled:focus, .btn-danger.custom-file-control:disabled:focus::before, .btn.btn-danger:disabled.focus, .btn-danger.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .btn.btn-danger.disabled:hover, .btn-danger.disabled.custom-file-control:hover::before, .btn.btn-danger:disabled:hover, .btn-danger.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-danger, .bg-inverse .btn-danger.custom-file-control::before {
   color: #f44336;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -9109,7 +9257,7 @@ button:focus {
 
 .open > .bg-inverse .btn.btn-danger.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-danger.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-danger.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-danger.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -9117,12 +9265,12 @@ button:focus {
 }
 
 .bg-inverse .btn.btn-danger.disabled:focus, .bg-inverse .btn-danger.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-danger.disabled.focus, .bg-inverse .btn-danger.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-danger:disabled:focus, .bg-inverse .btn-danger.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-danger:disabled.focus, .bg-inverse .btn-danger.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-danger.disabled:hover, .bg-inverse .btn-danger.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-danger:disabled:hover, .bg-inverse .btn-danger.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ccc;
 }
 
@@ -9922,7 +10070,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .btn.btn-outline, .btn-outline.custom-file-control::before {
   color: rgba(0, 0, 0, 0.87);
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
@@ -9960,7 +10108,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .btn.btn-outline.dropdown-toggle.bmd-btn-icon, .open > .btn-outline.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-outline.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -9968,18 +10116,18 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .btn.btn-outline.disabled:focus, .btn-outline.disabled.custom-file-control:focus::before, .btn.btn-outline.disabled.focus, .btn-outline.disabled.focus.custom-file-control::before, .btn.btn-outline:disabled:focus, .btn-outline.custom-file-control:disabled:focus::before, .btn.btn-outline:disabled.focus, .btn-outline.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
 .btn.btn-outline.disabled:hover, .btn-outline.disabled.custom-file-control:hover::before, .btn.btn-outline:disabled:hover, .btn-outline.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
 .bg-inverse .btn.btn-outline, .bg-inverse .btn-outline.custom-file-control::before {
   color: rgba(0, 0, 0, 0.87);
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
@@ -10017,7 +10165,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .bg-inverse .btn.btn-outline.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-outline.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10025,12 +10173,12 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .bg-inverse .btn.btn-outline.disabled:focus, .bg-inverse .btn-outline.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline.disabled.focus, .bg-inverse .btn-outline.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline:disabled:focus, .bg-inverse .btn-outline.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline:disabled.focus, .bg-inverse .btn-outline.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
 .bg-inverse .btn.btn-outline.disabled:hover, .bg-inverse .btn-outline.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline:disabled:hover, .bg-inverse .btn-outline.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
@@ -10040,7 +10188,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .btn.btn-outline-primary, .btn-outline-primary.custom-file-control::before {
   color: #009688;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #009688;
 }
 
@@ -10078,7 +10226,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .btn.btn-outline-primary.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-primary.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-outline-primary.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline-primary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10086,18 +10234,18 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .btn.btn-outline-primary.disabled:focus, .btn-outline-primary.disabled.custom-file-control:focus::before, .btn.btn-outline-primary.disabled.focus, .btn-outline-primary.disabled.focus.custom-file-control::before, .btn.btn-outline-primary:disabled:focus, .btn-outline-primary.custom-file-control:disabled:focus::before, .btn.btn-outline-primary:disabled.focus, .btn-outline-primary.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #009688;
 }
 
 .btn.btn-outline-primary.disabled:hover, .btn-outline-primary.disabled.custom-file-control:hover::before, .btn.btn-outline-primary:disabled:hover, .btn-outline-primary.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #009688;
 }
 
 .bg-inverse .btn.btn-outline-primary, .bg-inverse .btn-outline-primary.custom-file-control::before {
   color: #009688;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #009688;
 }
 
@@ -10135,7 +10283,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .bg-inverse .btn.btn-outline-primary.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-primary.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-outline-primary.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline-primary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10143,12 +10291,12 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .bg-inverse .btn.btn-outline-primary.disabled:focus, .bg-inverse .btn-outline-primary.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-primary.disabled.focus, .bg-inverse .btn-outline-primary.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline-primary:disabled:focus, .bg-inverse .btn-outline-primary.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline-primary:disabled.focus, .bg-inverse .btn-outline-primary.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #009688;
 }
 
 .bg-inverse .btn.btn-outline-primary.disabled:hover, .bg-inverse .btn-outline-primary.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-primary:disabled:hover, .bg-inverse .btn-outline-primary.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #009688;
 }
 
@@ -10158,7 +10306,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .btn.btn-outline-secondary, .btn-outline-secondary.custom-file-control::before {
   color: rgba(0, 0, 0, 0.87);
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
@@ -10196,7 +10344,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .btn.btn-outline-secondary.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-outline-secondary.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10204,18 +10352,18 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .btn.btn-outline-secondary.disabled:focus, .btn-outline-secondary.disabled.custom-file-control:focus::before, .btn.btn-outline-secondary.disabled.focus, .btn-outline-secondary.disabled.focus.custom-file-control::before, .btn.btn-outline-secondary:disabled:focus, .btn-outline-secondary.custom-file-control:disabled:focus::before, .btn.btn-outline-secondary:disabled.focus, .btn-outline-secondary.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
 .btn.btn-outline-secondary.disabled:hover, .btn-outline-secondary.disabled.custom-file-control:hover::before, .btn.btn-outline-secondary:disabled:hover, .btn-outline-secondary.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
 .bg-inverse .btn.btn-outline-secondary, .bg-inverse .btn-outline-secondary.custom-file-control::before {
   color: rgba(0, 0, 0, 0.87);
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
@@ -10253,7 +10401,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .bg-inverse .btn.btn-outline-secondary.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-outline-secondary.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10261,12 +10409,12 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .bg-inverse .btn.btn-outline-secondary.disabled:focus, .bg-inverse .btn-outline-secondary.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-secondary.disabled.focus, .bg-inverse .btn-outline-secondary.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline-secondary:disabled:focus, .bg-inverse .btn-outline-secondary.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline-secondary:disabled.focus, .bg-inverse .btn-outline-secondary.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
 .bg-inverse .btn.btn-outline-secondary.disabled:hover, .bg-inverse .btn-outline-secondary.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-secondary:disabled:hover, .bg-inverse .btn-outline-secondary.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: rgba(0, 0, 0, 0.87);
 }
 
@@ -10276,7 +10424,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .btn.btn-outline-info, .btn-outline-info.custom-file-control::before {
   color: #03a9f4;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #03a9f4;
 }
 
@@ -10314,7 +10462,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10322,18 +10470,18 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .btn.btn-outline-info.disabled:focus, .btn-outline-info.disabled.custom-file-control:focus::before, .btn.btn-outline-info.disabled.focus, .btn-outline-info.disabled.focus.custom-file-control::before, .btn.btn-outline-info:disabled:focus, .btn-outline-info.custom-file-control:disabled:focus::before, .btn.btn-outline-info:disabled.focus, .btn-outline-info.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #03a9f4;
 }
 
 .btn.btn-outline-info.disabled:hover, .btn-outline-info.disabled.custom-file-control:hover::before, .btn.btn-outline-info:disabled:hover, .btn-outline-info.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #03a9f4;
 }
 
 .bg-inverse .btn.btn-outline-info, .bg-inverse .btn-outline-info.custom-file-control::before {
   color: #03a9f4;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #03a9f4;
 }
 
@@ -10371,7 +10519,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .bg-inverse .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10379,12 +10527,12 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .bg-inverse .btn.btn-outline-info.disabled:focus, .bg-inverse .btn-outline-info.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-info.disabled.focus, .bg-inverse .btn-outline-info.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline-info:disabled:focus, .bg-inverse .btn-outline-info.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline-info:disabled.focus, .bg-inverse .btn-outline-info.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #03a9f4;
 }
 
 .bg-inverse .btn.btn-outline-info.disabled:hover, .bg-inverse .btn-outline-info.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-info:disabled:hover, .bg-inverse .btn-outline-info.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #03a9f4;
 }
 
@@ -10394,7 +10542,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .btn.btn-outline-success, .btn-outline-success.custom-file-control::before {
   color: #4caf50;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #4caf50;
 }
 
@@ -10432,7 +10580,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .btn.btn-outline-success.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-success.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-outline-success.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline-success.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10440,18 +10588,18 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .btn.btn-outline-success.disabled:focus, .btn-outline-success.disabled.custom-file-control:focus::before, .btn.btn-outline-success.disabled.focus, .btn-outline-success.disabled.focus.custom-file-control::before, .btn.btn-outline-success:disabled:focus, .btn-outline-success.custom-file-control:disabled:focus::before, .btn.btn-outline-success:disabled.focus, .btn-outline-success.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #4caf50;
 }
 
 .btn.btn-outline-success.disabled:hover, .btn-outline-success.disabled.custom-file-control:hover::before, .btn.btn-outline-success:disabled:hover, .btn-outline-success.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #4caf50;
 }
 
 .bg-inverse .btn.btn-outline-success, .bg-inverse .btn-outline-success.custom-file-control::before {
   color: #4caf50;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #4caf50;
 }
 
@@ -10489,7 +10637,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .bg-inverse .btn.btn-outline-success.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-success.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-outline-success.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline-success.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10497,12 +10645,12 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .bg-inverse .btn.btn-outline-success.disabled:focus, .bg-inverse .btn-outline-success.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-success.disabled.focus, .bg-inverse .btn-outline-success.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline-success:disabled:focus, .bg-inverse .btn-outline-success.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline-success:disabled.focus, .bg-inverse .btn-outline-success.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #4caf50;
 }
 
 .bg-inverse .btn.btn-outline-success.disabled:hover, .bg-inverse .btn-outline-success.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-success:disabled:hover, .bg-inverse .btn-outline-success.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #4caf50;
 }
 
@@ -10512,7 +10660,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .btn.btn-outline-warning, .btn-outline-warning.custom-file-control::before {
   color: #ff5722;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ff5722;
 }
 
@@ -10550,7 +10698,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .btn.btn-outline-warning.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-warning.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-outline-warning.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline-warning.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10558,18 +10706,18 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .btn.btn-outline-warning.disabled:focus, .btn-outline-warning.disabled.custom-file-control:focus::before, .btn.btn-outline-warning.disabled.focus, .btn-outline-warning.disabled.focus.custom-file-control::before, .btn.btn-outline-warning:disabled:focus, .btn-outline-warning.custom-file-control:disabled:focus::before, .btn.btn-outline-warning:disabled.focus, .btn-outline-warning.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ff5722;
 }
 
 .btn.btn-outline-warning.disabled:hover, .btn-outline-warning.disabled.custom-file-control:hover::before, .btn.btn-outline-warning:disabled:hover, .btn-outline-warning.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ff5722;
 }
 
 .bg-inverse .btn.btn-outline-warning, .bg-inverse .btn-outline-warning.custom-file-control::before {
   color: #ff5722;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ff5722;
 }
 
@@ -10607,7 +10755,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .bg-inverse .btn.btn-outline-warning.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-warning.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-outline-warning.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline-warning.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10615,12 +10763,12 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .bg-inverse .btn.btn-outline-warning.disabled:focus, .bg-inverse .btn-outline-warning.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-warning.disabled.focus, .bg-inverse .btn-outline-warning.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline-warning:disabled:focus, .bg-inverse .btn-outline-warning.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline-warning:disabled.focus, .bg-inverse .btn-outline-warning.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ff5722;
 }
 
 .bg-inverse .btn.btn-outline-warning.disabled:hover, .bg-inverse .btn-outline-warning.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-warning:disabled:hover, .bg-inverse .btn-outline-warning.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #ff5722;
 }
 
@@ -10630,7 +10778,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .btn.btn-outline-danger, .btn-outline-danger.custom-file-control::before {
   color: #f44336;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #f44336;
 }
 
@@ -10668,7 +10816,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .btn.btn-outline-danger.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-danger.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .btn.btn-outline-danger.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline-danger.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10676,18 +10824,18 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .btn.btn-outline-danger.disabled:focus, .btn-outline-danger.disabled.custom-file-control:focus::before, .btn.btn-outline-danger.disabled.focus, .btn-outline-danger.disabled.focus.custom-file-control::before, .btn.btn-outline-danger:disabled:focus, .btn-outline-danger.custom-file-control:disabled:focus::before, .btn.btn-outline-danger:disabled.focus, .btn-outline-danger.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #f44336;
 }
 
 .btn.btn-outline-danger.disabled:hover, .btn-outline-danger.disabled.custom-file-control:hover::before, .btn.btn-outline-danger:disabled:hover, .btn-outline-danger.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #f44336;
 }
 
 .bg-inverse .btn.btn-outline-danger, .bg-inverse .btn-outline-danger.custom-file-control::before {
   color: #f44336;
-  background-color: inherit;
+  background-color: transparent;
   border-color: #f44336;
 }
 
@@ -10725,7 +10873,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .open > .bg-inverse .btn.btn-outline-danger.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-danger.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: inherit;
+  background-color: transparent;
 }
 
 .open > .bg-inverse .btn.btn-outline-danger.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline-danger.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
@@ -10733,12 +10881,12 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .bg-inverse .btn.btn-outline-danger.disabled:focus, .bg-inverse .btn-outline-danger.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-danger.disabled.focus, .bg-inverse .btn-outline-danger.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline-danger:disabled:focus, .bg-inverse .btn-outline-danger.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline-danger:disabled.focus, .bg-inverse .btn-outline-danger.custom-file-control:disabled.focus::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #f44336;
 }
 
 .bg-inverse .btn.btn-outline-danger.disabled:hover, .bg-inverse .btn-outline-danger.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-danger:disabled:hover, .bg-inverse .btn-outline-danger.custom-file-control:disabled:hover::before {
-  background-color: inherit;
+  background-color: transparent;
   border-color: #f44336;
 }
 
@@ -10749,7 +10897,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 .btn.bmd-btn-fab, .bmd-btn-fab.custom-file-control::before, .btn.bmd-btn-icon, .bmd-btn-icon.custom-file-control::before {
   overflow: hidden;
   font-size: 1.5rem;
-  line-height: normal;
+  line-height: 0;
 }
 
 .btn-group-lg .btn.bmd-btn-fab, .btn-group-lg .bmd-btn-fab.custom-file-control::before,
@@ -10759,6 +10907,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 .btn-group-sm .bmd-btn-icon.custom-file-control::before, .btn.bmd-btn-icon, .bmd-btn-icon.custom-file-control::before {
   padding: 0;
   border-radius: 50%;
+  line-height: 0;
 }
 
 .btn.bmd-btn-fab .material-icons, .bmd-btn-fab.custom-file-control::before .material-icons, .btn.bmd-btn-icon .material-icons, .bmd-btn-icon.custom-file-control::before .material-icons {
@@ -12487,17 +12636,28 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 }
 
 .bmd-form-group.bmd-collapse-inline {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
   padding: 0;
+  min-height: 2.1em;
 }
 
-.bmd-form-group.bmd-collapse-inline .collapse.in {
-  max-width: 600px;
+.bmd-form-group.bmd-collapse-inline .collapse {
+  -ms-flex: 1;
+      flex: 1;
+  display: none;
+}
+
+.bmd-form-group.bmd-collapse-inline .collapse.show {
+  max-width: 1200px;
 }
 
 .bmd-form-group.bmd-collapse-inline .collapsing,
 .bmd-form-group.bmd-collapse-inline .width:not(.collapse),
-.bmd-form-group.bmd-collapse-inline .collapse.in {
-  display: inline-block;
+.bmd-form-group.bmd-collapse-inline .collapse.show {
+  display: block;
 }
 
 .bmd-form-group.bmd-collapse-inline .collapsing {
@@ -13115,25 +13275,10 @@ thead.thead-inverse th,
   border: 0;
   border-radius: 0;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: row nowrap;
-      flex-flow: row nowrap;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-item-align: stretch;
-      align-self: stretch;
 }
 
 .navbar .navbar-brand {
   position: relative;
-}
-
-.navbar > * {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
 }
 
 .navbar > .container {

@@ -14,12 +14,12 @@
   ],
   "scripts": {
     "build": "npm-run-all css-compile css-prefix css-minify",
-    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-darkroom.scss css/bootstrap-darkroom.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-darkroom-core.scss theme.css && node-sass --include-path node_modules --output-style expanded --source-map true --source-map-contents true --precision 6 scss/material-darkroom.scss css/material-colors/material-darkroom/bootstrap-material-design.css",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-darkroom.scss css/bootstrap-darkroom.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-darkroom-core.scss theme.css && node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true --source-map-contents true --precision 6 scss/material-darkroom.scss css/material-colors/material-darkroom/bootstrap-material-design.css",
     "css-prefix": "postcss --config components/bootstrap/build/postcss.config.js --replace css/bootstrap-darkroom.css && postcss --config components/bootstrap/build/postcss.config.js --replace css/material-colors/material-darkroom/bootstrap-material-design.css",
     "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output css/bootstrap-darkroom.min.css css/bootstrap-darkroom.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/material-colors/material-darkroom/bootstrap-material-design.min.css css/material-colors/material-darkroom/bootstrap-material-design.css",
     "build-material": "npm-run-all build-material:js build-material:css",
     "build-material:js": "pushd components/bootstrap-material-design; npm install && npm run build:js && sed -i '/^\\/dist/d' .gitignore; popd",
-    "build-material:css": "for i in deep-purple purple teal; do node-sass --include-path node_modules --output-style expanded --source-map true --source-map-contents true --precision 6 scss/material-${i}.scss css/material-colors/${i}/bootstrap-material-design.css && postcss --config components/bootstrap/build/postcss.config.js --replace css/material-colors/${i}/bootstrap-material-design.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/material-colors/${i}/bootstrap-material-design.min.css css/material-colors/${i}/bootstrap-material-design.css; done"
+    "build-material:css": "for i in deep-purple purple teal; do node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true --source-map-contents true --precision 6 scss/material-${i}.scss css/material-colors/${i}/bootstrap-material-design.css && postcss --config components/bootstrap/build/postcss.config.js --replace css/material-colors/${i}/bootstrap-material-design.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/material-colors/${i}/bootstrap-material-design.min.css css/material-colors/${i}/bootstrap-material-design.css; done"
   },
   "style": "css/bootstrap-darkroom.css",
   "sass": "scss/bootstrap-darkroom.scss",
@@ -29,9 +29,12 @@
     "autoprefixer": "^7.1.2",
     "clean-css-cli": "^4.1.6",
     "node-sass": "^4.5.3",
+    "node-sass-tilde-importer": "^1.0.0",
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^4.1.0",
     "uglify-js": "^3.0.24",
-    "bootstrap": "4.0.0-beta"
+    "bootstrap": "4.0.0-beta",
+    "jquery": ">=3.0.0",
+    "popper.js": "^1.11.0"
   }
 }

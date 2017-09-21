@@ -17,7 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-material-design": "v4.0.0-beta.3",
+    "bootstrap-material-design": "master",
     "bootswatch": "gh-pages",
     "font-awesome": "fontawesome#~4",
     "jquery-touch-events": "~1.0.8",
@@ -26,7 +26,8 @@
     "pTSans": "https://google-fonts.azurewebsites.net/googleFonts/PT-Sans?family=PT+Sans:400,700",
     "roboto": "https://google-fonts.azurewebsites.net/googleFonts/Roboto?family=Roboto:300,400,500,700",
     "slick-carousel": "https://github.com/tkuther/slick.git#piwigo-patches",
-    "jquery": ">=2.2"
+    "jquery": ">=2.2",
+    "popper.js": "^1.12"
   },
   "resolutions": {
     "bootstrap": "4.0.0-beta",
