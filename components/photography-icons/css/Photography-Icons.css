@@ -18,7 +18,7 @@
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale
 }
-.photography-icon-apperture:before{content:'\0041';}
+.photography-icon-aperture:before{content:'\0041';}
 .photography-icon-compact_camera:before{content:'\0042';}
 .photography-icon-continous_shoot:before{content:'\0043';}
 .photography-icon-dslr_camera:before{content:'\0044';}
