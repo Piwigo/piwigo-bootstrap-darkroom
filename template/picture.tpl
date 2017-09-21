@@ -131,12 +131,12 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
 
   <div id="theImageInfos" class="row">
+{if $theme_config->picture_info != 'disabled'}
     <div id="infopanel" class="col-lg-6 col-12">
       <!-- Picture infos -->
      <div class="card card-body mb-2">
       <h4 class="card-title">{'Information'|@translate}</h4>
       <div id="info-content" class="d-flex flex-column">
-{if $theme_config->picture_info != 'disabled'}
 {if $display_info.author and isset($INFO_AUTHOR)}
         <div id="Author" class="imageInfo">
           <dl class="row mb-0">
@@ -324,10 +324,11 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
       </div>
     </div>
+{/if}
 
     <!-- metadata -->
-{if isset($metadata)}
     <div class="col-lg-6 col-12">
+{if isset($metadata)}
      <div class="card card-body mb-2">
       <h4 class="card-title">{'EXIF Metadata'|@translate}</h4>
       <div id="metadata" class="d-flex flex-column">
@@ -343,17 +344,14 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/foreach}
       </div>
      </div>
+{/if}
     </div>
-{/if}
-{/if}
-  </div>
-
-  <!-- comments -->
+   <!-- comments -->
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-  <div class="row justify-content-center">
+    <div class="col-lg-6 col-12">
 {$shortname = $theme_config->comments_disqus_shortname}
   {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
-    <div id="disqus_thread"></div>
+      <div id="disqus_thread"></div>
 {footer_script}{strip}
 var disqus_shortname = '{/strip}{$shortname}{strip}';
 
@@ -365,8 +363,7 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 {/strip}
 {/footer_script}
   {else}
-    <div class="col-12 col-lg-10">
-      <ul class="nav nav-pills">
+      <ul class="nav nav-pills p-2">
     {if $COMMENT_COUNT > 0}
         <li class="active"><a href="#viewcomments" data-toggle="tab">{$COMMENT_COUNT|@translate_dec:'%d comment':'%d comments'}</a></li>
     {/if}

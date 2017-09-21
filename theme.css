@@ -825,13 +825,6 @@ ul#thumbnails .gthumb a img.thumbnail {
 /* BatchDownloader */
 .batch-downloader-icon {
   background: none !important;
-  font-family: none !important;
-  line-height: none !important;
-}
-
-.batch-downloader-icon:before {
-  content: "\f0ed";
-  font-family: "FontAwesome";
 }
 
 /* User Collections */
