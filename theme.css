@@ -478,6 +478,16 @@ body {
   padding-bottom: 177.78%;
 }
 
+.exif-icon {
+  width: 25%;
+}
+
+@media (max-width: 767px) {
+  .exif-icon {
+    width: 33%;
+  }
+}
+
 #sidebar {
   position: absolute;
   right: -250px;
