@@ -48,6 +48,10 @@ function set_config_values()
     add_event_handler('loc_end_register', 'language_controler_flags', 95 );
     add_event_handler('loc_end_password', 'language_controler_flags', 95 );
   }
+
+  if (isset($pwg_loaded_plugins['exif_view'])) {
+    load_language('lang.exif', PHPWG_PLUGINS_PATH.'exif_view/');
+  }
 }
 
 // needed for the carousel and photoswipe
