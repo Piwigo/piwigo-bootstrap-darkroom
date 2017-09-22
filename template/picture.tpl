@@ -338,7 +338,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
             {if array_key_exists("{'exif_field_Make'|@translate}", $metadata.0.lines) || array_key_exists("{'exif_field_Model'|@translate}", $metadata.0.lines)}
             <div class="d-flex flex-row">
               <div class="flex-column w-100" style="height: 80px;">
-                <span class="photography-icon-compact_camera float-left fa-5x mr-3 h-100"></span>
+                <span class="camera-compact float-left fa-5x mr-3 h-100"></span>
                 {if array_key_exists("{'exif_field_Make'|@translate}", $metadata.0.lines)}
                 <div class="pt-4">
                   {$metadata.0.lines[{'exif_field_Make'|@translate}]} {if array_key_exists("{'exif_field_Model'|@translate}", $metadata.0.lines)}{$metadata.0.lines[{'exif_field_Model'|@translate}]}{/if}
@@ -356,12 +356,12 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
             <div class="d-flex flex-row">
               {if array_key_exists("{'exif_field_FNumber'|@translate}", $metadata.0.lines)}
               <div class="d-flex flex-row w-25">
-                <span class="photography-icon-aperture float-left fa-2x pr-2"></span><span class="pt-2"> f/{$metadata.0.lines[{'exif_field_FNumber'|@translate}]}</span>
+                <span class="camera-aperture float-left fa-2x pr-2"></span><span class="pt-2"> f/{$metadata.0.lines[{'exif_field_FNumber'|@translate}]}</span>
               </div>
               {/if}
               {if array_key_exists("{'exif_field_FocalLength'|@translate}", $metadata.0.lines)}
               <div class="d-flex flex-row w-25">
-                <span class="photography-icon-lens_front float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_FocalLength'|@translate}]}</span>
+                <span class="camera-focal-length float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_FocalLength'|@translate}]}</span>
               </div>
               {/if}
             </div>
@@ -369,12 +369,12 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
             <div class="d-flex flex-row">
               {if array_key_exists("{'exif_field_ExposureTime'|@translate}", $metadata.0.lines)}
               <div class="d-flex flex-row w-25">
-                <span class="photography-icon-shutter_speed float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_ExposureTime'|@translate}]}</span>
+                <span class="camera-shutter-speed float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_ExposureTime'|@translate}]}</span>
               </div> 
               {/if}
               {if array_key_exists("{'exif_field_ISOSpeedRatings'|@translate}", $metadata.0.lines)}
               <div class="d-flex flex-row w-25">
-                <span class="photography-icon-iso float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_ISOSpeedRatings'|@translate}]}</span>
+                <span class="camera-iso float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_ISOSpeedRatings'|@translate}]}</span>
               </div>
               {/if}
             </div>
