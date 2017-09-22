@@ -329,62 +329,72 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
 
     <!-- metadata -->
+{assign var="exif_make" value="{'exif_field_Make'|@translate}"}
+{assign var="exif_model" value="{'exif_field_Model'|@translate}"}
+{assign var="exif_lens" value="{'exif_field_UndefinedTag:0xA434'|@translate}"}
+{assign var="exif_fnumber" value="{'exif_field_FNumber'|@translate}"}
+{assign var="exif_iso" value="{'exif_field_Model'|@translate}"}
+{assign var="exif_focal_length" value="{'exif_field_FocalLength'|@translate}"}
+{assign var="exif_flash" value="{'exif_field_Flash'|@translate}"}
+{assign var="exif_exposure_time" value="{'exif_field_ExposureTime'|@translate}"}
+{assign var="exif_exposure_bias" value="{'exif_field_ExposureBiasValue'|@translate}"}
+
     <div class="col-lg-6 col-12">
 {if isset($metadata)}
       <div class="card">
         <div class="card-body mb-2">
           <h4 class="card-title">{'EXIF Metadata'|@translate}</h4>
           <div id="metadata">
-            {if array_key_exists("{'exif_field_Make'|@translate}", $metadata.0.lines) || array_key_exists("{'exif_field_Model'|@translate}", $metadata.0.lines)}
+            {if array_key_exists("{$exif_make}", $metadata.0.lines) || array_key_exists("{$exif_model}", $metadata.0.lines)}
             <div class="d-flex flex-row">
               <div class="flex-column w-100" style="height: 80px;">
                 <span class="camera-compact float-left fa-5x mr-3 h-100"></span>
-                {if array_key_exists("{'exif_field_Make'|@translate}", $metadata.0.lines)}
+                {if array_key_exists("{$exif_make}", $metadata.0.lines)}
                 <div class="pt-4">
-                  {$metadata.0.lines[{'exif_field_Make'|@translate}]} {if array_key_exists("{'exif_field_Model'|@translate}", $metadata.0.lines)}{$metadata.0.lines[{'exif_field_Model'|@translate}]}{/if}
+                  {$metadata.0.lines[{$exif_make}]} {if array_key_exists("{$exif_model}", $metadata.0.lines)}{$metadata.0.lines[{$exif_model}]}{/if}
                 </div>
                 {/if}
-                {if array_key_exists("{'exif_field_UndefinedTag:0xA434'|@translate}", $metadata.0.lines)}
+                {if array_key_exists("{$exif_lens}", $metadata.0.lines)}
                 <div>
-                  {$metadata.0.lines[{'exif_field_UndefinedTag:0xA434'|@translate}]}
+                  {$metadata.0.lines[{$exif_lens}]}
                 </div>
                 {/if}
               </div>
             </div>
             {/if}
-            {if array_key_exists("{'exif_field_FNumber'|@translate}", $metadata.0.lines) || array_key_exists("{'exif_field_ISOSpeedRatings'|@translate}", $metadata.0.lines)}
+            {if array_key_exists("{$exif_fnumber}", $metadata.0.lines) || array_key_exists("{$exif_focal_length}", $metadata.0.lines)}
             <div class="d-flex flex-row">
-              {if array_key_exists("{'exif_field_FNumber'|@translate}", $metadata.0.lines)}
+              {if array_key_exists("{$exif_fnumber}", $metadata.0.lines)}
               <div class="d-flex flex-row w-25">
-                <span class="camera-aperture float-left fa-2x pr-2"></span><span class="pt-2"> f/{$metadata.0.lines[{'exif_field_FNumber'|@translate}]}</span>
+                <span class="camera-aperture float-left fa-2x pr-2"></span><span class="pt-2"> f/{$metadata.0.lines[{$exif_fnumber}]}</span>
               </div>
               {/if}
-              {if array_key_exists("{'exif_field_FocalLength'|@translate}", $metadata.0.lines)}
+              {if array_key_exists("{$exif_focal_length}", $metadata.0.lines)}
               <div class="d-flex flex-row w-25">
-                <span class="camera-focal-length float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_FocalLength'|@translate}]}</span>
+                <span class="camera-focal-length float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{$exif_focal_length}]}</span>
               </div>
               {/if}
-              {if array_key_exists("{'exif_field_Flash'|@translate}", $metadata.0.lines)}
+              {if array_key_exists("{$exif_flash}", $metadata.0.lines)}
               <div class="d-flex flex-row w-25">
-                <span class="camera-flash float-left fa-2x pr-2"></span><span class="pt-0"> {$metadata.0.lines[{'exif_field_Flash'|@translate}]}</span>
+                <span class="camera-flash float-left fa-2x pr-2"></span><span class="pt-0"> {$metadata.0.lines[{$exif_flash}]}</span>
               </div>
               {/if}
             </div>
             {/if}
             <div class="d-flex flex-row">
-              {if array_key_exists("{'exif_field_ExposureTime'|@translate}", $metadata.0.lines)}
+              {if array_key_exists("{$exif_exposure_time}", $metadata.0.lines)}
               <div class="d-flex flex-row w-25">
-                <span class="camera-shutter-speed float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_ExposureTime'|@translate}]}</span>
+                <span class="camera-shutter-speed float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{$exif_exposure_time}]}</span>
               </div> 
               {/if}
-              {if array_key_exists("{'exif_field_ISOSpeedRatings'|@translate}", $metadata.0.lines)}
+              {if array_key_exists("{$exif_iso}", $metadata.0.lines)}
               <div class="d-flex flex-row w-25">
-                <span class="camera-iso float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_ISOSpeedRatings'|@translate}]}</span>
+                <span class="camera-iso float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{$exif_iso}]}</span>
               </div>
               {/if}
-              {if array_key_exists("{'exif_field_ExposureBiasValue'|@translate}", $metadata.0.lines)}
+              {if array_key_exists("{$exif_exposure_bias}", $metadata.0.lines)}
               <div class="d-flex flex-row w-25">
-                <span class="camera-exposure float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_ExposureBiasValue'|@translate}]}</span>
+                <span class="camera-exposure float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{$exif_exposure_bias}]}</span>
               </div>
               {/if}
             </div>
