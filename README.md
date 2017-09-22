@@ -63,6 +63,7 @@ A demo is available at https://pwdemo.kuther.net
 * [PhotoSwipe](http://photoswipe.com/)
 * [Slick](http://kenwheeler.github.io/slick/)
 * [jQuery-Touch-Events](https://github.com/benmajor/jQuery-Touch-Events)
+* [Photography Icons](https://thenounproject.com/DmitryBaranovskiy/collection/photo/) by [Dmitry Baranovskiy](https://thenounproject.com/DmitryBaranovskiy/), Licensed under [Creative Commons 3.0](https://creativecommons.org/licenses/by/3.0/us/)
 
 ### License
 
