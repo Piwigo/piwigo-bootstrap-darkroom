@@ -49,13 +49,13 @@
                     </a>
                 </li>
 {/if}
-{if isset($U_METADATA)}
+{*{if isset($U_METADATA)}
                 <li class="nav-item">
                     <a class="nav-link" href="{$U_METADATA}" title="{'Show file metadata'|@translate}" rel="nofollow">
                         <i class="fa fa-camera-retro fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Show file metadata'|@translate}</span>
                     </a>
                 </li>
-{/if}
+{/if}*}
 {if isset($current.U_DOWNLOAD)}
 {if empty($current.formats)}
                 <li class="nav-item">

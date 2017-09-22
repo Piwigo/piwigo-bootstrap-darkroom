@@ -364,6 +364,11 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
                 <span class="camera-focal-length float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_FocalLength'|@translate}]}</span>
               </div>
               {/if}
+              {if array_key_exists("{'exif_field_Flash'|@translate}", $metadata.0.lines)}
+              <div class="d-flex flex-row w-25">
+                <span class="camera-flash float-left fa-2x pr-2"></span><span class="pt-0"> {$metadata.0.lines[{'exif_field_Flash'|@translate}]}</span>
+              </div>
+              {/if}
             </div>
             {/if}
             <div class="d-flex flex-row">
@@ -377,9 +382,26 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
                 <span class="camera-iso float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_ISOSpeedRatings'|@translate}]}</span>
               </div>
               {/if}
+              {if array_key_exists("{'exif_field_ExposureBiasValue'|@translate}", $metadata.0.lines)}
+              <div class="d-flex flex-row w-25">
+                <span class="camera-exposure float-left fa-2x pr-2"></span><span class="pt-2"> {$metadata.0.lines[{'exif_field_ExposureBiasValue'|@translate}]}</span>
+              </div>
+              {/if}
             </div>
           </div>
-          <div class="d-flex flex-column">
+          <button id="show_exif_data" class="btn btn-primary mt-1" style="text-transform: none;"><i class="fa fa-info mr-1"></i> {'Show EXIF data'|@translate}</button>
+{footer_script require='jquery'}
+$('#show_exif_data').on('click', function() {
+  if ($('#full_exif_data').hasClass('d-none')) {
+    $('#full_exif_data').addClass('d-flex').removeClass('d-none');
+    $('#show_exif_data').html('<i class="fa fa-info mr-1"></i> {"Hide EXIF data"|@translate}');
+  } else {
+    $('#full_exif_data').addClass('d-none').removeClass('d-flex');
+    $('#show_exif_data').html('<i class="fa fa-info mr-1"></i> {"Show EXIF data"|@translate}');
+  }
+});
+{/footer_script}
+          <div id="full_exif_data" class="d-none flex-column mt-2">
 {foreach from=$metadata item=meta}
 {foreach from=$meta.lines item=value key=label}
             <div>
