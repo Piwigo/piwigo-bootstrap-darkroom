@@ -19,14 +19,14 @@ $gray-600: $gray-lighter-1;
 
 // override Bootstrap's theme colors
 $theme-colors: (
-  primary: $black,
-  secondary: $gray-darker-3,
+  primary: $gray-darker-3,
+  secondary: $gray-darker-1,
   success: $green,
   info: $cyan,
   warning: $yellow,
   danger: $red,
-  light: $gray-lighter-1,
-  dark: $gray-darker-2
+  light: $gray-darker-2,
+  dark: $black
 ) !default;
 
 
