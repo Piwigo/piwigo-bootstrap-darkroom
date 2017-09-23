@@ -329,6 +329,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
 
     <!-- metadata -->
+{if isset($loaded_plugins['exif_view'])}
 {assign var="exif_make" value="{'exif_field_Make'|@translate}"}
 {assign var="exif_model" value="{'exif_field_Model'|@translate}"}
 {assign var="exif_lens" value="{'exif_field_UndefinedTag:0xA434'|@translate}"}
@@ -338,6 +339,17 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {assign var="exif_flash" value="{'exif_field_Flash'|@translate}"}
 {assign var="exif_exposure_time" value="{'exif_field_ExposureTime'|@translate}"}
 {assign var="exif_exposure_bias" value="{'exif_field_ExposureBiasValue'|@translate}"}
+{else}
+{assign var="exif_make" value="Make"}
+{assign var="exif_model" value="Model"}
+{assign var="exif_lens" value="UndefinedTag:0xA434"}
+{assign var="exif_fnumber" value="FNumber"}
+{assign var="exif_iso" value="ISOSpeedRatings"}
+{assign var="exif_focal_length" value="FocalLength"}
+{assign var="exif_flash" value="Flash"}
+{assign var="exif_exposure_time" value="ExposureTime"}
+{assign var="exif_exposure_bias" value="ExposureBiasValue"}
+{/if}
 
     <div class="col-lg-6 col-12">
 {if isset($metadata)}
