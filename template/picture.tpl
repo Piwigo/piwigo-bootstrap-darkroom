@@ -308,7 +308,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
                 <dt class="col-sm-4">{'Who can see this photo?'|@translate}</dt>
                 <dd class="col-sm-8">
                   <div class="dropdown">
-                    <button class="btn btn-secondary btn-raised dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
+                    <button class="btn btn-primary btn-raised dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
                       {$available_permission_levels[$current.level]}
                       <span class="caret"></span>
                     </button>
@@ -329,6 +329,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
 
     <!-- metadata -->
+{if isset($loaded_plugins['exif_view'])}
 {assign var="exif_make" value="{'exif_field_Make'|@translate}"}
 {assign var="exif_model" value="{'exif_field_Model'|@translate}"}
 {assign var="exif_lens" value="{'exif_field_UndefinedTag:0xA434'|@translate}"}
@@ -338,6 +339,17 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {assign var="exif_flash" value="{'exif_field_Flash'|@translate}"}
 {assign var="exif_exposure_time" value="{'exif_field_ExposureTime'|@translate}"}
 {assign var="exif_exposure_bias" value="{'exif_field_ExposureBiasValue'|@translate}"}
+{else}
+{assign var="exif_make" value="Make"}
+{assign var="exif_model" value="Model"}
+{assign var="exif_lens" value="UndefinedTag:0xA434"}
+{assign var="exif_fnumber" value="FNumber"}
+{assign var="exif_iso" value="ISOSpeedRatings"}
+{assign var="exif_focal_length" value="FocalLength"}
+{assign var="exif_flash" value="Flash"}
+{assign var="exif_exposure_time" value="ExposureTime"}
+{assign var="exif_exposure_bias" value="ExposureBiasValue"}
+{/if}
 
     <div class="col-lg-6 col-12">
 {if isset($metadata)}
@@ -407,7 +419,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
               {/if}
             </div>
           </div>
-          <button id="show_exif_data" class="btn btn-primary mt-1" style="text-transform: none;"><i class="fa fa-info mr-1"></i> {'Show EXIF data'|@translate}</button>
+          <button id="show_exif_data" class="btn btn-primary btn-raised mt-1" style="text-transform: none;"><i class="fa fa-info mr-1"></i> {'Show EXIF data'|@translate}</button>
 {footer_script require='jquery'}
 $('#show_exif_data').on('click', function() {
   if ($('#full_exif_data').hasClass('d-none')) {
@@ -434,10 +446,9 @@ $('#show_exif_data').on('click', function() {
         </div>
       </div>
 {/if}
-    </div>
    <!-- comments -->
 {if isset($comment_add) || $COMMENT_COUNT > 0}
-    <div id="comments" class="col-lg-6 col-12">
+    <div id="comments">
 {$shortname = $theme_config->comments_disqus_shortname}
   {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
       <div id="disqus_thread"></div>
@@ -498,6 +509,7 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     </div>
   {/if}
 {/if}
+    </div>
   </div>
 
 {if !empty($navbar) }
