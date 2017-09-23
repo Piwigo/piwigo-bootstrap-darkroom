@@ -360,7 +360,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
             {if array_key_exists("{$exif_make}", $metadata.0.lines) || array_key_exists("{$exif_model}", $metadata.0.lines)}
             <div class="row mb-2">
               <div class="col-12 col-md-6" style="height: 80px;">
-                <span class="camera-compact float-left fa-5x mr-3 h-100"></span>
+                <span class="camera-compact float-left fa-5x mr-3 h-100" title="{$exif_make} &amp; {$exif_model}"></span>
                 {if array_key_exists("{$exif_make}", $metadata.0.lines)}
                 <div class="pt-3">
                   {$metadata.0.lines[{$exif_make}]}
@@ -375,7 +375,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
             {/if}
             {if array_key_exists("{$exif_lens}", $metadata.0.lines)}
               <div class="col-12 col-md-6" style="height: 80px">
-                <span class="camera-lens-h float-left fa-5x mr-3 h-100"></span>
+                <span class="camera-lens-h float-left fa-5x mr-3 h-100" title="{$exif_lens}"></span>
                 <div class="pt-4">
                   {$metadata.0.lines[{$exif_lens}]}
                 </div>
@@ -386,17 +386,17 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
             <div class="d-flex flex-row">
               {if array_key_exists("{$exif_fnumber}", $metadata.0.lines)}
               <div class="d-flex flex-row exif-icon">
-                <span class="camera-aperture float-left fa-2x pr-2"></span><span class="pt-1"> f/{$metadata.0.lines[{$exif_fnumber}]}</span>
+                <span class="camera-aperture float-left fa-2x pr-2" title="{$exif_fnumber}"></span><span class="pt-1"> f/{$metadata.0.lines[{$exif_fnumber}]}</span>
               </div>
               {/if}
               {if array_key_exists("{$exif_focal_length}", $metadata.0.lines)}
               <div class="d-flex flex-row exif-icon">
-                <span class="camera-focal-length float-left fa-2x pr-2"></span><span class="pt-1"> {$metadata.0.lines[{$exif_focal_length}]}</span>
+                <span class="camera-focal-length float-left fa-2x pr-2" title="{$exif_focal_length}"></span><span class="pt-1"> {$metadata.0.lines[{$exif_focal_length}]}</span>
               </div>
               {/if}
               {if array_key_exists("{$exif_flash}", $metadata.0.lines)}
               <div class="d-flex flex-row exif-icon">
-                <span class="camera-flash float-left fa-2x pr-2"></span><span class="pt-0"> {$metadata.0.lines[{$exif_flash}]}</span>
+                <span class="camera-flash float-left fa-2x pr-2" title="{$exif_flash}"></span><span class="pt-0"> {$metadata.0.lines[{$exif_flash}]}</span>
               </div>
               {/if}
             </div>
@@ -404,17 +404,17 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
             <div class="d-flex flex-row">
               {if array_key_exists("{$exif_exposure_time}", $metadata.0.lines)}
               <div class="d-flex flex-row exif-icon">
-                <span class="camera-shutter-speed float-left fa-2x pr-2"></span><span class="pt-1"> {$metadata.0.lines[{$exif_exposure_time}]}</span>
+                <span class="camera-shutter-speed float-left fa-2x pr-2" title="{$exif_exposure_time}"></span><span class="pt-1"> {$metadata.0.lines[{$exif_exposure_time}]}</span>
               </div> 
               {/if}
               {if array_key_exists("{$exif_iso}", $metadata.0.lines)}
               <div class="d-flex flex-row exif-icon">
-                <span class="camera-iso float-left fa-2x pr-2"></span><span class="pt-1"> {$metadata.0.lines[{$exif_iso}]}</span>
+                <span class="camera-iso float-left fa-2x pr-2" title="{$exif_iso}"></span><span class="pt-1"> {$metadata.0.lines[{$exif_iso}]}</span>
               </div>
               {/if}
               {if array_key_exists("{$exif_exposure_bias}", $metadata.0.lines)}
               <div class="d-flex flex-row exif-icon">
-                <span class="camera-exposure float-left fa-2x pr-2"></span><span class="pt-1"> {$metadata.0.lines[{$exif_exposure_bias}]}</span>
+                <span class="camera-exposure float-left fa-2x pr-2" title="{$exif_exposure_bias}"></span><span class="pt-1"> {$metadata.0.lines[{$exif_exposure_bias}]}</span>
               </div>
               {/if}
             </div>
