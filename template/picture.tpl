@@ -346,8 +346,8 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
           <h4 class="card-title">{'EXIF Metadata'|@translate}</h4>
           <div id="metadata">
             {if array_key_exists("{$exif_make}", $metadata.0.lines) || array_key_exists("{$exif_model}", $metadata.0.lines)}
-            <div class="d-flex flex-row">
-              <div class="flex-column w-100" style="height: 80px;">
+            <div class="row mb-2">
+              <div class="col-12 col-md-6" style="height: 80px;">
                 <span class="camera-compact float-left fa-5x mr-3 h-100"></span>
                 {if array_key_exists("{$exif_make}", $metadata.0.lines)}
                 <div class="pt-3">
@@ -360,11 +360,9 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
                 </div>
                 {/if}
               </div>
-            </div>
             {/if}
             {if array_key_exists("{$exif_lens}", $metadata.0.lines)}
-            <div class="d-flex flex-row">
-              <div class="flex-column w-100" style="height: 80px">
+              <div class="col-12 col-md-6" style="height: 80px">
                 <span class="camera-lens-h float-left fa-5x mr-3 h-100"></span>
                 <div class="pt-4">
                   {$metadata.0.lines[{$exif_lens}]}
