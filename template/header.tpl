@@ -104,7 +104,7 @@
 </head>
 
 <body id="{$BODY_ID}">
-{if $BODY_ID != 'thePicturePage'}
+{if !($theme_config->main_nav_on_picture_page == false && $BODY_ID == 'thePicturePage')}
         <nav class="navbar navbar-expand-lg navbar-main navbar-dark bg-primary">
             <div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {if $theme_config->logo_image_enabled && $theme_config->logo_image_path !== ''}
