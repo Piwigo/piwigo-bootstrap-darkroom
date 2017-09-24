@@ -58,6 +58,7 @@
     {combine_css path="themes/bootstrap_darkroom/components/bootswatch/{$theme_config->bootswatch_theme}/bootstrap.min.css" order=-20}
 {elseif $theme_config->bootstrap_theme == 'bootstrap-default'}
     {combine_css path='themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap.min.css' order=-20}
+    {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-19}
 {elseif (0 === strpos($theme_config->bootstrap_theme, 'material'))}
     {combine_css path="themes/bootstrap_darkroom/css/{$theme_config->bootstrap_theme}/bootstrap.min.css" order=-20}
     {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-19}
@@ -86,7 +87,7 @@
 {combine_script id='jquery.ajaxmanager' require='jquery' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
 {combine_script id='thumbnails.loader' require='jquery.ajaxmanager' path='themes/default/js/thumbnails.loader.js' load='footer'}
 {combine_script id='popper.js' require='jquery' path='themes/bootstrap_darkroom/components/popper.js/dist/umd/popper.min.js' load=$loc}
-{if $theme_config->bootstrap_theme == 'material'}
+{if preg_match('/^material/', $theme_config->bootstrap_theme}
     {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/bootstrap-material-design.min.js' load=$loc}
 {else}
     {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/components/bootstrap/dist/js/bootstrap.min.js' load=$loc}
