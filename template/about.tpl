@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-contextual navbar-dark bg-primary sticky-top mb-5">
+<nav class="navbar navbar-expand-lg navbar-contextual {$theme_config->navbar_contextual_style} {$theme_config->navbar_contextual_bg} sticky-top mb-5">
     <div class="container{if $theme_config->fluid_width}-fluid{/if}">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'About'|@translate}</a></div>
         <ul class="navbar-nav justify-content-end">

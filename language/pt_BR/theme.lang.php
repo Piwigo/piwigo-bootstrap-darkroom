@@ -27,7 +27,6 @@ $lang['Photoswipe Slideshow (Mobile devices only)'] = 'Photoswipe Slideshow (Ape
 $lang['PhotoSwipe Slideshow'] = 'Slideshow de PhotoSwipe';
 $lang['On mobile devices only'] = 'Somente em dispositivos móveis';
 $lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Nota: em dispositivos móveis, as Abas são forçadas, porque o botão da Barra Lateral sobrepõe a imagem principal.';
-$lang['No color theme'] = 'Nenhum tema de cor';
 $lang['Never'] = 'Nunca';
 $lang['Link thumbnail to'] = 'Vincular miniatura a';
 $lang['Issue tracker'] = 'Rastreador de problemas';

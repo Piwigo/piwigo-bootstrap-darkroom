@@ -44,7 +44,6 @@ $lang['Show a jumbotron banner on the categroy pages.'] = '在目录页上显示
 $lang['Issue tracker'] = '问题跟踪器';
 $lang['Link thumbnail to'] = '将缩略图链接至';
 $lang['Never'] = '从不';
-$lang['No color theme'] = '无色主题';
 $lang['On mobile devices only'] = '仅适用于移动设备';
 $lang['PhotoSwipe Slideshow'] = 'PhotoSwipe幻灯';
 $lang['Photoswipe Slideshow (Mobile devices only)'] = 'PhotoSwipe幻灯（仅适用于移动设备）';

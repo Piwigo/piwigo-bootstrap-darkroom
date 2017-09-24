@@ -56,17 +56,14 @@
 {strip}
 {if $theme_config->bootstrap_theme == 'bootswatch'}
     {combine_css path="themes/bootstrap_darkroom/components/bootswatch/{$theme_config->bootswatch_theme}/bootstrap.min.css" order=-20}
-{elseif $theme_config->bootstrap_theme == 'material'}
-    {combine_css path="themes/bootstrap_darkroom/css/material-colors/{$theme_config->material_color}/bootstrap-material-design.min.css" order=-20}
-    {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-19}
-  {if $theme_config->material_color == 'material-darkroom'}
-    {combine_css path="themes/bootstrap_darkroom/components/pTSans/pTSans.css" order=-19}
-  {/if}
-{elseif $theme_config->bootstrap_theme == 'darkroom'}
-    {combine_css path='themes/bootstrap_darkroom/css/bootstrap-darkroom.min.css' order=-20}
-    {combine_css path="themes/bootstrap_darkroom/components/pTSans/pTSans.css" order=-19}
-{else}
+{elseif $theme_config->bootstrap_theme == 'bootstrap-default'}
     {combine_css path='themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap.min.css' order=-20}
+{elseif (0 === strpos($theme_config->bootstrap_theme, 'material'))}
+    {combine_css path="themes/bootstrap_darkroom/css/{$theme_config->bootstrap_theme}/bootstrap.min.css" order=-20}
+    {combine_css path="themes/bootstrap_darkroom/components/roboto/roboto.css" order=-19}
+{/if}
+{if $theme_config->bootstrap_theme == 'bootstrap-darkroom' || $theme_config->bootstrap_theme == 'material-darkroom'}
+    {combine_css path="themes/bootstrap_darkroom/components/pTSans/pTSans.css" order=-19}
 {/if}
     {combine_css path='themes/bootstrap_darkroom/components/font-awesome/css/font-awesome.min.css' order=-14}
     {combine_css path='themes/bootstrap_darkroom/components/photography-icons/css/PhotographyIcons.css' order=-13}
@@ -105,7 +102,7 @@
 
 <body id="{$BODY_ID}">
 {if $BODY_ID != 'thePicturePage'}
-        <nav class="navbar navbar-expand-lg navbar-main navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-main {$theme_config->navbar_main_style} {$theme_config->navbar_main_bg}">
             <div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {if $theme_config->logo_image_enabled && $theme_config->logo_image_path !== ''}
                 <a class="navbar-brand mr-auto" href="{$U_HOME}"><img class="img-fluid" src="{$ROOT_URL}{$theme_config->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>

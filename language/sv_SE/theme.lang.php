@@ -26,7 +26,6 @@ $lang['For more information on metadata visit'] = 'För mer information om metad
 $lang['Infinite looping'] = 'Oändlig repetition';
 $lang['Link thumbnail to'] = 'Länka miniatyrbild till';
 $lang['Never'] = 'Aldrig';
-$lang['No color theme'] = 'Inget färgtema';
 $lang['A color theme from'] = 'Ett färgtema från';
 $lang['A mobile-ready theme based on Boostrap Default'] = 'Ett mobilanpassat tema baserat på Bootstrap Default';
 $lang['Always'] = 'Alltid ';

@@ -21,10 +21,12 @@
                 <li>
                     <label labelfor="bootstrap_theme">{'Color theme'|@translate}</label>
                     <select name="bootstrap_theme">
-                        <option value="darkroom"{if $theme_config->bootstrap_theme == 'darkroom'} selected="selected"{/if}>Darkroom</option>
+                        <option value="bootstrap-darkroom"{if $theme_config->bootstrap_theme == 'bootstrap-darkroom'} selected="selected"{/if}>Bootstrap Darkroom</option>
+                        <option value="bootstrap-default"{if $theme_config->bootstrap_theme == 'bootstrap-default'} selected="selected"{/if}>Bootstrap Default</option>
+                        <option value="material-darkroom"{if $theme_config->bootstrap_theme == 'material-darkroom'} selected="selected"{/if}>Material Darkroom</option>
+                        <option value="material-teal"{if $theme_config->bootstrap_theme == 'material-teal'} selected="selected"{/if}>Material Teal</option>
+                        <option value="material-deep-purple"{if $theme_config->bootstrap_theme == 'material-deep-purple'} selected="selected"{/if}>Material Deep Purple</option>
                         <option value="bootswatch"{if $theme_config->bootstrap_theme == 'bootswatch'} selected="selected"{/if} disabled>Bootswatch</option>
-                        <option value="material"{if $theme_config->bootstrap_theme == 'material'} selected="selected"{/if}>Material</option>
-                        <option value="none"{if $theme_config->bootstrap_theme == 'none'} selected="selected"{/if}>{'None'|@translate}</option>
                     </select>
                 </li>
             <ul>
@@ -37,8 +39,11 @@
                 <dt>Darkroom</dt><dd>{'Bootstrap Darkroom\'s custom dark color theme'|@translate}</dd>
                 <dt>Bootswatch</dt><dd>{'A color theme from'|@translate} <a href="https://bootswatch.com">https://bootswatch.com</a></dd>
                 <dt>Material</dt><dd>Material design {'from'|@translate} <a href="http://fezvrasta.github.io/bootstrap-material-design">http://fezvrasta.github.io/bootstrap-material-design</a></dd>
-                <dt>{'None'|@translate}</dt><dd>{'No color theme'|@translate}</dd> 
             </dl>
+            <input type="hidden" name="navbar_main_style" value="{$theme_config->navbar_main_style}">
+            <input type="hidden" name="navbar_main_bg" value="{$theme_config->navbar_main_bg}">
+            <input type="hidden" name="navbar_contextual_style" value="{$theme_config->navbar_contextual_style}">
+            <input type="hidden" name="navbar_contextual_bg" value="{$theme_config->navbar_contextual_bg}">
         </fieldset>
         <fieldset>
             <legend>{'Full width layout'|@translate}</legend>
@@ -418,6 +423,31 @@ $(document).ready(function() {
 });
 
 $('select[name=bootstrap_theme]').change(function() {
+  var navbar_main_style,
+      navbar_main_bg,
+      navbar_contextual_style,
+      navbar_contextual_bg;
+
+  switch($('select[name=bootstrap_theme]').val()) {
+    case 'bootstrap-default':
+      navbar_main_style = 'navbar-dark';
+      navbar_main_bg = 'bg-dark';
+      navbar_contextual_style = 'navbar-light';
+      navbar_contextual_bg = 'bg-light';
+      break;
+    default:
+      navbar_main_style = 'navbar-dark';
+      navbar_main_bg = 'bg-dark';
+      navbar_contextual_style = 'navbar-dark';
+      navbar_contextual_bg = 'bg-primary';
+      break;
+  }
+
+  $('input[name=navbar_main_style]').attr('value', navbar_main_style);
+  $('input[name=navbar_main_bg]').attr('value', navbar_main_bg);
+  $('input[name=navbar_contextual_style]').attr('value', navbar_contextual_style);
+  $('input[name=navbar_contextual_bg]').attr('value', navbar_contextual_bg);
+
   if ($('select[name=bootstrap_theme]').val() === 'bootswatch') {
     getBootswatchThemes();
     select_material.empty();

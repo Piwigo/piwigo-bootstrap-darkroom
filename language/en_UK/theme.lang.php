@@ -5,7 +5,6 @@ $lang['Color theme'] = 'Color theme';
 $lang['Bootstrap Darkroom\'s custom dark color theme'] = 'Bootstrap Darkroom\'s custom dark color theme';
 $lang['A color theme from'] = 'A color theme from';
 $lang['Bootstrap\'s default theme'] = 'Bootstrap\'s default theme';
-$lang['No color theme'] = 'No color theme';
 $lang['Bootswatch theme'] = 'Bootswatch theme';
 $lang['Bootstrap theme'] = 'Bootstrap theme';
 $lang['Enable the slick carousel below the main image on the picture page'] = 'Enable the slick carousel below the main image on the picture page';

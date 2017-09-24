@@ -4,7 +4,7 @@ namespace BootstrapDarkroom;
 class Config {
 
     const CONF_PARAM = 'bootstrap_darkroom';
-    const CONF_VERSION = 15;
+    const CONF_VERSION = 16;
 
     const TYPE_BOOL = 'bool';
     const TYPE_STRING = 'string';
@@ -17,6 +17,11 @@ class Config {
     const KEY_BOOTSTRAP_THEME = 'bootstrap_theme';
     const KEY_BOOTSWATCH_THEME = 'bootswatch_theme';
     const KEY_MATERIAL_COLOR = 'material_color';
+    const KEY_NAVBAR_MAIN_STYLE = 'navbar_main_style';
+    const KEY_NAVBAR_MAIN_BG = 'navbar_main_bg';
+    const KEY_NAVBAR_CONTEXTUAL_STYLE = 'navbar_contextual_style';
+    const KEY_NAVBAR_CONTEXTUAL_BG = 'navbar_contextual_bg';
+
     const KEY_SLICK_ENABLED = 'slick_enabled';
     const KEY_SLICK_LAZYLOAD = 'slick_lazyload';
     const KEY_SLICK_INFINITE = 'slick_infinite';
@@ -33,25 +38,28 @@ class Config {
     const KEY_LOGO_IMAGE_PATH = 'logo_image_path';
     const KEY_QUICKSEARCH_NAVBAR = 'quicksearch_navbar';
     const KEY_CAT_DESCRIPTIONS = 'cat_descriptions';
-
+    
     const KEY_SOCIAL_ENABLED = 'social_enabled';
     const KEY_SOCIAL_TWITTER = 'social_twitter';
     const KEY_SOCIAL_FACEBOOK = 'social_facebook';
     const KEY_SOCIAL_GOOGLE_PLUS = 'social_google_plus';
     const KEY_SOCIAL_PINTEREST = 'social_pinterest';
-                                                                                                                                                                                                   
+
     const KEY_COMMENTS_TYPE = 'comments_type';
     const KEY_COMMENTS_DISQUS_SHORTNAME = 'comments_disqus_shortname';
-                                                                                                                                                                                                   
     const KEY_TAG_CLOUD_TYPE = 'tag_cloud_type';
-                                                                                                                                                                                                   
+
     const KEY_CUSTOM_CSS = 'custom_css';
 
     private $defaults = array(
         self::KEY_FLUID_WIDTH => true,
-        self::KEY_BOOTSTRAP_THEME => 'darkroom',
+        self::KEY_BOOTSTRAP_THEME => 'material-darkroom',
         self::KEY_BOOTSWATCH_THEME => 'cerulean',
         self::KEY_MATERIAL_COLOR => 'teal',
+        self::KEY_NAVBAR_MAIN_STYLE => 'navbar-dark',
+        self::KEY_NAVBAR_MAIN_BG => 'bg-dark',
+        self::KEY_NAVBAR_CONTEXTUAL_STYLE => 'navbar-dark',
+        self::KEY_NAVBAR_CONTEXTUAL_BG => 'bg-primary',
         self::KEY_SLICK_ENABLED => true,
         self::KEY_SLICK_LAZYLOAD => 'ondemand',
         self::KEY_SLICK_INFINITE => false,
@@ -84,6 +92,10 @@ class Config {
         self::KEY_BOOTSTRAP_THEME => self::TYPE_STRING,
         self::KEY_BOOTSWATCH_THEME => self::TYPE_STRING,
         self::KEY_MATERIAL_COLOR => self::TYPE_STRING,
+        self::KEY_NAVBAR_MAIN_STYLE => self::TYPE_STRING,
+        self::KEY_NAVBAR_MAIN_BG => self::TYPE_STRING,
+        self::KEY_NAVBAR_CONTEXTUAL_STYLE => self::TYPE_STRING,
+        self::KEY_NAVBAR_CONTEXTUAL_BG => self::TYPE_STRING,
         self::KEY_SLICK_ENABLED => self::TYPE_BOOL,
         self::KEY_SLICK_LAZYLOAD => self::TYPE_STRING,
         self::KEY_SLICK_INFINITE => self::TYPE_BOOL,
