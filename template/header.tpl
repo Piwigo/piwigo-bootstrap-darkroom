@@ -87,7 +87,7 @@
 {combine_script id='jquery.ajaxmanager' require='jquery' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
 {combine_script id='thumbnails.loader' require='jquery.ajaxmanager' path='themes/default/js/thumbnails.loader.js' load='footer'}
 {combine_script id='popper.js' require='jquery' path='themes/bootstrap_darkroom/components/popper.js/dist/umd/popper.min.js' load=$loc}
-{if preg_match('/^material/', $theme_config->bootstrap_theme}
+{if preg_match('/^material/', $theme_config->bootstrap_theme)}
     {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/components/bootstrap-material-design/dist/js/bootstrap-material-design.min.js' load=$loc}
 {else}
     {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/components/bootstrap/dist/js/bootstrap.min.js' load=$loc}
