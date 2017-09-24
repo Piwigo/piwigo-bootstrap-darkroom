@@ -5,38 +5,35 @@
 
 // override Bootstrap's theme colors
 $theme-colors: (
-  primary: #004c40,
-  secondary: #00796b,
+  primary: #009688,
+  secondary: #448aff,
   success: $green,
   info: $cyan,
   warning: $yellow,
   danger: $red,
-  light: $teal-200,
-  dark: $teal-900
+  light: #b2dfdb,
+  dark: #004c40
 ) !default;
 
 $link-decoration:         none !default;
 $link-hover-decoration:   none !default;
 
-$jumbotron-bg:            #00796b;
+$jumbotron-bg:            #009688;
 $body-bg:                 #f5f5f6;
 
 // now, import top-level material
 @import "material-core";
-
-.navbar-contextual {
-  background-color: #48a999 !important;
-}
 
 .dropdown-item.active a {
   color: inherit;
 }
 .card-footer {
   border-top: none;
+}
 
-  &.text-muted {
-    font-size: 0.75rem;
-  }
+input[type=text].form-control,
+input[type=password].form-control {
+  color: $black;
 }
 
 #sidebar {

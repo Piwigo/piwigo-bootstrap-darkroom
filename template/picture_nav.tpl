@@ -1,4 +1,4 @@
-<nav class="navbar navbar-contextual navbar-expand-lg navbar-dark bg-secondary sticky-top mb-2">
+<nav class="navbar navbar-contextual navbar-expand-lg {$theme_config->navbar_contextual_style} {$theme_config->navbar_contextual_bg} sticky-top mb-2">
     <div class="container{if $theme_config->fluid_width}-fluid{/if}">
         <div class="navbar-brand">{$SECTION_TITLE}{$LEVEL_SEPARATOR}<a href>{$current.TITLE}</a></div>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">

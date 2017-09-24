@@ -41,7 +41,6 @@ $lang['Picture details page'] = 'Attēla informācijas lapa';
 $lang['Issue tracker'] = 'Problēmu izsekotājs';
 $lang['On mobile devices only'] = 'Tikai mobīlajām iekārtām';
 $lang['Link thumbnail to'] = 'Piesaistīt sīkbildi';
-$lang['No color theme'] = 'Nav krāsu tēmas';
 $lang['Never'] = 'Nekad';
 $lang['If you find any issues, please report them to the'] = 'Ja atrodat problēmas, lūdzu, ziņojiet par to uz';
 $lang['Infinite looping'] = 'bezgalīga atkārtošana';

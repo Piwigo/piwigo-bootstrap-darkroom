@@ -14257,10 +14257,6 @@ input[type=text].custom-file-control {
   border-top: none;
 }
 
-.card-footer.text-muted, .card-footer.bmd-help {
-  font-size: 0.75rem;
-}
-
 input[type=text].form-control, input[type=text].custom-file-control,
 input[type=password].form-control,
 input[type=password].custom-file-control {
@@ -14292,4 +14288,4 @@ input[type=password].custom-file-control {
   border-left: 1px solid #448aff !important;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
-/*# sourceMappingURL=bootstrap-material-design.css.map */
+/*# sourceMappingURL=bootstrap.css.map */

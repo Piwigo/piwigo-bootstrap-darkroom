@@ -26,7 +26,6 @@ $lang['Color theme'] = 'Farbschema';
 $lang['Bootstrap Darkroom\'s custom dark color theme'] = 'Bootstrap Darkroom\'s dunkles Farbschema';
 $lang['A color theme from'] = 'Ein Farbschema von';
 $lang['Bootstrap\'s default theme'] = 'Das Standard-Farbschema von Bootstrap';
-$lang['No color theme'] = 'Kein spezielles Farbschema';
 $lang['Bootswatch theme'] = 'Bootswatch Thema';
 $lang['Bootstrap theme'] = 'Bootstrap Thema';
 $lang['Enable the slick carousel below the main image on the picture page'] = 'Aktiviere das Slick-Carousel unter dem Hauptbild auf der Foto-Seite';

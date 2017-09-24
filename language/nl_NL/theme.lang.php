@@ -30,7 +30,6 @@ $lang['For more information on metadata visit'] = 'Voor meer informatie over met
 $lang['HTML 5 canvas'] = 'HTML 5 canvas';
 $lang['Infinite looping'] = 'Oneindige loop';
 $lang['Link thumbnail to'] = 'Link mini-afbeelding aan';
-$lang['No color theme'] = 'Geen kleurthema';
 $lang['On mobile devices only'] = 'Alleen op mobiele apparaten';
 $lang['PhotoSwipe Slideshow'] = 'PhotoSwipe Diashow';
 $lang['Photoswipe Slideshow (Mobile devices only)'] = 'Photoswipe Diashow (Alleen mobiele apparaten)';

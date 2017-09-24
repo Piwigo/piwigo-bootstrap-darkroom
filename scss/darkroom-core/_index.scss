@@ -37,5 +37,11 @@
   text-overflow: ellipsis;
 }
 
+.card-footer {
+  &.text-muted {
+    font-size: 0.75rem;
+  }
+}
+
 // still needed?
 #theCategoryPage { padding-left: 0px !important; }
