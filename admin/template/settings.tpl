@@ -32,8 +32,6 @@
             <ul>
             <label id="bootswatch_theme_label" labelfor="bootswatch_theme">{'Bootswatch theme'|@translate}</label>
             <select id="bootswatch_theme" name="bootswatch_theme"></select>
-            <label id="material_color_label" labelfor="material_color">{'Material color'|@translate}</label>
-            <select id="material_color" name="material_color"></select>
             <div id="theme_preview"></div>
             <dl id="boostrap_theme_descr" class="dl-horizontal">
                 <dt>Darkroom</dt><dd>{'Bootstrap Darkroom\'s custom dark color theme'|@translate}</dd>
@@ -351,8 +349,6 @@ $(document).ready(function(){
 
 var select_bootswatch = $("#bootswatch_theme");
 var label_bootswatch = $("#bootswatch_theme_label");
-var select_material = $("#material_color");
-var label_material = $("#material_color_label");
 var preview = $("#theme_preview");
 var cur_theme = '{$theme_config->bootswatch_theme}';
 function getBootswatchThemes() {
@@ -382,32 +378,9 @@ function getBootswatchThemes() {
 
 }
 
-function getMaterialColors() {
-  var colors = ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'light-blue', 'cyan', 'teal', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey', 'material-darkroom'];
-  var lcolor = colors.length;
-  var cur_color = '{$theme_config->material_color}';
-  select_material.show();
-  label_material.show();
-  
-  for (var i = 0; i < lcolor; i++) {
-    select_material.append($("<option />")
-          .val(colors[i])
-          .text(colors[i]));
-
-    if (colors[i] === cur_color) {
-      $('option[value=' + colors[i] + ']').attr('selected', 'selected');
-    }
-  }
-
-  preview.html('<img src="themes/bootstrap_darkroom/admin/img/material-' + select_material.val() + '.png" style="padding: 10px 0;"/>');
-  preview.show();
-}
-
 $(document).ready(function() {
   if ($('select[name=bootstrap_theme]').val() === 'bootswatch') {
     getBootswatchThemes();
-  } else if ($('select[name=bootstrap_theme]').val() === 'material') {
-    getMaterialColors();
   } else {
     preview.html('<img src="themes/bootstrap_darkroom/admin/img/' + $('select[name=bootstrap_theme]').val() + '.png" style="padding: 10px 0;"/>');
     preview.show();
@@ -435,11 +408,19 @@ $('select[name=bootstrap_theme]').change(function() {
       navbar_contextual_style = 'navbar-light';
       navbar_contextual_bg = 'bg-light';
       break;
+    case 'bootswatch':
+      getBootswatchThemes();
+      break;
     default:
       navbar_main_style = 'navbar-dark';
       navbar_main_bg = 'bg-dark';
       navbar_contextual_style = 'navbar-dark';
       navbar_contextual_bg = 'bg-primary';
+      preview.html('<img src="themes/bootstrap_darkroom/admin/img/' + $('select[name=bootstrap_theme]').val() + '.png" style="padding: 10px 0;"/>');
+      preview.show();
+      select_bootswatch.empty()
+      select_bootswatch.hide();
+      label_bootswatch.hide();
       break;
   }
 
@@ -447,33 +428,9 @@ $('select[name=bootstrap_theme]').change(function() {
   $('input[name=navbar_main_bg]').attr('value', navbar_main_bg);
   $('input[name=navbar_contextual_style]').attr('value', navbar_contextual_style);
   $('input[name=navbar_contextual_bg]').attr('value', navbar_contextual_bg);
-
-  if ($('select[name=bootstrap_theme]').val() === 'bootswatch') {
-    getBootswatchThemes();
-    select_material.empty();
-    select_material.hide();
-    label_material.hide();
-  } else {
-    select_bootswatch.empty();
-    select_bootswatch.hide();
-    label_bootswatch.hide();
-    preview.hide();
-    if ($('select[name=bootstrap_theme]').val() === 'material') {
-      getMaterialColors();
-    } else {
-      select_material.empty();
-      select_material.hide();
-      label_material.hide();
-      preview.html('<img src="themes/bootstrap_darkroom/admin/img/' + $('select[name=bootstrap_theme]').val() + '.png" style="padding: 10px 0;"/>');
-      preview.show();
-    }
-  }
 });
 $(select_bootswatch).change(function() {
     preview.html('<img src="themes/bootstrap_darkroom/components/bootswatch/' + select_bootswatch.val() + '/thumbnail.png" width="50%" style="padding: 10px 0;"/>');
-});
-$(select_material).change(function() {
-    preview.html('<img src="themes/bootstrap_darkroom/admin/img/material-' + select_material.val() + '.png" style="padding: 10px 0;"/>');
 });
 
 $('input[name=photoswipe]').change(function() {
