@@ -5,13 +5,7 @@
 {combine_script id='jquery.mobile-events' path='themes/bootstrap_darkroom/components/jquery-touch-events/src/jquery.mobile-events.min.js' require='jquery' load='footer'}
 {/if}
 {if !empty($PLUGIN_INDEX_CONTENT_BEFORE)}{$PLUGIN_INDEX_CONTENT_BEFORE}{/if}
-{if $theme_config->bootstrap_theme == 'material'}
-{footer_script require='jquery' require='bootstrap'}
-$(document).ready(function () {
-  $('#content-spacer').addClass('well');
-});
-{/footer_script}
-{/if}
+
     <nav class="navbar navbar-expand-lg navbar-contextual {$theme_config->navbar_contextual_style} {$theme_config->navbar_contextual_bg} sticky-top mb-2">
         <div class="container{if $theme_config->fluid_width}-fluid{/if}">
             <div class="navbar-brand mr-auto">
@@ -19,7 +13,7 @@ $(document).ready(function () {
                 <a href="{$U_HOME}" title="{'Home'|@translate}"><i class="fa fa-home" aria-hidden="true"></i></a>{$LEVEL_SEPARATOR}{$chronology.TITLE}
 {else}
                     {$TITLE}
-{if $theme_config->bootstrap_theme == 'bootswatch' || $theme_config->bootstrap_theme == 'material'}
+{if $theme_config->bootstrap_theme == 'bootswatch'}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
  $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));

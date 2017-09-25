@@ -17,7 +17,7 @@
 {include file="grid_classes.tpl" width=260 height=180}
 <div class="col-outer mt-3 {if $smarty.cookies.view == 'list'}col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
   <div class="card card-thumbnail">
-    <a href="{$cat.URL}"{if $theme_config->bootstrap_theme == 'material'} class="ripple h-100"{/if}>
+    <a href="{$cat.URL}" class="h-100{if preg_match('/^material/', $theme_config->bootstrap_theme)} ripple{/if}">
       <img class="card-img-top img-fluid" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
       <div class="card-body">
         <h4 class="card-title ellipsis{if !empty($cat.icon_ts)} recent{/if}">{$cat.NAME}</h4>

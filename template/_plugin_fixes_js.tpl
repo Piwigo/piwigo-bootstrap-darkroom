@@ -1,7 +1,7 @@
 {if isset($loaded_plugins['rv_gmaps']) && $BODY_ID == "thePicturePage"}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').removeClass('pwg-state-default pwg-button').wrap('<li class="nav-item"></li>');
+  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').addClass('nav-link').removeClass('pwg-state-default pwg-button').wrap('<li class="nav-item"></li>');
   $('#map').wrap('<div id="mapContainer" class="container{if $theme_config->fluid_width}-fluid{/if}"></div>');
   $('#mapPicture').prependTo('#mapContainer');
 });
@@ -10,7 +10,7 @@ $(document).ready(function() {
 {if isset($loaded_plugins['rv_gmaps']) && $BODY_ID == "theCategoryPage"}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').removeClass('pwg-state-default pwg-button');
+  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').addClass('nav-link').removeClass('pwg-state-default pwg-button');
 });
 {/strip}{/footer_script}
 {/if}
@@ -133,8 +133,8 @@ $(document).ready(function() {
 {if isset($loaded_plugins['PWG_Stuffs'])}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  var stuffAboveContent = $('.navbar-default').next('.pwgstuffs-container');
-  $(stuffAboveContent).insertBefore('#content-spacer');
+  var stuffAboveContent = $('.navbar-main').next('.pwgstuffs-container');
+  $(stuffAboveContent).insertAfter('.navbar-contextual');
 });
 {/strip}{/footer_script}
 {/if}
