@@ -320,7 +320,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
         <div class="card-body mb-2">
           <h4 class="card-title">{'Tags'|@translate}</h4>
             <div id="Tags" class="imageInfo">
-              {foreach from=$related_tags item=tag name=tag_loop}{if !$smarty.foreach.tag_loop.first}, {/if}<a class="btn btn-primary" href="{$tag.URL}">{$tag.name}</a>{/foreach}
+              {foreach from=$related_tags item=tag name=tag_loop}<a class="btn btn-primary" href="{$tag.URL}">{$tag.name}</a>{/foreach}
             </div>
         </div>
       </div>

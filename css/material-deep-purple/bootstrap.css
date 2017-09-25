@@ -14249,6 +14249,10 @@ input[type=text].custom-file-control {
   color: #512da8;
 }
 
+#theImageInfos #Tags .btn, #theImageInfos #Tags .custom-file-control::before {
+  text-transform: none;
+}
+
 .navbar-contextual {
   background-color: #7e57c2;
 }

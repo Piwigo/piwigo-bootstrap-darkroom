@@ -41,3 +41,7 @@ input[type=text].form-control {
 .slick-next:before {
   color: theme-color('primary'); 
 }
+
+#theImageInfos #Tags .btn {
+  text-transform: none;
+}

@@ -14249,6 +14249,10 @@ input[type=text].custom-file-control {
   color: #2e2e2e;
 }
 
+#theImageInfos #Tags .btn, #theImageInfos #Tags .custom-file-control::before {
+  text-transform: none;
+}
+
 .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
   color: #fff;
 }
