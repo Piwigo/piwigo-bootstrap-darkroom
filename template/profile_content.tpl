@@ -10,9 +10,9 @@
 {$UCF_PROFILE_ADD}
 {else}
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">{'Username'|@translate}</label>
+                    <label for="username" class="col-sm-3 col-form-label">{'Username'|@translate}</label>
                     <div class="col-sm-4">
-                        <input class="form-control" type="text" placeholder="{$USERNAME}" readonly/>
+                        <input id="username" class="form-control-plaintext" type="text" value="{$USERNAME}" readonly/>
                     </div>
                 </div>
 {if not $SPECIAL_USER} {* can modify password + email*}
@@ -87,24 +87,24 @@
                         <input type="text" size="3" maxlength="2" name="recent_period" id="recent_period" class="form-control" value="{$RECENT_PERIOD}">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="expand" class="col-sm-3 col-form-label">{'Expand all albums'|@translate}</label>
-                    <div class="col-sm-6 html-radios-inline radio">
-{html_radios name='expand' options=$radio_options selected=$EXPAND}
+                <div class="form-check">
+                    <label for="expand" class="col-sm-3 form-check-label float-left pl-0">{'Expand all albums'|@translate}</label>
+                    <div class="col-sm-6 radio">
+{html_radios name='expand' options=$radio_options selected=$EXPAND class="form-check-input"}
                     </div>
                 </div>
 {if $ACTIVATE_COMMENTS}
-                <div class="form-group row">
-                    <label for="show_nb_comments" class="col-sm-3 col-form-label">{'Show number of comments'|@translate}</label>
-                    <div class="col-sm-6 html-radios-inline radio">
-{html_radios name='show_nb_comments' options=$radio_options selected=$NB_COMMENTS}
+                <div class="form-check">
+                    <label for="show_nb_comments" class="col-sm-3 form-check-label float-left pl-0">{'Show number of comments'|@translate}</label>
+                    <div class="col-sm-6 radio">
+{html_radios name='show_nb_comments' options=$radio_options selected=$NB_COMMENTS class="form-check-input"}
                     </div>
                 </div>
 {/if}
-                <div class="form-group row">
-                    <label for="show_nb_hits" class="col-sm-3 col-form-label">{'Show number of hits'|@translate}</label>
-                    <div class="col-sm-9 html-radios-inline radio">
-{html_radios name='show_nb_hits' options=$radio_options selected=$NB_HITS}
+                <div class="form-check">
+                    <label for="show_nb_hits" class="col-sm-3 form-check-label float-left pl-0">{'Show number of hits'|@translate}</label>
+                    <div class="col-sm-9 radio">
+{html_radios name='show_nb_hits' options=$radio_options selected=$NB_HITS class="form-check-input"}
                     </div>
                 </div>
             </div>
