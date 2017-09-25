@@ -133,6 +133,9 @@ var qsearch_text = $('#navbar-menubar>#quicksearch #qsearchInput');
 $(qsearch_icon).click(function () {
   $(qsearch_text).focus();
 });
+$(document).ready(function() {
+  $('#navbar-menubar>#quicksearch').css({literal}{'color': $('#navbar-menubar .nav-link').css('color')}{/literal});
+});
 {/footer_script}
 {/if}
 {$MENUBAR}
