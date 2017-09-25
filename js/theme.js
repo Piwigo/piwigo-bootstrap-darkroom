@@ -66,9 +66,6 @@ $(document).ready(function() {
             return false;
         });
     }
-
-    // common issue, still needed in v4?
-    $('#navbar-menubar .navbar-form').css({'color': $('.navbar-nav>li>a').css('color')});
 });
 
 /* help popup */
