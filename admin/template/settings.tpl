@@ -88,14 +88,6 @@
                     </select>
                     <span class="info">{'Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'|@translate}</span>
                 </li>
-                <li>
-                    <label class="font-checkbox">
-                        <span class="icon-check"></span>
-                        <input type="checkbox" name="main_nav_on_picture_page"{if $theme_config->main_nav_on_picture_page} checked="checked"{/if}>
-                        {'Enabled'|@translate}
-                    </label>
-                    <span class="info">{'Show the primary navbar on the picture page'|@translate}</span>
-                </li>
             </ul>
         </fieldset>
         <fieldset>

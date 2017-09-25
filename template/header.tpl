@@ -108,7 +108,7 @@
 </head>
 
 <body id="{$BODY_ID}">
-{if !($theme_config->main_nav_on_picture_page == false && $BODY_ID == 'thePicturePage')}
+{if !($BODY_ID == 'thePicturePage' && !isset($MENUBAR))}
         <nav class="navbar navbar-expand-lg navbar-main {$theme_config->navbar_main_style} {$theme_config->navbar_main_bg}">
             <div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {if $theme_config->logo_image_enabled && $theme_config->logo_image_path !== ''}
@@ -136,6 +136,7 @@ $(qsearch_icon).click(function () {
 {/footer_script}
 {/if}
 {$MENUBAR}
+{if !isset($MENUBAR)}oh, oh, no menubar..{/if}
                 </div>
             </div>
         </nav>
