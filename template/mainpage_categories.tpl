@@ -15,7 +15,7 @@
 {/if}
 {* this needs a fixed size else it messes up the grid on tablets *}
 {include file="grid_classes.tpl" width=260 height=180}
-<div class="col-outer mt-3 {if $smarty.cookies.view == 'list'}col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
+<div class="col-outer mt-3 {if $smarty.cookies.view == 'list'}col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
   <div class="card card-thumbnail">
     <a href="{$cat.URL}" class="h-100{if preg_match('/^material/', $theme_config->bootstrap_theme)} ripple{/if}">
       <img class="card-img-top img-fluid" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
@@ -40,22 +40,26 @@
     {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
     {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
-<a class="w-100 mb-2" href="{$cat.URL}">
- <div class="card card-body bg-dark">
-  <div class="media">
-      <img class="d-flex mr-3" {if $derivative_square->is_cached()}src="{$derivative_square->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative_square->get_url()}"{/if} alt="{$cat.TN_ALT}">
-      <div class="media-body">
-        <h4 class="mt-0 mb-1">{$cat.NAME}</h4>
-{if isset($cat.INFO_DATES) }
-        <p>{$cat.INFO_DATES}</p>
-{/if}
+<div class="col-outer col-12">
+  <div class="card">
+    <div class="card-body p-0">
+      <a href="{$cat.URL}">
+        <div class="media h-100">
+          <img class="d-flex mr-3" {if $derivative_square->is_cached()}src="{$derivative_square->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative_square->get_url()}"{/if} alt="{$cat.TN_ALT}">
+          <div class="media-body pt-2">
+            <h4 class="mt-0 mb-1">{$cat.NAME}</h4>
 {if not empty($cat.DESCRIPTION)}
-        <p class="description">{$cat.DESCRIPTION}</p>
+            <div class="description">{$cat.DESCRIPTION}</div>
 {/if}
-        <p><small>{$cat.CAPTION_NB_IMAGES}</small></p>
-      </div>
+{if isset($cat.INFO_DATES) }
+            <div>{$cat.INFO_DATES}</div>
+{/if}
+            <div class="text-muted">{$cat.CAPTION_NB_IMAGES}</div>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
- </div>
-</a>
+</div>
 {/if}
 {/foreach}

@@ -11,7 +11,7 @@ $(document).ready(function() {
             .removeClass('content-list')
             .addClass('content-grid')
             .find('.col-outer').each(function() {
-                $(this).removeClass('col-lg-12 col-md-12 col-sm-12 col-xs-12')
+                $(this).removeClass('col-12')
                     .addClass($(this).data('grid-classes'))
                     .one(
                         'webkitTransitionEnd',
@@ -35,7 +35,7 @@ $(document).ready(function() {
             .height('auto')
             .find('.col-outer').each(function() {
                 $(this).removeClass($(this).data('grid-classes'))
-                    .addClass('col-lg-12 col-md-12 col-sm-12 col-xs-12')
+                    .addClass('col-12')
                     .one(
                     'webkitTransitionEnd',
                     function () {
