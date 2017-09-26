@@ -34,7 +34,7 @@ social_image_path: /assets/brand/bootstrap-social.png
 current_version:  4.0.0-beta.3
 docs_version:     4.0
 repo:             https://github.com/FezVrasta/bootstrap-material-design
-slack:            https://bootstrap-slack.herokuapp.com
+gitter:           https://gitter.im/FezVrasta/bootstrap-material-design
 
 download:
   source:         https://github.com/FezVrasta/bootstrap-material-design/releases
@@ -44,6 +44,7 @@ blog:             https://blog.getbootstrap.com
 expo:             https://expo.getbootstrap.com
 mkp:              https://www.creative-tim.com/product/material-kit-pro?affiliate_id=87385
 mdp:              https://www.creative-tim.com/product/material-dashboard-pro?affiliate_id=87385
+mdbootstrap:      https://mdbootstrap.com/product/material-design-for-bootstrap-pro/?utm_source=7e4bff&utm_id=7e4bff
 
 cdn:
   # See https://www.srihash.org for info on how to generate the hashes

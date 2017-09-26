@@ -26,11 +26,11 @@
     "popper.js": "^1.10.11",
     "bootstrap": "v4-dev"
   },
-  "_release": "b495928490",
+  "_release": "45c4f8cdac",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "b4959284909797eadadf42e798276c5db6d7285d"
+    "commit": "45c4f8cdac1e6bdea6def7d10b0b750284de0897"
   },
   "_source": "https://github.com/FezVrasta/bootstrap-material-design.git",
   "_target": "master",

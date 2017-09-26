@@ -29,14 +29,23 @@ $bmd-navbar-link-font-size: 1rem !default;
   }
 }
 
-
-.radio label,
+// awkward stuff...
 .checkbox label,
+.checkbox-inline,
+.is-focused .checkbox label,
+.is-focused .checkbox-inline,
+.is-focused .radio label,
+.is-focused .radio-inline,
+.is-focused .switch label,
+.radio label,
+.radio-inline,
+.switch label,
 select.form-control,
 input[type=text].form-control {
   color: inherit;
 }
 
+// Slick carousel
 .slick-prev:before,
 .slick-next:before {
   color: theme-color('primary'); 
