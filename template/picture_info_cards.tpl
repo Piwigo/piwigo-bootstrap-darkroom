@@ -240,7 +240,7 @@
             </div>
             {/if}
             <div class="row">
-              <div class="col-12 col-lg-10">
+              <div class="col-12{if $theme_config->fluid_width} col-lg-10{/if}">
                 <div class="row">
                   {if array_key_exists("{$exif_fnumber}", $metadata.0.lines)}
                   <div class="col-6 col-sm-4">
@@ -269,7 +269,7 @@
                   {/if}
                   {if array_key_exists("{$exif_flash}", $metadata.0.lines)}
                   <div class="col-6 col-sm-4">
-                    <span class="camera-flash fa-2x pr-2 float-left" title="{$exif_flash}"></span><div> {$metadata.0.lines[{$exif_flash}]}</div>
+                    <span class="camera-flash fa-2x pr-2 float-left h-100" title="{$exif_flash}"></span><div> {$metadata.0.lines[{$exif_flash}]}</div>
                   </div>
                   {/if}
                 </div>
