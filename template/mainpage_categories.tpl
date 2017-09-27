@@ -20,10 +20,15 @@
     <a href="{$cat.URL}" class="h-100{if preg_match('/^material/', $theme_config->bootstrap_theme)} ripple{/if}">
       <img class="card-img-top img-fluid" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
       <div class="card-body">
-        <h4 class="card-title ellipsis{if !empty($cat.icon_ts)} recent{/if}">{$cat.NAME}</h4>
+        <h4 class="card-title ellipsis{if !empty($cat.icon_ts)} recent{/if}">
+          {$cat.NAME}
+          {if !empty($cat.icon_ts)}
+          <img title="{$cat.icon_ts.TITLE}" src="{$ROOT_URL}{$themeconf.icon_dir}/recent{if $cat.icon_ts.IS_CHILD_DATE}_by_child{/if}.png" alt="(!)">
+          {/if}
+        </h4>
         <div class="card-text">
 {if not empty($cat.DESCRIPTION)}
-            <div class="description">{$cat.DESCRIPTION}</div>
+            <div class="description{if $theme_config->cat_descriptions} d-block{/if}">{$cat.DESCRIPTION}</div>
 {/if}
 {if isset($cat.INFO_DATES) }
             <p>{$cat.INFO_DATES}</p>

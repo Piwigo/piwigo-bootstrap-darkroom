@@ -328,6 +328,10 @@ body {
   margin-bottom: 10px;
 }
 
+.content-grid .col-outer .description {
+  display: none;
+}
+
 .content-list .col-outer {
   margin-top: 20px;
   margin-bottom: 20px;
