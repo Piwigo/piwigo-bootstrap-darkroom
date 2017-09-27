@@ -2,7 +2,7 @@
       <!-- Picture infos -->
       <div class="card mb-2">
         <div class="card-body">
-          <h5 class="card-title">{'Information'|@translate}</h5>
+          <h4 class="card-title">{'Information'|@translate}</h4>
           <div id="info-content" class="d-flex flex-column">
 {if $display_info.author and isset($INFO_AUTHOR)}
             <div id="Author" class="imageInfo">
@@ -218,35 +218,27 @@
 {assign var="exif_exposure_bias" value="ExposureBiasValue"}
 {/if}
 
-      <div class="card">
-        <div class="card-body mb-2">
+      <div class="card mb-2">
+        <div class="card-body">
           <h4 class="card-title">{'EXIF Metadata'|@translate}</h4>
           <div id="metadata">
-            {if array_key_exists("{$exif_make}", $metadata.0.lines) || array_key_exists("{$exif_model}", $metadata.0.lines)}
+            {if array_key_exists("{$exif_make}", $metadata.0.lines) || array_key_exists("{$exif_model}", $metadata.0.lines) || array_key_exists("{$exif_lens}", $metadata.0.lines)}
             <div class="row mb-2">
-              <div class="col-12 col-md-6" style="height: 80px;">
+              <div class="col-12" style="height: 80px;">
                 <span class="camera-compact float-left fa-5x mr-3 h-100" title="{$exif_make} &amp; {$exif_model}"></span>
                 {if array_key_exists("{$exif_make}", $metadata.0.lines)}
-                <div class="pt-3">
-                  {$metadata.0.lines[{$exif_make}]}
-                </div>
-                {/if}
-                {if array_key_exists("{$exif_model}", $metadata.0.lines)}
-                <div>
-                  {$metadata.0.lines[{$exif_model}]}
-                </div>
-                {/if}
-              </div>
-            {/if}
-            {if array_key_exists("{$exif_lens}", $metadata.0.lines)}
-              <div class="col-12 col-md-6" style="height: 80px">
-                <span class="camera-lens-h float-left fa-5x mr-3 h-100" title="{$exif_lens}"></span>
                 <div class="pt-4">
+                  {$metadata.0.lines[{$exif_make}]}{if array_key_exists("{$exif_model}", $metadata.0.lines)} {$metadata.0.lines[{$exif_model}]}{/if}
+                </div>
+                {/if}
+                {if array_key_exists("{$exif_lens}", $metadata.0.lines)}
+                <div>
                   {$metadata.0.lines[{$exif_lens}]}
                 </div>
+                {/if}
               </div>
-            </div>
             {/if}
+            </div>
             {if array_key_exists("{$exif_fnumber}", $metadata.0.lines) || array_key_exists("{$exif_focal_length}", $metadata.0.lines)}
             <div class="d-flex flex-row">
               {if array_key_exists("{$exif_fnumber}", $metadata.0.lines)}
@@ -301,8 +293,8 @@ $('#show_exif_data').on('click', function() {
 {foreach from=$meta.lines item=value key=label}
             <div>
               <dl class="row mb-0">
-                <dt class="col-sm-4">{$label}</dt>
-                <dd class="col-sm-8">{$value}</dd>
+                <dt class="col-sm-6">{$label}</dt>
+                <dd class="col-sm-6">{$value}</dd>
               </dl>
             </div>
 {/foreach}
