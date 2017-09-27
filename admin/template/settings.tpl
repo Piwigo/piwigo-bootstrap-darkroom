@@ -396,17 +396,18 @@ $(document).ready(function() {
 });
 
 $('select[name=bootstrap_theme]').change(function() {
-  var navbar_main_style,
-      navbar_main_bg,
-      navbar_contextual_style,
-      navbar_contextual_bg;
+  var navbar_main_style = 'navbar-dark',
+      navbar_main_bg = 'bg-dark',
+      navbar_contextual_style = 'navbar-dark',
+      navbar_contextual_bg = 'bg-light',
+      bs_theme = $('select[name=bootstrap_theme]').val();
 
-  switch($('select[name=bootstrap_theme]').val()) {
+  switch(bs_theme) {
     case 'bootstrap-default':
-      navbar_main_style = 'navbar-dark';
-      navbar_main_bg = 'bg-dark';
       navbar_contextual_style = 'navbar-light';
-      navbar_contextual_bg = 'bg-light';
+      break;
+    case (bs_theme.match(/teal|deep-purple/) || {}).input:
+      navbar_contextual_bg = 'bg-primary';
       break;
     case 'bootswatch':
       getBootswatchThemes();
@@ -415,7 +416,7 @@ $('select[name=bootstrap_theme]').change(function() {
       navbar_main_style = 'navbar-dark';
       navbar_main_bg = 'bg-dark';
       navbar_contextual_style = 'navbar-dark';
-      navbar_contextual_bg = 'bg-primary';
+      navbar_contextual_bg = 'bg-light';
       preview.html('<img src="themes/bootstrap_darkroom/admin/img/' + $('select[name=bootstrap_theme]').val() + '.png" style="padding: 10px 0;"/>');
       preview.show();
       select_bootswatch.empty()

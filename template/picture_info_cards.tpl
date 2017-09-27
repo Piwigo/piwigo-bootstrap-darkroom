@@ -1,8 +1,8 @@
     <div id="infopanel" class="col-lg-6 col-12">
       <!-- Picture infos -->
       <div class="card mb-2">
-        <div class="card-body mb-2">
-          <h4 class="card-title">{'Information'|@translate}</h4>
+        <div class="card-body">
+          <h5 class="card-title">{'Information'|@translate}</h5>
           <div id="info-content" class="d-flex flex-column">
 {if $display_info.author and isset($INFO_AUTHOR)}
             <div id="Author" class="imageInfo">
@@ -182,11 +182,11 @@
         </div>
       </div>
 {if $display_info.tags and isset($related_tags)}
-      <div class="card">
-        <div class="card-body mb-2">
+      <div class="card mb-2">
+        <div class="card-body">
           <h4 class="card-title">{'Tags'|@translate}</h4>
             <div id="Tags" class="imageInfo">
-              {foreach from=$related_tags item=tag name=tag_loop}<a class="btn btn-primary" href="{$tag.URL}">{$tag.name}</a>{/foreach}
+              {foreach from=$related_tags item=tag name=tag_loop}<a class="btn btn-primary mr-1" href="{$tag.URL}">{$tag.name}</a>{/foreach}
             </div>
         </div>
       </div>
