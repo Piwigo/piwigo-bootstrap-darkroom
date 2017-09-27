@@ -222,58 +222,58 @@
         <div class="card-body">
           <h4 class="card-title">{'EXIF Metadata'|@translate}</h4>
           <div id="metadata">
-            {if array_key_exists("{$exif_make}", $metadata.0.lines) || array_key_exists("{$exif_model}", $metadata.0.lines) || array_key_exists("{$exif_lens}", $metadata.0.lines)}
-            <div class="row mb-2">
-              <div class="col-12" style="height: 80px;">
-                <span class="camera-compact float-left fa-5x mr-3 h-100" title="{$exif_make} &amp; {$exif_model}"></span>
-                {if array_key_exists("{$exif_make}", $metadata.0.lines)}
-                <div class="pt-4">
-                  {$metadata.0.lines[{$exif_make}]}{if array_key_exists("{$exif_model}", $metadata.0.lines)} {$metadata.0.lines[{$exif_model}]}{/if}
-                </div>
-                {/if}
-                {if array_key_exists("{$exif_lens}", $metadata.0.lines)}
-                <div>
-                  {$metadata.0.lines[{$exif_lens}]}
-                </div>
-                {/if}
+            {if array_key_exists("{$exif_make}", $metadata.0.lines) || array_key_exists("{$exif_model}", $metadata.0.lines)}
+            <div class="row" style="line-height: 40px">
+              <div class="col-12">
+                <span class="camera-compact fa-3x mr-3" title="{$exif_make} &amp; {$exif_model}"></span>
+                {if array_key_exists("{$exif_make}", $metadata.0.lines)}{$metadata.0.lines[{$exif_make}]}{/if}
+                {if array_key_exists("{$exif_model}", $metadata.0.lines)}&nbsp;&nbsp;{$metadata.0.lines[{$exif_model}]}{/if}
               </div>
-            {/if}
-            </div>
-            {if array_key_exists("{$exif_fnumber}", $metadata.0.lines) || array_key_exists("{$exif_focal_length}", $metadata.0.lines)}
-            <div class="d-flex flex-row">
-              {if array_key_exists("{$exif_fnumber}", $metadata.0.lines)}
-              <div class="d-flex flex-row exif-icon">
-                <span class="camera-aperture float-left fa-2x pr-2" title="{$exif_fnumber}"></span><span class="pt-1"> f/{$metadata.0.lines[{$exif_fnumber}]}</span>
-              </div>
-              {/if}
-              {if array_key_exists("{$exif_focal_length}", $metadata.0.lines)}
-              <div class="d-flex flex-row exif-icon">
-                <span class="camera-focal-length float-left fa-2x pr-2" title="{$exif_focal_length}"></span><span class="pt-1"> {$metadata.0.lines[{$exif_focal_length}]}</span>
-              </div>
-              {/if}
-              {if array_key_exists("{$exif_flash}", $metadata.0.lines)}
-              <div class="d-flex flex-row exif-icon">
-                <span class="camera-flash float-left fa-2x pr-2" title="{$exif_flash}"></span><span class="pt-0"> {$metadata.0.lines[{$exif_flash}]}</span>
-              </div>
-              {/if}
             </div>
             {/if}
-            <div class="d-flex flex-row">
-              {if array_key_exists("{$exif_exposure_time}", $metadata.0.lines)}
-              <div class="d-flex flex-row exif-icon">
-                <span class="camera-shutter-speed float-left fa-2x pr-2" title="{$exif_exposure_time}"></span><span class="pt-1"> {$metadata.0.lines[{$exif_exposure_time}]}</span>
-              </div> 
-              {/if}
-              {if array_key_exists("{$exif_iso}", $metadata.0.lines)}
-              <div class="d-flex flex-row exif-icon">
-                <span class="camera-iso float-left fa-2x pr-2" title="{$exif_iso}"></span><span class="pt-1"> {$metadata.0.lines[{$exif_iso}]}</span>
+            {if array_key_exists("{$exif_lens}", $metadata.0.lines)}
+            <div class="row" style="line-height: 40px">
+              <div class="col-12">
+                <span class="camera-lens-h fa-3x mr-3" title="{$exif_lens}"></span>
+                    {$metadata.0.lines[{$exif_lens}]}
               </div>
-              {/if}
-              {if array_key_exists("{$exif_exposure_bias}", $metadata.0.lines)}
-              <div class="d-flex flex-row exif-icon">
-                <span class="camera-exposure float-left fa-2x pr-2" title="{$exif_exposure_bias}"></span><span class="pt-1"> {$metadata.0.lines[{$exif_exposure_bias}]}</span>
+            </div>
+            {/if}
+            <div class="row">
+              <div class="col-12 col-lg-10">
+                <div class="row">
+                  {if array_key_exists("{$exif_fnumber}", $metadata.0.lines)}
+                  <div class="col-6 col-sm-4">
+                    <span class="camera-aperture fa-2x pr-2" title="{$exif_fnumber}"></span> f/{$metadata.0.lines[{$exif_fnumber}]}
+                  </div>
+                  {/if}
+                  {if array_key_exists("{$exif_focal_length}", $metadata.0.lines)}
+                  <div class="col-6 col-sm-4">
+                    <span class="camera-focal-length fa-2x pr-2" title="{$exif_focal_length}"></span> {$metadata.0.lines[{$exif_focal_length}]}
+                  </div>
+                  {/if}
+                  {if array_key_exists("{$exif_exposure_time}", $metadata.0.lines)}
+                  <div class="col-6 col-sm-4">
+                    <span class="camera-shutter-speed fa-2x pr-2" title="{$exif_exposure_time}"></span> {$metadata.0.lines[{$exif_exposure_time}]}
+                  </div>
+                  {/if}
+                  {if array_key_exists("{$exif_iso}", $metadata.0.lines)}
+                  <div class="col-6 col-sm-4">
+                    <span class="camera-iso fa-2x pr-2" title="{$exif_iso}"></span> {$metadata.0.lines[{$exif_iso}]}
+                  </div>
+                  {/if}
+                  {if array_key_exists("{$exif_exposure_bias}", $metadata.0.lines)}
+                  <div class="col-6 col-sm-4">
+                    <span class="camera-exposure fa-2x pr-2" title="{$exif_exposure_bias}"></span> {$metadata.0.lines[{$exif_exposure_bias}]}
+                  </div>
+                  {/if}
+                  {if array_key_exists("{$exif_flash}", $metadata.0.lines)}
+                  <div class="col-6 col-sm-4">
+                    <span class="camera-flash fa-2x pr-2 float-left" title="{$exif_flash}"></span><div> {$metadata.0.lines[{$exif_flash}]}</div>
+                  </div>
+                  {/if}
+                </div>
               </div>
-              {/if}
             </div>
           </div>
           <button id="show_exif_data" class="btn btn-primary btn-raised mt-1" style="text-transform: none;"><i class="fa fa-info mr-1"></i> {'Show EXIF data'|@translate}</button>

@@ -9,12 +9,15 @@
     font-weight: normal;
     font-style: normal;
 }
+[class*='camera-'] {
+   display: inline-block;
+   vertical-align: middle;
+} 
 [class*='camera-']:before{
-	display: inline-block;
    font-family: 'PhotographyIcons';
    font-style: normal;
    font-weight: normal;
-   line-height: 1;
+   line-height: inherit;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale
 }
