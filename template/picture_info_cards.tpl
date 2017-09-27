@@ -227,7 +227,7 @@
               <div class="col-12">
                 <span class="camera-compact fa-3x mr-3" title="{$exif_make} &amp; {$exif_model}"></span>
                 {if array_key_exists("{$exif_make}", $metadata.0.lines)}{$metadata.0.lines[{$exif_make}]}{/if}
-                {if array_key_exists("{$exif_model}", $metadata.0.lines)}&nbsp;&nbsp;{$metadata.0.lines[{$exif_model}]}{/if}
+                {if array_key_exists("{$exif_model}", $metadata.0.lines)}{$metadata.0.lines[{$exif_model}]}{/if}
               </div>
             </div>
             {/if}
