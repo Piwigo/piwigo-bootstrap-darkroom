@@ -249,6 +249,20 @@ function register_picture_templates() {
   $template->assign_var_from_handle('PICTURE_INFO_CARDS', 'picture_info_cards');
 }
 
+add_event_handler('format_exif_data', 'exif_replacements');
+function exif_replacements($exif) {
+  global $conf;
+
+  if (array_key_exists('bootstrap_darkroom_ps_exif_replacements', $conf)) {
+    foreach ($conf['bootstrap_darkroom_ps_exif_replacements'] as $tag => $replacement) {
+      if (array_key_exists($tag, $exif)) {
+        $exif[$tag] = str_replace($replacement[0], $replacement[1], $exif[$tag]);
+      }
+    }
+  }
+  return $exif; 
+}
+
 // register video files
 $video_ext = array('mp4','m4v');
 $conf['file_ext'] = array_merge ($conf['file_ext'], $video_ext, array_map('strtoupper', $video_ext));
