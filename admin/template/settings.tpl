@@ -82,11 +82,11 @@
                 <li>
                     <label labelfor="picture_info">{'Picture info display position'|@translate}</label>
                     <select name="picture_info">
+                        <option value="cards"{if $theme_config->picture_info == 'cards'} selected="selected"{/if}>{'Card grid below the image'|@translate}</option>
                         <option value="tabs"{if $theme_config->picture_info == 'tabs'} selected="selected"{/if}>{'Tabs below the image'|@translate}</option>
                         <option value="sidebar"{if $theme_config->picture_info == 'sidebar'} selected="selected"{/if}>{'Sidebar (like Boostrap Default)'|@translate}</option>
                         <option value="disabled"{if $theme_config->picture_info == 'disabled'} selected="selected"{/if}>{'Disabled'|@translate}</option>
                     </select>
-                    <span class="info">{'Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'|@translate}</span>
                 </li>
             </ul>
         </fieldset>
