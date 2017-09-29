@@ -139,12 +139,6 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
   </div>
 {/if}
 
-{if !empty($navbar) }
-  <div class="row">
-    {include file='navigation_bar.tpl' fragment='comments'|@get_extent:'navbar'}
-  </div>
-{/if}
-
 {if !empty($PLUGIN_PICTURE_AFTER)}{$PLUGIN_PICTURE_AFTER}{/if}
 
 </div>

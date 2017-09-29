@@ -303,5 +303,7 @@ $('#show_exif_data').on('click', function() {
         </div>
       </div>
 {/if}
-    {$PICTURE_INFO_COMMENTS}
+      <div class="ml-2">
+        {$PICTURE_INFO_COMMENTS}
+      </div>
     </div>
