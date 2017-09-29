@@ -23,7 +23,6 @@ $lang['Picture page display'] = 'Picture page display';
 $lang['Tabs below the image'] = 'Tabs below the image';
 $lang['Sidebar (like Boostrap Default)'] = 'Sidebar (like Boostrap Default)';
 $lang['Picture info display position'] = 'Picture info display position';
-$lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.';
 $lang['Thumbnail Link Target'] = 'Thumbnail Link Target';
 $lang['Link thumbnail to'] = 'Link thumbnail to';
 $lang['Picture details page'] = 'Picture details page';

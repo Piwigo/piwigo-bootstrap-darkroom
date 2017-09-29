@@ -44,7 +44,6 @@ $lang['Picture page display'] = 'Affichage de la page image';
 $lang['Tabs below the image'] = 'Onglets sous l\'image';
 $lang['Sidebar (like Boostrap Default)'] = 'Sidebar (comme Boostrap Default)';
 $lang['Picture info display position'] = 'Position des informations de l\'image';
-$lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Remarque: sur les appareils mobiles, les onglets sont forcés car le bouton de la barre latérale recouvrait l\'image principale.';
 $lang['Thumbnail Link Target'] = 'Cible des miniatures';
 $lang['Link thumbnail to'] = 'Cliquer sur les miniatures ouvre';
 $lang['Picture details page'] = 'Page détaillée de l\'image';

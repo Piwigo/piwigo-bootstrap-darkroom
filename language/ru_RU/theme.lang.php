@@ -53,7 +53,6 @@ $lang['Picture page display'] = 'Показать страницу изобра�
 $lang['This setting is overridden by Bootstrap Darkroom'] = 'Этот параметр переопределяется Bootstrap Darkroom';
 $lang['Thumbnail Link Target'] = 'Thumbnail Link Target';
 $lang['Thumbnail page display'] = 'Отображение эскизов страницы';
-$lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Внимание: на мобильных устройствах используются вкладки, т.к. применить полосу прокрутки невозможно.';
 $lang['On mobile devices only'] = 'Только для мобильных устройств';
 $lang['Show basic EXIF metadata'] = 'Показать основные метаданные EXIF';
 $lang['Show image caption'] = 'Показать заголовок изображения';

@@ -48,7 +48,6 @@ $lang['Infinite looping'] = 'Uendelig løkke';
 $lang['Issue tracker'] = 'Fejlsporing';
 $lang['Link thumbnail to'] = 'Link miniaturebilleder til';
 $lang['Never'] = 'Aldrig';
-$lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Bemærk: på mobile enheder er Tabs påtvungne, da Sidebar-knappen ellers vil overlappe med hovedbilledet.';
 $lang['On mobile devices only'] = 'Kun på mobile enheder';
 $lang['PhotoSwipe Slideshow'] = 'PhotoSwipe Slideshow';
 $lang['Photoswipe Slideshow (Mobile devices only)'] = 'PhotoSwipe Slideshow (kun mobile enheder)';

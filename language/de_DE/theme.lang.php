@@ -44,7 +44,6 @@ $lang['Picture page display'] = 'Erscheinungsbild der Foto-Detailseite';
 $lang['Tabs below the image'] = 'Reiter unter dem Bild';
 $lang['Sidebar (like Boostrap Default)'] = 'Sidebar (wie Boostrap Default)';
 $lang['Picture info display position'] = 'Position der Bild-Informationen';
-$lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Hinweis: auf Mobil-Geräten werden immer die Tabs verwendet, da der Knopf für die Sidebar das Hauptbild überlagern würde.';
 $lang['Thumbnail Link Target'] = 'Verlinkung der Vorschaubilder';
 $lang['Link thumbnail to'] = 'Klick auf Vorschaubild öffnet';
 $lang['Picture details page'] = 'Foto-Detailseite';

@@ -241,12 +241,28 @@ function register_picture_templates() {
   $template->set_filenames(array('picture_nav'=>'picture_nav.tpl',
                                  'picture_info_sidebar'=>'picture_info_sidebar.tpl',
                                  'picture_info_cards'=>'picture_info_cards.tpl',
+                                 'picture_info_tabs'=>'picture_info_tabs.tpl',
                                  'picture_info_comments'=>'picture_info_comments.tpl'));
 
   $template->assign_var_from_handle('PICTURE_NAV', 'picture_nav');
   $template->assign_var_from_handle('PICTURE_INFO_COMMENTS', 'picture_info_comments');
   $template->assign_var_from_handle('PICTURE_INFO_SIDEBAR', 'picture_info_sidebar');
   $template->assign_var_from_handle('PICTURE_INFO_CARDS', 'picture_info_cards');
+  $template->assign_var_from_handle('PICTURE_INFO_TABS', 'picture_info_tabs');
+}
+
+add_event_handler('format_exif_data', 'exif_replacements');
+function exif_replacements($exif) {
+  global $conf;
+
+  if (array_key_exists('bootstrap_darkroom_ps_exif_replacements', $conf)) {
+    foreach ($conf['bootstrap_darkroom_ps_exif_replacements'] as $tag => $replacement) {
+      if (array_key_exists($tag, $exif)) {
+        $exif[$tag] = str_replace($replacement[0], $replacement[1], $exif[$tag]);
+      }
+    }
+  }
+  return $exif; 
 }
 
 // register video files

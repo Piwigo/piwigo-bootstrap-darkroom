@@ -31,7 +31,6 @@ $lang['will load the image as soon as you slide to it'] = '将在你滑到图片
 $lang['This will display categories as media wells with squared thumbnails, similar to the smartpocket mobile theme.'] = '本设置会将目录显示为带正方形缩略图的 Media Wells，与 smartpocket mobile 主题类似。';
 $lang['The path to the image, relative to your Piwigo installation folder'] = '图片的路径，相对于你的 Piwigo 安装文件夹';
 $lang['This setting is overridden by Bootstrap Darkroom'] = '本设置由 Bootstrap Darkroom 插件控制';
-$lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = '注意：在移动设备上标签是强制性的，因为侧边栏按钮会覆盖主图片。';
 $lang['Show basic EXIF metadata'] = '显示基础EXIF元数据';
 $lang['Show image caption'] = '显示图片说明';
 $lang['Sidebar (like Boostrap Default)'] = '侧边栏（同 Boostrap Default）';

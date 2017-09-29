@@ -58,7 +58,6 @@ $lang['Show a jumbotron banner on the categroy pages.'] = 'Rādīt jumbotron ban
 $lang['Photoswipe Slideshow (Mobile devices only)'] = 'Photoswipe Slaidrāde (Tikai Mobilām ierīcēm)';
 $lang['Display the currently selected image in the middle. Works best with infinite looping enabled.'] = 'Attēlot patlaban izvēlēto attēlu vidū. Vislabāk darbojas ar iespējotu bezgalīgu atkārtošanu.';
 $lang['Based on Bootstrap Default by'] = 'Balstīts uz Sāknēšanas Noklusējumu ';
-$lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Piezīme: uz mobilajām ierīcēm Cilnes ir piespiedu kārtā, jo Sānjoslas poga varētu pārklāt galveno attēlu';
 $lang['Display categories as Bootstrap media wells'] = 'Attēlot kategorijas kā Sāknēšanas mediju krātuves';
 $lang['Display a site logo image instead of plain text'] = 'Rādīt vietnes logo attēlu gludā teksta vietā';
 $lang['Bootstrap Darkroom\'s custom dark color theme'] = 'Sāknēšanas Darkroom pielāgotā tumšās krāsas tēma';

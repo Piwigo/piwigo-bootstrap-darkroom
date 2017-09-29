@@ -65,7 +65,7 @@ class Config {
         self::KEY_SLICK_INFINITE => false,
         self::KEY_SLICK_CENTERED => false,
         self::KEY_SHOW_JUMBOTRON => false,
-        self::KEY_PICTURE_INFO => 'tabs',
+        self::KEY_PICTURE_INFO => 'cards',
         self::KEY_PHOTOSWIPE => true,
         self::KEY_PHOTOSWIPE_INTERVAL => '3500',
         self::KEY_PHOTOSWIPE_METADATA => false,

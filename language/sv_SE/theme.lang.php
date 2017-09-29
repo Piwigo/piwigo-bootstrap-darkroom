@@ -71,7 +71,6 @@ $lang['Enable the slick carousel below the main image on the picture page'] = 'A
 $lang['HTML 5 canvas'] = 'HTML 5 canvas';
 $lang['If you find any issues, please report them to the'] = 'Om du hittar några problem, rapportera dem till';
 $lang['Issue tracker'] = 'Problemspåraren';
-$lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Obs: på mobila enheter är flikar tvingade, eftersom sidomenyknappar skulle täcka huvudbilden.';
 $lang['On mobile devices only'] = 'Bara på mobila enheter';
 $lang['PhotoSwipe Slideshow'] = 'PhotoSwipe-bildspel';
 $lang['Photoswipe Slideshow (Mobile devices only)'] = 'Photoswipe-bildspel (bara på mobila enheter)';

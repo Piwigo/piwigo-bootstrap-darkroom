@@ -70,7 +70,6 @@ $lang['Endlessly scroll through album images'] = 'Eindeloos bladeren door album-
 $lang['Hides the top menu and jumbotron containing the page title and banner'] = 'Verbergt het hoofdmenu en jumbotron met de paginatitel en banner';
 $lang['If you find any issues, please report them to the'] = 'Indien je problemen tegenkomt, rapporteer deze dan aan de';
 $lang['Issue tracker'] = 'probleem-volger';
-$lang['Note: on mobile devices the Tabs are forced, because the Sidebar button would overlay the main picture.'] = 'Let op: op mobiele apparaten worden de tabs "gedwongen" weergegeven, omdat de Sidebar-knop anders de hoofd-afbeelding zou bedekken.';
 $lang['Show a jumbotron banner on the categroy pages.'] = 'Toon een jumbotron banner op de categorie pagina\'s.';
 $lang['Show basic EXIF metadata'] = 'Toon basis EXIF metadata';
 $lang['Show image caption'] = 'Toon foto-onderschrift';

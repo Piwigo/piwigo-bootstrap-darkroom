@@ -132,10 +132,14 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 
 
   <div id="theImageInfos" class="row">
-{if $theme_config->picture_info != 'sidebar'}
-   {$PICTURE_INFO_CARDS}
-{else}
-   {$PICTURE_INFO_COMMENTS}
+{if $theme_config->picture_info == 'cards'}
+    {$PICTURE_INFO_CARDS}
+{elseif $theme_config->picture_info == 'tabs'}
+    {$PICTURE_INFO_TABS}
+{elseif $theme_config->picture_info == 'sidebar' || $theme_config->picture_info == 'disabled'}
+    <div class="col-lg-8 col-md-10 col-12 mx-auto">
+      {$PICTURE_INFO_COMMENTS}
+    </div>
   </div>
 {/if}
 
