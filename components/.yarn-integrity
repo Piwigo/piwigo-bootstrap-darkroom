@@ -8,8 +8,8 @@
   "linkedModules": [],
   "topLevelPatterns": [
     "autoprefixer@^7.1.2",
-    "bootstrap-material-design@4.0.0-beta.3",
-    "bootstrap@4.0.0-beta",
+    "bootstrap-material-design@FezVrasta/bootstrap-material-design#master",
+    "bootstrap@twbs/bootstrap#v4-dev",
     "clean-css-cli@^4.1.6",
     "font-awesome@^4.7.0",
     "jquery-migrate@^3.0.0",
@@ -24,7 +24,8 @@
     "ptsans-npm-webfont@^0.0.4",
     "roboto-npm-webfont@^0.0.4",
     "slick-carousel@1.7.1",
-    "uglify-js@^3.0.24"
+    "uglify-js@^3.0.24",
+    "yarn@^1.1.0"
   ],
   "lockfileEntries": {
     "abbrev@1": "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8",
@@ -68,8 +69,8 @@
     "boom@2.x.x": "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f",
     "boom@4.x.x": "https://registry.yarnpkg.com/boom/-/boom-4.3.1.tgz#4f8a3005cb4a7e3889f749030fd25b96e01d2e31",
     "boom@5.x.x": "https://registry.yarnpkg.com/boom/-/boom-5.2.0.tgz#5dd9da6ee3a5f302077436290cb717d3f4a54e02",
-    "bootstrap-material-design@4.0.0-beta.3": "https://registry.yarnpkg.com/bootstrap-material-design/-/bootstrap-material-design-4.0.0-beta.3.tgz#78c1588fbaab38f1bb66e43154fd43bf3f69a500",
-    "bootstrap@4.0.0-beta": "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-beta.tgz#dc5928175d2e71310bc668cf9e05a907211b72a6",
+    "bootstrap-material-design@FezVrasta/bootstrap-material-design#master": "https://codeload.github.com/FezVrasta/bootstrap-material-design/tar.gz/f76527b07847a7c672cad6c3a78672e626385c6c",
+    "bootstrap@twbs/bootstrap#v4-dev": "https://codeload.github.com/twbs/bootstrap/tar.gz/9145cc8279abb6d9ca73e18d82d6816e386cdab3",
     "brace-expansion@^1.1.7": "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.8.tgz#c07b211c7c952ec1f8efd51a77ef0d1d3990a292",
     "braces@^1.8.2": "https://registry.yarnpkg.com/braces/-/braces-1.8.5.tgz#ba77962e12dff969d6b76711e914b737857bf6a7",
     "browserslist@^2.4.0": "https://registry.yarnpkg.com/browserslist/-/browserslist-2.4.0.tgz#693ee93d01e66468a6348da5498e011f578f87f8",
@@ -479,7 +480,8 @@
     "yargs-parser@^5.0.0": "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-5.0.0.tgz#275ecf0d7ffe05c77e64e7c86e4cd94bf0e1228a",
     "yargs-parser@^7.0.0": "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-7.0.0.tgz#8d0ac42f16ea55debd332caf4c4038b3e3f5dfd9",
     "yargs@^7.0.0": "https://registry.yarnpkg.com/yargs/-/yargs-7.1.0.tgz#6ba318eb16961727f5d284f8ea003e8d6154d0c8",
-    "yargs@^8.0.1": "https://registry.yarnpkg.com/yargs/-/yargs-8.0.2.tgz#6299a9055b1cefc969ff7e79c1d918dceb22c360"
+    "yargs@^8.0.1": "https://registry.yarnpkg.com/yargs/-/yargs-8.0.2.tgz#6299a9055b1cefc969ff7e79c1d918dceb22c360",
+    "yarn@^1.1.0": "https://registry.yarnpkg.com/yarn/-/yarn-1.1.0.tgz#f2da9340490236b6c56de305b1c21a8a19c433c3"
   },
   "files": [],
   "artifacts": {}

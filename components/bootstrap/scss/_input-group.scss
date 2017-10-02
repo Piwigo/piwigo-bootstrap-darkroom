@@ -5,6 +5,7 @@
 .input-group {
   position: relative;
   display: flex;
+  align-items: stretch;
   width: 100%;
 
   .form-control {
@@ -28,10 +29,8 @@
 .input-group-addon,
 .input-group-btn,
 .input-group .form-control {
-  // Vertically centers the content of the addons within the input group
   display: flex;
   align-items: center;
-
   &:not(:first-child):not(:last-child) {
     @include border-radius(0);
   }
@@ -40,7 +39,6 @@
 .input-group-addon,
 .input-group-btn {
   white-space: nowrap;
-  vertical-align: middle; // Match the inputs
 }
 
 
@@ -136,6 +134,7 @@
 
 .input-group-btn {
   position: relative;
+  align-items: stretch;
   // Jankily prevent input button groups from wrapping with `white-space` and
   // `font-size` in combination with `inline-block` on buttons.
   font-size: 0;
@@ -169,7 +168,8 @@
     > .btn,
     > .btn-group {
       z-index: 2;
-      margin-left: (-$input-btn-border-width);
+      // remove nagative margin ($input-btn-border-width) to solve overlapping issue with button.
+      margin-left: 0;
       // Because specificity
       @include hover-focus-active {
         z-index: 3;

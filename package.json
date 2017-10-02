@@ -18,6 +18,7 @@
     "css-prefix": "postcss --config components/bootstrap/build/postcss.config.js --replace css/bootstrap-darkroom/bootstrap.css",
     "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output css/bootstrap-darkroom/bootstrap.min.css css/bootstrap-darkroom/bootstrap.css",
     "build-material": "for i in darkroom deep-purple purple teal; do node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true --source-map-contents true --precision 6 scss/material-${i}.scss css/material-${i}/bootstrap.css && postcss --config components/bootstrap/build/postcss.config.js --replace css/material-${i}/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/material-${i}/bootstrap.min.css css/material-${i}/bootstrap.css; done",
+    "build-material:js": "pushd components/bootstrap-material-design; npm install && npm run build:js; popd",
     "install-components": "yarn install --prod --modules-folder components --ignore-optional"
   },
   "style": "css/bootstrap-darkroom.css",
@@ -27,8 +28,8 @@
     "jquery": ">=3.0.0",
     "jquery-migrate": "^3.0.0",
     "popper.js": "^1.11.0",
-    "bootstrap": "4.0.0-beta",
-    "bootstrap-material-design": "4.0.0-beta.3",
+    "bootstrap": "twbs/bootstrap#v4-dev",
+    "bootstrap-material-design": "FezVrasta/bootstrap-material-design#master",
     "slick-carousel": "1.7.1",
     "photoswipe": "4.1.2",
     "font-awesome": "^4.7.0",

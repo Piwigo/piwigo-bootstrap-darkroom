@@ -1,48 +1,7 @@
 // Variables
 //
-// Copy settings from this file into the provided `_custom.scss` to override
-// the Bootstrap defaults without modifying key, versioned files.
-//
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
-
-// Table of Contents
-//
-// Color system
-// Options
-// Spacing
-// Body
-// Links
-// Paragraphs
-// Grid breakpoints
-// Grid containers
-// Grid columns
-// Fonts
-// Components
-// Tables
-// Buttons
-// Forms
-// Dropdowns
-// Z-index master list
-// Navs
-// Navbar
-// Pagination
-// Jumbotron
-// Form states and alerts
-// Cards
-// Tooltips
-// Popovers
-// Badges
-// Modals
-// Alerts
-// Progress bars
-// List group
-// Image thumbnails
-// Figures
-// Breadcrumbs
-// Carousel
-// Close
-// Code
 
 
 //
@@ -61,17 +20,18 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:  #000 !default;
 
-$grays: (
-  100: $gray-100,
-  200: $gray-200,
-  300: $gray-300,
-  400: $gray-400,
-  500: $gray-500,
-  600: $gray-600,
-  700: $gray-700,
-  800: $gray-800,
-  900: $gray-900
-) !default;
+$grays: () !default;
+$grays: map-merge((
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+), $grays);
 
 $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
@@ -84,32 +44,34 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
-$colors: (
-  blue: $blue,
-  indigo: $indigo,
-  purple: $purple,
-  pink: $pink,
-  red: $red,
-  orange: $orange,
-  yellow: $yellow,
-  green: $green,
-  teal: $teal,
-  cyan: $cyan,
-  white: $white,
-  gray: $gray-600,
-  gray-dark: $gray-800
-) !default;
+$colors: () !default;
+$colors: map-merge((
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+  "white": $white,
+  "gray": $gray-600,
+  "gray-dark": $gray-800
+), $colors);
 
-$theme-colors: (
-  primary: $blue,
-  secondary: $gray-600,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
-  light: $gray-100,
-  dark: $gray-800
-) !default;
+$theme-colors: () !default;
+$theme-colors: map-merge((
+  "primary": $blue,
+  "secondary": $gray-600,
+  "success": $green,
+  "info": $cyan,
+  "warning": $yellow,
+  "danger": $red,
+  "light": $gray-100,
+  "dark": $gray-800
+), $theme-colors);
 
 // Set a specific jump point for requesting color jumps
 $theme-color-interval: 8% !default;
@@ -172,7 +134,7 @@ $link-hover-decoration: underline !default;
 //
 // Style p element.
 
-$paragraph-margin-bottom: 1rem;
+$paragraph-margin-bottom: 1rem !default;
 
 
 // Grid breakpoints
@@ -321,11 +283,11 @@ $table-border-color:            $gray-200 !default;
 $table-head-bg:                 $gray-200 !default;
 $table-head-color:              $gray-700 !default;
 
-$table-inverse-bg:              $gray-900 !default;
-$table-inverse-accent-bg:       rgba($white, .05) !default;
-$table-inverse-hover-bg:        rgba($white, .075) !default;
-$table-inverse-border-color:    lighten($gray-900, 7.5%) !default;
-$table-inverse-color:           $body-bg !default;
+$table-dark-bg:              $gray-900 !default;
+$table-dark-accent-bg:       rgba($white, .05) !default;
+$table-dark-hover-bg:        rgba($white, .075) !default;
+$table-dark-border-color:    lighten($gray-900, 7.5%) !default;
+$table-dark-color:           $body-bg !default;
 
 
 // Buttons
@@ -445,8 +407,8 @@ $custom-radio-indicator-border-radius: 50% !default;
 $custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-indicator-checked-color}'/%3E%3C/svg%3E"), "#", "%23") !default;
 
 $custom-select-padding-y:          .375rem !default;
-$custom-select-padding-x:          .75rem  !default;
-$custom-select-height:              $input-height  !default;
+$custom-select-padding-x:          .75rem !default;
+$custom-select-height:              $input-height !default;
 $custom-select-indicator-padding:   1rem !default; // Extra padding to account for the presence of the background-image based indicator
 $custom-select-line-height:         $input-btn-line-height !default;
 $custom-select-color:               $input-color !default;
@@ -623,7 +585,7 @@ $jumbotron-bg:                   $gray-200 !default;
 
 $card-spacer-y:            .75rem !default;
 $card-spacer-x:            1.25rem !default;
-$card-border-width:        1px !default;
+$card-border-width:        $border-width !default;
 $card-border-radius:       $border-radius !default;
 $card-border-color:        rgba($black,.125) !default;
 $card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
@@ -632,7 +594,8 @@ $card-bg:                  $white !default;
 
 $card-img-overlay-padding: 1.25rem !default;
 
-$card-deck-margin:          ($grid-gutter-width / 2) !default;
+$card-group-margin:         ($grid-gutter-width / 2) !default;
+$card-deck-margin:          $card-group-margin !default;
 
 $card-columns-count:        3 !default;
 $card-columns-gap:          1.25rem !default;
@@ -683,7 +646,6 @@ $popover-arrow-outer-color:           fade-in($popover-border-color, .05) !defau
 
 // Badges
 
-$badge-color:                 $white !default;
 $badge-font-size:             75% !default;
 $badge-font-weight:           $font-weight-bold !default;
 $badge-padding-y:             .25em !default;

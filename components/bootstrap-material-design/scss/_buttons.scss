@@ -49,6 +49,13 @@
       @include box-shadow($bmd-shadow-focus);
       //border: 1px solid $green;
     }
+
+    // :focus - Avoid outline/boxShadow on buttons after mouseup
+    &.focus,
+    &:focus {
+      box-shadow: none; // disable box-shadow
+      outline: 0; // disable outline
+    }
   }
 
   //---
@@ -80,13 +87,14 @@
   &.bmd-btn-icon {
     overflow: hidden;
     font-size: $bmd-btn-fab-font-size;
-    line-height: normal;
+    line-height: 0;
 
     .btn-group-lg &,
     .btn-group-sm &,
     & {
       padding: 0; // need specificity
       border-radius: 50%;
+      line-height: 0;
     }
 
     .material-icons {

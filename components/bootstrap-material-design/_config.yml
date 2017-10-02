@@ -1,0 +1,59 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+kramdown:
+  auto_ids: true
+
+# Permalinks
+permalink:        pretty
+
+# Server
+source:           .
+destination:      ./_gh_pages
+port:             9001
+baseurl:          "/bootstrap-material-design"
+url:              https://fezvrasta.github.io
+encoding:         UTF-8
+exclude:          [.git, .github, assets/scss/, build, js, node_modules, nuget, scss, vendor, bower.json, composer.json, Gemfile, Gemfile.lock, Gruntfile.js, package.js, package.json, package-lock.json, sache.json]
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-toc
+
+# Social
+title: Bootstrap Material Design
+description: The most popular HTML, CSS, and JS Material Design library in the world.
+twitter: FezVrasta
+authors: Federico Zivolo and Bootstrap contributors
+social_logo_path: /assets/brand/bootstrap-social-logo.png
+social_image_path: /assets/brand/bootstrap-social.png
+
+# Custom vars
+current_version:  4.0.0-beta.3
+docs_version:     4.0
+repo:             https://github.com/FezVrasta/bootstrap-material-design
+gitter:           https://gitter.im/FezVrasta/bootstrap-material-design
+
+download:
+  source:         https://github.com/FezVrasta/bootstrap-material-design/releases
+  dist:           https://github.com/FezVrasta/bootstrap-material-design/archive/v4.0.0-beta.3-dist.zip
+
+blog:             https://blog.getbootstrap.com
+expo:             https://expo.getbootstrap.com
+mkp:              https://www.creative-tim.com/product/material-kit-pro?affiliate_id=87385
+mdp:              https://www.creative-tim.com/product/material-dashboard-pro?affiliate_id=87385
+mdbootstrap:      https://mdbootstrap.com/product/material-design-for-bootstrap-pro/?utm_source=7e4bff&utm_id=7e4bff
+
+cdn:
+  # See https://www.srihash.org for info on how to generate the hashes
+  css:            https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/css/bootstrap-material-design.min.css
+  css_hash:       "sha384-k5bjxeyx3S5yJJNRD1eKUMdgxuvfisWKku5dwHQq9Q/Lz6H8CyL89KF52ICpX4cL"
+  js:             https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/js/bootstrap-material-design.js
+  js_hash:        "sha384-hC7RwS0Uz+TOt6rNG8GX0xYCJ2EydZt1HeElNwQqW+3udRol4XwyBfISrNDgQcGA"
+  jquery:         https://code.jquery.com/jquery-3.2.1.slim.min.js
+  jquery_hash:    "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  popper:         https://unpkg.com/popper.js@1.12.5/dist/umd/popper.js
+  popper_hash:    "sha384-KlVcf2tswD0JOTQnzU4uwqXcbAy57PvV48YUiLjqpk/MJ2wExQhg9tuozn5A1iVw"
+  snackbar:       https://cdn.rawgit.com/FezVrasta/snackbarjs/1.1.0/dist/snackbar.min.js

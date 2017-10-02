@@ -193,13 +193,13 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
-bootstrap-material-design@4.0.0-beta.3:
+bootstrap-material-design@FezVrasta/bootstrap-material-design#master:
   version "4.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/bootstrap-material-design/-/bootstrap-material-design-4.0.0-beta.3.tgz#78c1588fbaab38f1bb66e43154fd43bf3f69a500"
+  resolved "https://codeload.github.com/FezVrasta/bootstrap-material-design/tar.gz/f76527b07847a7c672cad6c3a78672e626385c6c"
 
-bootstrap@4.0.0-beta:
+bootstrap@twbs/bootstrap#v4-dev:
   version "4.0.0-beta"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-beta.tgz#dc5928175d2e71310bc668cf9e05a907211b72a6"
+  resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/9145cc8279abb6d9ca73e18d82d6816e386cdab3"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
@@ -2223,3 +2223,7 @@ yargs@^8.0.1:
     which-module "^2.0.0"
     y18n "^3.2.1"
     yargs-parser "^7.0.0"
+
+yarn@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.1.0.tgz#f2da9340490236b6c56de305b1c21a8a19c433c3"
