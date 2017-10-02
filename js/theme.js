@@ -34,6 +34,9 @@ $(document).ready(function() {
             .addClass('content-list')
             .height('auto')
             .find('.col-outer').each(function() {
+                $(this).find('.card').height('200px');
+                $(this).find('.card-body').attr('style', 'height: 80%;');
+                $(this).find('.card-img-top').addClass('card-img-left').removeClass('card-img-top img-fluid').attr('style', 'height: 100%; width: auto;');
                 $(this).removeClass($(this).data('grid-classes'))
                     .addClass('col-12')
                     .one(
