@@ -1622,10 +1622,6 @@ pseudomap@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
-ptsans-npm-webfont@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/ptsans-npm-webfont/-/ptsans-npm-webfont-0.0.4.tgz#c0232128200c130d188bb490301fdeb00a041138"
-
 punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
@@ -1829,10 +1825,6 @@ rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1:
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.2.tgz#2ed8150d24a16ea8651e6d6ef0f47c4158ce7a36"
   dependencies:
     glob "^7.0.5"
-
-roboto-npm-webfont@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/roboto-npm-webfont/-/roboto-npm-webfont-0.0.4.tgz#1c75d95ddbdfd06754602080d32c4f11acaf4b7b"
 
 safe-buffer@^5.0.1, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
@@ -2098,6 +2090,14 @@ tunnel-agent@^0.6.0:
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
+
+typeface-pt-sans@^0.0.35:
+  version "0.0.35"
+  resolved "https://registry.yarnpkg.com/typeface-pt-sans/-/typeface-pt-sans-0.0.35.tgz#95ac15e48c31ecb5706aa017d7af30193e19c256"
+
+typeface-roboto@^0.0.35:
+  version "0.0.35"
+  resolved "https://registry.yarnpkg.com/typeface-roboto/-/typeface-roboto-0.0.35.tgz#5965d3f6d4cd72b7b2833d6b7d42c9b59b8392ba"
 
 uglify-js@^3.0.24:
   version "3.1.3"

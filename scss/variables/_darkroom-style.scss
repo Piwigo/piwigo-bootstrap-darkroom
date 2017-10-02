@@ -1,8 +1,5 @@
 // Darkroom color style
 
-// Options
-$enable-shadows:  true !default;
-
 // define Darkroom colors
 $gray-lighter-2:  #dbdbdb !default;
 $gray-lighter-1:  #a9a9a9 !default;
@@ -11,24 +8,27 @@ $gray-darker-1:   #4f4f4f !default;
 $gray-darker-2:   #3c3c3c !default;
 $gray-darker-3:   #2e2e2e !default;
 
-// redefine some of bootstrap's
+// redefine gray-600 from bootstrap, it's used in various places
 $gray-600: $gray-lighter-1;
 
-// import base colors
-@import "colors";
+// import material colors
+@import "components/bootstrap-material-design/scss/variables/colors";
 
-// override Bootstrap's theme colors
+//
+// Now, the bootstrap overrides...
+//
+
+// Theme colors
 $theme-colors: (
   primary: $gray-darker-2,
   secondary: $gray-darker-1,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
   light: $gray-darker-3,
   dark: $black
 ) !default;
 
+
+// Options
+$enable-shadows:  true !default;
 
 // Body
 $body-bg:       $gray-darker-1 !default;
@@ -58,13 +58,13 @@ $component-active-bg:    $gray-darker-2 !default;
 
 // Dropdowns
 $dropdown-link-color:            $gray-darker-1 !default;
-$dropdown-link-hover-color:      darken($gray-900, 5%) !default;
-$dropdown-link-hover-bg:         $gray-200 !default;
+$dropdown-link-hover-color:      darken($gray-darker-3, 5%) !default;
+$dropdown-link-hover-bg:         $gray-lighter-2 !default;
 
 $dropdown-link-active-color:     $component-active-color !default;
 $dropdown-link-active-bg:        $component-active-bg !default;
 
-$dropdown-link-disabled-color:   $gray-600 !default;
+$dropdown-link-disabled-color:   $gray !default;
 
 // Cards
 $card-cap-bg:              $gray-darker-3 !default;

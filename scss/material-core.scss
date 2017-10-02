@@ -1,9 +1,12 @@
 // Material core overrides
 
+// variable overrides
 $bmd-navbar-link-font-size: 1rem !default;
 
+// import
 @import "../components/bootstrap-material-design/scss/bootstrap-material-design";
 
+// additional styles
 .navbar-main {
   box-shadow: none;
 }

@@ -63,6 +63,12 @@
       margin-bottom: 5px;
     }
   }
+
+  .nav-link {
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 #identificationDropdown .dropdown-menu { min-width: 12rem; }
