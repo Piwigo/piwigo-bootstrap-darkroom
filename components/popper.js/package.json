@@ -1,48 +1,52 @@
 {
-  "name": "popperjs-monorepo",
-  "version": "0.0.0",
-  "license": "MIT",
-  "private": true,
-  "devDependencies": {
-    "async": "^2.5.0",
-    "babel-eslint": "^7.2.3",
-    "bundlesize": "^0.12.1",
-    "eslint-plugin-jasmine": "^2.7.1",
-    "jsdoc-to-markdown": "^3.0.0",
-    "lerna": "^2.0.0",
-    "lint-staged": "^4.0.1",
-    "opt-cli": "^1.5.1",
-    "pre-commit": "^1.2.2",
-    "prettier-eslint-cli": "^4.1.1",
-    "wait-on": "^2.0.2",
-    "wide-align": "^1.1.2"
+  "name": "popper.js",
+  "version": "1.12.5",
+  "description": "A kickass library to manage your poppers",
+  "homepage": "https://popper.js.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FezVrasta/popper.js.git"
   },
-  "scripts": {
-    "precommit": "lint-staged",
-    "postinstall": "lerna bootstrap",
-    "bootstrap": "lerna bootstrap",
-    "pretest": "$BUNDLESIZE && bundlesize-init",
-    "test": "lerna run --parallel test && yarn build",
-    "posttest": "$BUNDLESIZE && bundlesize",
-    "build": "lerna run build",
-    "docs": "yarn build && for dest in popper tooltip; do jsdoc2md ./packages/$dest/dist/$dest.js > ./docs/_includes/$dest-documentation.md; done",
-    "docs:serve": "cd docs; { wait-on http://localhost:4000; open http://localhost:4000; } & jekyll serve"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier-eslint --write \"**/src/**/*.js\"",
-      "git add"
-    ]
-  },
-  "bundlesize": [
-    {
-      "path": "./packages/popper/dist/popper.min.js",
-      "threshold": "7 Kb"
-    },
-    {
-      "path": "./packages/tooltip/dist/tooltip.min.js",
-      "threshold": "2 Kb"
-    }
+  "author": "Federico Zivolo <federico.zivolo@gmail.com>",
+  "contributors": [
+    "Contributors (https://github.com/FezVrasta/popper.js/graphs/contributors)"
   ],
-  "dependencies": {}
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FezVrasta/popper.js/issues"
+  },
+  "keywords": [
+    "popperjs",
+    "component",
+    "drop",
+    "tooltip",
+    "popover",
+    "position",
+    "attached"
+  ],
+  "main": "dist/umd/popper.js",
+  "module": "dist/esm/popper.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "postpublish": "nuget-publish && ./bower-publish.sh",
+    "prebuild": "npm run lint",
+    "pretest": "npm run lint",
+    "build": "node bundle.js",
+    "lint": "eslint .",
+    "test": "popper-karma",
+    "test:dev": "BROWSERS=Chrome NODE_ENV=development npm run test",
+    "coverage": "NODE_ENV=coverage npm run test"
+  },
+  "devDependencies": {
+    "@popperjs/bundle": "^1.0.2",
+    "@popperjs/eslint-config-popper": "^1.0.0",
+    "nuget-publish": "^1.0.3",
+    "@popperjs/test": "^1.0.0",
+    "@popperjs/test-utils": "^1.0.0",
+    "eslint": "^4.1.1"
+  },
+  "resolutions": {
+    "micromatch": "^3.0.3"
+  }
 }

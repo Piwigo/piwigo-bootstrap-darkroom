@@ -1,32 +1,34 @@
 {
   "name": "jquery-touch-events",
-  "version": "1.0.8",
-  "description": "Polyfill to remove click delays on browsers with touch UIs.",
-  "maintainers": [
-    {
-        "name": "Ben Major",
-        "email": "ben.major88@gmail.com"
-    }
+  "description": "A mobile events plugin for jQuery",
+  "contributors": [
+    {"name": "Sam Delgado", "email": "<sam@samdelgado.com>", "url": "https://rizerapp.com"},
+    {"name": "hachigoro", "url": "https://github.com/hachigoro"},
+    {"name": "Ben Major", "url": "http://www.ben-major.co.uk"}
   ],
-  "author": {
-    "name": "Ben Major",
-    "email": "ben.major88@gmail.com"
-  },
-  "main": "src/jquery.mobile-events.js",
+  "version": "1.0.7",
+  "main": "index.js",
+  "keywords": [
+    "jquery",
+    "zepto",
+    "touch",
+    "gestures",
+    "mobile",
+    "multitouch"
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/benmajor/jQuery-Touch-Events.git"
+    "url": "https://github.com/SamDelgado/jQuery-Touch-Events.git"
   },
-  "keywords": [
-    "jquery-touch-events",
-    "jquery-mobile",
-    "mobile",
-    "touch"
-  ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
+  "bugs": {
+    "url": "https://github.com/SamDelgado/jQuery-Touch-Events/issues"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js"
   ]
 }

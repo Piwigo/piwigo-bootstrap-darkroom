@@ -1,0 +1,23 @@
+{
+  "name": "ptsans-npm-webfont",
+  "version": "0.0.4",
+  "description": "PTsans webfont package",
+  "main": "style.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaeum/ptsans-npm-webfont.git"
+  },
+  "keywords": [
+    "ptsans",
+    "webfont"
+  ],
+  "author": "Vaeum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vaeum/ptsans-npm-webfont/issues"
+  },
+  "homepage": "https://github.com/vaeum/ptsans-npm-webfont#readme"
+}
