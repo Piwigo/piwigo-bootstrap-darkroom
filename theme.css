@@ -236,6 +236,7 @@ body {
     text-indent: 10px;
   }
   #navbar-menubar > #quicksearch input[type="text"] {
+    color: inherit;
     background: 14px;
     width: 1px !important;
     border: none !important;
@@ -249,6 +250,10 @@ body {
   #navbar-menubar > #quicksearch input[type="text"]:focus {
     background: none;
     width: 150px !important;
+  }
+  #navbar-menubar > #quicksearch input[type="text"]::-webkit-input-placeholder {
+    color: inherit;
+    padding-top: .125rem;
   }
 }
 

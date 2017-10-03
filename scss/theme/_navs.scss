@@ -115,6 +115,7 @@
   }
                                                                                                                                                                     
   #navbar-menubar>#quicksearch input[type="text"] {
+    color: inherit;
     background: 14px;
     width: 1px !important;
     border: none !important;
@@ -124,13 +125,19 @@
     -moz-transition: all 0.7s ease 0s;
     -o-transition: all 0.7s ease 0s;
     transition: all 0.7s ease 0s;
-  }
-                                                                                                                                                                    
-  #navbar-menubar>#quicksearch input[type="text"]:focus {
-    background: none;
-    width: 150px !important;
+
+    &:focus {
+      background: none;
+      width: 150px !important;
+    }
+
+    &::-webkit-input-placeholder {
+      color: inherit;
+      padding-top: .125rem;
+    }
   }
 }
+
 @include media-breakpoint-down(md) {
   #navbar-menubar>#quicksearch>.fa-search {
     display: none;
