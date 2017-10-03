@@ -196,21 +196,6 @@ body {
   min-width: 12rem;
 }
 
-@media (min-width: 992px) {
-  #navbar-menubar > #quicksearch {
-    float: left;
-  }
-  #navbar-menubar > #quicksearch input[type="text"] {
-    width: 100px;
-  }
-}
-
-@media (min-width: 1200px) {
-  #navbar-menubar > #quicksearch input[type="text"] {
-    width: 150px;
-  }
-}
-
 /* replace the home link in navbar */
 .navbar-brand a:first-child {
   font-size: 0;
@@ -223,8 +208,18 @@ body {
 }
 
 /* Quicksearch in navbar */
+#navbar-menubar > #quicksearch input[type="text"] {
+  color: inherit;
+}
+
+#navbar-menubar > #quicksearch input[type="text"]::-webkit-input-placeholder {
+  color: inherit;
+  padding-top: .125rem;
+}
+
 @media (min-width: 992px) {
   #navbar-menubar > #quicksearch {
+    float: left;
     position: relative;
     padding-right: 0px;
   }
@@ -236,9 +231,8 @@ body {
     text-indent: 10px;
   }
   #navbar-menubar > #quicksearch input[type="text"] {
-    color: inherit;
     background: 14px;
-    width: 1px !important;
+    width: 1px;
     border: none !important;
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
@@ -251,14 +245,13 @@ body {
     background: none;
     width: 150px !important;
   }
-  #navbar-menubar > #quicksearch input[type="text"]::-webkit-input-placeholder {
-    color: inherit;
-    padding-top: .125rem;
-  }
 }
 
 @media (max-width: 991px) {
-  #navbar-menubar > #quicksearch > .fa-search {
+  #navbar-menubar > #quicksearch {
+    margin-left: .75rem !important;
+  }
+  #navbar-menubar > #quicksearch .fa-search {
     display: none;
   }
 }
