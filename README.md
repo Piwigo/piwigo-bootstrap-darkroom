@@ -65,6 +65,13 @@ A demo is available at https://pwdemo.kuther.net
 * [jQuery-Touch-Events](https://github.com/benmajor/jQuery-Touch-Events)
 * [Photography Icons](https://thenounproject.com/DmitryBaranovskiy/collection/photo/) by [Dmitry Baranovskiy](https://thenounproject.com/DmitryBaranovskiy/), Licensed under [Creative Commons 3.0](https://creativecommons.org/licenses/by/3.0/us/)
 
+### Development & Customizing
+* All stylesheets are compiled from Sass source files using node-sass.
+* Dependencies are managed using npm, with a .gitignore on node_modules
+* Distribution dependencies are separated from the usual npm bloat using `yarn --prod --module-folder components --ignore-optional`
+
+To make changes to the scss files, setup the project using `npm install`, change the files and run `npm run build`.
+
 ### License
 
 ```
