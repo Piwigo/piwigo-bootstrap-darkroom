@@ -26,6 +26,8 @@
                         <option value="material-darkroom"{if $theme_config->bootstrap_theme == 'material-darkroom'} selected="selected"{/if}>Material Darkroom</option>
                         <option value="material-deep-purple"{if $theme_config->bootstrap_theme == 'material-deep-purple'} selected="selected"{/if}>Material Deep Purple</option>
                         <option value="material-indigo"{if $theme_config->bootstrap_theme == 'material-indigo'} selected="selected"{/if}>Material Indigo</option>
+                        <option value="material-light-green"{if $theme_config->bootstrap_theme == 'material-light-green'} selected="selected"{/if}>Material Light Green</option>
+                        <option value="material-red"{if $theme_config->bootstrap_theme == 'material-red'} selected="selected"{/if}>Material Red</option>
                         <option value="material-teal"{if $theme_config->bootstrap_theme == 'material-teal'} selected="selected"{/if}>Material Teal</option>
                         <option value="bootswatch"{if $theme_config->bootstrap_theme == 'bootswatch'} selected="selected"{/if} disabled>Bootswatch</option>
                     </select>
@@ -407,7 +409,7 @@ $('select[name=bootstrap_theme]').change(function() {
     case 'bootstrap-default':
       navbar_contextual_style = 'navbar-light';
       break;
-    case (bs_theme.match(/teal|deep-purple|indigo/) || {}).input:
+    case (bs_theme.match(/deep-purple|indigo|light-green|purple|red|teal/) || {}).input:
       navbar_contextual_bg = 'bg-primary';
       break;
     case 'bootswatch':
@@ -418,13 +420,13 @@ $('select[name=bootstrap_theme]').change(function() {
       navbar_main_bg = 'bg-dark';
       navbar_contextual_style = 'navbar-dark';
       navbar_contextual_bg = 'bg-light';
-      preview.html('<img src="themes/bootstrap_darkroom/admin/img/' + $('select[name=bootstrap_theme]').val() + '.png" style="padding: 10px 0;"/>');
-      preview.show();
       select_bootswatch.empty()
       select_bootswatch.hide();
       label_bootswatch.hide();
       break;
   }
+
+  preview.html('<img src="themes/bootstrap_darkroom/admin/img/' + $('select[name=bootstrap_theme]').val() + '.png" style="padding: 10px 0;"/>');
 
   $('input[name=navbar_main_style]').attr('value', navbar_main_style);
   $('input[name=navbar_main_bg]').attr('value', navbar_main_bg);
