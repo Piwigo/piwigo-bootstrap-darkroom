@@ -30,7 +30,7 @@ $(document).ready(function() {
 {if !empty($image_orders)}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
-                            <i class="fa fa-sort fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Sort order'|@translate}</span><span class="caret"></span>
+                            <i class="fa fa-sort fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Sort order'|@translate}</span>
                         </a>
                         <div class="dropdown-menu" role="menu">
 {foreach from=$image_orders item=image_order name=loop}
@@ -42,7 +42,7 @@ $(document).ready(function() {
 {if !empty($image_derivatives)}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
-                            <i class="fa fa-picture-o fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span><span class="caret"></span>
+                            <i class="fa fa-picture-o fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span>
                         </a>
                         <div class="dropdown-menu" role="menu">
 {foreach from=$image_derivatives item=image_derivative name=loop}
@@ -148,7 +148,6 @@ $(document).ready(function() {
     <div id="calendar-select" class="btn-group">
         <button id="calendar-view" type="button" class="btn btn-primary btn-raised dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {foreach from=$chronology_views item=view}{if $view.SELECTED}{$view.CONTENT}{/if}{/foreach}
-            <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="calendar-view">
             {foreach from=$chronology_views item=view name=loop}

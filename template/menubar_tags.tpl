@@ -1,5 +1,5 @@
 <li class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Related tags'|@translate} <span class="caret"></span></a>
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Related tags'|@translate}</a>
     <div class="dropdown-menu dropdown-menu-scrollable" role="menu">
 {foreach from=$block->data item=tag}
         {strip}<a class="dropdown-item tagLevel{$tag.level}" href=

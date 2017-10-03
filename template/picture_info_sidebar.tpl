@@ -135,7 +135,7 @@
             method: "POST",
             onFailure: function(num, text) { alert(num + " " + text); },
             onSuccess: function(result) {
-                jQuery('#dropdownPermissions').html(label + ' <span class="caret"></span>');
+                jQuery('#dropdownPermissions').html(label);
                 jQuery('.permission-li').removeClass('active');
                 jQuery('#permission-' + level).addClass('active');
             }
@@ -150,7 +150,6 @@
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
                             {$available_permission_levels[$current.level]}
-                            <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownPermissions">
 {foreach from=$available_permission_levels item=label key=level}

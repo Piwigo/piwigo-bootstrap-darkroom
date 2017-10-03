@@ -1,5 +1,5 @@
 <li class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Albums'|@translate} <span class="caret"></span></a>
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Albums'|@translate}</a>
     <div class="dropdown-menu dropdown-menu-scrollable" role="menu">
 {assign var='ref_level' value=0}
 {foreach from=$block->data.MENU_CATEGORIES item=cat}

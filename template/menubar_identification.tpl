@@ -1,5 +1,5 @@
 <li class="nav-item dropdown" id="identificationDropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{if isset($USERNAME)}<i class="fa fa-user"></i> {$USERNAME}{else}{'Login'|@translate}{/if} <span class="caret"></span></a>
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{if isset($USERNAME)}<i class="fa fa-user"></i> {$USERNAME}{else}{'Login'|@translate}{/if}</a>
     <div class="dropdown-menu" role="menu">
 {strip}
     {if isset($USERNAME)}

@@ -23,7 +23,7 @@
 {/strip}{/footer_script}
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
-                        <i class="fa fa-picture-o fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span><span class="caret"></span>
+                        <i class="fa fa-picture-o fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
 {foreach from=$current.unique_derivatives item=derivative key=derivative_type}
@@ -65,7 +65,7 @@
 {else}
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" title="{'Download this file'|@translate}">
-                        <i class="fa fa-download fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Download this file'|@translate}</span><span class="caret"></span>
+                        <i class="fa fa-download fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Download this file'|@translate}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$current.formats item=format}

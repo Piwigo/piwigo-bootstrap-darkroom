@@ -76,7 +76,7 @@ $(document).ready(function() {
     $('.navbar-main dt:contains("Downloads")').wrap('<li class="nav-item"></li>');
     $('.navbar-main dt:contains("Downloads")').closest('li').addClass('dropdown').attr('id', 'bd_downloads');
     $('.navbar-main dt:contains("Downloads")').changeElementType('a');
-    $('#bd_downloads>a').addClass('nav-link dropdown-toggle').attr('data-toggle', 'dropdown').append('<span class="caret"></span>');
+    $('#bd_downloads>a').addClass('nav-link dropdown-toggle').attr('data-toggle', 'dropdown');
     $('#bd_downloads dd ul').appendTo('#bd_downloads');
     $('#bd_downloads dd').remove();
     $('#bd_downloads ul').addClass('dropdown-menu dropdown-menu-right');
@@ -100,7 +100,6 @@ $(document).ready(function() {
   $('#downloadSizeBox').appendTo(liDownloadSizeLink);
   $(liDownloadSizeLink).addClass('dropdown');
   $('#downloadSizeLink').addClass('dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown');
-  $('#downloadSizeLink .pwg-button-text').after('<span class="caret"></span>');
   $('#downloadSizeBox').changeElementType('ul');
   $('#downloadSizeBox a').wrap('<li></li>');
   $('#downloadSizeBox').attr('role', 'menu').attr('style', '');

@@ -1,5 +1,5 @@
 <li class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{$block->get_title()|strip_tags:true} <span class="caret"></span></a>
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{$block->get_title()|strip_tags:true}</a>
     <ul class="dropdown-menu dropdown-menu-scrollable" role="menu">
         <li class="dropdown-item">{strip}
             <a href="{$block->data.U_LIST}">
