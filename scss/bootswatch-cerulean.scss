@@ -1,0 +1,8 @@
+@import "variables/core";
+@import "components/bootswatch/cerulean/variables";
+@import "components/bootstrap/scss/bootstrap";
+@import "components/bootswatch/cerulean/bootswatch";
+
+.navbar-contextual.sticky-top {
+  z-index: 1020;
+}

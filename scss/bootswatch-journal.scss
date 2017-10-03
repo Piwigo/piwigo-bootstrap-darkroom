@@ -1,10 +1,10 @@
 @import "variables/core";
 @import "components/bootswatch/journal/variables";
-@import "components/bootswatch/journal/bootswatch";
 
 $jumbotron-bg: theme-color('primary');
 
 @import "components/bootstrap/scss/bootstrap";
+@import "components/bootswatch/journal/bootswatch";
 
 .navbar-contextual.sticky-top {
   z-index: 1020;

@@ -1,31 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
-body {
-  -webkit-font-smoothing: antialiased;
-}
-
-.alert {
-  border: none;
-}
-
-.progress {
-  height: 8px;
-}
-
-.progress .progress-bar {
-  font-size: 8px;
-  line-height: 8px;
-}
-
-.popover {
-  color: #373a3c;
-}
-
 /*!
  * Bootstrap v4.0.0-beta (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
 :root {
   --blue: #0275d8;
   --indigo: #6610f2;
@@ -8664,6 +8643,27 @@ a.text-dark:focus, a.text-dark:hover {
 
 .invisible {
   visibility: hidden !important;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.alert {
+  border: none;
+}
+
+.progress {
+  height: 8px;
+}
+
+.progress .progress-bar {
+  font-size: 8px;
+  line-height: 8px;
+}
+
+.popover {
+  color: #373a3c;
 }
 
 .navbar-contextual.sticky-top {

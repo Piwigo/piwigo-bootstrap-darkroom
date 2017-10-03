@@ -29,10 +29,26 @@
                         <option value="material-light-green"{if $theme_config->bootstrap_theme == 'material-light-green'} selected="selected"{/if}>Material Light Green</option>
                         <option value="material-red"{if $theme_config->bootstrap_theme == 'material-red'} selected="selected"{/if}>Material Red</option>
                         <option value="material-teal"{if $theme_config->bootstrap_theme == 'material-teal'} selected="selected"{/if}>Material Teal</option>
+                        <option value="bootswatch-cerulean"{if $theme_config->bootstrap_theme == 'bootswatch-cerulean'} selected="selected"{/if}>Bootswatch Cerulean</option>
                         <option value="bootswatch-cosmo"{if $theme_config->bootstrap_theme == 'bootswatch-cosmo'} selected="selected"{/if}>Bootswatch Cosmo</option>
+                        <option value="bootswatch-cyborg"{if $theme_config->bootstrap_theme == 'bootswatch-cyborg'} selected="selected"{/if}>Bootswatch Cyborg</option>
+                        <option value="bootswatch-darkly"{if $theme_config->bootstrap_theme == 'bootswatch-darkly'} selected="selected"{/if}>Bootswatch Darkly</option>
+                        <option value="bootswatch-flatly"{if $theme_config->bootstrap_theme == 'bootswatch-flatly'} selected="selected"{/if}>Bootswatch Flatly</option>
                         <option value="bootswatch-journal"{if $theme_config->bootstrap_theme == 'bootswatch-journal'} selected="selected"{/if}>Bootswatch Journal</option>
                         <option value="bootswatch-materia"{if $theme_config->bootstrap_theme == 'bootswatch-materia'} selected="selected"{/if}>Bootswatch Materia</option>
+                        <option value="bootswatch-minty"{if $theme_config->bootstrap_theme == 'bootswatch-minty'} selected="selected"{/if}>Bootswatch Minty</option>
+                        <option value="bootswatch-litera"{if $theme_config->bootstrap_theme == 'bootswatch-litera'} selected="selected"{/if}>Bootswatch Litera</option>
+                        <option value="bootswatch-lumen"{if $theme_config->bootstrap_theme == 'bootswatch-lumen'} selected="selected"{/if}>Bootswatch Lumen</option>
                         <option value="bootswatch-lux"{if $theme_config->bootstrap_theme == 'bootswatch-lux'} selected="selected"{/if}>Bootswatch Lux</option>
+                        <option value="bootswatch-pulse"{if $theme_config->bootstrap_theme == 'bootswatch-pulse'} selected="selected"{/if}>Bootswatch Pulse</option>
+                        <option value="bootswatch-sandstone"{if $theme_config->bootstrap_theme == 'bootswatch-sandstone'} selected="selected"{/if}>Bootswatch Sandstone</option>
+                        <option value="bootswatch-simplex"{if $theme_config->bootstrap_theme == 'bootswatch-simplex'} selected="selected"{/if}>Bootswatch Simplex</option>
+                        <option value="bootswatch-sketchy"{if $theme_config->bootstrap_theme == 'bootswatch-sketchy'} selected="selected"{/if}>Bootswatch Sketchy</option>
+                        <option value="bootswatch-slate"{if $theme_config->bootstrap_theme == 'bootswatch-slate'} selected="selected"{/if}>Bootswatch Slate</option>
+                        <option value="bootswatch-solar"{if $theme_config->bootstrap_theme == 'bootswatch-solar'} selected="selected"{/if}>Bootswatch Solar</option>
+                        <option value="bootswatch-superhero"{if $theme_config->bootstrap_theme == 'bootswatch-superhero'} selected="selected"{/if}>Bootswatch Superhero</option>
+                        <option value="bootswatch-united"{if $theme_config->bootstrap_theme == 'bootswatch-united'} selected="selected"{/if}>Bootswatch United</option>
+                        <option value="bootswatch-yeti"{if $theme_config->bootstrap_theme == 'bootswatch-yeti'} selected="selected"{/if}>Bootswatch Yeti</option>
                     </select>
                 </li>
             <ul>
@@ -415,7 +431,13 @@ $('select[name=bootstrap_theme]').change(function() {
     case (bs_theme.match(/material-(deep-purple|indigo|light-green|purple|red|teal)/) || {}).input:
       navbar_contextual_bg = 'bg-primary';
       break;
-    case (bs_theme.match(/bootswatch-(cosmo|journal|materia|lux)/) || {}).input:
+    case (bs_theme.match(/^bootswatch-(litera|lumen|simplex)/) || {}).input:
+      navbar_main_style = 'navbar-light';
+      navbar_main_bg = 'bg-primary';
+      navbar_contextual_style = 'navbar-light';
+      navbar_contextual_bg = 'bg-primary';
+      break;
+    case (bs_theme.match(/^bootswatch/) || {}).input:
       navbar_main_bg = 'bg-primary';
       navbar_contextual_bg = 'bg-primary';
       break;

@@ -1,7 +1,7 @@
 @import "variables/core";
 @import "components/bootswatch/cosmo/variables";
-@import "components/bootswatch/cosmo/bootswatch";
 @import "components/bootstrap/scss/bootstrap";
+@import "components/bootswatch/cosmo/bootswatch";
 
 .navbar-contextual.sticky-top {
   z-index: 1020;

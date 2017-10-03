@@ -1,53 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=News+Cycle:400,700");
-.bg-primary {
-  background-color: #fff !important;
-  border: 1px solid #eee;
-}
-
-.bg-primary.navbar-fixed-top {
-  border-width: 0 0 1px 0;
-}
-
-.bg-primary.navbar-fixed-bottom {
-  border-width: 1px 0 0 0;
-}
-
-.bg-inverse {
-  background-color: #000 !important;
-}
-
-.navbar {
-  font-size: 18px;
-  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
-  font-weight: 700;
-}
-
-.navbar-nav .nav-item + .nav-item {
-  margin-left: 2rem;
-}
-
-.navbar-brand {
-  padding-top: 0.5rem;
-  font-size: inherit;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.btn {
-  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
-  font-weight: 700;
-}
-
-.pagination a:hover {
-  text-decoration: none;
-}
-
 /*!
  * Bootstrap v4.0.0-beta (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:400,700");
 :root {
   --blue: #0275d8;
   --indigo: #6610f2;
@@ -8686,6 +8643,49 @@ a.text-dark:focus, a.text-dark:hover {
 
 .invisible {
   visibility: hidden !important;
+}
+
+.bg-primary {
+  background-color: #fff !important;
+  border: 1px solid #eee;
+}
+
+.bg-primary.navbar-fixed-top {
+  border-width: 0 0 1px 0;
+}
+
+.bg-primary.navbar-fixed-bottom {
+  border-width: 1px 0 0 0;
+}
+
+.bg-inverse {
+  background-color: #000 !important;
+}
+
+.navbar {
+  font-size: 18px;
+  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+  font-weight: 700;
+}
+
+.navbar-nav .nav-item + .nav-item {
+  margin-left: 2rem;
+}
+
+.navbar-brand {
+  padding-top: 0.5rem;
+  font-size: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn {
+  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+  font-weight: 700;
+}
+
+.pagination a:hover {
+  text-decoration: none;
 }
 
 .navbar-contextual.sticky-top {
