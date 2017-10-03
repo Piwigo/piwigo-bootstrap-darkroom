@@ -1,30 +1,28 @@
 // Material Deep-Purple Style
 
 @import "variables/core";
-@import "variables/colors";
 
 // override Bootstrap's theme colors
 $theme-colors: (
-  primary: $deep-purple-700,
-  secondary: $deep-purple-400,
-  success: $green,
-  info: $cyan,
-  warning: $yellow,
-  danger: $red,
-  light: $deep-purple-200,
-  dark: $deep-purple-900
+  primary: #673AB7,
+  secondary: #E040FB,
+  light: #D1C4E9,
+  dark: #512DA8
 ) !default;
+
+$body-bg:                 #fff;
+$body-color:              #212121;
+
+$jumbotron-bg:            #673AB7;
 
 $link-decoration:         none !default;
 $link-hover-decoration:   none !default;
 
-$jumbotron-bg:            theme-color('secondary');
-
 // now, import top-level material
 @import "material-core";
 
-.navbar-contextual {
-  background-color: theme-color('secondary');
+.jumbotron {
+  color: $white;
 }
 
 .dropdown-item.active a {
@@ -32,19 +30,20 @@ $jumbotron-bg:            theme-color('secondary');
 }
 .card-footer {
   border-top: none;
+}
 
-  &.text-muted {
-    font-size: 0.75rem;
-  }
+input[type=text].form-control,
+input[type=password].form-control {
+  color: $black;
 }
 
 #sidebar {
  .handle {
     color: $white;
-    background-color: theme-color('secondary') !important;
-    border-top: 1px solid theme-color('secondary') !important;
-    border-bottom: 1px solid theme-color('secondary') !important;
-    border-left: 1px solid theme-color('secondary') !important;
+    background-color: theme-color('primary') !important;
+    border-top: 1px solid theme-color('primary') !important;
+    border-bottom: 1px solid theme-color('primary') !important;
+    border-left: 1px solid theme-color('primary') !important;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
 
     a {
@@ -58,10 +57,10 @@ $jumbotron-bg:            theme-color('secondary');
                                                                                                                                                                       
   .info {
     color: $white;
-    background-color: theme-color('secondary') !important;
-    border-top: 1px solid theme-color('secondary') !important;
-    border-bottom: 1px solid theme-color('secondary') !important;
-    border-left: 1px solid theme-color('secondary') !important;
+    background-color: theme-color('primary') !important;
+    border-top: 1px solid theme-color('primary') !important;
+    border-bottom: 1px solid theme-color('primary') !important;
+    border-left: 1px solid theme-color('primary') !important;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
   }
 }

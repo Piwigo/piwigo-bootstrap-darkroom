@@ -4,16 +4,16 @@
 
 // override Bootstrap's theme colors
 $theme-colors: (
-  primary: #009688,
+  primary: #3F51B5,
   secondary: #03A9F4,
-  light: #B2DFDB,
-  dark: #00796B
+  light: #C5CAE9,
+  dark: #303F9F
 ) !default;
 
 $body-bg:                 #fff;
 $body-color:              #212121;
 
-$jumbotron-bg:            theme-color('primary');
+$jumbotron-bg:            #3F51B5;
 
 $link-decoration:         none !default;
 $link-hover-decoration:   none !default;

@@ -24,8 +24,9 @@
                         <option value="bootstrap-darkroom"{if $theme_config->bootstrap_theme == 'bootstrap-darkroom'} selected="selected"{/if}>Bootstrap Darkroom</option>
                         <option value="bootstrap-default"{if $theme_config->bootstrap_theme == 'bootstrap-default'} selected="selected"{/if}>Bootstrap Default</option>
                         <option value="material-darkroom"{if $theme_config->bootstrap_theme == 'material-darkroom'} selected="selected"{/if}>Material Darkroom</option>
-                        <option value="material-teal"{if $theme_config->bootstrap_theme == 'material-teal'} selected="selected"{/if}>Material Teal</option>
                         <option value="material-deep-purple"{if $theme_config->bootstrap_theme == 'material-deep-purple'} selected="selected"{/if}>Material Deep Purple</option>
+                        <option value="material-indigo"{if $theme_config->bootstrap_theme == 'material-indigo'} selected="selected"{/if}>Material Indigo</option>
+                        <option value="material-teal"{if $theme_config->bootstrap_theme == 'material-teal'} selected="selected"{/if}>Material Teal</option>
                         <option value="bootswatch"{if $theme_config->bootstrap_theme == 'bootswatch'} selected="selected"{/if} disabled>Bootswatch</option>
                     </select>
                 </li>
@@ -406,7 +407,7 @@ $('select[name=bootstrap_theme]').change(function() {
     case 'bootstrap-default':
       navbar_contextual_style = 'navbar-light';
       break;
-    case (bs_theme.match(/teal|deep-purple/) || {}).input:
+    case (bs_theme.match(/teal|deep-purple|indigo/) || {}).input:
       navbar_contextual_bg = 'bg-primary';
       break;
     case 'bootswatch':

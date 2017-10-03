@@ -12,7 +12,7 @@ $gray-darker-3:   #2e2e2e !default;
 $gray-600: $gray-lighter-1;
 
 // import material colors
-@import "components/bootstrap-material-design/scss/variables/colors";
+@import "colors";
 
 //
 // Now, the bootstrap overrides...
