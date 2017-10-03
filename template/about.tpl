@@ -13,17 +13,18 @@
     <div class="card">
         <h4 class="card-header">{'About'|@translate}</h4>
         <div class="card-body">
-{$ABOUT_MESSAGE}
+          {$ABOUT_MESSAGE}
 {if isset($THEME_ABOUT) }
-            <ul>
-                <li>{$THEME_ABOUT}</li>
-            </ul>
+          {$THEME_ABOUT}
 {/if}
+
 {if not empty($about_msgs)}
 {foreach from=$about_msgs item=elt}
 {$elt}
 {/foreach}
 {/if}
+          <div><a href="https://github.com/tkuther/piwigo-bootstrap-darkroom">Bootstrap Darkroom Theme</a> by Thomas Kuther.</div>
+          <div><a href="https://thenounproject.com/DmitryBaranovskiy/collection/photo/">Photography Icons</a> by <a href="https://thenounproject.com/DmitryBaranovskiy/">Dmitry Baranovskiy</a>, licensed under <a href="https://creativecommons.org/licenses/by/3.0/us/">Creative Commons 3.0</a>.
         </div>
     </div>
 </div>
