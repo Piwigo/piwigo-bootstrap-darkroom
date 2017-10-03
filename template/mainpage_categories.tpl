@@ -35,7 +35,7 @@
 {/if}
         </div>
       </div>
-      <div class="card-footer text-muted">{$cat.CAPTION_NB_IMAGES}</div>
+      <div class="card-footer text-muted">{str_replace('<br>', ', ', $cat.CAPTION_NB_IMAGES)}</div>
     </a>
   </div>
 </div>
@@ -59,7 +59,7 @@
 {if isset($cat.INFO_DATES) }
             <div>{$cat.INFO_DATES}</div>
 {/if}
-            <div class="text-muted">{$cat.CAPTION_NB_IMAGES}</div>
+            <div class="text-muted">{str_replace('<br>', ', ', $cat.CAPTION_NB_IMAGES)}</div>
           </div>
         </div>
       </a>
