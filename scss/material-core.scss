@@ -8,7 +8,8 @@ $brand-primary: theme-color('primary');
 $navbar-dark-color: rgba($white,.75) !default;
 
 // import
-@import "../components/bootstrap-material-design/scss/bootstrap-material-design";
+@import "components/bootstrap-material-design/scss/bootstrap-material-design";
+@import "common/picture-info-sidebar";
 
 // additional styles
 .navbar-main {

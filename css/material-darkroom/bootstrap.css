@@ -15070,6 +15070,32 @@ h6 {
   }
 }
 
+#sidebar .handle {
+  background-color: #3c3c3c !important;
+  border-top: 1px solid #3c3c3c !important;
+  border-bottom: 1px solid #3c3c3c !important;
+  border-left: 1px solid #3c3c3c !important;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .handle a {
+  color: #fff;
+}
+
+#sidebar .handle a:hover, #sidebar .handle a:focus {
+  color: #eee;
+}
+
+#sidebar .info {
+  background-color: #3c3c3c !important;
+  border-top: 1px solid #3c3c3c !important;
+  border-bottom: 1px solid #3c3c3c !important;
+  border-left: 1px solid #3c3c3c !important;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
 .navbar-main {
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -15192,32 +15218,6 @@ input[type=text].custom-file-control {
 
 .card-thumbnail .card-footer {
   font-size: .8rem;
-}
-
-#sidebar .handle {
-  background-color: #3c3c3c !important;
-  border-top: 1px solid #3c3c3c !important;
-  border-bottom: 1px solid #3c3c3c !important;
-  border-left: 1px solid #3c3c3c !important;
-  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-}
-
-#sidebar .handle a {
-  color: #fff;
-}
-
-#sidebar .handle a:hover, #sidebar .handle a:focus {
-  color: #eee;
-}
-
-#sidebar .info {
-  background-color: #3c3c3c !important;
-  border-top: 1px solid #3c3c3c !important;
-  border-bottom: 1px solid #3c3c3c !important;
-  border-left: 1px solid #3c3c3c !important;
-  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 
 #navigationButtons > i {

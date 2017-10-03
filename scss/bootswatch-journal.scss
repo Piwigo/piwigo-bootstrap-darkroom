@@ -1,0 +1,8 @@
+@import "variables/core";
+@import "components/bootswatch/journal/variables";
+@import "components/bootswatch/journal/bootswatch";
+@import "components/bootstrap/scss/bootstrap";
+
+.navbar-contextual.sticky-top {
+  z-index: 1020;
+}

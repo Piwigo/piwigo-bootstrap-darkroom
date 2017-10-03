@@ -15070,6 +15070,32 @@ h6 {
   }
 }
 
+#sidebar .handle {
+  background-color: #673AB7 !important;
+  border-top: 1px solid #673AB7 !important;
+  border-bottom: 1px solid #673AB7 !important;
+  border-left: 1px solid #673AB7 !important;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .handle a {
+  color: #fff;
+}
+
+#sidebar .handle a:hover, #sidebar .handle a:focus {
+  color: #eee;
+}
+
+#sidebar .info {
+  background-color: #673AB7 !important;
+  border-top: 1px solid #673AB7 !important;
+  border-bottom: 1px solid #673AB7 !important;
+  border-left: 1px solid #673AB7 !important;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
 .navbar-main {
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -15143,33 +15169,5 @@ input[type=text].form-control, input[type=text].custom-file-control,
 input[type=password].form-control,
 input[type=password].custom-file-control {
   color: #000;
-}
-
-#sidebar .handle {
-  color: #fff;
-  background-color: #673AB7 !important;
-  border-top: 1px solid #673AB7 !important;
-  border-bottom: 1px solid #673AB7 !important;
-  border-left: 1px solid #673AB7 !important;
-  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-}
-
-#sidebar .handle a {
-  color: #fff;
-}
-
-#sidebar .handle a:hover, #sidebar .handle a:focus {
-  color: #eee;
-}
-
-#sidebar .info {
-  color: #fff;
-  background-color: #673AB7 !important;
-  border-top: 1px solid #673AB7 !important;
-  border-bottom: 1px solid #673AB7 !important;
-  border-left: 1px solid #673AB7 !important;
-  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=bootstrap.css.map */

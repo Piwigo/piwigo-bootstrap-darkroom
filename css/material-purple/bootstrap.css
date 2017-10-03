@@ -15070,6 +15070,32 @@ h6 {
   }
 }
 
+#sidebar .handle {
+  background-color: #7b1fa2 !important;
+  border-top: 1px solid #7b1fa2 !important;
+  border-bottom: 1px solid #7b1fa2 !important;
+  border-left: 1px solid #7b1fa2 !important;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .handle a {
+  color: #fff;
+}
+
+#sidebar .handle a:hover, #sidebar .handle a:focus {
+  color: #eee;
+}
+
+#sidebar .info {
+  background-color: #7b1fa2 !important;
+  border-top: 1px solid #7b1fa2 !important;
+  border-bottom: 1px solid #7b1fa2 !important;
+  border-left: 1px solid #7b1fa2 !important;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
 .navbar-main {
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -15141,33 +15167,5 @@ input[type=text].custom-file-control {
 
 .card-footer.text-muted, .card-footer.bmd-help {
   font-size: 0.75rem;
-}
-
-#sidebar .handle {
-  color: #fff;
-  background-color: #ab47bc !important;
-  border-top: 1px solid #ab47bc !important;
-  border-bottom: 1px solid #ab47bc !important;
-  border-left: 1px solid #ab47bc !important;
-  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-}
-
-#sidebar .handle a {
-  color: #fff;
-}
-
-#sidebar .handle a:hover, #sidebar .handle a:focus {
-  color: #eee;
-}
-
-#sidebar .info {
-  color: #fff;
-  background-color: #ab47bc !important;
-  border-top: 1px solid #ab47bc !important;
-  border-bottom: 1px solid #ab47bc !important;
-  border-left: 1px solid #ab47bc !important;
-  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=bootstrap.css.map */

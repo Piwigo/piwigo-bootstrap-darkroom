@@ -8731,4 +8731,8 @@ a.text-dark:focus, a.text-dark:hover {
 .navbar-contextual.sticky-top {
   z-index: 1020;
 }
+
+.navbar-contextual .nav-item + .nav-item {
+  margin-left: .2rem;
+}
 /*# sourceMappingURL=bootstrap.css.map */

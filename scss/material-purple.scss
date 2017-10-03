@@ -37,31 +37,3 @@ $jumbotron-bg:            theme-color('secondary');
     font-size: 0.75rem;
   }
 }
-
-#sidebar {
- .handle {
-    color: $white;
-    background-color: theme-color('secondary') !important;
-    border-top: 1px solid theme-color('secondary') !important;
-    border-bottom: 1px solid theme-color('secondary') !important;
-    border-left: 1px solid theme-color('secondary') !important;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
-
-    a {
-      color: #fff;
-                                                                                                                                                                      
-      &:hover, &:focus {
-        color: #eee;
-      }
-    }
-  }
-                                                                                                                                                                      
-  .info {
-    color: $white;
-    background-color: theme-color('secondary') !important;
-    border-top: 1px solid theme-color('secondary') !important;
-    border-bottom: 1px solid theme-color('secondary') !important;
-    border-left: 1px solid theme-color('secondary') !important;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
-  }
-}

@@ -30,6 +30,7 @@
                         <option value="material-red"{if $theme_config->bootstrap_theme == 'material-red'} selected="selected"{/if}>Material Red</option>
                         <option value="material-teal"{if $theme_config->bootstrap_theme == 'material-teal'} selected="selected"{/if}>Material Teal</option>
                         <option value="bootswatch-cosmo"{if $theme_config->bootstrap_theme == 'bootswatch-cosmo'} selected="selected"{/if}>Bootswatch Cosmo</option>
+                        <option value="bootswatch-journal"{if $theme_config->bootstrap_theme == 'bootswatch-lux'} selected="selected"{/if}>Bootswatch Journal</option>
                         <option value="bootswatch-lux"{if $theme_config->bootstrap_theme == 'bootswatch-lux'} selected="selected"{/if}>Bootswatch Lux</option>
                     </select>
                 </li>
@@ -410,10 +411,10 @@ $('select[name=bootstrap_theme]').change(function() {
     case 'bootstrap-default':
       navbar_contextual_style = 'navbar-light';
       break;
-    case (bs_theme.match(/deep-purple|indigo|light-green|purple|red|teal/) || {}).input:
+    case (bs_theme.match(/material-(deep-purple|indigo|light-green|purple|red|teal)/) || {}).input:
       navbar_contextual_bg = 'bg-primary';
       break;
-    case (bs_theme.match(/bootswatch-(cosmo|lux)/) || {}).input:
+    case (bs_theme.match(/bootswatch-(cosmo|journal|lux)/) || {}).input:
       navbar_main_bg = 'bg-primary';
       navbar_contextual_bg = 'bg-primary';
       break;
