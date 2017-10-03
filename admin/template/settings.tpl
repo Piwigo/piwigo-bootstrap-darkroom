@@ -29,7 +29,8 @@
                         <option value="material-light-green"{if $theme_config->bootstrap_theme == 'material-light-green'} selected="selected"{/if}>Material Light Green</option>
                         <option value="material-red"{if $theme_config->bootstrap_theme == 'material-red'} selected="selected"{/if}>Material Red</option>
                         <option value="material-teal"{if $theme_config->bootstrap_theme == 'material-teal'} selected="selected"{/if}>Material Teal</option>
-                        <option value="bootswatch"{if $theme_config->bootstrap_theme == 'bootswatch'} selected="selected"{/if} disabled>Bootswatch</option>
+                        <option value="bootswatch-cosmo"{if $theme_config->bootstrap_theme == 'bootswatch-cosmo'} selected="selected"{/if}>Bootswatch Cosmo</option>
+                        <option value="bootswatch-lux"{if $theme_config->bootstrap_theme == 'bootswatch-lux'} selected="selected"{/if}>Bootswatch Lux</option>
                     </select>
                 </li>
             <ul>
@@ -410,6 +411,10 @@ $('select[name=bootstrap_theme]').change(function() {
       navbar_contextual_style = 'navbar-light';
       break;
     case (bs_theme.match(/deep-purple|indigo|light-green|purple|red|teal/) || {}).input:
+      navbar_contextual_bg = 'bg-primary';
+      break;
+    case (bs_theme.match(/bootswatch-(cosmo|lux)/) || {}).input:
+      navbar_main_bg = 'bg-primary';
       navbar_contextual_bg = 'bg-primary';
       break;
     case 'bootswatch':

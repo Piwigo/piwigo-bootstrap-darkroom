@@ -1,5 +1,6 @@
 // import functions
 @import "components/bootstrap/scss/functions";
+@import "components/bootstrap/scss/mixins";
 
 // Core variable overrides that affect all styles
 $card-border-radius:       .125rem !default;
