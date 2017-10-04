@@ -166,7 +166,7 @@ $(document).ready(function() {
         <h5>{$CONTENT_DESCRIPTION}</h5>
     </div>
 {/if}
-    <div id="content" class="{if $smarty.cookies.view == 'list'}content-list{else}content-grid{/if}{if empty($THUMBNAILS)} row{/if} pt-3">
+    <div id="content" class="{if $smarty.cookies.view == 'list'}content-list{else}content-grid{/if} pt-3">
 {if !empty($CONTENT)}
     <!-- Start of content -->
     {$CONTENT}
