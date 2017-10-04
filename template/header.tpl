@@ -141,19 +141,27 @@ $(document).ready(function() {
 {if $theme_config->page_header == 'fancy'}
 {footer_script require='jquery'}
 $(document).ready(function() {
-  console.log($('.page-header').outerHeight());
-  $('.navbar-contextual.sticky-top').css('top', $('.navbar-main').outerHeight() + 'px');
+  $('.navbar-contextual.sticky-top').css('top', ($('.navbar-main').outerHeight() - 2)  + 'px');
 });
 $(window).scroll(function(){
-    var alpha = 0 + ($(window).scrollTop() / 440);
-    $(".page-header").attr('style', 'background-color: rgba(0, 0, 0, ' + alpha + ') !important');
-    $(".page-header .content-center").css('opacity', 1 - alpha * 3);
-    if ((440 - $(window).scrollTop()) <= $('.navbar-main').outerHeight()) {
-      $(".navbar-main").attr('style', 'background-color: rgba(0, 0, 0, ' + alpha + ') !important');
-    } else {
-      $(".navbar-main").attr('style', 'background-color: rgba(0, 0, 0, 0) !important');
-    }
-  });
+  var alpha = 0 + ($(window).scrollTop() / 350);
+  $(".page-header").attr('style', 'background-color: rgba(0, 0, 0, ' + alpha + ') !important');
+  $(".page-header .content-center").css('opacity', 1 - alpha * 3);
+  var offset = $('.navbar-contextual').offset();
+  if (offset.top > $('.page-header').outerHeight()) {
+    $(".navbar-main").attr('style', 'background-color: rgba(0, 0, 0, ' + alpha + ') !important');
+  } else {
+    $(".navbar-main").attr('style', 'background-color: rgba(0, 0, 0, 0) !important');
+  }
+});
+var nb_color;
+$('.navbar-main .navbar-collapse').on('show.bs.collapse', function() {
+  nb_color = $('.navbar-main').css('background-color');
+  $('.navbar-main').attr('style', 'background-color: rgba(0, 0, 0, 0.9) !important');
+});
+$('.navbar-main .navbar-collapse').on('hidden.bs.collapse', function() {
+  $('.navbar-main').attr('style', 'background-color: ' + nb_color + ') !important');
+});
 {/footer_script}
 {/if}
 {/if}

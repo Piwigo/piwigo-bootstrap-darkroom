@@ -33,7 +33,6 @@
     "slick-carousel": "1.8.1",
     "photoswipe": "4.1.2",
     "font-awesome": "^4.7.0",
-    "jquery-touch-events": "1.0.7",
     "typeface-pt-sans": "^0.0.35",
     "typeface-roboto": "^0.0.35"
   },

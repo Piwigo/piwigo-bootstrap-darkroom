@@ -4268,11 +4268,6 @@ tbody.collapse.show {
   float: none;
 }
 
-.navbar-nav .dropdown-toggle::after {
-  border-top: 0.3em solid;
-  border-bottom: 0;
-}
-
 .navbar-text {
   display: inline-block;
   padding-top: 0.5rem;
@@ -4319,26 +4314,6 @@ tbody.collapse.show {
     padding-right: 0;
     padding-left: 0;
   }
-  .navbar-expand-sm .dropup .dropdown-menu {
-    position: absolute;
-    top: auto;
-    bottom: 100%;
-  }
-  .navbar-expand-sm .dropup .dropdown-toggle::after {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 0.255em;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0.3em solid;
-    border-left: 0.3em solid transparent;
-  }
-  .navbar-expand-sm .dropup .dropdown-toggle:empty::after {
-    margin-left: 0;
-  }
 }
 
 @media (min-width: 576px) {
@@ -4383,6 +4358,10 @@ tbody.collapse.show {
   .navbar-expand-sm .navbar-toggler {
     display: none;
   }
+  .navbar-expand-sm .dropup .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -4390,26 +4369,6 @@ tbody.collapse.show {
   .navbar-expand-md > .container-fluid {
     padding-right: 0;
     padding-left: 0;
-  }
-  .navbar-expand-md .dropup .dropdown-menu {
-    position: absolute;
-    top: auto;
-    bottom: 100%;
-  }
-  .navbar-expand-md .dropup .dropdown-toggle::after {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 0.255em;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0.3em solid;
-    border-left: 0.3em solid transparent;
-  }
-  .navbar-expand-md .dropup .dropdown-toggle:empty::after {
-    margin-left: 0;
   }
 }
 
@@ -4455,6 +4414,10 @@ tbody.collapse.show {
   .navbar-expand-md .navbar-toggler {
     display: none;
   }
+  .navbar-expand-md .dropup .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+  }
 }
 
 @media (max-width: 991px) {
@@ -4462,26 +4425,6 @@ tbody.collapse.show {
   .navbar-expand-lg > .container-fluid {
     padding-right: 0;
     padding-left: 0;
-  }
-  .navbar-expand-lg .dropup .dropdown-menu {
-    position: absolute;
-    top: auto;
-    bottom: 100%;
-  }
-  .navbar-expand-lg .dropup .dropdown-toggle::after {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 0.255em;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0.3em solid;
-    border-left: 0.3em solid transparent;
-  }
-  .navbar-expand-lg .dropup .dropdown-toggle:empty::after {
-    margin-left: 0;
   }
 }
 
@@ -4527,6 +4470,10 @@ tbody.collapse.show {
   .navbar-expand-lg .navbar-toggler {
     display: none;
   }
+  .navbar-expand-lg .dropup .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -4534,26 +4481,6 @@ tbody.collapse.show {
   .navbar-expand-xl > .container-fluid {
     padding-right: 0;
     padding-left: 0;
-  }
-  .navbar-expand-xl .dropup .dropdown-menu {
-    position: absolute;
-    top: auto;
-    bottom: 100%;
-  }
-  .navbar-expand-xl .dropup .dropdown-toggle::after {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 0.255em;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0.3em solid;
-    border-left: 0.3em solid transparent;
-  }
-  .navbar-expand-xl .dropup .dropdown-toggle:empty::after {
-    margin-left: 0;
   }
 }
 
@@ -4599,6 +4526,10 @@ tbody.collapse.show {
   .navbar-expand-xl .navbar-toggler {
     display: none;
   }
+  .navbar-expand-xl .dropup .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+  }
 }
 
 .navbar-expand {
@@ -4615,29 +4546,6 @@ tbody.collapse.show {
 .navbar-expand > .container-fluid {
   padding-right: 0;
   padding-left: 0;
-}
-
-.navbar-expand .dropup .dropdown-menu {
-  position: absolute;
-  top: auto;
-  bottom: 100%;
-}
-
-.navbar-expand .dropup .dropdown-toggle::after {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0.3em solid;
-  border-left: 0.3em solid transparent;
-}
-
-.navbar-expand .dropup .dropdown-toggle:empty::after {
-  margin-left: 0;
 }
 
 .navbar-expand .navbar-nav {
@@ -4677,6 +4585,11 @@ tbody.collapse.show {
 
 .navbar-expand .navbar-toggler {
   display: none;
+}
+
+.navbar-expand .dropup .dropdown-menu {
+  top: auto;
+  bottom: 100%;
 }
 
 .navbar-light .navbar-brand {
