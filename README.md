@@ -1,17 +1,18 @@
 Piwigo Bootstrap Darkroom
 -------------------
-A mobile-ready Piwigo theme based on [Bootstrap 4](https://getbootstrap.com)
-
-Initially this theme was based on the Bootstrap Default theme by Phil Bayfield, the old version can be found in the bootstrap-v3 branch.
+A mobile-ready [Piwigo](http://piwigo.org) theme based on [Bootstrap 4](https://getbootstrap.com)
 
 ### Features
 
 * Various color styles
-  * [Bootswatch](https://bootswatch.com) support
-  * [Material Design](http://fezvrasta.github.io/bootstrap-material-design/) included
-  * A custom dark color scheme based on Lightroom® colors (the default)
+  * [Bootswatch](https://bootswatch.com)
+  * [Material Design](http://fezvrasta.github.io/bootstrap-material-design/)
+  * A custom dark, low contrast color scheme based on Lightroom® colors (the default)
+  * New color styles can be created with ease
+* Optional page header with fancy fading full width background image, or a jumbotron banner
+* Different layout option for the picture details page
 * Video support using native HTML 5 video widget
-* Full screen slideshow view using [PhotoSwipe](http://photoswipe.com)
+* Fullscreen slideshow view using [PhotoSwipe](http://photoswipe.com)
   * Supports auto play
   * Supports HTML5 video
   * Album thumbnails can be linked to PhotoSwipe directly (like smartpocket)
@@ -20,17 +21,17 @@ Initially this theme was based on the Bootstrap Default theme by Phil Bayfield, 
   * fully responsive Navbars, Carousel, PhotoSwipe slideshow, video content
   * async/ondemand loading of carousel & PhotoSwipe content, adaptive image size selection, swipe & tap events
 * Various configuration options
-* Easy customization using SASS
+* Easy customization using SASS (built your own) or CSS overrides.
  
 
 ### Usage
 
 1. Installation:
- * Git clone and move to piwigo/themes/bootstrap_darkroom
- * Download from http://piwigo.org/ext/extension_view.php?eid=831
- * Or just use the Extension Manager
+ * Use the Piwigo built-in plungin manager (preferred)
+ * or git clone and move to piwigo/themes/bootstrap_darkroom
+ * or download from http://piwigo.org/ext/extension_view.php?eid=831
 2. Enable Bootstrap Darkroom
-3. To use it as the standard theme for mobile devices, you need to disable the Smartpocket theme (if enabled). In combination with the recommended plugins and by setting "Thumbnail link target" to "PhotoSwipe" or "PhotoSwipe (mobile devices only)" it will behave like smartpocket (click on thumbnail opens the slideshow, masonry style thumbnail page with ajax loading).
+3. Disable the smartpocket theme (it's enabled by default). This is required in order to use Bootstrap Darkroom by default on mobile devices, too.
 
 ### Demo
 A demo is available at https://pwdemo.kuther.net
