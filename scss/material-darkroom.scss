@@ -1,6 +1,9 @@
 // Bootstrap Darkroom
 @import "variables/core";
 @import "variables/darkroom-style";
+
+$brand-primary: $teal;
+
 @import "material-core";
 
 @import "darkroom-colors/nav";
@@ -40,6 +43,7 @@
 .radio label,
 .radio-inline,
 .switch label {
-  //color: rgba(255,255,255,.26);
   color: inherit;
 }
+
+

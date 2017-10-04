@@ -185,7 +185,7 @@
         <div class="card-body">
           <h4 class="card-title">{'Tags'|@translate}</h4>
             <div id="Tags" class="imageInfo">
-              {foreach from=$related_tags item=tag name=tag_loop}<a class="btn btn-primary mr-1" href="{$tag.URL}">{$tag.name}</a>{/foreach}
+              {foreach from=$related_tags item=tag name=tag_loop}<a class="btn btn-primary btn-raised mr-1" href="{$tag.URL}">{$tag.name}</a>{/foreach}
             </div>
         </div>
       </div>
