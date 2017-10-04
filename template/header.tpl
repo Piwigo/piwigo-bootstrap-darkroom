@@ -143,8 +143,12 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('.navbar-contextual.sticky-top').css('top', ($('.navbar-main').outerHeight() - 2)  + 'px');
 });
+var sfactor = $(".page-header").height() - 50;
+$(window).resize(function(){
+  sfactor = $(".page-header").height() -50;
+});
 $(window).scroll(function(){
-  var alpha = 0 + ($(window).scrollTop() / 350);
+  var alpha = 0 + ($(window).scrollTop() / sfactor);
   $(".page-header").attr('style', 'background-color: rgba(0, 0, 0, ' + alpha + ') !important');
   $(".page-header .content-center").css('opacity', 1 - alpha * 3);
   var offset = $('.navbar-contextual').offset();
