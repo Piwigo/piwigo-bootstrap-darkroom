@@ -150,7 +150,7 @@ $(window).resize(function(){
 $(window).scroll(function(){
   var alpha = 0 + ($(window).scrollTop() / sfactor);
   $(".page-header").attr('style', 'background-color: rgba(0, 0, 0, ' + alpha + ') !important');
-  $(".page-header .content-center").css('opacity', 1 - alpha * 3);
+  $(".page-header .content-center").css('opacity', 1 - alpha * 2.5);
   var offset = $('.navbar-contextual').offset();
   if (offset.top > $('.page-header').outerHeight()) {
     $(".navbar-main").attr('style', 'background-color: rgba(0, 0, 0, ' + alpha + ') !important');
