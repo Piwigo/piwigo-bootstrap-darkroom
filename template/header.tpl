@@ -104,8 +104,8 @@
 </head>
 
 <body id="{$BODY_ID}">
-{if !($BODY_ID == 'thePicturePage' && !isset($MENUBAR))}
-        <nav class="navbar navbar-expand-lg navbar-main {$theme_config->navbar_main_style} {$theme_config->navbar_main_bg}">
+{if isset($MENUBAR)}
+        <nav class="navbar navbar-expand-lg navbar-main {$theme_config->navbar_main_bg} {if $theme_config->page_header == 'fancy'}navbar-transparent fixed-top{else}{$theme_config->navbar_main_style}{/if}">
             <div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {if $theme_config->logo_image_enabled && $theme_config->logo_image_path !== ''}
                 <a class="navbar-brand mr-auto" href="{$U_HOME}"><img class="img-fluid" src="{$ROOT_URL}{$theme_config->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>
@@ -135,19 +135,48 @@ $(document).ready(function() {
 {/footer_script}
 {/if}
 {$MENUBAR}
-{if !isset($MENUBAR)}oh, oh, no menubar..{/if}
                 </div>
             </div>
         </nav>
+{if $theme_config->page_header == 'fancy'}
+{footer_script require='jquery'}
+$(document).ready(function() {
+  console.log($('.page-header').outerHeight());
+  $('.navbar-contextual.sticky-top').css('top', $('.navbar-main').outerHeight() + 'px');
+});
+$(window).scroll(function(){
+    var alpha = 0 + ($(window).scrollTop() / 440);
+    $(".page-header").attr('style', 'background-color: rgba(0, 0, 0, ' + alpha + ') !important');
+    $(".page-header .content-center").css('opacity', 1 - alpha * 3);
+    if ((440 - $(window).scrollTop()) <= $('.navbar-main').outerHeight()) {
+      $(".navbar-main").attr('style', 'background-color: rgba(0, 0, 0, ' + alpha + ') !important');
+    } else {
+      $(".navbar-main").attr('style', 'background-color: rgba(0, 0, 0, 0) !important');
+    }
+  });
+{/footer_script}
+{/if}
 {/if}
 
-{if !isset($slideshow) && $BODY_ID != 'thePicturePage' && $theme_config->show_jumbotron}
+{if !isset($slideshow) && !empty($MENUBAR) && $theme_config->page_header != 'none'}
+{if $theme_config->page_header == 'jumbotron'}
         <div class="jumbotron mb-0">
             <div class="container{if $theme_config->fluid_width}-fluid{/if}">
                 <div id="theHeader">{$PAGE_BANNER}</div>
             </div>
         </div>
+{else}
+        <div class="page-header page-header-small">
+            <div class="page-header-image" style="background-image: url({$theme_config->page_header_image}); transform: translate3d(0px, 0px, 0px);"></div>
+            <div class="container">
+                <div id="theHeader" class="content-center">
+                    {$PAGE_BANNER}
+                </div>
+            </div>
+        </div>
 {/if}
+{/if}
+
 
 {if not empty($header_msgs)}
 {foreach from=$header_msgs item=msg}

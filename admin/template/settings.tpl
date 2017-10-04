@@ -92,9 +92,31 @@
                 <li>
                     <label>
                         {'Path'|@translate}
-                        <input type="text" name="logo_image_path"size="50" {if $theme_config->logo_image_path != ""}value="{$theme_config->logo_image_path}"{else}placeholder="relative/path/to/image"{/if}>
+                        <input type="text" name="logo_image_path" size="50" {if $theme_config->logo_image_path != ""}value="{$theme_config->logo_image_path}"{else}placeholder="relative/path/to/image"{/if}>
                     </label>
                     <span class="info">{'The path to the image, relative to your Piwigo installation folder'|@translate}</span>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Page header {'Settings'|@translate}</legend>
+            <ul>
+                <li>
+                    <label labelfor="page_header">{'Banner style'|@translate}</label>
+                    <select name="page_header">
+                        <option value="jumbotron"{if $theme_config->page_header == 'jumbotron'} selected="selected"{/if}>{'Jumbotron banner'|@translate}</option>
+                        <option value="fancy"{if $theme_config->page_header == 'fancy'} selected="selected"{/if}>{'Fancy background image'|@translate}</option>
+                        <option value="none"{if $theme_config->page_header == 'none'} selected="selected"{/if}>{'Disabled'|@translate}</option>
+                    </select>
+                </li>
+                <li>
+                    <div id="page_header_image">
+                      <label>
+                          {'Background image'|@translate}
+                          <input type="text" name="page_header_image" size="50" {if $theme_config->page_header_image != ""}value="{$theme_config->page_header_image}"{else}placeholder="{'URL or releative path to the image'|@translate}"{/if}>
+                      </label>
+                      <span class="info">{'URL or releative path to the image'|@translate}</span>
+                    </div>
                 </li>
             </ul>
         </fieldset>
@@ -232,19 +254,6 @@
                        {'Show basic EXIF metadata'|@translate}
                     </label>
                     <span class="info">{'For more information on metadata visit'|@translate} <a href="https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki/EXIF-Metadata-in-PhotoSwipe">Wiki:EXIF-Metadata-in-PhotoSwipe</a></span>
-                </li>
-            </ul>
-        </fieldset>
-        <fieldset>
-            <legend>Jumbotron {'Settings'|@translate}</legend>
-            <ul>
-                <li>
-                    <label class="font-checkbox">
-                        <span class="icon-check"></span>
-                        <input type="checkbox" name="show_jumbotron"{if $theme_config->show_jumbotron} checked="checked"{/if}>
-                        {'Enabled'|@translate}
-                    </label>
-                    <span class="info">{'Show a jumbotron banner on the categroy pages.'|@translate}</span>
                 </li>
             </ul>
         </fieldset>
@@ -422,6 +431,20 @@ $(document).ready(function() {
     $('select[name=thumbnail_linkto] option[value=photoswipe_mobile_only]').attr('disabled', 'disabled');
   }
 
+
+  if ($('select[name=page_header]').val() === 'fancy') {
+    $('#page_header_image').show();
+  } else {
+    $('#page_header_image').hide();
+  }
+});
+
+$('select[name=page_header]').change(function() {
+  if ($(this).val() == 'fancy') {
+    $('#page_header_image').show();
+  } else {
+    $('#page_header_image').hide();
+  }
 });
 
 $('select[name=bootstrap_theme]').change(function() {

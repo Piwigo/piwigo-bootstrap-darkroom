@@ -38,6 +38,13 @@
     }
   }
 
+  &.navbar-transparent {
+    background-color: transparent !important;
+    box-shadow: none;
+    color: $white;
+    padding: 20px;
+  }
+
   .navbar-collapse {
     @include media-breakpoint-up(md) {
       padding-right: 0;
