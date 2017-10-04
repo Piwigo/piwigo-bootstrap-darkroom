@@ -85,3 +85,5 @@ $lang['Use full width containers that span the entire width of the viewport'] = 
 $lang['Appearance'] = 'Erscheinungsbild';
 $lang['Components'] = 'Komponenten';
 $lang['Social Media Integration'] = 'Social Media Integration';
+$lang['Card grid below the image'] = 'Karten-Raster unter dem Bild';
+$lang['Display number of images in album and subalbums'] = 'Zeige Anzahl der Bilder im Album und in Unteralben';

@@ -35,7 +35,9 @@
 {/if}
         </div>
       </div>
+{if $theme_config->cat_nb_images}
       <div class="card-footer text-muted">{str_replace('<br>', ', ', $cat.CAPTION_NB_IMAGES)}</div>
+{/if}
     </a>
   </div>
 </div>
@@ -59,7 +61,9 @@
 {if isset($cat.INFO_DATES) }
             <div>{$cat.INFO_DATES}</div>
 {/if}
+{if $theme_config->cat_nb_images}
             <div class="text-muted">{str_replace('<br>', ', ', $cat.CAPTION_NB_IMAGES)}</div>
+{/if}
           </div>
         </div>
       </a>

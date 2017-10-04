@@ -99,20 +99,6 @@
             </ul>
         </fieldset>
         <fieldset>
-            <legend>{'Picture page display'|@translate}</legend>
-            <ul>
-                <li>
-                    <label labelfor="picture_info">{'Picture info display position'|@translate}</label>
-                    <select name="picture_info">
-                        <option value="cards"{if $theme_config->picture_info == 'cards'} selected="selected"{/if}>{'Card grid below the image'|@translate}</option>
-                        <option value="tabs"{if $theme_config->picture_info == 'tabs'} selected="selected"{/if}>{'Tabs below the image'|@translate}</option>
-                        <option value="sidebar"{if $theme_config->picture_info == 'sidebar'} selected="selected"{/if}>{'Sidebar (like Boostrap Default)'|@translate}</option>
-                        <option value="disabled"{if $theme_config->picture_info == 'disabled'} selected="selected"{/if}>{'Disabled'|@translate}</option>
-                    </select>
-                </li>
-            </ul>
-        </fieldset>
-        <fieldset>
             <legend>{'Category page display'|@translate}</legend>
             <ul>
                 <li>
@@ -129,6 +115,13 @@
                        <span class="icon-check"></span>
                        <input type="checkbox" name="cat_descriptions"{if $theme_config->cat_descriptions} checked=checked{/if}>
                        {'Display category description in grid view'|@translate}
+                    </label>
+                </li>
+                <li>
+                    <label class="font-checkbox">
+                       <span class="icon-check"></span>
+                       <input type="checkbox" name="cat_nb_images"{if $theme_config->cat_nb_images} checked=checked{/if}>
+                       {'Display number of images in album and subalbums'|@translate}
                     </label>
                 </li>
             </ul>
@@ -149,6 +142,20 @@
                         <option value="picture"{if $theme_config->thumbnail_linkto == 'picture'} selected="selected"{/if}>{'Picture details page'|@translate}</option>
                         <option value="photoswipe"{if $theme_config->thumbnail_linkto == 'photoswipe'} selected="selected"{/if}>{'PhotoSwipe Slideshow'|@translate}</option>
                         <option value="photoswipe_mobile_only"{if $theme_config->thumbnail_linkto == 'photoswipe_mobile_only'} selected="selected"{/if}>{'Photoswipe Slideshow (Mobile devices only)'|@translate}</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>{'Picture page display'|@translate}</legend>
+            <ul>
+                <li>
+                    <label labelfor="picture_info">{'Picture info display position'|@translate}</label>
+                    <select name="picture_info">
+                        <option value="cards"{if $theme_config->picture_info == 'cards'} selected="selected"{/if}>{'Card grid below the image'|@translate}</option>
+                        <option value="tabs"{if $theme_config->picture_info == 'tabs'} selected="selected"{/if}>{'Tabs below the image'|@translate}</option>
+                        <option value="sidebar"{if $theme_config->picture_info == 'sidebar'} selected="selected"{/if}>{'Sidebar (like Boostrap Default)'|@translate}</option>
+                        <option value="disabled"{if $theme_config->picture_info == 'disabled'} selected="selected"{/if}>{'Disabled'|@translate}</option>
                     </select>
                 </li>
             </ul>

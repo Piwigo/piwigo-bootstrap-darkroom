@@ -4,7 +4,7 @@ namespace BootstrapDarkroom;
 class Config {
 
     const CONF_PARAM = 'bootstrap_darkroom';
-    const CONF_VERSION = 16;
+    const CONF_VERSION = 17;
 
     const TYPE_BOOL = 'bool';
     const TYPE_STRING = 'string';
@@ -38,6 +38,7 @@ class Config {
     const KEY_LOGO_IMAGE_PATH = 'logo_image_path';
     const KEY_QUICKSEARCH_NAVBAR = 'quicksearch_navbar';
     const KEY_CAT_DESCRIPTIONS = 'cat_descriptions';
+    const KEY_CAT_NB_IMAGES = 'cat_nb_images';
 
     const KEY_SOCIAL_ENABLED = 'social_enabled';
     const KEY_SOCIAL_TWITTER = 'social_twitter';
@@ -76,6 +77,7 @@ class Config {
         self::KEY_LOGO_IMAGE_PATH => '',
         self::KEY_QUICKSEARCH_NAVBAR => false,
         self::KEY_CAT_DESCRIPTIONS => false,
+        self::KEY_CAT_NB_IMAGES => true,
         self::KEY_SOCIAL_ENABLED => true,
         self::KEY_SOCIAL_TWITTER => true,
         self::KEY_SOCIAL_FACEBOOK => true,
@@ -112,6 +114,7 @@ class Config {
         self::KEY_LOGO_IMAGE_PATH => self::TYPE_STRING,
         self::KEY_QUICKSEARCH_NAVBAR => self::TYPE_BOOL,
         self::KEY_CAT_DESCRIPTIONS => self::TYPE_BOOL,
+        self::KEY_CAT_NB_IMAGES => self::TYPE_BOOL,
         self::KEY_SOCIAL_ENABLED => self::TYPE_BOOL,
         self::KEY_SOCIAL_TWITTER => self::TYPE_BOOL,
         self::KEY_SOCIAL_FACEBOOK => self::TYPE_BOOL,

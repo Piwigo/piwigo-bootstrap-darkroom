@@ -64,3 +64,5 @@ $lang['Use full width containers that span the entire width of the viewport'] = 
 $lang['Appearance'] = 'Appearance';
 $lang['Components'] = 'Components';
 $lang['Social Media Integration'] = 'Social Integration';
+$lang['Card grid below the image'] = 'Card grid below the image';
+$lang['Display number of images in album and subalbums'] = 'Display number of images in album and subalbums';
