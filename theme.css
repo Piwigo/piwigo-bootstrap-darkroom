@@ -150,6 +150,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-align: initial;
   }
 }
 
@@ -164,6 +165,24 @@ body {
   box-shadow: none;
   color: #fff;
   padding: 20px;
+}
+
+.navbar.navbar-transparent .navbar-brand,
+.navbar.navbar-transparent .nav-link {
+  color: #cccccc;
+}
+
+.navbar.navbar-transparent .navbar-brand:hover, .navbar.navbar-transparent .navbar-brand:focus,
+.navbar.navbar-transparent .nav-link:hover,
+.navbar.navbar-transparent .nav-link:focus {
+  color: #fff;
+}
+
+.navbar.navbar-transparent.navbar-sm {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: -99px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 768px) {
@@ -840,14 +859,14 @@ a.pswp__share--google:hover {
   width: 100%;
 }
 
-.page-header .container {
+.page-header > .container {
   height: 100%;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   position: relative;
 }
 
-.page-header .container > .content-center {
+.page-header > .container > .content-center {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -879,10 +898,6 @@ a.pswp__share--google:hover {
 
 .page-header:before {
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-.page-header .container {
-  z-index: 2;
 }
 
 .pwg-icon {

@@ -141,30 +141,44 @@ $(document).ready(function() {
 {if $theme_config->page_header == 'fancy'}
 {footer_script require='jquery'}
 $(document).ready(function() {
-  $('.navbar-contextual.sticky-top').css('top', ($('.navbar-main').outerHeight() - 2)  + 'px');
+  $('.navbar-contextual.sticky-top').css('top', ($('.navbar-main').outerHeight() - 1)  + 'px');
 });
 var sfactor = $(".page-header").height() - 50;
+{*var color = $('#fake-background').css('background-color');*}
+var color = "rgba(0, 0, 0, 0)";
+var nb_main_color;
+var nb_cont_color;
 $(window).resize(function(){
   sfactor = $(".page-header").height() -50;
 });
 $(window).scroll(function(){
   var alpha = 0 + ($(window).scrollTop() / sfactor);
-  $(".page-header").attr('style', 'background-color: rgba(0, 0, 0, ' + alpha + ') !important');
-  $(".page-header .content-center").css('opacity', 1 - alpha * 2.5);
-  var offset = $('.navbar-contextual').offset();
-  if (offset.top > $('.page-header').outerHeight()) {
-    $(".navbar-main").attr('style', 'background-color: rgba(0, 0, 0, ' + alpha + ') !important');
+  $('.page-header').attr('style', 'background-color: ' + setColorOpacity(color, alpha) + ' !important');
+  $('.page-header .content-center').css('opacity', 1 - alpha * 2.5);
+  $('.page-header .page-header-image').css('opacity', 1 - alpha);
+  var top_offset = $(window).scrollTop();
+  var p_size = $('.page-header').outerHeight() - $(".navbar-main").outerHeight() - $(".navbar-contextual").outerHeight();
+  if (top_offset >= p_size) {
+    $('.navbar-main').attr('style', 'background-color: ' + setColorOpacity(color, alpha*1.1) + ' !important');
+    $('.navbar-contextual').attr('style', 'background-color: ' + setColorOpacity(color, alpha*2.1) + ' !important; top: ' + ($('.navbar-main').outerHeight() - 2)  + 'px');
   } else {
-    $(".navbar-main").attr('style', 'background-color: rgba(0, 0, 0, 0) !important');
+    $('.navbar-main').attr('style', 'background-color:' + setColorOpacity(color, 0) + ' !important');
+    $('.navbar-contextual').attr('style', 'background-color: ' + setColorOpacity(color, 0) + ' !important; top: ' + ($('.navbar-main').outerHeight() - 2)  + 'px');
   }
 });
-var nb_color;
 $('.navbar-main .navbar-collapse').on('show.bs.collapse', function() {
-  nb_color = $('.navbar-main').css('background-color');
+  nb_main_color = $('.navbar-main').css('background-color');
   $('.navbar-main').attr('style', 'background-color: rgba(0, 0, 0, 0.9) !important');
 });
 $('.navbar-main .navbar-collapse').on('hidden.bs.collapse', function() {
-  $('.navbar-main').attr('style', 'background-color: ' + nb_color + ') !important');
+  $('.navbar-main').attr('style', 'background-color: ' + nb_main_color + ') !important');
+});
+$('.navbar-contextual .navbar-collapse').on('show.bs.collapse', function() {
+  nb_cont_color = $('.navbar-contextual').css('background-color');
+  $('.navbar-contextual').attr('style', 'background-color: rgba(0, 0, 0, 0.9) !important');
+});
+$('.navbar-contextual .navbar-collapse').on('hidden.bs.collapse', function() {
+  $('.navbar-contextual').attr('style', 'background-color: ' + nb_cont_color + ') !important');
 });
 {/footer_script}
 {/if}
@@ -178,14 +192,17 @@ $('.navbar-main .navbar-collapse').on('hidden.bs.collapse', function() {
             </div>
         </div>
 {else}
-        <div class="page-header page-header-small">
+        <div class="page-header page-header-small mb-5">
             <div class="page-header-image" style="background-image: url({$theme_config->page_header_image}); transform: translate3d(0px, 0px, 0px);"></div>
-            <div class="container">
+            <div class="container d-flex">
                 <div id="theHeader" class="content-center">
                     {$PAGE_BANNER}
                 </div>
             </div>
         </div>
+{footer_script require='jquery'}
+  $('.navbar-contextual').addClass('navbar-transparent navbar-sm');
+{/footer_script}
 {/if}
 {/if}
 

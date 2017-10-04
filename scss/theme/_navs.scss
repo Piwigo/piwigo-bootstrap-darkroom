@@ -29,6 +29,7 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        text-align: initial; // needed for the fancy header
       }
       a,
       a:hover,
@@ -43,6 +44,23 @@
     box-shadow: none;
     color: $white;
     padding: 20px;
+
+    .navbar-brand,
+    .nav-link {
+      color: darken($white, 20%);
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
+
+    &.navbar-sm {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-top: -99px;
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+    }
   }
 
   .navbar-collapse {

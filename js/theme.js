@@ -93,4 +93,31 @@ function bd_popup(url) {
     }
 })(jQuery);
 
+/* change rgba alpha */
+function setColorOpacity(colorStr, opacity) {
+  if(colorStr.indexOf("rgb(") == 0)
+  {
+    var rgbaCol = colorStr.replace("rgb(", "rgba(");
+    rgbaCol = rgbaCol.replace(")", ", "+opacity+")");
+    return rgbaCol;
+  }
 
+  if(colorStr.indexOf("rgba(") == 0)
+  {
+    var rgbaCol = colorStr.substr(0, colorStr.lastIndexOf(",")+1) + opacity + ")";
+    return rgbaCol;
+  }
+
+  if(colorStr.length == 6)
+    colorStr = "#" + colorStr;
+
+  if(colorStr.indexOf("#") == 0)
+  {
+    var rgbaCol = 'rgba(' + parseInt(colorStr.slice(-6, -4), 16)
+        + ',' + parseInt(colorStr.slice(-4, -2), 16)
+        + ',' + parseInt(colorStr.slice(-2), 16)
+        + ','+opacity+')';
+    return rgbaCol;
+  }
+  return colorStr;
+}
