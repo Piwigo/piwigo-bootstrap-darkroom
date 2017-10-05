@@ -14,9 +14,9 @@
                     <input class="form-control" type="password" name="password" id="password" placeholder="{'Password'|@translate}">
                 </div>
                 {if $AUTHORIZE_REMEMBERING}
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="remember_me" id="remember_me" value="1">{/strip} {'Auto login'|@translate}{strip}
+                <div class="form-check checkbox">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember_me" id="remember_me" value="1">{/strip} {'Auto login'|@translate}{strip}
                     </label>
                 </div>
                 {/if}
@@ -24,7 +24,9 @@
                 <button type="submit" class="btn btn-primary btn-raised" name="login">{'Login'|@translate}</button>
             </form>
          </div>
+         {if isset($U_REGISTER)||isset($U_LOGOUT)||isset($U_PROFILE)||isset($U_ADMIN)}
          <div class="dropdown-divider"></div>
+         {/if}
     {/if}
     {if isset($U_REGISTER)}
          <a class="dropdown-item" href="{$U_REGISTER}" title="{'Create a new account'|@translate}" rel="nofollow">{'Register'|@translate}</a>
