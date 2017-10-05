@@ -1,7 +1,7 @@
 // Bootstrap Darkroom
 @import "variables/core";
-@import "variables/darkroom-style";
-@import "../components/bootstrap/scss/bootstrap";
+@import "darkroom-colors/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
 @import "darkroom-colors/nav";
 @import "darkroom-colors/jumbotron";
 @import "darkroom-colors/dropdown";
