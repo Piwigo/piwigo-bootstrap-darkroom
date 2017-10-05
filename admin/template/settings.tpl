@@ -46,6 +46,7 @@
                         <option value="bootswatch-sketchy"{if $theme_config->bootstrap_theme == 'bootswatch-sketchy'} selected="selected"{/if}>Bootswatch Sketchy</option>
                         <option value="bootswatch-slate"{if $theme_config->bootstrap_theme == 'bootswatch-slate'} selected="selected"{/if}>Bootswatch Slate</option>
                         <option value="bootswatch-solar"{if $theme_config->bootstrap_theme == 'bootswatch-solar'} selected="selected"{/if}>Bootswatch Solar</option>
+                        <option value="bootswatch-spacelab"{if $theme_config->bootstrap_theme == 'bootswatch-spacelab'} selected="selected"{/if}>Bootswatch Spacelab</option>
                         <option value="bootswatch-superhero"{if $theme_config->bootstrap_theme == 'bootswatch-superhero'} selected="selected"{/if}>Bootswatch Superhero</option>
                         <option value="bootswatch-united"{if $theme_config->bootstrap_theme == 'bootswatch-united'} selected="selected"{/if}>Bootswatch United</option>
                         <option value="bootswatch-yeti"{if $theme_config->bootstrap_theme == 'bootswatch-yeti'} selected="selected"{/if}>Bootswatch Yeti</option>
