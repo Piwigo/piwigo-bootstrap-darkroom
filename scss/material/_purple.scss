@@ -1,7 +1,6 @@
 // Material Deep-Purple Style
 
-@import "variables/core";
-@import "variables/colors";
+@import "../variables/core";
 
 // override Bootstrap's theme colors
 $theme-colors: (
@@ -21,7 +20,8 @@ $link-hover-decoration:   none !default;
 $jumbotron-bg:            theme-color('secondary');
 
 // now, import top-level material
-@import "material-core";
+@import "base";
+@import "common-overrides";
 
 .navbar-contextual {
   background-color: theme-color('secondary');
