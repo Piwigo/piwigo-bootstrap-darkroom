@@ -8971,4 +8971,27 @@ pre {
 .navbar-contextual.sticky-top {
   z-index: 1020;
 }
+
+.navbar-contextual .navbar-brand a {
+  text-decoration: none;
+}
+
+[type="checkbox"]:before {
+  position: relative;
+  top: 0;
+}
+
+[type="checkbox"]:checked:after {
+  left: 3px;
+  top: -10px;
+}
+
+[type="radio"]:before {
+  position: relative;
+  top: 0;
+}
+
+.form-check-label {
+  padding-left: 1.5rem;
+}
 /*# sourceMappingURL=bootstrap.css.map */
