@@ -13,6 +13,17 @@
   }
 }
 
+.card-thumbnail {
+  a {
+    text-decoration: none;
+  }
+
+  .card-footer {
+    background-color: inherit;
+    border-top: none;
+  }
+}
+
 [type="checkbox"] {
   &:before {
     position: relative;
