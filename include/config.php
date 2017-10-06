@@ -28,6 +28,7 @@ class Config {
     const KEY_SLICK_CENTERED = 'slick_centered';
     const KEY_PAGE_HEADER = 'page_header';
     const KEY_PAGE_HEADER_IMAGE = 'page_header_image';
+    const KEY_PAGE_HEADER_BOTH_NAVS = 'page_header_both_navs';
     const KEY_PICTURE_INFO = 'picture_info';
     const KEY_PHOTOSWIPE = 'photoswipe';
     const KEY_PHOTOSWIPE_INTERVAL = 'photoswipe_interval';
@@ -68,6 +69,7 @@ class Config {
         self::KEY_SLICK_CENTERED => false,
         self::KEY_PAGE_HEADER => 'jumbotron',
         self::KEY_PAGE_HEADER_IMAGE => '',
+        self::KEY_PAGE_HEADER_BOTH_NAVS => true,
         self::KEY_PICTURE_INFO => 'cards',
         self::KEY_PHOTOSWIPE => true,
         self::KEY_PHOTOSWIPE_INTERVAL => '3500',
@@ -106,6 +108,7 @@ class Config {
         self::KEY_SLICK_CENTERED => self::TYPE_BOOL,
         self::KEY_PAGE_HEADER => self::TYPE_STRING,
         self::KEY_PAGE_HEADER_IMAGE => self::TYPE_STRING,
+        self::KEY_PAGE_HEADER_BOTH_NAVS => self::TYPE_BOOL,
         self::KEY_PICTURE_INFO => self::TYPE_STRING,
         self::KEY_PHOTOSWIPE => self::TYPE_BOOL,
         self::KEY_PHOTOSWIPE_INTERVAL => self::TYPE_NUM,

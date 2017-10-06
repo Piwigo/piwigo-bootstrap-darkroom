@@ -116,14 +116,19 @@
                         <option value="none"{if $theme_config->page_header == 'none'} selected="selected"{/if}>{'Disabled'|@translate}</option>
                     </select>
                 </li>
-                <li>
-                    <div id="page_header_image">
-                      <label>
-                          {'Background image'|@translate}
-                          <input type="text" name="page_header_image" size="50" {if $theme_config->page_header_image != ""}value="{$theme_config->page_header_image}"{else}placeholder="{'URL or releative path to the image'|@translate}"{/if}>
-                      </label>
-                      <span class="info">{'URL or releative path to the image'|@translate}</span>
-                    </div>
+                <li id="page_header_image">
+                    <label>
+                        {'Background image'|@translate}
+                        <input type="text" name="page_header_image" size="50" {if $theme_config->page_header_image != ""}value="{$theme_config->page_header_image}"{else}placeholder="{'URL or releative path to the image'|@translate}"{/if}>
+                    </label>
+                    <span class="info">{'URL or releative path to the image'|@translate}</span>
+                </li>
+                <li id="page_header_navbars">
+                    <label class="font-checkbox">
+                      <span class="icon-check"></span>
+                      <input type="checkbox" name="page_header_both_navs"{if $theme_config->page_header_both_navs} checked=checked{/if}>
+                        {'Integrate lower navbar'|@translate}
+                    </label>
                 </li>
             </ul>
         </fieldset>
@@ -441,16 +446,20 @@ $(document).ready(function() {
 
   if ($('select[name=page_header]').val() === 'fancy') {
     $('#page_header_image').show();
+    $('#page_header_navbars').show();
   } else {
     $('#page_header_image').hide();
+    $('#page_header_navbars').hide();
   }
 });
 
 $('select[name=page_header]').change(function() {
   if ($(this).val() == 'fancy') {
     $('#page_header_image').show();
+    $('#page_header_navbars').show();
   } else {
     $('#page_header_image').hide();
+    $('#page_header_navbars').hide();
   }
 });
 

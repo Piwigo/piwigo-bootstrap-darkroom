@@ -185,7 +185,27 @@ $('.navbar-contextual.navbar-transparent .navbar-collapse').on('hidden.bs.collap
 {/if}
 {/if}
 
-{if $theme_config->page_header == 'fancy' && !isset($MENUBAR)}
+{if !isset($slideshow) && !empty($MENUBAR)}
+{if $theme_config->page_header == 'jumbotron'}
+        <div class="jumbotron mb-0">
+            <div class="container{if $theme_config->fluid_width}-fluid{/if}">
+                <div id="theHeader">{$PAGE_BANNER}</div>
+            </div>
+        </div>
+{else}
+        <div class="page-header page-header-small">
+            <div class="page-header-image" style="background-image: url({$theme_config->page_header_image}); transform: translate3d(0px, 0px, 0px);"></div>
+            <div class="container">
+                <div id="theHeader" class="content-center">
+                    {$PAGE_BANNER}
+                </div>
+            </div>
+        </div>
+{/if}
+{/if}
+
+{if $theme_config->page_header == 'fancy' && $theme_config->page_header_both_navs}
+{if empty($MENUBAR)}
 {html_style}
 .navbar-contextual {
   background-color: #000 !important;
@@ -200,31 +220,15 @@ $(document).ready(function() {
   }
 });
 {/footer_script}
-{/if}
-
-{if !isset($slideshow) && !empty($MENUBAR)}
-{if $theme_config->page_header == 'jumbotron'}
-        <div class="jumbotron mb-0">
-            <div class="container{if $theme_config->fluid_width}-fluid{/if}">
-                <div id="theHeader">{$PAGE_BANNER}</div>
-            </div>
-        </div>
-{elseif $theme_config->page_header == 'fancy'}
-        <div class="page-header page-header-small">
-            <div class="page-header-image" style="background-image: url({$theme_config->page_header_image}); transform: translate3d(0px, 0px, 0px);"></div>
-            <div class="container">
-                <div id="theHeader" class="content-center">
-                    {$PAGE_BANNER}
-                </div>
-            </div>
-        </div>
+{else}
 {footer_script require='jquery'}
+$(document).ready(function() {
   $('.page-header').addClass('mb-5');
   $('.navbar-contextual').addClass('navbar-transparent navbar-sm');
+});
 {/footer_script}
 {/if}
 {/if}
-
 
 {if not empty($header_msgs)}
 {foreach from=$header_msgs item=msg}
