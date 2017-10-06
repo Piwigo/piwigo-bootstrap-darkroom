@@ -115,7 +115,7 @@
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-menubar" aria-controls="navbar-menubar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="fa fa-bars"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbar-menubar">
+                <div class="collapse navbar-collapse" id="navbar-menubar">
 {if $theme_config->quicksearch_navbar}
                   <form class="form-inline navbar-form ml-auto" role="search" action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
                     <i class="fa fa-search" title="{'Search'|@translate}" aria-hidden="true"></i>
@@ -140,12 +140,10 @@ $(document).ready(function() {
         </nav>
 {if $theme_config->page_header == 'fancy'}
 {footer_script require='jquery'}
-$(document).ready(function() {
-  $('.navbar-contextual.sticky-top').css('top', ($('.navbar-main').outerHeight() - 1)  + 'px');
-});
 var sfactor = $(".page-header").height() - 50;
 {*var color = $('#fake-background').css('background-color');*}
 var color = "rgba(0, 0, 0, 0)";
+var nb_main_height = $('.navbar-main').outerHeight();
 var nb_main_color;
 var nb_cont_color;
 $(window).resize(function(){
@@ -160,10 +158,10 @@ $(window).scroll(function(){
   var p_size = $('.page-header').outerHeight() - $(".navbar-main").outerHeight() - $(".navbar-contextual").outerHeight();
   if (top_offset >= p_size) {
     $('.navbar-main').attr('style', 'background-color: ' + setColorOpacity(color, alpha*1.1) + ' !important');
-    $('.navbar-contextual').attr('style', 'background-color: ' + setColorOpacity(color, alpha*2.1) + ' !important; top: ' + ($('.navbar-main').outerHeight() - 2)  + 'px');
+    $('.navbar-contextual').attr('style', 'background-color: ' + setColorOpacity(color, alpha*2.1) + ' !important; top: ' + (nb_main_height - 1)  + 'px');
   } else {
     $('.navbar-main').attr('style', 'background-color:' + setColorOpacity(color, 0) + ' !important');
-    $('.navbar-contextual').attr('style', 'background-color: ' + setColorOpacity(color, 0) + ' !important; top: ' + ($('.navbar-main').outerHeight() - 2)  + 'px');
+    $('.navbar-contextual').attr('style', 'background-color: ' + setColorOpacity(color, 0) + ' !important; top: 0');
   }
 });
 $('.navbar-main .navbar-collapse').on('show.bs.collapse', function() {
@@ -175,10 +173,10 @@ $('.navbar-main .navbar-collapse').on('hidden.bs.collapse', function() {
 });
 $('.navbar-contextual .navbar-collapse').on('show.bs.collapse', function() {
   nb_cont_color = $('.navbar-contextual').css('background-color');
-  $('.navbar-contextual').attr('style', 'background-color: rgba(0, 0, 0, 0.9) !important');
+  $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: rgba(0, 0, 0, 0.9) !important');
 });
 $('.navbar-contextual .navbar-collapse').on('hidden.bs.collapse', function() {
-  $('.navbar-contextual').attr('style', 'background-color: ' + nb_cont_color + ') !important');
+  $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: ' + nb_cont_color + ') !important');
 });
 {/footer_script}
 {/if}
@@ -201,6 +199,7 @@ $('.navbar-contextual .navbar-collapse').on('hidden.bs.collapse', function() {
             </div>
         </div>
 {footer_script require='jquery'}
+  console.log(navigator.userAgent);
   $('.navbar-contextual').addClass('navbar-transparent navbar-sm');
 {/footer_script}
 {/if}
