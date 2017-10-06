@@ -186,6 +186,13 @@ $('.navbar-contextual.navbar-transparent .navbar-collapse').on('hidden.bs.collap
 {/if}
 
 {if $theme_config->page_header == 'fancy' && !isset($MENUBAR)}
+{html_style}
+.navbar-contextual {
+  background-color: #000 !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+{/html_style}
 {footer_script require='jquery'}
 $(document).ready(function() {
   if ($('.navbar-contextual').hasClass('navbar-light')) {
