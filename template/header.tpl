@@ -215,9 +215,7 @@ $('.navbar-contextual.navbar-transparent .navbar-collapse').on('hidden.bs.collap
 {/html_style}
 {footer_script require='jquery'}
 $(document).ready(function() {
-  if ($('.navbar-contextual').hasClass('navbar-light')) {
-    $('.navbar-contextual').removeClass('navbar-light').addClass('navbar-dark navbar-forced-sm');
-  }
+  $('.navbar-contextual').removeClass('navbar-light').addClass('navbar-dark navbar-forced-sm');
 });
 {/footer_script}
 {else}

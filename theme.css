@@ -191,6 +191,17 @@ body {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 
+.navbar.navbar-forced-sm .navbar-brand,
+.navbar.navbar-forced-sm .nav-link {
+  color: #cccccc;
+}
+
+.navbar.navbar-forced-sm .navbar-brand:hover, .navbar.navbar-forced-sm .navbar-brand:focus,
+.navbar.navbar-forced-sm .nav-link:hover,
+.navbar.navbar-forced-sm .nav-link:focus {
+  color: #fff;
+}
+
 @media (min-width: 768px) {
   .navbar .navbar-collapse {
     padding-right: 0;
