@@ -8746,8 +8746,4 @@ table-success, table-info, table-warning, table-danger,
 .list-group {
   font-size: 14px;
 }
-
-.navbar-contextual.sticky-top {
-  z-index: 1020;
-}
 /*# sourceMappingURL=bootstrap.css.map */

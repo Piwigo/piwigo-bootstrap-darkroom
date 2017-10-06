@@ -8968,10 +8968,6 @@ pre {
   color: #333;
 }
 
-.navbar-contextual.sticky-top {
-  z-index: 1020;
-}
-
 .navbar-contextual .navbar-brand a {
   text-decoration: none;
 }

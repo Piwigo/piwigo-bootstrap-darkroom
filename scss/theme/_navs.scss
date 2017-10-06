@@ -14,7 +14,7 @@
 
   // raise above .sticky-top
   &.navbar-main {
-    z-index: 1030;
+    z-index: 1031;
   }
                                                                                                                                                                   
   &.navbar-contextual {
@@ -98,7 +98,7 @@
 
 #identificationDropdown .dropdown-menu { min-width: 12rem; }
                                                                                                                                                                     
-/* replace the home link in navbar */
+// replace the home link in navbar
 .navbar-brand a:first-child {
   font-size: 0;
 }
@@ -108,7 +108,7 @@
   font-size: 18px;
 }
 
-/* Quicksearch in navbar */
+// Quicksearch in navbar
 #navbar-menubar>#quicksearch {
 
   input[type="text"] {
@@ -149,6 +149,12 @@
         background: none;
         width: 150px !important;
       }
+    }
+
+    i.fa {
+      position: absolute;
+      top: 8px;
+      left: -15px;
     }
   }
 

@@ -4,10 +4,6 @@
 @import "components/bootswatch/sketchy/bootswatch";
 
 .navbar-contextual {
-  &.sticky-top {
-    z-index: 1020;
-  }
-
   .navbar-brand a {
     text-decoration: none;
   }

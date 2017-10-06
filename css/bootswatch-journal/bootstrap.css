@@ -8688,10 +8688,6 @@ a.text-dark:focus, a.text-dark:hover {
   text-decoration: none;
 }
 
-.navbar-contextual.sticky-top {
-  z-index: 1020;
-}
-
 .jumbotron {
   color: #fff;
   border-left: 1px solid #eee;

@@ -15435,10 +15435,6 @@ h6 {
   text-transform: none;
 }
 
-.navbar-contextual.sticky-top {
-  z-index: 1020;
-}
-
 .dropdown-menu {
   min-width: 15rem;
 }

@@ -8699,8 +8699,4 @@ a.text-dark:focus, a.text-dark:hover {
   background-image: linear-gradient(#e12b31, #C71C22 60%, #b5191f);
   background-repeat: no-repeat;
 }
-
-.navbar-contextual.sticky-top {
-  z-index: 1020;
-}
 /*# sourceMappingURL=bootstrap.css.map */

@@ -6,10 +6,6 @@ $jumbotron-bg: theme-color('primary');
 @import "components/bootstrap/scss/bootstrap";
 @import "components/bootswatch/journal/bootswatch";
 
-.navbar-contextual.sticky-top {
-  z-index: 1020;
-}
-
 .jumbotron {
   color: #fff;
   border-left: 1px solid #eee;

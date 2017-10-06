@@ -8735,8 +8735,4 @@ a.text-dark:focus, a.text-dark:hover {
 .list-group-item.active:hover {
   background-color: #2e283e;
 }
-
-.navbar-contextual.sticky-top {
-  z-index: 1020;
-}
 /*# sourceMappingURL=bootstrap.css.map */

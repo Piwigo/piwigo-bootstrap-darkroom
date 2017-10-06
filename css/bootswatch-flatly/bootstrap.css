@@ -8710,8 +8710,4 @@ a.text-dark:focus, a.text-dark:hover {
   font-size: 10px;
   line-height: 10px;
 }
-
-.navbar-contextual.sticky-top {
-  z-index: 1020;
-}
 /*# sourceMappingURL=bootstrap.css.map */

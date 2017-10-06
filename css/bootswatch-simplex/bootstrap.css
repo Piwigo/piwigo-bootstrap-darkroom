@@ -8745,8 +8745,4 @@ label {
 .pagination .page-link:hover {
   text-decoration: none;
 }
-
-.navbar-contextual.sticky-top {
-  z-index: 1020;
-}
 /*# sourceMappingURL=bootstrap.css.map */

@@ -8879,8 +8879,4 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 .popover {
   color: #555;
 }
-
-.navbar-contextual.sticky-top {
-  z-index: 1020;
-}
 /*# sourceMappingURL=bootstrap.css.map */

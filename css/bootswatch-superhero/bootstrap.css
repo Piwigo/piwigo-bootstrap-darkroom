@@ -8750,8 +8750,4 @@ label,
 .modal-header .close:hover, .modal-header .close:focus, .modal-footer .close:hover, .modal-footer .close:focus {
   opacity: 1;
 }
-
-.navbar-contextual.sticky-top {
-  z-index: 1020;
-}
 /*# sourceMappingURL=bootstrap.css.map */
