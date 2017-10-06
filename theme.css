@@ -134,7 +134,7 @@ body {
 }
 
 .navbar.navbar-main {
-  z-index: 1030;
+  z-index: 1031;
 }
 
 .navbar.navbar-contextual {
@@ -222,7 +222,6 @@ body {
   min-width: 12rem;
 }
 
-/* replace the home link in navbar */
 .navbar-brand a:first-child {
   font-size: 0;
 }
@@ -233,7 +232,6 @@ body {
   font-size: 18px;
 }
 
-/* Quicksearch in navbar */
 #navbar-menubar > #quicksearch input[type="text"] {
   color: inherit;
 }
@@ -270,6 +268,11 @@ body {
   #navbar-menubar > #quicksearch input[type="text"]:focus {
     background: none;
     width: 150px !important;
+  }
+  #navbar-menubar > #quicksearch i.fa {
+    position: absolute;
+    top: 8px;
+    left: -15px;
   }
 }
 
