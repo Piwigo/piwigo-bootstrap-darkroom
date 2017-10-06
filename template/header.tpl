@@ -157,11 +157,11 @@ $(window).scroll(function(){
   var top_offset = $(window).scrollTop();
   var p_size = $('.page-header').outerHeight() - $(".navbar-main").outerHeight() - $(".navbar-contextual").outerHeight();
   if (top_offset >= p_size) {
-    $('.navbar-main').attr('style', 'background-color: ' + setColorOpacity(color, alpha*1.1) + ' !important');
-    $('.navbar-contextual').attr('style', 'background-color: ' + setColorOpacity(color, alpha*2.1) + ' !important; top: ' + (nb_main_height - 1)  + 'px');
+    $('.navbar-main').attr('style', 'background-color: ' + setColorOpacity(color, alpha*0.75) + ' !important').css('top', 0-(top_offset-p_size));
+    $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: ' + setColorOpacity(color, alpha) + ' !important;');
   } else {
     $('.navbar-main').attr('style', 'background-color:' + setColorOpacity(color, 0) + ' !important');
-    $('.navbar-contextual').attr('style', 'background-color: ' + setColorOpacity(color, 0) + ' !important; top: 0');
+    $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: ' + setColorOpacity(color, 0) + ' !important;');
   }
 });
 $('.navbar-main .navbar-collapse').on('show.bs.collapse', function() {
@@ -171,34 +171,35 @@ $('.navbar-main .navbar-collapse').on('show.bs.collapse', function() {
 $('.navbar-main .navbar-collapse').on('hidden.bs.collapse', function() {
   $('.navbar-main').attr('style', 'background-color: ' + nb_main_color + ') !important');
 });
-$('.navbar-contextual .navbar-collapse').on('show.bs.collapse', function() {
+$('.navbar-contextual.navbar-transparent .navbar-collapse').on('show.bs.collapse', function() {
   nb_cont_color = $('.navbar-contextual').css('background-color');
   $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: rgba(0, 0, 0, 0.9) !important');
 });
-$('.navbar-contextual .navbar-collapse').on('hidden.bs.collapse', function() {
+$('.navbar-contextual.navbar-transparent .navbar-collapse').on('hidden.bs.collapse', function() {
   $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: ' + nb_cont_color + ') !important');
 });
 {/footer_script}
 {/if}
 {/if}
 
-{if !isset($slideshow) && !empty($MENUBAR) && $theme_config->page_header != 'none'}
+{if !isset($slideshow) && !empty($MENUBAR)}
 {if $theme_config->page_header == 'jumbotron'}
         <div class="jumbotron mb-0">
             <div class="container{if $theme_config->fluid_width}-fluid{/if}">
                 <div id="theHeader">{$PAGE_BANNER}</div>
             </div>
         </div>
-{else}
-        <div class="page-header page-header-small mb-5">
+{elseif $theme_config->page_header == 'fancy'}
+        <div class="page-header page-header-small">
             <div class="page-header-image" style="background-image: url({$theme_config->page_header_image}); transform: translate3d(0px, 0px, 0px);"></div>
-            <div class="container d-flex">
+            <div class="container">
                 <div id="theHeader" class="content-center">
                     {$PAGE_BANNER}
                 </div>
             </div>
         </div>
 {footer_script require='jquery'}
+  $('.page-header').addClass('mb-5');
   $('.navbar-contextual').addClass('navbar-transparent navbar-sm');
 {/footer_script}
 {/if}
