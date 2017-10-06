@@ -141,8 +141,7 @@ $(document).ready(function() {
 {if $theme_config->page_header == 'fancy'}
 {footer_script require='jquery'}
 var sfactor = $(".page-header").height() - 50;
-{*var color = $('#fake-background').css('background-color');*}
-var color = "rgba(0, 0, 0, 0)";
+var color = "rgba(0, 0, 0, 1)";
 var nb_main_height = $('.navbar-main').outerHeight();
 var nb_main_color;
 var nb_cont_color;
@@ -156,12 +155,16 @@ $(window).scroll(function(){
   $('.page-header .page-header-image').css('opacity', 1 - alpha);
   var top_offset = $(window).scrollTop();
   var p_size = $('.page-header').outerHeight() - $(".navbar-main").outerHeight() - $(".navbar-contextual").outerHeight();
-  if (top_offset >= p_size) {
-    $('.navbar-main').attr('style', 'background-color: ' + setColorOpacity(color, alpha*0.75) + ' !important').css('top', 0-(top_offset-p_size));
-    $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: ' + setColorOpacity(color, alpha) + ' !important;');
+  var c_size = $('.page-header').outerHeight() - $(".navbar-contextual").outerHeight();
+  if (top_offset >= c_size) {
+    $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: ' + setColorOpacity(color, 1) + ' !important;');
   } else {
-    $('.navbar-main').attr('style', 'background-color:' + setColorOpacity(color, 0) + ' !important');
-    $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: ' + setColorOpacity(color, 0) + ' !important;');
+    $('.navbar-contextual.navbar-transparent').removeAttr('style');
+  }
+  if (top_offset >= p_size) {
+    $('.navbar-main').css('top', 0-(top_offset-p_size));
+  } else {
+    $('.navbar-main').css('top', 0);
   }
 });
 $('.navbar-main .navbar-collapse').on('show.bs.collapse', function() {
@@ -180,6 +183,16 @@ $('.navbar-contextual.navbar-transparent .navbar-collapse').on('hidden.bs.collap
 });
 {/footer_script}
 {/if}
+{/if}
+
+{if $theme_config->page_header == 'fancy' && !isset($MENUBAR)}
+{footer_script require='jquery'}
+$(document).ready(function() {
+  if ($('.navbar-contextual').hasClass('navbar-light')) {
+    $('.navbar-contextual').removeClass('navbar-light').addClass('navbar-dark navbar-forced-sm');
+  }
+});
+{/footer_script}
 {/if}
 
 {if !isset($slideshow) && !empty($MENUBAR)}

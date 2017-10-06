@@ -34,7 +34,8 @@
 {include file='_photoswipe_div.tpl'}
 {/if}
 
-<div id="fake-background" class="{$theme_config->navbar_main_bg}"></div>
+<div id="fake-bg-main" class="{$theme_config->navbar_main_bg}"></div>
+<div id="fake-bg-contextual" class="{$theme_config->navbar_contextual_bg}"></div>
 
 {if preg_match('/^material/', $theme_config->bootstrap_theme)}
 {footer_script require='bootstrap'}
