@@ -1,0 +1,41 @@
+// Material Deep-Purple Style
+
+@import "../variables/core";
+
+// override Bootstrap's theme colors
+$theme-colors: (
+  primary: #795548,
+  secondary: #9E9E9E,
+  light: #D7CCC8,
+  dark: #5D4037
+) !default;
+
+$body-bg:                 #fff !default;
+$body-color:              #212121 !default;
+
+$jumbotron-bg:            theme-color('primary') !default;
+
+$link-decoration:         none !default;
+$link-hover-decoration:   none !default;
+
+// now, import top-level material
+@import "base";
+@import "common-overrides";
+
+.jumbotron {
+  color: $white;
+}
+
+.dropdown-item.active a {
+  color: inherit;
+}
+.card-footer {
+  border-top: none;
+  background-color: inherit;
+}
+
+input[type=text].form-control,
+input[type=password].form-control {
+  color: $black;
+}
+

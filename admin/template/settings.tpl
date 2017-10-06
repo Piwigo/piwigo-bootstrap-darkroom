@@ -24,9 +24,15 @@
                         <option value="bootstrap-darkroom"{if $theme_config->bootstrap_theme == 'bootstrap-darkroom'} selected="selected"{/if}>Bootstrap Darkroom</option>
                         <option value="bootstrap-default"{if $theme_config->bootstrap_theme == 'bootstrap-default'} selected="selected"{/if}>Bootstrap Default</option>
                         <option value="material-darkroom"{if $theme_config->bootstrap_theme == 'material-darkroom'} selected="selected"{/if}>Material Darkroom</option>
+                        <option value="material-amber"{if $theme_config->bootstrap_theme == 'material-amber'} selected="selected"{/if}>Material Amber</option>
+                        <option value="material-blue"{if $theme_config->bootstrap_theme == 'material-blue'} selected="selected"{/if}>Material Blue</option>
+                        <option value="material-brown"{if $theme_config->bootstrap_theme == 'material-brown'} selected="selected"{/if}>Material Brown</option>
+                        <option value="material-deep-orange"{if $theme_config->bootstrap_theme == 'material-deep-orange'} selected="selected"{/if}>Material Deep Orange</option>
                         <option value="material-deep-purple"{if $theme_config->bootstrap_theme == 'material-deep-purple'} selected="selected"{/if}>Material Deep Purple</option>
                         <option value="material-indigo"{if $theme_config->bootstrap_theme == 'material-indigo'} selected="selected"{/if}>Material Indigo</option>
                         <option value="material-light-green"{if $theme_config->bootstrap_theme == 'material-light-green'} selected="selected"{/if}>Material Light Green</option>
+                        <option value="material-lime"{if $theme_config->bootstrap_theme == 'material-lime'} selected="selected"{/if}>Material Lime</option>
+                        <option value="material-purple"{if $theme_config->bootstrap_theme == 'material-purple'} selected="selected"{/if}>Material Purple</option>
                         <option value="material-red"{if $theme_config->bootstrap_theme == 'material-red'} selected="selected"{/if}>Material Red</option>
                         <option value="material-teal"{if $theme_config->bootstrap_theme == 'material-teal'} selected="selected"{/if}>Material Teal</option>
                         <option value="bootswatch-cerulean"{if $theme_config->bootstrap_theme == 'bootswatch-cerulean'} selected="selected"{/if}>Bootswatch Cerulean</option>
@@ -459,7 +465,11 @@ $('select[name=bootstrap_theme]').change(function() {
     case 'bootstrap-default':
       navbar_contextual_style = 'navbar-light';
       break;
-    case (bs_theme.match(/material-(deep-purple|indigo|light-green|purple|red|teal)/) || {}).input:
+    case (bs_theme.match(/^material-(amber|lime)/) || {}).input:
+      navbar_contextual_style = 'navbar-light';
+      navbar_contextual_bg = 'bg-primary';
+      break;
+    case (bs_theme.match(/^material/) || {}).input:
       navbar_contextual_bg = 'bg-primary';
       break;
     case (bs_theme.match(/^bootswatch-(litera|lumen|simplex)/) || {}).input:

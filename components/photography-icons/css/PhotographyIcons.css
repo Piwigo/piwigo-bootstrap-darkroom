@@ -9,11 +9,11 @@
     font-weight: normal;
     font-style: normal;
 }
-[class*='camera-'] {
+[class^='camera-'] {
    display: inline-block;
    vertical-align: middle;
 } 
-[class*='camera-']:before{
+[class^='camera-']:before{
    font-family: 'PhotographyIcons';
    font-style: normal;
    font-weight: normal;

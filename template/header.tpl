@@ -199,7 +199,6 @@ $('.navbar-contextual .navbar-collapse').on('hidden.bs.collapse', function() {
             </div>
         </div>
 {footer_script require='jquery'}
-  console.log(navigator.userAgent);
   $('.navbar-contextual').addClass('navbar-transparent navbar-sm');
 {/footer_script}
 {/if}

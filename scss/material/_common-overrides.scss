@@ -1,5 +1,10 @@
 @import "../common/picture-info-sidebar";
 
+// faulty .sticky-top override in material
+.sticky-top {
+  z-index: 1020;
+}
+
 // additional styles
 .navbar-main {
   box-shadow: none;

@@ -10,10 +10,10 @@ $theme-colors: (
   dark: #689F38
 ) !default;
 
-$body-bg:                 #fff;
-$body-color:              #212121;
+$body-bg:                 #fff !default;
+$body-color:              #212121 !default;
 
-$jumbotron-bg:            theme-color('primary');
+$jumbotron-bg:            theme-color('primary') !default;
 
 $link-decoration:         none !default;
 $link-hover-decoration:   none !default;
