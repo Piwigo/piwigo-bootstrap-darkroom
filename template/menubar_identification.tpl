@@ -41,5 +41,5 @@
         <a class="dropdown-item" href="{$U_ADMIN}" title="{'available for administrators only'|@translate}">{'Administration'|@translate}</a>
     {/if}
 {/strip}
-    </ul>
+    </div>
 </li>
