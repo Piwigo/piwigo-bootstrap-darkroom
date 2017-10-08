@@ -104,8 +104,9 @@
 </head>
 
 <body id="{$BODY_ID}">
+<div id="the_page">
 {if isset($MENUBAR)}
-        <nav class="navbar navbar-expand-lg navbar-main {$theme_config->navbar_main_bg} {if $theme_config->page_header == 'fancy'}navbar-transparent fixed-top{else}{$theme_config->navbar_main_style}{/if}">
+        <nav class="navbar navbar-expand-lg navbar-main {$theme_config->navbar_main_bg} {if $theme_config->page_header == 'fancy'}navbar-dark navbar-transparent fixed-top{else}{$theme_config->navbar_main_style}{/if}">
             <div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {if $theme_config->logo_image_enabled && $theme_config->logo_image_path !== ''}
                 <a class="navbar-brand mr-auto" href="{$U_HOME}"><img class="img-fluid" src="{$ROOT_URL}{$theme_config->logo_image_path}" alt="{$GALLERY_TITLE}"/></a>
@@ -143,8 +144,6 @@ $(document).ready(function() {
 var sfactor = $(".page-header").height() - 50;
 var color = "rgba(0, 0, 0, 1)";
 var nb_main_height = $('.navbar-main').outerHeight();
-var nb_main_color;
-var nb_cont_color;
 $(window).resize(function(){
   sfactor = $(".page-header").height() -50;
 });
@@ -168,19 +167,19 @@ $(window).scroll(function(){
   }
 });
 $('.navbar-main .navbar-collapse').on('show.bs.collapse', function() {
-  nb_main_color = $('.navbar-main').css('background-color');
   $('.navbar-main').attr('style', 'background-color: rgba(0, 0, 0, 0.9) !important');
 });
 $('.navbar-main .navbar-collapse').on('hidden.bs.collapse', function() {
-  $('.navbar-main').attr('style', 'background-color: ' + nb_main_color + ') !important');
+  $('.navbar-main').attr('style', '');
 });
-$('.navbar-contextual.navbar-transparent .navbar-collapse').on('show.bs.collapse', function() {
-  nb_cont_color = $('.navbar-contextual').css('background-color');
-  $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: rgba(0, 0, 0, 0.9) !important');
+{if $theme_config->page_header_both_navs}
+$('.navbar-contextual .navbar-collapse').on('show.bs.collapse', function() {
+  $('.navbar-contextual').attr('style', 'background-color: rgba(0, 0, 0, 0.9) !important');
 });
-$('.navbar-contextual.navbar-transparent .navbar-collapse').on('hidden.bs.collapse', function() {
-  $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: ' + nb_cont_color + ') !important');
+$('.navbar-contextual .navbar-collapse').on('hidden.bs.collapse', function() {
+  $('.navbar-contextual').attr('style', '');
 });
+{/if}
 {/footer_script}
 {/if}
 {/if}

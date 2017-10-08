@@ -140,8 +140,8 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     <div class="col-lg-8 col-md-10 col-12 mx-auto">
       {$PICTURE_INFO_COMMENTS}
     </div>
-  </div>
 {/if}
+  </div>
 
 {if !empty($PLUGIN_PICTURE_AFTER)}{$PLUGIN_PICTURE_AFTER}{/if}
 

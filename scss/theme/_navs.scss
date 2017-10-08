@@ -59,6 +59,17 @@
       padding-bottom: 5px;
       margin-top: -99px;
       box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+
+      .collapse.show,
+      .collapsing {
+        .navbar-nav {
+          padding-top: 1rem;
+        }
+      }
+    }
+
+    .navbar-toggler {
+      color: darken($white, 20%);
     }
   }
 
@@ -77,6 +88,17 @@
         color: $white;
       }
     }
+
+    .nav-item .dropdown-item {
+      &.active a,
+      &:hover a,
+      &:focus a,
+      a:hover,
+      a:focus {
+        color: $white;
+      }
+    }
+    
   }
 
   .navbar-collapse {

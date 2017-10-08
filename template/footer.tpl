@@ -25,6 +25,7 @@
 {/if}
             </div>
         </div>
+</div>
 {if isset($debug.QUERIES_LIST)}
         <div id="debug">
 {$debug.QUERIES_LIST}

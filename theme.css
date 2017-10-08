@@ -184,6 +184,15 @@ body {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 
+.navbar.navbar-transparent.navbar-sm .collapse.show .navbar-nav,
+.navbar.navbar-transparent.navbar-sm .collapsing .navbar-nav {
+  padding-top: 1rem;
+}
+
+.navbar.navbar-transparent .navbar-toggler {
+  color: #cccccc;
+}
+
 .navbar.navbar-forced-sm {
   background-color: #000 !important;
   padding-top: 5px;
@@ -199,6 +208,14 @@ body {
 .navbar.navbar-forced-sm .navbar-brand:hover, .navbar.navbar-forced-sm .navbar-brand:focus,
 .navbar.navbar-forced-sm .nav-link:hover,
 .navbar.navbar-forced-sm .nav-link:focus {
+  color: #fff;
+}
+
+.navbar.navbar-forced-sm .nav-item .dropdown-item.active a,
+.navbar.navbar-forced-sm .nav-item .dropdown-item:hover a,
+.navbar.navbar-forced-sm .nav-item .dropdown-item:focus a,
+.navbar.navbar-forced-sm .nav-item .dropdown-item a:hover,
+.navbar.navbar-forced-sm .nav-item .dropdown-item a:focus {
   color: #fff;
 }
 
