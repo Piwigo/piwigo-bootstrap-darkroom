@@ -104,7 +104,7 @@
 </head>
 
 <body id="{$BODY_ID}">
-<div id="the_page">
+<div id="wrapper">
 {if isset($MENUBAR)}
         <nav class="navbar navbar-expand-lg navbar-main {$theme_config->navbar_main_bg} {if $theme_config->page_header == 'fancy'}navbar-dark navbar-transparent fixed-top{else}{$theme_config->navbar_main_style}{/if}">
             <div class="container{if $theme_config->fluid_width}-fluid{/if}">
