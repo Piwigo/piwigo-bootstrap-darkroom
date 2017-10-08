@@ -481,7 +481,7 @@ $('select[name=bootstrap_theme]').change(function() {
     case (bs_theme.match(/^material/) || {}).input:
       navbar_contextual_bg = 'bg-primary';
       break;
-    case (bs_theme.match(/^bootswatch-(litera|lumen|simplex)/) || {}).input:
+    case (bs_theme.match(/^bootswatch-(litera|lumen|simplex|spacelab)/) || {}).input:
       navbar_main_style = 'navbar-light';
       navbar_main_bg = 'bg-primary';
       navbar_contextual_style = 'navbar-light';
