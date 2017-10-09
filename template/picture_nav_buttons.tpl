@@ -48,7 +48,7 @@
             <i class="fa fa-chevron-up"></i>
         </a>
 {/if}{/strip}
-{strip}{if !isset($slideshow) && $theme_config->photoswipe}
+{strip}{if !isset($slideshow) && ($theme_config->photoswipe && !empty($thumbnails))}
         <a href="javascript:;" title="{'Fullscreen'|@translate}" id="startPhotoSwipe">
             <i class="fa fa-arrows-alt" aria-hidden="true"></i>
         </a>
