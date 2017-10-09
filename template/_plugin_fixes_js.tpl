@@ -132,7 +132,14 @@ $(document).ready(function() {
 {if isset($loaded_plugins['PWG_Stuffs'])}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
+  {if $theme_config->page_header == 'jumbotron'}
+  var stuffAboveContent = $('.jumbotron').next('.pwgstuffs-container');
+  {elseif $theme_config->page_header == 'fancy'}
+  var stuffAboveContent = $('.page-header').next('.pwgstuffs-container');
+  {else}
   var stuffAboveContent = $('.navbar-main').next('.pwgstuffs-container');
+  {/if}
+  console.log(stuffAboveContent);
   $(stuffAboveContent).insertAfter('.navbar-contextual');
 });
 {/strip}{/footer_script}
