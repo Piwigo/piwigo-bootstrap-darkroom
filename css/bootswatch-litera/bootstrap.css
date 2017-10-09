@@ -8746,4 +8746,10 @@ table-success, table-info, table-warning, table-danger,
 .list-group {
   font-size: 14px;
 }
+
+@media (min-width: 992px) {
+  #navbar-menubar > #quicksearch i.fa {
+    top: 12px !important;
+  }
+}
 /*# sourceMappingURL=bootstrap.css.map */

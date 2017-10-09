@@ -8652,4 +8652,10 @@ a.text-dark:focus, a.text-dark:hover {
 .thead-inverse th {
   background-color: #772953;
 }
+
+@media (min-width: 992px) {
+  #navbar-menubar > #quicksearch i.fa {
+    top: 10px !important;
+  }
+}
 /*# sourceMappingURL=bootstrap.css.map */

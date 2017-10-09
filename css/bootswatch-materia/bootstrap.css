@@ -9866,4 +9866,10 @@ input[type="checkbox"]:disabled:checked:after,
 .carousel-caption h1, .carousel-caption h2, .carousel-caption h3, .carousel-caption h4, .carousel-caption h5, .carousel-caption h6 {
   color: inherit;
 }
+
+@media (min-width: 992px) {
+  #navbar-menubar > #quicksearch i.fa {
+    top: 16px !important;
+  }
+}
 /*# sourceMappingURL=bootstrap.css.map */

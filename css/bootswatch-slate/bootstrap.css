@@ -8957,4 +8957,13 @@ legend {
 .jumbotron {
   border: 1px solid rgba(0, 0, 0, 0.6);
 }
+
+@media (min-width: 992px) {
+  #navbar-menubar > #quicksearch {
+    margin-right: 10px;
+  }
+  #navbar-menubar > #quicksearch i.fa {
+    top: 12px !important;
+  }
+}
 /*# sourceMappingURL=bootstrap.css.map */

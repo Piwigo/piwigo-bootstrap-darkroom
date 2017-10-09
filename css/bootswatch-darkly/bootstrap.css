@@ -8743,4 +8743,10 @@ a.text-dark:focus, a.text-dark:hover {
 .list-group-item-action .list-group-item-heading {
   color: #fff;
 }
+
+@media (min-width: 992px) {
+  #navbar-menubar > #quicksearch i.fa {
+    top: 10px !important;
+  }
+}
 /*# sourceMappingURL=bootstrap.css.map */

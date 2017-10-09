@@ -8646,7 +8646,7 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .bg-primary {
-  background-color: #fff !important;
+  background-color: #EB6864 !important;
   border: 1px solid #eee;
 }
 
@@ -8659,7 +8659,7 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .bg-inverse {
-  background-color: #000 !important;
+  background-color: #222 !important;
 }
 
 .navbar {

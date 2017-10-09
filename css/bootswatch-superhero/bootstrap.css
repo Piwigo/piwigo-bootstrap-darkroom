@@ -8750,4 +8750,10 @@ label,
 .modal-header .close:hover, .modal-header .close:focus, .modal-footer .close:hover, .modal-footer .close:focus {
   opacity: 1;
 }
+
+@media (min-width: 992px) {
+  #navbar-menubar > #quicksearch i.fa {
+    top: 12px !important;
+  }
+}
 /*# sourceMappingURL=bootstrap.css.map */

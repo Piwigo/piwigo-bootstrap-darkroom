@@ -8745,4 +8745,10 @@ label {
 .pagination .page-link:hover {
   text-decoration: none;
 }
+
+@media (min-width: 992px) {
+  #navbar-menubar > #quicksearch i.fa {
+    top: 12px !important;
+  }
+}
 /*# sourceMappingURL=bootstrap.css.map */
