@@ -97,6 +97,9 @@ ul#thumbnails .gthumb a img.thumbnail {
 
 /* PWG_Stuffs */
 .pwgstuffs-container { padding-top: 20px; }
+.pwgstuffs-content .card-thumbnail {
+  margin-bottom: 2rem;
+}
 
 /* RV Autocomplete */
 ul.ui-autocomplete { z-index: 150; }

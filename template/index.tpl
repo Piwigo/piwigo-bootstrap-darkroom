@@ -149,11 +149,11 @@ $(document).ready(function() {
         <button id="calendar-view" type="button" class="btn btn-primary btn-raised dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {foreach from=$chronology_views item=view}{if $view.SELECTED}{$view.CONTENT}{/if}{/foreach}
         </button>
-        <ul class="dropdown-menu" aria-labelledby="calendar-view">
+        <div class="dropdown-menu" aria-labelledby="calendar-view">
             {foreach from=$chronology_views item=view name=loop}
-                <li {if $view.SELECTED} class="active"{/if}><a href="{$view.VALUE}">{$view.CONTENT}</a><li>
+                <a class="dropdown-item {if $view.SELECTED} active{/if}" href="{$view.VALUE}">{$view.CONTENT}</a>
             {/foreach}
-        </ul>
+        </div>
     </div>
 {/if}
 
