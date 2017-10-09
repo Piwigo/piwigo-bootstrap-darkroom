@@ -106,13 +106,13 @@
             </ul>
         </fieldset>
         <fieldset>
-            <legend>Page header {'Settings'|@translate}</legend>
+            <legend>{'Page header'|@translate}</legend>
             <ul>
                 <li>
                     <label labelfor="page_header">{'Banner style'|@translate}</label>
                     <select name="page_header">
-                        <option value="jumbotron"{if $theme_config->page_header == 'jumbotron'} selected="selected"{/if}>{'Jumbotron banner'|@translate}</option>
-                        <option value="fancy"{if $theme_config->page_header == 'fancy'} selected="selected"{/if}>{'Fancy background image'|@translate}</option>
+                        <option value="jumbotron"{if $theme_config->page_header == 'jumbotron'} selected="selected"{/if}>{'Jumbotron'|@translate}</option>
+                        <option value="fancy"{if $theme_config->page_header == 'fancy'} selected="selected"{/if}>{'Fancy'|@translate} {'Background image'|@translate}</option>
                         <option value="none"{if $theme_config->page_header == 'none'} selected="selected"{/if}>{'Disabled'|@translate}</option>
                     </select>
                 </li>
