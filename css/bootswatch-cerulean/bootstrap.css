@@ -8699,4 +8699,44 @@ a.text-dark:focus, a.text-dark:hover {
   background-image: linear-gradient(#e12b31, #C71C22 60%, #b5191f);
   background-repeat: no-repeat;
 }
+
+#sidebar .handle {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #2FA4E7;
+  border-top: 1px solid #2FA4E7;
+  border-bottom: 1px solid #2FA4E7;
+  border-left: 1px solid #2FA4E7;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .handle a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#sidebar .handle a:hover, #sidebar .handle a:focus {
+  color: #fff;
+}
+
+#sidebar .info {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #2FA4E7;
+  border-top: 1px solid #2FA4E7;
+  border-bottom: 1px solid #2FA4E7;
+  border-left: 1px solid #2FA4E7;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .info h4 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#sidebar .info .imageInfo > dd > a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#sidebar .info .imageInfo > dd > a:hover, #sidebar .info .imageInfo > dd > a:focus {
+  color: #fff;
+}
 /*# sourceMappingURL=bootstrap.css.map */

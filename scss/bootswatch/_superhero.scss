@@ -2,6 +2,7 @@
 @import "components/bootswatch/superhero/variables";
 @import "components/bootstrap/scss/bootstrap";
 @import "components/bootswatch/superhero/bootswatch";
+@import "common";
 
 @include media-breakpoint-up(lg) {
   #navbar-menubar > #quicksearch i.fa {

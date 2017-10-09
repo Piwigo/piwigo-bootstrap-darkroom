@@ -8805,4 +8805,44 @@ a.text-dark:focus, a.text-dark:hover {
 [class*="btn-outline-"] {
   text-shadow: none;
 }
+
+#sidebar .handle {
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #446E9B;
+  border-top: 1px solid #446E9B;
+  border-bottom: 1px solid #446E9B;
+  border-left: 1px solid #446E9B;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .handle a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#sidebar .handle a:hover, #sidebar .handle a:focus {
+  color: white;
+}
+
+#sidebar .info {
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #446E9B;
+  border-top: 1px solid #446E9B;
+  border-bottom: 1px solid #446E9B;
+  border-left: 1px solid #446E9B;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .info h4 {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#sidebar .info .imageInfo > dd > a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#sidebar .info .imageInfo > dd > a:hover, #sidebar .info .imageInfo > dd > a:focus {
+  color: white;
+}
 /*# sourceMappingURL=bootstrap.css.map */

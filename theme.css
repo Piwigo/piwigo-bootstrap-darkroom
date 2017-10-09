@@ -580,10 +580,6 @@ body {
 #sidebar .handle {
   margin-top: 10px;
   float: right;
-  background-color: #868e96;
-  border-top: 1px solid #868e96;
-  border-bottom: 1px solid #868e96;
-  border-left: 1px solid #868e96;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -604,10 +600,6 @@ body {
 
 #sidebar .info {
   float: right;
-  background-color: #868e96;
-  border-top: 1px solid #868e96;
-  border-bottom: 1px solid #868e96;
-  border-left: 1px solid #868e96;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   width: 250px;

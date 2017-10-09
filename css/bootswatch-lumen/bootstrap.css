@@ -8879,4 +8879,44 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 .popover {
   color: #555;
 }
+
+#sidebar .handle {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #158CBA;
+  border-top: 1px solid #158CBA;
+  border-bottom: 1px solid #158CBA;
+  border-left: 1px solid #158CBA;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .handle a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#sidebar .handle a:hover, #sidebar .handle a:focus {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#sidebar .info {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #158CBA;
+  border-top: 1px solid #158CBA;
+  border-bottom: 1px solid #158CBA;
+  border-left: 1px solid #158CBA;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .info h4 {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#sidebar .info .imageInfo > dd > a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#sidebar .info .imageInfo > dd > a:hover, #sidebar .info .imageInfo > dd > a:focus {
+  color: rgba(255, 255, 255, 0.75);
+}
 /*# sourceMappingURL=bootstrap.css.map */

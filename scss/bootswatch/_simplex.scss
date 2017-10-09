@@ -2,6 +2,7 @@
 @import "components/bootswatch/simplex/variables";
 @import "components/bootstrap/scss/bootstrap";
 @import "components/bootswatch/simplex/bootswatch";
+@import "common";
 
 @include media-breakpoint-up(lg) {
   #navbar-menubar > #quicksearch i.fa {

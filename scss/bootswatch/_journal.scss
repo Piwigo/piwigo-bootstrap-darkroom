@@ -5,6 +5,7 @@ $jumbotron-bg: theme-color('primary');
 
 @import "components/bootstrap/scss/bootstrap";
 @import "components/bootswatch/journal/bootswatch";
+@import "common";
 
 .jumbotron {
   color: #fff;

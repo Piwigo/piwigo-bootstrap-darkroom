@@ -8968,6 +8968,46 @@ pre {
   color: #333;
 }
 
+#sidebar .handle {
+  color: #fff;
+  background-color: #333;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  border-left: 1px solid #333;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .handle a {
+  color: #fff;
+}
+
+#sidebar .handle a:hover, #sidebar .handle a:focus {
+  color: #fff;
+}
+
+#sidebar .info {
+  color: #fff;
+  background-color: #333;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  border-left: 1px solid #333;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .info h4 {
+  color: #fff;
+}
+
+#sidebar .info .imageInfo > dd > a {
+  color: #fff;
+}
+
+#sidebar .info .imageInfo > dd > a:hover, #sidebar .info .imageInfo > dd > a:focus {
+  color: #fff;
+}
+
 .navbar-contextual .navbar-brand a {
   text-decoration: none;
 }

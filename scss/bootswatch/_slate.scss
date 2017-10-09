@@ -2,6 +2,7 @@
 @import "components/bootswatch/slate/variables";
 @import "components/bootstrap/scss/bootstrap";
 @import "components/bootswatch/slate/bootswatch";
+@import "common";
 
 @include media-breakpoint-up(lg) {
   #navbar-menubar > #quicksearch {

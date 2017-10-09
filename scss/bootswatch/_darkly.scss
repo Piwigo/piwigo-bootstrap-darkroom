@@ -2,6 +2,7 @@
 @import "components/bootswatch/darkly/variables";
 @import "components/bootstrap/scss/bootstrap";
 @import "components/bootswatch/darkly/bootswatch";
+@import "common";
 
 @include media-breakpoint-up(lg) {
   #navbar-menubar > #quicksearch i.fa {

@@ -15397,29 +15397,43 @@ h6 {
 }
 
 #sidebar .handle {
-  background-color: #009688 !important;
-  border-top: 1px solid #009688 !important;
-  border-bottom: 1px solid #009688 !important;
-  border-left: 1px solid #009688 !important;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #009688;
+  border-top: 1px solid #009688;
+  border-bottom: 1px solid #009688;
+  border-left: 1px solid #009688;
   -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 
 #sidebar .handle a {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 #sidebar .handle a:hover, #sidebar .handle a:focus {
-  color: #eee;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 #sidebar .info {
-  background-color: #009688 !important;
-  border-top: 1px solid #009688 !important;
-  border-bottom: 1px solid #009688 !important;
-  border-left: 1px solid #009688 !important;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #009688;
+  border-top: 1px solid #009688;
+  border-bottom: 1px solid #009688;
+  border-left: 1px solid #009688;
   -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .info h4 {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#sidebar .info .imageInfo > dd > a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#sidebar .info .imageInfo > dd > a:hover, #sidebar .info .imageInfo > dd > a:focus {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .sticky-top {

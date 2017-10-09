@@ -8710,4 +8710,44 @@ a.text-dark:focus, a.text-dark:hover {
   font-size: 10px;
   line-height: 10px;
 }
+
+#sidebar .handle {
+  color: white;
+  background-color: #2C3E50;
+  border-top: 1px solid #2C3E50;
+  border-bottom: 1px solid #2C3E50;
+  border-left: 1px solid #2C3E50;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .handle a {
+  color: white;
+}
+
+#sidebar .handle a:hover, #sidebar .handle a:focus {
+  color: #18BC9C;
+}
+
+#sidebar .info {
+  color: white;
+  background-color: #2C3E50;
+  border-top: 1px solid #2C3E50;
+  border-bottom: 1px solid #2C3E50;
+  border-left: 1px solid #2C3E50;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar .info h4 {
+  color: white;
+}
+
+#sidebar .info .imageInfo > dd > a {
+  color: white;
+}
+
+#sidebar .info .imageInfo > dd > a:hover, #sidebar .info .imageInfo > dd > a:focus {
+  color: #18BC9C;
+}
 /*# sourceMappingURL=bootstrap.css.map */
