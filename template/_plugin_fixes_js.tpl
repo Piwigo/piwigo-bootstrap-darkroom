@@ -139,7 +139,6 @@ $(document).ready(function() {
   {else}
   var stuffAboveContent = $('.navbar-main').next('.pwgstuffs-container');
   {/if}
-  console.log(stuffAboveContent);
   $(stuffAboveContent).insertAfter('.navbar-contextual');
 });
 {/strip}{/footer_script}
