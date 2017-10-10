@@ -1000,7 +1000,7 @@ jquery-migrate@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/jquery-migrate/-/jquery-migrate-3.0.1.tgz#141de3abfe6d301baaa4130b0ec7b9a839845e72"
 
-jquery@>=3.0.0:
+jquery@>=1.7.2, jquery@>=3.0.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
@@ -1882,8 +1882,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
 "slick-carousel@https://github.com/tkuther/slick.git#piwigo-patches":
-  version "1.8.1"
-  resolved "https://github.com/tkuther/slick.git#3169bf30c3a2e0d791c85371fbd900a49f6c3905"
+  version "1.6.0"
+  resolved "https://github.com/tkuther/slick.git#f2203807a12a15f3f86c816f02f1f52e17ce9107"
+  dependencies:
+    jquery ">=1.7.2"
 
 sntp@1.x.x:
   version "1.0.9"
