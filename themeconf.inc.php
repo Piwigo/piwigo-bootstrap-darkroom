@@ -257,7 +257,7 @@ function exif_replacements($exif) {
 
   if (array_key_exists('bootstrap_darkroom_ps_exif_replacements', $conf)) {
     foreach ($conf['bootstrap_darkroom_ps_exif_replacements'] as $tag => $replacement) {
-      if (array_key_exists($tag, $exif)) {
+      if (is_array($tag) && array_key_exists($tag, $exif)) {
         $exif[$tag] = str_replace($replacement[0], $replacement[1], $exif[$tag]);
       }
     }
