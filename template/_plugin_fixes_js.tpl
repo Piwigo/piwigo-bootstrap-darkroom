@@ -80,13 +80,13 @@ $(document).ready(function() {
     $('#bd_downloads dd ul').appendTo('#bd_downloads');
     $('#bd_downloads dd').remove();
     $('#bd_downloads ul').addClass('dropdown-menu dropdown-menu-right');
-    $('#bd_downloads ul>li').addClass('dropdown-item');
+    $('#bd_downloads ul>li>a').addClass('dropdown-item');
     $('#bd_downloads ul').find('span').each(function() { $(this).appendTo($(this).prev('a')); });
   }
 });
 $(window).on('load', function() {
-  if ($('#batchDownloadLink').next('div#batchDownloadBox2').length > 0) {
-    $('#batchDownloadLink').off().on('click', function() { $('#downloadSizeLink').dropdown() });
+ if ($('#batchDownloadLink').next('div#batchDownloadBox2').length > 0) {
+    $('#batchDownloadLink').off().on('click', function() { $('#batchDownloadLink').dropdown() });
   }
 });
 {/strip}{/footer_script}
