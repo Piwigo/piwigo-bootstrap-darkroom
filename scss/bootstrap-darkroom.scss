@@ -11,3 +11,9 @@
 @import "darkroom-colors/piwigo-plugins";
 
 @import "common/picture-info-sidebar";
+
+@include media-breakpoint-up(lg) {
+  #navbar-menubar > #quicksearch i.fa {
+    top: 10px !important;
+  }
+}
