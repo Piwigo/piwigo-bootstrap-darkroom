@@ -1881,9 +1881,9 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
-slick-carousel@1.8.1:
+"slick-carousel@https://github.com/tkuther/slick.git#piwigo-patches":
   version "1.8.1"
-  resolved "https://registry.yarnpkg.com/slick-carousel/-/slick-carousel-1.8.1.tgz#a4bfb29014887bb66ce528b90bd0cda262cc8f8d"
+  resolved "https://github.com/tkuther/slick.git#3169bf30c3a2e0d791c85371fbd900a49f6c3905"
 
 sntp@1.x.x:
   version "1.0.9"
