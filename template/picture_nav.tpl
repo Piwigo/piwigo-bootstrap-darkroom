@@ -59,7 +59,7 @@
 {if isset($current.U_DOWNLOAD)}
 {if empty($current.formats)}
                 <li class="nav-item">
-                    <a class="nav-link" id="downloadSwitchLink" href="{$current.U_DOWNLOAD}" title="{'Download this file'|@translate}" class="pwg-state-default pwg-button" rel="nofollow">
+                    <a id="downloadSwitchLink" class="nav-link" href="{$current.U_DOWNLOAD}" title="{'Download this file'|@translate}" rel="nofollow">
                         <i class="fa fa-download fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Download this file'|@translate}</span>
                     </a>
 {else}

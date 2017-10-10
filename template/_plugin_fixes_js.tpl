@@ -96,17 +96,15 @@ $(window).on('load', function() {
 {if isset($loaded_plugins['download_by_size'])}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  var liDownloadSizeLink = $('#downloadSizeLink').closest('li');
-  $('#downloadSizeBox').appendTo(liDownloadSizeLink);
+  var liDownloadSizeLink = $('#downloadSwitchLink').closest('li');
   $(liDownloadSizeLink).addClass('dropdown');
-  $('#downloadSizeLink').addClass('dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown');
-  $('#downloadSizeBox').changeElementType('ul');
-  $('#downloadSizeBox a').wrap('<li></li>');
+  $('#downloadSizeBox').appendTo(liDownloadSizeLink);
+  $('#downloadSwitchLink').addClass('dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown');
+  $('#downloadSizeBox').addClass('dropdown-menu').removeClass('switchBox');
+  $('#downloadSizeBox a').addClass('dropdown-item');
   $('#downloadSizeBox').attr('role', 'menu').attr('style', '');
-  $('#downloadSizeBox .switchBoxTitle').changeElementType('li');
   $('#downloadSizeBox .switchBoxTitle').addClass('dropdown-header').removeClass('switchBoxTitle');
   $('#downloadSizeBox br').remove();
-  $('#downloadSizeBox').addClass('dropdown-menu').removeClass('switchBox');
 });
 
 $(window).on('load', function() {
