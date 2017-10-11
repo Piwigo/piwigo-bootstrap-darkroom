@@ -1,7 +1,15 @@
+{if isset($loaded_plugins['piwigo-openstreetmap']) && ($BODY_ID == "thePicturePage" || $BODY_ID == "theCategoryPage")}
+{footer_script require='jquery'}{strip}
+$(document).ready(function() {
+  $('.pwg-icon-globe').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe fa-fw" aria-hidden="true"></i>').addClass('nav-link').removeClass('pwg-state-default pwg-button').closest('li').addClass('nav-item osm-button').find('a>i').after('<span class="d-lg-none ml-2">'+$('.osm-button').find('a').attr('title')+'</span>');;
+});
+{/strip}{/footer_script}
+{/if}
+
 {if isset($loaded_plugins['rv_gmaps']) && $BODY_ID == "thePicturePage"}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').addClass('nav-link').removeClass('pwg-state-default pwg-button').wrap('<li class="nav-item"></li>');
+  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe fa-fw" aria-hidden="true"></i>').addClass('nav-link').removeClass('pwg-state-default pwg-button').wrap('<li class="nav-item rvgmaps-button"></li>').find('i').after('<span class="d-lg-none ml-2">'+$('.rvgmaps-button').find('a').attr('title')+'</span>');
   $('#map').wrap('<div id="mapContainer" class="container{if $theme_config->fluid_width}-fluid{/if}"></div>');
   $('#mapPicture').prependTo('#mapContainer');
 });
@@ -10,7 +18,7 @@ $(document).ready(function() {
 {if isset($loaded_plugins['rv_gmaps']) && $BODY_ID == "theCategoryPage"}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe" aria-hidden="true"></i>').addClass('nav-link').removeClass('pwg-state-default pwg-button');
+  $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe fa-fw" aria-hidden="true"></i>').addClass('nav-link').removeClass('pwg-state-default pwg-button').closest('li').addClass('nav-item rvgmaps-button').find('a>i').after('<span class="d-lg-none ml-2">'+$('.rvgmaps-button').find('a').attr('title')+'</span>');
 });
 {/strip}{/footer_script}
 {/if}
