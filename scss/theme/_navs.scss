@@ -305,7 +305,9 @@
     }
   }
 
-  @include media-breakpoint-between(md, lg) {
+  // WTF that thing returns null for xl
+  //@include media-breakpoint-between(md, xl) {
+  @media (min-width: 768px) and (max-width: 1199px) {
     & > *:nth-last-child(-n+4) {
         display:block;
     } 
@@ -314,7 +316,7 @@
     }
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     & > *:nth-last-child(-n+6) {
         display:block;
     } 
