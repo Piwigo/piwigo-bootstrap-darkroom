@@ -47,10 +47,9 @@ A demo is available at https://pwdemo.kuther.net
 
 ### Known issues
 
-* The secondary navbar on the picture page might span several lines, depending on the length of the category/picture name. As a workaround, the number of nested levels is truncated to max 2 levels by default.
+* The secondary navbar might span several lines, depending on the length of the category/picture name and number of category levels, which does mess up the mobile view. As a workaround, the number of nested levels is truncated to max 2 levels by default.
 * On iOS the PhotoSwipe fullscreen mode isn't supported. On iPhone it does work in landscape orientation only, on iPad it doesn't work at all. That's an iOS bug. Works just fine on Android
 * Plugins that add buttons to the Navbar might not (yet) be supported, see [Plugin Support Matrix](https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki/Plugin-Support-Matrix)
-* The Sidebar, if enabled in settings, doesn't play well with Bootswatch Themes. You need to CSS-style the sidebar yourself.
 * Portrait mode videos (e.g. from mobile phones) need to be recoded in actual portrait orientation, rotation tags won't work.
 
 ### Preview
