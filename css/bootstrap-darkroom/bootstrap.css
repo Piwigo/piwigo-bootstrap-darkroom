@@ -8834,8 +8834,10 @@ a.text-dark:focus, a.text-dark:hover {
   visibility: hidden !important;
 }
 
-.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
-  color: #fff;
+.navbar-dark a.navbar-brand:focus, .navbar-dark a.navbar-brand:hover,
+.navbar-dark .navbar-brand a:focus,
+.navbar-dark .navbar-brand a:hover {
+  color: #fff !important;
 }
 
 .navbar-main .navbar-brand {

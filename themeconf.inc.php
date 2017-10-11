@@ -1,8 +1,8 @@
 <?php
 /*
 Theme Name: Bootstrap Darkroom
-Version: 1.5.20
-Description: A mobile-ready & feature-rich theme based on Boostrap Default, with PhotoSwipe full-screen slideshow, Slick carousel on picture page, many color styles thanks to Bootswatch and lots of configuration options
+Version: 2.0.0
+Description: A mobile-ready & feature-rich theme based on Boostrap 4, with PhotoSwipe full-screen slideshow, Slick carousel, over 30 color styles and lots of configuration options
 Theme URI: http://piwigo.org/ext/extension_view.php?eid=831
 Author: Thomas Kuther
 Author URI: https://https://github.com/tkuther/piwigo-bootstrap-darkroom
@@ -171,7 +171,6 @@ add_event_handler('loc_after_page_header', 'strip_breadcrumbs');
 function strip_breadcrumbs() {
   global $template;
 
-  $u_home = $template->get_template_vars('U_HOME');
   $l_sep = $template->get_template_vars('LEVEL_SEPARATOR');
   $title = $template->get_template_vars('TITLE');
   $section_title = $template->get_template_vars('SECTION_TITLE');
@@ -182,53 +181,15 @@ function strip_breadcrumbs() {
     $splt = strpos($title, "[");
     if ($splt) {
       $title_links = substr($title, 0, $splt);
-      $title_count = substr($title, $splt, strlen($title));
       $title = $title_links;
     }
 
-    $dom = new DOMDocument;
-    $int_err = libxml_use_internal_errors(true);
-    $dom->loadHTML(mb_convert_encoding($title, 'HTML-ENTITIES', 'UTF-8'));
-    libxml_use_internal_errors($int_err);
-    $dom->removeChild($dom->doctype);
-
-    $nr_links = $dom->getElementsByTagName('a')->length;
-    $home_link_orig = $dom->getElementsByTagName('a')->item(0);
-    $home_link_content = '<a href="' . $u_home . '" title="' . $home_link_orig->nodeValue . '"><i class="fa fa-home" aria-hidden="true"></i></a > ';
-      $title_new = $home_link_content;
-    if ($nr_links > 2) {
-      if (!empty($section_title)) {
-        $home_link_orig->parentNode->removeChild($home_link_orig);
-        $home_link_orig = $dom->getElementsByTagName('a')->item(0);
-      }
-      while ($nr_links > 2) {
-        $nr_links = $nr_links - 1;
-        $home_link_orig->parentNode->removeChild($home_link_orig);
-        $home_link_orig = $dom->getElementsByTagName('a')->item(0);
-        $home_link_new = $dom->saveHTML();
-        if (!empty($section_title)) {
-          $home_link_new = preg_replace('@'.$l_sep.'@', '', $home_link_new);
-        } else {
-          $home_link_new = preg_replace('@'.$l_sep.$l_sep.'@', $l_sep, $home_link_new);
-          // yes, twice. Don't ask..
-          $home_link_new = preg_replace('@'.$l_sep.$l_sep.'@', $l_sep, $home_link_new);
-        }
-      }
-      if (!empty($section_title)) {
-        $title_new = $home_link_content . $l_sep . $home_link_new;
-      } else {
-        $title_new = $home_link_content . $home_link_new;
-      }
-      $title_new = preg_replace('~<(/?(?:html|body))[^>]*>\s*~i', '', $title_new);
-      if (empty($section_title)) {
-        $template->assign('TITLE', $title_new);
-      } else {
-        $template->assign('SECTION_TITLE', $title_new);
-      }
+    $title = str_replace('<a href', '<a class="nav-breadcrumb-item" href', $title);
+    $title = str_replace($l_sep, '', $title);
+    if (empty($section_title)) {
+      $template->assign('TITLE', $title);
     } else {
-      if ($splt) {
-        $template->assign('TITLE', $title_links);
-      }
+      $template->assign('SECTION_TITLE', $title);
     }
   }
 }

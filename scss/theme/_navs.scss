@@ -143,7 +143,7 @@
 .navbar-brand a:first-child:before {
   content: "\f015";
   font-family: FontAwesome;
-  font-size: 18px;
+  font-size: 1.25rem;
 }
 
 // Quicksearch in navbar
@@ -271,5 +271,57 @@
     position: absolute;
     top: 0;
     width: 50%; /* 6 columns */
+  }
+}
+
+// Breadcrumbs from http://bootsnipp.com/snippets/featured/triangle-breadcrumbs-arrows
+.nav-breadcrumb {
+  .nav-breadcrumb-item {
+    + .nav-breadcrumb-item::before {
+      display: inline-block;
+      padding-right: $breadcrumb-item-padding;
+      padding-left: $breadcrumb-item-padding;
+      color: $breadcrumb-divider-color;
+      content: "#{$breadcrumb-divider}";
+    }
+  }
+
+  & > .nav-breadcrumb-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+  }
+
+  & > *:nth-child(n+2) {
+    display:none;
+  }
+
+  @include media-breakpoint-down(md) {
+    & > *:nth-last-child(-n+2) {
+        display:block;
+    } 
+    & > .nav-breadcrumb-item {
+        max-width: 170px;
+    }
+  }
+
+  // WTF that thing returns null for xl
+  //@include media-breakpoint-between(md, xl) {
+  @media (min-width: 768px) and (max-width: 1199px) {
+    & > *:nth-last-child(-n+4) {
+        display:block;
+    } 
+    & > .nav-breadcrumb-item {
+        max-width: 170px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    & > *:nth-last-child(-n+6) {
+        display:block;
+    } 
+    & > .nav-breadcrumb-item {
+        max-width: 220px;
+    }
   }
 }

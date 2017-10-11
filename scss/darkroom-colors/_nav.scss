@@ -1,8 +1,9 @@
 // Navbar overrides
 .navbar-dark {
-  .navbar-brand {
+  a.navbar-brand,
+  .navbar-brand a {
     @include hover-focus {
-      color: $navbar-dark-hover-color;
+      color: $navbar-dark-hover-color !important;
     }
   }
 }
