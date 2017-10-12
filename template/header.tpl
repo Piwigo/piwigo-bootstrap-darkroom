@@ -162,7 +162,9 @@ function setNavbarOpacity() {
     $('.navbar-contextual.navbar-transparent').removeAttr('style');
   }
   if (top_offset >= p_size) {
-    $('.navbar-main').css('top', 0-(top_offset-p_size));
+    if ($('.navbar-main .navbar-nav').find('.nav-item.dropdown.show').length == 0) {
+      $('.navbar-main').css('top', 0-(top_offset-p_size));
+    }
   } else {
     $('.navbar-main').css('top', 0);
   }
