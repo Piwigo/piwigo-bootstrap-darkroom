@@ -176,19 +176,10 @@ $(document).ready(function() {
 {if !empty($CATEGORIES)}
     <!-- Start of categories -->
 {$CATEGORIES}
-{footer_script}{strip}
+{footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  $(window).load(function(){
-    $('#content .col-outer .card-body').equalHeights();
-    $('#content .col-outer .card-footer br').replaceWith(', ');
-  })
-});
-var resizeTimer;
-$(window).on('resize', function() {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
-    $('#content .col-outer .card-footer').removeAttr('style').equalHeights();
-  }, 250);
+  $('#content .col-outer .card-body').equalHeights();
+  $('#content .col-outer .card-footer br').replaceWith(', ');
 });
 {/strip}{/footer_script}
     <!-- End of categories -->

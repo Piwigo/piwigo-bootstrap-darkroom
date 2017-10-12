@@ -4302,11 +4302,11 @@ tbody.collapse.show {
 }
 
 .navbar-dark .navbar-brand {
-  color: #9e9e9e;
+  color: #fff;
 }
 
 .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
-  color: #9e9e9e;
+  color: #fff;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -4325,7 +4325,7 @@ tbody.collapse.show {
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #9e9e9e;
+  color: #fff;
 }
 
 .navbar-dark .navbar-toggler {
@@ -4342,11 +4342,11 @@ tbody.collapse.show {
 }
 
 .navbar-dark .navbar-text a {
-  color: #9e9e9e;
+  color: #fff;
 }
 
 .navbar-dark .navbar-text a:focus, .navbar-dark .navbar-text a:hover {
-  color: #9e9e9e;
+  color: #fff;
 }
 
 .card {
@@ -8834,8 +8834,21 @@ a.text-dark:focus, a.text-dark:hover {
   visibility: hidden !important;
 }
 
-.navbar-dark a.navbar-brand:focus, .navbar-dark a.navbar-brand:hover,
-.navbar-dark .navbar-brand a:focus,
+.navbar-dark .navbar-brand {
+  color: #9e9e9e !important;
+}
+
+.navbar-dark a.navbar-brand,
+.navbar-dark .navbar-brand a {
+  color: #9e9e9e !important;
+}
+
+.navbar-dark a.navbar-brand:focus,
+.navbar-dark .navbar-brand a:focus {
+  color: #9e9e9e !important;
+}
+
+.navbar-dark a.navbar-brand:hover,
 .navbar-dark .navbar-brand a:hover {
   color: #fff !important;
 }

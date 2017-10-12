@@ -17,10 +17,10 @@
 {* this needs a fixed size else it messes up the grid on tablets *}
 {include file="grid_classes.tpl" width=260 height=180}
   <div class="col-outer mt-3 {if $smarty.cookies.view == 'list'}col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
-    <div class="card card-thumbnail">
+    <div class="card card-thumbnail"{if $smarty.cookies.view == 'list'} style="height: 200px"{/if}>
       <a href="{$cat.URL}" class="h-100{if preg_match('/^material/', $theme_config->bootstrap_theme)} ripple{/if}">
-        <img class="card-img-top img-fluid" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
-        <div class="card-body">
+        <img class="{if $smarty.cookies.view == 'list'}card-img-left{else}card-img-top img-fluid{/if}" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
+        <div class="card-body"{if $smarty.cookies.view == 'list'} style="height: 80%"{/if}>
           <h4 class="card-title ellipsis{if !empty($cat.icon_ts)} recent{/if}">
           {$cat.NAME}
           {if !empty($cat.icon_ts)}

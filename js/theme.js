@@ -11,6 +11,9 @@ $(document).ready(function() {
             .removeClass('content-list')
             .addClass('content-grid')
             .find('.col-outer').each(function() {
+                $(this).find('.card').height('auto');
+                $(this).find('.card-body').attr('style', '');
+                $(this).find('.card-img-left').addClass('card-img-top img-fluid').removeClass('card-img-left');
                 $(this).removeClass('col-12')
                     .addClass($(this).data('grid-classes'))
                     .one(
@@ -36,7 +39,7 @@ $(document).ready(function() {
             .find('.col-outer').each(function() {
                 $(this).find('.card').height('200px');
                 $(this).find('.card-body').attr('style', 'height: 80%;');
-                $(this).find('.card-img-top').addClass('card-img-left').removeClass('card-img-top img-fluid').attr('style', 'height: 100%; width: auto;');
+                $(this).find('.card-img-top').addClass('card-img-left').removeClass('card-img-top img-fluid');
                 $(this).removeClass($(this).data('grid-classes'))
                     .addClass('col-12')
                     .one(
@@ -46,13 +49,6 @@ $(document).ready(function() {
                     })
             });
     });
-
-//    $(window).resize(function() {
-//      $('.content-list').find('.col-outer').each(function() {
-//        $(this).find('.card-body').css('min-height', $(this).find('.card-img-top').height() - $(this).find('.card-footer').outerHeight());
-//        console.log($(this).find('.card-img-top').height() - $(this).find('.card-footer').outerHeight());
-//      });
-//    });
 
     // Side bar
     var sidebar = $("#sidebar");

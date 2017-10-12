@@ -22,9 +22,9 @@
 {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
 {/if}
 {include file="grid_classes.tpl" width=$rwidth height=$rheight}
-<div class="col-outer {if $smarty.cookies.view == 'list'}col-lg-12 col-md-12 col-sm-12 col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
+<div class="col-outer {if $smarty.cookies.view == 'list'}col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
      <div class="card card-thumbnail">
-        <a href="{$thumbnail.URL}" data-index="{$idx}"{if preg_match('/^material/', $theme_config->bootstrap_theme)} class="ripple"{/if}>
+        <a href="{$thumbnail.URL}" data-index="{$idx}" class="h-100{if preg_match('/^material/', $theme_config->bootstrap_theme)} ripple{/if}">
             <img class="card-img-top" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}">
         </a>
 {assign var=idx value=$idx+1}

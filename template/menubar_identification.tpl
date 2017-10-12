@@ -1,6 +1,6 @@
 <li class="nav-item dropdown" id="identificationDropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{if isset($USERNAME)}<i class="fa fa-user"></i> {$USERNAME}{else}{'Login'|@translate}{/if}</a>
-    <div class="dropdown-menu" role="menu">
+    <div class="dropdown-menu dropdown-menu-right" role="menu">
 {strip}
     {if isset($USERNAME)}
         <div class="dropdown-header">{'Hello'|@translate} {$USERNAME}!</div>
