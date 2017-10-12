@@ -11,7 +11,6 @@ $(document).ready(function() {
             .removeClass('content-list')
             .addClass('content-grid')
             .find('.col-outer').each(function() {
-                $(this).find('.card').height('auto');
                 $(this).find('.card-body').attr('style', '');
                 $(this).find('.card-img-left').addClass('card-img-top img-fluid').removeClass('card-img-left');
                 $(this).removeClass('col-12')
@@ -37,15 +36,13 @@ $(document).ready(function() {
             .addClass('content-list')
             .height('auto')
             .find('.col-outer').each(function() {
-                $(this).find('.card').height('200px');
-                $(this).find('.card-body').attr('style', 'height: 80%;');
                 $(this).find('.card-img-top').addClass('card-img-left').removeClass('card-img-top img-fluid');
                 $(this).removeClass($(this).data('grid-classes'))
                     .addClass('col-12')
                     .one(
                     'webkitTransitionEnd',
                     function () {
-                        $('#content').find('.card-body').equalHeights();
+                        $('#content').find('.card-body').removeAttr('style').equalHeights();
                     })
             });
     });

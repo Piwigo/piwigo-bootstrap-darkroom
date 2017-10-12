@@ -458,10 +458,19 @@ body {
   margin-bottom: 20px;
 }
 
-.content-list .card-img-top {
-  float: left !important;
-  width: 25% !important;
-  margin-right: 5rem;
+.content-list .col-outer .card {
+  height: 150px;
+}
+
+@media (min-width: 992px) {
+  .content-list .col-outer .card {
+    height: 200px;
+  }
+}
+
+.content-list .col-outer .card .description {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ellipsis {
@@ -471,8 +480,8 @@ body {
   text-overflow: ellipsis;
 }
 
-.card-footer.text-muted {
-  font-size: 0.75rem;
+.card-thumbnail .text-muted {
+  font-size: 0.8rem;
 }
 
 #theCategoryPage {

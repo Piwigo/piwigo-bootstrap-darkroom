@@ -179,7 +179,6 @@ $(document).ready(function() {
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
   $('#content .col-outer .card-body').equalHeights();
-  $('#content .col-outer .card-footer br').replaceWith(', ');
 });
 {/strip}{/footer_script}
     <!-- End of categories -->

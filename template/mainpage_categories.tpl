@@ -17,10 +17,10 @@
 {* this needs a fixed size else it messes up the grid on tablets *}
 {include file="grid_classes.tpl" width=260 height=180}
   <div class="col-outer mt-3 {if $smarty.cookies.view == 'list'}col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
-    <div class="card card-thumbnail"{if $smarty.cookies.view == 'list'} style="height: 200px"{/if}>
+    <div class="card card-thumbnail">
       <a href="{$cat.URL}" class="h-100{if preg_match('/^material/', $theme_config->bootstrap_theme)} ripple{/if}">
         <img class="{if $smarty.cookies.view == 'list'}card-img-left{else}card-img-top img-fluid{/if}" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
-        <div class="card-body"{if $smarty.cookies.view == 'list'} style="height: 80%"{/if}>
+        <div class="card-body">
           <h4 class="card-title ellipsis{if !empty($cat.icon_ts)} recent{/if}">
           {$cat.NAME}
           {if !empty($cat.icon_ts)}
@@ -29,10 +29,10 @@
           </h4>
           <div class="card-text">
 {if not empty($cat.DESCRIPTION)}
-              <div class="description{if $theme_config->cat_descriptions} d-block{/if}">{$cat.DESCRIPTION}</div>
+              <div class="description {if $theme_config->cat_descriptions} d-block{/if}">{$cat.DESCRIPTION}</div>
 {/if}
 {if isset($cat.INFO_DATES) }
-              <p>{$cat.INFO_DATES}</p>
+              <div class="info-dates">{$cat.INFO_DATES}</div>
 {/if}
           </div>
         </div>
