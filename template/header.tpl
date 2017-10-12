@@ -156,10 +156,12 @@ function setNavbarOpacity() {
   var top_offset = $(window).scrollTop();
   var p_size = $('.page-header').outerHeight() - $(".navbar-main").outerHeight() - $(".navbar-contextual").outerHeight();
   var c_size = $('.page-header').outerHeight() - $(".navbar-contextual").outerHeight();
-  if (top_offset >= c_size) {
-    $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: ' + setColorOpacity(color, 1) + ' !important;');
-  } else {
-    $('.navbar-contextual.navbar-transparent').removeAttr('style');
+  if (!$('.navbar-contextual .navbar-collapse').hasClass('show')) {
+    if (top_offset >= c_size) {
+      $('.navbar-contextual.navbar-transparent').attr('style', 'background-color: ' + setColorOpacity(color, 1) + ' !important;');
+    } else {
+      $('.navbar-contextual.navbar-transparent').removeAttr('style');
+    }
   }
   if (top_offset >= p_size) {
     if ($('.navbar-main .navbar-nav').find('.nav-item.dropdown.show').length == 0) {
