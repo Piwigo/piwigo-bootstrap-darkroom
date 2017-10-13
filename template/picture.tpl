@@ -32,7 +32,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
   </div>
 
 {if $theme_config->picture_info == 'sidebar'}
-    {$PICTURE_INFO_SIDEBAR}
+    {include file='picture_info_sidebar.tpl'}}
 {/if}
 
   <div id="theImageComment" class="row justify-content-center mb-3">
@@ -133,12 +133,12 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 
   <div id="theImageInfos" class="row">
 {if $theme_config->picture_info == 'cards'}
-    {$PICTURE_INFO_CARDS}
+    {include file='picture_info_cards.tpl'}
 {elseif $theme_config->picture_info == 'tabs'}
-    {$PICTURE_INFO_TABS}
+    {include file='picture_info_tabs.tpl'}
 {elseif $theme_config->picture_info == 'sidebar' || $theme_config->picture_info == 'disabled'}
     <div class="col-lg-8 col-md-10 col-12 mx-auto">
-      {$PICTURE_INFO_COMMENTS}
+      {include file='picture_info_comments.tpl'}
     </div>
 {/if}
   </div>
