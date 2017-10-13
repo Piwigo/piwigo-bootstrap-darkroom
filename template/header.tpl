@@ -210,7 +210,7 @@ $('.navbar-contextual .navbar-collapse').on('hidden.bs.collapse', function() {
             </div>
         </div>
 {elseif $theme_config->page_header == 'fancy'}
-        <div class="page-header{if !$theme_config->page_header_full} page-header-small{/if}">
+        <div class="page-header{if !$theme_config->page_header_full || ($theme_config->page_header_full && !$is_homepage)} page-header-small{/if}">
             <div class="page-header-image" style="background-image: url({$theme_config->page_header_image}); transform: translate3d(0px, 0px, 0px);"></div>
             <div class="container">
                 <div id="theHeader" class="content-center">

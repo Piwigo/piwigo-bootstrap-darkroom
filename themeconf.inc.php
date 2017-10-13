@@ -30,6 +30,7 @@ add_event_handler('init', 'set_config_values');
 function set_config_values()
 {
   global $template, $pwg_loaded_plugins, $conf;
+
   $template->assign(array(
                           'loaded_plugins' => $GLOBALS['pwg_loaded_plugins'],
                           'meta_ref_enabled' => $conf['meta_ref']
@@ -51,6 +52,17 @@ function set_config_values()
 
   if (isset($pwg_loaded_plugins['exif_view'])) {
     load_language('lang.exif', PHPWG_PLUGINS_PATH.'exif_view/');
+  }
+}
+
+add_event_handler('loc_begin_page_header', 'check_if_homepage');
+function check_if_homepage() {
+  global $template, $page;
+
+  if (isset($page['is_homepage'])) {
+    $template->assign('is_homepage', true);
+  } else {
+    $template->assign('is_homepage', false);
   }
 }
 
