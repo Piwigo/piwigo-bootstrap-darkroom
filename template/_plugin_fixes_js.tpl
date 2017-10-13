@@ -54,7 +54,7 @@ var ucf_body_id = $('{if $BODY_ID == 'theProfilePage'}#theProfilePage{else}#theR
 $(document).ready(function() {
   $(ucf_body_id).find('fieldset>legend').remove();
   $(ucf_body_id).find('fieldset>ul>li').changeElementType('div');
-  $(ucf_body_id).find('fieldset>ul>div').addClass('form-group').unwrap();
+  $(ucf_body_id).find('fieldset>ul>div').addClass('form-group row').unwrap();
   $(ucf_body_id).find('fieldset>div>.property>label').addClass('col-sm-2 control-label').unwrap();
   $(ucf_body_id).find('fieldset>.form-group>input').wrap('<div class="col-sm-4"></div>').addClass('form-control');
   $('#theProfilePage .property').addClass('col-sm-2 control-label').changeElementType('label');
