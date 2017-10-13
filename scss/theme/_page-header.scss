@@ -2,11 +2,15 @@
   height: 100vh;
   max-height: 1050px;
   padding: 0;
-  color: $white;
+  color: darken($white, 10%);
   position: relative;
 
   background-position: center center;
   background-size: cover;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: darken($white, 10%);
+  }
 
   .page-header-image{
     position: absolute;
@@ -34,7 +38,7 @@
 
       text-align: center;
       padding: 0 15px;
-      color: #FFFFFF;
+      color: $white;
       width: 100%;
       max-width: 880px;
     }
@@ -66,6 +70,6 @@
   }
 
   &:before{
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.4);
   }
 }

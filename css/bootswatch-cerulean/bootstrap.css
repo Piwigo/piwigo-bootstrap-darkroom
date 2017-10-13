@@ -8857,4 +8857,8 @@ a.text-dark:focus, a.text-dark:hover {
 #sidebar .info .imageInfo > dd > a:hover, #sidebar .info .imageInfo > dd > a:focus {
   color: #fff;
 }
+
+.navbar-transparent {
+  background-image: none;
+}
 /*# sourceMappingURL=bootstrap.css.map */

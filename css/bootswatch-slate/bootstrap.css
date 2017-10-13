@@ -9124,4 +9124,8 @@ legend {
     top: 12px !important;
   }
 }
+
+.navbar.navbar-transparent.navbar-sm {
+  margin-top: -112px !important;
+}
 /*# sourceMappingURL=bootstrap.css.map */

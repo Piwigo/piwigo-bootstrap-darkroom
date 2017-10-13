@@ -10035,4 +10035,8 @@ input[type="checkbox"]:disabled:checked:after,
     top: 16px !important;
   }
 }
+
+.navbar.navbar-transparent.navbar-sm {
+  margin-top: -106px !important;
+}
 /*# sourceMappingURL=bootstrap.css.map */

@@ -13,3 +13,9 @@
     }
   }
 }
+
+.navbar {
+  &.navbar-transparent.navbar-sm {
+    margin-top: -112px !important;
+  }
+}

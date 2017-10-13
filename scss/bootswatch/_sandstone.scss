@@ -3,3 +3,9 @@
 @import "components/bootstrap/scss/bootstrap";
 @import "components/bootswatch/sandstone/bootswatch";
 @import "common";
+
+.navbar {
+  &.navbar-transparent.navbar-sm {
+    margin-top: -97px !important;
+  }
+}

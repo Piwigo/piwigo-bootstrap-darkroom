@@ -170,6 +170,7 @@ body {
   box-shadow: none;
   color: #fff;
   padding: 20px;
+  border-style: none;
 }
 
 .navbar.navbar-transparent .navbar-brand,
@@ -183,11 +184,16 @@ body {
   color: #fff;
 }
 
+.navbar.navbar-transparent .nav-item.active .nav-link {
+  color: #fff;
+}
+
 .navbar.navbar-transparent.navbar-sm {
   padding-top: 5px;
   padding-bottom: 5px;
   margin-top: -99px;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  border-style: none;
 }
 
 .navbar.navbar-transparent.navbar-sm .collapse.show .navbar-nav,
@@ -922,10 +928,14 @@ a.pswp__share--google:hover {
   height: 100vh;
   max-height: 1050px;
   padding: 0;
-  color: #fff;
+  color: #e6e6e6;
   position: relative;
   background-position: center center;
   background-size: cover;
+}
+
+.page-header h1, .page-header h2, .page-header h3, .page-header h4, .page-header h5, .page-header h6 {
+  color: #e6e6e6;
 }
 
 .page-header .page-header-image {
@@ -953,7 +963,7 @@ a.pswp__share--google:hover {
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 0 15px;
-  color: #FFFFFF;
+  color: #fff;
   width: 100%;
   max-width: 880px;
 }
@@ -983,7 +993,7 @@ a.pswp__share--google:hover {
 }
 
 .page-header:before {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .pwg-icon {

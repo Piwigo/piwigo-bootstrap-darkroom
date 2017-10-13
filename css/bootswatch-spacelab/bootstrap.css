@@ -8963,4 +8963,12 @@ a.text-dark:focus, a.text-dark:hover {
 #sidebar .info .imageInfo > dd > a:hover, #sidebar .info .imageInfo > dd > a:focus {
   color: white;
 }
+
+.navbar.navbar-transparent.navbar-sm {
+  margin-top: -97px !important;
+}
+
+.navbar-transparent {
+  background-image: none;
+}
 /*# sourceMappingURL=bootstrap.css.map */

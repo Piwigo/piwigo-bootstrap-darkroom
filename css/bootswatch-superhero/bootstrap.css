@@ -8914,4 +8914,8 @@ label,
     top: 12px !important;
   }
 }
+
+.navbar.navbar-transparent.navbar-sm {
+  margin-top: -97px !important;
+}
 /*# sourceMappingURL=bootstrap.css.map */

@@ -8889,4 +8889,8 @@ a.text-dark:focus, a.text-dark:hover {
 .navbar-contextual .nav-item + .nav-item {
   margin-left: .2rem;
 }
+
+.navbar-contextual.navbar-transparent.navbar-sm {
+  margin-top: -102px !important;
+}
 /*# sourceMappingURL=bootstrap.css.map */

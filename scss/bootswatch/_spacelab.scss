@@ -3,3 +3,14 @@
 @import "components/bootstrap/scss/bootstrap";
 @import "components/bootswatch/spacelab/bootswatch";
 @import "common";
+
+.navbar {
+  &.navbar-transparent.navbar-sm {
+    margin-top: -97px !important;
+  }
+}
+
+.navbar-transparent {
+  background-image: none;
+}
+

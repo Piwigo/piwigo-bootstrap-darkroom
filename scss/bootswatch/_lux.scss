@@ -8,4 +8,9 @@
   .nav-item + .nav-item {
     margin-left: .2rem;
   }
+
+  &.navbar-transparent.navbar-sm {
+    margin-top: -102px !important;
+  }
 }
+

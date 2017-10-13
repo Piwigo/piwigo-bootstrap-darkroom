@@ -3,3 +3,7 @@
 @import "components/bootstrap/scss/bootstrap";
 @import "components/bootswatch/cerulean/bootswatch";
 @import "common";
+
+.navbar-transparent {
+  background-image: none;
+}

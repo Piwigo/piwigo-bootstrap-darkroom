@@ -8902,4 +8902,8 @@ legend,
 #sidebar .info .imageInfo > dd > a:hover, #sidebar .info .imageInfo > dd > a:focus {
   color: #fff;
 }
+
+.navbar.navbar-transparent.navbar-sm {
+  margin-top: -96px !important;
+}
 /*# sourceMappingURL=bootstrap.css.map */

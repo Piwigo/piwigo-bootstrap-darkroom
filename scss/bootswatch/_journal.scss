@@ -12,3 +12,9 @@ $jumbotron-bg: theme-color('primary');
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
 }
+
+.navbar {
+  &.navbar-transparent.navbar-sm {
+    margin-top: -101px !important;
+  }
+}

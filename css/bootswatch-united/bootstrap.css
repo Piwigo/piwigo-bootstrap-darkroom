@@ -8816,4 +8816,8 @@ a.text-dark:focus, a.text-dark:hover {
     top: 10px !important;
   }
 }
+
+.navbar.navbar-transparent.navbar-sm {
+  margin-top: -988888888px !important;
+}
 /*# sourceMappingURL=bootstrap.css.map */
