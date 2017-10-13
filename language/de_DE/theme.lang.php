@@ -90,3 +90,4 @@ $lang['URL or releative path to the image'] = 'URL oder relativer Pfad zum Bild'
 $lang['Integrate lower navbar'] = 'Die untere Navigationsleiste integrieren';
 $lang['Background image'] = 'Hintergrundbild';
 $lang['Banner style'] = 'Art des Banners';
+$lang['Span the full viewport height'] = 'Die ganze Höhe des Ansichtsfenters ausfüllen';

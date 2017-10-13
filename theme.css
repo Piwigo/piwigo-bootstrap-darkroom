@@ -468,11 +468,6 @@ body {
   }
 }
 
-.content-list .col-outer .card .description {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .ellipsis {
   display: block;
   white-space: nowrap;
@@ -938,12 +933,6 @@ a.pswp__share--google:hover {
   z-index: -1;
 }
 
-.page-header footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
 .page-header > .container {
   height: 100%;
   z-index: 2;
@@ -965,9 +954,17 @@ a.pswp__share--google:hover {
   max-width: 880px;
 }
 
+.page-header + .navbar-contextual.navbar-transparent {
+  display: none;
+}
+
 .page-header.page-header-small {
   height: 60vh;
   max-height: 440px;
+}
+
+.page-header.page-header-small + .navbar-contextual.navbar-transparent {
+  display: flex;
 }
 
 .page-header:after, .page-header:before {

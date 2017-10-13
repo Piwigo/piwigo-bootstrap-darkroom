@@ -170,6 +170,14 @@ function setNavbarOpacity() {
   } else {
     $('.navbar-main').css('top', 0);
   }
+
+  if($('.page-header.page-header-small').length == 0) {
+    if (top_offset > 5) {
+      $('.navbar-contextual.navbar-transparent').fadeIn('slow').addClass('d-flex');
+    } else {
+      $('.navbar-contextual.navbar-transparent').fadeOut('slow').removeClass('d-flex');
+    }
+  }
 }
 
 $(window).scroll(function(){
@@ -202,7 +210,7 @@ $('.navbar-contextual .navbar-collapse').on('hidden.bs.collapse', function() {
             </div>
         </div>
 {elseif $theme_config->page_header == 'fancy'}
-        <div class="page-header page-header-small">
+        <div class="page-header{if !$theme_config->page_header_full} page-header-small{/if}">
             <div class="page-header-image" style="background-image: url({$theme_config->page_header_image}); transform: translate3d(0px, 0px, 0px);"></div>
             <div class="container">
                 <div id="theHeader" class="content-center">

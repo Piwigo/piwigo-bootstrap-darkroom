@@ -27,6 +27,7 @@ class Config {
     const KEY_SLICK_INFINITE = 'slick_infinite';
     const KEY_SLICK_CENTERED = 'slick_centered';
     const KEY_PAGE_HEADER = 'page_header';
+    const KEY_PAGE_HEADER_FULL = 'page_header_full';
     const KEY_PAGE_HEADER_IMAGE = 'page_header_image';
     const KEY_PAGE_HEADER_BOTH_NAVS = 'page_header_both_navs';
     const KEY_PICTURE_INFO = 'picture_info';
@@ -68,6 +69,7 @@ class Config {
         self::KEY_SLICK_INFINITE => false,
         self::KEY_SLICK_CENTERED => false,
         self::KEY_PAGE_HEADER => 'jumbotron',
+        self::KEY_PAGE_HEADER_FULL => false,
         self::KEY_PAGE_HEADER_IMAGE => '',
         self::KEY_PAGE_HEADER_BOTH_NAVS => true,
         self::KEY_PICTURE_INFO => 'cards',
@@ -107,6 +109,7 @@ class Config {
         self::KEY_SLICK_INFINITE => self::TYPE_BOOL,
         self::KEY_SLICK_CENTERED => self::TYPE_BOOL,
         self::KEY_PAGE_HEADER => self::TYPE_STRING,
+        self::KEY_PAGE_HEADER_FULL => self::TYPE_BOOL,
         self::KEY_PAGE_HEADER_IMAGE => self::TYPE_STRING,
         self::KEY_PAGE_HEADER_BOTH_NAVS => self::TYPE_BOOL,
         self::KEY_PICTURE_INFO => self::TYPE_STRING,

@@ -130,6 +130,13 @@
                         {'Integrate lower navbar'|@translate}
                     </label>
                 </li>
+                <li id="page_header_full">
+                    <label class="font-checkbox">
+                      <span class="icon-check"></span>
+                      <input type="checkbox" name="page_header_full"{if $theme_config->page_header_full} checked=checked{/if}>
+                        {'Span the full viewport height'|@translate}
+                    </label>
+                </li>
             </ul>
         </fieldset>
         <fieldset>
@@ -450,6 +457,7 @@ $(document).ready(function() {
   } else {
     $('#page_header_image').hide();
     $('#page_header_navbars').hide();
+    $('#page_header_full').hide();
   }
 });
 
@@ -457,9 +465,11 @@ $('select[name=page_header]').change(function() {
   if ($(this).val() == 'fancy') {
     $('#page_header_image').show();
     $('#page_header_navbars').show();
+    $('#page_header_full').show();
   } else {
     $('#page_header_image').hide();
     $('#page_header_navbars').hide();
+    $('#page_header_full').hide();
   }
 });
 

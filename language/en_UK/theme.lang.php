@@ -68,3 +68,4 @@ $lang['URL or releative path to the image'] = 'URL or releative path to the imag
 $lang['Integrate lower navbar'] = 'Integrate lower navbar';
 $lang['Background image'] = 'Background image';
 $lang['Banner style'] = 'Banner style';
+$lang['Span the full viewport height'] = 'Span the full viewport height';
