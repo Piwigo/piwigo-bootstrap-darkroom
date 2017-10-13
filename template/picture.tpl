@@ -32,7 +32,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
   </div>
 
 {if $theme_config->picture_info == 'sidebar'}
-    {include file='picture_info_sidebar.tpl'}}
+    {include file='picture_info_sidebar.tpl'}
 {/if}
 
   <div id="theImageComment" class="row justify-content-center mb-3">
