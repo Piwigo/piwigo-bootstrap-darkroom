@@ -125,6 +125,10 @@ body {
   width: auto;
 }
 
+.form-control-plaintext {
+  color: inherit;
+}
+
 .navbar-expand-lg .navbar-nav .nav-link {
   padding-left: .8rem;
   padding-right: .8rem;
