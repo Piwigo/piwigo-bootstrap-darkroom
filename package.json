@@ -26,25 +26,25 @@
   "sass": "scss/bootstrap-darkroom.scss",
   "license": "APACHE-2.0",
   "dependencies": {
+    "bootstrap": "twbs/bootstrap#v4-dev",
+    "font-awesome": "^4.7.0",
     "jquery": ">=3.0.0",
     "jquery-migrate": "^3.0.0",
-    "popper.js": "^1.11.0",
-    "bootstrap": "twbs/bootstrap#v4-dev",
-    "slick-carousel": "https://github.com/tkuther/slick.git#piwigo-patches",
     "photoswipe": "4.1.2",
-    "font-awesome": "^4.7.0",
+    "popper.js": "^1.11.0",
+    "slick-carousel": "https://github.com/tkuther/slick.git#piwigo-patches",
     "typeface-pt-sans": "^0.0.35",
     "typeface-roboto": "^0.0.35"
   },
   "devDependencies": {
-    "bootstrap-material-design": "FezVrasta/bootstrap-material-design#master",
     "autoprefixer": "^7.1.2",
+    "bootstrap-material-design": "FezVrasta/bootstrap-material-design#master",
     "clean-css-cli": "^4.1.6",
     "node-sass": "^4.5.3",
     "node-sass-tilde-importer": "^1.0.0",
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^4.1.0",
     "uglify-js": "^3.0.24",
-    "yarn": "^1.1.0"
+    "yarn": "^1.2.1"
   }
 }

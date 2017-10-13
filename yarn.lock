@@ -199,7 +199,7 @@ bootstrap-material-design@FezVrasta/bootstrap-material-design#master:
 
 bootstrap@twbs/bootstrap#v4-dev:
   version "4.0.0-beta"
-  resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/9145cc8279abb6d9ca73e18d82d6816e386cdab3"
+  resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/71e60e1f85e3e822bb62a919bfb9b1d4e5d7f29b"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
@@ -2220,6 +2220,6 @@ yargs@^8.0.1:
     y18n "^3.2.1"
     yargs-parser "^7.0.0"
 
-yarn@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.1.0.tgz#f2da9340490236b6c56de305b1c21a8a19c433c3"
+yarn@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.2.1.tgz#0d628dc01438881a1663a6f83cbf7ac5db7a75fc"
