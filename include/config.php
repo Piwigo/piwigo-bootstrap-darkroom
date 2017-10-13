@@ -55,7 +55,7 @@ class Config {
     const KEY_CUSTOM_CSS = 'custom_css';
 
     private $defaults = array(
-        self::KEY_FLUID_WIDTH => true,
+        self::KEY_FLUID_WIDTH => false,
         self::KEY_BOOTSTRAP_THEME => 'material-darkroom',
         self::KEY_BOOTSWATCH_THEME => 'cerulean',
         self::KEY_MATERIAL_COLOR => 'teal',
