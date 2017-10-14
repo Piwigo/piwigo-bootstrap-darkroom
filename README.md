@@ -72,6 +72,10 @@ A demo is available at https://pwdemo.kuther.net
 
 To make changes to the scss files, setup the project using `npm install`, change the files and run `npm run build`.
 
+### Thanks
+* Phil Bayfield for his work on the Bootstrap Default theme, which this theme was initiallly based on as a child theme. It's grown up now.
+* The Piwigo Team for a great gallery software
+
 ### License
 
 ```
