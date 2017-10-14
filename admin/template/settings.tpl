@@ -41,11 +41,11 @@
                         <option value="bootswatch-darkly"{if $theme_config->bootstrap_theme == 'bootswatch-darkly'} selected="selected"{/if}>Bootswatch Darkly</option>
                         <option value="bootswatch-flatly"{if $theme_config->bootstrap_theme == 'bootswatch-flatly'} selected="selected"{/if}>Bootswatch Flatly</option>
                         <option value="bootswatch-journal"{if $theme_config->bootstrap_theme == 'bootswatch-journal'} selected="selected"{/if}>Bootswatch Journal</option>
-                        <option value="bootswatch-materia"{if $theme_config->bootstrap_theme == 'bootswatch-materia'} selected="selected"{/if}>Bootswatch Materia</option>
-                        <option value="bootswatch-minty"{if $theme_config->bootstrap_theme == 'bootswatch-minty'} selected="selected"{/if}>Bootswatch Minty</option>
                         <option value="bootswatch-litera"{if $theme_config->bootstrap_theme == 'bootswatch-litera'} selected="selected"{/if}>Bootswatch Litera</option>
                         <option value="bootswatch-lumen"{if $theme_config->bootstrap_theme == 'bootswatch-lumen'} selected="selected"{/if}>Bootswatch Lumen</option>
                         <option value="bootswatch-lux"{if $theme_config->bootstrap_theme == 'bootswatch-lux'} selected="selected"{/if}>Bootswatch Lux</option>
+                        <option value="bootswatch-materia"{if $theme_config->bootstrap_theme == 'bootswatch-materia'} selected="selected"{/if}>Bootswatch Materia</option>
+                        <option value="bootswatch-minty"{if $theme_config->bootstrap_theme == 'bootswatch-minty'} selected="selected"{/if}>Bootswatch Minty</option>
                         <option value="bootswatch-pulse"{if $theme_config->bootstrap_theme == 'bootswatch-pulse'} selected="selected"{/if}>Bootswatch Pulse</option>
                         <option value="bootswatch-sandstone"{if $theme_config->bootstrap_theme == 'bootswatch-sandstone'} selected="selected"{/if}>Bootswatch Sandstone</option>
                         <option value="bootswatch-simplex"{if $theme_config->bootstrap_theme == 'bootswatch-simplex'} selected="selected"{/if}>Bootswatch Simplex</option>
