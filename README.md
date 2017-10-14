@@ -36,7 +36,7 @@ A mobile-ready [Piwigo](http://piwigo.org) theme based on [Bootstrap 4](https://
 ### Demo
 A demo is available at https://pwdemo.kuther.net
 
-### Documentation
+### Documentation, Support and Issue tracker
 * [Github Wiki](https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki)
 * [Forum thread](http://piwigo.org/forum/viewtopic.php?id=26624)
 * [Issue tracker](https://github.com/tkuther/piwigo-bootstrap-darkroom/issues)
