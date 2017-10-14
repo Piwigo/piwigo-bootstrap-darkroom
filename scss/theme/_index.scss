@@ -32,6 +32,14 @@
       @include media-breakpoint-up(lg) {
         height: 200px;
       }
+
+      .card-body {
+        min-height: 80%;
+      }
+      .card-footer {
+        max-height: 20%;
+        min-height: 20%;
+      }
     }
   }
 }
@@ -44,8 +52,17 @@
 }
 
 .card-thumbnail {
-  .text-muted {
-    font-size: 0.8rem;
+  .card-body {
+    padding-bottom: .25rem;
+  }
+  .card-footer {
+    background: none;
+    border-top: none;
+    padding-top: .25rem;
+
+    &.text-muted {
+     font-size: 0.8rem;
+    }
   }
 }
 

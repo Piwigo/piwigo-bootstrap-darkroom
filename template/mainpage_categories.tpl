@@ -18,11 +18,13 @@
 {include file="grid_classes.tpl" width=260 height=180}
   <div class="col-outer mt-3 {if $smarty.cookies.view == 'list'}col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
     <div class="card card-thumbnail">
-      <a href="{$cat.URL}" class="h-100{if preg_match('/^material/', $theme_config->bootstrap_theme)} ripple{/if}">
-        <img class="{if $smarty.cookies.view == 'list'}card-img-left{else}card-img-top img-fluid{/if}" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
+      <div class="h-100">
+        <a href="{$cat.URL}"{if preg_match('/^material/', $theme_config->bootstrap_theme)} class="ripple"{/if}>
+          <img class="{if $smarty.cookies.view == 'list'}card-img-left{else}card-img-top img-fluid{/if}" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
+        </a>
         <div class="card-body">
           <h4 class="card-title ellipsis{if !empty($cat.icon_ts)} recent{/if}">
-          {$cat.NAME}
+          <a href="{$cat.URL}">{$cat.NAME}</a>
           {if !empty($cat.icon_ts)}
             <img title="{$cat.icon_ts.TITLE}" src="{$ROOT_URL}{$themeconf.icon_dir}/recent{if $cat.icon_ts.IS_CHILD_DATE}_by_child{/if}.png" alt="(!)">
           {/if}
@@ -37,9 +39,9 @@
           </div>
         </div>
 {if $theme_config->cat_nb_images}
-        <div class="card-footer text-muted">{str_replace('<br>', ', ', $cat.CAPTION_NB_IMAGES)}</div>
+        <div class="card-footer text-muted"><div class="d-inline-block">{str_replace('<br>', ', ', $cat.CAPTION_NB_IMAGES)}</div></div>
 {/if}
-      </a>
+      </div>
     </div>
   </div>
 {else}
