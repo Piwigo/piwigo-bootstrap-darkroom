@@ -9,7 +9,7 @@
 {if $discover_menu_exists == false && ($id == "mbSpecials" or $id == "mbMenu")}
     <li class="nav-item dropdown">                                                                                                                                                   
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Discover'|@translate}</a>
-        <div class="dropdown-menu" role="menu">
+        <div class="dropdown-menu dropdown-menu-right" role="menu">
         {if not empty($blocks.mbMenu->template)}
         {include file=$blocks.mbMenu->template}
         {/if}

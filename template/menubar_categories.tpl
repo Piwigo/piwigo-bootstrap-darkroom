@@ -1,6 +1,6 @@
 <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Albums'|@translate}</a>
-    <div class="dropdown-menu dropdown-menu-scrollable" role="menu">
+    <div class="dropdown-menu dropdown-menu-right dropdown-menu-scrollable" role="menu">
 {assign var='ref_level' value=0}
 {foreach from=$block->data.MENU_CATEGORIES item=cat}
         <a class="dropdown-item{if $cat.SELECTED} active{/if}" href="{$cat.URL}"{if $cat.LEVEL > 1} style="padding-left: {($cat.LEVEL -1) * 10}px;"{/if}>
