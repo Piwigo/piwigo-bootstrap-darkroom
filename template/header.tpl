@@ -75,8 +75,8 @@
 {/if}
 {if !empty($theme.local_head)}{include file=$theme.local_head load_css=$theme.load_css}{/if}
 {/foreach}
-{if file_exists("local/bootstrapdefault/custom.css")}
-    {combine_css path="local/bootstrapdefault/custom.css" order=10000}
+{if file_exists("local/bootstrap_darkroom/custom.css")}
+    {combine_css path="local/bootstrap_darkroom/custom.css" order=10000}
 {/if}
 {get_combined_css}
 {if $BODY_ID == 'theAdditionalPage' || $BODY_ID == 'theHomePage' || $bootstrap_darkroom_core_js_in_header == true }
