@@ -9157,4 +9157,8 @@ pre {
 .form-check-label {
   padding-left: 1.5rem;
 }
+
+.navbar-main + .jumbotron {
+  border: none;
+}
 /*# sourceMappingURL=bootstrap.css.map */
