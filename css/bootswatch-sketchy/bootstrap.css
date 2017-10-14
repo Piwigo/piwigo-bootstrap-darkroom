@@ -9130,6 +9130,14 @@ pre {
   text-decoration: none;
 }
 
+.navbar-contextual.navbar-transparent.navbar-sm {
+  margin-top: -98px !important;
+}
+
+.navbar-main + .jumbotron {
+  border: none;
+}
+
 .card-thumbnail a {
   text-decoration: none;
 }
@@ -9156,9 +9164,5 @@ pre {
 
 .form-check-label {
   padding-left: 1.5rem;
-}
-
-.navbar-main + .jumbotron {
-  border: none;
 }
 /*# sourceMappingURL=bootstrap.css.map */

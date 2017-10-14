@@ -8,6 +8,14 @@
   .navbar-brand a {
     text-decoration: none;
   }
+
+  &.navbar-transparent.navbar-sm {
+    margin-top: -98px !important;
+  }
+}
+
+.navbar-main + .jumbotron {
+  border: none;
 }
 
 .card-thumbnail {
@@ -44,6 +52,3 @@
   padding-left: 1.5rem;
 }
 
-.navbar-main + .jumbotron {
-  border: none;
-}
