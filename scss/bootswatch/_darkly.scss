@@ -14,4 +14,10 @@
   &.navbar-transparent.navbar-sm {
     margin-top: -97px !important;
   }
+
+  &.navbar-contextual {
+    .nav-item + .nav-item {
+      margin-left: .2rem;
+    }
+  }
 }
