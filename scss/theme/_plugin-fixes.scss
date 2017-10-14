@@ -108,7 +108,11 @@ ul.ui-autocomplete { z-index: 150; }
 ul.thumbnailCategories { padding-top: 20px; }
 
 /* Language Switch */
-/* Language Switch */
 [class*="langflag-text-"] {
   background-position: 0 50px !important;
+}
+
+// Admin tools
+#ato_header {
+  z-index: 1040 !important;
 }

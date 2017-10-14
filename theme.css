@@ -1148,9 +1148,12 @@ ul.thumbnailCategories {
 }
 
 /* Language Switch */
-/* Language Switch */
 [class*="langflag-text-"] {
   background-position: 0 50px !important;
+}
+
+#ato_header {
+  z-index: 1040 !important;
 }
 
 /*# sourceMappingURL=theme.css.map */
