@@ -199,7 +199,7 @@ bootstrap-material-design@FezVrasta/bootstrap-material-design#master:
 
 bootstrap@twbs/bootstrap#v4-dev:
   version "4.0.0-beta"
-  resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/71e60e1f85e3e822bb62a919bfb9b1d4e5d7f29b"
+  resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/a9fa21e701536e84789169fec6a1f4a0f821ee3c"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
