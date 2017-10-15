@@ -9165,4 +9165,9 @@ pre {
 .form-check-label {
   padding-left: 1.5rem;
 }
+
+.slick-prev:before,
+.slick-next:before {
+  color: #333;
+}
 /*# sourceMappingURL=bootstrap.css.map */
