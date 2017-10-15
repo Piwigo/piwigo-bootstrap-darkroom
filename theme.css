@@ -560,10 +560,14 @@ body {
 }
 
 #thumbnailCarousel {
-  display: none;
+  visibility: hidden;
   /* hide initially until page is loaded */
   padding-top: 1em;
   padding-bottom: 1.5em;
+}
+
+#thumbnailCarousel.slick-initialized {
+  visibility: visible;
 }
 
 .slick-slide img {

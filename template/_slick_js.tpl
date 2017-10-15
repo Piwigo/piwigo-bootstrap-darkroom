@@ -56,7 +56,6 @@ $(document).ready(function(){
   });
   var currentThumbnailIndex = $('#thumbnailCarousel .thumbnail-active').data('slick-index');
   $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
-
-  $('#thumbnailCarousel').show();
+  $('#thumbnailCarousel').fadeIn('slow');
 });
 {/strip}{/footer_script}
