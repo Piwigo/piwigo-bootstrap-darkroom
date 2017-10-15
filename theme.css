@@ -487,6 +487,12 @@ body {
   min-height: 20%;
 }
 
+@media (min-width: 992px) {
+  .container-fluid #content, .container-fluid #content-description {
+    padding: 0 1rem;
+  }
+}
+
 .ellipsis {
   display: block;
   white-space: nowrap;
@@ -1152,7 +1158,7 @@ ul.thumbnailCategories {
   background-position: 0 50px !important;
 }
 
-#ato_headeri,
+#ato_header,
 #ato_header_closed {
   z-index: 1040 !important;
 }

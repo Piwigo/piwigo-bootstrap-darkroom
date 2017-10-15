@@ -44,6 +44,14 @@
   }
 }
 
+@include media-breakpoint-up(lg) {
+  .container-fluid {
+    #content, #content-description {
+      padding: 0 1rem;
+    }
+  }
+}
+
 .ellipsis {
   display: block;
   white-space: nowrap;

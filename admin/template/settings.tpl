@@ -185,6 +185,21 @@
                         <option value="photoswipe_mobile_only"{if $theme_config->thumbnail_linkto == 'photoswipe_mobile_only'} selected="selected"{/if}>{'Photoswipe Slideshow (Mobile devices only)'|@translate}</option>
                     </select>
                 </li>
+                <li>
+                    <label>{'Description display style'|@translate}</label>
+                    <blockquote>
+                        <label class="radio" style="display: inline-block; width: 100px;">
+                            <input type="radio" name="thumbnail_cat_desc" value="simple"{if $theme_config->thumbnail_cat_desc == 'simple'} checked="checked"{/if} />
+                            {'Simple'|@translate}
+                        </label>
+                        <span class="info">{'center-aligned h5 heading'|@translate}</span><br/>
+                        <label class="radio" style="display: inline-block; width: 100px;">
+                            <input type="radio" name="thumbnail_cat_desc" value="advanced"{if $theme_config->thumbnail_cat_desc == 'advanced'} checked="checked"{/if} />
+                            {'Advanced'|@translate}
+                        </label>
+                        <span class="info">{'left-aligned free text for advanced descriptions'|@translate}
+                    </blockquote>
+                </li>
             </ul>
         </fieldset>
         <fieldset>

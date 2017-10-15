@@ -162,8 +162,12 @@ $(document).ready(function() {
 {/if}
 
 {if !empty($CONTENT_DESCRIPTION)}
-    <div class="d-flex justify-content-center py-3">
+    <div id="content-description" class="d-flex py-3 {if $theme_config->thumbnail_cat_desc == 'simple'}justify-content-center text-center{/if}">
+{if $theme_config->thumbnail_cat_desc == 'simple'}
         <h5>{$CONTENT_DESCRIPTION}</h5>
+{else}
+        {$CONTENT_DESCRIPTION}
+{/if}
     </div>
 {/if}
     <div id="content" class="{if $smarty.cookies.view == 'list'}content-list{else}content-grid{/if} pt-3">
