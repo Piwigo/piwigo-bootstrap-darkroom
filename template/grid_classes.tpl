@@ -1,5 +1,6 @@
 {* Content container widths, taken from bootstrap.css. Must be updated to match for accurate grid calcuations if image
 size menu is enabled in child theme *}
+{assign var=width_xxl value=1410}
 {assign var=width_xl value=1170}
 {assign var=width_lg value=970}
 {assign var=width_md value=750}
@@ -8,17 +9,31 @@ size menu is enabled in child theme *}
 
 {assign var=col_class value=""}
 
+{if $theme_config->fluid_width}
+{if $width > ($width_xxl - (4 * $col_padding)) / 2}
+    {$col_class = $col_class|cat:"col-xxl-12"}
+{elseif $width > ($width_xxl - (6 * $col_padding)) / 3}
+    {$col_class = $col_class|cat:"col-xxl-4"}
+{elseif $width > ($width_xxl - (8 * $col_padding)) / 4}
+    {$col_class = $col_class|cat:"col-xxl-3"}
+{elseif $width <= ($width_xxl - (8 * $col_padding)) / 4 && $width > ($width_xxl - (12 * $col_padding)) / 6}
+    {$col_class = $col_class|cat:"col-xxl-2"}
+{else}
+    {$col_class = $col_class|cat:"col-xxl-1"}
+{/if}
+{/if}
+
 {* Calulate grid for xlarge desktops *}
 {if $width > ($width_xl - (4 * $col_padding)) / 2}
-    {$col_class = $col_class|cat:"col-xl-12"}
+    {$col_class = $col_class|cat:" col-xl-12"}
 {elseif $width > ($width_xl - (6 * $col_padding)) / 3}
-    {$col_class = $col_class|cat:"col-xl-6"}
+    {$col_class = $col_class|cat:" col-xl-6"}
 {elseif $width > ($width_xl - (8 * $col_padding)) / 4}
-    {$col_class = $col_class|cat:"col-xl-4"}
+    {$col_class = $col_class|cat:" col-xl-4"}
 {elseif $width <= ($width_xl - (8 * $col_padding)) / 4 && $width > ($width_xl - (12 * $col_padding)) / 6}
-    {$col_class = $col_class|cat:"col-xl-3"}
+    {$col_class = $col_class|cat:" col-xl-3"}
 {else}
-    {$col_class = $col_class|cat:"col-xl-2"}
+    {$col_class = $col_class|cat:" col-xl-2"}
 {/if}
 
 {* Calulate grid for large desktops *}

@@ -54,17 +54,10 @@
 {/if}
 
 {strip}
-{if $theme_config->bootstrap_theme == 'bootswatch'}
-    {combine_css path="themes/bootstrap_darkroom/components/bootswatch/{$theme_config->bootswatch_theme}/bootstrap.min.css" order=-20}
-{elseif $theme_config->bootstrap_theme == 'bootstrap-default'}
-    {combine_css path='themes/bootstrap_darkroom/components/bootstrap/dist/css/bootstrap.min.css' order=-20}
-    {combine_css path="themes/bootstrap_darkroom/components/typeface-roboto/index.css" order=-19}
-{else}
     {combine_css path="themes/bootstrap_darkroom/css/{$theme_config->bootstrap_theme}/bootstrap.min.css" order=-20}
-{/if}
 {if $theme_config->bootstrap_theme == 'bootstrap-darkroom' || $theme_config->bootstrap_theme == 'material-darkroom'}
     {combine_css path="themes/bootstrap_darkroom/components/typeface-pt-sans/index.css" order=-19}
-{elseif (0 === strpos($theme_config->bootstrap_theme, 'material'))}
+{elseif (0 === strpos($theme_config->bootstrap_theme, 'material')) || $theme_config->bootstrap_theme == 'bootstrap-default'}
     {combine_css path="themes/bootstrap_darkroom/components/typeface-roboto/index.css" order=-19}
 {/if}
     {combine_css path='themes/bootstrap_darkroom/components/font-awesome/css/font-awesome.min.css' order=-14}
