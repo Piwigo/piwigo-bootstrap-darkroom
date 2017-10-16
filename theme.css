@@ -151,7 +151,7 @@ body {
 
 @media (max-width: 767px) {
   .navbar.navbar-contextual .navbar-brand {
-    width: 80%;
+    max-width: 88%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -416,12 +416,12 @@ body {
   display: none;
 }
 
-@media (max-width: 991px) {
-  .nav-breadcrumb > *:nth-last-child(-n+2) {
+@media (min-width: 1200px) {
+  .nav-breadcrumb > *:nth-last-child(-n+6) {
     display: block;
   }
   .nav-breadcrumb > .nav-breadcrumb-item {
-    max-width: 170px;
+    max-width: 300px;
   }
 }
 
@@ -430,16 +430,25 @@ body {
     display: block;
   }
   .nav-breadcrumb > .nav-breadcrumb-item {
-    max-width: 170px;
+    max-width: 270px;
   }
 }
 
-@media (min-width: 1200px) {
-  .nav-breadcrumb > *:nth-last-child(-n+6) {
+@media (min-width: 576px) and (max-width: 767px) {
+  .nav-breadcrumb > *:nth-last-child(-n+2) {
     display: block;
   }
   .nav-breadcrumb > .nav-breadcrumb-item {
-    max-width: 220px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 575px) {
+  .nav-breadcrumb > *:nth-last-child(-n+2) {
+    display: block;
+  }
+  .nav-breadcrumb > .nav-breadcrumb-item {
+    max-width: 190px;
   }
 }
 

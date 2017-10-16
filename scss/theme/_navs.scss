@@ -25,7 +25,7 @@
                                                                                                                                                                     
     .navbar-brand {
       @include media-breakpoint-down(sm) {
-        width: 80%;
+        max-width: 88%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -302,32 +302,39 @@
     display:none;
   }
 
-  @include media-breakpoint-down(md) {
-    & > *:nth-last-child(-n+2) {
-        display:block;
-    } 
-    & > .nav-breadcrumb-item {
-        max-width: 170px;
-    }
-  }
-
-  // WTF that thing returns null for xl
-  //@include media-breakpoint-between(md, xl) {
-  @media (min-width: 768px) and (max-width: 1199px) {
-    & > *:nth-last-child(-n+4) {
-        display:block;
-    } 
-    & > .nav-breadcrumb-item {
-        max-width: 170px;
-    }
-  }
-
   @include media-breakpoint-up(xl) {
     & > *:nth-last-child(-n+6) {
         display:block;
     } 
     & > .nav-breadcrumb-item {
-        max-width: 220px;
+        max-width: 300px;
+    }
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    & > *:nth-last-child(-n+4) {
+        display:block;
+    } 
+    & > .nav-breadcrumb-item {
+        max-width: 270px;
+    }
+  }
+
+  @include media-breakpoint-only(sm) {
+    & > *:nth-last-child(-n+2) {
+        display:block;
+    }
+    & > .nav-breadcrumb-item {
+        max-width: 250px;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+        & > *:nth-last-child(-n+2) {
+        display:block;
+    }
+    & > .nav-breadcrumb-item {
+        max-width: 190px;
     }
   }
 }
