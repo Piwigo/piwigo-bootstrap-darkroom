@@ -39,7 +39,7 @@
           </div>
         </div>
 {if $theme_config->cat_nb_images}
-        <div class="card-footer text-muted"><div class="d-inline-block">{str_replace('<br>', ', ', $cat.CAPTION_NB_IMAGES)}</div></div>
+        <div class="card-footer text-muted"><div class="d-inline-block ellipsis">{str_replace('<br>', ', ', $cat.CAPTION_NB_IMAGES)}</div></div>
 {/if}
       </div>
     </div>
