@@ -85,7 +85,7 @@
 {if preg_match('/^material/', $theme_config->bootstrap_theme)}
     {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/js/bootstrap-material-design.min.js' load=$loc}
 {else}
-    {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/components/bootstrap/dist/js/bootstrap.min.js' load=$loc}
+    {combine_script id='bootstrap' require='popper.js' path='themes/bootstrap_darkroom/js/bootstrap.min.js' load=$loc}
 {/if}
 {combine_script id=$themeconf.name require='bootstrap' path='themes/bootstrap_darkroom/js/theme.js' load='footer'}
 {/strip}
