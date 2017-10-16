@@ -519,7 +519,11 @@ body {
   padding-top: .25rem;
 }
 
-.card-thumbnail .card-footer.text-muted {
+.card-thumbnail .card-text p.nb-comments, .card-thumbnail .card-text p.nb-hits {
+  margin-bottom: 0;
+}
+
+.card-thumbnail .text-muted {
   font-size: 0.8rem;
 }
 

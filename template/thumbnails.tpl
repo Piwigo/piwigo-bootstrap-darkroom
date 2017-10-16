@@ -36,19 +36,21 @@
                 <img title="{$thumbnail.icon_ts.TITLE}" src="{$ROOT_URL}{$themeconf.icon_dir}/recent.png" alt="(!)">
 {/if}
             </h6>
-{if isset($thumbnail.NB_COMMENTS)}
+{if isset($thumbnail.NB_COMMENTS) || isset($thumbnail.NB_HITS)}
             <div class="card-text">
-                <p class="{if 0==$thumbnail.NB_COMMENTS}zero {/if}nb-comments">
+  {if isset($thumbnail.NB_COMMENTS)}
+                <p class="text-muted {if 0==$thumbnail.NB_COMMENTS}zero {/if}nb-comments">
                     {$pwg->l10n_dec('%d comment', '%d comments',$thumbnail.NB_COMMENTS)}
                 </p>
-{/if}
-{if isset($thumbnail.NB_HITS)}
-                <p class="{if 0==$thumbnail.NB_HITS}zero {/if}nb-hits">
+  {/if}
+  {if isset($thumbnail.NB_HITS)}
+                <p class="text-muted {if 0==$thumbnail.NB_HITS}zero {/if}nb-hits">
                     {$pwg->l10n_dec('%d view', '%d views',$thumbnail.NB_HITS)}
                 </p>
+  {/if}
             </div>
-{/if}
         </div>
+{/if}
 {/if}
     </div>
 </div>

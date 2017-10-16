@@ -63,14 +63,21 @@
   .card-body {
     padding-bottom: .25rem;
   }
+
   .card-footer {
     background: none;
     border-top: none;
     padding-top: .25rem;
+  }
 
-    &.text-muted {
-     font-size: 0.8rem;
+  .card-text {
+    p.nb-comments, p.nb-hits {
+      margin-bottom: 0;
     }
+  }
+
+  .text-muted {
+     font-size: 0.8rem;
   }
 }
 
