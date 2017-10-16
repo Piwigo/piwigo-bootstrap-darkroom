@@ -1048,6 +1048,11 @@ ul#thumbnails {
   padding-left: 0px;
 }
 
+ul#thumbnails:not(.thumbnails) {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
 ul#thumbnails .gthumb a img.thumbnail {
   border-radius: 0;
   background: none;
