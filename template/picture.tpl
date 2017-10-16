@@ -34,7 +34,9 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {if $theme_config->picture_info == 'sidebar'}
     {include file='picture_info_sidebar.tpl'}
 {/if}
+</div>
 
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
   <div id="theImageComment" class="row justify-content-center mb-3">
 {if isset($COMMENT_IMG)}
     <div class="text-center col-lg-10 -col-md-12 mx-auto">
@@ -44,7 +46,9 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     </div>
 {/if}
   </div>
+</div>
 
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {include file="http_scheme.tpl"}
 {if $theme_config->social_enabled}
   <div id="theImageShareButtons" class="row justify-content-center">
@@ -76,17 +80,10 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     </section>
   </div>
 {/if}
+</div>
 
+<div class="container">
 {if !empty($thumbnails) && ($theme_config->slick_enabled || $theme_config->photoswipe)}
-  {if $theme_config->slick_enabled && sizeOf($thumbnails) > 1}
-    {include file="_slick_js.tpl"}
-  {/if}
-  {if $theme_config->photoswipe && !$theme_config->slick_infinite}
-    {include file="_photoswipe_js.tpl" selector="#thumbnailCarousel"}
-  {/if}
-  {if $theme_config->photoswipe && $theme_config->slick_infinite}
-    {include file="_photoswipe_js.tpl" selector="#photoSwipeData"}
-  {/if}
   <div id="theImageCarousel" class="row mx-0">
     <div class="col-lg-10 col-md-12 mx-auto">
       <div id="thumbnailCarousel" class="slick-carousel">
@@ -103,7 +100,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
   {/if}
   {if $theme_config->photoswipe && !$theme_config->slick_infinite}
-        <div class="text-center{if $thumbnail.id eq $current.id && !$theme_config->slick_infinite} thumbnail-active{/if}">
+        <div class="text-center{if $thumbnail.id eq $current.id && !$theme_config->slick_infinite} thumbnail-active{/if}{if !$theme_config->slick_enabled} d-none{/if}">
           <a{if $thumbnail.id eq $current.id} id="thumbnail-active"{/if} href="{$thumbnail.URL}" data-index="{$idx}" data-name="{$thumbnail.NAME}" data-description="{$thumbnail.DESCRIPTION}" {if !$theme_config->slick_infinite}data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{else}{if $theme_config->photoswipe_metadata} data-exif-make="{$thumbnail.EXIF.make}" data-exif-model="{$thumbnail.EXIF.model}" data-exif-lens="{$thumbnail.EXIF.lens}" data-exif-iso="{$thumbnail.EXIF.iso}" data-exif-apperture="{$thumbnail.EXIF.apperture}" data-exif-shutter-speed="{$thumbnail.EXIF.shutter_speed}" data-exif-focal-length="{$thumbnail.EXIF.focal_length}" data-date-created="{$thumbnail.DATE_CREATED}"{/if}{/if}{/if}>
   {else}
         <div class="text-center{if $thumbnail.id eq $current.id} thumbnail-active{/if}"><a href="{$thumbnail.URL}">
@@ -128,9 +125,19 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     {/foreach}
   </div>
   {/if}
+  {if $theme_config->slick_enabled && sizeOf($thumbnails) > 1}
+    {include file="_slick_js.tpl"}
+  {/if}
+  {if $theme_config->photoswipe && !$theme_config->slick_infinite}
+    {include file="_photoswipe_js.tpl" selector="#thumbnailCarousel"}
+  {/if}
+  {if $theme_config->photoswipe && $theme_config->slick_infinite}
+    {include file="_photoswipe_js.tpl" selector="#photoSwipeData"}
+  {/if}
 {/if}
+</div>
 
-
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
   <div id="theImageInfos" class="row">
 {if $theme_config->picture_info == 'cards'}
     {include file='picture_info_cards.tpl'}
