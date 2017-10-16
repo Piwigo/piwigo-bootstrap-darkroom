@@ -31,7 +31,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --breakpoint-xxl: 1440px;
+  --breakpoint-xxl: 1680px;
   --font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
@@ -1700,7 +1700,7 @@ pre code {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1680px) {
   .col-xxl {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -2167,7 +2167,7 @@ pre code {
   }
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1679px) {
   .table-responsive-xxl {
     display: block;
     width: 100%;
@@ -4327,7 +4327,7 @@ tbody.collapse.show {
   }
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1679px) {
   .navbar-expand-xxl > .container,
   .navbar-expand-xxl > .container-fluid {
     padding-right: 0;
@@ -4335,7 +4335,7 @@ tbody.collapse.show {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1680px) {
   .navbar-expand-xxl {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -6567,7 +6567,7 @@ a.bg-dark:focus, a.bg-dark:hover {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1680px) {
   .d-xxl-none {
     display: none !important;
   }
@@ -7386,7 +7386,7 @@ a.bg-dark:focus, a.bg-dark:hover {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1680px) {
   .flex-xxl-row {
     -webkit-box-orient: horizontal !important;
     -webkit-box-direction: normal !important;
@@ -7582,7 +7582,7 @@ a.bg-dark:focus, a.bg-dark:hover {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1680px) {
   .float-xxl-left {
     float: left !important;
   }
@@ -9016,7 +9016,7 @@ a.bg-dark:focus, a.bg-dark:hover {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1680px) {
   .m-xxl-0 {
     margin: 0 !important;
   }
@@ -9340,7 +9340,7 @@ a.bg-dark:focus, a.bg-dark:hover {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1680px) {
   .text-xxl-left {
     text-align: left !important;
   }
