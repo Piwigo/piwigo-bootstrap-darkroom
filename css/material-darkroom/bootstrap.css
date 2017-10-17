@@ -2547,6 +2547,11 @@ pre code {
   opacity: 1;
 }
 
+.form-control::-ms-input-placeholder, .custom-file-control::-ms-input-placeholder {
+  color: #a9a9a9;
+  opacity: 1;
+}
+
 .form-control::placeholder, .custom-file-control::placeholder {
   color: #a9a9a9;
   opacity: 1;
@@ -14446,6 +14451,12 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 
 .bmd-form-group .form-control, .bmd-form-group .custom-file-control,
 .bmd-form-group label,
+.bmd-form-group input::-ms-input-placeholder {
+  line-height: 1;
+}
+
+.bmd-form-group .form-control, .bmd-form-group .custom-file-control,
+.bmd-form-group label,
 .bmd-form-group input::placeholder {
   line-height: 1;
 }
@@ -14463,6 +14474,10 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 }
 
 .bmd-form-group input:-ms-input-placeholder {
+  font-size: 1rem;
+}
+
+.bmd-form-group input::-ms-input-placeholder {
   font-size: 1rem;
 }
 
@@ -14544,6 +14559,12 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 
 .bmd-form-group.bmd-form-group-sm .form-control, .bmd-form-group.bmd-form-group-sm .custom-file-control,
 .bmd-form-group.bmd-form-group-sm label,
+.bmd-form-group.bmd-form-group-sm input::-ms-input-placeholder {
+  line-height: 1;
+}
+
+.bmd-form-group.bmd-form-group-sm .form-control, .bmd-form-group.bmd-form-group-sm .custom-file-control,
+.bmd-form-group.bmd-form-group-sm label,
 .bmd-form-group.bmd-form-group-sm input::placeholder {
   line-height: 1;
 }
@@ -14561,6 +14582,10 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 }
 
 .bmd-form-group.bmd-form-group-sm input:-ms-input-placeholder {
+  font-size: 0.875rem;
+}
+
+.bmd-form-group.bmd-form-group-sm input::-ms-input-placeholder {
   font-size: 0.875rem;
 }
 
@@ -14642,6 +14667,12 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 
 .bmd-form-group.bmd-form-group-lg .form-control, .bmd-form-group.bmd-form-group-lg .custom-file-control,
 .bmd-form-group.bmd-form-group-lg label,
+.bmd-form-group.bmd-form-group-lg input::-ms-input-placeholder {
+  line-height: 1;
+}
+
+.bmd-form-group.bmd-form-group-lg .form-control, .bmd-form-group.bmd-form-group-lg .custom-file-control,
+.bmd-form-group.bmd-form-group-lg label,
 .bmd-form-group.bmd-form-group-lg input::placeholder {
   line-height: 1;
 }
@@ -14659,6 +14690,10 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 }
 
 .bmd-form-group.bmd-form-group-lg input:-ms-input-placeholder {
+  font-size: 1.25rem;
+}
+
+.bmd-form-group.bmd-form-group-lg input::-ms-input-placeholder {
   font-size: 1.25rem;
 }
 
@@ -14736,6 +14771,12 @@ input:-ms-input-placeholder {
 
 .form-control, .custom-file-control,
 label,
+input::-ms-input-placeholder {
+  line-height: 1;
+}
+
+.form-control, .custom-file-control,
+label,
 input::placeholder {
   line-height: 1;
 }
@@ -14753,6 +14794,10 @@ input::-webkit-input-placeholder {
 }
 
 input:-ms-input-placeholder {
+  font-size: 1rem;
+}
+
+input::-ms-input-placeholder {
   font-size: 1rem;
 }
 

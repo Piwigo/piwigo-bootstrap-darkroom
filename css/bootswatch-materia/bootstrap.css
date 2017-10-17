@@ -2233,6 +2233,11 @@ pre code {
   opacity: 1;
 }
 
+.form-control::-ms-input-placeholder {
+  color: #868e96;
+  opacity: 1;
+}
+
 .form-control::placeholder {
   color: #868e96;
   opacity: 1;
@@ -9499,6 +9504,11 @@ a.text-dark:focus, a.text-dark:hover {
 
 .navbar-inverse input[type=text]:-ms-input-placeholder,
 .navbar-inverse input[type=password]:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-inverse input[type=text]::-ms-input-placeholder,
+.navbar-inverse input[type=password]::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 

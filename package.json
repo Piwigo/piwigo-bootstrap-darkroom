@@ -38,7 +38,7 @@
     "typeface-roboto": "^0.0.35"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^7.1.5",
     "bootstrap": "git+https://github.com/twbs/bootstrap.git#v4-dev",
     "bootstrap-material-design": "git+https://github.com/FezVrasta/bootstrap-material-design.git#master",
     "bootswatch": "git+https://github.com/tkuther/bootswatch.git#v4-beta",
