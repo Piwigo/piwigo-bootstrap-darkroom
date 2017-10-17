@@ -96,3 +96,4 @@ $lang['Simple'] = 'Einfach';
 $lang['Advanced'] = 'Erweitert';
 $lang['center-aligned h5 heading'] = 'Mittig ausgerichtete H5-Überschrift';
 $lang['left-aligned free text for advanced descriptions'] = 'Linksbündiger Freitext für ausführlichere Beschreibungen';
+$lang['Use 6 colums for viewports >= 1680px'] = 'Benutze 6 Spalten für Viewports >= 1680px';

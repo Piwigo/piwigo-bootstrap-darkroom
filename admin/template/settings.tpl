@@ -83,6 +83,13 @@
                     </label>
                     <span class="info">{'Use full width containers that span the entire width of the viewport'|@translate}</span>
                 </li>
+                <li id="fluid_width_col_xxl">
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="fluid_width_col_xxl"{if $theme_config->fluid_width_col_xxl} checked="checked"{/if}>
+                        {'Use 6 colums for viewports >= 1680px'|@translate}
+                    </label>
+                </li>
             </ul>
         </fieldset>
         <fieldset>
@@ -96,7 +103,7 @@
                     </label>
                     <span class="info">{'Display a site logo image instead of plain text'|@translate}</span>
                 </li>
-                <li>
+                <li id="logo_image_path">
                     <label>
                         {'Path'|@translate}
                         <input type="text" name="logo_image_path" size="50" {if $theme_config->logo_image_path != ""}value="{$theme_config->logo_image_path}"{else}placeholder="relative/path/to/image"{/if}>
@@ -402,22 +409,23 @@
 </form>
 {footer_script require="jquery"}
 (function(){
-    var targets = {                                                                                                                                                                            
+    var targets = {
         'input[name="social_enabled"]': ['#social_twitter', '#social_facebook', '#social_google_plus', '#social_pinterest', '#social_vk', '#social_buttons'],
         '#comments_radio_disqus': ['#comments_type_disqus'],
+        'input[name="fluid_width"]': ['#fluid_width_col_xxl'],
+        'input[name="logo_image_enabled"]': ['#logo_image_path'],
     };
-                                                                                                                                                                                               
     for (selector in targets) {
         for (target of targets[selector]) {
-            jQuery(target).toggle(jQuery(selector).is(':checked'));                                                                                                                            
-                                                                                                                                                                                                   
-            (function(target){                                                                                                                                                                 
-                jQuery(selector).on('change', function() {                                                                                                                                     
-                    jQuery(target).toggle($(this).is(':checked'));                                                                                                                             
+            jQuery(target).toggle(jQuery(selector).is(':checked'));
+
+            (function(target){
+                jQuery(selector).on('change', function() {
+                    jQuery(target).toggle($(this).is(':checked'));
                 });
-            })(target);                                                                                                                                                                        
-        }                                                                                                                                                                                      
-    };                                                                                                                                                                                         
+            })(target);
+        }
+    };
 }());
 
 $(document).ready(function(){

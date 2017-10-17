@@ -4,7 +4,7 @@ namespace BootstrapDarkroom;
 class Config {
 
     const CONF_PARAM = 'bootstrap_darkroom';
-    const CONF_VERSION = 19;
+    const CONF_VERSION = 20;
 
     const TYPE_BOOL = 'bool';
     const TYPE_STRING = 'string';
@@ -14,6 +14,7 @@ class Config {
     const KEY_VERSION = 'conf_version';
 
     const KEY_FLUID_WIDTH = 'fluid_width';
+    const KEY_FLUID_WIDTH_COL_XXL = 'fluid_width_col_xxl';
     const KEY_BOOTSTRAP_THEME = 'bootstrap_theme';
     const KEY_BOOTSWATCH_THEME = 'bootswatch_theme';
     const KEY_MATERIAL_COLOR = 'material_color';
@@ -60,6 +61,7 @@ class Config {
 
     private $defaults = array(
         self::KEY_FLUID_WIDTH => false,
+        self::KEY_FLUID_WIDTH_COL_XXL => true,
         self::KEY_BOOTSTRAP_THEME => 'material-darkroom',
         self::KEY_BOOTSWATCH_THEME => 'cerulean',
         self::KEY_MATERIAL_COLOR => 'teal',
@@ -103,6 +105,7 @@ class Config {
 
     private $types = array(
         self::KEY_FLUID_WIDTH => self::TYPE_BOOL,
+        self::KEY_FLUID_WIDTH_COL_XXL => self::TYPE_BOOL,
         self::KEY_BOOTSTRAP_THEME => self::TYPE_STRING,
         self::KEY_BOOTSWATCH_THEME => self::TYPE_STRING,
         self::KEY_MATERIAL_COLOR => self::TYPE_STRING,

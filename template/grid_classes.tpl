@@ -9,7 +9,7 @@ size menu is enabled in child theme *}
 
 {assign var=col_class value=""}
 
-{if $theme_config->fluid_width}
+{if $theme_config->fluid_width && $theme_config->fluid_width_col_xxl}
 {if $width > ($width_xxl - (4 * $col_padding)) / 2}
     {$col_class = $col_class|cat:"col-xxl-12"}
 {elseif $width > ($width_xxl - (6 * $col_padding)) / 3}
