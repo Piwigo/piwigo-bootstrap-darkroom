@@ -331,7 +331,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .dropdown-menu-scrollable {
     height: auto;
     max-height: 300px;
@@ -346,6 +346,16 @@ body {
   .dropdown-menu-scrollable::-webkit-scrollbar-thumb {
     background-color: #777777;
     outline: 1px solid #777777;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar.fixed-top .dropdown-menu {
+    max-height: 50vh;
+    overflow-y: scroll;
+  }
+  .navbar.fixed-top .dropdown-menu::-webkit-scrollbar {
+    display: none;
   }
 }
 
