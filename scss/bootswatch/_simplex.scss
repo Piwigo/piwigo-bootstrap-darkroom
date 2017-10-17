@@ -1,7 +1,7 @@
 @import "../variables/core";
-@import "components/bootswatch/simplex/variables";
-@import "components/bootstrap/scss/bootstrap";
-@import "components/bootswatch/simplex/bootswatch";
+@import "node_modules/bootswatch/simplex/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/simplex/bootswatch";
 @import "common";
 
 @include media-breakpoint-up(lg) {

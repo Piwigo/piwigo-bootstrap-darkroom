@@ -1,7 +1,7 @@
 @import "../variables/core";
-@import "components/bootswatch/cyborg/variables";
-@import "components/bootstrap/scss/bootstrap";
-@import "components/bootswatch/cyborg/bootswatch";
+@import "node_modules/bootswatch/cyborg/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/cyborg/bootswatch";
 @import "common";
 
 .navbar {

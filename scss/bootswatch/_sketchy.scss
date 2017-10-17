@@ -1,7 +1,7 @@
 @import "../variables/core";
-@import "components/bootswatch/sketchy/variables";
-@import "components/bootstrap/scss/bootstrap";
-@import "components/bootswatch/sketchy/bootswatch";
+@import "node_modules/bootswatch/sketchy/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/sketchy/bootswatch";
 @import "common";
 
 .navbar-contextual {
@@ -50,9 +50,4 @@
 
 .form-check-label {
   padding-left: 1.5rem;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  color: #333;
 }

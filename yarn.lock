@@ -193,13 +193,17 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
-bootstrap-material-design@FezVrasta/bootstrap-material-design#master:
+"bootstrap-material-design@git+https://github.com/FezVrasta/bootstrap-material-design.git#master":
   version "4.0.0-beta.3"
-  resolved "https://codeload.github.com/FezVrasta/bootstrap-material-design/tar.gz/f76527b07847a7c672cad6c3a78672e626385c6c"
+  resolved "git+https://github.com/FezVrasta/bootstrap-material-design.git#f76527b07847a7c672cad6c3a78672e626385c6c"
 
-bootstrap@twbs/bootstrap#v4-dev:
+"bootstrap@git+https://github.com/twbs/bootstrap.git#v4-dev":
   version "4.0.0-beta"
-  resolved "https://codeload.github.com/twbs/bootstrap/tar.gz/a9fa21e701536e84789169fec6a1f4a0f821ee3c"
+  resolved "git+https://github.com/twbs/bootstrap.git#fa234e27aa88f3602d8695ccf0b66e802154246f"
+
+"bootswatch@git+https://github.com/tkuther/bootswatch.git#v4-beta":
+  version "4.0.0-alpha.6"
+  resolved "git+https://github.com/tkuther/bootswatch.git#06ddbf0ca3336cff1044bee456d0e7666c2a554c"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
@@ -1881,9 +1885,9 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
-"slick-carousel@https://github.com/tkuther/slick.git#piwigo-patches":
+"slick-carousel@git+https://github.com/tkuther/slick.git#piwigo-patches":
   version "1.6.0"
-  resolved "https://github.com/tkuther/slick.git#f2203807a12a15f3f86c816f02f1f52e17ce9107"
+  resolved "git+https://github.com/tkuther/slick.git#f2203807a12a15f3f86c816f02f1f52e17ce9107"
   dependencies:
     jquery ">=1.7.2"
 

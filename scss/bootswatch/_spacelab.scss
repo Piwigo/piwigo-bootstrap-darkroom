@@ -1,7 +1,7 @@
 @import "../variables/core";
-@import "components/bootswatch/spacelab/variables";
-@import "components/bootstrap/scss/bootstrap";
-@import "components/bootswatch/spacelab/bootswatch";
+@import "node_modules/bootswatch/spacelab/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/spacelab/bootswatch";
 @import "common";
 
 .navbar {

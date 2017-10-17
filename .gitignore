@@ -4,5 +4,3 @@ npm-debug.log
 yarn-error.log
 .DS_Store
 components/.yarn-integrity
-components/bootswatch/
-!components/bootstrap-material-design/dist/js

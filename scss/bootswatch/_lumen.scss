@@ -1,5 +1,5 @@
 @import "../variables/core";
-@import "components/bootswatch/lumen/variables";
-@import "components/bootstrap/scss/bootstrap";
-@import "components/bootswatch/lumen/bootswatch";
+@import "node_modules/bootswatch/lumen/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/lumen/bootswatch";
 @import "common";

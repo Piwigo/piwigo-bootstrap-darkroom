@@ -3,3 +3,8 @@ $sidebar-bg:           theme-color('primary') !default;
 $sidebar-color:        $navbar-dark-color !default;
 $sidebar-hover-color:  $navbar-dark-hover-color !default;
 @import "../common/picture-info-sidebar";
+
+.slick-prev:before,
+.slick-next:before {
+  color: $body-color;
+}

@@ -1,7 +1,7 @@
 @import "../variables/core";
-@import "components/bootswatch/cerulean/variables";
-@import "components/bootstrap/scss/bootstrap";
-@import "components/bootswatch/cerulean/bootswatch";
+@import "node_modules/bootswatch/cerulean/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/cerulean/bootswatch";
 @import "common";
 
 .navbar-transparent {

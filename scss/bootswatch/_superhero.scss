@@ -1,7 +1,7 @@
 @import "../variables/core";
-@import "components/bootswatch/superhero/variables";
-@import "components/bootstrap/scss/bootstrap";
-@import "components/bootswatch/superhero/bootswatch";
+@import "node_modules/bootswatch/superhero/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/superhero/bootswatch";
 @import "common";
 
 @include media-breakpoint-up(lg) {

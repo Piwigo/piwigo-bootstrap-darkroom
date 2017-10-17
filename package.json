@@ -33,14 +33,15 @@
     "jquery-migrate": "^3.0.0",
     "photoswipe": "4.1.2",
     "popper.js": "^1.11.0",
-    "slick-carousel": "https://github.com/tkuther/slick.git#piwigo-patches",
+    "slick-carousel": "git+https://github.com/tkuther/slick.git#piwigo-patches",
     "typeface-pt-sans": "^0.0.35",
     "typeface-roboto": "^0.0.35"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
-    "bootstrap": "twbs/bootstrap#v4-dev",
-    "bootstrap-material-design": "FezVrasta/bootstrap-material-design#master",
+    "bootstrap": "git+https://github.com/twbs/bootstrap.git#v4-dev",
+    "bootstrap-material-design": "git+https://github.com/FezVrasta/bootstrap-material-design.git#master",
+    "bootswatch": "git+https://github.com/tkuther/bootswatch.git#v4-beta",
     "clean-css-cli": "^4.1.6",
     "node-sass": "^4.5.3",
     "node-sass-tilde-importer": "^1.0.0",

@@ -1,7 +1,7 @@
 @import "../variables/core";
-@import "components/bootswatch/solar/variables";
-@import "components/bootstrap/scss/bootstrap";
-@import "components/bootswatch/solar/bootswatch";
+@import "node_modules/bootswatch/solar/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/solar/bootswatch";
 @import "common";
 
 .navbar {

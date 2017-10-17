@@ -1,7 +1,7 @@
 @import "../variables/core";
-@import "components/bootswatch/yeti/variables";
-@import "components/bootstrap/scss/bootstrap";
-@import "components/bootswatch/yeti/bootswatch";
+@import "node_modules/bootswatch/yeti/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/yeti/bootswatch";
 @import "common";
 
 @include media-breakpoint-up(lg) {

@@ -1,7 +1,7 @@
 @import "../variables/core";
-@import "components/bootswatch/sandstone/variables";
-@import "components/bootstrap/scss/bootstrap";
-@import "components/bootswatch/sandstone/bootswatch";
+@import "node_modules/bootswatch/sandstone/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/sandstone/bootswatch";
 @import "common";
 
 .navbar {
