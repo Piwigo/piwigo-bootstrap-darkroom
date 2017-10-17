@@ -16,11 +16,16 @@
 #share {
   font-size: 2.5em;
   text-align: center;
-}
-#share a {
-  padding-left: 20px;
-  padding-right: 20px;
-  text-decoration: none;
+
+  a:not(.btn-social) {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+  }
+
+  .btn-social {
+    min-width: 125px;
+  }
 }
 
 // Info tabs
@@ -55,8 +60,18 @@
     visibility: visible;
   }
 }
-.slick-slide img { display: inherit !important; }
-.slick-slide, .slick-slide *{ outline: none !important; }
+
+.slick-slide {
+  img {
+    display: inherit;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+
+ &, & *{
+   outline: none;
+ }
+}
+
 .slick-list { padding: 10px 0 !important; }
 
 // Rating

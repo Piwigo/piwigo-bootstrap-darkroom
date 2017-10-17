@@ -197,9 +197,20 @@ boom@5.x.x:
   version "4.0.0-beta.3"
   resolved "git+https://github.com/FezVrasta/bootstrap-material-design.git#f76527b07847a7c672cad6c3a78672e626385c6c"
 
+bootstrap-social@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/bootstrap-social/-/bootstrap-social-5.1.1.tgz#7530c678adf56cf8fad3fa82c29d4d3e5d027501"
+  dependencies:
+    bootstrap "~3"
+    font-awesome "~4.7"
+
 "bootstrap@git+https://github.com/twbs/bootstrap.git#v4-dev":
   version "4.0.0-beta"
   resolved "git+https://github.com/twbs/bootstrap.git#fa234e27aa88f3602d8695ccf0b66e802154246f"
+
+bootstrap@~3:
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
 
 "bootswatch@git+https://github.com/tkuther/bootswatch.git#v4-beta":
   version "4.0.0-alpha.6"
@@ -578,7 +589,7 @@ find-up@^2.0.0:
   dependencies:
     locate-path "^2.0.0"
 
-font-awesome@^4.7.0:
+font-awesome@^4.7.0, font-awesome@~4.7:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
 

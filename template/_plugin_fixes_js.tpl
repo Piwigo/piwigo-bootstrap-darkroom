@@ -149,3 +149,11 @@ $(document).ready(function() {
 });
 {/strip}{/footer_script}
 {/if}
+
+{if isset($loaded_plugins['Piwecard']) && $BODY_ID == 'thePicturePage'}
+{footer_script require='jquery'}
+$(document).ready(function() {
+  $('.imageComment .createECardOpen').appendTo('#important-info').addClass('btn btn-primary mt-2');
+});
+{/footer_script}
+{/if}

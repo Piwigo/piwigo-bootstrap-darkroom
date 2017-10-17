@@ -13,7 +13,13 @@ $social-colors: (
 );
 
 @each $name, $color in $social-colors {
-   .social-#{$name} {
+   .bg-social-#{$name} {
       background-color: $color !important;
+   }
+   .text-social-#{$name} {
+      color: $color !important;
+      &:hover {
+         color: lighten($color, 10%) !important;
+      }
    }
 }

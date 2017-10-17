@@ -56,9 +56,8 @@ body {
 .placeholder > img,
 #theImage > img,
 #theImage #video-modal > .embed-responsive,
-.slick-slide > a > img,
 .col-thumbnail > div > img {
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .thumbnail-active > a > img {
@@ -557,10 +556,14 @@ body {
   text-align: center;
 }
 
-#share a {
+#share a:not(.btn-social) {
   padding-left: 20px;
   padding-right: 20px;
   text-decoration: none;
+}
+
+#share .btn-social {
+  min-width: 125px;
 }
 
 #theImageInfos .tab-pane {
@@ -594,11 +597,12 @@ body {
 }
 
 .slick-slide img {
-  display: inherit !important;
+  display: inherit;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .slick-slide, .slick-slide * {
-  outline: none !important;
+  outline: none;
 }
 
 .slick-list {
@@ -938,42 +942,6 @@ a.pswp__share--google:hover {
 
 .carousel-fade .carousel-item.active {
   opacity: 1;
-}
-
-.social-facebook {
-  background-color: #3B5998 !important;
-}
-
-.social-twitter {
-  background-color: #55ACEE !important;
-}
-
-.social-gplus {
-  background-color: #DD4B39 !important;
-}
-
-.social-youtube {
-  background-color: #ED302F !important;
-}
-
-.social-pinterest {
-  background-color: #C61118 !important;
-}
-
-.social-instagram {
-  background-color: #2E5E86 !important;
-}
-
-.social-github {
-  background-color: #333 !important;
-}
-
-.social-vk {
-  background-color: #4C75A3 !important;
-}
-
-.social-email {
-  background-color: #4B515D !important;
 }
 
 .page-header {

@@ -4,7 +4,7 @@ namespace BootstrapDarkroom;
 class Config {
 
     const CONF_PARAM = 'bootstrap_darkroom';
-    const CONF_VERSION = 18;
+    const CONF_VERSION = 19;
 
     const TYPE_BOOL = 'bool';
     const TYPE_STRING = 'string';
@@ -45,10 +45,12 @@ class Config {
     const KEY_CAT_NB_IMAGES = 'cat_nb_images';
 
     const KEY_SOCIAL_ENABLED = 'social_enabled';
+    const KEY_SOCIAL_BUTTONS = 'social_buttons';
     const KEY_SOCIAL_TWITTER = 'social_twitter';
     const KEY_SOCIAL_FACEBOOK = 'social_facebook';
     const KEY_SOCIAL_GOOGLE_PLUS = 'social_google_plus';
     const KEY_SOCIAL_PINTEREST = 'social_pinterest';
+    const KEY_SOCIAL_VK = 'social_vk';
 
     const KEY_COMMENTS_TYPE = 'comments_type';
     const KEY_COMMENTS_DISQUS_SHORTNAME = 'comments_disqus_shortname';
@@ -87,10 +89,12 @@ class Config {
         self::KEY_CAT_DESCRIPTIONS => false,
         self::KEY_CAT_NB_IMAGES => true,
         self::KEY_SOCIAL_ENABLED => true,
+        self::KEY_SOCIAL_BUTTONS => false,
         self::KEY_SOCIAL_TWITTER => true,
         self::KEY_SOCIAL_FACEBOOK => true,
         self::KEY_SOCIAL_GOOGLE_PLUS => true,
         self::KEY_SOCIAL_PINTEREST => true,
+        self::KEY_SOCIAL_VK => true,
         self::KEY_COMMENTS_TYPE => 'piwigo',
         self::KEY_COMMENTS_DISQUS_SHORTNAME => null,
         self::KEY_TAG_CLOUD_TYPE => 'basic',
@@ -128,10 +132,12 @@ class Config {
         self::KEY_CAT_DESCRIPTIONS => self::TYPE_BOOL,
         self::KEY_CAT_NB_IMAGES => self::TYPE_BOOL,
         self::KEY_SOCIAL_ENABLED => self::TYPE_BOOL,
+        self::KEY_SOCIAL_BUTTONS => self::TYPE_BOOL,
         self::KEY_SOCIAL_TWITTER => self::TYPE_BOOL,
         self::KEY_SOCIAL_FACEBOOK => self::TYPE_BOOL,
         self::KEY_SOCIAL_GOOGLE_PLUS => self::TYPE_BOOL,
         self::KEY_SOCIAL_PINTEREST => self::TYPE_BOOL,
+        self::KEY_SOCIAL_VK => self::TYPE_BOOL,
         self::KEY_COMMENTS_TYPE => self::TYPE_STRING,
         self::KEY_COMMENTS_DISQUS_SHORTNAME => self::TYPE_STRING,
         self::KEY_TAG_CLOUD_TYPE => self::TYPE_STRING,

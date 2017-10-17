@@ -4,6 +4,7 @@
 
 // Core variable overrides that affect all styles
 $card-border-radius:       .125rem !default;
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -12,5 +13,3 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1680px
 ) !default;
-
-@import "colors";

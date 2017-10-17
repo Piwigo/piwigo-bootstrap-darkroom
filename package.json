@@ -35,7 +35,8 @@
     "popper.js": "^1.11.0",
     "slick-carousel": "git+https://github.com/tkuther/slick.git#piwigo-patches",
     "typeface-pt-sans": "^0.0.35",
-    "typeface-roboto": "^0.0.35"
+    "typeface-roboto": "^0.0.35",
+    "bootstrap-social": "^5.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",

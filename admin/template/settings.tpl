@@ -378,6 +378,20 @@
                         {'Pinterest'|@translate}
                     </label>
                 </li>
+                <li id="social_vk" class="ident">
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="social_vk"{if $theme_config->social_vk}  checked="checked"{/if}>
+                        {'VK'|@translate}
+                    </label>
+                </li>
+                <li id="social_buttons">
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="social_buttons"{if $theme_config->social_buttons} checked="checked"{/if}>
+                        {'Use colored share buttons instead of simple icons'|@translate}
+                    </label>
+                </li>
             </ul>
         </fieldset>
       </div>
@@ -389,7 +403,7 @@
 {footer_script require="jquery"}
 (function(){
     var targets = {                                                                                                                                                                            
-        'input[name="social_enabled"]': ['#social_twitter', '#social_facebook', '#social_google_plus', '#social_pinterest'],
+        'input[name="social_enabled"]': ['#social_twitter', '#social_facebook', '#social_google_plus', '#social_pinterest', '#social_vk', '#social_buttons'],
         '#comments_radio_disqus': ['#comments_type_disqus'],
     };
                                                                                                                                                                                                

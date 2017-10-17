@@ -11,8 +11,8 @@ $gray-darker-3:   #2e2e2e !default;
 // redefine gray-600 from bootstrap, it's used in various places
 $gray-600: $gray-lighter-1;
 
-// import material colors
-@import "../variables/colors";
+$white: #fff;
+$black: #000;
 
 //
 // Now, the bootstrap overrides...
