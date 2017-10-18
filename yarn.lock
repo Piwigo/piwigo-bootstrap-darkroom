@@ -1904,9 +1904,9 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
-"slick-carousel@git+https://github.com/tkuther/slick.git#piwigo-patches":
+slick-carousel@tkuther/slick#1.6.0-pwg:
   version "1.6.0"
-  resolved "git+https://github.com/tkuther/slick.git#f2203807a12a15f3f86c816f02f1f52e17ce9107"
+  resolved "https://codeload.github.com/tkuther/slick/tar.gz/f2203807a12a15f3f86c816f02f1f52e17ce9107"
   dependencies:
     jquery ">=1.7.2"
 
@@ -2247,6 +2247,6 @@ yargs@^8.0.1:
     y18n "^3.2.1"
     yargs-parser "^7.0.0"
 
-yarn@^1.2.1:
+yarn@~1.2:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.2.1.tgz#0d628dc01438881a1663a6f83cbf7ac5db7a75fc"

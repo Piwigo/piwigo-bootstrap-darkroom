@@ -22,7 +22,7 @@
     "build:material": "for i in amber blue brown darkroom deep-orange deep-purple indigo light-green lime purple red teal; do node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true --source-map-contents true --precision 6 scss/material/_${i}.scss css/material-${i}/bootstrap.css && postcss --config node_modules/bootstrap/build/postcss.config.js --replace css/material-${i}/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/material-${i}/bootstrap.min.css css/material-${i}/bootstrap.css; done",
     "build:material-js": "pushd node_modules/bootstrap-material-design; npm install && npm run build:js; popd; cp node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js js/",
     "build:bootswatch": "for i in cerulean cosmo cyborg darkly flatly journal materia minty litera lumen lux pulse sandstone simplex sketchy slate solar spacelab superhero united yeti; do node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootswatch/_${i}.scss css/bootswatch-${i}/bootstrap.css && postcss --config node_modules/bootstrap/build/postcss.config.js --replace css/bootswatch-${i}/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/bootswatch-${i}/bootstrap.min.css css/bootswatch-${i}/bootstrap.css; done",
-    "install-components": "yarn install --prod --modules-folder components --ignore-optional"
+    "install-components": "npm install yarn && yarn install --prod --modules-folder components --ignore-optional"
   },
   "style": "css/bootstrap-darkroom.css",
   "sass": "scss/bootstrap-darkroom.scss",
@@ -33,7 +33,7 @@
     "jquery-migrate": "^3.0.0",
     "photoswipe": "4.1.2",
     "popper.js": "^1.11.0",
-    "slick-carousel": "git+https://github.com/tkuther/slick.git#piwigo-patches",
+    "slick-carousel": "tkuther/slick#1.6.0-pwg",
     "typeface-pt-sans": "^0.0.35",
     "typeface-roboto": "^0.0.35",
     "bootstrap-social": "^5.1.1"
@@ -49,6 +49,6 @@
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^4.1.0",
     "uglify-js": "^3.0.24",
-    "yarn": "^1.2.1"
+    "yarn": "~1.2"
   }
 }
