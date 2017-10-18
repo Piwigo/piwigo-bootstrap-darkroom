@@ -54,8 +54,7 @@ $(document).ready(function(){
       }
     }]
   });
-  var currentThumbnailIndex = $('#thumbnailCarousel .thumbnail-active').data('slick-index');
+  var currentThumbnailIndex = $('#thumbnailCarousel .thumbnail-active:not(.slick-cloned)').data('slick-index');
   $('#thumbnailCarousel').slick('goTo', currentThumbnailIndex, true);
-  $('#thumbnailCarousel').fadeIn('slow');
 });
 {/strip}{/footer_script}
