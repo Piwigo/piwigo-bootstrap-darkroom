@@ -192,6 +192,7 @@
 {/if}
     </div>
 
+{if isset($metadata) || isset($PICTURE_INFO_COMMENTS)}
     <div class="col-lg-6 col-12">
     <!-- metadata -->
 {if isset($metadata)}
@@ -306,3 +307,4 @@ $('#show_exif_data').on('click', function() {
         {$PICTURE_INFO_COMMENTS}
       </div>
     </div>
+{/if}

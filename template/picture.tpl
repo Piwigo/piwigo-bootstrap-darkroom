@@ -144,7 +144,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 </div>
 
 <div class="container{if $theme_config->fluid_width}-fluid{/if}">
-  <div id="theImageInfos" class="row">
+  <div id="theImageInfos" class="row justify-content-center">
 {if $theme_config->picture_info == 'cards'}
     {include file='picture_info_cards.tpl'}
 {elseif $theme_config->picture_info == 'tabs'}
