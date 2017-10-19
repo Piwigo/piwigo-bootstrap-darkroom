@@ -54,7 +54,11 @@
 {/if}
 
 {strip}
+{if $theme_config->bootstrap_theme} {* see https://github.com/tkuther/piwigo-bootstrap-darkroom/issues/104 *}
     {combine_css path="themes/bootstrap_darkroom/css/{$theme_config->bootstrap_theme}/bootstrap.min.css" order=-20}
+{else}
+    {combine_css path="themes/bootstrap_darkroom/css/bootstrap-darkroom/bootstrap.min.css" order=-20}
+{/if}
 {if $theme_config->bootstrap_theme == 'bootstrap-darkroom' || $theme_config->bootstrap_theme == 'material-darkroom'}
     {combine_css path="themes/bootstrap_darkroom/components/typeface-pt-sans/index.css" order=-19}
 {elseif (0 === strpos($theme_config->bootstrap_theme, 'material')) || $theme_config->bootstrap_theme == 'bootstrap-default'}
