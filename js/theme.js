@@ -12,7 +12,7 @@ $(document).ready(function() {
             .addClass('content-grid')
             .find('.col-outer').each(function() {
                 $(this).find('.card-body').attr('style', '');
-                $(this).find('.card-img-left').addClass('card-img-top img-fluid').removeClass('card-img-left');
+                $(this).find('.card-img-left').addClass('card-img-top').removeClass('card-img-left');
                 $(this).removeClass('col-12')
                     .addClass($(this).data('grid-classes'))
                     .one(
@@ -36,7 +36,7 @@ $(document).ready(function() {
             .addClass('content-list')
             .height('auto')
             .find('.col-outer').each(function() {
-                $(this).find('.card-img-top').addClass('card-img-left').removeClass('card-img-top img-fluid');
+                $(this).find('.card-img-top').addClass('card-img-left').removeClass('card-img-top');
                 $(this).removeClass($(this).data('grid-classes'))
                     .addClass('col-12')
                     .one(
