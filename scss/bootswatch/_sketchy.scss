@@ -51,3 +51,18 @@
 .form-check-label {
   padding-left: 1.5rem;
 }
+
+@include media-breakpoint-up(lg) {
+  .navbar .dropdown-menu {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #333 !important;
+      outline: 1px solid #333 !important;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 4px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 4px;
+    }
+  }
+}
