@@ -1,6 +1,6 @@
 <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Related tags'|@translate}</a>
-    <div class="dropdown-menu dropdown-menu-right dropdown-menu-scrollable" role="menu">
+    <div class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$block->data item=tag}
         {strip}<a class="dropdown-item tagLevel{$tag.level}" href=
 {if isset($tag.U_ADD)}
