@@ -1,7 +1,7 @@
 {
   "name": "piwigo-bootstrap-darkroom",
   "description": "A Piwigo theme based on Bootstrap 4",
-  "version": "2.0.4",
+  "version": "2.0.6",
   "keywords": [
     "piwigo",
     "gallery"
@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
-    "bootstrap": "git+https://github.com/twbs/bootstrap.git#v4-dev",
+    "bootstrap": "4.0.0-beta.2",
     "bootstrap-material-design": "git+https://github.com/FezVrasta/bootstrap-material-design.git#master",
     "bootswatch": "git+https://github.com/tkuther/bootswatch.git#v4-beta",
     "clean-css-cli": "^4.1.6",
