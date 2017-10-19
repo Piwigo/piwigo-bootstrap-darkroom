@@ -411,7 +411,7 @@ body {
   display: inline-block;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
-  color: #868e96;
+  color: inherit;
   content: "/";
 }
 

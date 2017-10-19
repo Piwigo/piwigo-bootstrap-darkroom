@@ -299,7 +299,7 @@
       display: inline-block;
       padding-right: $breadcrumb-item-padding;
       padding-left: $breadcrumb-item-padding;
-      color: $breadcrumb-divider-color;
+      color: inherit;
       content: "#{$breadcrumb-divider}";
     }
   }
