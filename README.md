@@ -47,7 +47,7 @@ A demo is available at https://pwdemo.kuther.net
 
 ### Known issues
 
-* The secondary navbar might span several lines, depending on the length of the category/picture name and number of category levels, which does mess up the mobile view. As a workaround, the number of nested levels is truncated to max 2 levels by default.
+* In IE11, the navbars only display correctly if using fluid-width layout.
 * On iOS the PhotoSwipe fullscreen mode isn't supported. On iPhone it does work in landscape orientation only, on iPad it doesn't work at all. That's an iOS bug. Works just fine on Android
 * Plugins that add buttons to the Navbar might not (yet) be supported, see [Plugin Support Matrix](https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki/Plugin-Support-Matrix)
 * Portrait mode videos (e.g. from mobile phones) need to be recoded in actual portrait orientation, rotation tags won't work.
@@ -67,10 +67,21 @@ A demo is available at https://pwdemo.kuther.net
 
 ### Development & Customizing
 * All stylesheets are compiled from Sass source files using node-sass.
-* Dependencies are managed using npm, with a .gitignore on node_modules
-* Distribution dependencies are separated from the usual npm bloat using `yarn --prod --module-folder components --ignore-optional`
+* Dependencies are managed using yarn. Build and dist dependencies are separated.
+ * To install devDependencies: `npm install yarn && yarn install`
+ * To install (dist)dependencies: `yarn --prod --module-folder components --ignore-optional` or simply `npm run install-components`
 
-To make changes to the scss files, setup the project using `npm install`, change the files and run `npm run build`.
+The build process is based on npm scripts and uses common shell functions, so it might not work on Windows.
+
+To build everything, use
+```
+npm run build
+```
+To build only bootswatch, for example, use
+```
+npm run build:bootswatch
+```
+See [package.json](https://raw.githubusercontent.com/tkuther/piwigo-bootstrap-darkroom/master/package.json) for available script commands.
 
 ### Thanks
 * Phil Bayfield for his work on the Bootstrap Default theme, which this theme was initiallly based on as a child theme. It's grown up now.
