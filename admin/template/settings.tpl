@@ -396,7 +396,7 @@
                     <label class="font-checkbox">
                         <span class="icon-check"></span>
                         <input type="checkbox" name="social_buttons"{if $theme_config->social_buttons} checked="checked"{/if}>
-                        {'Use colored share buttons instead of simple icons'|@translate}
+                        {'Use colored share buttons instead of icons'|@translate}
                     </label>
                 </li>
             </ul>

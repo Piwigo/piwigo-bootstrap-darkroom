@@ -75,3 +75,4 @@ $lang['Advanced'] = 'Advanced';
 $lang['center-aligned h5 heading'] = 'center-aligned h5 heading';
 $lang['left-aligned free text for advanced descriptions'] = 'left-aligned free text for advanced descriptions';
 $lang['Use 6 colums for viewports >= 1680px'] = 'Use 6 colums for viewports >= 1680px';
+$lang['Use colored share buttons instead of icons'] = 'Use colored share buttons instead of icons';
