@@ -13,7 +13,7 @@
       </ul>
 
       <!-- Tab panes -->
-      <div class="tab-content">
+      <div class="tab-content d-flex justify-content-center">
 {if $theme_config->picture_info === 'tabs' || (get_device() != 'desktop' && $theme_config->picture_info != 'disabled')}
         <div role="tabpanel" class="tab-pane active" id="tab_info">
           <div id="info-content" class="info">
@@ -223,7 +223,7 @@
         <!-- comments -->
 {if isset($comment_add) || $COMMENT_COUNT > 0}
         <div role="tabpanel" class="tab-pane" id="tab_comments">
-          {$PICTURE_INFO_COMMENTS}
+          {include file='picture_info_comments.tpl'}
         </div>
 {/if}
       </div>

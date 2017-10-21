@@ -18,12 +18,12 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       <ul class="nav nav-pills p-2" role="tablist">
     {if $COMMENT_COUNT > 0}
         <li class="nav-item">
-          <a class="nav-link active" href="#viewcomments" data-toggle="pill">{$COMMENT_COUNT|@translate_dec:'%d comment':'%d comments'}</a>
+          <a class="nav-link active" href="#viewcomments" data-toggle="pill" aria-controls="viewcomments">{$COMMENT_COUNT|@translate_dec:'%d comment':'%d comments'}</a>
         </li>
     {/if}
     {if isset($comment_add)}
         <li class="nav-item">
-          <a class="nav-link{if $COMMENT_COUNT == 0} active{/if}" href="#addcomment" data-toggle="pill">{'Add a comment'|@translate}</a>
+          <a class="nav-link{if $COMMENT_COUNT == 0} active{/if}" href="#addcomment" data-toggle="pill" aria-controls="addcomment">{'Add a comment'|@translate}</a>
         </li>
     {/if}
       </ul>
