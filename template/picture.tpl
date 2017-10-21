@@ -55,31 +55,31 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     <section id="share">
 {if $theme_config->social_twitter}
         <a href="http://twitter.com/share?text={$current.TITLE}&amp;url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
-           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-twitter"{/if}>
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-raised btn-twitter"{/if}>
             <i class="fa fa-twitter"></i>{if $theme_config->social_buttons} Twitter{/if}
         </a>
 {/if}
 {if $theme_config->social_facebook}
         <a href="https://www.facebook.com/sharer/sharer.php?u={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
-           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-facebook"{/if}>
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-raised btn-facebook"{/if}>
             <i class="fa fa-facebook"></i>{if $theme_config->social_buttons} Facebook{/if}
         </a>
 {/if}
 {if $theme_config->social_google_plus}
         <a href="https://plus.google.com/share?url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
-           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-google"{/if}>
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-raised btn-google"{/if}>
             <i class="fa fa-google"></i>{if $theme_config->social_buttons} Google+{/if}
         </a>
 {/if}
 {if $theme_config->social_pinterest}
         <a href="https://www.pinterest.com/pin/create/button/?url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}&media={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}/../{$current.selected_derivative->get_url()}"
-           onclick="window.open(this.href, 'pinterest-share', 'width=490,height=530');return false;" title="Pin on Pinterest"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-pinterest"{/if}>
+           onclick="window.open(this.href, 'pinterest-share', 'width=490,height=530');return false;" title="Pin on Pinterest"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-raised btn-pinterest"{/if}>
             <i class="fa fa-pinterest"></i>{if $theme_config->social_buttons} Pinterest{/if}
         </a>
 {/if}
 {if $theme_config->social_vk}
         <a href="https://vkontakte.ru/share.php?url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}&image={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}/../{$current.selected_derivative->get_url()}"
-           onclick="window.open(this.href, 'vk-share', 'width=490,height=530');return false;" title="Share on VK"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-vk"{/if}>
+           onclick="window.open(this.href, 'vk-share', 'width=490,height=530');return false;" title="Share on VK"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-raised btn-vk"{/if}>
             <i class="fa fa-vk"></i>{if $theme_config->social_buttons} VK{/if}
         </a>
 {/if}
