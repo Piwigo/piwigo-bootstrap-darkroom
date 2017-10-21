@@ -32,7 +32,7 @@ $(document).ready(function() {
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
                             <i class="fa fa-sort fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Sort order'|@translate}</span>
                         </a>
-                        <div class="dropdown-menu" role="menu">
+                        <div class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$image_orders item=image_order name=loop}
                             <a class="dropdown-item{if $image_order.SELECTED} active{/if}" href="{$image_order.URL}" rel="nofollow">{$image_order.DISPLAY}</a>
 {/foreach}
@@ -44,7 +44,7 @@ $(document).ready(function() {
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
                             <i class="fa fa-picture-o fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span>
                         </a>
-                        <div class="dropdown-menu" role="menu">
+                        <div class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$image_derivatives item=image_derivative name=loop}
                             <a class="dropdown-item{if $image_derivative.SELECTED} active{/if}" href="{$image_derivative.URL}" rel="nofollow">{$image_derivative.DISPLAY}</a>
 {/foreach}

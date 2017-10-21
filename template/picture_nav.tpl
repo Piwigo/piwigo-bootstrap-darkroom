@@ -27,21 +27,17 @@
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
                         <i class="fa fa-picture-o fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span>
                     </a>
-                    <ul class="dropdown-menu" role="menu">
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$current.unique_derivatives item=derivative key=derivative_type}
-                        <li id="derivative{$derivative->get_type()}" class="dropdown-item derivative-li{if $derivative->get_type() == $current.selected_derivative->get_type()} active{/if}">
-                            <a href="javascript:changeImgSrc('{$derivative->get_url()|@escape:javascript}','{$derivative_type}','{$derivative->get_type()}')" rel="nofollow">
+                        <a id="derivative{$derivative->get_type()}" class="dropdown-item derivative-li{if $derivative->get_type() == $current.selected_derivative->get_type()} active{/if}" href="javascript:changeImgSrc('{$derivative->get_url()|@escape:javascript}','{$derivative_type}','{$derivative->get_type()}')" rel="nofollow">
                                 {$derivative->get_type()|@translate}<span class="derivativeSizeDetails"> ({$derivative->get_size_hr()})</span>
-                            </a>
-                        </li>
+                        </a>
 {/foreach}
 {if isset($U_ORIGINAL)}
 {combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
-                        <li class="dropdown-item">
-                            <a href="javascript:phpWGOpenWindow('{$U_ORIGINAL}','xxx','scrollbars=yes,toolbar=no,status=no,resizable=yes')" rel="nofollow">{'Original'|@translate}</a>
-                        </li>
+                        <a class="dropdown-item" href="javascript:phpWGOpenWindow('{$U_ORIGINAL}','xxx','scrollbars=yes,toolbar=no,status=no,resizable=yes')" rel="nofollow">{'Original'|@translate}</a>
 {/if}
-                    </ul>
+                    </div>
                 </li>
 {/if}
 {if isset($U_SLIDESHOW_START)}
