@@ -108,7 +108,7 @@ $(document).ready(function() {
   $(liDownloadSizeLink).addClass('dropdown');
   $('#downloadSizeBox').appendTo(liDownloadSizeLink);
   $('#downloadSwitchLink').addClass('dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown');
-  $('#downloadSizeBox').addClass('dropdown-menu').removeClass('switchBox');
+  $('#downloadSizeBox').addClass('dropdown-menu dropdown-menu-right').removeClass('switchBox');
   $('#downloadSizeBox a').addClass('dropdown-item');
   $('#downloadSizeBox').attr('role', 'menu').attr('style', '');
   $('#downloadSizeBox .switchBoxTitle').addClass('dropdown-header').removeClass('switchBoxTitle');
