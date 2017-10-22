@@ -115,9 +115,11 @@ $(document).ready(function() {
   $('#downloadSizeBox br').remove();
 });
 
-$(window).on('load', function() {
-  $('#downloadSizeBox').off('mouseleave click');
-  $('#downloadSizeLink').off().on('click', function() { $('#downloadSizeLink').dropdown() });
+$(window).on("load", function() {
+  $('#downloadSwitchLink').off().on('click', function() {
+    $('#downloadSizeBox').off();
+    $('#downloadSwitchLink').dropdown();
+  });
 });
 {/strip}{/footer_script}
 {/if}
