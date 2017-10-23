@@ -30,8 +30,9 @@
 
 {include file='infos_errors.tpl'}
 
-{if $display_mode == 'cloud' and isset($tags)}
 <div class="container{if $theme_config->fluid_width}-fluid{/if}">
+
+{if $display_mode == 'cloud' and isset($tags)}
 {if $theme_config->tag_cloud_type == 'basic'}
     <div id="tagCloud">
 {foreach from=$tags item=tag}
@@ -69,11 +70,9 @@
     <div id="tagCloudGradientStart"></div>
     <div id="tagCloudGradientEnd"></div>
 {/if}
-</div>
 {/if}
 
 {if $display_mode == 'letters' and isset($letters)}
-<div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <div id="tagLetters">
 {foreach from=$letters item=letter}
         <div class="card w-100 mb-3">
@@ -86,7 +85,6 @@
         </div>
 {/foreach}
     </div>
-</div>
 {/if}
 
-</div>
+</div> <!-- content -->

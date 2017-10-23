@@ -159,3 +159,11 @@ $(document).ready(function() {
 });
 {/footer_script}
 {/if}
+
+{if isset($loaded_plugins['tag_groups']) && $BODY_ID == 'theTagsPage'}
+{footer_script require='jquery'}
+$(document).ready(function() {
+  $('table').addClass('table table-bordered table-sm');
+});
+{/footer_script}
+{/if}
