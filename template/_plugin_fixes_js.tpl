@@ -70,7 +70,6 @@ $(document).ready(function() {
   if ($('#batchDownloadLink').next('div#batchDownloadBox').length > 0) {
     $('#batchDownloadLink').closest('li').addClass('nav-item dropdown');
     $('#batchDownloadLink').addClass('nav-link dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown').attr('href', '#');
-    $('.batch-downloader-icon').addClass('fa fa-cloud-download fa-fw').removeClass('pwg-icon');
     $('#batchDownloadBox').off();
     $('#batchDownloadBox a').addClass('dropdown-item');
     $('#batchDownloadBox').attr('role', 'menu').attr('style', '');
@@ -81,8 +80,8 @@ $(document).ready(function() {
   } else {
     $('#batchDownloadLink').closest('li').addClass('nav-item');
     $('#batchDownloadLink').addClass('nav-link').removeClass('pwg-state-default pwg-button');
-    $('.batch-downloader-icon').addClass('fa fa-cloud-download fa-fw').removeClass('pwg-icon');
   }
+  $('.batch-downloader-icon').addClass('fa fa-cloud-download fa-fw').removeClass('pwg-icon').after('<span class="d-lg-none"> ' + $('#batchDownloadLink').attr('title') + '</span>');
   if ($('.navbar-main dt:contains("Downloads")').length > 0) {
     $('.navbar-main dt:contains("Downloads")').next('dd').appendTo($('.navbar-main dt:contains("Downloads")'));
     $('.navbar-main dt:contains("Downloads")').wrap('<li class="nav-item"></li>');
