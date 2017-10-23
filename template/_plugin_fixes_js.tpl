@@ -70,14 +70,18 @@ $(document).ready(function() {
   if ($('#batchDownloadLink').next('div#batchDownloadBox').length > 0) {
     $('#batchDownloadLink').closest('li').addClass('nav-item dropdown');
     $('#batchDownloadLink').addClass('nav-link dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown').attr('href', '#');
+    $('.batch-downloader-icon').addClass('fa fa-cloud-download fa-fw').removeClass('pwg-icon');
     $('#batchDownloadBox').off();
     $('#batchDownloadBox a').addClass('dropdown-item');
     $('#batchDownloadBox').attr('role', 'menu').attr('style', '');
     $('#batchDownloadBox .switchBoxTitle').addClass('dropdown-header').removeClass('switchBoxTitle');
     $('#batchDownloadBox br').remove();
     $('#batchDownloadBox').addClass('dropdown-menu dropdown-menu-right').removeClass('switchBox').attr('id', 'batchDownloadBox2');
-    $('.batch-downloader-icon').addClass('fa fa-cloud-download fa-fw').removeClass('pwg-icon');
     $('#batchDownloadLink .pwg-button-text').addClass('d-lg-none ml-2').removeClass('pwg-button-text');
+  } else {
+    $('#batchDownloadLink').closest('li').addClass('nav-item');
+    $('#batchDownloadLink').addClass('nav-link').removeClass('pwg-state-default pwg-button');
+    $('.batch-downloader-icon').addClass('fa fa-cloud-download fa-fw').removeClass('pwg-icon');
   }
   if ($('.navbar-main dt:contains("Downloads")').length > 0) {
     $('.navbar-main dt:contains("Downloads")').next('dd').appendTo($('.navbar-main dt:contains("Downloads")'));
