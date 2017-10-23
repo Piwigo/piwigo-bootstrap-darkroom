@@ -2,17 +2,24 @@
     <div class="container{if $theme_config->fluid_width}-fluid{/if}">
         <div class="navbar-brand mr-auto"><a href="{$U_HOME}">{'Home'|@translate}</a>{$LEVEL_SEPARATOR}<a href>{'Tags'|@translate}</a></div>
         <ul class="navbar-nav justify-content-end">
-{if $display_mode == 'letters'}
+{if $display_mode != 'cloud'}
             <li class="nav-item">
                 <a class="nav-link" href="{$U_CLOUD}" title="{'show tag cloud'|@translate}">
-                    <i class="fa fa-cloud" aria-hidden="true"></i>
+                    <i class="fa fa-cloud fa-fw" aria-hidden="true"></i><span class="d-lg-none"> {'show tag cloud'|@translate}</span>
                 </a>
             </li>
 {/if}
-{if $display_mode == 'cloud'}
+{if $display_mode != 'letters'}
             <li class="nav-item">
                 <a class="nav-link" href="{$U_LETTERS}" title="{'group by letters'|@translate}" rel="nofollow">
-                    <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+                    <i class="fa fa-sort-alpha-asc fa-fw" aria-hidden="true"></i><span class="d-lg-none"> {'group by letters'|@translate}</span>
+                </a>
+            </li>
+{/if}
+{if isset($loaded_plugins['tag_groups']) && $display_mode != 'groups'}
+            <li class="nav-item">
+                <a class="nav-link" href="{$U_TAG_GROUPS}" title="{'show tag groups'|@translate}" rel="nofollow">
+                    <i class="fa fa-tags fa-fw" aria-hidden="true"></i><span class="d-lg-none"> {'show tag groups'|@translate}</span>
                 </a>
             </li>
 {/if}
@@ -68,16 +75,16 @@
 {if $display_mode == 'letters' and isset($letters)}
 <div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <div id="tagLetters">
-        <div class="menu row">
 {foreach from=$letters item=letter}
-            <div class="menu-category">
-                <div class="menu-category-name list-group-item active">{$letter.TITLE}</div>
+        <div class="card w-100 mb-3">
+            <div class="card-header">{$letter.TITLE}</div>
+            <div class="list-group list-group-flush">
     {foreach from=$letter.tags item=tag}
-                <a href="{$tag.URL}" class="menu-item list-group-item" title="{$tag.name}">{$tag.name}<span class="badge">{$tag.counter|@translate_dec:'%d photo':'%d photos'}</span></a>
+                <a href="{$tag.URL}" class="list-group-item list-group-item-action" title="{$tag.name}">{$tag.name}<span class="badge badge-secondary ml-2">{$tag.counter|@translate_dec:'%d photo':'%d photos'}</span></a>
     {/foreach}
             </div>
-{/foreach}
         </div>
+{/foreach}
     </div>
 </div>
 {/if}

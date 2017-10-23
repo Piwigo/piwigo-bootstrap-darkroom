@@ -33,24 +33,3 @@
   display: none;
   color: #337ab7;
 }
-#tagLetters {
-  padding-left: 2px;
-  padding-right: 7px;
-}
-#tagLetters *,
-#tagLetters *:before,
-#tagLetters *:after {
-  box-sizing: border-box !important;
-}
-#tagLetters .row {
-  -moz-column-width: 17em;
-  -webkit-column-width: 17em;
-  -moz-column-gap: -1em;
-  -webkit-column-gap: -1em;
-}
-#tagLetters .menu-category {
-  display: inline-block;
-  margin: 0.26rem;
-  padding: 1rem;
-  width: 100%;
-}
