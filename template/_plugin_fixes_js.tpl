@@ -166,7 +166,7 @@ $(document).ready(function() {
 {if isset($loaded_plugins['tag_groups']) && $BODY_ID == 'theTagsPage'}
 {footer_script require='jquery'}
 $(document).ready(function() {
-  $('table').addClass('table table-bordered table-sm');
+  $('.container table').addClass('table table-sm').attr('id', 'tagGroupsTable');
 });
 {/footer_script}
 {/if}

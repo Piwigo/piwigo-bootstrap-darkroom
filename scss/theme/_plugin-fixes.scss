@@ -126,3 +126,10 @@ ul.thumbnailCategories { padding-top: 20px; }
 #ato_header_closed {
   z-index: 1040 !important;
 }
+
+// Tag Groups
+#tagGroupsTable {
+  td {
+    border-top: none;
+  }
+}

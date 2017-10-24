@@ -1142,4 +1142,8 @@ ul.thumbnailCategories {
   z-index: 1040 !important;
 }
 
+#tagGroupsTable td {
+  border-top: none;
+}
+
 /*# sourceMappingURL=theme.css.map */
