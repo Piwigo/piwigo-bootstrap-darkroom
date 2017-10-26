@@ -15,16 +15,16 @@
     <div class="comment">
         <div class="image">
 {if isset($comment.src_image)}
-{if isset($comment_derivative_params)}
+  {if isset($comment_derivative_params)}
     {define_derivative name='cropped_derivative_params' width=$comment_derivative_params->sizing->ideal_size[0] height=$comment_derivative_params->sizing->ideal_size[0] crop=true}
-{else}
+  {else}
     {define_derivative name='cropped_derivative_params' width=$derivative_params->sizing->ideal_size[0] height=$derivative_params->sizing->ideal_size[0] crop=true}
-{/if}
-{assign var=derivative value=$pwg->derivative($cropped_derivative_params, $comment.src_image)}
-{if !$derivative->is_cached()}
-{combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
-{combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
-{/if}
+  {/if}
+  {assign var=derivative value=$pwg->derivative($cropped_derivative_params, $comment.src_image)}
+  {if !$derivative->is_cached()}
+  {combine_script id='jquery.ajaxmanager' path='themes/default/js/plugins/jquery.ajaxmanager.js' load='footer'}
+  {combine_script id='thumbnails.loader' path='themes/default/js/thumbnails.loader.js' require='jquery.ajaxmanager' load='footer'}
+  {/if}
             <a href="{$comment.U_PICTURE}">
                 <img {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$comment.ALT}">
             </a>

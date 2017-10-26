@@ -88,9 +88,12 @@ $(document).ready(function() {
     $('#batchDownloadBox .switchBoxTitle').addClass('dropdown-header').removeClass('switchBoxTitle');
     $('#batchDownloadBox br').remove();
     $('#batchDownloadBox').addClass('dropdown-menu dropdown-menu-right').removeClass('switchBox').attr('id', 'batchDownloadBox2');
-    $('.batch-downloader-icon').addClass('fa fa-cloud-download fa-fw').removeClass('pwg-icon');
     $('#batchDownloadLink .pwg-button-text').addClass('d-lg-none ml-2').removeClass('pwg-button-text');
+  } else {
+    $('#batchDownloadLink').closest('li').addClass('nav-item');
+    $('#batchDownloadLink').addClass('nav-link').removeClass('pwg-state-default pwg-button');
   }
+  $('.batch-downloader-icon').addClass('fa fa-cloud-download fa-fw').removeClass('pwg-icon').after('<span class="d-lg-none"> ' + $('#batchDownloadLink').attr('title') + '</span>');
   if ($('.navbar-main dt:contains("Downloads")').length > 0) {
     $('.navbar-main dt:contains("Downloads")').next('dd').appendTo($('.navbar-main dt:contains("Downloads")'));
     $('.navbar-main dt:contains("Downloads")').wrap('<li class="nav-item"></li>');
@@ -120,16 +123,18 @@ $(document).ready(function() {
   $(liDownloadSizeLink).addClass('dropdown');
   $('#downloadSizeBox').appendTo(liDownloadSizeLink);
   $('#downloadSwitchLink').addClass('dropdown-toggle').removeClass('pwg-state-default pwg-button').attr('data-toggle', 'dropdown');
-  $('#downloadSizeBox').addClass('dropdown-menu').removeClass('switchBox');
+  $('#downloadSizeBox').addClass('dropdown-menu dropdown-menu-right').removeClass('switchBox');
   $('#downloadSizeBox a').addClass('dropdown-item');
   $('#downloadSizeBox').attr('role', 'menu').attr('style', '');
   $('#downloadSizeBox .switchBoxTitle').addClass('dropdown-header').removeClass('switchBoxTitle');
   $('#downloadSizeBox br').remove();
 });
 
-$(window).on('load', function() {
-  $('#downloadSizeBox').off('mouseleave click');
-  $('#downloadSizeLink').off().on('click', function() { $('#downloadSizeLink').dropdown() });
+$(window).on("load", function() {
+  $('#downloadSwitchLink').off().on('click', function() {
+    $('#downloadSizeBox').off();
+    $('#downloadSwitchLink').dropdown();
+  });
 });
 {/strip}{/footer_script}
 {/if}
@@ -166,6 +171,14 @@ $(document).ready(function() {
 {footer_script require='jquery'}
 $(document).ready(function() {
   $('.imageComment .createECardOpen').appendTo('#important-info').addClass('btn btn-primary mt-2');
+});
+{/footer_script}
+{/if}
+
+{if isset($loaded_plugins['tag_groups']) && $BODY_ID == 'theTagsPage'}
+{footer_script require='jquery'}
+$(document).ready(function() {
+  $('.container table').addClass('table table-sm').attr('id', 'tagGroupsTable');
 });
 {/footer_script}
 {/if}
