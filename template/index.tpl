@@ -122,7 +122,7 @@ $(document).ready(function() {
 {/if}
 {if !empty($PLUGIN_INDEX_BUTTONS)}{foreach from=$PLUGIN_INDEX_BUTTONS item=button}<li>{$button}</li>{/foreach}{/if}
 {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}
-{if !empty($CATEGORIES) && !isset($GDThumb) && ($theme_config->category_wells == 'never' || ($theme_config->category_wells == 'mobile_only' && get_device() == 'desktop'))}
+{if ((!empty($CATEGORIES) && !isset($GDThumb)) || (!empty($THUMBNAILS) && !isset($GThumb) && !isset($GDThumb))) && ($theme_config->category_wells == 'never' || ($theme_config->category_wells == 'mobile_only' && get_device() == 'desktop'))}
                     <li id="btn-grid" class="nav-item{if $smarty.cookies.view != 'list'} active{/if}">
                         <a class="nav-link" href="javascript:;" title="{'Grid view'|@translate}">
                             <i class="fa fa-th fa-fw"></i><span class="d-lg-none ml-2">{'Grid view'|@translate}</span>
@@ -162,7 +162,7 @@ $(document).ready(function() {
 {/if}
 
 {if !empty($CONTENT_DESCRIPTION)}
-    <div id="content-description" class="pt-4{if $theme_config->thumbnail_cat_desc == 'simple'} d-flex justify-content-center text-center{/if}">
+    <div id="content-description" class="py-3{if $theme_config->thumbnail_cat_desc == 'simple'} d-flex justify-content-center text-center{/if}">
 {if $theme_config->thumbnail_cat_desc == 'simple'}
         <h5>{$CONTENT_DESCRIPTION}</h5>
 {else}
