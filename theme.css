@@ -600,6 +600,18 @@ body {
   visibility: visible;
 }
 
+#thumbnailCarousel.center .slick-center img {
+  transform: scale(1.06);
+  -moz-transform: scale(1.06);
+  -ms-transform: scale(1.06);
+  -o-transform: scale(1.06);
+  -webkit-transform: scale(1.06);
+}
+
+#thumbnailCarousel.center img {
+  transition: all 300ms ease;
+}
+
 .slick-slide img {
   display: inherit;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);

@@ -39,7 +39,7 @@ $(document).ready(function(){
      },
 {/if}
      {
-      breakpoint: 600,
+      breakpoint: 768,
       settings: {
        slidesToShow: 3,
        slidesToScroll: 3

@@ -92,7 +92,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {if !empty($thumbnails) && ($theme_config->slick_enabled || $theme_config->photoswipe)}
   <div id="theImageCarousel" class="row mx-0">
     <div class="col-lg-10 col-md-12 mx-auto">
-      <div id="thumbnailCarousel" class="slick-carousel">
+      <div id="thumbnailCarousel" class="slick-carousel{if $theme_config->slick_centered} center{/if}">
   {assign var=idx value=0}
   {foreach from=$thumbnails item=thumbnail}
   {assign var=derivative value=$pwg->derivative($derivative_params_square, $thumbnail.src_image)}
