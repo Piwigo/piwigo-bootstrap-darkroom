@@ -1,7 +1,6 @@
 // Core Piwigo layout (theme.css without any color styles or full bootsrap included)
-@import "node_modules/bootstrap/scss/functions";
+@import "common/variables";
 @import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins";
 @import "theme/base";
 @import "theme/navs";
 @import "theme/index";

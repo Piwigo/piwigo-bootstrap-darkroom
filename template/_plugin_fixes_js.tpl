@@ -10,8 +10,8 @@ $(document).ready(function() {
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
   $('.pwg-icon-map').removeClass('pwg-icon').closest('a').html('<i class="fa fa-globe fa-fw" aria-hidden="true"></i>').addClass('nav-link').removeClass('pwg-state-default pwg-button').wrap('<li class="nav-item rvgmaps-button"></li>').find('i').after('<span class="d-lg-none ml-2">'+$('.rvgmaps-button').find('a').attr('title')+'</span>');
-  $('#map').wrap('<div id="mapContainer" class="container{if $theme_config->fluid_width}-fluid{/if}"></div>');
-  $('#mapPicture').prependTo('#mapContainer');
+  $('#map').wrap('<div id="mapContainer" class="container"></div>');
+  $('#mapPicture').prependTo('#mapContainer').wrap('<div class="row justify-content-center"></div>');
 });
 {/strip}{/footer_script}
 {/if}
@@ -22,11 +22,23 @@ $(document).ready(function() {
 });
 {/strip}{/footer_script}
 {/if}
+{if isset($loaded_plugins['rv_gmaps']) && $BODY_ID == "theMapListPage"}
+{footer_script require='jquery'}{strip}
+$(document).ready(function() {
+  $('#theMapListPage #wrapper').addClass('container');
+  $('#theMapListPage ul.categoryActions').addClass('nav flex-column').find('li').addClass('nav-item').find('a').addClass('nav-link');
+  $('#theMapListPage .pwg-icon-globe').addClass('fa fa-globe').removeClass('pwg-icon pwg-icon-globe');
+  $('#theMapListPage .pwg-icon-home').addClass('fa fa-home').removeClass('pwg-icon pwg-icon-home');
+  $('#theMapListPage #thumbnails').addClass('row').changeElementType('div');
+  $('#theMapListPage #thumbnails').find('.card-thumbnail').addClass('mb-3');
+});
+{/strip}{/footer_script}
+{/if}
 
 {if isset($loaded_plugins['oAuth'])}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  $('#navbar-menubar>.nav>dd>#quickconnect').attr('id', 'oAuthQuickconnect');
+  $('#navbar-menubar>.navbar-nav>dd>#quickconnect').attr('id', 'oAuthQuickconnect');
   $('#oAuthQuickconnect legend').addClass('dropdown-header').appendTo('#identificationDropdown>.dropdown-menu').changeElementType('li');
   $('#oAuthQuickconnect').closest('dd').appendTo('#identificationDropdown>.dropdown-menu');
   $('#oAuthQuickconnect').closest('dd').changeElementType('li');
