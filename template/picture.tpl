@@ -41,7 +41,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {if isset($COMMENT_IMG)}
     <div class="text-center col-lg-10 -col-md-12 mx-auto">
       <section id="important-info">
-        <h4 class="imageComment">{$COMMENT_IMG}</h4>
+        <h5 class="imageComment">{$COMMENT_IMG}</h5>
       </section>
     </div>
 {/if}

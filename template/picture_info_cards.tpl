@@ -2,7 +2,7 @@
       <!-- Picture infos -->
       <div class="card mb-2">
         <div class="card-body">
-          <h4 class="card-title">{'Information'|@translate}</h4>
+          <h5 class="card-title">{'Information'|@translate}</h5>
           <div id="info-content" class="d-flex flex-column">
 {if $display_info.author and isset($INFO_AUTHOR)}
             <div id="Author" class="imageInfo">
@@ -183,7 +183,7 @@
 {if $display_info.tags and isset($related_tags)}
       <div class="card mb-2">
         <div class="card-body">
-          <h4 class="card-title">{'Tags'|@translate}</h4>
+          <h5 class="card-title">{'Tags'|@translate}</h5>
             <div id="Tags" class="imageInfo">
               {foreach from=$related_tags item=tag name=tag_loop}<a class="btn btn-primary btn-raised mr-1" href="{$tag.URL}">{$tag.name}</a>{/foreach}
             </div>
@@ -220,7 +220,7 @@
 
       <div class="card mb-2">
         <div class="card-body">
-          <h4 class="card-title">{'EXIF Metadata'|@translate}</h4>
+          <h5 class="card-title">{'EXIF Metadata'|@translate}</h5>
           <div id="metadata">
             {if is_array($metadata.0.lines) && (array_key_exists("{$exif_make}", $metadata.0.lines) || array_key_exists("{$exif_model}", $metadata.0.lines))}
             <div class="row" style="line-height: 40px">
