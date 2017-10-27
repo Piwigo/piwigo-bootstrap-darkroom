@@ -23,13 +23,14 @@
 {/if}
 {include file="grid_classes.tpl" width=$rwidth height=$rheight}
 <div class="col-outer {if $smarty.cookies.view == 'list'}col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
-     <div class="card card-thumbnail">
-        <a href="{$thumbnail.URL}" data-index="{$idx}" class="h-100{if preg_match('/^material/', $theme_config->bootstrap_theme)} ripple{/if}">
+    <div class="card card-thumbnail">
+      <div class="h-100">
+        <a href="{$thumbnail.URL}" data-index="{$idx}" class="ripple{if $smarty.cookies.view != 'list'} d-block{/if}">
             <img class="{if $smarty.cookies.view == 'list'}card-img-left{else}card-img-top{/if}" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}">
         </a>
 {assign var=idx value=$idx+1}
-{if $theme_config->thumbnail_caption && $SHOW_THUMBNAIL_CAPTION }
-        <div class="card-body">
+{if $SHOW_THUMBNAIL_CAPTION}
+        <div class="card-body{if !$theme_config->thumbnail_caption && $smarty.cookies.view != 'list'} d-none{/if}{if !$theme_config->thumbnail_caption} list-view-only{/if}">
             <h6 class="card-title">
                 <a href="{$thumbnail.URL}" class="ellipsis{if !empty($thumbnail.icon_ts)} recent{/if}">{$thumbnail.NAME}</a>
 {if !empty($thumbnail.icon_ts)}
@@ -52,6 +53,7 @@
 {/if}
         </div>
 {/if}
+      </div>
     </div>
 </div>
 {/foreach}
