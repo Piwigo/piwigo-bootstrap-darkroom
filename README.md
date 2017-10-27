@@ -67,9 +67,8 @@ A demo is available at https://pwdemo.kuther.net
 
 ### Development & Customizing
 * All stylesheets are compiled from Sass source files using node-sass.
-* Dependencies are managed using yarn. Build and dist dependencies are separated.
- * To install devDependencies: `npm install yarn && yarn install`
- * To install (dist)dependencies: `yarn --prod --module-folder components --ignore-optional` or simply `npm run install-components`
+* Dependencies are managed using yarn. Dist dependencies are separated from the usual npm bloat using .gitignore tricks
+* To install dependencies: `npm install yarn && yarn install`
 
 The build process is based on npm scripts and uses common shell functions, so it might not work on Windows.
 

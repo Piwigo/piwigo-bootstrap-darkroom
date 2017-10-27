@@ -1,5 +1,5 @@
-{combine_css path="themes/bootstrap_darkroom/components/selectize/dist/css/selectize.bootstrap3.css"}
-{combine_script id='jquery.selectize' load='footer' require='jquery' path="themes/bootstrap_darkroom/components/selectize/dist/js/standalone/selectize.min.js"}
+{combine_css path="themes/bootstrap_darkroom/node_modules/selectize/dist/css/selectize.bootstrap3.css"}
+{combine_script id='jquery.selectize' load='footer' require='jquery' path="themes/bootstrap_darkroom/node_modules/selectize/dist/js/standalone/selectize.min.js"}
 {footer_script require='jquery'}
     jQuery(document).ready(function() {
     jQuery("#authors, #tags, #categories").each(function() {
