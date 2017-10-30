@@ -37,7 +37,7 @@
 	</span>
 {/if}{/strip}-->*}
 {strip}{if isset($previous)}
-	<a href="{$previous.U_IMG}" title="{'Previous'|@translate} : {$previous.TITLE_ESC}" id="navPrevPicture" rel="prerender">
+	<a href="{$previous.U_IMG}" title="{'Previous'|@translate} : {$previous.TITLE_ESC}" id="navPrevPicture">
 	    <i class="fa fa-chevron-left" aria-hidden="true"></i>
 	</a>
 {else}
@@ -69,7 +69,10 @@
         </a>
 {/if}
 {strip}{if isset($next)}
-	<a href="{$next.U_IMG}" title="{'Next'|@translate} : {$next.TITLE_ESC}" id="navNextPicture" rel="prerender">
+{html_head}
+<link rel="prerender" href="{$next.U_IMG}">
+{/html_head}
+	<a href="{$next.U_IMG}" title="{'Next'|@translate} : {$next.TITLE_ESC}" id="navNextPicture">
 	    <i class="fa fa-chevron-right" aria-hidden="true"></i>
 	</a>
 {else}
