@@ -139,15 +139,20 @@ $(window).on("load", function() {
 {/strip}{/footer_script}
 {/if}
 
-{if isset($loaded_plugins['UserCollections']) && ($BODY_ID == 'thePicturePage' || $BODY_ID == 'theCollectionPage')}
+{if isset($loaded_plugins['UserCollections']) && ($BODY_ID == 'thePicturePage' || $BODY_ID == 'theCollectionPage' || $BODY_ID == 'theCategoryPage')}
 {footer_script require='jquery'}{strip}
 $(document).ready(function() {
-  $('#thePicturePage .nav a.addCollection').wrap('<li id="collectionsDropdownBS" class="dropdown"></li>').removeClass('pwg-button pwg-state-default').addClass('dropdown-toggle');
-  $('#thePicturePage #collectionsDropdown').appendTo('#collectionsDropdownBS');
-  $('#thePicturePage #collectionsDropdownBS .user-collections-icon').removeClass('pwg-icon');
-  $('#thePicturePage #collectionsDropdownBS .pwg-button-text').remove();
-  $('#theCollectionPage .navbar .pwg-icon').removeClass('pwg-icon');
+  $('.navbar-nav a.addCollection').off().removeClass('pwg-button pwg-state-default').addClass('nav-link dropdown-toggle').closest('li').addClass('nav-item dropdown').attr('id', 'collectionsDropdownBS');
+  $('#collectionsDropdown').appendTo('#collectionsDropdownBS').addClass('dropdown-menu dropdown-menu-right').removeClass('switchBox').removeAttr('style');
+  $('#collectionsDropdownBS .user-collections-icon').addClass('fa fa-star fa-fw').removeClass('pwg-icon user-collections-icon');
+  $('#collectionsDropdownBS .pwg-button-text').addClass('d-lg-none ml-2');
   $('#theCollectionPage input[type="submit"]').addClass('btn btn-primary');
+});
+
+$(window).on("load", function() {
+  $('a.addCollection').off().on('click', function() {
+    $('#collectionsDropdown').dropdown();
+  });
 });
 {/strip}{/footer_script}
 {/if}
