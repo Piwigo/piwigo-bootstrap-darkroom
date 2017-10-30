@@ -600,7 +600,7 @@ body {
   visibility: visible;
 }
 
-#thumbnailCarousel.center .slick-center img {
+#thumbnailCarousel.center .slick-current.slick-active.slick-center img {
   transform: scale(1.06);
   -moz-transform: scale(1.06);
   -ms-transform: scale(1.06);

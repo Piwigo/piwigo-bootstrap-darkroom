@@ -64,14 +64,6 @@
     visibility: visible;
   }
 
-  &.center .slick-center img {
-    transform: scale(1.06);
-    -moz-transform: scale(1.06);
-    -ms-transform: scale(1.06);
-    -o-transform: scale(1.06);
-    -webkit-transform: scale(1.06);
-  }
-
   &.center img {
     transform: scale(0.95);
     -moz-transform: scale(0.95);
@@ -79,6 +71,14 @@
     -o-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     transition: all 300ms ease;
+  }
+
+  &.center .slick-current.slick-active.slick-center img {
+    transform: scale(1.06);
+    -moz-transform: scale(1.06);
+    -ms-transform: scale(1.06);
+    -o-transform: scale(1.06);
+    -webkit-transform: scale(1.06);
   }
 }
 
