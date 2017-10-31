@@ -154,6 +154,10 @@ $(document).ready(function() {
   $('#theCollectionPage .navbar-nav').find('.pwg-button').each(function() {
     $(this).addClass('nav-link').closest('li').addClass('nav-item');
   });
+
+  $('.content-list').find('.col-outer').each(function() {
+    $(this).find('.addCollection').attr('style', 'width: ' + $(this).find('img').width() + 'px');
+  });
 });
 {/footer_script}
 {/if}

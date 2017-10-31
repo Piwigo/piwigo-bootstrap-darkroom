@@ -14,6 +14,7 @@ $(document).ready(function() {
                 $(this).find('.card-body').attr('style', '');
                 $(this).find('a').addClass('d-block').find('.card-img-left').addClass('card-img-top').removeClass('card-img-left');
                 $(this).find('.card-body.list-view-only').addClass('d-none');
+                $(this).find('.addCollection').removeAttr('style');
                 $(this).removeClass('col-12')
                     .addClass($(this).data('grid-classes'))
                     .one(
@@ -39,6 +40,7 @@ $(document).ready(function() {
             .find('.col-outer').each(function() {
                 $(this).find('a').removeClass('d-block').find('.card-img-top').addClass('card-img-left').removeClass('card-img-top');
                 $(this).find('.card-body.list-view-only').removeClass('d-none');
+                $(this).find('.addCollection').attr('style', 'width: ' + $(this).find('img').width() + 'px');
                 $(this).removeClass($(this).data('grid-classes'))
                     .addClass('col-12')
                     .one(
