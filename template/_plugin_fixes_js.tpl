@@ -143,21 +143,13 @@ $(window).on("load", function() {
 {if isset($loaded_plugins['UserCollections']) && ($BODY_ID == 'thePicturePage' || $BODY_ID == 'theCollectionPage' || $BODY_ID == 'theCategoryPage')}
 {footer_script require='jquery'}
 $(document).ready(function() {
-  $('.navbar-nav a.addCollection').off().removeClass('pwg-button pwg-state-default').addClass('nav-link dropdown-toggle').closest('li').addClass('nav-item dropdown').attr('id', 'collectionsDropdownBS');
-  $('#collectionsDropdownBS .user-collections-icon').addClass('fa fa-star fa-fw').removeClass('pwg-icon user-collections-icon');
+  $('.addCollection').off().removeClass('pwg-button pwg-state-default').addClass('nav-link dropdown-toggle').closest('li').addClass('nav-item dropdown').attr('id', 'collectionsDropdownBS');
+  $('.user-collections-icon').addClass('fa fa-star fa-fw').removeClass('pwg-icon user-collections-icon');
   $('#collectionsDropdownBS .pwg-button-text').addClass('d-lg-none ml-2');
   if ($('#collectionsDropdown').length == 0) {
     $('#collectionsDropdownBS').addClass('d-none');
-  } else {
-    $('#collectionsDropdown').appendTo('#collectionsDropdownBS').addClass('dropdown-menu dropdown-menu-right').removeClass('switchBox').removeAttr('style');
   }
   $('#theCollectionPage input[type="submit"]').addClass('btn btn-primary');
-});
-
-$(window).on("load", function() {
-  $('a.addCollection').off().on('click', function() {
-    $('#collectionsDropdown').dropdown();
-  });
 });
 {/footer_script}
 {/if}

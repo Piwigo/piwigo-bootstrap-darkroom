@@ -57,6 +57,7 @@ ul#thumbnails .gthumb a img.thumbnail {
   border-radius: 0;
 }
 #collectionsDropdown {
+  z-index: 1050 !important;
   padding: 10px;
   color: #4f4f4f;
   background-color: #fff;
@@ -71,14 +72,14 @@ ul#thumbnails .gthumb a img.thumbnail {
     }
   }
 }
-.nav .user-collections-icon,
-#theCollectionPage .nav .user-collections-share-icon,
-#theCollectionPage .nav .user-collections-mail-icon,
-#theCollectionPage .nav .user-collections-clear-icon,
-#theCollectionPage .nav .user-collections-delete-icon {
+.user-collections-icon,
+#theCollectionPage .user-collections-share-icon,
+#theCollectionPage .user-collections-mail-icon,
+#theCollectionPage .user-collections-clear-icon,
+#theCollectionPage .user-collections-delete-icon {
   background: none !important
 }
-.nav a.addCollection .user-collections-icon:before {
+.navbar-nav a.addCollection .user-collections-icon:before {
   content:"\f006";
   font-family:"FontAwesome";
   font-weight: 400;
