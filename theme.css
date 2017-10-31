@@ -1093,7 +1093,7 @@ ul#thumbnails .gthumb a img.thumbnail {
   background-color: #f5f5f5;
 }
 
-.user-collections-icon,
+.navbar-nav .user-collections-icon,
 #theCollectionPage .user-collections-share-icon,
 #theCollectionPage .user-collections-mail-icon,
 #theCollectionPage .user-collections-clear-icon,
@@ -1101,7 +1101,7 @@ ul#thumbnails .gthumb a img.thumbnail {
   background: none !important;
 }
 
-.navbar-nav a.addCollection .user-collections-icon:before {
+.navbar-nav .user-collections-icon:before {
   content: "\f006";
   font-family: "FontAwesome";
   font-weight: 400;
@@ -1129,6 +1129,22 @@ ul#thumbnails .gthumb a img.thumbnail {
   content: "\f014";
   font-family: "FontAwesome";
   font-weight: 400;
+}
+
+.card-thumbnail a.addCollection {
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.card-thumbnail a.addCollection:hover {
+  opacity: 0.9;
+}
+
+.card-thumbnail a:first-of-type:hover + a.addCollection {
+  opacity: 0.9;
 }
 
 /* PWG_Stuffs */
