@@ -253,5 +253,4 @@ $(document).ready(function() {
 {/foreach}
 {/if}
 
-{include file='_plugin_fixes_js.tpl'}
 <!-- End of header.tpl -->

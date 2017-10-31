@@ -35,6 +35,8 @@
 {include file='_photoswipe_div.tpl'}
 {/if}
 
+{include file='_plugin_fixes_js.tpl'}
+
 {if preg_match('/^material/', $theme_config->bootstrap_theme)}
 {footer_script require='bootstrap'}
  $('body').bootstrapMaterialDesign();

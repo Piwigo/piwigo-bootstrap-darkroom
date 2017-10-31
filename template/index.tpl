@@ -191,7 +191,7 @@ $(document).ready(function() {
 {if !empty($THUMBNAILS)}
         <!-- Start of thumbnails -->
         <div id="thumbnails" class="row">{$THUMBNAILS}</div>
-{footer_script}{literal}$(document).ready(function(){$('#content img').load(function(){$('#content .col-inner').equalHeights()})});{/literal}{/footer_script}
+{footer_script require='jquery'}{literal}$(document).ready(function(){$('#content img').load(function(){$('#content .col-inner').equalHeights()})});{/literal}{/footer_script}
 {if $theme_config->photoswipe}
         <div id="photoSwipeData">
 {assign var=idx value=0}
@@ -204,7 +204,7 @@ $(document).ready(function() {
 {/foreach}
 {include file='_photoswipe_js.tpl' selector='#photoSwipeData'}
         </div>
-{footer_script require='jquery' require='photoswipe'}
+{footer_script require='jquery' require='photoswipe'}{strip}
 $('#startSlideshow').on('click touchstart', function() {
    startPhotoSwipe(0);
    $('.pswp__button--autoplay')[0].click();
@@ -241,7 +241,7 @@ $(document).ajaxComplete(function() {
 });
 {/if}
 {/if}
-{/footer_script}
+{/strip}{/footer_script}
 {/if}
 {footer_script require="jquery"}{strip}
 {if !isset($loaded_plugins['piwigo-videojs']) && (isset($GThumb) || isset($GDThumb))}
