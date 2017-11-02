@@ -240,7 +240,7 @@
             </div>
             {/if}
             <div class="row">
-              <div class="col-12{if $theme_config->fluid_width} col-lg-10{/if}">
+              <div class="col-12{if $theme_config->fluid_width} col-xl-10{/if}">
                 <div class="row">
                   {if is_array($metadata.0.lines) && (array_key_exists("{$exif_fnumber}", $metadata.0.lines))}
                   <div class="col-6 col-sm-4">
