@@ -149,6 +149,28 @@ $(document).ready(function() {
   if ($('#collectionsDropdown').length == 0) {
     $('.navbar-nav #collectionsDropdownBS').addClass('d-none');
   }
+
+  $('#theCategoryPage .addCollection').on('click', function(e) {
+    e.preventDefault();
+    var img_id = jQuery(this).data('id'),
+        album_id = jQuery(this).data('albumId'),
+        col_ids = jQuery(this).data('cols');
+
+    $cdm.data('img_id', img_id);
+    $cdm.data('album_id', album_id);
+    $cdm.children('.add').each(function() {
+       if (col_ids && col_ids.indexOf(jQuery(this).data('id')) != -1) {
+         jQuery(this).css('font-weight', 'bold').next().next().show();
+       } else {
+         jQuery(this).css('font-weight', 'normal').next().next().hide();
+       }
+    });
+    $cdm.css({ 'left': Math.min(e.pageX - jQuery(window).scrollLeft() - 20, jQuery(window).width() - $cdm.outerWidth(true) - 5), 'top': e.pageY - 5 - $(window).scrollTop() });
+    $cdm.toggle();
+
+    e.stopPropagation();
+  });
+
   $('#theCollectionPage input[type="submit"]').addClass('btn btn-primary');
   $('#theCollectionPage #edit_form_hide').addClass('btn btn-secondary');
   $('#theCollectionPage .navbar-nav').find('.pwg-button').each(function() {
