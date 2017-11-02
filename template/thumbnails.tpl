@@ -27,7 +27,7 @@
       <div class="h-100">
         <a href="{$thumbnail.URL}" data-index="{$idx}" class="ripple{if $smarty.cookies.view != 'list'} d-block{/if}">
             <img class="{if $smarty.cookies.view == 'list'}card-img-left{else}card-img-top{/if}" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}">
-{if isset($loaded_plugins['UserCollections'])}
+{if isset($loaded_plugins['UserCollections']) && !isset($U_LOGIN)}
             <div class="fa fa-star-o addCollection" data-id="{$thumbnail.id}" data-cols="[{$thumbnail.COLLECTIONS}]"><span class="text-muted ml-2">{'Collections'|@translate}</span></div>
 {/if}
         </a>
