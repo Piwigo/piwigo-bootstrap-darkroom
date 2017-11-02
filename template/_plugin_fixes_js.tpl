@@ -155,6 +155,12 @@ $(document).ready(function() {
     $(this).addClass('nav-link').closest('li').addClass('nav-item');
   });
 
+{if isset($loaded_plugins['GThumb']) && $theme_config->photoswipe}
+  $('#theCollectionPage').find('ul#thumbnails').each(function() {
+    $(this).find('a.preview-box.cboxElement').removeClass('preview-box cboxElement');
+  });
+{/if}
+
   $('.content-list').find('.col-outer').each(function() {
     $(this).find('.addCollection').attr('style', 'width: ' + $(this).find('img').width() + 'px');
   });
