@@ -874,6 +874,14 @@ body {
   }
 }
 
+.pswp__caption__center a {
+  color: #666;
+}
+
+.pswp__caption__center a:hover {
+  color: #ccc;
+}
+
 a.pswp__share--google:hover {
   background: #03a9f4;
   color: #fff;
