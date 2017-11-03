@@ -10,12 +10,16 @@
   }
 
   &.navbar-transparent.navbar-sm {
-    margin-top: -98px !important;
+    margin-top: -100px !important;
   }
 }
 
 .navbar-main + .jumbotron {
   border: none;
+}
+
+.card {
+  border-color: inherit;
 }
 
 .card-thumbnail {
@@ -65,4 +69,10 @@
       border-bottom-left-radius: 4px;
     }
   }
+}
+
+.page-header,
+.page-header:before,
+.page-header-image {
+  border-radius: 0px 0px 30px 5px/5px 0px 15px 25px;
 }

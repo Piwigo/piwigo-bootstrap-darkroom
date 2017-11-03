@@ -222,7 +222,7 @@ bootstrap-social@^5.1.1:
     bootstrap "~3"
     font-awesome "~4.7"
 
-bootstrap@4.0.0-beta.2:
+bootstrap@4.0.0-beta.2, bootstrap@~4.0.0-beta.2:
   version "4.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-beta.2.tgz#4d67d2aa2219f062cd90bc1247e6747b9e8fd051"
 
@@ -230,9 +230,13 @@ bootstrap@~3:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
 
-"bootswatch@git+https://github.com/tkuther/bootswatch.git#v4-beta":
-  version "4.0.0-alpha.6"
-  resolved "git+https://github.com/tkuther/bootswatch.git#06ddbf0ca3336cff1044bee456d0e7666c2a554c"
+"bootswatch@git+https://github.com/thomaspark/bootswatch.git#v4":
+  version "4.0.0-beta.2"
+  resolved "git+https://github.com/thomaspark/bootswatch.git#caa0656ce003dccfa4108a9392d0f9d6e05905b7"
+  dependencies:
+    bootstrap "~4.0.0-beta.2"
+    jquery ">=1.9.1"
+    popper.js "^1.11.0"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
@@ -1070,7 +1074,7 @@ jquery-migrate@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/jquery-migrate/-/jquery-migrate-3.0.1.tgz#141de3abfe6d301baaa4130b0ec7b9a839845e72"
 
-jquery@>=1.7.2, jquery@>=3.0.0:
+jquery@>=1.7.2, jquery@>=1.9.1, jquery@>=3.0.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 

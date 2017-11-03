@@ -528,11 +528,15 @@ $('select[name=bootstrap_theme]').change(function() {
     case (bs_theme.match(/^material/) || {}).input:
       navbar_contextual_bg = 'bg-primary';
       break;
-    case (bs_theme.match(/^bootswatch-(litera|lumen|simplex|spacelab)/) || {}).input:
+    case (bs_theme.match(/^bootswatch-(litera|simplex)/) || {}).input:
       navbar_main_style = 'navbar-light';
-      navbar_main_bg = 'bg-primary';
+      navbar_main_bg = 'bg-light';
       navbar_contextual_style = 'navbar-light';
-      navbar_contextual_bg = 'bg-primary';
+      navbar_contextual_bg = 'bg-light';
+      break;
+    case (bs_theme.match(/^bootswatch-(cyborg|solar)/) || {}).input:
+      navbar_main_bg = 'bg-dark';
+      navbar_contextual_bg = 'bg-dark';
       break;
     case (bs_theme.match(/^bootswatch/) || {}).input:
       navbar_main_bg = 'bg-primary';

@@ -1,7 +1,7 @@
 @import "../common/variables";
 @import "node_modules/bootswatch/journal/variables";
 
-$jumbotron-bg: theme-color('primary');
+$jumbotron-bg: $primary !default;
 
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/bootswatch/journal/bootswatch";
@@ -9,8 +9,6 @@ $jumbotron-bg: theme-color('primary');
 
 .jumbotron {
   color: #fff;
-  border-left: 1px solid #eee;
-  border-right: 1px solid #eee;
 }
 
 .navbar {

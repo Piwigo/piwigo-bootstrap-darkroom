@@ -1,7 +1,7 @@
 @import "../common/variables";
 @import "node_modules/bootswatch/lux/variables";
-@import "node_modules/bootswatch/lux/bootswatch";
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootswatch/lux/bootswatch";
 @import "common";
 
 .navbar-contextual {
@@ -14,3 +14,9 @@
   }
 }
 
+#navbar-menubar > #quicksearch i.fa {
+  top: 16px;
+}
+.navbar-brand a:first-child:before {
+  font-size: 1.09rem;
+}
