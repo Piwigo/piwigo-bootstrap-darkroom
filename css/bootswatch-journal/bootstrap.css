@@ -9584,6 +9584,10 @@ a.text-dark:focus, a.text-dark:hover {
   color: #222;
 }
 
+.navbar-brand a:first-child:before {
+  font-size: 1.25rem;
+}
+
 .jumbotron {
   color: #fff;
 }

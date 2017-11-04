@@ -9848,4 +9848,8 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 .slick-next:before {
   color: #222;
 }
+
+.navbar-brand a:first-child:before {
+  font-size: 1.09375rem;
+}
 /*# sourceMappingURL=bootstrap.css.map */

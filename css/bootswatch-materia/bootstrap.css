@@ -10990,6 +10990,10 @@ input[type="checkbox"]:disabled:checked:after,
   color: #444;
 }
 
+.navbar-brand a:first-child:before {
+  font-size: 1.015625rem;
+}
+
 @media (min-width: 992px) {
   #navbar-menubar > #quicksearch i.fa {
     top: 16px !important;

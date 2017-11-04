@@ -8,3 +8,7 @@ $sidebar-hover-color:  $navbar-dark-hover-color !default;
 .slick-next:before {
   color: $body-color;
 }
+
+.navbar-brand a:first-child:before {
+  font-size: $navbar-brand-font-size;
+}

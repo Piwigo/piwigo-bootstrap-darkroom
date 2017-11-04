@@ -9708,6 +9708,10 @@ table-success, table-info, table-warning, table-danger,
   color: #343a40;
 }
 
+.navbar-brand a:first-child:before {
+  font-size: 1.32875rem;
+}
+
 @media (min-width: 992px) {
   #navbar-menubar > #quicksearch i.fa {
     top: 12px !important;

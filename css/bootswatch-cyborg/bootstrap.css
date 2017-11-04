@@ -9716,6 +9716,10 @@ legend,
   color: #888;
 }
 
+.navbar-brand a:first-child:before {
+  font-size: 1.09375rem;
+}
+
 .navbar.navbar-transparent.navbar-sm {
   margin-top: -96px !important;
 }

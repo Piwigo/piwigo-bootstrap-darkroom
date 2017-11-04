@@ -9621,6 +9621,10 @@ th {
   color: #919aa1;
 }
 
+.navbar-brand a:first-child:before {
+  font-size: 1.09375rem;
+}
+
 .navbar-contextual .nav-item + .nav-item {
   margin-left: .2rem;
 }
@@ -9631,9 +9635,5 @@ th {
 
 #navbar-menubar > #quicksearch i.fa {
   top: 16px;
-}
-
-.navbar-brand a:first-child:before {
-  font-size: 1.09rem;
 }
 /*# sourceMappingURL=bootstrap.css.map */

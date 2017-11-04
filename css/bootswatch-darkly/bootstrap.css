@@ -9673,6 +9673,10 @@ a.text-dark:focus, a.text-dark:hover {
   color: #fff;
 }
 
+.navbar-brand a:first-child:before {
+  font-size: 1.171875rem;
+}
+
 @media (min-width: 992px) {
   #navbar-menubar > #quicksearch i.fa {
     top: 10px !important;

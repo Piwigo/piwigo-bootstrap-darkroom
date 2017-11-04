@@ -9661,4 +9661,8 @@ a.text-dark:focus, a.text-dark:hover {
 .slick-next:before {
   color: #444;
 }
+
+.navbar-brand a:first-child:before {
+  font-size: 1.09375rem;
+}
 /*# sourceMappingURL=bootstrap.css.map */

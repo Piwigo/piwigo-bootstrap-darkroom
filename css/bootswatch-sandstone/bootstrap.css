@@ -9660,6 +9660,10 @@ a.text-dark:focus, a.text-dark:hover {
   color: #3E3F3A;
 }
 
+.navbar-brand a:first-child:before {
+  font-size: 1.09375rem;
+}
+
 .navbar.navbar-transparent.navbar-sm {
   margin-top: -97px !important;
 }

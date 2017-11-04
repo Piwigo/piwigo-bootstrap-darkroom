@@ -9703,4 +9703,8 @@ legend {
 .slick-next:before {
   color: #888;
 }
+
+.navbar-brand a:first-child:before {
+  font-size: 1.25rem;
+}
 /*# sourceMappingURL=bootstrap.css.map */

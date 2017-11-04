@@ -9603,6 +9603,10 @@ a.text-dark:focus, a.text-dark:hover {
   color: #868e96;
 }
 
+.navbar-brand a:first-child:before {
+  font-size: 1.25rem;
+}
+
 .navbar-transparent {
   background-image: none;
 }

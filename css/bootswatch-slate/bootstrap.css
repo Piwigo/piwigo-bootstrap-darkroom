@@ -9954,6 +9954,10 @@ legend {
   color: #aaa;
 }
 
+.navbar-brand a:first-child:before {
+  font-size: 1.171875rem;
+}
+
 @media (min-width: 992px) {
   #navbar-menubar > #quicksearch {
     margin-right: 10px;

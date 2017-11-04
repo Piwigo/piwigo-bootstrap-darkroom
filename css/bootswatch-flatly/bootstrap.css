@@ -9666,6 +9666,10 @@ a.text-dark:focus, a.text-dark:hover {
   color: #212529;
 }
 
+.navbar-brand a:first-child:before {
+  font-size: 1.171875rem;
+}
+
 .navbar.navbar-transparent.navbar-sm {
   margin-top: -97px !important;
 }

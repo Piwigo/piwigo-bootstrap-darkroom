@@ -9894,6 +9894,10 @@ pre {
   color: #212529;
 }
 
+.navbar-brand a:first-child:before {
+  font-size: 1.25rem;
+}
+
 .navbar-contextual .navbar-brand a {
   text-decoration: none;
 }
