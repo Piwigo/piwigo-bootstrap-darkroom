@@ -43,7 +43,7 @@
     "autoprefixer": "^7.1.5",
     "bootstrap": "4.0.0-beta.2",
     "bootstrap-material-design": "4.0.0-beta.4",
-    "bootswatch": "git+https://github.com/thomaspark/bootswatch.git#master",
+    "bootswatch": "4.0.0-beta.2",
     "clean-css-cli": "^4.1.6",
     "node-sass": "^4.5.3",
     "node-sass-tilde-importer": "^1.0.0",
