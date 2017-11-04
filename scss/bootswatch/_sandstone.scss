@@ -3,9 +3,3 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/bootswatch/dist/sandstone/bootswatch";
 @import "common";
-
-.navbar {
-  &.navbar-transparent.navbar-sm {
-    margin-top: -97px !important;
-  }
-}

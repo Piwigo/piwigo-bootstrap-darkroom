@@ -6,12 +6,16 @@
 
 @include media-breakpoint-up(lg) {
   #navbar-menubar > #quicksearch i.fa {
-    top: 16px !important;
+    top: 19px !important;
   }
 }
 
 .navbar {
   &.navbar-transparent.navbar-sm {
-    margin-top: -106px !important;
+    margin-top: -109px !important;
   }
+}
+
+.nav-breadcrumb > .nav-breadcrumb-item {
+  font-size: $navbar-brand-font-size;
 }

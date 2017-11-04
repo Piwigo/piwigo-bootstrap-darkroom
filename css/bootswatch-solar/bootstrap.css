@@ -9612,7 +9612,7 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.25rem;
+  font-size: 1.25rem !important;
 }
 
 .navbar.navbar-transparent.navbar-sm {

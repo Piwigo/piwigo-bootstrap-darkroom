@@ -9705,6 +9705,6 @@ legend {
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.25rem;
+  font-size: 1.25rem !important;
 }
 /*# sourceMappingURL=bootstrap.css.map */

@@ -9895,7 +9895,7 @@ pre {
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.25rem;
+  font-size: 1.25rem !important;
 }
 
 .navbar-contextual .navbar-brand a {

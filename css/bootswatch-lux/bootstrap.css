@@ -9622,18 +9622,14 @@ th {
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.09375rem;
+  font-size: 1.09375rem !important;
 }
 
 .navbar-contextual .nav-item + .nav-item {
   margin-left: .2rem;
 }
 
-.navbar-contextual.navbar-transparent.navbar-sm {
-  margin-top: -102px !important;
-}
-
 #navbar-menubar > #quicksearch i.fa {
-  top: 16px;
+  top: 16px !important;
 }
 /*# sourceMappingURL=bootstrap.css.map */

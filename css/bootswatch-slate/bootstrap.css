@@ -9955,7 +9955,7 @@ legend {
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.171875rem;
+  font-size: 1.171875rem !important;
 }
 
 @media (min-width: 992px) {

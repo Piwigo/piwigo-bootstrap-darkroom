@@ -8,12 +8,8 @@
   .nav-item + .nav-item {
     margin-left: .2rem;
   }
-
-  &.navbar-transparent.navbar-sm {
-    margin-top: -102px !important;
-  }
 }
 
 #navbar-menubar > #quicksearch i.fa {
-  top: 16px;
+  top: 16px !important;
 }

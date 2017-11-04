@@ -9717,7 +9717,7 @@ legend,
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.09375rem;
+  font-size: 1.09375rem !important;
 }
 
 .navbar.navbar-transparent.navbar-sm {

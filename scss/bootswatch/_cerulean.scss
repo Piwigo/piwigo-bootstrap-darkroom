@@ -4,6 +4,8 @@
 @import "node_modules/bootswatch/dist/cerulean/bootswatch";
 @import "common";
 
-.navbar-transparent {
-  background-image: none;
+.navbar {
+  &.navbar-transparent.navbar-sm {
+    margin-top: -98px !important;
+  }
 }

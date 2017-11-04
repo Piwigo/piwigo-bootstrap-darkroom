@@ -9709,16 +9709,12 @@ label,
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.25rem;
+  font-size: 1.25rem !important;
 }
 
 @media (min-width: 992px) {
   #navbar-menubar > #quicksearch i.fa {
     top: 12px !important;
   }
-}
-
-.navbar.navbar-transparent.navbar-sm {
-  margin-top: -97px !important;
 }
 /*# sourceMappingURL=bootstrap.css.map */

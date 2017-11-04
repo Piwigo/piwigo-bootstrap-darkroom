@@ -3,3 +3,15 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/bootswatch/dist/lumen/bootswatch";
 @import "common";
+
+@include media-breakpoint-up(lg) {
+  #navbar-menubar > #quicksearch i.fa {
+    top: 10px !important;
+  }
+}
+
+.navbar {
+  &.navbar-transparent.navbar-sm {
+    margin-top: -97px !important;
+  }
+}

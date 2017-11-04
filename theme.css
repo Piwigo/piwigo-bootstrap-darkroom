@@ -166,6 +166,7 @@ body {
 
 .navbar.navbar-transparent {
   background-color: transparent !important;
+  background-image: none !important;
   box-shadow: none;
   color: #fff;
   padding: 20px;
@@ -206,6 +207,7 @@ body {
 
 .navbar.navbar-forced-sm {
   background-color: #000 !important;
+  background-image: none !important;
   padding-top: 5px;
   padding-bottom: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);

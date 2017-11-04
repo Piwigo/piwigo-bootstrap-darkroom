@@ -9850,6 +9850,16 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.09375rem;
+  font-size: 1.09375rem !important;
+}
+
+@media (min-width: 992px) {
+  #navbar-menubar > #quicksearch i.fa {
+    top: 10px !important;
+  }
+}
+
+.navbar.navbar-transparent.navbar-sm {
+  margin-top: -97px !important;
 }
 /*# sourceMappingURL=bootstrap.css.map */

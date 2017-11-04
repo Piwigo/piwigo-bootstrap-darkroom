@@ -9682,7 +9682,7 @@ label {
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.015625rem;
+  font-size: 1.015625rem !important;
 }
 
 @media (min-width: 992px) {
@@ -9692,6 +9692,6 @@ label {
 }
 
 .navbar.navbar-transparent.navbar-sm {
-  margin-top: -97px !important;
+  margin-top: -112px !important;
 }
 /*# sourceMappingURL=bootstrap.css.map */

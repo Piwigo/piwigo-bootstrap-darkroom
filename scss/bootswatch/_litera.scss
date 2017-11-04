@@ -6,6 +6,12 @@
 
 @include media-breakpoint-up(lg) {
   #navbar-menubar > #quicksearch i.fa {
-    top: 12px !important;
+    top: 14px !important;
+  }
+}
+
+.navbar {
+  &.navbar-transparent.navbar-sm {
+    margin-top: -100px !important;
   }
 }

@@ -9604,10 +9604,10 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.25rem;
+  font-size: 1.25rem !important;
 }
 
-.navbar-transparent {
-  background-image: none;
+.navbar.navbar-transparent.navbar-sm {
+  margin-top: -98px !important;
 }
 /*# sourceMappingURL=bootstrap.css.map */

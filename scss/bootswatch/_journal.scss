@@ -11,6 +11,12 @@ $jumbotron-bg: $primary !default;
   color: #fff;
 }
 
+@include media-breakpoint-up(lg) {
+  #navbar-menubar > #quicksearch i.fa {
+    top: 10px !important;
+  }
+}
+
 .navbar {
   &.navbar-transparent.navbar-sm {
     margin-top: -101px !important;

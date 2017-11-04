@@ -9554,6 +9554,10 @@ body {
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.171875rem;
+  font-size: 1.171875rem !important;
+}
+
+.navbar.navbar-transparent.navbar-sm {
+  margin-top: -97px !important;
 }
 /*# sourceMappingURL=bootstrap.css.map */

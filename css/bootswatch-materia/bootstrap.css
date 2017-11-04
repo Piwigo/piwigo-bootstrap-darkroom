@@ -10991,16 +10991,20 @@ input[type="checkbox"]:disabled:checked:after,
 }
 
 .navbar-brand a:first-child:before {
-  font-size: 1.015625rem;
+  font-size: 1.015625rem !important;
 }
 
 @media (min-width: 992px) {
   #navbar-menubar > #quicksearch i.fa {
-    top: 16px !important;
+    top: 19px !important;
   }
 }
 
 .navbar.navbar-transparent.navbar-sm {
-  margin-top: -106px !important;
+  margin-top: -109px !important;
+}
+
+.nav-breadcrumb > .nav-breadcrumb-item {
+  font-size: 1.015625rem;
 }
 /*# sourceMappingURL=bootstrap.css.map */

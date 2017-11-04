@@ -10,5 +10,5 @@ $sidebar-hover-color:  $navbar-dark-hover-color !default;
 }
 
 .navbar-brand a:first-child:before {
-  font-size: $navbar-brand-font-size;
+  font-size: $navbar-brand-font-size !important;
 }

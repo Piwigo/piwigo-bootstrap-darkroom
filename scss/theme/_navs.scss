@@ -41,6 +41,7 @@
 
   &.navbar-transparent {
     background-color: transparent !important;
+    background-image: none !important;
     box-shadow: none;
     color: $white;
     padding: 20px;
@@ -81,6 +82,7 @@
 
   &.navbar-forced-sm {
     background-color: #000 !important;
+    background-image: none !important;
     padding-top: 5px;
     padding-bottom: 5px;
     box-shadow: $bd-boxshadow-sm;
