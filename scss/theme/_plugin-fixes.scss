@@ -107,6 +107,7 @@ ul#thumbnails .gthumb a img.thumbnail {
 
 .card-thumbnail .addCollection {
   opacity: 0;
+  transition: opacity 0.25s ease-in;
   z-index: 1;
   width: 100%;
   position: absolute;
@@ -115,9 +116,14 @@ ul#thumbnails .gthumb a img.thumbnail {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
+  color: $yellow;
+  background-color: rgba(0, 0, 0, 0.6);
   &:hover {
     opacity: 0.9;
+  }
+  > span {
+    color: #fff;
+    font-size: 0.9rem;
   }
 }
 .card-thumbnail a:hover {
