@@ -1,7 +1,7 @@
 @import "../common/variables";
-@import "node_modules/bootswatch/materia/variables";
+@import "node_modules/bootswatch/dist/materia/variables";
 @import "node_modules/bootstrap/scss/bootstrap";
-@import "node_modules/bootswatch/materia/bootswatch";
+@import "node_modules/bootswatch/dist/materia/bootswatch";
 @import "common";
 
 @include media-breakpoint-up(lg) {

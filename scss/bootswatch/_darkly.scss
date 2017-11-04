@@ -1,7 +1,7 @@
 @import "../common/variables";
-@import "node_modules/bootswatch/darkly/variables";
+@import "node_modules/bootswatch/dist/darkly/variables";
 @import "node_modules/bootstrap/scss/bootstrap";
-@import "node_modules/bootswatch/darkly/bootswatch";
+@import "node_modules/bootswatch/dist/darkly/bootswatch";
 @import "common";
 
 @include media-breakpoint-up(lg) {

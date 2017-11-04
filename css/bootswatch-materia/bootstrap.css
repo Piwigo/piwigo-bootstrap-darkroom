@@ -10635,7 +10635,7 @@ input[type="radio"]:before,
 .radio-inline input[type="radio"]:before {
   position: absolute;
   left: 0;
-  top: 2px;
+  top: -2px;
   background-color: #2196F3;
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -10719,7 +10719,7 @@ input[type="checkbox"]:checked:before,
 .checkbox-inline input[type="checkbox"]:checked:before {
   content: "";
   position: absolute;
-  top: 5px;
+  top: 2px;
   left: 6px;
   display: table;
   width: 6px;

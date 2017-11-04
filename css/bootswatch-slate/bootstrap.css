@@ -9505,8 +9505,6 @@ a.text-dark:focus, a.text-dark:hover {
 
 .navbar .navbar-toggler {
   border-color: rgba(0, 0, 0, 0.6);
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 .navbar-fixed-top {
@@ -9558,6 +9556,27 @@ a.text-dark:focus, a.text-dark:hover {
   -webkit-filter: none;
           filter: none;
   border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 576px) {
+  .navbar-expand-sm .navbar-brand,
+  .navbar-expand-sm .nav-link {
+    border: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-expand-md .navbar-brand,
+  .navbar-expand-md .nav-link {
+    border: none !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-expand-lg .navbar-brand,
+  .navbar-expand-lg .nav-link {
+    border: none !important;
+  }
 }
 
 .btn {

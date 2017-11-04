@@ -230,9 +230,9 @@ bootstrap@~3:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
 
-"bootswatch@git+https://github.com/thomaspark/bootswatch.git#v4":
+"bootswatch@git+https://github.com/thomaspark/bootswatch.git#master":
   version "4.0.0-beta.2"
-  resolved "git+https://github.com/thomaspark/bootswatch.git#caa0656ce003dccfa4108a9392d0f9d6e05905b7"
+  resolved "git+https://github.com/thomaspark/bootswatch.git#bc8b879796f1d36ffef26e98145c7a48f9f250eb"
   dependencies:
     bootstrap "~4.0.0-beta.2"
     jquery ">=1.9.1"

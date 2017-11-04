@@ -1,10 +1,10 @@
 @import "../common/variables";
-@import "node_modules/bootswatch/journal/variables";
+@import "node_modules/bootswatch/dist/journal/variables";
 
 $jumbotron-bg: $primary !default;
 
 @import "node_modules/bootstrap/scss/bootstrap";
-@import "node_modules/bootswatch/journal/bootswatch";
+@import "node_modules/bootswatch/dist/journal/bootswatch";
 @import "common";
 
 .jumbotron {
