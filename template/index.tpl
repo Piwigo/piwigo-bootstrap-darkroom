@@ -162,7 +162,7 @@ $(document).ready(function() {
 {/if}
 
 {if !empty($CONTENT_DESCRIPTION)}
-    <div id="content-description" class="py-3{if $theme_config->thumbnail_cat_desc == 'simple'} d-flex justify-content-center text-center{/if}">
+    <div id="content-description" class="py-3{if $theme_config->thumbnail_cat_desc == 'simple'} text-center{/if}">
 {if $theme_config->thumbnail_cat_desc == 'simple'}
         <h5>{$CONTENT_DESCRIPTION}</h5>
 {else}
