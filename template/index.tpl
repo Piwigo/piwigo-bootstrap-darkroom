@@ -170,7 +170,7 @@ $(document).ready(function() {
 {/if}
     </div>
 {/if}
-    <div id="content" class="{if $smarty.cookies.view == 'list'}content-list{else}content-grid{/if} pt-3">
+    <div id="content" class="{if $smarty.cookies.view == 'list'}content-list{else}content-grid{/if}{if empty($CONTENT_DESCRIPTION)} pt-3{/if}">
 {if !empty($CONTENT)}
     <!-- Start of content -->
     {$CONTENT}
