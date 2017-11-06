@@ -221,4 +221,13 @@ $(document).ready(function() {
 {/footer_script}
 {/if}
 
+{if isset($loaded_plugins['Contact1menu'])}
+{footer_script require='jquery'}
+$(document).ready(function() {
+  $('#navbar-menubar a[title="{'Contact'|@translate}"').addClass('nav-link').closest('dt').addClass('nav-item').attr('id', 'Contact1menu').changeElementType('li');
+});
+{/footer_script}
+{/if}
 {/strip}
+
+
