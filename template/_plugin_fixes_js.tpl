@@ -229,5 +229,3 @@ $(document).ready(function() {
 {/footer_script}
 {/if}
 {/strip}
-
-
