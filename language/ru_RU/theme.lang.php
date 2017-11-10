@@ -77,6 +77,6 @@ $lang['Center mode'] = 'Режим центрирования';
 $lang['Disabled'] = 'Отключено';
 $lang['Display a site logo image instead of plain text'] = 'Отображение логотипа сайта вместо обычного текста';
 $lang['Fullscreen'] = 'Во весь экран';
-$lang['Discover'] = 'Открытие';
+$lang['Discover'] = 'Открыть';
 $lang['Grid view'] = 'Просмотр в виде сетки';
 $lang['List view'] = 'Просмотр в виде списка';
