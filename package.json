@@ -19,9 +19,8 @@
     "build:bootstrap:js": "cp node_modules/bootstrap/dist/js/bootstrap.min.js js/",
     "build:bootstrap-darkroom": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-darkroom.scss css/bootstrap-darkroom/bootstrap.css && postcss --config node_modules/bootstrap/build/postcss.config.js --replace css/bootstrap-darkroom/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/bootstrap-darkroom/bootstrap.min.css css/bootstrap-darkroom/bootstrap.css",
     "build:theme": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/theme.scss theme.css",
-    "build:material": "npm-run-all build:material:css build:material:js",
+    "build:material": "npm-run-all build:material:css",
     "build:material:css": "for i in amber blue brown darkroom deep-orange deep-purple indigo light-green lime purple red teal; do node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true --source-map-contents true --precision 6 scss/material/_${i}.scss css/material-${i}/bootstrap.css && postcss --config node_modules/bootstrap/build/postcss.config.js --replace css/material-${i}/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/material-${i}/bootstrap.min.css css/material-${i}/bootstrap.css; done",
-    "build:material:js": "cp node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js js/",
     "build:bootswatch": "for i in cerulean cosmo cyborg darkly flatly journal litera lumen lux materia minty pulse sandstone simplex sketchy slate solar spacelab superhero united yeti; do node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootswatch/_${i}.scss css/bootswatch-${i}/bootstrap.css && postcss --config node_modules/bootstrap/build/postcss.config.js --replace css/bootswatch-${i}/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/bootswatch-${i}/bootstrap.min.css css/bootswatch-${i}/bootstrap.css; done"
   },
   "style": "css/bootstrap-darkroom.css",

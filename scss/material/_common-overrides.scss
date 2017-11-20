@@ -42,8 +42,18 @@ $sidebar-bg: theme-color("primary") !default;
 .radio-inline,
 .switch label,
 select.form-control,
-input[type=text].form-control {
+textarea.form-control,
+input[type=text].form-control,
+.form-control:focus {
   color: inherit;
+}
+select.form-control>option {
+  color: $input-color;
+}
+
+[class*=' bmd-label'],
+[class^=bmd-label] {
+  color: $link-color;
 }
 
 // Slick carousel

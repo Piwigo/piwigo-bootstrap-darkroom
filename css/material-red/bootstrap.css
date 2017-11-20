@@ -16265,9 +16265,22 @@ h6 {
 .switch label,
 select.form-control,
 select.custom-file-control,
+textarea.form-control,
+textarea.custom-file-control,
 input[type=text].form-control,
-input[type=text].custom-file-control {
+input[type=text].custom-file-control,
+.form-control:focus,
+.custom-file-control:focus {
   color: inherit;
+}
+
+select.form-control > option, select.custom-file-control > option {
+  color: #495057;
+}
+
+[class*=' bmd-label'],
+[class^=bmd-label] {
+  color: #F44336;
 }
 
 .slick-prev:before,
