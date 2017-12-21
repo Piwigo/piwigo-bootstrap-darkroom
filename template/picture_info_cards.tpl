@@ -1,6 +1,6 @@
-    <div id="infopanel" class="col-lg-6 col-12">
+    <div id="infopanel-left" class="col-lg-6 col-12">
       <!-- Picture infos -->
-      <div class="card mb-2">
+      <div id="card-informations" class="card mb-2">
         <div class="card-body">
           <h5 class="card-title">{'Information'|@translate}</h5>
           <div id="info-content" class="d-flex flex-column">
@@ -181,7 +181,7 @@
         </div>
       </div>
 {if $display_info.tags and isset($related_tags)}
-      <div class="card mb-2">
+      <div id="card-tags" class="card mb-2">
         <div class="card-body">
           <h5 class="card-title">{'Tags'|@translate}</h5>
             <div id="Tags" class="imageInfo">
@@ -193,7 +193,7 @@
     </div>
 
 {if isset($metadata) || isset($PICTURE_INFO_COMMENTS)}
-    <div class="col-lg-6 col-12">
+    <div id="infopanel-right" class="col-lg-6 col-12">
     <!-- metadata -->
 {if isset($metadata)}
 {if isset($loaded_plugins['exif_view'])}
@@ -218,7 +218,7 @@
 {assign var="exif_exposure_bias" value="ExposureBiasValue"}
 {/if}
 
-      <div class="card mb-2">
+      <div id="card-metadata" class="card mb-2">
         <div class="card-body">
           <h5 class="card-title">{'EXIF Metadata'|@translate}</h5>
           <div id="metadata">
@@ -303,7 +303,7 @@ $('#show_exif_data').on('click', function() {
         </div>
       </div>
 {/if}
-      <div class="ml-2">
+      <div id="card-comments" class="ml-2">
         {include file='picture_info_comments.tpl'}
       </div>
     </div>
