@@ -4,7 +4,7 @@
         <div class="card-body">
           <h5 class="card-title">{'Information'|@translate}</h5>
           <div id="info-content" class="d-flex flex-column">
-{if $display_info.author and isset($INFO_AUTHOR)}
+{if isset($INFO_AUTHOR)}
             <div id="Author" class="imageInfo">
               <dl class="row mb-0">
                 <dt class="col-sm-5">{'Author'|@translate}</dt>
@@ -20,7 +20,7 @@
               </dl>
             </div>
 {/if}
-{if $display_info.rating_score and isset($rate_summary)}
+{if isset($rate_summary)}
             <div id="Average" class="imageInfo">
               <dl class="row mb-0">
                 <dt class="col-sm-5">{'Rating score'|@translate}</dt>
@@ -81,7 +81,15 @@
               </dl>
             </div>
 {/if}
-{if $display_info.created_on and isset($INFO_CREATION_DATE)}
+<div class="card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">{'Tags'|@translate}</h5>
+            <div id="Tags" class="imageInfo">
+              {foreach from=$related_tags item=tag name=tag_loop}<a class="btn btn-primary btn-raised mr-1" href="{$tag.URL}">{$tag.name}</a>{/foreach}
+            </div>
+        </div>
+      </div>
+{if isset($INFO_CREATION_DATE)}
             <div id="datecreate" class="imageInfo">
               <dl class="row mb-0">
                 <dt class="col-sm-5">{'Created on'|@translate}</dt>
@@ -105,7 +113,7 @@
               </dl>
             </div>
 {/if}
-{if $display_info.dimensions and isset($INFO_DIMENSIONS)}
+{if isset($INFO_DIMENSIONS)}
             <div id="Dimensions" class="imageInfo">
               <dl class="row mb-0">
                 <dt class="col-sm-5">{'Dimensions'|@translate}</dt>
@@ -121,7 +129,7 @@
               </dl>
             </div>
 {/if}
-{if $display_info.filesize and isset($INFO_FILESIZE)}
+{if isset($INFO_FILESIZE)}
             <div id="Filesize" class="imageInfo">
               <dl class="row mb-0">
                 <dt class="col-sm-5">{'Filesize'|@translate}</dt>
@@ -129,7 +137,7 @@
               </dl>
             </div>
 {/if}
-{if $display_info.categories and isset($related_categories)}
+{if isset($related_categories)}
             <div id="Categories" class="imageInfo">
               <dl class="row mb-0">
                 <dt class="col-sm-5">{'Albums'|@translate}</dt>
@@ -141,7 +149,7 @@
               </dl>
             </div>
 {/if}
-{if $display_info.privacy_level and isset($available_permission_levels)}
+{if isset($available_permission_levels)}
 {combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
 {footer_script require='jquery'}{strip}
     function setPrivacyLevel(id, level, label) {
@@ -180,16 +188,6 @@
           </div>
         </div>
       </div>
-{if $display_info.tags and isset($related_tags)}
-      <div class="card mb-2">
-        <div class="card-body">
-          <h5 class="card-title">{'Tags'|@translate}</h5>
-            <div id="Tags" class="imageInfo">
-              {foreach from=$related_tags item=tag name=tag_loop}<a class="btn btn-primary btn-raised mr-1" href="{$tag.URL}">{$tag.name}</a>{/foreach}
-            </div>
-        </div>
-      </div>
-{/if}
     </div>
 
 {if isset($metadata) || isset($PICTURE_INFO_COMMENTS)}
