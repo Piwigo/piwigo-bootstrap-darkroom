@@ -7,7 +7,7 @@
 
 {$PICTURE_NAV}
 
-<div class="container{if $theme_config->fluid_width}-fluid{/if}">
+<div id="main-picture-container" class="container{if $theme_config->fluid_width}-fluid{/if}">
 {include file='infos_errors.tpl'}
 
   <div class="row justify-content-center">
@@ -34,9 +34,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {if $theme_config->picture_info == 'sidebar'}
     {include file='picture_info_sidebar.tpl'}
 {/if}
-</div>
 
-<div class="container{if $theme_config->fluid_width}-fluid{/if}">
   <div id="theImageComment" class="row justify-content-center mb-3">
 {if isset($COMMENT_IMG)}
     <div class="text-center col-lg-10 -col-md-12 mx-auto">
@@ -46,9 +44,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
     </div>
 {/if}
   </div>
-</div>
 
-<div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {include file="http_scheme.tpl"}
 {if $theme_config->social_enabled}
   <div id="theImageShareButtons" class="row justify-content-center{if !$theme_config->slick_enabled} pb-4{/if}">
@@ -88,7 +84,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
 </div>
 
-<div class="container">
+<div id="carousel-container" class="container">
 {if !empty($thumbnails) && ($theme_config->slick_enabled || $theme_config->photoswipe)}
   <div id="theImageCarousel" class="row mx-0{if !$theme_config->slick_enabled} d-none{/if}">
     <div class="col-lg-10 col-md-12 mx-auto">
@@ -143,7 +139,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {/if}
 </div>
 
-<div class="container{if $theme_config->fluid_width}-fluid{/if}">
+<div id="info-container" class="container{if $theme_config->fluid_width}-fluid{/if}">
   <div id="theImageInfos" class="row justify-content-center">
 {if $theme_config->picture_info == 'cards'}
     {include file='picture_info_cards.tpl'}
