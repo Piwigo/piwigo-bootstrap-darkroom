@@ -1,7 +1,7 @@
 {
   "name": "piwigo-bootstrap-darkroom",
   "description": "A Piwigo theme based on Bootstrap 4",
-  "version": "2.0.6",
+  "version": "2.1.3",
   "keywords": [
     "piwigo",
     "gallery"
@@ -14,13 +14,10 @@
   ],
   "scripts": {
     "build": "npm-run-all build:bootstrap build:bootstrap-darkroom build:theme build:material build:bootswatch",
-    "build:bootstrap": "npm-run-all build:bootstrap:css build:bootstrap:js",
-    "build:bootstrap:css": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-default.scss css/bootstrap-default/bootstrap.css && postcss --config node_modules/bootstrap/build/postcss.config.js --replace css/bootstrap-default/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/bootstrap-default/bootstrap.min.css css/bootstrap-default/bootstrap.css",
-    "build:bootstrap:js": "cp node_modules/bootstrap/dist/js/bootstrap.min.js js/",
+    "build:bootstrap": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-default.scss css/bootstrap-default/bootstrap.css && postcss --config node_modules/bootstrap/build/postcss.config.js --replace css/bootstrap-default/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/bootstrap-default/bootstrap.min.css css/bootstrap-default/bootstrap.css",
     "build:bootstrap-darkroom": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-darkroom.scss css/bootstrap-darkroom/bootstrap.css && postcss --config node_modules/bootstrap/build/postcss.config.js --replace css/bootstrap-darkroom/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/bootstrap-darkroom/bootstrap.min.css css/bootstrap-darkroom/bootstrap.css",
     "build:theme": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/theme.scss theme.css",
-    "build:material": "npm-run-all build:material:css",
-    "build:material:css": "for i in amber blue brown darkroom deep-orange deep-purple indigo light-green lime purple red teal; do node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true --source-map-contents true --precision 6 scss/material/_${i}.scss css/material-${i}/bootstrap.css && postcss --config node_modules/bootstrap/build/postcss.config.js --replace css/material-${i}/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/material-${i}/bootstrap.min.css css/material-${i}/bootstrap.css; done",
+    "build:material": "for i in amber blue brown darkroom deep-orange deep-purple indigo light-green lime purple red teal; do node-sass --importer=node_modules/node-sass-tilde-importer --output-style expanded --source-map true --source-map-contents true --precision 6 scss/material/_${i}.scss css/material-${i}/bootstrap.css && postcss --config node_modules/bootstrap/build/postcss.config.js --replace css/material-${i}/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/material-${i}/bootstrap.min.css css/material-${i}/bootstrap.css; done",
     "build:bootswatch": "for i in cerulean cosmo cyborg darkly flatly journal litera lumen lux materia minty pulse sandstone simplex sketchy slate solar spacelab superhero united yeti; do node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootswatch/_${i}.scss css/bootswatch-${i}/bootstrap.css && postcss --config node_modules/bootstrap/build/postcss.config.js --replace css/bootswatch-${i}/bootstrap.css && cleancss --level 1 --source-map --source-map-inline-sources --output css/bootswatch-${i}/bootstrap.min.css css/bootswatch-${i}/bootstrap.css; done"
   },
   "style": "css/bootstrap-darkroom.css",
@@ -31,7 +28,7 @@
     "jquery": ">=3.0.0",
     "jquery-migrate": "^3.0.0",
     "photoswipe": "4.1.2",
-    "popper.js": "^1.11.0",
+    "popper.js": "^1.12.9",
     "slick-carousel": "tkuther/slick#1.6.0-pwg",
     "typeface-pt-sans": "^0.0.35",
     "typeface-roboto": "^0.0.35",
@@ -40,15 +37,15 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
-    "bootstrap": "4.0.0-beta.2",
+    "bootstrap": "4.0.0-beta.3",
     "bootstrap-material-design": "4.0.0-beta.4",
-    "bootswatch": "4.0.0-beta.2",
+    "bootswatch": "thomaspark/bootswatch#master",
     "clean-css-cli": "^4.1.6",
     "node-sass": "^4.5.3",
     "node-sass-tilde-importer": "^1.0.0",
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^4.1.0",
     "uglify-js": "^3.0.24",
-    "yarn": "~1.2"
+    "yarn": "~1.3"
   }
 }

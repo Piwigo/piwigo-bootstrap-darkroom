@@ -39,7 +39,7 @@ body {
   font-size: 49px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.99px) {
   .jumbotron p {
     font-size: 16px;
   }
@@ -148,7 +148,7 @@ body {
   transform: translate3d(0, 0, 0);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.99px) {
   .navbar.navbar-contextual .navbar-brand {
     max-width: 88%;
     overflow: hidden;
@@ -250,7 +250,7 @@ body {
   width: 100%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.99px) {
   .navbar .navbar-form {
     border-top: none;
     border-bottom: none;
@@ -323,7 +323,7 @@ body {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 991.99px) {
   #navbar-menubar > #quicksearch {
     margin-left: .75rem !important;
   }
@@ -350,7 +350,7 @@ body {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 991.99px) {
   .navbar .dropdown-menu {
     max-height: 50vh;
     overflow-y: scroll;
@@ -360,7 +360,7 @@ body {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 991.99px) {
   .row-offcanvas {
     position: relative;
     -webkit-transition: all .25s ease-out;
@@ -436,7 +436,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 1199.99px) {
   .nav-breadcrumb > *:nth-last-child(-n+4) {
     display: block;
   }
@@ -445,7 +445,7 @@ body {
   }
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767.99px) {
   .nav-breadcrumb > *:nth-last-child(-n+2) {
     display: block;
   }
@@ -454,7 +454,7 @@ body {
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 575.99px) {
   .nav-breadcrumb > *:nth-last-child(-n+2) {
     display: block;
   }
@@ -704,7 +704,7 @@ body {
   width: 25%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.99px) {
   .exif-icon {
     width: 33%;
   }
