@@ -24,16 +24,16 @@
   "sass": "scss/bootstrap-darkroom.scss",
   "license": "APACHE-2.0",
   "dependencies": {
+    "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
     "jquery": ">=3.0.0",
     "jquery-migrate": "^3.0.0",
     "photoswipe": "4.1.2",
     "popper.js": "^1.12.9",
+    "selectize": "0.12.4",
     "slick-carousel": "tkuther/slick#1.6.0-pwg",
     "typeface-pt-sans": "^0.0.35",
-    "typeface-roboto": "^0.0.35",
-    "bootstrap-social": "^5.1.1",
-    "selectize": "0.12.4"
+    "typeface-roboto": "^0.0.35"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.3",

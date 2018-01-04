@@ -222,7 +222,7 @@ bootstrap-social@^5.1.1:
     bootstrap "~3"
     font-awesome "~4.7"
 
-bootstrap@4.0.0-beta.3:
+bootstrap@4.0.0-beta.3, bootstrap@^4.0.0-beta.3:
   version "4.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-beta.3.tgz#60f0660bc3d121176514b361f6f83201c7ff8874"
 
@@ -230,17 +230,13 @@ bootstrap@~3:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
 
-bootstrap@~4.0.0-beta.2:
-  version "4.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-beta.2.tgz#4d67d2aa2219f062cd90bc1247e6747b9e8fd051"
-
 bootswatch@thomaspark/bootswatch#master:
-  version "4.0.0-beta.2"
-  resolved "https://codeload.github.com/thomaspark/bootswatch/tar.gz/b0f7ef4e27e5df7d02dbcd9b935796aeed8a80c2"
+  version "4.0.0-beta.3"
+  resolved "https://codeload.github.com/thomaspark/bootswatch/tar.gz/916c2129abd249633401a9fef66a8c535520e65a"
   dependencies:
-    bootstrap "~4.0.0-beta.2"
+    bootstrap "^4.0.0-beta.3"
     jquery ">=1.9.1"
-    popper.js "^1.11.0"
+    popper.js "^1.12.9"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
@@ -1656,10 +1652,6 @@ pinkie-promise@^2.0.0:
 pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
-
-popper.js@^1.11.0:
-  version "1.12.5"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.12.5.tgz#229e4dea01629e1f1a1e26991ffade5024220fa6"
 
 popper.js@^1.12.9:
   version "1.12.9"
