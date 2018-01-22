@@ -37,9 +37,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.2.3",
-    "bootstrap": "4.0.0-beta.3",
+    "bootstrap": "4.0.0",
     "bootstrap-material-design": "4.0.0-beta.4",
-    "bootswatch": "thomaspark/bootswatch#master",
+    "bootswatch": "4.0.0",
     "clean-css-cli": "^4.1.6",
     "node-sass": "^4.5.3",
     "node-sass-tilde-importer": "^1.0.0",
