@@ -10174,16 +10174,6 @@ pre {
   border-top: none;
 }
 
-[type="checkbox"]:before {
-  position: relative;
-  top: 0;
-}
-
-[type="checkbox"]:checked:after {
-  left: 3px;
-  top: -10px;
-}
-
 [type="radio"]:before {
   position: relative;
   top: 0;
