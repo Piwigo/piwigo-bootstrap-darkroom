@@ -3,3 +3,11 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/bootswatch/dist/minty/bootswatch";
 @import "common";
+
+@include media-breakpoint-down(md) {
+  #navbar-menubar>#quicksearch {
+    input[type="text"] {
+      color: $gray-700 !important;
+    }
+  }
+}

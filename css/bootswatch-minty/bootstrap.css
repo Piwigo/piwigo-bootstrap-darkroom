@@ -9957,4 +9957,10 @@ legend {
 .navbar-brand a:first-child:before {
   font-size: 1.25rem !important;
 }
+
+@media (max-width: 991.98px) {
+  #navbar-menubar > #quicksearch input[type="text"] {
+    color: #5a5a5a !important;
+  }
+}
 /*# sourceMappingURL=bootstrap.css.map */
