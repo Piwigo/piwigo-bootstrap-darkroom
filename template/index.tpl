@@ -257,8 +257,8 @@ $(document).ajaxComplete(function() {
   addVideoIndicator();
 });
 {else}
-$('.col-thumbnail').find('img[src*="pwg_representative"]').each(function() {
-  $(this).closest('div').append('<i class="fa fa-file-video-o fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 15px; left: 30px; z-index: 100; color: #fff;"></i>');
+$('.card-thumbnail').find('img[src*="pwg_representative"]').each(function() {
+  $(this).closest('div').append('<i class="fa fa-file-video-o fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
 });
 {/if}
 {/strip}{/footer_script}
