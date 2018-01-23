@@ -3,397 +3,42 @@
   font-weight: normal;
 }
 
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html {
-  font-family: sans-serif;
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparent;
-}
-
-@-ms-viewport {
-  width: device-width;
-}
-
-article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
-  display: block;
-}
-
-body {
-  margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212121;
-  text-align: left;
-  background-color: #fff;
-}
-
-[tabindex="-1"]:focus {
-  outline: 0 !important;
-}
-
-hr {
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-abbr[title],
-abbr[data-original-title] {
-  text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
-  cursor: help;
-  border-bottom: 0;
-}
-
-address {
-  margin-bottom: 1rem;
-  font-style: normal;
-  line-height: inherit;
-}
-
-ol,
-ul,
-dl {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-ol ol,
-ul ul,
-ol ul,
-ul ol {
-  margin-bottom: 0;
-}
-
-dt {
-  font-weight: 700;
-}
-
-dd {
-  margin-bottom: .5rem;
-  margin-left: 0;
-}
-
-blockquote {
-  margin: 0 0 1rem;
-}
-
-dfn {
-  font-style: italic;
-}
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  position: relative;
-  font-size: 75%;
-  line-height: 0;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -.25em;
-}
-
-sup {
-  top: -.5em;
-}
-
-a {
-  color: #FFC107;
-  text-decoration: none;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-
-a:hover {
-  color: #ba8b00;
-  text-decoration: none;
-}
-
-a:not([href]):not([tabindex]) {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:not([href]):not([tabindex]):focus {
-  outline: 0;
-}
-
-pre,
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-pre {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  overflow: auto;
-  -ms-overflow-style: scrollbar;
-}
-
-figure {
-  margin: 0 0 1rem;
-}
-
-img {
-  vertical-align: middle;
-  border-style: none;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-caption {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  color: #6c757d;
-  text-align: left;
-  caption-side: bottom;
-}
-
-th {
-  text-align: inherit;
-}
-
-label {
-  display: inline-block;
-  margin-bottom: .5rem;
-}
-
-button {
-  border-radius: 0;
-}
-
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-
-input,
-button,
-select,
-optgroup,
-textarea {
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-button,
-input {
-  overflow: visible;
-}
-
-button,
-select {
-  text-transform: none;
-}
-
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0;
-}
-
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-  -webkit-appearance: listbox;
-}
-
-textarea {
-  overflow: auto;
-  resize: vertical;
-}
-
-fieldset {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-legend {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  margin-bottom: .5rem;
-  font-size: 1.5rem;
-  line-height: inherit;
-  color: inherit;
-  white-space: normal;
-}
-
-progress {
-  vertical-align: baseline;
-}
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type="search"] {
-  outline-offset: -2px;
-  -webkit-appearance: none;
-}
-
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  font: inherit;
-  -webkit-appearance: button;
-}
-
-output {
-  display: inline-block;
-}
-
-summary {
-  display: list-item;
-  cursor: pointer;
-}
-
-template {
-  display: none;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    text-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-  }
-  a:not(.btn):not(.custom-file-control::before) {
-    text-decoration: underline;
-  }
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-  pre {
-    white-space: pre-wrap !important;
-  }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  thead {
-    display: table-header-group;
-  }
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-  @page {
-    size: a3;
-  }
-  body {
-    min-width: 992px !important;
-  }
-  .container {
-    min-width: 992px !important;
-  }
-  .navbar {
-    display: none;
-  }
-  .badge {
-    border: 1px solid #000;
-  }
-  .table {
-    border-collapse: collapse !important;
-  }
-  .table td,
-  .table th {
-    background-color: #fff !important;
-  }
-  .table-bordered th,
-  .table-bordered td {
-    border: 1px solid #ddd !important;
-  }
+/*!
+ * Bootstrap v4.0.0 (https://getbootstrap.com)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+:root {
+  --blue: #2196f3;
+  --indigo: #3f51b5;
+  --purple: #9c27b0;
+  --pink: #e91e63;
+  --red: #f44336;
+  --orange: #ff9800;
+  --yellow: #ffeb3b;
+  --green: #4caf50;
+  --teal: #009688;
+  --cyan: #00bcd4;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #FFC107;
+  --secondary: #FF5722;
+  --success: #4caf50;
+  --info: #03a9f4;
+  --warning: #ff5722;
+  --danger: #f44336;
+  --light: #FFECB3;
+  --dark: #FFA000;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1680px;
+  --font-family-sans-serif: "Roboto", "Helvetica", "Arial", sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -2340,31 +1985,31 @@ pre code {
 .table-info,
 .table-info > th,
 .table-info > td {
-  background-color: #b8ecf3;
+  background-color: #b8e7fc;
 }
 
 .table-hover .table-info:hover {
-  background-color: #a2e6ef;
+  background-color: #a0dffb;
 }
 
 .table-hover .table-info:hover > td,
 .table-hover .table-info:hover > th {
-  background-color: #a2e6ef;
+  background-color: #a0dffb;
 }
 
 .table-warning,
 .table-warning > th,
 .table-warning > td {
-  background-color: #fff9c8;
+  background-color: #ffd0c1;
 }
 
 .table-hover .table-warning:hover {
-  background-color: #fff6af;
+  background-color: #ffbda8;
 }
 
 .table-hover .table-warning:hover > td,
 .table-hover .table-warning:hover > th {
-  background-color: #fff6af;
+  background-color: #ffbda8;
 }
 
 .table-danger,
@@ -3090,8 +2735,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .btn:focus, .custom-file-control:focus::before, .btn.focus, .focus.custom-file-control::before {
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
-  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .btn.disabled, .disabled.custom-file-control::before, .btn:disabled, .custom-file-control:disabled::before {
@@ -3111,8 +2756,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .btn:not(:disabled):not(.disabled):active:focus, .custom-file-control:not(:disabled):not(.disabled):active:focus::before, .btn:not(:disabled):not(.disabled).active:focus, .custom-file-control:not(:disabled):not(.disabled).active:focus::before {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25), none;
-  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25), none;
+  -webkit-box-shadow: none, none;
+  box-shadow: none, none;
 }
 
 a.btn.disabled, a.disabled.custom-file-control::before,
@@ -3237,78 +2882,78 @@ fieldset:disabled a.custom-file-control::before {
 
 .btn-info {
   color: #fff;
-  background-color: #00bcd4;
-  border-color: #00bcd4;
+  background-color: #03a9f4;
+  border-color: #03a9f4;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
 .btn-info:hover {
   color: #fff;
-  background-color: #009aae;
-  border-color: #008fa1;
+  background-color: #038fce;
+  border-color: #0286c2;
 }
 
 .btn-info:focus, .btn-info.focus {
-  -webkit-box-shadow: none, 0 0 0 0.2rem rgba(0, 188, 212, 0.5);
-  box-shadow: none, 0 0 0 0.2rem rgba(0, 188, 212, 0.5);
+  -webkit-box-shadow: none, 0 0 0 0.2rem rgba(3, 169, 244, 0.5);
+  box-shadow: none, 0 0 0 0.2rem rgba(3, 169, 244, 0.5);
 }
 
 .btn-info.disabled, .btn-info:disabled {
   color: #fff;
-  background-color: #00bcd4;
-  border-color: #00bcd4;
+  background-color: #03a9f4;
+  border-color: #03a9f4;
 }
 
 .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
 .show > .btn-info.dropdown-toggle {
   color: #fff;
-  background-color: #008fa1;
-  border-color: #008394;
+  background-color: #0286c2;
+  border-color: #027db5;
 }
 
 .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-info.dropdown-toggle:focus {
-  -webkit-box-shadow: none, 0 0 0 0.2rem rgba(0, 188, 212, 0.5);
-  box-shadow: none, 0 0 0 0.2rem rgba(0, 188, 212, 0.5);
+  -webkit-box-shadow: none, 0 0 0 0.2rem rgba(3, 169, 244, 0.5);
+  box-shadow: none, 0 0 0 0.2rem rgba(3, 169, 244, 0.5);
 }
 
 .btn-warning {
-  color: #212529;
-  background-color: #ffeb3b;
-  border-color: #ffeb3b;
+  color: #fff;
+  background-color: #ff5722;
+  border-color: #ff5722;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
 .btn-warning:hover {
-  color: #212529;
-  background-color: #ffe715;
-  border-color: #ffe608;
+  color: #fff;
+  background-color: #fb3c00;
+  border-color: #ee3900;
 }
 
 .btn-warning:focus, .btn-warning.focus {
-  -webkit-box-shadow: none, 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
-  box-shadow: none, 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
+  -webkit-box-shadow: none, 0 0 0 0.2rem rgba(255, 87, 34, 0.5);
+  box-shadow: none, 0 0 0 0.2rem rgba(255, 87, 34, 0.5);
 }
 
 .btn-warning.disabled, .btn-warning:disabled {
-  color: #212529;
-  background-color: #ffeb3b;
-  border-color: #ffeb3b;
+  color: #fff;
+  background-color: #ff5722;
+  border-color: #ff5722;
 }
 
 .btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active,
 .show > .btn-warning.dropdown-toggle {
-  color: #212529;
-  background-color: #ffe608;
-  border-color: #fae100;
+  color: #fff;
+  background-color: #ee3900;
+  border-color: #e13600;
 }
 
 .btn-warning:not(:disabled):not(.disabled):active:focus, .btn-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-warning.dropdown-toggle:focus {
-  -webkit-box-shadow: none, 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
-  box-shadow: none, 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
+  -webkit-box-shadow: none, 0 0 0 0.2rem rgba(255, 87, 34, 0.5);
+  box-shadow: none, 0 0 0 0.2rem rgba(255, 87, 34, 0.5);
 }
 
 .btn-danger {
@@ -3534,75 +3179,75 @@ fieldset:disabled a.custom-file-control::before {
 }
 
 .btn-outline-info {
-  color: #00bcd4;
+  color: #03a9f4;
   background-color: transparent;
   background-image: none;
-  border-color: #00bcd4;
+  border-color: #03a9f4;
 }
 
 .btn-outline-info:hover {
   color: #fff;
-  background-color: #00bcd4;
-  border-color: #00bcd4;
+  background-color: #03a9f4;
+  border-color: #03a9f4;
 }
 
 .btn-outline-info:focus, .btn-outline-info.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 188, 212, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(0, 188, 212, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(3, 169, 244, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(3, 169, 244, 0.5);
 }
 
 .btn-outline-info.disabled, .btn-outline-info:disabled {
-  color: #00bcd4;
+  color: #03a9f4;
   background-color: transparent;
 }
 
 .btn-outline-info:not(:disabled):not(.disabled):active, .btn-outline-info:not(:disabled):not(.disabled).active,
 .show > .btn-outline-info.dropdown-toggle {
   color: #fff;
-  background-color: #00bcd4;
-  border-color: #00bcd4;
+  background-color: #03a9f4;
+  border-color: #03a9f4;
 }
 
 .btn-outline-info:not(:disabled):not(.disabled):active:focus, .btn-outline-info:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-info.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 188, 212, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(0, 188, 212, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(3, 169, 244, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(3, 169, 244, 0.5);
 }
 
 .btn-outline-warning {
-  color: #ffeb3b;
+  color: #ff5722;
   background-color: transparent;
   background-image: none;
-  border-color: #ffeb3b;
+  border-color: #ff5722;
 }
 
 .btn-outline-warning:hover {
-  color: #212529;
-  background-color: #ffeb3b;
-  border-color: #ffeb3b;
+  color: #fff;
+  background-color: #ff5722;
+  border-color: #ff5722;
 }
 
 .btn-outline-warning:focus, .btn-outline-warning.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 87, 34, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(255, 87, 34, 0.5);
 }
 
 .btn-outline-warning.disabled, .btn-outline-warning:disabled {
-  color: #ffeb3b;
+  color: #ff5722;
   background-color: transparent;
 }
 
 .btn-outline-warning:not(:disabled):not(.disabled):active, .btn-outline-warning:not(:disabled):not(.disabled).active,
 .show > .btn-outline-warning.dropdown-toggle {
-  color: #212529;
-  background-color: #ffeb3b;
-  border-color: #ffeb3b;
+  color: #fff;
+  background-color: #ff5722;
+  border-color: #ff5722;
 }
 
 .btn-outline-warning:not(:disabled):not(.disabled):active:focus, .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-warning.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 87, 34, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(255, 87, 34, 0.5);
 }
 
 .btn-outline-danger {
@@ -5603,6 +5248,121 @@ tbody.collapse.show {
   border-bottom-right-radius: 0.0625rem;
 }
 
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.125rem;
+}
+
+.badge:empty {
+  display: none;
+}
+
+.btn .badge, .custom-file-control::before .badge {
+  position: relative;
+  top: -1px;
+}
+
+.badge-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+
+.badge-primary {
+  color: #212529;
+  background-color: #FFC107;
+}
+
+.badge-primary[href]:hover, .badge-primary[href]:focus {
+  color: #212529;
+  text-decoration: none;
+  background-color: #d39e00;
+}
+
+.badge-secondary {
+  color: #fff;
+  background-color: #FF5722;
+}
+
+.badge-secondary[href]:hover, .badge-secondary[href]:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #ee3900;
+}
+
+.badge-success {
+  color: #fff;
+  background-color: #4caf50;
+}
+
+.badge-success[href]:hover, .badge-success[href]:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #3d8b40;
+}
+
+.badge-info {
+  color: #fff;
+  background-color: #03a9f4;
+}
+
+.badge-info[href]:hover, .badge-info[href]:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #0286c2;
+}
+
+.badge-warning {
+  color: #fff;
+  background-color: #ff5722;
+}
+
+.badge-warning[href]:hover, .badge-warning[href]:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #ee3900;
+}
+
+.badge-danger {
+  color: #fff;
+  background-color: #f44336;
+}
+
+.badge-danger[href]:hover, .badge-danger[href]:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #ea1c0d;
+}
+
+.badge-light {
+  color: #212529;
+  background-color: #FFECB3;
+}
+
+.badge-light[href]:hover, .badge-light[href]:focus {
+  color: #212529;
+  text-decoration: none;
+  background-color: #ffdf80;
+}
+
+.badge-dark {
+  color: #212529;
+  background-color: #FFA000;
+}
+
+.badge-dark[href]:hover, .badge-dark[href]:focus {
+  color: #212529;
+  text-decoration: none;
+  background-color: #cc8000;
+}
+
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
@@ -5693,31 +5453,31 @@ tbody.collapse.show {
 }
 
 .alert-info {
-  color: #00626e;
-  background-color: #ccf2f6;
-  border-color: #b8ecf3;
+  color: #02587f;
+  background-color: #cdeefd;
+  border-color: #b8e7fc;
 }
 
 .alert-info hr {
-  border-top-color: #a2e6ef;
+  border-top-color: #a0dffb;
 }
 
 .alert-info .alert-link {
-  color: #00353b;
+  color: #01354d;
 }
 
 .alert-warning {
-  color: #857a1f;
-  background-color: #fffbd8;
-  border-color: #fff9c8;
+  color: #852d12;
+  background-color: #ffddd3;
+  border-color: #ffd0c1;
 }
 
 .alert-warning hr {
-  border-top-color: #fff6af;
+  border-top-color: #ffbda8;
 }
 
 .alert-warning .alert-link {
-  color: #5c5415;
+  color: #581e0c;
 }
 
 .alert-danger {
@@ -5965,35 +5725,35 @@ tbody.collapse.show {
 }
 
 .list-group-item-info {
-  color: #00626e;
-  background-color: #b8ecf3;
+  color: #02587f;
+  background-color: #b8e7fc;
 }
 
 .list-group-item-info.list-group-item-action:hover, .list-group-item-info.list-group-item-action:focus {
-  color: #00626e;
-  background-color: #a2e6ef;
+  color: #02587f;
+  background-color: #a0dffb;
 }
 
 .list-group-item-info.list-group-item-action.active {
   color: #fff;
-  background-color: #00626e;
-  border-color: #00626e;
+  background-color: #02587f;
+  border-color: #02587f;
 }
 
 .list-group-item-warning {
-  color: #857a1f;
-  background-color: #fff9c8;
+  color: #852d12;
+  background-color: #ffd0c1;
 }
 
 .list-group-item-warning.list-group-item-action:hover, .list-group-item-warning.list-group-item-action:focus {
-  color: #857a1f;
-  background-color: #fff6af;
+  color: #852d12;
+  background-color: #ffbda8;
 }
 
 .list-group-item-warning.list-group-item-action.active {
   color: #fff;
-  background-color: #857a1f;
-  border-color: #857a1f;
+  background-color: #852d12;
+  border-color: #852d12;
 }
 
 .list-group-item-danger {
@@ -6069,121 +5829,6 @@ button.close {
   background-color: transparent;
   border: 0;
   -webkit-appearance: none;
-}
-
-.badge {
-  display: inline-block;
-  padding: 0.25em 0.4em;
-  font-size: 75%;
-  font-weight: 700;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: 0.125rem;
-}
-
-.badge:empty {
-  display: none;
-}
-
-.btn .badge, .custom-file-control::before .badge {
-  position: relative;
-  top: -1px;
-}
-
-.badge-pill {
-  padding-right: 0.6em;
-  padding-left: 0.6em;
-  border-radius: 10rem;
-}
-
-.badge-primary {
-  color: #212529;
-  background-color: #FFC107;
-}
-
-.badge-primary[href]:hover, .badge-primary[href]:focus {
-  color: #212529;
-  text-decoration: none;
-  background-color: #d39e00;
-}
-
-.badge-secondary {
-  color: #fff;
-  background-color: #FF5722;
-}
-
-.badge-secondary[href]:hover, .badge-secondary[href]:focus {
-  color: #fff;
-  text-decoration: none;
-  background-color: #ee3900;
-}
-
-.badge-success {
-  color: #fff;
-  background-color: #4caf50;
-}
-
-.badge-success[href]:hover, .badge-success[href]:focus {
-  color: #fff;
-  text-decoration: none;
-  background-color: #3d8b40;
-}
-
-.badge-info {
-  color: #fff;
-  background-color: #00bcd4;
-}
-
-.badge-info[href]:hover, .badge-info[href]:focus {
-  color: #fff;
-  text-decoration: none;
-  background-color: #008fa1;
-}
-
-.badge-warning {
-  color: #212529;
-  background-color: #ffeb3b;
-}
-
-.badge-warning[href]:hover, .badge-warning[href]:focus {
-  color: #212529;
-  text-decoration: none;
-  background-color: #ffe608;
-}
-
-.badge-danger {
-  color: #fff;
-  background-color: #f44336;
-}
-
-.badge-danger[href]:hover, .badge-danger[href]:focus {
-  color: #fff;
-  text-decoration: none;
-  background-color: #ea1c0d;
-}
-
-.badge-light {
-  color: #212529;
-  background-color: #FFECB3;
-}
-
-.badge-light[href]:hover, .badge-light[href]:focus {
-  color: #212529;
-  text-decoration: none;
-  background-color: #ffdf80;
-}
-
-.badge-dark {
-  color: #212529;
-  background-color: #FFA000;
-}
-
-.badge-dark[href]:hover, .badge-dark[href]:focus {
-  color: #212529;
-  text-decoration: none;
-  background-color: #cc8000;
 }
 
 .modal-open {
@@ -6907,23 +6552,23 @@ button.bg-success:focus {
 }
 
 .bg-info {
-  background-color: #00bcd4 !important;
+  background-color: #03a9f4 !important;
 }
 
 a.bg-info:hover, a.bg-info:focus,
 button.bg-info:hover,
 button.bg-info:focus {
-  background-color: #008fa1 !important;
+  background-color: #0286c2 !important;
 }
 
 .bg-warning {
-  background-color: #ffeb3b !important;
+  background-color: #ff5722 !important;
 }
 
 a.bg-warning:hover, a.bg-warning:focus,
 button.bg-warning:hover,
 button.bg-warning:focus {
-  background-color: #ffe608 !important;
+  background-color: #ee3900 !important;
 }
 
 .bg-danger {
@@ -7017,11 +6662,11 @@ button.bg-dark:focus {
 }
 
 .border-info {
-  border-color: #00bcd4 !important;
+  border-color: #03a9f4 !important;
 }
 
 .border-warning {
-  border-color: #ffeb3b !important;
+  border-color: #ff5722 !important;
 }
 
 .border-danger {
@@ -10094,19 +9739,19 @@ a.text-success:hover, a.text-success:focus {
 }
 
 .text-info {
-  color: #00bcd4 !important;
+  color: #03a9f4 !important;
 }
 
 a.text-info:hover, a.text-info:focus {
-  color: #008fa1 !important;
+  color: #0286c2 !important;
 }
 
 .text-warning {
-  color: #ffeb3b !important;
+  color: #ff5722 !important;
 }
 
 a.text-warning:hover, a.text-warning:focus {
-  color: #ffe608 !important;
+  color: #ee3900 !important;
 }
 
 .text-danger {
@@ -10153,6 +9798,73 @@ a.text-dark:hover, a.text-dark:focus {
   visibility: hidden !important;
 }
 
+@media print {
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  a:not(.btn):not(.custom-file-control::before) {
+    text-decoration: underline;
+  }
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  @page {
+    size: a3;
+  }
+  body {
+    min-width: 992px !important;
+  }
+  .container {
+    min-width: 992px !important;
+  }
+  .navbar {
+    display: none;
+  }
+  .badge {
+    border: 1px solid #000;
+  }
+  .table {
+    border-collapse: collapse !important;
+  }
+  .table td,
+  .table th {
+    background-color: #fff !important;
+  }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+}
+
 body {
   font-weight: 400;
 }
@@ -10166,13 +9878,6 @@ button:focus {
 }
 
 .bmd-layout-canvas {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.bmd-layout-container {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10182,9 +9887,23 @@ button:focus {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+}
+
+.bmd-layout-container {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .bmd-layout-header {
@@ -10282,10 +10001,6 @@ button:focus {
   color: rgba(0, 0, 0, 0.87);
   background-color: transparent;
   border-color: #ccc;
-}
-
-.btn:focus, .custom-file-control:focus::before, .btn.focus, .focus.custom-file-control::before, .btn:active:focus, .custom-file-control:active:focus::before, .btn:active.focus, .custom-file-control:active.focus::before, .btn.active:focus, .active.custom-file-control:focus::before, .btn.active.focus, .active.focus.custom-file-control::before {
-  outline: 0;
 }
 
 .btn:hover, .custom-file-control:hover::before {
@@ -10519,19 +10234,19 @@ button:focus {
 }
 
 .btn.btn-secondary, .btn-secondary.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: transparent;
   border-color: #ccc;
 }
 
 .btn.btn-secondary:hover, .btn-secondary.custom-file-control:hover::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(153, 153, 153, 0.2);
   border-color: rgba(153, 153, 153, 0.2);
 }
 
 .btn.btn-secondary:focus, .btn-secondary.custom-file-control:focus::before, .btn.btn-secondary.focus, .btn-secondary.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(153, 153, 153, 0.2);
   border-color: rgba(153, 153, 153, 0.2);
 }
@@ -10539,7 +10254,7 @@ button:focus {
 .btn.btn-secondary:active, .btn-secondary.custom-file-control:active::before, .btn.btn-secondary.active, .btn-secondary.active.custom-file-control::before,
 .open > .btn.btn-secondary.dropdown-toggle,
 .open > .btn-secondary.dropdown-toggle.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(153, 153, 153, 0.2);
   border-color: rgba(153, 153, 153, 0.2);
 }
@@ -10551,7 +10266,7 @@ button:focus {
 .open > .btn-secondary.dropdown-toggle.custom-file-control:focus::before,
 .open > .btn.btn-secondary.dropdown-toggle.focus,
 .open > .btn-secondary.dropdown-toggle.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(153, 153, 153, 0.4);
   border-color: rgba(153, 153, 153, 0.4);
 }
@@ -10576,19 +10291,19 @@ button:focus {
 }
 
 .bg-inverse .btn.btn-secondary, .bg-inverse .btn-secondary.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: transparent;
   border-color: #ccc;
 }
 
 .bg-inverse .btn.btn-secondary:hover, .bg-inverse .btn-secondary.custom-file-control:hover::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(204, 204, 204, 0.15);
   border-color: rgba(204, 204, 204, 0.15);
 }
 
 .bg-inverse .btn.btn-secondary:focus, .bg-inverse .btn-secondary.custom-file-control:focus::before, .bg-inverse .btn.btn-secondary.focus, .bg-inverse .btn-secondary.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(204, 204, 204, 0.15);
   border-color: rgba(204, 204, 204, 0.15);
 }
@@ -10596,7 +10311,7 @@ button:focus {
 .bg-inverse .btn.btn-secondary:active, .bg-inverse .btn-secondary.custom-file-control:active::before, .bg-inverse .btn.btn-secondary.active, .bg-inverse .btn-secondary.active.custom-file-control::before,
 .open > .bg-inverse .btn.btn-secondary.dropdown-toggle,
 .open > .bg-inverse .btn-secondary.dropdown-toggle.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(204, 204, 204, 0.15);
   border-color: rgba(204, 204, 204, 0.15);
 }
@@ -10608,7 +10323,7 @@ button:focus {
 .open > .bg-inverse .btn-secondary.dropdown-toggle.custom-file-control:focus::before,
 .open > .bg-inverse .btn.btn-secondary.dropdown-toggle.focus,
 .open > .bg-inverse .btn-secondary.dropdown-toggle.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(204, 204, 204, 0.25);
   border-color: rgba(204, 204, 204, 0.25);
 }
@@ -10633,124 +10348,6 @@ button:focus {
 }
 
 .btn.btn-secondary.btn-link, .btn-secondary.btn-link.custom-file-control::before {
-  background-color: transparent;
-}
-
-.btn.btn-info, .btn-info.custom-file-control::before {
-  color: #03a9f4;
-  background-color: transparent;
-  border-color: #ccc;
-}
-
-.btn.btn-info:hover, .btn-info.custom-file-control:hover::before {
-  color: #03a9f4;
-  background-color: rgba(153, 153, 153, 0.2);
-  border-color: rgba(153, 153, 153, 0.2);
-}
-
-.btn.btn-info:focus, .btn-info.custom-file-control:focus::before, .btn.btn-info.focus, .btn-info.focus.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(153, 153, 153, 0.2);
-  border-color: rgba(153, 153, 153, 0.2);
-}
-
-.btn.btn-info:active, .btn-info.custom-file-control:active::before, .btn.btn-info.active, .btn-info.active.custom-file-control::before,
-.open > .btn.btn-info.dropdown-toggle,
-.open > .btn-info.dropdown-toggle.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(153, 153, 153, 0.2);
-  border-color: rgba(153, 153, 153, 0.2);
-}
-
-.btn.btn-info:active:hover, .btn-info.custom-file-control:active:hover::before, .btn.btn-info:active:focus, .btn-info.custom-file-control:active:focus::before, .btn.btn-info:active.focus, .btn-info.custom-file-control:active.focus::before, .btn.btn-info.active:hover, .btn-info.active.custom-file-control:hover::before, .btn.btn-info.active:focus, .btn-info.active.custom-file-control:focus::before, .btn.btn-info.active.focus, .btn-info.active.focus.custom-file-control::before,
-.open > .btn.btn-info.dropdown-toggle:hover,
-.open > .btn-info.dropdown-toggle.custom-file-control:hover::before,
-.open > .btn.btn-info.dropdown-toggle:focus,
-.open > .btn-info.dropdown-toggle.custom-file-control:focus::before,
-.open > .btn.btn-info.dropdown-toggle.focus,
-.open > .btn-info.dropdown-toggle.focus.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(153, 153, 153, 0.4);
-  border-color: rgba(153, 153, 153, 0.4);
-}
-
-.open > .btn.btn-info.dropdown-toggle.bmd-btn-icon, .open > .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
-  color: inherit;
-  background-color: transparent;
-}
-
-.open > .btn.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
-  background-color: rgba(153, 153, 153, 0.2);
-}
-
-.btn.btn-info.disabled:focus, .btn-info.disabled.custom-file-control:focus::before, .btn.btn-info.disabled.focus, .btn-info.disabled.focus.custom-file-control::before, .btn.btn-info:disabled:focus, .btn-info.custom-file-control:disabled:focus::before, .btn.btn-info:disabled.focus, .btn-info.custom-file-control:disabled.focus::before {
-  background-color: transparent;
-  border-color: #ccc;
-}
-
-.btn.btn-info.disabled:hover, .btn-info.disabled.custom-file-control:hover::before, .btn.btn-info:disabled:hover, .btn-info.custom-file-control:disabled:hover::before {
-  background-color: transparent;
-  border-color: #ccc;
-}
-
-.bg-inverse .btn.btn-info, .bg-inverse .btn-info.custom-file-control::before {
-  color: #03a9f4;
-  background-color: transparent;
-  border-color: #ccc;
-}
-
-.bg-inverse .btn.btn-info:hover, .bg-inverse .btn-info.custom-file-control:hover::before {
-  color: #03a9f4;
-  background-color: rgba(204, 204, 204, 0.15);
-  border-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-info:focus, .bg-inverse .btn-info.custom-file-control:focus::before, .bg-inverse .btn.btn-info.focus, .bg-inverse .btn-info.focus.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(204, 204, 204, 0.15);
-  border-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-info:active, .bg-inverse .btn-info.custom-file-control:active::before, .bg-inverse .btn.btn-info.active, .bg-inverse .btn-info.active.custom-file-control::before,
-.open > .bg-inverse .btn.btn-info.dropdown-toggle,
-.open > .bg-inverse .btn-info.dropdown-toggle.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(204, 204, 204, 0.15);
-  border-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-info:active:hover, .bg-inverse .btn-info.custom-file-control:active:hover::before, .bg-inverse .btn.btn-info:active:focus, .bg-inverse .btn-info.custom-file-control:active:focus::before, .bg-inverse .btn.btn-info:active.focus, .bg-inverse .btn-info.custom-file-control:active.focus::before, .bg-inverse .btn.btn-info.active:hover, .bg-inverse .btn-info.active.custom-file-control:hover::before, .bg-inverse .btn.btn-info.active:focus, .bg-inverse .btn-info.active.custom-file-control:focus::before, .bg-inverse .btn.btn-info.active.focus, .bg-inverse .btn-info.active.focus.custom-file-control::before,
-.open > .bg-inverse .btn.btn-info.dropdown-toggle:hover,
-.open > .bg-inverse .btn-info.dropdown-toggle.custom-file-control:hover::before,
-.open > .bg-inverse .btn.btn-info.dropdown-toggle:focus,
-.open > .bg-inverse .btn-info.dropdown-toggle.custom-file-control:focus::before,
-.open > .bg-inverse .btn.btn-info.dropdown-toggle.focus,
-.open > .bg-inverse .btn-info.dropdown-toggle.focus.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(204, 204, 204, 0.25);
-  border-color: rgba(204, 204, 204, 0.25);
-}
-
-.open > .bg-inverse .btn.btn-info.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
-  color: inherit;
-  background-color: transparent;
-}
-
-.open > .bg-inverse .btn.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
-  background-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-info.disabled:focus, .bg-inverse .btn-info.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-info.disabled.focus, .bg-inverse .btn-info.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-info:disabled:focus, .bg-inverse .btn-info.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-info:disabled.focus, .bg-inverse .btn-info.custom-file-control:disabled.focus::before {
-  background-color: transparent;
-  border-color: #ccc;
-}
-
-.bg-inverse .btn.btn-info.disabled:hover, .bg-inverse .btn-info.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-info:disabled:hover, .bg-inverse .btn-info.custom-file-control:disabled:hover::before {
-  background-color: transparent;
-  border-color: #ccc;
-}
-
-.btn.btn-info.btn-link, .btn-info.btn-link.custom-file-control::before {
   background-color: transparent;
 }
 
@@ -10869,6 +10466,124 @@ button:focus {
 }
 
 .btn.btn-success.btn-link, .btn-success.btn-link.custom-file-control::before {
+  background-color: transparent;
+}
+
+.btn.btn-info, .btn-info.custom-file-control::before {
+  color: #03a9f4;
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.btn.btn-info:hover, .btn-info.custom-file-control:hover::before {
+  color: #03a9f4;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-info:focus, .btn-info.custom-file-control:focus::before, .btn.btn-info.focus, .btn-info.focus.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-info:active, .btn-info.custom-file-control:active::before, .btn.btn-info.active, .btn-info.active.custom-file-control::before,
+.open > .btn.btn-info.dropdown-toggle,
+.open > .btn-info.dropdown-toggle.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-info:active:hover, .btn-info.custom-file-control:active:hover::before, .btn.btn-info:active:focus, .btn-info.custom-file-control:active:focus::before, .btn.btn-info:active.focus, .btn-info.custom-file-control:active.focus::before, .btn.btn-info.active:hover, .btn-info.active.custom-file-control:hover::before, .btn.btn-info.active:focus, .btn-info.active.custom-file-control:focus::before, .btn.btn-info.active.focus, .btn-info.active.focus.custom-file-control::before,
+.open > .btn.btn-info.dropdown-toggle:hover,
+.open > .btn-info.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.btn-info.dropdown-toggle:focus,
+.open > .btn-info.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.btn-info.dropdown-toggle.focus,
+.open > .btn-info.dropdown-toggle.focus.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(153, 153, 153, 0.4);
+  border-color: rgba(153, 153, 153, 0.4);
+}
+
+.open > .btn.btn-info.dropdown-toggle.bmd-btn-icon, .open > .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .btn.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-info.disabled:focus, .btn-info.disabled.custom-file-control:focus::before, .btn.btn-info.disabled.focus, .btn-info.disabled.focus.custom-file-control::before, .btn.btn-info:disabled:focus, .btn-info.custom-file-control:disabled:focus::before, .btn.btn-info:disabled.focus, .btn-info.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.btn.btn-info.disabled:hover, .btn-info.disabled.custom-file-control:hover::before, .btn.btn-info:disabled:hover, .btn-info.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.bg-inverse .btn.btn-info, .bg-inverse .btn-info.custom-file-control::before {
+  color: #03a9f4;
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.bg-inverse .btn.btn-info:hover, .bg-inverse .btn-info.custom-file-control:hover::before {
+  color: #03a9f4;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-info:focus, .bg-inverse .btn-info.custom-file-control:focus::before, .bg-inverse .btn.btn-info.focus, .bg-inverse .btn-info.focus.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-info:active, .bg-inverse .btn-info.custom-file-control:active::before, .bg-inverse .btn.btn-info.active, .bg-inverse .btn-info.active.custom-file-control::before,
+.open > .bg-inverse .btn.btn-info.dropdown-toggle,
+.open > .bg-inverse .btn-info.dropdown-toggle.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-info:active:hover, .bg-inverse .btn-info.custom-file-control:active:hover::before, .bg-inverse .btn.btn-info:active:focus, .bg-inverse .btn-info.custom-file-control:active:focus::before, .bg-inverse .btn.btn-info:active.focus, .bg-inverse .btn-info.custom-file-control:active.focus::before, .bg-inverse .btn.btn-info.active:hover, .bg-inverse .btn-info.active.custom-file-control:hover::before, .bg-inverse .btn.btn-info.active:focus, .bg-inverse .btn-info.active.custom-file-control:focus::before, .bg-inverse .btn.btn-info.active.focus, .bg-inverse .btn-info.active.focus.custom-file-control::before,
+.open > .bg-inverse .btn.btn-info.dropdown-toggle:hover,
+.open > .bg-inverse .btn-info.dropdown-toggle.custom-file-control:hover::before,
+.open > .bg-inverse .btn.btn-info.dropdown-toggle:focus,
+.open > .bg-inverse .btn-info.dropdown-toggle.custom-file-control:focus::before,
+.open > .bg-inverse .btn.btn-info.dropdown-toggle.focus,
+.open > .bg-inverse .btn-info.dropdown-toggle.focus.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(204, 204, 204, 0.25);
+  border-color: rgba(204, 204, 204, 0.25);
+}
+
+.open > .bg-inverse .btn.btn-info.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .bg-inverse .btn.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-info.disabled:focus, .bg-inverse .btn-info.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-info.disabled.focus, .bg-inverse .btn-info.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-info:disabled:focus, .bg-inverse .btn-info.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-info:disabled.focus, .bg-inverse .btn-info.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.bg-inverse .btn.btn-info.disabled:hover, .bg-inverse .btn-info.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-info:disabled:hover, .bg-inverse .btn-info.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.btn.btn-info.btn-link, .btn-info.btn-link.custom-file-control::before {
   background-color: transparent;
 }
 
@@ -11108,6 +10823,242 @@ button:focus {
   background-color: transparent;
 }
 
+.btn.btn-light, .btn-light.custom-file-control::before {
+  color: #FFECB3;
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.btn.btn-light:hover, .btn-light.custom-file-control:hover::before {
+  color: #FFECB3;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-light:focus, .btn-light.custom-file-control:focus::before, .btn.btn-light.focus, .btn-light.focus.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-light:active, .btn-light.custom-file-control:active::before, .btn.btn-light.active, .btn-light.active.custom-file-control::before,
+.open > .btn.btn-light.dropdown-toggle,
+.open > .btn-light.dropdown-toggle.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-light:active:hover, .btn-light.custom-file-control:active:hover::before, .btn.btn-light:active:focus, .btn-light.custom-file-control:active:focus::before, .btn.btn-light:active.focus, .btn-light.custom-file-control:active.focus::before, .btn.btn-light.active:hover, .btn-light.active.custom-file-control:hover::before, .btn.btn-light.active:focus, .btn-light.active.custom-file-control:focus::before, .btn.btn-light.active.focus, .btn-light.active.focus.custom-file-control::before,
+.open > .btn.btn-light.dropdown-toggle:hover,
+.open > .btn-light.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.btn-light.dropdown-toggle:focus,
+.open > .btn-light.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.btn-light.dropdown-toggle.focus,
+.open > .btn-light.dropdown-toggle.focus.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(153, 153, 153, 0.4);
+  border-color: rgba(153, 153, 153, 0.4);
+}
+
+.open > .btn.btn-light.dropdown-toggle.bmd-btn-icon, .open > .btn-light.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .btn.btn-light.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-light.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-light.disabled:focus, .btn-light.disabled.custom-file-control:focus::before, .btn.btn-light.disabled.focus, .btn-light.disabled.focus.custom-file-control::before, .btn.btn-light:disabled:focus, .btn-light.custom-file-control:disabled:focus::before, .btn.btn-light:disabled.focus, .btn-light.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.btn.btn-light.disabled:hover, .btn-light.disabled.custom-file-control:hover::before, .btn.btn-light:disabled:hover, .btn-light.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.bg-inverse .btn.btn-light, .bg-inverse .btn-light.custom-file-control::before {
+  color: #FFECB3;
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.bg-inverse .btn.btn-light:hover, .bg-inverse .btn-light.custom-file-control:hover::before {
+  color: #FFECB3;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-light:focus, .bg-inverse .btn-light.custom-file-control:focus::before, .bg-inverse .btn.btn-light.focus, .bg-inverse .btn-light.focus.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-light:active, .bg-inverse .btn-light.custom-file-control:active::before, .bg-inverse .btn.btn-light.active, .bg-inverse .btn-light.active.custom-file-control::before,
+.open > .bg-inverse .btn.btn-light.dropdown-toggle,
+.open > .bg-inverse .btn-light.dropdown-toggle.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-light:active:hover, .bg-inverse .btn-light.custom-file-control:active:hover::before, .bg-inverse .btn.btn-light:active:focus, .bg-inverse .btn-light.custom-file-control:active:focus::before, .bg-inverse .btn.btn-light:active.focus, .bg-inverse .btn-light.custom-file-control:active.focus::before, .bg-inverse .btn.btn-light.active:hover, .bg-inverse .btn-light.active.custom-file-control:hover::before, .bg-inverse .btn.btn-light.active:focus, .bg-inverse .btn-light.active.custom-file-control:focus::before, .bg-inverse .btn.btn-light.active.focus, .bg-inverse .btn-light.active.focus.custom-file-control::before,
+.open > .bg-inverse .btn.btn-light.dropdown-toggle:hover,
+.open > .bg-inverse .btn-light.dropdown-toggle.custom-file-control:hover::before,
+.open > .bg-inverse .btn.btn-light.dropdown-toggle:focus,
+.open > .bg-inverse .btn-light.dropdown-toggle.custom-file-control:focus::before,
+.open > .bg-inverse .btn.btn-light.dropdown-toggle.focus,
+.open > .bg-inverse .btn-light.dropdown-toggle.focus.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(204, 204, 204, 0.25);
+  border-color: rgba(204, 204, 204, 0.25);
+}
+
+.open > .bg-inverse .btn.btn-light.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-light.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .bg-inverse .btn.btn-light.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-light.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-light.disabled:focus, .bg-inverse .btn-light.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-light.disabled.focus, .bg-inverse .btn-light.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-light:disabled:focus, .bg-inverse .btn-light.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-light:disabled.focus, .bg-inverse .btn-light.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.bg-inverse .btn.btn-light.disabled:hover, .bg-inverse .btn-light.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-light:disabled:hover, .bg-inverse .btn-light.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.btn.btn-light.btn-link, .btn-light.btn-link.custom-file-control::before {
+  background-color: transparent;
+}
+
+.btn.btn-dark, .btn-dark.custom-file-control::before {
+  color: #FFA000;
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.btn.btn-dark:hover, .btn-dark.custom-file-control:hover::before {
+  color: #FFA000;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-dark:focus, .btn-dark.custom-file-control:focus::before, .btn.btn-dark.focus, .btn-dark.focus.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-dark:active, .btn-dark.custom-file-control:active::before, .btn.btn-dark.active, .btn-dark.active.custom-file-control::before,
+.open > .btn.btn-dark.dropdown-toggle,
+.open > .btn-dark.dropdown-toggle.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-dark:active:hover, .btn-dark.custom-file-control:active:hover::before, .btn.btn-dark:active:focus, .btn-dark.custom-file-control:active:focus::before, .btn.btn-dark:active.focus, .btn-dark.custom-file-control:active.focus::before, .btn.btn-dark.active:hover, .btn-dark.active.custom-file-control:hover::before, .btn.btn-dark.active:focus, .btn-dark.active.custom-file-control:focus::before, .btn.btn-dark.active.focus, .btn-dark.active.focus.custom-file-control::before,
+.open > .btn.btn-dark.dropdown-toggle:hover,
+.open > .btn-dark.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.btn-dark.dropdown-toggle:focus,
+.open > .btn-dark.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.btn-dark.dropdown-toggle.focus,
+.open > .btn-dark.dropdown-toggle.focus.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(153, 153, 153, 0.4);
+  border-color: rgba(153, 153, 153, 0.4);
+}
+
+.open > .btn.btn-dark.dropdown-toggle.bmd-btn-icon, .open > .btn-dark.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .btn.btn-dark.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-dark.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-dark.disabled:focus, .btn-dark.disabled.custom-file-control:focus::before, .btn.btn-dark.disabled.focus, .btn-dark.disabled.focus.custom-file-control::before, .btn.btn-dark:disabled:focus, .btn-dark.custom-file-control:disabled:focus::before, .btn.btn-dark:disabled.focus, .btn-dark.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.btn.btn-dark.disabled:hover, .btn-dark.disabled.custom-file-control:hover::before, .btn.btn-dark:disabled:hover, .btn-dark.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.bg-inverse .btn.btn-dark, .bg-inverse .btn-dark.custom-file-control::before {
+  color: #FFA000;
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.bg-inverse .btn.btn-dark:hover, .bg-inverse .btn-dark.custom-file-control:hover::before {
+  color: #FFA000;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-dark:focus, .bg-inverse .btn-dark.custom-file-control:focus::before, .bg-inverse .btn.btn-dark.focus, .bg-inverse .btn-dark.focus.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-dark:active, .bg-inverse .btn-dark.custom-file-control:active::before, .bg-inverse .btn.btn-dark.active, .bg-inverse .btn-dark.active.custom-file-control::before,
+.open > .bg-inverse .btn.btn-dark.dropdown-toggle,
+.open > .bg-inverse .btn-dark.dropdown-toggle.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-dark:active:hover, .bg-inverse .btn-dark.custom-file-control:active:hover::before, .bg-inverse .btn.btn-dark:active:focus, .bg-inverse .btn-dark.custom-file-control:active:focus::before, .bg-inverse .btn.btn-dark:active.focus, .bg-inverse .btn-dark.custom-file-control:active.focus::before, .bg-inverse .btn.btn-dark.active:hover, .bg-inverse .btn-dark.active.custom-file-control:hover::before, .bg-inverse .btn.btn-dark.active:focus, .bg-inverse .btn-dark.active.custom-file-control:focus::before, .bg-inverse .btn.btn-dark.active.focus, .bg-inverse .btn-dark.active.focus.custom-file-control::before,
+.open > .bg-inverse .btn.btn-dark.dropdown-toggle:hover,
+.open > .bg-inverse .btn-dark.dropdown-toggle.custom-file-control:hover::before,
+.open > .bg-inverse .btn.btn-dark.dropdown-toggle:focus,
+.open > .bg-inverse .btn-dark.dropdown-toggle.custom-file-control:focus::before,
+.open > .bg-inverse .btn.btn-dark.dropdown-toggle.focus,
+.open > .bg-inverse .btn-dark.dropdown-toggle.focus.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(204, 204, 204, 0.25);
+  border-color: rgba(204, 204, 204, 0.25);
+}
+
+.open > .bg-inverse .btn.btn-dark.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-dark.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .bg-inverse .btn.btn-dark.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-dark.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-dark.disabled:focus, .bg-inverse .btn-dark.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-dark.disabled.focus, .bg-inverse .btn-dark.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-dark:disabled:focus, .bg-inverse .btn-dark.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-dark:disabled.focus, .bg-inverse .btn-dark.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.bg-inverse .btn.btn-dark.disabled:hover, .bg-inverse .btn-dark.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-dark:disabled:hover, .bg-inverse .btn-dark.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #ccc;
+}
+
+.btn.btn-dark.btn-link, .btn-dark.btn-link.custom-file-control::before {
+  background-color: transparent;
+}
+
 .btn.bmd-btn-fab.btn-primary, .bmd-btn-fab.btn-primary.custom-file-control::before, .btn.btn-raised.btn-primary, .btn-raised.btn-primary.custom-file-control::before,
 .btn-group-raised .btn.btn-primary,
 .btn-group-raised .btn-primary.custom-file-control::before {
@@ -11232,17 +11183,17 @@ button:focus {
 .btn.bmd-btn-fab.btn-secondary, .bmd-btn-fab.btn-secondary.custom-file-control::before, .btn.btn-raised.btn-secondary, .btn-raised.btn-secondary.custom-file-control::before,
 .btn-group-raised .btn.btn-secondary,
 .btn-group-raised .btn-secondary.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #fff;
-  border-color: #ccc;
+  color: #fff;
+  background-color: #FF5722;
+  border-color: #FF5722;
 }
 
 .btn.bmd-btn-fab.btn-secondary:hover, .bmd-btn-fab.btn-secondary.custom-file-control:hover::before, .btn.btn-raised.btn-secondary:hover, .btn-raised.btn-secondary.custom-file-control:hover::before,
 .btn-group-raised .btn.btn-secondary:hover,
 .btn-group-raised .btn-secondary.custom-file-control:hover::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: whitesmoke;
-  border-color: #adadad;
+  color: #fff;
+  background-color: #ff470e;
+  border-color: #e43700;
 }
 
 .btn.bmd-btn-fab.btn-secondary:focus, .bmd-btn-fab.btn-secondary.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-secondary.focus, .bmd-btn-fab.btn-secondary.focus.custom-file-control::before, .btn.btn-raised.btn-secondary:focus, .btn-raised.btn-secondary.custom-file-control:focus::before, .btn.btn-raised.btn-secondary.focus, .btn-raised.btn-secondary.focus.custom-file-control::before,
@@ -11250,9 +11201,9 @@ button:focus {
 .btn-group-raised .btn-secondary.custom-file-control:focus::before,
 .btn-group-raised .btn.btn-secondary.focus,
 .btn-group-raised .btn-secondary.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: whitesmoke;
-  border-color: #adadad;
+  color: #fff;
+  background-color: #ff470e;
+  border-color: #e43700;
 }
 
 .btn.bmd-btn-fab.btn-secondary:active, .bmd-btn-fab.btn-secondary.custom-file-control:active::before, .btn.bmd-btn-fab.btn-secondary.active, .bmd-btn-fab.btn-secondary.active.custom-file-control::before,
@@ -11268,9 +11219,9 @@ button:focus {
 .btn-group-raised .btn.btn-secondary.dropdown-toggle,
 .open >
 .btn-group-raised .btn-secondary.dropdown-toggle.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: whitesmoke;
-  border-color: #adadad;
+  color: #fff;
+  background-color: #ff470e;
+  border-color: #e43700;
 }
 
 .btn.bmd-btn-fab.btn-secondary:active:hover, .bmd-btn-fab.btn-secondary.custom-file-control:active:hover::before, .btn.bmd-btn-fab.btn-secondary:active:focus, .bmd-btn-fab.btn-secondary.custom-file-control:active:focus::before, .btn.bmd-btn-fab.btn-secondary:active.focus, .bmd-btn-fab.btn-secondary.custom-file-control:active.focus::before, .btn.bmd-btn-fab.btn-secondary.active:hover, .bmd-btn-fab.btn-secondary.active.custom-file-control:hover::before, .btn.bmd-btn-fab.btn-secondary.active:focus, .bmd-btn-fab.btn-secondary.active.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-secondary.active.focus, .bmd-btn-fab.btn-secondary.active.focus.custom-file-control::before,
@@ -11310,22 +11261,22 @@ button:focus {
 .btn-group-raised .btn.btn-secondary.dropdown-toggle.focus,
 .open >
 .btn-group-raised .btn-secondary.dropdown-toggle.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: whitesmoke;
-  border-color: #8c8c8c;
+  color: #fff;
+  background-color: #ff470e;
+  border-color: #a22700;
 }
 
 .open > .btn.bmd-btn-fab.btn-secondary.dropdown-toggle.bmd-btn-icon, .open > .bmd-btn-fab.btn-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .btn.btn-raised.btn-secondary.dropdown-toggle.bmd-btn-icon, .open > .btn-raised.btn-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open >
 .btn-group-raised .btn.btn-secondary.dropdown-toggle.bmd-btn-icon, .open >
 .btn-group-raised .btn-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
   color: inherit;
-  background-color: #fff;
+  background-color: #FF5722;
 }
 
 .open > .btn.bmd-btn-fab.btn-secondary.dropdown-toggle.bmd-btn-icon:hover, .open > .bmd-btn-fab.btn-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open > .btn.btn-raised.btn-secondary.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-raised.btn-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open >
 .btn-group-raised .btn.btn-secondary.dropdown-toggle.bmd-btn-icon:hover, .open >
 .btn-group-raised .btn-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
-  background-color: whitesmoke;
+  background-color: #ff470e;
 }
 
 .btn.bmd-btn-fab.btn-secondary.disabled:focus, .bmd-btn-fab.btn-secondary.disabled.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-secondary.disabled.focus, .bmd-btn-fab.btn-secondary.disabled.focus.custom-file-control::before, .btn.bmd-btn-fab.btn-secondary:disabled:focus, .bmd-btn-fab.btn-secondary.custom-file-control:disabled:focus::before, .btn.bmd-btn-fab.btn-secondary:disabled.focus, .bmd-btn-fab.btn-secondary.custom-file-control:disabled.focus::before, .btn.btn-raised.btn-secondary.disabled:focus, .btn-raised.btn-secondary.disabled.custom-file-control:focus::before, .btn.btn-raised.btn-secondary.disabled.focus, .btn-raised.btn-secondary.disabled.focus.custom-file-control::before, .btn.btn-raised.btn-secondary:disabled:focus, .btn-raised.btn-secondary.custom-file-control:disabled:focus::before, .btn.btn-raised.btn-secondary:disabled.focus, .btn-raised.btn-secondary.custom-file-control:disabled.focus::before,
@@ -11337,8 +11288,8 @@ button:focus {
 .btn-group-raised .btn-secondary.custom-file-control:disabled:focus::before,
 .btn-group-raised .btn.btn-secondary:disabled.focus,
 .btn-group-raised .btn-secondary.custom-file-control:disabled.focus::before {
-  background-color: #fff;
-  border-color: #ccc;
+  background-color: #FF5722;
+  border-color: #FF5722;
 }
 
 .btn.bmd-btn-fab.btn-secondary.disabled:hover, .bmd-btn-fab.btn-secondary.disabled.custom-file-control:hover::before, .btn.bmd-btn-fab.btn-secondary:disabled:hover, .bmd-btn-fab.btn-secondary.custom-file-control:disabled:hover::before, .btn.btn-raised.btn-secondary.disabled:hover, .btn-raised.btn-secondary.disabled.custom-file-control:hover::before, .btn.btn-raised.btn-secondary:disabled:hover, .btn-raised.btn-secondary.custom-file-control:disabled:hover::before,
@@ -11346,129 +11297,8 @@ button:focus {
 .btn-group-raised .btn-secondary.disabled.custom-file-control:hover::before,
 .btn-group-raised .btn.btn-secondary:disabled:hover,
 .btn-group-raised .btn-secondary.custom-file-control:disabled:hover::before {
-  background-color: #fff;
-  border-color: #ccc;
-}
-
-.btn.bmd-btn-fab.btn-info, .bmd-btn-fab.btn-info.custom-file-control::before, .btn.btn-raised.btn-info, .btn-raised.btn-info.custom-file-control::before,
-.btn-group-raised .btn.btn-info,
-.btn-group-raised .btn-info.custom-file-control::before {
-  color: #fff;
-  background-color: #03a9f4;
-  border-color: #03a9f4;
-}
-
-.btn.bmd-btn-fab.btn-info:hover, .bmd-btn-fab.btn-info.custom-file-control:hover::before, .btn.btn-raised.btn-info:hover, .btn-raised.btn-info.custom-file-control:hover::before,
-.btn-group-raised .btn.btn-info:hover,
-.btn-group-raised .btn-info.custom-file-control:hover::before {
-  color: #fff;
-  background-color: #039be0;
-  border-color: #027fb8;
-}
-
-.btn.bmd-btn-fab.btn-info:focus, .bmd-btn-fab.btn-info.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-info.focus, .bmd-btn-fab.btn-info.focus.custom-file-control::before, .btn.btn-raised.btn-info:focus, .btn-raised.btn-info.custom-file-control:focus::before, .btn.btn-raised.btn-info.focus, .btn-raised.btn-info.focus.custom-file-control::before,
-.btn-group-raised .btn.btn-info:focus,
-.btn-group-raised .btn-info.custom-file-control:focus::before,
-.btn-group-raised .btn.btn-info.focus,
-.btn-group-raised .btn-info.focus.custom-file-control::before {
-  color: #fff;
-  background-color: #039be0;
-  border-color: #027fb8;
-}
-
-.btn.bmd-btn-fab.btn-info:active, .bmd-btn-fab.btn-info.custom-file-control:active::before, .btn.bmd-btn-fab.btn-info.active, .bmd-btn-fab.btn-info.active.custom-file-control::before,
-.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle,
-.open > .bmd-btn-fab.btn-info.dropdown-toggle.custom-file-control::before, .btn.btn-raised.btn-info:active, .btn-raised.btn-info.custom-file-control:active::before, .btn.btn-raised.btn-info.active, .btn-raised.btn-info.active.custom-file-control::before,
-.open > .btn.btn-raised.btn-info.dropdown-toggle,
-.open > .btn-raised.btn-info.dropdown-toggle.custom-file-control::before,
-.btn-group-raised .btn.btn-info:active,
-.btn-group-raised .btn-info.custom-file-control:active::before,
-.btn-group-raised .btn.btn-info.active,
-.btn-group-raised .btn-info.active.custom-file-control::before,
-.open >
-.btn-group-raised .btn.btn-info.dropdown-toggle,
-.open >
-.btn-group-raised .btn-info.dropdown-toggle.custom-file-control::before {
-  color: #fff;
-  background-color: #039be0;
-  border-color: #027fb8;
-}
-
-.btn.bmd-btn-fab.btn-info:active:hover, .bmd-btn-fab.btn-info.custom-file-control:active:hover::before, .btn.bmd-btn-fab.btn-info:active:focus, .bmd-btn-fab.btn-info.custom-file-control:active:focus::before, .btn.bmd-btn-fab.btn-info:active.focus, .bmd-btn-fab.btn-info.custom-file-control:active.focus::before, .btn.bmd-btn-fab.btn-info.active:hover, .bmd-btn-fab.btn-info.active.custom-file-control:hover::before, .btn.bmd-btn-fab.btn-info.active:focus, .bmd-btn-fab.btn-info.active.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-info.active.focus, .bmd-btn-fab.btn-info.active.focus.custom-file-control::before,
-.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle:hover,
-.open > .bmd-btn-fab.btn-info.dropdown-toggle.custom-file-control:hover::before,
-.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle:focus,
-.open > .bmd-btn-fab.btn-info.dropdown-toggle.custom-file-control:focus::before,
-.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle.focus,
-.open > .bmd-btn-fab.btn-info.dropdown-toggle.focus.custom-file-control::before, .btn.btn-raised.btn-info:active:hover, .btn-raised.btn-info.custom-file-control:active:hover::before, .btn.btn-raised.btn-info:active:focus, .btn-raised.btn-info.custom-file-control:active:focus::before, .btn.btn-raised.btn-info:active.focus, .btn-raised.btn-info.custom-file-control:active.focus::before, .btn.btn-raised.btn-info.active:hover, .btn-raised.btn-info.active.custom-file-control:hover::before, .btn.btn-raised.btn-info.active:focus, .btn-raised.btn-info.active.custom-file-control:focus::before, .btn.btn-raised.btn-info.active.focus, .btn-raised.btn-info.active.focus.custom-file-control::before,
-.open > .btn.btn-raised.btn-info.dropdown-toggle:hover,
-.open > .btn-raised.btn-info.dropdown-toggle.custom-file-control:hover::before,
-.open > .btn.btn-raised.btn-info.dropdown-toggle:focus,
-.open > .btn-raised.btn-info.dropdown-toggle.custom-file-control:focus::before,
-.open > .btn.btn-raised.btn-info.dropdown-toggle.focus,
-.open > .btn-raised.btn-info.dropdown-toggle.focus.custom-file-control::before,
-.btn-group-raised .btn.btn-info:active:hover,
-.btn-group-raised .btn-info.custom-file-control:active:hover::before,
-.btn-group-raised .btn.btn-info:active:focus,
-.btn-group-raised .btn-info.custom-file-control:active:focus::before,
-.btn-group-raised .btn.btn-info:active.focus,
-.btn-group-raised .btn-info.custom-file-control:active.focus::before,
-.btn-group-raised .btn.btn-info.active:hover,
-.btn-group-raised .btn-info.active.custom-file-control:hover::before,
-.btn-group-raised .btn.btn-info.active:focus,
-.btn-group-raised .btn-info.active.custom-file-control:focus::before,
-.btn-group-raised .btn.btn-info.active.focus,
-.btn-group-raised .btn-info.active.focus.custom-file-control::before,
-.open >
-.btn-group-raised .btn.btn-info.dropdown-toggle:hover,
-.open >
-.btn-group-raised .btn-info.dropdown-toggle.custom-file-control:hover::before,
-.open >
-.btn-group-raised .btn.btn-info.dropdown-toggle:focus,
-.open >
-.btn-group-raised .btn-info.dropdown-toggle.custom-file-control:focus::before,
-.open >
-.btn-group-raised .btn.btn-info.dropdown-toggle.focus,
-.open >
-.btn-group-raised .btn-info.dropdown-toggle.focus.custom-file-control::before {
-  color: #fff;
-  background-color: #039be0;
-  border-color: #015276;
-}
-
-.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle.bmd-btn-icon, .open > .bmd-btn-fab.btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .btn.btn-raised.btn-info.dropdown-toggle.bmd-btn-icon, .open > .btn-raised.btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open >
-.btn-group-raised .btn.btn-info.dropdown-toggle.bmd-btn-icon, .open >
-.btn-group-raised .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
-  color: inherit;
-  background-color: #03a9f4;
-}
-
-.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open > .bmd-btn-fab.btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open > .btn.btn-raised.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-raised.btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open >
-.btn-group-raised .btn.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open >
-.btn-group-raised .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
-  background-color: #039be0;
-}
-
-.btn.bmd-btn-fab.btn-info.disabled:focus, .bmd-btn-fab.btn-info.disabled.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-info.disabled.focus, .bmd-btn-fab.btn-info.disabled.focus.custom-file-control::before, .btn.bmd-btn-fab.btn-info:disabled:focus, .bmd-btn-fab.btn-info.custom-file-control:disabled:focus::before, .btn.bmd-btn-fab.btn-info:disabled.focus, .bmd-btn-fab.btn-info.custom-file-control:disabled.focus::before, .btn.btn-raised.btn-info.disabled:focus, .btn-raised.btn-info.disabled.custom-file-control:focus::before, .btn.btn-raised.btn-info.disabled.focus, .btn-raised.btn-info.disabled.focus.custom-file-control::before, .btn.btn-raised.btn-info:disabled:focus, .btn-raised.btn-info.custom-file-control:disabled:focus::before, .btn.btn-raised.btn-info:disabled.focus, .btn-raised.btn-info.custom-file-control:disabled.focus::before,
-.btn-group-raised .btn.btn-info.disabled:focus,
-.btn-group-raised .btn-info.disabled.custom-file-control:focus::before,
-.btn-group-raised .btn.btn-info.disabled.focus,
-.btn-group-raised .btn-info.disabled.focus.custom-file-control::before,
-.btn-group-raised .btn.btn-info:disabled:focus,
-.btn-group-raised .btn-info.custom-file-control:disabled:focus::before,
-.btn-group-raised .btn.btn-info:disabled.focus,
-.btn-group-raised .btn-info.custom-file-control:disabled.focus::before {
-  background-color: #03a9f4;
-  border-color: #03a9f4;
-}
-
-.btn.bmd-btn-fab.btn-info.disabled:hover, .bmd-btn-fab.btn-info.disabled.custom-file-control:hover::before, .btn.bmd-btn-fab.btn-info:disabled:hover, .bmd-btn-fab.btn-info.custom-file-control:disabled:hover::before, .btn.btn-raised.btn-info.disabled:hover, .btn-raised.btn-info.disabled.custom-file-control:hover::before, .btn.btn-raised.btn-info:disabled:hover, .btn-raised.btn-info.custom-file-control:disabled:hover::before,
-.btn-group-raised .btn.btn-info.disabled:hover,
-.btn-group-raised .btn-info.disabled.custom-file-control:hover::before,
-.btn-group-raised .btn.btn-info:disabled:hover,
-.btn-group-raised .btn-info.custom-file-control:disabled:hover::before {
-  background-color: #03a9f4;
-  border-color: #03a9f4;
+  background-color: #FF5722;
+  border-color: #FF5722;
 }
 
 .btn.bmd-btn-fab.btn-success, .bmd-btn-fab.btn-success.custom-file-control::before, .btn.btn-raised.btn-success, .btn-raised.btn-success.custom-file-control::before,
@@ -11590,6 +11420,127 @@ button:focus {
 .btn-group-raised .btn-success.custom-file-control:disabled:hover::before {
   background-color: #4caf50;
   border-color: #4caf50;
+}
+
+.btn.bmd-btn-fab.btn-info, .bmd-btn-fab.btn-info.custom-file-control::before, .btn.btn-raised.btn-info, .btn-raised.btn-info.custom-file-control::before,
+.btn-group-raised .btn.btn-info,
+.btn-group-raised .btn-info.custom-file-control::before {
+  color: #fff;
+  background-color: #03a9f4;
+  border-color: #03a9f4;
+}
+
+.btn.bmd-btn-fab.btn-info:hover, .bmd-btn-fab.btn-info.custom-file-control:hover::before, .btn.btn-raised.btn-info:hover, .btn-raised.btn-info.custom-file-control:hover::before,
+.btn-group-raised .btn.btn-info:hover,
+.btn-group-raised .btn-info.custom-file-control:hover::before {
+  color: #fff;
+  background-color: #039be0;
+  border-color: #027fb8;
+}
+
+.btn.bmd-btn-fab.btn-info:focus, .bmd-btn-fab.btn-info.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-info.focus, .bmd-btn-fab.btn-info.focus.custom-file-control::before, .btn.btn-raised.btn-info:focus, .btn-raised.btn-info.custom-file-control:focus::before, .btn.btn-raised.btn-info.focus, .btn-raised.btn-info.focus.custom-file-control::before,
+.btn-group-raised .btn.btn-info:focus,
+.btn-group-raised .btn-info.custom-file-control:focus::before,
+.btn-group-raised .btn.btn-info.focus,
+.btn-group-raised .btn-info.focus.custom-file-control::before {
+  color: #fff;
+  background-color: #039be0;
+  border-color: #027fb8;
+}
+
+.btn.bmd-btn-fab.btn-info:active, .bmd-btn-fab.btn-info.custom-file-control:active::before, .btn.bmd-btn-fab.btn-info.active, .bmd-btn-fab.btn-info.active.custom-file-control::before,
+.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle,
+.open > .bmd-btn-fab.btn-info.dropdown-toggle.custom-file-control::before, .btn.btn-raised.btn-info:active, .btn-raised.btn-info.custom-file-control:active::before, .btn.btn-raised.btn-info.active, .btn-raised.btn-info.active.custom-file-control::before,
+.open > .btn.btn-raised.btn-info.dropdown-toggle,
+.open > .btn-raised.btn-info.dropdown-toggle.custom-file-control::before,
+.btn-group-raised .btn.btn-info:active,
+.btn-group-raised .btn-info.custom-file-control:active::before,
+.btn-group-raised .btn.btn-info.active,
+.btn-group-raised .btn-info.active.custom-file-control::before,
+.open >
+.btn-group-raised .btn.btn-info.dropdown-toggle,
+.open >
+.btn-group-raised .btn-info.dropdown-toggle.custom-file-control::before {
+  color: #fff;
+  background-color: #039be0;
+  border-color: #027fb8;
+}
+
+.btn.bmd-btn-fab.btn-info:active:hover, .bmd-btn-fab.btn-info.custom-file-control:active:hover::before, .btn.bmd-btn-fab.btn-info:active:focus, .bmd-btn-fab.btn-info.custom-file-control:active:focus::before, .btn.bmd-btn-fab.btn-info:active.focus, .bmd-btn-fab.btn-info.custom-file-control:active.focus::before, .btn.bmd-btn-fab.btn-info.active:hover, .bmd-btn-fab.btn-info.active.custom-file-control:hover::before, .btn.bmd-btn-fab.btn-info.active:focus, .bmd-btn-fab.btn-info.active.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-info.active.focus, .bmd-btn-fab.btn-info.active.focus.custom-file-control::before,
+.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle:hover,
+.open > .bmd-btn-fab.btn-info.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle:focus,
+.open > .bmd-btn-fab.btn-info.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle.focus,
+.open > .bmd-btn-fab.btn-info.dropdown-toggle.focus.custom-file-control::before, .btn.btn-raised.btn-info:active:hover, .btn-raised.btn-info.custom-file-control:active:hover::before, .btn.btn-raised.btn-info:active:focus, .btn-raised.btn-info.custom-file-control:active:focus::before, .btn.btn-raised.btn-info:active.focus, .btn-raised.btn-info.custom-file-control:active.focus::before, .btn.btn-raised.btn-info.active:hover, .btn-raised.btn-info.active.custom-file-control:hover::before, .btn.btn-raised.btn-info.active:focus, .btn-raised.btn-info.active.custom-file-control:focus::before, .btn.btn-raised.btn-info.active.focus, .btn-raised.btn-info.active.focus.custom-file-control::before,
+.open > .btn.btn-raised.btn-info.dropdown-toggle:hover,
+.open > .btn-raised.btn-info.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.btn-raised.btn-info.dropdown-toggle:focus,
+.open > .btn-raised.btn-info.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.btn-raised.btn-info.dropdown-toggle.focus,
+.open > .btn-raised.btn-info.dropdown-toggle.focus.custom-file-control::before,
+.btn-group-raised .btn.btn-info:active:hover,
+.btn-group-raised .btn-info.custom-file-control:active:hover::before,
+.btn-group-raised .btn.btn-info:active:focus,
+.btn-group-raised .btn-info.custom-file-control:active:focus::before,
+.btn-group-raised .btn.btn-info:active.focus,
+.btn-group-raised .btn-info.custom-file-control:active.focus::before,
+.btn-group-raised .btn.btn-info.active:hover,
+.btn-group-raised .btn-info.active.custom-file-control:hover::before,
+.btn-group-raised .btn.btn-info.active:focus,
+.btn-group-raised .btn-info.active.custom-file-control:focus::before,
+.btn-group-raised .btn.btn-info.active.focus,
+.btn-group-raised .btn-info.active.focus.custom-file-control::before,
+.open >
+.btn-group-raised .btn.btn-info.dropdown-toggle:hover,
+.open >
+.btn-group-raised .btn-info.dropdown-toggle.custom-file-control:hover::before,
+.open >
+.btn-group-raised .btn.btn-info.dropdown-toggle:focus,
+.open >
+.btn-group-raised .btn-info.dropdown-toggle.custom-file-control:focus::before,
+.open >
+.btn-group-raised .btn.btn-info.dropdown-toggle.focus,
+.open >
+.btn-group-raised .btn-info.dropdown-toggle.focus.custom-file-control::before {
+  color: #fff;
+  background-color: #039be0;
+  border-color: #015276;
+}
+
+.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle.bmd-btn-icon, .open > .bmd-btn-fab.btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .btn.btn-raised.btn-info.dropdown-toggle.bmd-btn-icon, .open > .btn-raised.btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open >
+.btn-group-raised .btn.btn-info.dropdown-toggle.bmd-btn-icon, .open >
+.btn-group-raised .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: #03a9f4;
+}
+
+.open > .btn.bmd-btn-fab.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open > .bmd-btn-fab.btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open > .btn.btn-raised.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-raised.btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open >
+.btn-group-raised .btn.btn-info.dropdown-toggle.bmd-btn-icon:hover, .open >
+.btn-group-raised .btn-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: #039be0;
+}
+
+.btn.bmd-btn-fab.btn-info.disabled:focus, .bmd-btn-fab.btn-info.disabled.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-info.disabled.focus, .bmd-btn-fab.btn-info.disabled.focus.custom-file-control::before, .btn.bmd-btn-fab.btn-info:disabled:focus, .bmd-btn-fab.btn-info.custom-file-control:disabled:focus::before, .btn.bmd-btn-fab.btn-info:disabled.focus, .bmd-btn-fab.btn-info.custom-file-control:disabled.focus::before, .btn.btn-raised.btn-info.disabled:focus, .btn-raised.btn-info.disabled.custom-file-control:focus::before, .btn.btn-raised.btn-info.disabled.focus, .btn-raised.btn-info.disabled.focus.custom-file-control::before, .btn.btn-raised.btn-info:disabled:focus, .btn-raised.btn-info.custom-file-control:disabled:focus::before, .btn.btn-raised.btn-info:disabled.focus, .btn-raised.btn-info.custom-file-control:disabled.focus::before,
+.btn-group-raised .btn.btn-info.disabled:focus,
+.btn-group-raised .btn-info.disabled.custom-file-control:focus::before,
+.btn-group-raised .btn.btn-info.disabled.focus,
+.btn-group-raised .btn-info.disabled.focus.custom-file-control::before,
+.btn-group-raised .btn.btn-info:disabled:focus,
+.btn-group-raised .btn-info.custom-file-control:disabled:focus::before,
+.btn-group-raised .btn.btn-info:disabled.focus,
+.btn-group-raised .btn-info.custom-file-control:disabled.focus::before {
+  background-color: #03a9f4;
+  border-color: #03a9f4;
+}
+
+.btn.bmd-btn-fab.btn-info.disabled:hover, .bmd-btn-fab.btn-info.disabled.custom-file-control:hover::before, .btn.bmd-btn-fab.btn-info:disabled:hover, .bmd-btn-fab.btn-info.custom-file-control:disabled:hover::before, .btn.btn-raised.btn-info.disabled:hover, .btn-raised.btn-info.disabled.custom-file-control:hover::before, .btn.btn-raised.btn-info:disabled:hover, .btn-raised.btn-info.custom-file-control:disabled:hover::before,
+.btn-group-raised .btn.btn-info.disabled:hover,
+.btn-group-raised .btn-info.disabled.custom-file-control:hover::before,
+.btn-group-raised .btn.btn-info:disabled:hover,
+.btn-group-raised .btn-info.custom-file-control:disabled:hover::before {
+  background-color: #03a9f4;
+  border-color: #03a9f4;
 }
 
 .btn.bmd-btn-fab.btn-warning, .bmd-btn-fab.btn-warning.custom-file-control::before, .btn.btn-raised.btn-warning, .btn-raised.btn-warning.custom-file-control::before,
@@ -11834,6 +11785,248 @@ button:focus {
   border-color: #f44336;
 }
 
+.btn.bmd-btn-fab.btn-light, .bmd-btn-fab.btn-light.custom-file-control::before, .btn.btn-raised.btn-light, .btn-raised.btn-light.custom-file-control::before,
+.btn-group-raised .btn.btn-light,
+.btn-group-raised .btn-light.custom-file-control::before {
+  color: #fff;
+  background-color: #FFECB3;
+  border-color: #FFECB3;
+}
+
+.btn.bmd-btn-fab.btn-light:hover, .bmd-btn-fab.btn-light.custom-file-control:hover::before, .btn.btn-raised.btn-light:hover, .btn-raised.btn-light.custom-file-control:hover::before,
+.btn-group-raised .btn.btn-light:hover,
+.btn-group-raised .btn-light.custom-file-control:hover::before {
+  color: #fff;
+  background-color: #ffe79f;
+  border-color: #ffdd76;
+}
+
+.btn.bmd-btn-fab.btn-light:focus, .bmd-btn-fab.btn-light.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-light.focus, .bmd-btn-fab.btn-light.focus.custom-file-control::before, .btn.btn-raised.btn-light:focus, .btn-raised.btn-light.custom-file-control:focus::before, .btn.btn-raised.btn-light.focus, .btn-raised.btn-light.focus.custom-file-control::before,
+.btn-group-raised .btn.btn-light:focus,
+.btn-group-raised .btn-light.custom-file-control:focus::before,
+.btn-group-raised .btn.btn-light.focus,
+.btn-group-raised .btn-light.focus.custom-file-control::before {
+  color: #fff;
+  background-color: #ffe79f;
+  border-color: #ffdd76;
+}
+
+.btn.bmd-btn-fab.btn-light:active, .bmd-btn-fab.btn-light.custom-file-control:active::before, .btn.bmd-btn-fab.btn-light.active, .bmd-btn-fab.btn-light.active.custom-file-control::before,
+.open > .btn.bmd-btn-fab.btn-light.dropdown-toggle,
+.open > .bmd-btn-fab.btn-light.dropdown-toggle.custom-file-control::before, .btn.btn-raised.btn-light:active, .btn-raised.btn-light.custom-file-control:active::before, .btn.btn-raised.btn-light.active, .btn-raised.btn-light.active.custom-file-control::before,
+.open > .btn.btn-raised.btn-light.dropdown-toggle,
+.open > .btn-raised.btn-light.dropdown-toggle.custom-file-control::before,
+.btn-group-raised .btn.btn-light:active,
+.btn-group-raised .btn-light.custom-file-control:active::before,
+.btn-group-raised .btn.btn-light.active,
+.btn-group-raised .btn-light.active.custom-file-control::before,
+.open >
+.btn-group-raised .btn.btn-light.dropdown-toggle,
+.open >
+.btn-group-raised .btn-light.dropdown-toggle.custom-file-control::before {
+  color: #fff;
+  background-color: #ffe79f;
+  border-color: #ffdd76;
+}
+
+.btn.bmd-btn-fab.btn-light:active:hover, .bmd-btn-fab.btn-light.custom-file-control:active:hover::before, .btn.bmd-btn-fab.btn-light:active:focus, .bmd-btn-fab.btn-light.custom-file-control:active:focus::before, .btn.bmd-btn-fab.btn-light:active.focus, .bmd-btn-fab.btn-light.custom-file-control:active.focus::before, .btn.bmd-btn-fab.btn-light.active:hover, .bmd-btn-fab.btn-light.active.custom-file-control:hover::before, .btn.bmd-btn-fab.btn-light.active:focus, .bmd-btn-fab.btn-light.active.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-light.active.focus, .bmd-btn-fab.btn-light.active.focus.custom-file-control::before,
+.open > .btn.bmd-btn-fab.btn-light.dropdown-toggle:hover,
+.open > .bmd-btn-fab.btn-light.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.bmd-btn-fab.btn-light.dropdown-toggle:focus,
+.open > .bmd-btn-fab.btn-light.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.bmd-btn-fab.btn-light.dropdown-toggle.focus,
+.open > .bmd-btn-fab.btn-light.dropdown-toggle.focus.custom-file-control::before, .btn.btn-raised.btn-light:active:hover, .btn-raised.btn-light.custom-file-control:active:hover::before, .btn.btn-raised.btn-light:active:focus, .btn-raised.btn-light.custom-file-control:active:focus::before, .btn.btn-raised.btn-light:active.focus, .btn-raised.btn-light.custom-file-control:active.focus::before, .btn.btn-raised.btn-light.active:hover, .btn-raised.btn-light.active.custom-file-control:hover::before, .btn.btn-raised.btn-light.active:focus, .btn-raised.btn-light.active.custom-file-control:focus::before, .btn.btn-raised.btn-light.active.focus, .btn-raised.btn-light.active.focus.custom-file-control::before,
+.open > .btn.btn-raised.btn-light.dropdown-toggle:hover,
+.open > .btn-raised.btn-light.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.btn-raised.btn-light.dropdown-toggle:focus,
+.open > .btn-raised.btn-light.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.btn-raised.btn-light.dropdown-toggle.focus,
+.open > .btn-raised.btn-light.dropdown-toggle.focus.custom-file-control::before,
+.btn-group-raised .btn.btn-light:active:hover,
+.btn-group-raised .btn-light.custom-file-control:active:hover::before,
+.btn-group-raised .btn.btn-light:active:focus,
+.btn-group-raised .btn-light.custom-file-control:active:focus::before,
+.btn-group-raised .btn.btn-light:active.focus,
+.btn-group-raised .btn-light.custom-file-control:active.focus::before,
+.btn-group-raised .btn.btn-light.active:hover,
+.btn-group-raised .btn-light.active.custom-file-control:hover::before,
+.btn-group-raised .btn.btn-light.active:focus,
+.btn-group-raised .btn-light.active.custom-file-control:focus::before,
+.btn-group-raised .btn.btn-light.active.focus,
+.btn-group-raised .btn-light.active.focus.custom-file-control::before,
+.open >
+.btn-group-raised .btn.btn-light.dropdown-toggle:hover,
+.open >
+.btn-group-raised .btn-light.dropdown-toggle.custom-file-control:hover::before,
+.open >
+.btn-group-raised .btn.btn-light.dropdown-toggle:focus,
+.open >
+.btn-group-raised .btn-light.dropdown-toggle.custom-file-control:focus::before,
+.open >
+.btn-group-raised .btn.btn-light.dropdown-toggle.focus,
+.open >
+.btn-group-raised .btn-light.dropdown-toggle.focus.custom-file-control::before {
+  color: #fff;
+  background-color: #ffe79f;
+  border-color: #ffcc34;
+}
+
+.open > .btn.bmd-btn-fab.btn-light.dropdown-toggle.bmd-btn-icon, .open > .bmd-btn-fab.btn-light.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .btn.btn-raised.btn-light.dropdown-toggle.bmd-btn-icon, .open > .btn-raised.btn-light.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open >
+.btn-group-raised .btn.btn-light.dropdown-toggle.bmd-btn-icon, .open >
+.btn-group-raised .btn-light.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: #FFECB3;
+}
+
+.open > .btn.bmd-btn-fab.btn-light.dropdown-toggle.bmd-btn-icon:hover, .open > .bmd-btn-fab.btn-light.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open > .btn.btn-raised.btn-light.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-raised.btn-light.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open >
+.btn-group-raised .btn.btn-light.dropdown-toggle.bmd-btn-icon:hover, .open >
+.btn-group-raised .btn-light.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: #ffe79f;
+}
+
+.btn.bmd-btn-fab.btn-light.disabled:focus, .bmd-btn-fab.btn-light.disabled.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-light.disabled.focus, .bmd-btn-fab.btn-light.disabled.focus.custom-file-control::before, .btn.bmd-btn-fab.btn-light:disabled:focus, .bmd-btn-fab.btn-light.custom-file-control:disabled:focus::before, .btn.bmd-btn-fab.btn-light:disabled.focus, .bmd-btn-fab.btn-light.custom-file-control:disabled.focus::before, .btn.btn-raised.btn-light.disabled:focus, .btn-raised.btn-light.disabled.custom-file-control:focus::before, .btn.btn-raised.btn-light.disabled.focus, .btn-raised.btn-light.disabled.focus.custom-file-control::before, .btn.btn-raised.btn-light:disabled:focus, .btn-raised.btn-light.custom-file-control:disabled:focus::before, .btn.btn-raised.btn-light:disabled.focus, .btn-raised.btn-light.custom-file-control:disabled.focus::before,
+.btn-group-raised .btn.btn-light.disabled:focus,
+.btn-group-raised .btn-light.disabled.custom-file-control:focus::before,
+.btn-group-raised .btn.btn-light.disabled.focus,
+.btn-group-raised .btn-light.disabled.focus.custom-file-control::before,
+.btn-group-raised .btn.btn-light:disabled:focus,
+.btn-group-raised .btn-light.custom-file-control:disabled:focus::before,
+.btn-group-raised .btn.btn-light:disabled.focus,
+.btn-group-raised .btn-light.custom-file-control:disabled.focus::before {
+  background-color: #FFECB3;
+  border-color: #FFECB3;
+}
+
+.btn.bmd-btn-fab.btn-light.disabled:hover, .bmd-btn-fab.btn-light.disabled.custom-file-control:hover::before, .btn.bmd-btn-fab.btn-light:disabled:hover, .bmd-btn-fab.btn-light.custom-file-control:disabled:hover::before, .btn.btn-raised.btn-light.disabled:hover, .btn-raised.btn-light.disabled.custom-file-control:hover::before, .btn.btn-raised.btn-light:disabled:hover, .btn-raised.btn-light.custom-file-control:disabled:hover::before,
+.btn-group-raised .btn.btn-light.disabled:hover,
+.btn-group-raised .btn-light.disabled.custom-file-control:hover::before,
+.btn-group-raised .btn.btn-light:disabled:hover,
+.btn-group-raised .btn-light.custom-file-control:disabled:hover::before {
+  background-color: #FFECB3;
+  border-color: #FFECB3;
+}
+
+.btn.bmd-btn-fab.btn-dark, .bmd-btn-fab.btn-dark.custom-file-control::before, .btn.btn-raised.btn-dark, .btn-raised.btn-dark.custom-file-control::before,
+.btn-group-raised .btn.btn-dark,
+.btn-group-raised .btn-dark.custom-file-control::before {
+  color: #fff;
+  background-color: #FFA000;
+  border-color: #FFA000;
+}
+
+.btn.bmd-btn-fab.btn-dark:hover, .bmd-btn-fab.btn-dark.custom-file-control:hover::before, .btn.btn-raised.btn-dark:hover, .btn-raised.btn-dark.custom-file-control:hover::before,
+.btn-group-raised .btn.btn-dark:hover,
+.btn-group-raised .btn-dark.custom-file-control:hover::before {
+  color: #fff;
+  background-color: #eb9300;
+  border-color: #c27a00;
+}
+
+.btn.bmd-btn-fab.btn-dark:focus, .bmd-btn-fab.btn-dark.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-dark.focus, .bmd-btn-fab.btn-dark.focus.custom-file-control::before, .btn.btn-raised.btn-dark:focus, .btn-raised.btn-dark.custom-file-control:focus::before, .btn.btn-raised.btn-dark.focus, .btn-raised.btn-dark.focus.custom-file-control::before,
+.btn-group-raised .btn.btn-dark:focus,
+.btn-group-raised .btn-dark.custom-file-control:focus::before,
+.btn-group-raised .btn.btn-dark.focus,
+.btn-group-raised .btn-dark.focus.custom-file-control::before {
+  color: #fff;
+  background-color: #eb9300;
+  border-color: #c27a00;
+}
+
+.btn.bmd-btn-fab.btn-dark:active, .bmd-btn-fab.btn-dark.custom-file-control:active::before, .btn.bmd-btn-fab.btn-dark.active, .bmd-btn-fab.btn-dark.active.custom-file-control::before,
+.open > .btn.bmd-btn-fab.btn-dark.dropdown-toggle,
+.open > .bmd-btn-fab.btn-dark.dropdown-toggle.custom-file-control::before, .btn.btn-raised.btn-dark:active, .btn-raised.btn-dark.custom-file-control:active::before, .btn.btn-raised.btn-dark.active, .btn-raised.btn-dark.active.custom-file-control::before,
+.open > .btn.btn-raised.btn-dark.dropdown-toggle,
+.open > .btn-raised.btn-dark.dropdown-toggle.custom-file-control::before,
+.btn-group-raised .btn.btn-dark:active,
+.btn-group-raised .btn-dark.custom-file-control:active::before,
+.btn-group-raised .btn.btn-dark.active,
+.btn-group-raised .btn-dark.active.custom-file-control::before,
+.open >
+.btn-group-raised .btn.btn-dark.dropdown-toggle,
+.open >
+.btn-group-raised .btn-dark.dropdown-toggle.custom-file-control::before {
+  color: #fff;
+  background-color: #eb9300;
+  border-color: #c27a00;
+}
+
+.btn.bmd-btn-fab.btn-dark:active:hover, .bmd-btn-fab.btn-dark.custom-file-control:active:hover::before, .btn.bmd-btn-fab.btn-dark:active:focus, .bmd-btn-fab.btn-dark.custom-file-control:active:focus::before, .btn.bmd-btn-fab.btn-dark:active.focus, .bmd-btn-fab.btn-dark.custom-file-control:active.focus::before, .btn.bmd-btn-fab.btn-dark.active:hover, .bmd-btn-fab.btn-dark.active.custom-file-control:hover::before, .btn.bmd-btn-fab.btn-dark.active:focus, .bmd-btn-fab.btn-dark.active.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-dark.active.focus, .bmd-btn-fab.btn-dark.active.focus.custom-file-control::before,
+.open > .btn.bmd-btn-fab.btn-dark.dropdown-toggle:hover,
+.open > .bmd-btn-fab.btn-dark.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.bmd-btn-fab.btn-dark.dropdown-toggle:focus,
+.open > .bmd-btn-fab.btn-dark.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.bmd-btn-fab.btn-dark.dropdown-toggle.focus,
+.open > .bmd-btn-fab.btn-dark.dropdown-toggle.focus.custom-file-control::before, .btn.btn-raised.btn-dark:active:hover, .btn-raised.btn-dark.custom-file-control:active:hover::before, .btn.btn-raised.btn-dark:active:focus, .btn-raised.btn-dark.custom-file-control:active:focus::before, .btn.btn-raised.btn-dark:active.focus, .btn-raised.btn-dark.custom-file-control:active.focus::before, .btn.btn-raised.btn-dark.active:hover, .btn-raised.btn-dark.active.custom-file-control:hover::before, .btn.btn-raised.btn-dark.active:focus, .btn-raised.btn-dark.active.custom-file-control:focus::before, .btn.btn-raised.btn-dark.active.focus, .btn-raised.btn-dark.active.focus.custom-file-control::before,
+.open > .btn.btn-raised.btn-dark.dropdown-toggle:hover,
+.open > .btn-raised.btn-dark.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.btn-raised.btn-dark.dropdown-toggle:focus,
+.open > .btn-raised.btn-dark.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.btn-raised.btn-dark.dropdown-toggle.focus,
+.open > .btn-raised.btn-dark.dropdown-toggle.focus.custom-file-control::before,
+.btn-group-raised .btn.btn-dark:active:hover,
+.btn-group-raised .btn-dark.custom-file-control:active:hover::before,
+.btn-group-raised .btn.btn-dark:active:focus,
+.btn-group-raised .btn-dark.custom-file-control:active:focus::before,
+.btn-group-raised .btn.btn-dark:active.focus,
+.btn-group-raised .btn-dark.custom-file-control:active.focus::before,
+.btn-group-raised .btn.btn-dark.active:hover,
+.btn-group-raised .btn-dark.active.custom-file-control:hover::before,
+.btn-group-raised .btn.btn-dark.active:focus,
+.btn-group-raised .btn-dark.active.custom-file-control:focus::before,
+.btn-group-raised .btn.btn-dark.active.focus,
+.btn-group-raised .btn-dark.active.focus.custom-file-control::before,
+.open >
+.btn-group-raised .btn.btn-dark.dropdown-toggle:hover,
+.open >
+.btn-group-raised .btn-dark.dropdown-toggle.custom-file-control:hover::before,
+.open >
+.btn-group-raised .btn.btn-dark.dropdown-toggle:focus,
+.open >
+.btn-group-raised .btn-dark.dropdown-toggle.custom-file-control:focus::before,
+.open >
+.btn-group-raised .btn.btn-dark.dropdown-toggle.focus,
+.open >
+.btn-group-raised .btn-dark.dropdown-toggle.focus.custom-file-control::before {
+  color: #fff;
+  background-color: #eb9300;
+  border-color: #805000;
+}
+
+.open > .btn.bmd-btn-fab.btn-dark.dropdown-toggle.bmd-btn-icon, .open > .bmd-btn-fab.btn-dark.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open > .btn.btn-raised.btn-dark.dropdown-toggle.bmd-btn-icon, .open > .btn-raised.btn-dark.dropdown-toggle.bmd-btn-icon.custom-file-control::before, .open >
+.btn-group-raised .btn.btn-dark.dropdown-toggle.bmd-btn-icon, .open >
+.btn-group-raised .btn-dark.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: #FFA000;
+}
+
+.open > .btn.bmd-btn-fab.btn-dark.dropdown-toggle.bmd-btn-icon:hover, .open > .bmd-btn-fab.btn-dark.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open > .btn.btn-raised.btn-dark.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-raised.btn-dark.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before, .open >
+.btn-group-raised .btn.btn-dark.dropdown-toggle.bmd-btn-icon:hover, .open >
+.btn-group-raised .btn-dark.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: #eb9300;
+}
+
+.btn.bmd-btn-fab.btn-dark.disabled:focus, .bmd-btn-fab.btn-dark.disabled.custom-file-control:focus::before, .btn.bmd-btn-fab.btn-dark.disabled.focus, .bmd-btn-fab.btn-dark.disabled.focus.custom-file-control::before, .btn.bmd-btn-fab.btn-dark:disabled:focus, .bmd-btn-fab.btn-dark.custom-file-control:disabled:focus::before, .btn.bmd-btn-fab.btn-dark:disabled.focus, .bmd-btn-fab.btn-dark.custom-file-control:disabled.focus::before, .btn.btn-raised.btn-dark.disabled:focus, .btn-raised.btn-dark.disabled.custom-file-control:focus::before, .btn.btn-raised.btn-dark.disabled.focus, .btn-raised.btn-dark.disabled.focus.custom-file-control::before, .btn.btn-raised.btn-dark:disabled:focus, .btn-raised.btn-dark.custom-file-control:disabled:focus::before, .btn.btn-raised.btn-dark:disabled.focus, .btn-raised.btn-dark.custom-file-control:disabled.focus::before,
+.btn-group-raised .btn.btn-dark.disabled:focus,
+.btn-group-raised .btn-dark.disabled.custom-file-control:focus::before,
+.btn-group-raised .btn.btn-dark.disabled.focus,
+.btn-group-raised .btn-dark.disabled.focus.custom-file-control::before,
+.btn-group-raised .btn.btn-dark:disabled:focus,
+.btn-group-raised .btn-dark.custom-file-control:disabled:focus::before,
+.btn-group-raised .btn.btn-dark:disabled.focus,
+.btn-group-raised .btn-dark.custom-file-control:disabled.focus::before {
+  background-color: #FFA000;
+  border-color: #FFA000;
+}
+
+.btn.bmd-btn-fab.btn-dark.disabled:hover, .bmd-btn-fab.btn-dark.disabled.custom-file-control:hover::before, .btn.bmd-btn-fab.btn-dark:disabled:hover, .bmd-btn-fab.btn-dark.custom-file-control:disabled:hover::before, .btn.btn-raised.btn-dark.disabled:hover, .btn-raised.btn-dark.disabled.custom-file-control:hover::before, .btn.btn-raised.btn-dark:disabled:hover, .btn-raised.btn-dark.custom-file-control:disabled:hover::before,
+.btn-group-raised .btn.btn-dark.disabled:hover,
+.btn-group-raised .btn-dark.disabled.custom-file-control:hover::before,
+.btn-group-raised .btn.btn-dark:disabled:hover,
+.btn-group-raised .btn-dark.custom-file-control:disabled:hover::before {
+  background-color: #FFA000;
+  border-color: #FFA000;
+}
+
 .btn.bmd-btn-fab:hover, .bmd-btn-fab.custom-file-control:hover::before, .btn.bmd-btn-fab:focus, .bmd-btn-fab.custom-file-control:focus::before, .btn.btn-raised:hover, .btn-raised.custom-file-control:hover::before, .btn.btn-raised:focus, .btn-raised.custom-file-control:focus::before,
 .btn-group-raised .btn:hover,
 .btn-group-raised .custom-file-control:hover::before,
@@ -11859,8 +12052,6 @@ button:focus {
 .btn-group-raised .focus.custom-file-control::before,
 .btn-group-raised .btn:focus,
 .btn-group-raised .custom-file-control:focus::before {
-  -webkit-box-shadow: none;
-  box-shadow: none;
   outline: 0;
 }
 
@@ -11909,131 +12100,16 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
   box-shadow: none;
 }
 
-.btn.btn-outline, .btn-outline.custom-file-control::before, .btn.btn-outline-primary, .btn-outline-primary.custom-file-control::before, .btn.btn-outline-secondary, .btn-outline-secondary.custom-file-control::before, .btn.btn-outline-info, .btn-outline-info.custom-file-control::before, .btn.btn-outline-success, .btn-outline-success.custom-file-control::before, .btn.btn-outline-warning, .btn-outline-warning.custom-file-control::before, .btn.btn-outline-danger, .btn-outline-danger.custom-file-control::before {
+.btn.btn-outline, .btn-outline.custom-file-control::before {
   border-color: currentColor;
   border-style: solid;
   border-width: 1px;
 }
 
-.btn.btn-outline, .btn-outline.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
-}
-
-.btn.btn-outline:hover, .btn-outline.custom-file-control:hover::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(153, 153, 153, 0.2);
-  border-color: rgba(0, 0, 0, 0.87);
-}
-
-.btn.btn-outline:focus, .btn-outline.custom-file-control:focus::before, .btn.btn-outline.focus, .btn-outline.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(153, 153, 153, 0.2);
-  border-color: rgba(0, 0, 0, 0.87);
-}
-
-.btn.btn-outline:active, .btn-outline.custom-file-control:active::before, .btn.btn-outline.active, .btn-outline.active.custom-file-control::before,
-.open > .btn.btn-outline.dropdown-toggle,
-.open > .btn-outline.dropdown-toggle.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(153, 153, 153, 0.2);
-  border-color: rgba(0, 0, 0, 0.87);
-}
-
-.btn.btn-outline:active:hover, .btn-outline.custom-file-control:active:hover::before, .btn.btn-outline:active:focus, .btn-outline.custom-file-control:active:focus::before, .btn.btn-outline:active.focus, .btn-outline.custom-file-control:active.focus::before, .btn.btn-outline.active:hover, .btn-outline.active.custom-file-control:hover::before, .btn.btn-outline.active:focus, .btn-outline.active.custom-file-control:focus::before, .btn.btn-outline.active.focus, .btn-outline.active.focus.custom-file-control::before,
-.open > .btn.btn-outline.dropdown-toggle:hover,
-.open > .btn-outline.dropdown-toggle.custom-file-control:hover::before,
-.open > .btn.btn-outline.dropdown-toggle:focus,
-.open > .btn-outline.dropdown-toggle.custom-file-control:focus::before,
-.open > .btn.btn-outline.dropdown-toggle.focus,
-.open > .btn-outline.dropdown-toggle.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(153, 153, 153, 0.4);
-  border-color: rgba(0, 0, 0, 0.87);
-}
-
-.open > .btn.btn-outline.dropdown-toggle.bmd-btn-icon, .open > .btn-outline.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
-  color: inherit;
-  background-color: transparent;
-}
-
-.open > .btn.btn-outline.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
-  background-color: rgba(153, 153, 153, 0.2);
-}
-
-.btn.btn-outline.disabled:focus, .btn-outline.disabled.custom-file-control:focus::before, .btn.btn-outline.disabled.focus, .btn-outline.disabled.focus.custom-file-control::before, .btn.btn-outline:disabled:focus, .btn-outline.custom-file-control:disabled:focus::before, .btn.btn-outline:disabled.focus, .btn-outline.custom-file-control:disabled.focus::before {
-  background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
-}
-
-.btn.btn-outline.disabled:hover, .btn-outline.disabled.custom-file-control:hover::before, .btn.btn-outline:disabled:hover, .btn-outline.custom-file-control:disabled:hover::before {
-  background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
-}
-
-.bg-inverse .btn.btn-outline, .bg-inverse .btn-outline.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
-}
-
-.bg-inverse .btn.btn-outline:hover, .bg-inverse .btn-outline.custom-file-control:hover::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(204, 204, 204, 0.15);
-  border-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-outline:focus, .bg-inverse .btn-outline.custom-file-control:focus::before, .bg-inverse .btn.btn-outline.focus, .bg-inverse .btn-outline.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(204, 204, 204, 0.15);
-  border-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-outline:active, .bg-inverse .btn-outline.custom-file-control:active::before, .bg-inverse .btn.btn-outline.active, .bg-inverse .btn-outline.active.custom-file-control::before,
-.open > .bg-inverse .btn.btn-outline.dropdown-toggle,
-.open > .bg-inverse .btn-outline.dropdown-toggle.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(204, 204, 204, 0.15);
-  border-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-outline:active:hover, .bg-inverse .btn-outline.custom-file-control:active:hover::before, .bg-inverse .btn.btn-outline:active:focus, .bg-inverse .btn-outline.custom-file-control:active:focus::before, .bg-inverse .btn.btn-outline:active.focus, .bg-inverse .btn-outline.custom-file-control:active.focus::before, .bg-inverse .btn.btn-outline.active:hover, .bg-inverse .btn-outline.active.custom-file-control:hover::before, .bg-inverse .btn.btn-outline.active:focus, .bg-inverse .btn-outline.active.custom-file-control:focus::before, .bg-inverse .btn.btn-outline.active.focus, .bg-inverse .btn-outline.active.focus.custom-file-control::before,
-.open > .bg-inverse .btn.btn-outline.dropdown-toggle:hover,
-.open > .bg-inverse .btn-outline.dropdown-toggle.custom-file-control:hover::before,
-.open > .bg-inverse .btn.btn-outline.dropdown-toggle:focus,
-.open > .bg-inverse .btn-outline.dropdown-toggle.custom-file-control:focus::before,
-.open > .bg-inverse .btn.btn-outline.dropdown-toggle.focus,
-.open > .bg-inverse .btn-outline.dropdown-toggle.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: rgba(204, 204, 204, 0.25);
-  border-color: rgba(204, 204, 204, 0.25);
-}
-
-.open > .bg-inverse .btn.btn-outline.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
-  color: inherit;
-  background-color: transparent;
-}
-
-.open > .bg-inverse .btn.btn-outline.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
-  background-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-outline.disabled:focus, .bg-inverse .btn-outline.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline.disabled.focus, .bg-inverse .btn-outline.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline:disabled:focus, .bg-inverse .btn-outline.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline:disabled.focus, .bg-inverse .btn-outline.custom-file-control:disabled.focus::before {
-  background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
-}
-
-.bg-inverse .btn.btn-outline.disabled:hover, .bg-inverse .btn-outline.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline:disabled:hover, .bg-inverse .btn-outline.custom-file-control:disabled:hover::before {
-  background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
-}
-
-.btn.btn-outline.btn-link, .btn-outline.btn-link.custom-file-control::before {
-  background-color: transparent;
-}
-
 .btn.btn-outline-primary, .btn-outline-primary.custom-file-control::before {
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 1px;
   color: #FFC107;
   background-color: transparent;
   border-color: #FFC107;
@@ -12152,29 +12228,32 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .btn.btn-outline-secondary, .btn-outline-secondary.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 1px;
+  color: #FF5722;
   background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
+  border-color: #FF5722;
 }
 
 .btn.btn-outline-secondary:hover, .btn-outline-secondary.custom-file-control:hover::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(153, 153, 153, 0.2);
-  border-color: rgba(0, 0, 0, 0.87);
+  border-color: #FF5722;
 }
 
 .btn.btn-outline-secondary:focus, .btn-outline-secondary.custom-file-control:focus::before, .btn.btn-outline-secondary.focus, .btn-outline-secondary.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(153, 153, 153, 0.2);
-  border-color: rgba(0, 0, 0, 0.87);
+  border-color: #FF5722;
 }
 
 .btn.btn-outline-secondary:active, .btn-outline-secondary.custom-file-control:active::before, .btn.btn-outline-secondary.active, .btn-outline-secondary.active.custom-file-control::before,
 .open > .btn.btn-outline-secondary.dropdown-toggle,
 .open > .btn-outline-secondary.dropdown-toggle.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(153, 153, 153, 0.2);
-  border-color: rgba(0, 0, 0, 0.87);
+  border-color: #FF5722;
 }
 
 .btn.btn-outline-secondary:active:hover, .btn-outline-secondary.custom-file-control:active:hover::before, .btn.btn-outline-secondary:active:focus, .btn-outline-secondary.custom-file-control:active:focus::before, .btn.btn-outline-secondary:active.focus, .btn-outline-secondary.custom-file-control:active.focus::before, .btn.btn-outline-secondary.active:hover, .btn-outline-secondary.active.custom-file-control:hover::before, .btn.btn-outline-secondary.active:focus, .btn-outline-secondary.active.custom-file-control:focus::before, .btn.btn-outline-secondary.active.focus, .btn-outline-secondary.active.focus.custom-file-control::before,
@@ -12184,9 +12263,9 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 .open > .btn-outline-secondary.dropdown-toggle.custom-file-control:focus::before,
 .open > .btn.btn-outline-secondary.dropdown-toggle.focus,
 .open > .btn-outline-secondary.dropdown-toggle.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(153, 153, 153, 0.4);
-  border-color: rgba(0, 0, 0, 0.87);
+  border-color: #FF5722;
 }
 
 .open > .btn.btn-outline-secondary.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-secondary.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
@@ -12200,28 +12279,28 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .btn.btn-outline-secondary.disabled:focus, .btn-outline-secondary.disabled.custom-file-control:focus::before, .btn.btn-outline-secondary.disabled.focus, .btn-outline-secondary.disabled.focus.custom-file-control::before, .btn.btn-outline-secondary:disabled:focus, .btn-outline-secondary.custom-file-control:disabled:focus::before, .btn.btn-outline-secondary:disabled.focus, .btn-outline-secondary.custom-file-control:disabled.focus::before {
   background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
+  border-color: #FF5722;
 }
 
 .btn.btn-outline-secondary.disabled:hover, .btn-outline-secondary.disabled.custom-file-control:hover::before, .btn.btn-outline-secondary:disabled:hover, .btn-outline-secondary.custom-file-control:disabled:hover::before {
   background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
+  border-color: #FF5722;
 }
 
 .bg-inverse .btn.btn-outline-secondary, .bg-inverse .btn-outline-secondary.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
+  border-color: #FF5722;
 }
 
 .bg-inverse .btn.btn-outline-secondary:hover, .bg-inverse .btn-outline-secondary.custom-file-control:hover::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(204, 204, 204, 0.15);
   border-color: rgba(204, 204, 204, 0.15);
 }
 
 .bg-inverse .btn.btn-outline-secondary:focus, .bg-inverse .btn-outline-secondary.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-secondary.focus, .bg-inverse .btn-outline-secondary.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(204, 204, 204, 0.15);
   border-color: rgba(204, 204, 204, 0.15);
 }
@@ -12229,7 +12308,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 .bg-inverse .btn.btn-outline-secondary:active, .bg-inverse .btn-outline-secondary.custom-file-control:active::before, .bg-inverse .btn.btn-outline-secondary.active, .bg-inverse .btn-outline-secondary.active.custom-file-control::before,
 .open > .bg-inverse .btn.btn-outline-secondary.dropdown-toggle,
 .open > .bg-inverse .btn-outline-secondary.dropdown-toggle.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(204, 204, 204, 0.15);
   border-color: rgba(204, 204, 204, 0.15);
 }
@@ -12241,7 +12320,7 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 .open > .bg-inverse .btn-outline-secondary.dropdown-toggle.custom-file-control:focus::before,
 .open > .bg-inverse .btn.btn-outline-secondary.dropdown-toggle.focus,
 .open > .bg-inverse .btn-outline-secondary.dropdown-toggle.focus.custom-file-control::before {
-  color: rgba(0, 0, 0, 0.87);
+  color: #FF5722;
   background-color: rgba(204, 204, 204, 0.25);
   border-color: rgba(204, 204, 204, 0.25);
 }
@@ -12257,137 +12336,22 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 
 .bg-inverse .btn.btn-outline-secondary.disabled:focus, .bg-inverse .btn-outline-secondary.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-secondary.disabled.focus, .bg-inverse .btn-outline-secondary.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline-secondary:disabled:focus, .bg-inverse .btn-outline-secondary.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline-secondary:disabled.focus, .bg-inverse .btn-outline-secondary.custom-file-control:disabled.focus::before {
   background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
+  border-color: #FF5722;
 }
 
 .bg-inverse .btn.btn-outline-secondary.disabled:hover, .bg-inverse .btn-outline-secondary.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-secondary:disabled:hover, .bg-inverse .btn-outline-secondary.custom-file-control:disabled:hover::before {
   background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.87);
+  border-color: #FF5722;
 }
 
 .btn.btn-outline-secondary.btn-link, .btn-outline-secondary.btn-link.custom-file-control::before {
   background-color: transparent;
 }
 
-.btn.btn-outline-info, .btn-outline-info.custom-file-control::before {
-  color: #03a9f4;
-  background-color: transparent;
-  border-color: #03a9f4;
-}
-
-.btn.btn-outline-info:hover, .btn-outline-info.custom-file-control:hover::before {
-  color: #03a9f4;
-  background-color: rgba(153, 153, 153, 0.2);
-  border-color: #03a9f4;
-}
-
-.btn.btn-outline-info:focus, .btn-outline-info.custom-file-control:focus::before, .btn.btn-outline-info.focus, .btn-outline-info.focus.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(153, 153, 153, 0.2);
-  border-color: #03a9f4;
-}
-
-.btn.btn-outline-info:active, .btn-outline-info.custom-file-control:active::before, .btn.btn-outline-info.active, .btn-outline-info.active.custom-file-control::before,
-.open > .btn.btn-outline-info.dropdown-toggle,
-.open > .btn-outline-info.dropdown-toggle.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(153, 153, 153, 0.2);
-  border-color: #03a9f4;
-}
-
-.btn.btn-outline-info:active:hover, .btn-outline-info.custom-file-control:active:hover::before, .btn.btn-outline-info:active:focus, .btn-outline-info.custom-file-control:active:focus::before, .btn.btn-outline-info:active.focus, .btn-outline-info.custom-file-control:active.focus::before, .btn.btn-outline-info.active:hover, .btn-outline-info.active.custom-file-control:hover::before, .btn.btn-outline-info.active:focus, .btn-outline-info.active.custom-file-control:focus::before, .btn.btn-outline-info.active.focus, .btn-outline-info.active.focus.custom-file-control::before,
-.open > .btn.btn-outline-info.dropdown-toggle:hover,
-.open > .btn-outline-info.dropdown-toggle.custom-file-control:hover::before,
-.open > .btn.btn-outline-info.dropdown-toggle:focus,
-.open > .btn-outline-info.dropdown-toggle.custom-file-control:focus::before,
-.open > .btn.btn-outline-info.dropdown-toggle.focus,
-.open > .btn-outline-info.dropdown-toggle.focus.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(153, 153, 153, 0.4);
-  border-color: #03a9f4;
-}
-
-.open > .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
-  color: inherit;
-  background-color: transparent;
-}
-
-.open > .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
-  background-color: rgba(153, 153, 153, 0.2);
-}
-
-.btn.btn-outline-info.disabled:focus, .btn-outline-info.disabled.custom-file-control:focus::before, .btn.btn-outline-info.disabled.focus, .btn-outline-info.disabled.focus.custom-file-control::before, .btn.btn-outline-info:disabled:focus, .btn-outline-info.custom-file-control:disabled:focus::before, .btn.btn-outline-info:disabled.focus, .btn-outline-info.custom-file-control:disabled.focus::before {
-  background-color: transparent;
-  border-color: #03a9f4;
-}
-
-.btn.btn-outline-info.disabled:hover, .btn-outline-info.disabled.custom-file-control:hover::before, .btn.btn-outline-info:disabled:hover, .btn-outline-info.custom-file-control:disabled:hover::before {
-  background-color: transparent;
-  border-color: #03a9f4;
-}
-
-.bg-inverse .btn.btn-outline-info, .bg-inverse .btn-outline-info.custom-file-control::before {
-  color: #03a9f4;
-  background-color: transparent;
-  border-color: #03a9f4;
-}
-
-.bg-inverse .btn.btn-outline-info:hover, .bg-inverse .btn-outline-info.custom-file-control:hover::before {
-  color: #03a9f4;
-  background-color: rgba(204, 204, 204, 0.15);
-  border-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-outline-info:focus, .bg-inverse .btn-outline-info.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-info.focus, .bg-inverse .btn-outline-info.focus.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(204, 204, 204, 0.15);
-  border-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-outline-info:active, .bg-inverse .btn-outline-info.custom-file-control:active::before, .bg-inverse .btn.btn-outline-info.active, .bg-inverse .btn-outline-info.active.custom-file-control::before,
-.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle,
-.open > .bg-inverse .btn-outline-info.dropdown-toggle.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(204, 204, 204, 0.15);
-  border-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-outline-info:active:hover, .bg-inverse .btn-outline-info.custom-file-control:active:hover::before, .bg-inverse .btn.btn-outline-info:active:focus, .bg-inverse .btn-outline-info.custom-file-control:active:focus::before, .bg-inverse .btn.btn-outline-info:active.focus, .bg-inverse .btn-outline-info.custom-file-control:active.focus::before, .bg-inverse .btn.btn-outline-info.active:hover, .bg-inverse .btn-outline-info.active.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-info.active:focus, .bg-inverse .btn-outline-info.active.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-info.active.focus, .bg-inverse .btn-outline-info.active.focus.custom-file-control::before,
-.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle:hover,
-.open > .bg-inverse .btn-outline-info.dropdown-toggle.custom-file-control:hover::before,
-.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle:focus,
-.open > .bg-inverse .btn-outline-info.dropdown-toggle.custom-file-control:focus::before,
-.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle.focus,
-.open > .bg-inverse .btn-outline-info.dropdown-toggle.focus.custom-file-control::before {
-  color: #03a9f4;
-  background-color: rgba(204, 204, 204, 0.25);
-  border-color: rgba(204, 204, 204, 0.25);
-}
-
-.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
-  color: inherit;
-  background-color: transparent;
-}
-
-.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
-  background-color: rgba(204, 204, 204, 0.15);
-}
-
-.bg-inverse .btn.btn-outline-info.disabled:focus, .bg-inverse .btn-outline-info.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-info.disabled.focus, .bg-inverse .btn-outline-info.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline-info:disabled:focus, .bg-inverse .btn-outline-info.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline-info:disabled.focus, .bg-inverse .btn-outline-info.custom-file-control:disabled.focus::before {
-  background-color: transparent;
-  border-color: #03a9f4;
-}
-
-.bg-inverse .btn.btn-outline-info.disabled:hover, .bg-inverse .btn-outline-info.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-info:disabled:hover, .bg-inverse .btn-outline-info.custom-file-control:disabled:hover::before {
-  background-color: transparent;
-  border-color: #03a9f4;
-}
-
-.btn.btn-outline-info.btn-link, .btn-outline-info.btn-link.custom-file-control::before {
-  background-color: transparent;
-}
-
 .btn.btn-outline-success, .btn-outline-success.custom-file-control::before {
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 1px;
   color: #4caf50;
   background-color: transparent;
   border-color: #4caf50;
@@ -12505,7 +12469,131 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
   background-color: transparent;
 }
 
+.btn.btn-outline-info, .btn-outline-info.custom-file-control::before {
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 1px;
+  color: #03a9f4;
+  background-color: transparent;
+  border-color: #03a9f4;
+}
+
+.btn.btn-outline-info:hover, .btn-outline-info.custom-file-control:hover::before {
+  color: #03a9f4;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: #03a9f4;
+}
+
+.btn.btn-outline-info:focus, .btn-outline-info.custom-file-control:focus::before, .btn.btn-outline-info.focus, .btn-outline-info.focus.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: #03a9f4;
+}
+
+.btn.btn-outline-info:active, .btn-outline-info.custom-file-control:active::before, .btn.btn-outline-info.active, .btn-outline-info.active.custom-file-control::before,
+.open > .btn.btn-outline-info.dropdown-toggle,
+.open > .btn-outline-info.dropdown-toggle.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: #03a9f4;
+}
+
+.btn.btn-outline-info:active:hover, .btn-outline-info.custom-file-control:active:hover::before, .btn.btn-outline-info:active:focus, .btn-outline-info.custom-file-control:active:focus::before, .btn.btn-outline-info:active.focus, .btn-outline-info.custom-file-control:active.focus::before, .btn.btn-outline-info.active:hover, .btn-outline-info.active.custom-file-control:hover::before, .btn.btn-outline-info.active:focus, .btn-outline-info.active.custom-file-control:focus::before, .btn.btn-outline-info.active.focus, .btn-outline-info.active.focus.custom-file-control::before,
+.open > .btn.btn-outline-info.dropdown-toggle:hover,
+.open > .btn-outline-info.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.btn-outline-info.dropdown-toggle:focus,
+.open > .btn-outline-info.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.btn-outline-info.dropdown-toggle.focus,
+.open > .btn-outline-info.dropdown-toggle.focus.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(153, 153, 153, 0.4);
+  border-color: #03a9f4;
+}
+
+.open > .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-outline-info.disabled:focus, .btn-outline-info.disabled.custom-file-control:focus::before, .btn.btn-outline-info.disabled.focus, .btn-outline-info.disabled.focus.custom-file-control::before, .btn.btn-outline-info:disabled:focus, .btn-outline-info.custom-file-control:disabled:focus::before, .btn.btn-outline-info:disabled.focus, .btn-outline-info.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #03a9f4;
+}
+
+.btn.btn-outline-info.disabled:hover, .btn-outline-info.disabled.custom-file-control:hover::before, .btn.btn-outline-info:disabled:hover, .btn-outline-info.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #03a9f4;
+}
+
+.bg-inverse .btn.btn-outline-info, .bg-inverse .btn-outline-info.custom-file-control::before {
+  color: #03a9f4;
+  background-color: transparent;
+  border-color: #03a9f4;
+}
+
+.bg-inverse .btn.btn-outline-info:hover, .bg-inverse .btn-outline-info.custom-file-control:hover::before {
+  color: #03a9f4;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-info:focus, .bg-inverse .btn-outline-info.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-info.focus, .bg-inverse .btn-outline-info.focus.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-info:active, .bg-inverse .btn-outline-info.custom-file-control:active::before, .bg-inverse .btn.btn-outline-info.active, .bg-inverse .btn-outline-info.active.custom-file-control::before,
+.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle,
+.open > .bg-inverse .btn-outline-info.dropdown-toggle.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-info:active:hover, .bg-inverse .btn-outline-info.custom-file-control:active:hover::before, .bg-inverse .btn.btn-outline-info:active:focus, .bg-inverse .btn-outline-info.custom-file-control:active:focus::before, .bg-inverse .btn.btn-outline-info:active.focus, .bg-inverse .btn-outline-info.custom-file-control:active.focus::before, .bg-inverse .btn.btn-outline-info.active:hover, .bg-inverse .btn-outline-info.active.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-info.active:focus, .bg-inverse .btn-outline-info.active.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-info.active.focus, .bg-inverse .btn-outline-info.active.focus.custom-file-control::before,
+.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle:hover,
+.open > .bg-inverse .btn-outline-info.dropdown-toggle.custom-file-control:hover::before,
+.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle:focus,
+.open > .bg-inverse .btn-outline-info.dropdown-toggle.custom-file-control:focus::before,
+.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle.focus,
+.open > .bg-inverse .btn-outline-info.dropdown-toggle.focus.custom-file-control::before {
+  color: #03a9f4;
+  background-color: rgba(204, 204, 204, 0.25);
+  border-color: rgba(204, 204, 204, 0.25);
+}
+
+.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .bg-inverse .btn.btn-outline-info.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline-info.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-info.disabled:focus, .bg-inverse .btn-outline-info.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-info.disabled.focus, .bg-inverse .btn-outline-info.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline-info:disabled:focus, .bg-inverse .btn-outline-info.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline-info:disabled.focus, .bg-inverse .btn-outline-info.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #03a9f4;
+}
+
+.bg-inverse .btn.btn-outline-info.disabled:hover, .bg-inverse .btn-outline-info.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-info:disabled:hover, .bg-inverse .btn-outline-info.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #03a9f4;
+}
+
+.btn.btn-outline-info.btn-link, .btn-outline-info.btn-link.custom-file-control::before {
+  background-color: transparent;
+}
+
 .btn.btn-outline-warning, .btn-outline-warning.custom-file-control::before {
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 1px;
   color: #ff5722;
   background-color: transparent;
   border-color: #ff5722;
@@ -12624,6 +12712,9 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .btn.btn-outline-danger, .btn-outline-danger.custom-file-control::before {
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 1px;
   color: #f44336;
   background-color: transparent;
   border-color: #f44336;
@@ -12738,6 +12829,248 @@ fieldset[disabled][disabled] .btn.btn-raised, fieldset[disabled][disabled] .btn-
 }
 
 .btn.btn-outline-danger.btn-link, .btn-outline-danger.btn-link.custom-file-control::before {
+  background-color: transparent;
+}
+
+.btn.btn-outline-light, .btn-outline-light.custom-file-control::before {
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 1px;
+  color: #FFECB3;
+  background-color: transparent;
+  border-color: #FFECB3;
+}
+
+.btn.btn-outline-light:hover, .btn-outline-light.custom-file-control:hover::before {
+  color: #FFECB3;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: #FFECB3;
+}
+
+.btn.btn-outline-light:focus, .btn-outline-light.custom-file-control:focus::before, .btn.btn-outline-light.focus, .btn-outline-light.focus.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: #FFECB3;
+}
+
+.btn.btn-outline-light:active, .btn-outline-light.custom-file-control:active::before, .btn.btn-outline-light.active, .btn-outline-light.active.custom-file-control::before,
+.open > .btn.btn-outline-light.dropdown-toggle,
+.open > .btn-outline-light.dropdown-toggle.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: #FFECB3;
+}
+
+.btn.btn-outline-light:active:hover, .btn-outline-light.custom-file-control:active:hover::before, .btn.btn-outline-light:active:focus, .btn-outline-light.custom-file-control:active:focus::before, .btn.btn-outline-light:active.focus, .btn-outline-light.custom-file-control:active.focus::before, .btn.btn-outline-light.active:hover, .btn-outline-light.active.custom-file-control:hover::before, .btn.btn-outline-light.active:focus, .btn-outline-light.active.custom-file-control:focus::before, .btn.btn-outline-light.active.focus, .btn-outline-light.active.focus.custom-file-control::before,
+.open > .btn.btn-outline-light.dropdown-toggle:hover,
+.open > .btn-outline-light.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.btn-outline-light.dropdown-toggle:focus,
+.open > .btn-outline-light.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.btn-outline-light.dropdown-toggle.focus,
+.open > .btn-outline-light.dropdown-toggle.focus.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(153, 153, 153, 0.4);
+  border-color: #FFECB3;
+}
+
+.open > .btn.btn-outline-light.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-light.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .btn.btn-outline-light.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline-light.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-outline-light.disabled:focus, .btn-outline-light.disabled.custom-file-control:focus::before, .btn.btn-outline-light.disabled.focus, .btn-outline-light.disabled.focus.custom-file-control::before, .btn.btn-outline-light:disabled:focus, .btn-outline-light.custom-file-control:disabled:focus::before, .btn.btn-outline-light:disabled.focus, .btn-outline-light.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #FFECB3;
+}
+
+.btn.btn-outline-light.disabled:hover, .btn-outline-light.disabled.custom-file-control:hover::before, .btn.btn-outline-light:disabled:hover, .btn-outline-light.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #FFECB3;
+}
+
+.bg-inverse .btn.btn-outline-light, .bg-inverse .btn-outline-light.custom-file-control::before {
+  color: #FFECB3;
+  background-color: transparent;
+  border-color: #FFECB3;
+}
+
+.bg-inverse .btn.btn-outline-light:hover, .bg-inverse .btn-outline-light.custom-file-control:hover::before {
+  color: #FFECB3;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-light:focus, .bg-inverse .btn-outline-light.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-light.focus, .bg-inverse .btn-outline-light.focus.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-light:active, .bg-inverse .btn-outline-light.custom-file-control:active::before, .bg-inverse .btn.btn-outline-light.active, .bg-inverse .btn-outline-light.active.custom-file-control::before,
+.open > .bg-inverse .btn.btn-outline-light.dropdown-toggle,
+.open > .bg-inverse .btn-outline-light.dropdown-toggle.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-light:active:hover, .bg-inverse .btn-outline-light.custom-file-control:active:hover::before, .bg-inverse .btn.btn-outline-light:active:focus, .bg-inverse .btn-outline-light.custom-file-control:active:focus::before, .bg-inverse .btn.btn-outline-light:active.focus, .bg-inverse .btn-outline-light.custom-file-control:active.focus::before, .bg-inverse .btn.btn-outline-light.active:hover, .bg-inverse .btn-outline-light.active.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-light.active:focus, .bg-inverse .btn-outline-light.active.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-light.active.focus, .bg-inverse .btn-outline-light.active.focus.custom-file-control::before,
+.open > .bg-inverse .btn.btn-outline-light.dropdown-toggle:hover,
+.open > .bg-inverse .btn-outline-light.dropdown-toggle.custom-file-control:hover::before,
+.open > .bg-inverse .btn.btn-outline-light.dropdown-toggle:focus,
+.open > .bg-inverse .btn-outline-light.dropdown-toggle.custom-file-control:focus::before,
+.open > .bg-inverse .btn.btn-outline-light.dropdown-toggle.focus,
+.open > .bg-inverse .btn-outline-light.dropdown-toggle.focus.custom-file-control::before {
+  color: #FFECB3;
+  background-color: rgba(204, 204, 204, 0.25);
+  border-color: rgba(204, 204, 204, 0.25);
+}
+
+.open > .bg-inverse .btn.btn-outline-light.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-light.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .bg-inverse .btn.btn-outline-light.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline-light.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-light.disabled:focus, .bg-inverse .btn-outline-light.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-light.disabled.focus, .bg-inverse .btn-outline-light.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline-light:disabled:focus, .bg-inverse .btn-outline-light.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline-light:disabled.focus, .bg-inverse .btn-outline-light.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #FFECB3;
+}
+
+.bg-inverse .btn.btn-outline-light.disabled:hover, .bg-inverse .btn-outline-light.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-light:disabled:hover, .bg-inverse .btn-outline-light.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #FFECB3;
+}
+
+.btn.btn-outline-light.btn-link, .btn-outline-light.btn-link.custom-file-control::before {
+  background-color: transparent;
+}
+
+.btn.btn-outline-dark, .btn-outline-dark.custom-file-control::before {
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 1px;
+  color: #FFA000;
+  background-color: transparent;
+  border-color: #FFA000;
+}
+
+.btn.btn-outline-dark:hover, .btn-outline-dark.custom-file-control:hover::before {
+  color: #FFA000;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: #FFA000;
+}
+
+.btn.btn-outline-dark:focus, .btn-outline-dark.custom-file-control:focus::before, .btn.btn-outline-dark.focus, .btn-outline-dark.focus.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: #FFA000;
+}
+
+.btn.btn-outline-dark:active, .btn-outline-dark.custom-file-control:active::before, .btn.btn-outline-dark.active, .btn-outline-dark.active.custom-file-control::before,
+.open > .btn.btn-outline-dark.dropdown-toggle,
+.open > .btn-outline-dark.dropdown-toggle.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(153, 153, 153, 0.2);
+  border-color: #FFA000;
+}
+
+.btn.btn-outline-dark:active:hover, .btn-outline-dark.custom-file-control:active:hover::before, .btn.btn-outline-dark:active:focus, .btn-outline-dark.custom-file-control:active:focus::before, .btn.btn-outline-dark:active.focus, .btn-outline-dark.custom-file-control:active.focus::before, .btn.btn-outline-dark.active:hover, .btn-outline-dark.active.custom-file-control:hover::before, .btn.btn-outline-dark.active:focus, .btn-outline-dark.active.custom-file-control:focus::before, .btn.btn-outline-dark.active.focus, .btn-outline-dark.active.focus.custom-file-control::before,
+.open > .btn.btn-outline-dark.dropdown-toggle:hover,
+.open > .btn-outline-dark.dropdown-toggle.custom-file-control:hover::before,
+.open > .btn.btn-outline-dark.dropdown-toggle:focus,
+.open > .btn-outline-dark.dropdown-toggle.custom-file-control:focus::before,
+.open > .btn.btn-outline-dark.dropdown-toggle.focus,
+.open > .btn-outline-dark.dropdown-toggle.focus.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(153, 153, 153, 0.4);
+  border-color: #FFA000;
+}
+
+.open > .btn.btn-outline-dark.dropdown-toggle.bmd-btn-icon, .open > .btn-outline-dark.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .btn.btn-outline-dark.dropdown-toggle.bmd-btn-icon:hover, .open > .btn-outline-dark.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(153, 153, 153, 0.2);
+}
+
+.btn.btn-outline-dark.disabled:focus, .btn-outline-dark.disabled.custom-file-control:focus::before, .btn.btn-outline-dark.disabled.focus, .btn-outline-dark.disabled.focus.custom-file-control::before, .btn.btn-outline-dark:disabled:focus, .btn-outline-dark.custom-file-control:disabled:focus::before, .btn.btn-outline-dark:disabled.focus, .btn-outline-dark.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #FFA000;
+}
+
+.btn.btn-outline-dark.disabled:hover, .btn-outline-dark.disabled.custom-file-control:hover::before, .btn.btn-outline-dark:disabled:hover, .btn-outline-dark.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #FFA000;
+}
+
+.bg-inverse .btn.btn-outline-dark, .bg-inverse .btn-outline-dark.custom-file-control::before {
+  color: #FFA000;
+  background-color: transparent;
+  border-color: #FFA000;
+}
+
+.bg-inverse .btn.btn-outline-dark:hover, .bg-inverse .btn-outline-dark.custom-file-control:hover::before {
+  color: #FFA000;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-dark:focus, .bg-inverse .btn-outline-dark.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-dark.focus, .bg-inverse .btn-outline-dark.focus.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-dark:active, .bg-inverse .btn-outline-dark.custom-file-control:active::before, .bg-inverse .btn.btn-outline-dark.active, .bg-inverse .btn-outline-dark.active.custom-file-control::before,
+.open > .bg-inverse .btn.btn-outline-dark.dropdown-toggle,
+.open > .bg-inverse .btn-outline-dark.dropdown-toggle.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(204, 204, 204, 0.15);
+  border-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-dark:active:hover, .bg-inverse .btn-outline-dark.custom-file-control:active:hover::before, .bg-inverse .btn.btn-outline-dark:active:focus, .bg-inverse .btn-outline-dark.custom-file-control:active:focus::before, .bg-inverse .btn.btn-outline-dark:active.focus, .bg-inverse .btn-outline-dark.custom-file-control:active.focus::before, .bg-inverse .btn.btn-outline-dark.active:hover, .bg-inverse .btn-outline-dark.active.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-dark.active:focus, .bg-inverse .btn-outline-dark.active.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-dark.active.focus, .bg-inverse .btn-outline-dark.active.focus.custom-file-control::before,
+.open > .bg-inverse .btn.btn-outline-dark.dropdown-toggle:hover,
+.open > .bg-inverse .btn-outline-dark.dropdown-toggle.custom-file-control:hover::before,
+.open > .bg-inverse .btn.btn-outline-dark.dropdown-toggle:focus,
+.open > .bg-inverse .btn-outline-dark.dropdown-toggle.custom-file-control:focus::before,
+.open > .bg-inverse .btn.btn-outline-dark.dropdown-toggle.focus,
+.open > .bg-inverse .btn-outline-dark.dropdown-toggle.focus.custom-file-control::before {
+  color: #FFA000;
+  background-color: rgba(204, 204, 204, 0.25);
+  border-color: rgba(204, 204, 204, 0.25);
+}
+
+.open > .bg-inverse .btn.btn-outline-dark.dropdown-toggle.bmd-btn-icon, .open > .bg-inverse .btn-outline-dark.dropdown-toggle.bmd-btn-icon.custom-file-control::before {
+  color: inherit;
+  background-color: transparent;
+}
+
+.open > .bg-inverse .btn.btn-outline-dark.dropdown-toggle.bmd-btn-icon:hover, .open > .bg-inverse .btn-outline-dark.dropdown-toggle.bmd-btn-icon.custom-file-control:hover::before {
+  background-color: rgba(204, 204, 204, 0.15);
+}
+
+.bg-inverse .btn.btn-outline-dark.disabled:focus, .bg-inverse .btn-outline-dark.disabled.custom-file-control:focus::before, .bg-inverse .btn.btn-outline-dark.disabled.focus, .bg-inverse .btn-outline-dark.disabled.focus.custom-file-control::before, .bg-inverse .btn.btn-outline-dark:disabled:focus, .bg-inverse .btn-outline-dark.custom-file-control:disabled:focus::before, .bg-inverse .btn.btn-outline-dark:disabled.focus, .bg-inverse .btn-outline-dark.custom-file-control:disabled.focus::before {
+  background-color: transparent;
+  border-color: #FFA000;
+}
+
+.bg-inverse .btn.btn-outline-dark.disabled:hover, .bg-inverse .btn-outline-dark.disabled.custom-file-control:hover::before, .bg-inverse .btn.btn-outline-dark:disabled:hover, .bg-inverse .btn-outline-dark.custom-file-control:disabled:hover::before {
+  background-color: transparent;
+  border-color: #FFA000;
+}
+
+.btn.btn-outline-dark.btn-link, .btn-outline-dark.btn-link.custom-file-control::before {
   background-color: transparent;
 }
 
@@ -12979,6 +13312,7 @@ fieldset[disabled][disabled] .btn, fieldset[disabled][disabled] .custom-file-con
 
 .checkbox label,
 label.checkbox-inline {
+  position: relative;
   padding-left: 1.5625rem;
 }
 
@@ -15512,6 +15846,14 @@ thead.thead-inverse th,
   border: 0;
 }
 
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link,
+.nav-pills .nav-link.active,
+.nav-pills .nav-item.show .nav-link {
+  background-color: transparent;
+  color: inherit;
+}
+
 .nav-tabs .nav-link {
   border-bottom: 0.214rem solid transparent;
 }
@@ -15558,24 +15900,24 @@ thead.thead-inverse th,
   color: rgba(255, 255, 255, 0.84);
 }
 
-.nav-tabs.bg-inverse .nav-link {
+.nav-tabs.bg-dark .nav-link {
   color: white;
 }
 
-.nav-tabs.bg-inverse .nav-link.active {
+.nav-tabs.bg-dark .nav-link.active {
   color: #fff;
   border-color: #fff;
 }
 
-.nav-tabs.bg-inverse .nav-link.active:hover, .nav-tabs.bg-inverse .nav-link.active:focus {
+.nav-tabs.bg-dark .nav-link.active:hover, .nav-tabs.bg-dark .nav-link.active:focus {
   border-color: #fff;
 }
 
-.nav-tabs.bg-inverse .nav-link.disabled {
+.nav-tabs.bg-dark .nav-link.disabled {
   color: rgba(255, 255, 255, 0.84);
 }
 
-.nav-tabs.bg-inverse .nav-link.disabled, .nav-tabs.bg-inverse .nav-link.disabled:hover, .nav-tabs.bg-inverse .nav-link.disabled:focus {
+.nav-tabs.bg-dark .nav-link.disabled, .nav-tabs.bg-dark .nav-link.disabled:hover, .nav-tabs.bg-dark .nav-link.disabled:focus {
   color: rgba(255, 255, 255, 0.84);
 }
 
@@ -15599,6 +15941,26 @@ thead.thead-inverse th,
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.navbar-dark .form-control, .navbar-dark .custom-file-control {
+  color: #fff;
+}
+
+.navbar-dark .form-control::-webkit-input-placeholder, .navbar-dark .custom-file-control::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar-dark .form-control:-ms-input-placeholder, .navbar-dark .custom-file-control:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar-dark .form-control::-ms-input-placeholder, .navbar-dark .custom-file-control::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar-dark .form-control::placeholder, .navbar-dark .custom-file-control::placeholder {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .alert {
@@ -15712,6 +16074,7 @@ h6 {
 
 .card .card-header {
   padding: 1rem;
+  background-color: transparent;
 }
 
 .card .card-block {
@@ -15819,12 +16182,12 @@ h6 {
   transform: scale(0);
 }
 
-.dropdown-menu[x-placement="bottom-start"] {
+.dropdown-menu[x-placement="bottom-start"], .dropdown-menu.dropdown-menu-left {
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
 }
 
-.dropdown-menu[x-placement="bottom-end"] {
+.dropdown-menu[x-placement="bottom-end"], .dropdown-menu.dropdown-menu-right {
   -webkit-transform-origin: 100% 0;
   transform-origin: 100% 0;
 }
@@ -15861,6 +16224,11 @@ h6 {
   word-wrap: break-word;
 }
 
+.dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
+  background-color: inherit;
+  color: inherit;
+}
+
 @media (min-width: 768px) {
   .dropdown-menu .dropdown-item {
     padding-right: 1.5rem;
@@ -15882,6 +16250,10 @@ h6 {
 
 .dropdown-toggle.bmd-btn-icon ~ .dropdown-menu {
   margin: 0;
+}
+
+.show .dropdown-toggle.btn, .show .dropdown-toggle.custom-file-control::before, .show .dropdown-toggle.btn-secondary, .show .dropdown-toggle.btn-success, .show .dropdown-toggle.btn-info, .show .dropdown-toggle.btn-warning, .show .dropdown-toggle.btn-danger {
+  background-color: transparent;
 }
 
 @-webkit-keyframes bmd-dropdown-animation {
@@ -15928,6 +16300,7 @@ h6 {
   overflow: visible;
   overflow-y: auto;
   font-size: .875rem;
+  background: #fff;
   -webkit-transition: -webkit-transform;
   transition: -webkit-transform;
   transition: transform;
