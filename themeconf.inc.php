@@ -181,7 +181,7 @@ function return_page_start() {
 
 add_event_handler('loc_after_page_header', 'strip_breadcrumbs');
 function strip_breadcrumbs() {
-  global $template;
+  global $page, $template;
 
   $l_sep = $template->get_template_vars('LEVEL_SEPARATOR');
   $title = $template->get_template_vars('TITLE');
@@ -198,6 +198,9 @@ function strip_breadcrumbs() {
 
     $title = str_replace('<a href', '<a class="nav-breadcrumb-item" href', $title);
     $title = str_replace($l_sep, '', $title);
+    if ($page['section'] == 'recent_cats') {
+      $title = str_replace('</a>', '</a><a class="nav-breadcrumb-item" href="#">', $title) . '</a>';
+    }
     if (empty($section_title)) {
       $template->assign('TITLE', $title);
     } else {
