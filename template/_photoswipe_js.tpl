@@ -368,7 +368,7 @@ $(document).ready(function() {
 {/if}
 {if isset($U_SLIDESHOW_START)}
     $('#startSlideshow').on('click touchstart', function() {
-        startPhotoSwipe(0);
+        startPhotoSwipe();
         $('.pswp__button--autoplay')[0].click();
     });
 {/if}
