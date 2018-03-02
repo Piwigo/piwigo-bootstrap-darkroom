@@ -10223,6 +10223,12 @@ legend {
   }
 }
 
+@media (max-width: 991.98px) {
+  #navbar-menubar > #quicksearch input[type="text"] {
+    color: #52575C !important;
+  }
+}
+
 .navbar.navbar-transparent.navbar-sm {
   margin-top: -112px !important;
 }

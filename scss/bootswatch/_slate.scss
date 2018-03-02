@@ -14,6 +14,14 @@
   }
 }
 
+@include media-breakpoint-down(md) {
+  #navbar-menubar>#quicksearch {
+    input[type="text"] {
+      color: $gray-700 !important;
+    }
+  }
+}
+
 .navbar {
   &.navbar-transparent.navbar-sm {
     margin-top: -112px !important;
