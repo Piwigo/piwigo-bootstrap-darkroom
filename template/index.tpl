@@ -13,13 +13,6 @@
                 <a href="{$U_HOME}" title="{'Home'|@translate}"><i class="fa fa-home" aria-hidden="true"></i></a>{$LEVEL_SEPARATOR}{$chronology.TITLE}
 {else}
                 <div class="nav-breadcrumb d-inline-flex">{$TITLE}</div>
-{if $theme_config->bootstrap_theme == 'bootswatch'}
-{footer_script require='jquery'}{strip}
-$(document).ready(function() {
- $('.navbar-default .navbar-brand a').css('color', $('.navbar-default .navbar-brand').css('color'));
-});
-{/strip}{/footer_script}
-{/if}
 {/if}
             </div>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">
