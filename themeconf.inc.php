@@ -199,7 +199,7 @@ function strip_breadcrumbs() {
     $title = str_replace('<a href', '<a class="nav-breadcrumb-item" href', $title);
     $title = str_replace($l_sep, '', $title);
     if ($page['section'] == 'recent_cats') {
-      $title = str_replace('</a>', '</a><a class="nav-breadcrumb-item" href="#">', $title) . '</a>';
+      $title = str_replace('</a>', '</a><a class="nav-breadcrumb-item" href="' . make_index_url(array('section' => 'recent_cats')) . '">', $title) . '</a>';
     }
     if (empty($section_title)) {
       $template->assign('TITLE', $title);
