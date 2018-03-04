@@ -199,7 +199,7 @@ function strip_breadcrumbs() {
     $title = str_replace('<a href', '<a class="nav-breadcrumb-item" href', $title);
     $title = str_replace($l_sep, '', $title);
     if ($page['section'] == 'recent_cats' or $page['section'] == 'favorites') {
-      $title = preg_replace('/<\/a>([a-zA-z0-9]+)/', '</a><a class="nav-breadcrumb-item" href="' . make_index_url(array('section' => $page['section'])) . '">${1}', $title) . '</a>';
+      $title = preg_replace('/<\/a>([a-zA-Z0-9]+)/', '</a><a class="nav-breadcrumb-item" href="' . make_index_url(array('section' => $page['section'])) . '">${1}', $title) . '</a>';
     }
     if (empty($section_title)) {
       $template->assign('TITLE', $title);
