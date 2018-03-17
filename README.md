@@ -58,11 +58,12 @@ A demo is available at https://pwdemo.kuther.net
 ### Components
 
 * [Bootstrap 4](https://getbootstrap.com)
+* [Bootswatch] (https://bootswatch.com)
 * [Bootstrap Material Design](https://fezvrasta.github.io/bootstrap-material-design/)
 * [PhotoSwipe](http://photoswipe.com/)
 * [Slick](http://kenwheeler.github.io/slick/)
 * [jQuery-Touch-Events](https://github.com/benmajor/jQuery-Touch-Events)
-* [Photography Icons](https://thenounproject.com/DmitryBaranovskiy/collection/photo/) by [Dmitry Baranovskiy](https://thenounproject.com/DmitryBaranovskiy/), Licensed under [Creative Commons 3.0](https://creativecommons.org/licenses/by/3.0/us/)
+* [Photography Icons](https://thenounproject.com/DmitryBaranovskiy/collection/photo/) by [Dmitry Baranovskiy](https://thenounproject.com/DmitryBaranovskiy/), licensed under [Creative Commons 3.0](https://creativecommons.org/licenses/by/3.0/us/)
 
 ### Development & Customizing
 * All stylesheets are compiled from Bootstrap's Sass source files using node-sass.
@@ -86,13 +87,14 @@ See [package.json](https://raw.githubusercontent.com/tkuther/piwigo-bootstrap-da
 
 There is built-in support for a custom Sass build.
 * Create the file _scss/custom/custom.scss_
-* Include all required Boostrap stuff in there, override variables as you wish just with any custom bootstrap build
+* Include all required Boostrap stuff in there, override variables as you wish, just like any custom bootstrap build
 * Compile with `npm run build:custom`
 * Select "Custom" style in the theme's configuration
 
 ### Thanks
 * Phil Bayfield for his work on the Bootstrap Default theme, which this theme was initiallly based on as a child theme. It's grown up now.
 * The Piwigo Team for a great gallery software
+* The Piwigo translation team
 
 ### License
 
