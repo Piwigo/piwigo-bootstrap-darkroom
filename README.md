@@ -58,7 +58,7 @@ A demo is available at https://pwdemo.kuther.net
 ### Components
 
 * [Bootstrap 4](https://getbootstrap.com)
-* [Bootswatch] (https://bootswatch.com)
+* [Bootswatch](https://bootswatch.com)
 * [Bootstrap Material Design](https://fezvrasta.github.io/bootstrap-material-design/)
 * [PhotoSwipe](http://photoswipe.com/)
 * [Slick](http://kenwheeler.github.io/slick/)
