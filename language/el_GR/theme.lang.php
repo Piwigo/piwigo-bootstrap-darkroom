@@ -22,10 +22,8 @@
 // +-----------------------------------------------------------------------+
 $lang['Bootstrap Darkroom\'s custom dark color theme'] = 'Προσαρμοσμένο σκούρο χρώμα θέματος του Bootstrap Darkroom';
 $lang['Basic'] = 'Βασικό';
-$lang['Based on Bootstrap Default by'] = 'Βασισμένο στο Bootstrap Default';
 $lang['Autoplay interval'] = 'Διάστημα Αυτόματης Αναπαραγωγής';
 $lang['Always'] = 'Πάντα';
-$lang['A mobile-ready theme based on Boostrap Default'] = 'Ένα θέμα φιλικό για κινητά με βάση το Bootstrap Default';
 $lang['A color theme from'] = 'Ένα θέμα χρωμάτων από';
 $lang['Endlessly scroll through album images'] = 'Περιηγηθείτε ατελείωτα στις εικόνες άλμπουμ';
 $lang['Enabled'] = 'Ενεργοποιημένο';
@@ -44,3 +42,7 @@ $lang['Bug reports and feature requests'] = 'Αναφορές σφαλμάτων
 $lang['Bootswatch theme'] = 'Θέμα Bootswatch';
 $lang['Bootstrap\'s default theme'] = 'Το προεπιλεγμένο θέμα του Bootstrap';
 $lang['Bootstrap theme'] = 'Θέμα Bootstrap';
+$lang['Banner style'] = 'Τύπος Banner';
+$lang['Appearance'] = 'Εμφάνιση';
+$lang['Advanced'] = 'Προχωρημένα';
+$lang['A mobile-ready theme based on Bootstrap 4'] = 'Ένα θέμα φιλικό για κινητά βασισμένο στο Bootstrap 4';
