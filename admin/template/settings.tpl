@@ -56,6 +56,7 @@
                         <option value="bootswatch-superhero"{if $theme_config->bootstrap_theme == 'bootswatch-superhero'} selected="selected"{/if}>Bootswatch Superhero</option>
                         <option value="bootswatch-united"{if $theme_config->bootstrap_theme == 'bootswatch-united'} selected="selected"{/if}>Bootswatch United</option>
                         <option value="bootswatch-yeti"{if $theme_config->bootstrap_theme == 'bootswatch-yeti'} selected="selected"{/if}>Bootswatch Yeti</option>
+                        <option value="custom"{if $theme_config->bootstrap_theme == 'custom'} selected="selected"{/if}>Custom</option>
                     </select>
                 </li>
             <ul>

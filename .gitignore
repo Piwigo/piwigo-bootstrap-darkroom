@@ -3,6 +3,10 @@ npm-debug.log
 yarn-error.log
 .DS_Store
 
+# for custom themes
+css/custom/*.css
+scss/custom/*.scss
+
 #########################################################################
 # This list is rather static, so let's use gitignore tricks
 # Alternate approach:
