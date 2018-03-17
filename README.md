@@ -7,8 +7,7 @@ A mobile-ready [Piwigo](http://piwigo.org) theme based on [Bootstrap 4](https://
 * Various color styles
   * [Bootswatch](https://bootswatch.com)
   * [Material Design](http://fezvrasta.github.io/bootstrap-material-design/)
-  * A custom dark, low contrast color scheme based on Lightroom® colors (the default)
-  * New color styles can be created with ease
+  * Darkroom: a dark, low contrast color scheme based on Lightroom® colors (the default)
 * Optional page header with fancy fading full width background image, or a jumbotron banner
 * Different layout option for the picture details page
 * Video support using native HTML 5 video widget
@@ -21,7 +20,7 @@ A mobile-ready [Piwigo](http://piwigo.org) theme based on [Bootstrap 4](https://
   * fully responsive Navbars, Carousel, PhotoSwipe slideshow, video content
   * async/ondemand loading of carousel & PhotoSwipe content, adaptive image size selection, swipe & tap events
 * Various configuration options
-* Easy customization using SASS (built your own) or CSS overrides.
+* Easy customization using CSS overrides or SASS custom build for advanced needs.
  
 
 ### Usage
@@ -66,9 +65,12 @@ A demo is available at https://pwdemo.kuther.net
 * [Photography Icons](https://thenounproject.com/DmitryBaranovskiy/collection/photo/) by [Dmitry Baranovskiy](https://thenounproject.com/DmitryBaranovskiy/), Licensed under [Creative Commons 3.0](https://creativecommons.org/licenses/by/3.0/us/)
 
 ### Development & Customizing
-* All stylesheets are compiled from Sass source files using node-sass.
+* All stylesheets are compiled from Bootstrap's Sass source files using node-sass.
 * Dependencies are managed using yarn. Dist dependencies are separated from the usual npm bloat using .gitignore tricks
-* To install dependencies: `npm install yarn && yarn install`
+* To install build dependencies, use
+```
+npm install yarn && yarn install
+```
 
 The build process is based on npm scripts and uses common shell functions, so it might not work on Windows.
 
@@ -81,6 +83,12 @@ To build only bootswatch, for example, use
 npm run build:bootswatch
 ```
 See [package.json](https://raw.githubusercontent.com/tkuther/piwigo-bootstrap-darkroom/master/package.json) for available script commands.
+
+There is built-in support for a custom Sass build.
+* Create the file _scss/custom/custom.scss_
+* Include all required Boostrap stuff in there, override variables as you wish just with any custom bootstrap build
+* Compile with `npm run build:custom`
+* Select "Custom" style in the theme's configuration
 
 ### Thanks
 * Phil Bayfield for his work on the Bootstrap Default theme, which this theme was initiallly based on as a child theme. It's grown up now.
