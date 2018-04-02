@@ -276,15 +276,15 @@
               </div>
             </div>
           </div>
-          <button id="show_exif_data" class="btn btn-primary btn-raised mt-1" style="text-transform: none;"><i class="fa fa-info mr-1"></i> {'Show EXIF data'|@translate}</button>
+          <button id="show_exif_data" class="btn btn-primary btn-raised mt-1" style="text-transform: none;"><i class="fas fa-info mr-1"></i> {'Show EXIF data'|@translate}</button>
 {footer_script require='jquery'}
 $('#show_exif_data').on('click', function() {
   if ($('#full_exif_data').hasClass('d-none')) {
     $('#full_exif_data').addClass('d-flex').removeClass('d-none');
-    $('#show_exif_data').html('<i class="fa fa-info mr-1"></i> {"Hide EXIF data"|@translate}');
+    $('#show_exif_data').html('<i class="fas fa-info mr-1"></i> {"Hide EXIF data"|@translate}');
   } else {
     $('#full_exif_data').addClass('d-none').removeClass('d-flex');
-    $('#show_exif_data').html('<i class="fa fa-info mr-1"></i> {"Show EXIF data"|@translate}');
+    $('#show_exif_data').html('<i class="fas fa-info mr-1"></i> {"Show EXIF data"|@translate}');
   }
 });
 {/footer_script}

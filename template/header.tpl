@@ -117,12 +117,12 @@ window.FontAwesomeConfig = {
                 <a class="navbar-brand mr-auto" href="{$U_HOME}">{$GALLERY_TITLE}</a>
 {/if}
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-menubar" aria-controls="navbar-menubar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa fa-bars"></span>
+                    <span class="fas fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar-menubar">
 {if $theme_config->quicksearch_navbar}
                   <form class="form-inline navbar-form ml-auto" role="search" action="{$ROOT_URL}qsearch.php" method="get" id="quicksearch" onsubmit="return this.q.value!='' && this.q.value!=qsearch_prompt;">
-                    <i class="fa fa-search" title="{'Search'|@translate}" aria-hidden="true"></i>
+                    <i class="fas fa-search" title="{'Search'|@translate}" aria-hidden="true"></i>
                     <div class="form-group">
                         <input type="text" name="q" id="qsearchInput" class="form-control" placeholder="{'Search'|@translate}" />
                     </div>

@@ -117,7 +117,7 @@
     cursor: pointer;
 
     @include fa-icon;
-    @extend .far;
+    @extend .fas;
 
     &:before {
       content: fa-content($fa-var-star);

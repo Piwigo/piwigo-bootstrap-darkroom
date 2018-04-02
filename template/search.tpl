@@ -17,7 +17,7 @@
         <ul class="navbar-nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link" href="{$U_HELP}" onclick="bd_popup(this.href); return false;" title="{'Help'|@translate}">
-                    <i class="fa fa-question" aria-hidden="true"></i>
+                    <i class="fas fa-question" aria-hidden="true"></i>
                 </a>
             </li>
 {if !empty($PLUGIN_INDEX_ACTIONS)}{$PLUGIN_INDEX_ACTIONS}{/if}

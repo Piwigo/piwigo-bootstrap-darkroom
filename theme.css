@@ -5,8 +5,8 @@
 .fa,
 .fas,
 #rating .rateButtonStarFull,
-.far,
 #rating .rateButtonStarEmpty,
+.far,
 .fal,
 .fab {
   -moz-osx-font-smoothing: grayscale;
@@ -112,8 +112,8 @@
 .fa.fa-pull-left,
 .fas.fa-pull-left,
 #rating .fa-pull-left.rateButtonStarFull,
-.far.fa-pull-left,
 #rating .fa-pull-left.rateButtonStarEmpty,
+.far.fa-pull-left,
 .fal.fa-pull-left,
 .fab.fa-pull-left {
   margin-right: .3em;
@@ -122,8 +122,8 @@
 .fa.fa-pull-right,
 .fas.fa-pull-right,
 #rating .fa-pull-right.rateButtonStarFull,
-.far.fa-pull-right,
 #rating .fa-pull-right.rateButtonStarEmpty,
+.far.fa-pull-right,
 .fal.fa-pull-right,
 .fab.fa-pull-right {
   margin-left: .3em;
@@ -3741,7 +3741,8 @@ readers do not read off random characters that represent icons */
 
 .fa,
 .fas,
-#rating .rateButtonStarFull {
+#rating .rateButtonStarFull,
+#rating .rateButtonStarEmpty {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }
@@ -3758,7 +3759,7 @@ readers do not read off random characters that represent icons */
   src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg");
 }
 
-.far, #rating .rateButtonStarEmpty {
+.far {
   font-family: 'Font Awesome 5 Free';
   font-weight: 400;
 }

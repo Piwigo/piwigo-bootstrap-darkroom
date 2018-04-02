@@ -10,20 +10,20 @@
         <div class="container{if $theme_config->fluid_width}-fluid{/if}">
             <div class="navbar-brand mr-auto">
 {if isset($chronology.TITLE)}
-                <a href="{$U_HOME}" title="{'Home'|@translate}"><i class="fa fa-home" aria-hidden="true"></i></a>{$LEVEL_SEPARATOR}{$chronology.TITLE}
+                <a href="{$U_HOME}" title="{'Home'|@translate}"><i class="fas fa-home" aria-hidden="true"></i></a>{$LEVEL_SEPARATOR}{$chronology.TITLE}
 {else}
                 <div class="nav-breadcrumb d-inline-flex">{$TITLE}</div>
 {/if}
             </div>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa fa-bars"></span>
+                <span class="fas fa-bars"></span>
             </button>
             <div class="navbar-collapse collapse justify-content-end" id="secondary-navbar">
                 <ul class="navbar-nav">
 {if !empty($image_orders)}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
-                            <i class="fa fa-sort fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Sort order'|@translate}</span>
+                            <i class="fas fa-sort fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Sort order'|@translate}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$image_orders item=image_order name=loop}
@@ -47,7 +47,7 @@
 {if isset($favorite)}
                     <li class="nav-item">
                         <a class="nav-link" href="{$favorite.U_FAVORITE}" title="{'Delete all photos from your favorites'|@translate}" rel="nofollow">
-                            <i class="fa fa-heartbeat fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Delete all photos from your favorites'|@translate}</span>
+                            <i class="fas fa-heartbeat fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Delete all photos from your favorites'|@translate}</span>
                         </a>
                     </li>
 {/if}
@@ -61,7 +61,7 @@
 {if isset($U_CADDIE)}
                     <li class="nav-item">
                         <a class="nav-link" href="{$U_CADDIE}" title="{'Add to caddie'|@translate}">
-                            <i class="fa fa-shopping-basket fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Add to caddie'|@translate}</span>
+                            <i class="fas fa-shopping-basket fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Add to caddie'|@translate}</span>
                         </a>
                     </li>
 {/if}
@@ -69,28 +69,28 @@
 {combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
                     <li class="nav-item">
                         <a class="nav-link" href="{$U_SEARCH_RULES}" onclick="bd_popup(this.href); return false;" title="{'Search rules'|@translate}" rel="nofollow">
-                            <i class="fa fa-search fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Search rules'|@translate}</span>
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Search rules'|@translate}</span>
                         </a>
                     </li>
 {/if}
 {if isset($U_SLIDESHOW)}
                     <li class="nav-item">
                         <a class="nav-link" href="{if $theme_config->photoswipe}javascript:;{else}{$U_SLIDESHOW}{/if}" id="startSlideshow" title="{'slideshow'|@translate}" rel="nofollow">
-                            <i class="fa fa-play fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2 text-capitalize">{'slideshow'|@translate}</span>
+                            <i class="fas fa-play fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2 text-capitalize">{'slideshow'|@translate}</span>
                         </a>
                     </li>
 {/if}
 {if isset($U_MODE_FLAT)}
                     <li class="nav-item">
                         {strip}<a class="nav-link" href="{$U_MODE_FLAT}" title="{'display all photos in all sub-albums'|@translate}" rel="nofollow">
-                            <i class="fa fa-th-large fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'display all photos in all sub-albums'|@translate}</span>
+                            <i class="fas fa-th-large fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'display all photos in all sub-albums'|@translate}</span>
                         </a>{/strip}
                     </li>
 {/if}
 {if isset($U_MODE_NORMAL)}
                     <li class="nav-item">
                         {strip}<a class="nav-link" href="{$U_MODE_NORMAL}" title="{'return to normal view mode'|@translate}">
-                            <i class="fa fa-home fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'return to normal view mode'|@translate}</span>
+                            <i class="fas fa-home fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'return to normal view mode'|@translate}</span>
                         </a>{/strip}
                     </li>
 {/if}
@@ -102,12 +102,12 @@
                         <div class="dropdown-menu dropdown-menu-right">
 {if isset($U_MODE_POSTED)}
                             <a class="dropdown-item" href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
-                                <i class="fa fa-share-alt fa-fw" aria-hidden="true"></i> {'display a calendar by posted date'|@translate}
+                                <i class="fas fa-share-alt fa-fw" aria-hidden="true"></i> {'display a calendar by posted date'|@translate}
                             </a>
 {/if}
 {if isset($U_MODE_CREATED)}
                             <a class="dropdown-item" href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
-                                <i class="fa fa-camera-retro fa-fw" aria-hidden="true"></i> {'display a calendar by creation date'|@translate}
+                                <i class="fas fa-camera-retro fa-fw" aria-hidden="true"></i> {'display a calendar by creation date'|@translate}
                             </a>
 {/if}
                         </div>
@@ -118,12 +118,12 @@
 {if ((!empty($CATEGORIES) && !isset($GDThumb)) || (!empty($THUMBNAILS) && !isset($GThumb) && !isset($GDThumb))) && ($theme_config->category_wells == 'never' || ($theme_config->category_wells == 'mobile_only' && get_device() == 'desktop'))}
                     <li id="btn-grid" class="nav-item{if $smarty.cookies.view != 'list'} active{/if}">
                         <a class="nav-link" href="javascript:;" title="{'Grid view'|@translate}">
-                            <i class="fa fa-th fa-fw"></i><span class="d-lg-none ml-2">{'Grid view'|@translate}</span>
+                            <i class="fas fa-th fa-fw"></i><span class="d-lg-none ml-2">{'Grid view'|@translate}</span>
                         </a>
                     </li>
                     <li id="btn-list" class="nav-item{if $smarty.cookies.view == 'list'} active{/if}">
                         <a class="nav-link" href="javascript:;" title="{'List view'|@translate}">
-                            <i class="fa fa-th-list fa-fw"></i><span class="d-lg-none ml-2">{'List view'|@translate}</span>
+                            <i class="fas fa-th-list fa-fw"></i><span class="d-lg-none ml-2">{'List view'|@translate}</span>
                         </a>
                     </li>
 {/if}
@@ -240,7 +240,7 @@ $(document).ajaxComplete(function() {
 {if !isset($loaded_plugins['piwigo-videojs']) && (isset($GThumb) || isset($GDThumb))}
 function addVideoIndicator() {
   $('img.thumbnail[src*="pwg_representative"]').each(function() {
-    $(this).closest('li').append('<i class="fa fa-file-video-o fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
+    $(this).closest('li').append('<i class="fas fa-file-video-o fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
   });
 }
 $(document).ready(function() {
@@ -251,7 +251,7 @@ $(document).ajaxComplete(function() {
 });
 {else}
 $('.card-thumbnail').find('img[src*="pwg_representative"]').each(function() {
-  $(this).closest('div').append('<i class="fa fa-file-video-o fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
+  $(this).closest('div').append('<i class="fas fa-file-video-o fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
 });
 {/if}
 {/strip}{/footer_script}

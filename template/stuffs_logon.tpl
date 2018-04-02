@@ -36,14 +36,14 @@
             {if isset($block.U_REGISTER)}
             <div class="col-12 pt-2">
                 <a href="{$block.U_REGISTER}" title="{'Register'|@translate}">
-                    <span class="fa fa-user"></span> {'Register'|@translate}
+                    <span class="fas fa-user"></span> {'Register'|@translate}
                 </a>
             </div>
             {/if}
             {if isset($block.U_LOST_PASSWORD)}
             <div class="col-12 pt-2">
                 <a href="{$block.U_LOST_PASSWORD}" title="{'Forgot your password?'|@translate}">
-                    <span class="fa fa-lock"></span> {'Forgot your password?'|@translate}
+                    <span class="fas fa-lock"></span> {'Forgot your password?'|@translate}
                 </a>
             </div>
             {/if}

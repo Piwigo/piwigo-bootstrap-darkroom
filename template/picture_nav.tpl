@@ -4,7 +4,7 @@
             <div class="nav-breadcrumb d-inline-flex">{$SECTION_TITLE}<span class="nav-breadcrumb-item active">{$current.TITLE}</span></div>
         </div>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="fa fa-bars"></span>
+            <span class="fas fa-bars"></span>
         </button>
         <div class="navbar-collapse collapse justify-content-end" id="secondary-navbar">
             <ul class="navbar-nav">
@@ -43,14 +43,14 @@
 {if isset($U_SLIDESHOW_START)}
                 <li class="nav-item">
                     <a class="nav-link" href="{if $theme_config->photoswipe}javascript:;{else}{$U_SLIDESHOW_START}{/if}" title="{'slideshow'|@translate}" id="startSlideshow" rel="nofollow">
-                        <i class="fa fa-play fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2 text-capitalize">{'slideshow'|@translate}</span>
+                        <i class="fas fa-play fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2 text-capitalize">{'slideshow'|@translate}</span>
                     </a>
                 </li>
 {/if}
 {*{if isset($U_METADATA)}
                 <li class="nav-item">
                     <a class="nav-link" href="{$U_METADATA}" title="{'Show file metadata'|@translate}" rel="nofollow">
-                        <i class="fa fa-camera-retro fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Show file metadata'|@translate}</span>
+                        <i class="fas fa-camera-retro fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Show file metadata'|@translate}</span>
                     </a>
                 </li>
 {/if}*}
@@ -58,12 +58,12 @@
 {if empty($current.formats)}
                 <li class="nav-item">
                     <a id="downloadSwitchLink" class="nav-link" href="{$current.U_DOWNLOAD}" title="{'Download this file'|@translate}" rel="nofollow">
-                        <i class="fa fa-download fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Download this file'|@translate}</span>
+                        <i class="fas fa-download fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Download this file'|@translate}</span>
                     </a>
 {else}
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" title="{'Download this file'|@translate}">
-                        <i class="fa fa-download fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Download this file'|@translate}</span>
+                        <i class="fas fa-download fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Download this file'|@translate}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$current.formats item=format}
@@ -83,7 +83,7 @@
 {if isset($U_SET_AS_REPRESENTATIVE)}
                 <li class="nav-item">
                     <a class="nav-link" id="cmdSetRepresentative" href="{$U_SET_AS_REPRESENTATIVE}" title="{'set as album representative'|@translate}" rel="nofollow">
-                        <i class="fa fa-link fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'set as album representative'|@translate}</span>
+                        <i class="fas fa-link fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'set as album representative'|@translate}</span>
                     </a>
                 </li>
 {/if}
@@ -108,7 +108,7 @@
 {/strip}{/footer_script}
                 <li class="nav-item">
                     <a class="nav-link" href="{$U_CADDIE}" onclick="addToCadie(this, '{$ROOT_URL}', {$current.id}); return false;" title="{'Add to caddie'|@translate}" rel="nofollow">
-                        <i class="fa fa-shopping-basket fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Add to caddie'|@translate}</span>
+                        <i class="fas fa-shopping-basket fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Add to caddie'|@translate}</span>
                     </a>
                 </li>
 {/if}
