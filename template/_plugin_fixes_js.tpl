@@ -95,7 +95,7 @@ $(document).ready(function() {
     $('#batchDownloadLink').closest('li').addClass('nav-item');
     $('#batchDownloadLink').addClass('nav-link').removeClass('pwg-state-default pwg-button');
   }
-  $('.batch-downloader-icon').addClass('fa fa-cloud-download fa-fw').removeClass('pwg-icon').after('<span class="d-lg-none"> ' + $('#batchDownloadLink').attr('title') + '</span>');
+  $('.batch-downloader-icon').addClass('fas fa-cloud-download-alt fa-fw').removeClass('pwg-icon').after('<span class="d-lg-none"> ' + $('#batchDownloadLink').attr('title') + '</span>');
   if ($('.navbar-main dt:contains("Downloads")').length > 0) {
     $('.navbar-main dt:contains("Downloads")').next('dd').appendTo($('.navbar-main dt:contains("Downloads")'));
     $('.navbar-main dt:contains("Downloads")').wrap('<li class="nav-item"></li>');

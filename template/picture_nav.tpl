@@ -25,7 +25,7 @@
 {/strip}{/footer_script}
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
-                        <i class="fa fa-picture-o fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span>
+                        <i class="far fa-image fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$current.unique_derivatives item=derivative key=derivative_type}
@@ -76,7 +76,7 @@
 {if isset($favorite)}
                 <li class="nav-item">
                     <a class="nav-link" href="{$favorite.U_FAVORITE}" title="{if $favorite.IS_FAVORITE}{'delete this photo from your favorites'|@translate}{else}{'add this photo to your favorites'|@translate}{/if}" rel="nofollow">
-                        <i class="fa fa-heart{if !$favorite.IS_FAVORITE}-o{/if} fa-fw"></i><span class="d-lg-none ml-2">{if $favorite.IS_FAVORITE}{'delete this photo from your favorites'|@translate}{else}{'add this photo to your favorites'|@translate}{/if}</span>
+                        <i class="fa{if !$favorite.IS_FAVORITE}r{else}s{/if} fa-heart fa-fw"></i><span class="d-lg-none ml-2">{if $favorite.IS_FAVORITE}{'delete this photo from your favorites'|@translate}{else}{'add this photo to your favorites'|@translate}{/if}</span>
                     </a>
                 </li>
 {/if}
@@ -90,7 +90,7 @@
 {if isset($U_PHOTO_ADMIN)}
                 <li class="nav-item">
                     <a class="nav-link" id="cmdEditPhoto" href="{$U_PHOTO_ADMIN}" title="{'Modify information'|@translate}" rel="nofollow">
-                        <i class="fa fa-pencil fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Modify information'|@translate}</span>
+                        <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Modify information'|@translate}</span>
                     </a>
                 </li>
 {/if}

@@ -100,34 +100,27 @@
   .rateButtonStarFull {
     position: relative;
     top: 1px;
-    display: inline-block;
-    font-family: 'FontAwesome';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     cursor: pointer;
 
+    @include fa-icon;
+    @extend .fas;
+
     &:before {
-      content: "\f005";
+      content: fa-content($fa-var-star);
+      font-weight: 900;
     }
   }
 
   .rateButtonStarEmpty {
     position: relative;
     top: 1px;
-    display: inline-block;
-    font-family: 'FontAwesome';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     cursor: pointer;
 
+    @include fa-icon;
+    @extend .far;
+
     &:before {
-      content: "\f006";
+      content: fa-content($fa-var-star);
     }
   }
 }

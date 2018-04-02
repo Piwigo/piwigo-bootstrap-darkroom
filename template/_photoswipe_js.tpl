@@ -123,22 +123,22 @@ function startPhotoSwipe(idx) {
 {if $theme_config->social_enabled}
             shareButtons: [
 {if $theme_config->social_facebook}{literal}
-                           {id:'facebook', label:'<i class="fa fa-facebook fa-2x fa-fw"></i> Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
+                           {id:'facebook', label:'<i class="fab fa-facebook fa-2x fa-fw"></i> Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
 {/literal}{/if}
 {if $theme_config->social_twitter}{literal}
-                           {id:'twitter', label:'<i class="fa fa-twitter fa-2x fa-fw"></i> Tweet', url:'https://twitter.com/intent/tweet?url={{url}}'},
+                           {id:'twitter', label:'<i class="fab fa-twitter fa-2x fa-fw"></i> Tweet', url:'https://twitter.com/intent/tweet?url={{url}}'},
 {/literal}{/if}
 {if $theme_config->social_google_plus}{literal}
-                           {id:'google', label:'<i class="fa fa-google-plus fa-2x fa-fw"></i> Share on Google+', url:'https://plus.google.com/share?url={{url}}'},
+                           {id:'google', label:'<i class="fab fa-google-plus fa-2x fa-fw"></i> Share on Google+', url:'https://plus.google.com/share?url={{url}}'},
 {/literal}{/if}
 {if $theme_config->social_pinterest}{literal}
-                           {id:'pinterest', label:'<i class="fa fa-pinterest fa-2x fa-fw"></i> Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media=' + window.location + '/../{{raw_image_url}}'},
+                           {id:'pinterest', label:'<i class="fab fa-pinterest fa-2x fa-fw"></i> Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media=' + window.location + '/../{{raw_image_url}}'},
 {/literal}{/if}
 {if get_device() == 'mobile'}{literal}
-                           {id:'whatsapp', label:'<i class="fa fa-whatsapp fa-2x fa-fw"></i> Share via WhatsApp', url:'whatsapp://send?text={{url}}', download:true},
+                           {id:'whatsapp', label:'<i class="fab fa-whatsapp fa-2x fa-fw"></i> Share via WhatsApp', url:'whatsapp://send?text={{url}}', download:true},
 {/literal}{/if}
 {literal}
-                           {id:'download', label:'<i class="fa fa-cloud-download fa-2x fa-fw"></i> Download image', url:'{{raw_image_url}}', download:true}
+                           {id:'download', label:'<i class="fas fa-cloud-download-alt fa-2x fa-fw"></i> Download image', url:'{{raw_image_url}}', download:true}
 {/literal}
                         ],
 {/if}

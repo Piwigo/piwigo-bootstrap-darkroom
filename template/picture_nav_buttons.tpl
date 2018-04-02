@@ -50,7 +50,7 @@
 {/if}{/strip}
 {strip}{if !isset($slideshow) && ($theme_config->photoswipe && !empty($thumbnails))}
         <a href="javascript:;" title="{'Fullscreen'|@translate}" id="startPhotoSwipe">
-            <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+            <i class="fas fa-expand-arrows-alt" aria-hidden="true"></i>
         </a>
 {/if}{/strip}
 {if isset($slideshow.U_START_PLAY)}

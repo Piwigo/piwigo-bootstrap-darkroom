@@ -1,6 +1,12 @@
 // Core Piwigo layout (theme.css without any color styles or full bootsrap included)
 @import "common/variables";
 @import "node_modules/bootstrap/scss/variables";
+
+@import "node_modules/font-awesome/web-fonts-with-css/scss/fontawesome.scss";
+@import "node_modules/font-awesome/web-fonts-with-css/scss/fa-solid.scss";
+@import "node_modules/font-awesome/web-fonts-with-css/scss/fa-regular.scss";
+@import "node_modules/font-awesome/web-fonts-with-css/scss/fa-brands.scss";
+
 @import "theme/base";
 @import "theme/navs";
 @import "theme/index";

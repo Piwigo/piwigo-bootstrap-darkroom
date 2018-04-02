@@ -37,7 +37,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="{$block.U_EDIT}" title="{'edit'|translate}">
-                            <i class="fa fa-pencil" title="{'edit'|@translate}"></i>
+                            <i class="fas fa-pencil-alt" title="{'edit'|@translate}"></i>
                         </a>
                     </li>
                 </ul>

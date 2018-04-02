@@ -35,7 +35,7 @@
 {if !empty($image_derivatives)}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
-                            <i class="fa fa-picture-o fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span>
+                            <i class="far fa-image fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$image_derivatives item=image_derivative name=loop}
@@ -54,7 +54,7 @@
 {if isset($U_EDIT)}
                     <li class="nav-item">
                         <a class="nav-link" href="{$U_EDIT}" title="{'Edit album'|@translate}">
-                            <i class="fa fa-pencil fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Edit album'|@translate}</span>
+                            <i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Edit album'|@translate}</span>
                         </a>
                     </li>
 {/if}
@@ -97,7 +97,7 @@
 {if isset($U_MODE_POSTED) || isset($U_MODE_CREATED)}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Calendar'|@translate}">
-                            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Calendar'|@translate}</span>
+                            <i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Calendar'|@translate}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
 {if isset($U_MODE_POSTED)}
