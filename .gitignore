@@ -43,8 +43,6 @@ node_modules/popper.js/dist/*
 
 !node_modules/font-awesome
 node_modules/font-awesome/*
-!node_modules/font-awesome/css
-!node_modules/font-awesome/fonts
 !node_modules/font-awesome/web-fonts-with-css
 node_modules/font-awesome/web-fonts-with-css/*
 !node_modules/font-awesome/web-fonts-with-css/css
