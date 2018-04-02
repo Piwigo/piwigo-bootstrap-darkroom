@@ -99,11 +99,6 @@
     {foreach from=$head_elements item=elt}{$elt}
     {/foreach}
 {/if}
-<script>
-window.FontAwesomeConfig = {
-  searchPseudoElements: true
-}
-</script>
 </head>
 
 <body id="{$BODY_ID}">
