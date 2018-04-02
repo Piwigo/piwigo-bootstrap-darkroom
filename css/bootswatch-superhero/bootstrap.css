@@ -9965,7 +9965,7 @@ label,
 }
 
 @media (min-width: 992px) {
-  #navbar-menubar > #quicksearch i.fa {
+  #navbar-menubar > #quicksearch i.fas {
     top: 12px !important;
   }
 }

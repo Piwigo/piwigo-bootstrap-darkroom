@@ -9841,7 +9841,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 @media (min-width: 992px) {
-  #navbar-menubar > #quicksearch i.fa {
+  #navbar-menubar > #quicksearch i.fas {
     top: 10px !important;
   }
 }

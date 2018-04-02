@@ -101,12 +101,10 @@
     position: relative;
     top: 1px;
     cursor: pointer;
-
-    @include fa-icon;
-    @extend .fas;
+    font-family: "Font Awesome 5 Free";
 
     &:before {
-      content: fa-content($fa-var-star);
+      content: "\f005";
       font-weight: 900;
     }
   }
@@ -115,12 +113,11 @@
     position: relative;
     top: 1px;
     cursor: pointer;
-
-    @include fa-icon;
-    @extend .fas;
+    font-family: "Font Awesome 5 Free";
 
     &:before {
-      content: fa-content($fa-var-star);
+      content: "\f005";
+      font-weight: 400;
     }
   }
 }
@@ -135,7 +132,7 @@
     text-decoration: none;
   }
 
-  i.fa {
+  i.fas {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 

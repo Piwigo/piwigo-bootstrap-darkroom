@@ -9969,7 +9969,7 @@ table-success, table-info, table-warning, table-danger,
 }
 
 @media (min-width: 992px) {
-  #navbar-menubar > #quicksearch i.fa {
+  #navbar-menubar > #quicksearch i.fas {
     top: 14px !important;
   }
 }

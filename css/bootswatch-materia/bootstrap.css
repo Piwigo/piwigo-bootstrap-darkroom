@@ -11336,7 +11336,7 @@ input[type="checkbox"]:disabled:checked:after,
 }
 
 @media (min-width: 992px) {
-  #navbar-menubar > #quicksearch i.fa {
+  #navbar-menubar > #quicksearch i.fas {
     top: 19px !important;
   }
 }

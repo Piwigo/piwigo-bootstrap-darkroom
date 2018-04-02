@@ -5,7 +5,7 @@
 @import "common";
 
 @include media-breakpoint-up(lg) {
-  #navbar-menubar > #quicksearch i.fa {
+  #navbar-menubar > #quicksearch i.fas {
     top: 14px !important;
   }
 }

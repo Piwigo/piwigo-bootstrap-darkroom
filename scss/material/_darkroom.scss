@@ -37,7 +37,7 @@ $brand-primary: $teal;
 }
 
 @include media-breakpoint-up(lg) {
-  #navbar-menubar > #quicksearch i.fa {
+  #navbar-menubar > #quicksearch i.fas {
     top: 10px !important;
   }
 }
