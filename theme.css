@@ -784,6 +784,7 @@ body {
 .pswp__button--autoplay:before {
   content: "\f04b";
   font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   color: #fff;
 }
 
@@ -794,6 +795,7 @@ body {
 .pswp__button--autoplay.stop:before {
   content: "\f04d";
   font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   color: #fff;
 }
 
@@ -804,6 +806,7 @@ body {
 .pswp__button--details:before {
   content: "\f129";
   font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   color: #fff;
 }
 
