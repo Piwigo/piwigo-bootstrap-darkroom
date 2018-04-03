@@ -10218,9 +10218,6 @@ legend {
   #navbar-menubar > #quicksearch {
     margin-right: 10px;
   }
-  #navbar-menubar > #quicksearch i.fas {
-    top: 16px !important;
-  }
 }
 
 @media (max-width: 991.98px) {

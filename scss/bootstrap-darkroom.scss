@@ -9,11 +9,4 @@
 @import "darkroom-colors/card";
 @import "darkroom-colors/piwigo-components";
 @import "darkroom-colors/piwigo-plugins";
-
 @import "common/picture-info-sidebar";
-
-@include media-breakpoint-up(lg) {
-  #navbar-menubar > #quicksearch i.fas {
-    top: 10px !important;
-  }
-}

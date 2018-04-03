@@ -4,12 +4,6 @@
 @import "node_modules/bootswatch/dist/litera/bootswatch";
 @import "common";
 
-@include media-breakpoint-up(lg) {
-  #navbar-menubar > #quicksearch i.fas {
-    top: 14px !important;
-  }
-}
-
 .navbar {
   &.navbar-transparent.navbar-sm {
     margin-top: -100px !important;

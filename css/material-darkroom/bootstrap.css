@@ -17260,10 +17260,4 @@ select.form-control > option, select.custom-file-control > option {
 .card .is-focused .custom-file-control {
   background-image: linear-gradient(to top, #009688 2px, rgba(0, 150, 136, 0) 2px), linear-gradient(to top, #4f4f4f 1px, transparent 1px);
 }
-
-@media (min-width: 992px) {
-  #navbar-menubar > #quicksearch i.fas {
-    top: 10px !important;
-  }
-}
 /*# sourceMappingURL=bootstrap.css.map */

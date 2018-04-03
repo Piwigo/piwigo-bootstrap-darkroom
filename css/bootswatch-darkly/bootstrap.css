@@ -9943,12 +9943,6 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 1.171875rem !important;
 }
 
-@media (min-width: 992px) {
-  #navbar-menubar > #quicksearch i.fas {
-    top: 10px !important;
-  }
-}
-
 .navbar.navbar-transparent.navbar-sm {
   margin-top: -97px !important;
 }

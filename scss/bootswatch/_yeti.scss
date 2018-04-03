@@ -4,12 +4,6 @@
 @import "node_modules/bootswatch/dist/yeti/bootswatch";
 @import "common";
 
-@include media-breakpoint-up(lg) {
-  #navbar-menubar > #quicksearch i.fas {
-    top: 10px !important;
-  }
-}
-
 .navbar {
   &.navbar-transparent.navbar-sm {
     margin-top: -97px !important;

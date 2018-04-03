@@ -11335,12 +11335,6 @@ input[type="checkbox"]:disabled:checked:after,
   font-size: 1.015625rem !important;
 }
 
-@media (min-width: 992px) {
-  #navbar-menubar > #quicksearch i.fas {
-    top: 19px !important;
-  }
-}
-
 .navbar.navbar-transparent.navbar-sm {
   margin-top: -109px !important;
 }

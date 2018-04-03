@@ -35,9 +35,3 @@ $brand-primary: $teal;
     background-image: linear-gradient(to top,#009688 2px,rgba(0,150,136,0) 2px),linear-gradient(to top,rgb(79, 79, 79) 1px,transparent 1px);
   }
 }
-
-@include media-breakpoint-up(lg) {
-  #navbar-menubar > #quicksearch i.fas {
-    top: 10px !important;
-  }
-}

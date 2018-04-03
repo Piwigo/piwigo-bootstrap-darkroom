@@ -318,11 +318,6 @@ body {
     background: none;
     width: 150px !important;
   }
-  #navbar-menubar > #quicksearch i.fas {
-    position: absolute;
-    top: 8px;
-    left: -15px;
-  }
 }
 
 @media (max-width: 991.98px) {

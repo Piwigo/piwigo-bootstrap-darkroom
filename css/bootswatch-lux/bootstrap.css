@@ -9908,8 +9908,4 @@ th {
 .navbar-contextual .nav-item + .nav-item {
   margin-left: .2rem;
 }
-
-#navbar-menubar > #quicksearch i.fas {
-  top: 16px !important;
-}
 /*# sourceMappingURL=bootstrap.css.map */
