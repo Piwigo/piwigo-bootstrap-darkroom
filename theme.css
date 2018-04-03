@@ -271,6 +271,7 @@ body {
 
 .navbar-brand a:first-child {
   font-size: 0;
+  text-decoration: none;
 }
 
 .navbar-brand a:first-child:before {

@@ -147,7 +147,9 @@
 // replace the home link in navbar
 .navbar-brand a:first-child {
   font-size: 0;
+  text-decoration: none;
 }
+
 .navbar-brand a:first-child:before {
   content: "\f015";
   font-family: "Font Awesome 5 Free";
