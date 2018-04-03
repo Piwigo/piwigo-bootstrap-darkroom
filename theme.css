@@ -277,6 +277,7 @@ body {
   content: "\f015";
   font-family: "Font Awesome 5 Free";
   font-size: 1.25rem;
+  font-weight: 900;
 }
 
 #navbar-menubar > #quicksearch input[type="text"] {
