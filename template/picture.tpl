@@ -52,7 +52,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
 {if $theme_config->social_twitter}
         <a href="http://twitter.com/share?text={$current.TITLE}&amp;url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-raised btn-twitter"{/if}>
-            <i class="fas fa-twitter"></i>{if $theme_config->social_buttons} Twitter{/if}
+            <i class="fab fa-twitter"></i>{if $theme_config->social_buttons} Twitter{/if}
         </a>
 {/if}
 {if $theme_config->social_facebook}
