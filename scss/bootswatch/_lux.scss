@@ -4,6 +4,10 @@
 @import "node_modules/bootswatch/dist/lux/bootswatch";
 @import "common";
 
+.nav-item {
+  margin-right: 1.5rem;
+}
+
 .navbar-contextual {
   .nav-item + .nav-item {
     margin-left: .2rem;

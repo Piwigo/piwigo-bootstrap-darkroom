@@ -9901,6 +9901,10 @@ th {
   font-size: 1.09375rem !important;
 }
 
+.nav-item {
+  margin-right: 1.5rem;
+}
+
 .navbar-contextual .nav-item + .nav-item {
   margin-left: .2rem;
 }
