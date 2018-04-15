@@ -1,4 +1,4 @@
-<li class="nav-item dropdown" id="identificationDropdown">
+<li class="nav-item dropdown" id="linksDropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Links'|@translate}</a>
     <div class="dropdown-menu dropdown-menu-right" role="menu">
     {foreach from=$block->data item=link}
