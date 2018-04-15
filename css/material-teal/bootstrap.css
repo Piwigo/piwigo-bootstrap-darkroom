@@ -17144,6 +17144,14 @@ select.form-control > option, select.custom-file-control > option {
   text-transform: none;
 }
 
+.card-thumbnail h6.card-title {
+  font-size: 1.25rem;
+}
+
+#thumbnails .card-thumbnail h6.card-title {
+  font-size: 1.1rem;
+}
+
 .jumbotron {
   color: #fff;
 }
