@@ -52,7 +52,7 @@
     <div class="card-body">
         <ul class="calendar-month-list">
         {foreach from=$bar.items item=item}
-  	    <li><a href="{if isset($item.URL)}{$item.URL}{else}#{/if}">{$item.LABEL}{if isset($item.NB_IMAGES)} <span class="badge">{$item.NB_IMAGES}</span>{/if}</a></li>
+  	    <li><a href="{if isset($item.URL)}{$item.URL}{else}#{/if}">{$item.LABEL}{if isset($item.NB_IMAGES)} <span class="badge badge-secondary">{$item.NB_IMAGES}</span>{/if}</a></li>
 	{/foreach}
         </ul>
     </div>
