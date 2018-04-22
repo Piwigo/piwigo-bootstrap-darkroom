@@ -56,6 +56,10 @@ select.form-control>option {
   color: $link-color;
 }
 
+.navbar-form .bmd-form-group input::placeholder {
+  color: grey !important;
+}
+
 // Slick carousel
 .slick-prev:before,
 .slick-next:before {

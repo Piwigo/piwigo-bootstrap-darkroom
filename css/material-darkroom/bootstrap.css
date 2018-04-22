@@ -16230,6 +16230,22 @@ select.form-control > option, select.custom-file-control > option {
   color: #9e9e9e;
 }
 
+.navbar-form .bmd-form-group input::-webkit-input-placeholder {
+  color: grey !important;
+}
+
+.navbar-form .bmd-form-group input:-ms-input-placeholder {
+  color: grey !important;
+}
+
+.navbar-form .bmd-form-group input::-ms-input-placeholder {
+  color: grey !important;
+}
+
+.navbar-form .bmd-form-group input::placeholder {
+  color: grey !important;
+}
+
 .slick-prev:before,
 .slick-next:before {
   color: #3c3c3c;
