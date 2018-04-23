@@ -161,3 +161,8 @@ ul.thumbnailCategories { padding-top: 20px; }
     border-top: none;
   }
 }
+
+// Additional Pages
+#theAdditionalPage .navbar-contextual .nav-breadcrumb>a {
+  padding-right: 0.5rem;
+}
