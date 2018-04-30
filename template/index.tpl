@@ -240,7 +240,7 @@ $(document).ajaxComplete(function() {
 {if !isset($loaded_plugins['piwigo-videojs']) && (isset($GThumb) || isset($GDThumb))}
 function addVideoIndicator() {
   $('img.thumbnail[src*="pwg_representative"]').each(function() {
-    $(this).closest('li').append('<i class="fas fa-file-video-o fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
+    $(this).closest('li').append('<i class="fas fa-file-video fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
   });
 }
 $(document).ready(function() {
@@ -251,7 +251,7 @@ $(document).ajaxComplete(function() {
 });
 {else}
 $('.card-thumbnail').find('img[src*="pwg_representative"]').each(function() {
-  $(this).closest('div').append('<i class="fas fa-file-video-o fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
+  $(this).closest('div').append('<i class="fas fa-file-video fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
 });
 {/if}
 {/strip}{/footer_script}

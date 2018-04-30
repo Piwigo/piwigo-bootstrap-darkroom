@@ -535,6 +535,11 @@ body {
   font-size: 0.8rem;
 }
 
+i.video-indicator {
+  font-weight: 400;
+  opacity: 0.75;
+}
+
 #theCategoryPage {
   padding-left: 0px !important;
 }
