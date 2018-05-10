@@ -26,7 +26,7 @@
   "license": "APACHE-2.0",
   "dependencies": {
     "bootstrap-social": "^5.1.1",
-    "font-awesome": "FortAwesome/Font-Awesome#5.0.10",
+    "font-awesome": "FortAwesome/Font-Awesome#5.0.13",
     "jquery": ">=3.0.0",
     "jquery-migrate": "^3.0.0",
     "photoswipe": "4.1.2",
@@ -38,15 +38,15 @@
   },
   "devDependencies": {
     "autoprefixer": "^8.3.0",
-    "bootstrap": "4.1.0",
+    "bootstrap": "4.1.1",
     "bootstrap-material-design": "4.1.1",
-    "bootswatch": "thomaspark/bootswatch#v4.1.0",
-    "clean-css-cli": "^4.1.6",
+    "bootswatch": "thomaspark/bootswatch#v4.1.1",
+    "clean-css-cli": "^4.1.11",
     "node-sass": "^4.8.3",
     "node-sass-tilde-importer": "^1.0.0",
     "npm-run-all": "^4.1.2",
     "postcss-cli": "^5.0.0",
     "uglify-js": "^3.3.21",
-    "yarn": "~1.5"
+    "yarn": "~1.6"
   }
 }
