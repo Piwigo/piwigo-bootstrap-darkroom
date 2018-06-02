@@ -182,7 +182,7 @@ var uploadCategory = null;
 var sizeLimit = Math.round({$upload_max_filesize} / 1024); /* in KBytes */
 var sumQueueFilesize = 0;
 {if isset($limit_storage)}
-varr limit_storage = {$limit_storage};
+var limit_storage = {$limit_storage};
 {/if}
 
 {literal}
@@ -399,11 +399,6 @@ p#uploadModeInfos {text-align:left;margin-top:1em;font-size:90%;color:#999;}
 #progressbar {border:1px solid #ccc; background-color:#eee;}
 .ui-progressbar-value { background-image: url(admin/themes/default/images/pbar-ani.gif); height:10px;margin:-1px;border:1px solid #E78F08;}
 
-.showInfo {display:block;position:absolute;top:0;right:5px;width:15px;font-style:italic;font-family:"Georgia",serif;background-color:#464646;font-size:0.9em;border-radius:10px;-moz-border-radius:10px;}
-.showInfo:hover {cursor:pointer}
-.showInfo {color:#fff;background-color:#999; }
-.showInfo:hover {color:#fff;border:none;background-color:#333} 
-
 /* Upload Form */
 .plupload_header {display:none;}
 #uploadForm .plupload_container {padding:0}
@@ -544,17 +539,19 @@ p#uploadModeInfos {text-align:left;margin-top:1em;font-size:90%;color:#999;}
       </span>
 {if $create_subcategories}
       <div id="linkToCreate">
-      <span class="albumSelection">{'... or '|@translate}</span><a href="#" class="addAlbumOpen" title="{'create a new album'|@translate}">{'create a new album'|@translate}</a>
+      <span class="albumSelection">{'... or '|@translate}</span>
+      <a href="#" class="addAlbumOpen btn btn-sm btn-primary" title="{'create a new album'|@translate}">{'create a new album'|@translate}</a>
       </div>
 {/if}      
     </fieldset>
 
     <fieldset class="selectFiles form-group">
       <legend>{'Select files'|@translate}</legend>
-      <button id="addFiles" class="btn btn-sm btn-primary buttonLike icon-plus-circled">{'Add Photos'|translate}</button>
+      <button id="addFiles" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> {'Add Photos'|translate}</button>
 
     <p id="uploadWarningsSummary">{$upload_max_filesize_shorthand}B. {$upload_file_types}. {if isset($max_upload_resolution)}{$max_upload_resolution}Mpx.{/if} {if isset($quota_summary)}{$quota_summary}{/if}
-<a class="showInfo" title="{'Learn more'|@translate}">i</a></p>
+      <a class="showInfo" href="#" title="{'Learn more'|@translate}"><i class="fas fa-info-circle"></i></a>
+    </p>
 
     <p id="uploadWarnings">
 {'Maximum file size: %sB.'|@translate|@sprintf:$upload_max_filesize_shorthand}
@@ -595,14 +592,14 @@ p#uploadModeInfos {text-align:left;margin-top:1em;font-size:90%;color:#999;}
     </fieldset>
 
     <div id="uploadingActions" style="display:none">
-      <button id="cancelUpload" class="buttonLike btn btn-primary icon-cancel-circled">{'Cancel'|translate}</button>
+      <button id="cancelUpload" class="btn btn-primary"><i class="fas fa-ban"></i> {'Cancel'|translate}</button>
       
       <div class="big-progressbar">
         <div class="progressbar" style="width:0%"></div>
       </div>
     </div>
       
-    <button id="startUpload" class="btn btn-primary buttonLike icon-upload" disabled>{'Start Upload'|translate}</button>
+    <button id="startUpload" class="btn btn-primary" disabled><i class="fas fa-upload"></i> {'Start Upload'|translate}</button>
 
 </form>
 
