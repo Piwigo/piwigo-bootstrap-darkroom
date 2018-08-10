@@ -5,7 +5,7 @@ Version: 2.3.3
 Description: A mobile-ready & feature-rich theme based on Boostrap 4, with PhotoSwipe full-screen slideshow, Slick carousel, over 30 color styles and lots of configuration options
 Theme URI: http://piwigo.org/ext/extension_view.php?eid=831
 Author: Thomas Kuther
-Author URI: https://https://github.com/tkuther/piwigo-bootstrap-darkroom
+Author URI: https://github.com/tkuther/piwigo-bootstrap-darkroom
 */
 require_once(PHPWG_THEMES_PATH . 'bootstrap_darkroom/include/themecontroller.php');
 require_once(PHPWG_THEMES_PATH . 'bootstrap_darkroom/include/config.php');
