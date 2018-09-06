@@ -205,15 +205,15 @@ $('#startSlideshow').on('click touchstart', function() {
 
 function setupPhotoSwipe() {
    $('#thumbnails').find("a:has(img):not(.addCollection)").each(function(_index) {
-      var $pswpIndex;
+      var $pswpIndex = {if isset($GDThumb) || isset($GThumb)}{$START_ID}{else}0{/if};
       if ($(this).find('img').length > 0) {
          var _href = $(this).href;
          $(this).attr('href', 'javascript:;').attr('data-href', _href);
          if (!$(this).attr('data-index')) {
             $(this).attr('data-index', _index);
-            $pswpIndex = _index;
+            $pswpIndex = $pswpIndex + _index;
          } else {
-            $pswpIndex = $(this).data('index');
+            $pswpIndex = $pswpIndex + $(this).data('index');
          }
          $(this).off('click tap').on('click tap', function(event) {
             event.preventDefault();
