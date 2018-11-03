@@ -173,7 +173,7 @@
     }
 {/strip}{/footer_script}
                   <tr>
-                    <th scope="row">{'Who can see this photo?'|@translate}</dt>
+                    <th scope="row">{'Who can see this photo?'|@translate}</th>
                     <td>
                       <div id="Privacy" class="imageInfo">
                         <div class="dropdown">
