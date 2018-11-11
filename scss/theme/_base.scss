@@ -58,10 +58,16 @@ body {
 #calendar-nav {
   min-height: 55px;
   text-align: center;
+
+  .btn-group {
+    flex-wrap: wrap;
+  }
+
+  &>a {
+    margin-bottom: 10px;
+  }
 }
-#calendar-nav>a {
-  margin-bottom: 10px;
-}
+
 #calendar-nav-buttons table {
   padding-top: 10px;
 }

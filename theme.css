@@ -74,6 +74,10 @@ body {
   text-align: center;
 }
 
+#calendar-nav .btn-group {
+  flex-wrap: wrap;
+}
+
 #calendar-nav > a {
   margin-bottom: 10px;
 }
