@@ -229,3 +229,14 @@ $(document).ready(function() {
 {/footer_script}
 {/if}
 {/strip}
+
+{if isset($loaded_plugins['rv_tscroller'])}
+{footer_script require='jquery'}{literal}
+$(document).ready(function() {
+  if (window.jQuery && window.RVTS && RVTS.start>0) {
+        var $f = $('.navbar-contextual .navbar-brand a:last-child');
+        $('#rvtsUp').html( '<div id="rvtsUp" style="text-align:center;font-size:120%;margin:10px"><a href="'+$f.attr("href")+'">'+$f.html()+'</a> | <a href="javascript:RVTS.loadUp()">'+RVTS.prevMsg+"</a></div>" );
+  }
+});
+{/literal}{/footer_script}
+{/if}
