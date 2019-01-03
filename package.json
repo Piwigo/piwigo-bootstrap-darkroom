@@ -26,7 +26,7 @@
   "license": "APACHE-2.0",
   "dependencies": {
     "bootstrap-social": "^5.1.1",
-    "font-awesome": "FortAwesome/Font-Awesome#5.2.0",
+    "font-awesome": "FortAwesome/Font-Awesome#5.6.3",
     "jquery": ">=3.3.0",
     "jquery-migrate": "^3.0.1",
     "photoswipe": "4.1.2",

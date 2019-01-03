@@ -740,9 +740,9 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-font-awesome@FortAwesome/Font-Awesome#5.2.0:
+font-awesome@FortAwesome/Font-Awesome#5.6.3:
   version "0.0.0"
-  resolved "https://codeload.github.com/FortAwesome/Font-Awesome/tar.gz/03bcd4dc0831f0651a3b5a7cd41153e8129fccf3"
+  resolved "https://codeload.github.com/FortAwesome/Font-Awesome/tar.gz/34dff97269eb4d4142218af6a9dbc44024524ba2"
 
 font-awesome@~4.7:
   version "4.7.0"
