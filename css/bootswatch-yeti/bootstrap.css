@@ -5214,7 +5214,7 @@ a.badge-dark:hover, a.badge-dark:focus {
   height: 1rem;
   overflow: hidden;
   font-size: 0.703125rem;
-  background-color: #f6f6f6;
+  background-color: #ccc;
   border-radius: 0;
 }
 
@@ -5222,7 +5222,7 @@ a.badge-dark:hover, a.badge-dark:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #008cba;
+  color: #fff;
   text-align: center;
   white-space: nowrap;
   background-color: #008cba;
@@ -10305,6 +10305,10 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #dc2c0f;
 }
 
+.text-secondary {
+  color: #495057 !important;
+}
+
 .blockquote-footer {
   color: #888;
 }
@@ -10313,8 +10317,32 @@ table {
   font-size: 0.820312rem;
 }
 
-.table-success, .table-info, .table-warning, .table-danger {
+.table-primary, .table-success, .table-info, .table-warning, .table-danger {
   color: #fff;
+}
+
+.table-primary,
+.table-primary > th,
+.table-primary > td {
+  background-color: #008cba;
+}
+
+.table-secondary,
+.table-secondary > th,
+.table-secondary > td {
+  background-color: #eee;
+}
+
+.table-light,
+.table-light > th,
+.table-light > td {
+  background-color: #eee;
+}
+
+.table-dark,
+.table-dark > th,
+.table-dark > td {
+  background-color: #222;
 }
 
 .table-success,
@@ -10341,6 +10369,28 @@ table {
   background-color: #E99002;
 }
 
+.table-active,
+.table-active > th,
+.table-active > td {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table-hover .table-primary:hover, .table-hover .table-primary:hover > th, .table-hover .table-primary:hover > td {
+  background-color: #0079a1;
+}
+
+.table-hover .table-secondary:hover, .table-hover .table-secondary:hover > th, .table-hover .table-secondary:hover > td {
+  background-color: #e1e1e1;
+}
+
+.table-hover .table-light:hover, .table-hover .table-light:hover > th, .table-hover .table-light:hover > td {
+  background-color: #e1e1e1;
+}
+
+.table-hover .table-dark:hover, .table-hover .table-dark:hover > th, .table-hover .table-dark:hover > td {
+  background-color: #151515;
+}
+
 .table-hover .table-success:hover, .table-hover .table-success:hover > th, .table-hover .table-success:hover > td {
   background-color: #3c9a5f;
 }
@@ -10355,6 +10405,10 @@ table {
 
 .table-hover .table-warning:hover, .table-hover .table-warning:hover > th, .table-hover .table-warning:hover > td {
   background-color: #d08002;
+}
+
+.table-hover .table-active:hover, .table-hover .table-active:hover > th, .table-hover .table-active:hover > td {
+  background-color: rgba(0, 0, 0, 0.075);
 }
 
 label,
