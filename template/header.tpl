@@ -64,7 +64,7 @@
 {elseif (0 === strpos($theme_config->bootstrap_theme, 'material')) || $theme_config->bootstrap_theme == 'bootstrap-default'}
     {combine_css path="themes/bootstrap_darkroom/node_modules/typeface-roboto/index.css" order=-19}
 {/if}
-    {combine_css path='themes/bootstrap_darkroom/node_modules/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css' order=-14}
+    {combine_css path='themes/bootstrap_darkroom/node_modules/font-awesome/css/all.min.css' order=-14}
     {combine_css path='themes/bootstrap_darkroom/assets/photography-icons/css/PhotographyIcons.css' order=-13}
     {combine_css path='themes/bootstrap_darkroom/node_modules/bootstrap-social/bootstrap-social.css' order=-12}
 {foreach from=$themes item=theme}
