@@ -38,6 +38,7 @@ $lang['Show basic EXIF metadata'] = 'Show basic EXIF metadata';
 $lang['For more information on metadata visit'] = 'For more information on metadata visit';
 $lang['Thumbnail page display'] = 'Thumbnail page display';
 $lang['Show image caption'] = 'Show image caption';
+$lang['Use description rather than title for images'] = 'Use description rather than title for images';
 $lang['from'] = 'from';
 $lang['Site logo'] = 'Site logo';
 $lang['Display a site logo image instead of plain text'] = 'Display a site logo image instead of plain text';
