@@ -35,7 +35,19 @@
 {if $SHOW_THUMBNAIL_CAPTION}
         <div class="card-body{if !$theme_config->thumbnail_caption && $smarty.cookies.view != 'list'} d-none{/if}{if !$theme_config->thumbnail_caption} list-view-only{/if}">
             <h6 class="card-title">
+{if $theme_config->thumbnail_desc}
+            {if !empty($thumbnail.DESCRIPTION)}
+                <div id="content-description" class="py-3{if $theme_config->thumbnail_cat_desc == 'simple'} text-center{/if}">
+            {if $theme_config->thumbnail_cat_desc == 'simple'}
+                    <h5>{$thumbnail.DESCRIPTION}</h5>
+            {else}
+                    {$thumbnail.DESCRIPTION}
+            {/if}
+                </div>
+            {/if}
+{else}
                 <a href="{$thumbnail.URL}" class="ellipsis{if !empty($thumbnail.icon_ts)} recent{/if}">{$thumbnail.NAME}</a>
+{/if}
 {if !empty($thumbnail.icon_ts)}
                 <img title="{$thumbnail.icon_ts.TITLE}" src="{$ROOT_URL}{$themeconf.icon_dir}/recent.png" alt="(!)">
 {/if}

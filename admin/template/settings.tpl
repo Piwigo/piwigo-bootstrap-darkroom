@@ -186,6 +186,13 @@
                     </label>
                 </li>
                 <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="thumbnail_desc"{if $theme_config->thumbnail_desc} checked="checked"{/if}>
+                        {'Use description rather than title for images'|@translate}
+                    </label>
+                </li>
+                <li>
                     <label labelfor="thumbnail_linkto">{'Link thumbnail to'|@translate}</label>
                     <select name="thumbnail_linkto">
                         <option value="picture"{if $theme_config->thumbnail_linkto == 'picture'} selected="selected"{/if}>{'Picture details page'|@translate}</option>

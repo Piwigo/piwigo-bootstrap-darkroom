@@ -37,6 +37,7 @@ class Config {
     const KEY_PHOTOSWIPE_METADATA = 'photoswipe_metadata';
     const KEY_THUMBNAIL_LINKTO = 'thumbnail_linkto';
     const KEY_THUMBNAIL_CAPTION = 'thumbnail_caption';
+    const KEY_THUMBNAIL_DESC = 'thumbnail_desc';
     const KEY_THUMBNAIL_CAT_DESC = 'thumbnail_cat_desc';
     const KEY_CATEGORY_WELLS = 'category_wells';
     const KEY_LOGO_IMAGE_ENABLED = 'logo_image_enabled';
@@ -83,6 +84,7 @@ class Config {
         self::KEY_PHOTOSWIPE_METADATA => false,
         self::KEY_THUMBNAIL_LINKTO => 'picture',
         self::KEY_THUMBNAIL_CAPTION => true,
+        self::KEY_THUMBNAIL_DESC => false,
         self::KEY_THUMBNAIL_CAT_DESC => 'simple',
         self::KEY_CATEGORY_WELLS => 'never',
         self::KEY_LOGO_IMAGE_ENABLED => false,
@@ -127,6 +129,7 @@ class Config {
         self::KEY_PHOTOSWIPE_METADATA => self::TYPE_BOOL,
         self::KEY_THUMBNAIL_LINKTO => self::TYPE_STRING,
         self::KEY_THUMBNAIL_CAPTION => self::TYPE_BOOL,
+        self::KEY_THUMBNAIL_DESC => self::TYPE_BOOL,
         self::KEY_THUMBNAIL_CAT_DESC => self::TYPE_STRING,
         self::KEY_CATEGORY_WELLS => self::TYPE_STRING,
         self::KEY_LOGO_IMAGE_ENABLED => self::TYPE_BOOL,
