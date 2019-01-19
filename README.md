@@ -26,7 +26,7 @@ A mobile-ready [Piwigo](http://piwigo.org) theme based on [Bootstrap 4](https://
 ### Usage
 
 1. Installation:
- * Use the Piwigo built-in plungin manager (preferred)
+ * Use the Piwigo built-in extension manager (preferred)
  * or git clone and move to piwigo/themes/bootstrap_darkroom
  * or download from http://piwigo.org/ext/extension_view.php?eid=831
 2. Enable Bootstrap Darkroom
