@@ -379,13 +379,6 @@
                         {'Facebook'|@translate}
                     </label>
                 </li>
-                <li id="social_google_plus" class="ident">
-                    <label class="font-checkbox">
-                        <span class="icon-check"></span>
-                        <input type="checkbox" name="social_google_plus"{if $theme_config->social_google_plus}  checked="checked"{/if}>
-                        {'Google+'|@translate}
-                    </label>
-                </li>
                 <li id="social_pinterest" class="ident">
                     <label class="font-checkbox">
                         <span class="icon-check"></span>
@@ -418,7 +411,7 @@
 {footer_script require="jquery"}
 (function(){
     var targets = {
-        'input[name="social_enabled"]': ['#social_twitter', '#social_facebook', '#social_google_plus', '#social_pinterest', '#social_vk', '#social_buttons'],
+        'input[name="social_enabled"]': ['#social_twitter', '#social_facebook', '#social_pinterest', '#social_vk', '#social_buttons'],
         '#comments_radio_disqus': ['#comments_type_disqus'],
         'input[name="fluid_width"]': ['#fluid_width_col_xxl'],
         'input[name="logo_image_enabled"]': ['#logo_image_path'],

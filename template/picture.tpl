@@ -61,12 +61,6 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
             <i class="fab fa-facebook"></i>{if $theme_config->social_buttons} Facebook{/if}
         </a>
 {/if}
-{if $theme_config->social_google_plus}
-        <a href="https://plus.google.com/share?url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"
-           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-raised btn-google"{/if}>
-            <i class="fab fa-google"></i>{if $theme_config->social_buttons} Google+{/if}
-        </a>
-{/if}
 {if $theme_config->social_pinterest}
         <a href="https://www.pinterest.com/pin/create/button/?url={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}&media={$http_scheme}://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}/../{$current.selected_derivative->get_url()}"
            onclick="window.open(this.href, 'pinterest-share', 'width=490,height=530');return false;" title="Pin on Pinterest"{if $theme_config->social_buttons} class="btn btn-sm btn-social btn-raised btn-pinterest"{/if}>
