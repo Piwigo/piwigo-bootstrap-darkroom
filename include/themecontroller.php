@@ -167,7 +167,7 @@ class ThemeController {
 
         include_once(PHPWG_ROOT_PATH.'/include/functions_metadata.inc.php');
 
-        if (!$page['items'] || ($page['section'] == 'categories' && !isset($page['category']))) {
+        if (!$page['items'] || ($page['section'] == 'categories' && !isset($page['category']) && !isset($page['chronology_field']))) {
             return;
         }
 
