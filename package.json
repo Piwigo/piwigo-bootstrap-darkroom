@@ -26,27 +26,27 @@
   "license": "APACHE-2.0",
   "dependencies": {
     "bootstrap-social": "^5.1.1",
-    "font-awesome": "FortAwesome/Font-Awesome#5.6.3",
+    "font-awesome": "FortAwesome/Font-Awesome#5.7.2",
     "jquery": ">=3.3.0",
     "jquery-migrate": "^3.0.1",
     "photoswipe": "4.1.2",
-    "popper.js": "^1.14.6",
+    "popper.js": "^1.14.7",
     "selectize": "0.12.6",
     "slick-carousel": "tkuther/slick#1.6.0-pwg",
     "typeface-pt-sans": "^0.0.35",
     "typeface-roboto": "^0.0.35"
   },
   "devDependencies": {
-    "autoprefixer": "^9.4.2",
-    "bootstrap": "4.2.1",
+    "autoprefixer": "^9.4.7",
+    "bootstrap": "4.3.1",
     "bootstrap-material-design": "4.1.1",
-    "bootswatch": "thomaspark/bootswatch#v4.2.1",
+    "bootswatch": "thomaspark/bootswatch#v4.3.1",
     "clean-css-cli": "^4.2.1",
     "node-sass": "^4.11.0",
     "node-sass-tilde-importer": "^1.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.0.1",
+    "postcss-cli": "^6.1.1",
     "uglify-js": "^3.4.9",
-    "yarn": "~1.12"
+    "yarn": "~1.13"
   }
 }
