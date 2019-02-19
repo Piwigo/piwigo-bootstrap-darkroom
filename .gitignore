@@ -64,3 +64,9 @@ node_modules/selectize/*
 
 !node_modules/typeface-pt-sans
 !node_modules/typeface-roboto
+
+!node_modules/jQuery-Touch-Events
+node_modules/jQuery-Touch-Events/*
+!node_modules/jQuery-Touch-Events/src
+node_modules/jQuery-Touch-Events/src/*
+!node_modules/jQuery-Touch-Events/src/*.min.js
