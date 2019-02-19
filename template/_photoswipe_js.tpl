@@ -128,9 +128,6 @@ function startPhotoSwipe(idx) {
 {if $theme_config->social_twitter}{literal}
                            {id:'twitter', label:'<i class="fab fa-twitter fa-2x fa-fw"></i> Tweet', url:'https://twitter.com/intent/tweet?url={{url}}'},
 {/literal}{/if}
-{if $theme_config->social_google_plus}{literal}
-                           {id:'google', label:'<i class="fab fa-google-plus fa-2x fa-fw"></i> Share on Google+', url:'https://plus.google.com/share?url={{url}}'},
-{/literal}{/if}
 {if $theme_config->social_pinterest}{literal}
                            {id:'pinterest', label:'<i class="fab fa-pinterest fa-2x fa-fw"></i> Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media=' + window.location + '/../{{raw_image_url}}'},
 {/literal}{/if}
@@ -343,7 +340,7 @@ function startPhotoSwipe(idx) {
             }
             w = vw;
             h = vh;
-        } else if (vp.y < h) {
+        } else if (vp.y < (h * 1.2)) {
             r = w/h;
             vh = vp.y*0.85;
             vw = vh*r;
