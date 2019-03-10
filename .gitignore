@@ -41,10 +41,12 @@ node_modules/popper.js/*
 node_modules/popper.js/dist/*
 !node_modules/popper.js/dist/umd
 
-!node_modules/font-awesome
-node_modules/font-awesome/*
-!node_modules/font-awesome/css
-!node_modules/font-awesome/webfonts
+!node_modules/@fortawesome
+node_modules/@fortawesome/*
+!node_modules/@fortawesome/fontawesome-free
+node_modules/@fortawesome/fontawesome-free/*
+!node_modules/@fortawesome/fontawesome-free/css
+!node_modules/@fortawesome/fontawesome-free/webfonts
 
 !node_modules/bootstrap-social
 node_modules/bootstrap-social/*
