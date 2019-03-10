@@ -181,6 +181,34 @@ $(document).ready(function() {
     <!-- End of categories -->
 {/if}
 
+{if !empty($category_search_results)}
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
+    <h3 class="category_search_results">{'Album results for'|@translate} <em><strong>{$QUERY_SEARCH}</strong></em></h3>
+    <p>
+        <em><strong>
+{foreach from=$category_search_results item=res name=res_loop}
+{if !$smarty.foreach.res_loop.first} &mdash; {/if}
+            {$res}
+{/foreach}
+        </strong></em>
+    </p>
+</div>
+{/if}
+
+{if !empty($tag_search_results)}
+<div class="container{if $theme_config->fluid_width}-fluid{/if}">
+    <h3 class="tag_search_results">{'Tag results for'|@translate} <em><strong>{$QUERY_SEARCH}</strong></em></h3>
+    <p>
+        <em><strong>
+{foreach from=$tag_search_results item=tag name=res_loop}
+{if !$smarty.foreach.res_loop.first} &mdash; {/if}
+            <a href="{$tag.URL}">{$tag.name}</a>
+{/foreach}
+        </strong></em>
+    </p>
+</div>
+{/if}
+
 {if !empty($THUMBNAILS)}
         <!-- Start of thumbnails -->
         <div id="thumbnails" class="row">{$THUMBNAILS}</div>
@@ -267,34 +295,6 @@ $('.card-thumbnail').find('img[src*="pwg_representative"]').each(function() {
 {if !empty($thumb_navbar) && !isset($loaded_plugins['rv_tscroller'])}
     {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$thumb_navbar}
 {/if}
-</div>
-{/if}
-
-{if !empty($category_search_results)}
-<div class="container{if $theme_config->fluid_width}-fluid{/if}">
-    <h3 class="category_search_results">{'Album results for'|@translate} <em><strong>{$QUERY_SEARCH}</strong></em></h3>
-    <p>
-        <em><strong>
-{foreach from=$category_search_results item=res name=res_loop}
-{if !$smarty.foreach.res_loop.first} &mdash; {/if}
-            {$res}
-{/foreach}
-        </strong></em>
-    </p>
-</div>
-{/if}
-
-{if !empty($tag_search_results)}
-<div class="container{if $theme_config->fluid_width}-fluid{/if}">
-    <h3 class="tag_search_results">{'Tag results for'|@translate} <em><strong>{$QUERY_SEARCH}</strong></em></h3>
-    <p>
-        <em><strong>
-{foreach from=$tag_search_results item=tag name=res_loop}
-{if !$smarty.foreach.res_loop.first} &mdash; {/if}
-            <a href="{$tag.URL}">{$tag.name}</a>
-{/foreach}
-        </strong></em>
-    </p>
 </div>
 {/if}
 
