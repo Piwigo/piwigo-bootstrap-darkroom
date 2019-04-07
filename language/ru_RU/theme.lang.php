@@ -97,3 +97,4 @@ $lang['Banner style'] = 'Стиль баннера';
 $lang['Components'] = 'Компоненты';
 $lang['Page header'] = 'Заголовок страницы';
 $lang['Social Media Integration'] = 'Интеграция с соцсетями';
+$lang['Use description rather than title for images'] = 'Пользуйтесь описанием вместо заголовка для изображений';
