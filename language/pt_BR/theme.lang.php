@@ -97,3 +97,4 @@ $lang['Components'] = 'Componentes';
 $lang['Card grid below the image'] = 'Grade de cartão abaixo da imagem';
 $lang['Banner style'] = 'Estilo Banner';
 $lang['Appearance'] = 'Aparência';
+$lang['Use description rather than title for images'] = 'Use descrição em vez de título para imagens';
