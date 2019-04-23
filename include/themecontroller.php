@@ -31,9 +31,11 @@ class ThemeController {
         add_event_handler('loc_end_picture', array($this, 'registerPictureTemplates'));
         add_event_handler('loc_begin_index_thumbnails', array($this, 'returnPageStart'));
 
-        add_event_handler('loc_end_picture', array($this, 'getAllThumbnailsInCategory'));
-        // also needed on index.tpl for compatibility with GThumb+/GDThumb
-        add_event_handler('loc_end_index', array($this, 'getAllThumbnailsInCategory'));
+        if ($this->config->slick_enabled === true || $this->config->photoswipe === true) {
+            add_event_handler('loc_end_picture', array($this, 'getAllThumbnailsInCategory'));
+           // also needed on index.tpl for compatibility with GThumb+/GDThumb
+           add_event_handler('loc_end_index', array($this, 'getAllThumbnailsInCategory'));
+        }
     }
 
     public function assignConfig() {
