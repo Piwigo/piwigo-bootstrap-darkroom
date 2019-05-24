@@ -97,3 +97,4 @@ $lang['Appearance'] = 'Utseende';
 $lang['Banner style'] = 'Banner stil';
 $lang['Card grid below the image'] = 'Rutenett under bilde';
 $lang['Components'] = 'Komponenter';
+$lang['Use description rather than title for images'] = 'Bruk beskrivelse i stedet for tittel på bilde';
