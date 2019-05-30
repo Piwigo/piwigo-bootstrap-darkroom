@@ -97,3 +97,4 @@ $lang['URL or releative path to the image'] = 'URL of bijbehorend pad naar de fo
 $lang['Use 6 colums for viewports >= 1680px'] = 'Gebruik 6 kolommen voor kaders >=1680 pixels';
 $lang['Use colored share buttons instead of icons'] = 'Gebruik gekleurde deelknoppen i.p.v. iconen';
 $lang['Use full width containers that span the entire width of the viewport'] = 'Gebruik volledige breedte containers die de totale breedte van het kader omsluiten';
+$lang['Use description rather than title for images'] = 'Gebruik voor afbeeldingen de beschrijving in plaats van de titel ';
