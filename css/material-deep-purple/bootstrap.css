@@ -1961,6 +1961,11 @@ pre code {
   opacity: 1;
 }
 
+.form-control::-moz-placeholder, .custom-file-control::-moz-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
 .form-control:-ms-input-placeholder, .custom-file-control:-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
@@ -4843,8 +4848,10 @@ input[type="button"].btn-block {
 @media (min-width: 576px) {
   .card-columns {
     -webkit-column-count: 3;
+    -moz-column-count: 3;
     column-count: 3;
     -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
     column-gap: 1.25rem;
     orphans: 1;
     widows: 1;
@@ -14026,7 +14033,7 @@ fieldset[disabled][disabled] .custom-file-control .form-control, fieldset[disabl
 .was-validated .custom-file-control .is-focused .form-control:valid, .was-validated .custom-file-control .is-focused .custom-file-control:valid, .custom-file-control .is-focused .form-control.is-valid, .custom-file-control .is-focused .is-valid.custom-file-control, .was-validated .custom-file-control.is-focused .form-control:valid, .was-validated .custom-file-control.is-focused .custom-file-control:valid, .custom-file-control.is-focused .form-control.is-valid, .custom-file-control.is-focused .is-valid.custom-file-control {
   border-color: rgba(0, 0, 0, 0.26);
   padding-right: calc(1.5em + 0.875rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-image: "none";
   background-repeat: no-repeat;
   background-position: center right calc(0.375em + 0.21875rem);
   background-size: calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
@@ -14057,7 +14064,7 @@ fieldset[disabled][disabled] .custom-file-control .form-control, fieldset[disabl
 .was-validated .custom-file-control .is-focused .custom-select:valid, .custom-file-control .is-focused .custom-select.is-valid, .was-validated .custom-file-control.is-focused .custom-select:valid, .custom-file-control.is-focused .custom-select.is-valid {
   border-color: rgba(0, 0, 0, 0.26);
   padding-right: calc((1em + 0.875rem) * 3 / 4 + 1rem);
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, "none" rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
 }
 
 .was-validated .custom-file-control .is-focused .custom-select:valid:focus, .custom-file-control .is-focused .custom-select.is-valid:focus, .was-validated .custom-file-control.is-focused .custom-select:valid:focus, .custom-file-control.is-focused .custom-select.is-valid:focus {
@@ -14708,7 +14715,7 @@ fieldset[disabled][disabled] .form-control, fieldset[disabled][disabled] .custom
 .was-validated .is-focused .form-control:valid, .was-validated .is-focused .custom-file-control:valid, .is-focused .form-control.is-valid, .is-focused .is-valid.custom-file-control, .was-validated .is-focused .form-control:valid, .was-validated .is-focused .custom-file-control:valid, .is-focused .form-control.is-valid, .is-focused .is-valid.custom-file-control {
   border-color: rgba(0, 0, 0, 0.26);
   padding-right: calc(1.5em + 0.875rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-image: "none";
   background-repeat: no-repeat;
   background-position: center right calc(0.375em + 0.21875rem);
   background-size: calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
@@ -14741,7 +14748,7 @@ fieldset[disabled][disabled] .form-control, fieldset[disabled][disabled] .custom
 .is-focused .custom-select.is-valid {
   border-color: rgba(0, 0, 0, 0.26);
   padding-right: calc((1em + 0.875rem) * 3 / 4 + 1rem);
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, "none" rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
 }
 
 .was-validated .is-focused .custom-select:valid:focus, .is-focused .custom-select.is-valid:focus, .was-validated
@@ -14954,7 +14961,7 @@ fieldset[disabled][disabled] .has-success .form-control, fieldset[disabled][disa
 .was-validated .has-success .is-focused .form-control:valid, .was-validated .has-success .is-focused .custom-file-control:valid, .has-success .is-focused .form-control.is-valid, .has-success .is-focused .is-valid.custom-file-control, .was-validated .has-success.is-focused .form-control:valid, .was-validated .has-success.is-focused .custom-file-control:valid, .has-success.is-focused .form-control.is-valid, .has-success.is-focused .is-valid.custom-file-control {
   border-color: #4caf50;
   padding-right: calc(1.5em + 0.875rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-image: "none";
   background-repeat: no-repeat;
   background-position: center right calc(0.375em + 0.21875rem);
   background-size: calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
@@ -14985,7 +14992,7 @@ fieldset[disabled][disabled] .has-success .form-control, fieldset[disabled][disa
 .was-validated .has-success .is-focused .custom-select:valid, .has-success .is-focused .custom-select.is-valid, .was-validated .has-success.is-focused .custom-select:valid, .has-success.is-focused .custom-select.is-valid {
   border-color: #4caf50;
   padding-right: calc((1em + 0.875rem) * 3 / 4 + 1rem);
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, "none" rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
 }
 
 .was-validated .has-success .is-focused .custom-select:valid:focus, .has-success .is-focused .custom-select.is-valid:focus, .was-validated .has-success.is-focused .custom-select:valid:focus, .has-success.is-focused .custom-select.is-valid:focus {
@@ -15158,7 +15165,7 @@ fieldset[disabled][disabled] .has-info .form-control, fieldset[disabled][disable
 .was-validated .has-info .is-focused .form-control:valid, .was-validated .has-info .is-focused .custom-file-control:valid, .has-info .is-focused .form-control.is-valid, .has-info .is-focused .is-valid.custom-file-control, .was-validated .has-info.is-focused .form-control:valid, .was-validated .has-info.is-focused .custom-file-control:valid, .has-info.is-focused .form-control.is-valid, .has-info.is-focused .is-valid.custom-file-control {
   border-color: #03a9f4;
   padding-right: calc(1.5em + 0.875rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-image: "none";
   background-repeat: no-repeat;
   background-position: center right calc(0.375em + 0.21875rem);
   background-size: calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
@@ -15189,7 +15196,7 @@ fieldset[disabled][disabled] .has-info .form-control, fieldset[disabled][disable
 .was-validated .has-info .is-focused .custom-select:valid, .has-info .is-focused .custom-select.is-valid, .was-validated .has-info.is-focused .custom-select:valid, .has-info.is-focused .custom-select.is-valid {
   border-color: #03a9f4;
   padding-right: calc((1em + 0.875rem) * 3 / 4 + 1rem);
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, "none" rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
 }
 
 .was-validated .has-info .is-focused .custom-select:valid:focus, .has-info .is-focused .custom-select.is-valid:focus, .was-validated .has-info.is-focused .custom-select:valid:focus, .has-info.is-focused .custom-select.is-valid:focus {
@@ -15362,7 +15369,7 @@ fieldset[disabled][disabled] .has-warning .form-control, fieldset[disabled][disa
 .was-validated .has-warning .is-focused .form-control:valid, .was-validated .has-warning .is-focused .custom-file-control:valid, .has-warning .is-focused .form-control.is-valid, .has-warning .is-focused .is-valid.custom-file-control, .was-validated .has-warning.is-focused .form-control:valid, .was-validated .has-warning.is-focused .custom-file-control:valid, .has-warning.is-focused .form-control.is-valid, .has-warning.is-focused .is-valid.custom-file-control {
   border-color: #ff5722;
   padding-right: calc(1.5em + 0.875rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-image: "none";
   background-repeat: no-repeat;
   background-position: center right calc(0.375em + 0.21875rem);
   background-size: calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
@@ -15393,7 +15400,7 @@ fieldset[disabled][disabled] .has-warning .form-control, fieldset[disabled][disa
 .was-validated .has-warning .is-focused .custom-select:valid, .has-warning .is-focused .custom-select.is-valid, .was-validated .has-warning.is-focused .custom-select:valid, .has-warning.is-focused .custom-select.is-valid {
   border-color: #ff5722;
   padding-right: calc((1em + 0.875rem) * 3 / 4 + 1rem);
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, "none" rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
 }
 
 .was-validated .has-warning .is-focused .custom-select:valid:focus, .has-warning .is-focused .custom-select.is-valid:focus, .was-validated .has-warning.is-focused .custom-select:valid:focus, .has-warning.is-focused .custom-select.is-valid:focus {
@@ -15566,7 +15573,7 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 .was-validated .has-danger .is-focused .form-control:valid, .was-validated .has-danger .is-focused .custom-file-control:valid, .has-danger .is-focused .form-control.is-valid, .has-danger .is-focused .is-valid.custom-file-control, .was-validated .has-danger.is-focused .form-control:valid, .was-validated .has-danger.is-focused .custom-file-control:valid, .has-danger.is-focused .form-control.is-valid, .has-danger.is-focused .is-valid.custom-file-control {
   border-color: #f44336;
   padding-right: calc(1.5em + 0.875rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-image: "none";
   background-repeat: no-repeat;
   background-position: center right calc(0.375em + 0.21875rem);
   background-size: calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
@@ -15597,7 +15604,7 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 .was-validated .has-danger .is-focused .custom-select:valid, .has-danger .is-focused .custom-select.is-valid, .was-validated .has-danger.is-focused .custom-select:valid, .has-danger.is-focused .custom-select.is-valid {
   border-color: #f44336;
   padding-right: calc((1em + 0.875rem) * 3 / 4 + 1rem);
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234caf50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0 center/8px 10px, "none" rgba(0, 0, 0, 0) no-repeat center right 1rem/calc(0.75em + 0.4375rem) calc(0.75em + 0.4375rem);
 }
 
 .was-validated .has-danger .is-focused .custom-select:valid:focus, .has-danger .is-focused .custom-select.is-valid:focus, .was-validated .has-danger.is-focused .custom-select:valid:focus, .has-danger.is-focused .custom-select.is-valid:focus {
@@ -15753,6 +15760,12 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 
 .bmd-form-group .form-control, .bmd-form-group .custom-file-control,
 .bmd-form-group label,
+.bmd-form-group input::-moz-placeholder {
+  line-height: 1;
+}
+
+.bmd-form-group .form-control, .bmd-form-group .custom-file-control,
+.bmd-form-group label,
 .bmd-form-group input:-ms-input-placeholder {
   line-height: 1;
 }
@@ -15769,6 +15782,41 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
   line-height: 1;
 }
 
+.bmd-form-group input.form-control, .bmd-form-group input.custom-file-control,
+.bmd-form-group input.form-control::-webkit-input-placeholder,
+.bmd-form-group input.custom-file-control::-webkit-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group input.form-control, .bmd-form-group input.custom-file-control,
+.bmd-form-group input.form-control::-moz-placeholder,
+.bmd-form-group input.custom-file-control::-moz-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group input.form-control, .bmd-form-group input.custom-file-control,
+.bmd-form-group input.form-control:-ms-input-placeholder,
+.bmd-form-group input.custom-file-control:-ms-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group input.form-control, .bmd-form-group input.custom-file-control,
+.bmd-form-group input.form-control::-ms-input-placeholder,
+.bmd-form-group input.custom-file-control::-ms-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group input.form-control, .bmd-form-group input.custom-file-control,
+.bmd-form-group input.form-control::placeholder,
+.bmd-form-group input.custom-file-control::placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
 .bmd-form-group .radio label,
 .bmd-form-group label.radio-inline,
 .bmd-form-group .checkbox label,
@@ -15778,6 +15826,10 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 }
 
 .bmd-form-group input::-webkit-input-placeholder {
+  font-size: 1rem;
+}
+
+.bmd-form-group input::-moz-placeholder {
   font-size: 1rem;
 }
 
@@ -15861,6 +15913,12 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 
 .bmd-form-group.bmd-form-group-sm .form-control, .bmd-form-group.bmd-form-group-sm .custom-file-control,
 .bmd-form-group.bmd-form-group-sm label,
+.bmd-form-group.bmd-form-group-sm input::-moz-placeholder {
+  line-height: 1;
+}
+
+.bmd-form-group.bmd-form-group-sm .form-control, .bmd-form-group.bmd-form-group-sm .custom-file-control,
+.bmd-form-group.bmd-form-group-sm label,
 .bmd-form-group.bmd-form-group-sm input:-ms-input-placeholder {
   line-height: 1;
 }
@@ -15877,6 +15935,41 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
   line-height: 1;
 }
 
+.bmd-form-group.bmd-form-group-sm input.form-control, .bmd-form-group.bmd-form-group-sm input.custom-file-control,
+.bmd-form-group.bmd-form-group-sm input.form-control::-webkit-input-placeholder,
+.bmd-form-group.bmd-form-group-sm input.custom-file-control::-webkit-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group.bmd-form-group-sm input.form-control, .bmd-form-group.bmd-form-group-sm input.custom-file-control,
+.bmd-form-group.bmd-form-group-sm input.form-control::-moz-placeholder,
+.bmd-form-group.bmd-form-group-sm input.custom-file-control::-moz-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group.bmd-form-group-sm input.form-control, .bmd-form-group.bmd-form-group-sm input.custom-file-control,
+.bmd-form-group.bmd-form-group-sm input.form-control:-ms-input-placeholder,
+.bmd-form-group.bmd-form-group-sm input.custom-file-control:-ms-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group.bmd-form-group-sm input.form-control, .bmd-form-group.bmd-form-group-sm input.custom-file-control,
+.bmd-form-group.bmd-form-group-sm input.form-control::-ms-input-placeholder,
+.bmd-form-group.bmd-form-group-sm input.custom-file-control::-ms-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group.bmd-form-group-sm input.form-control, .bmd-form-group.bmd-form-group-sm input.custom-file-control,
+.bmd-form-group.bmd-form-group-sm input.form-control::placeholder,
+.bmd-form-group.bmd-form-group-sm input.custom-file-control::placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
 .bmd-form-group.bmd-form-group-sm .radio label,
 .bmd-form-group.bmd-form-group-sm label.radio-inline,
 .bmd-form-group.bmd-form-group-sm .checkbox label,
@@ -15886,6 +15979,10 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 }
 
 .bmd-form-group.bmd-form-group-sm input::-webkit-input-placeholder {
+  font-size: 0.875rem;
+}
+
+.bmd-form-group.bmd-form-group-sm input::-moz-placeholder {
   font-size: 0.875rem;
 }
 
@@ -15969,6 +16066,12 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 
 .bmd-form-group.bmd-form-group-lg .form-control, .bmd-form-group.bmd-form-group-lg .custom-file-control,
 .bmd-form-group.bmd-form-group-lg label,
+.bmd-form-group.bmd-form-group-lg input::-moz-placeholder {
+  line-height: 1;
+}
+
+.bmd-form-group.bmd-form-group-lg .form-control, .bmd-form-group.bmd-form-group-lg .custom-file-control,
+.bmd-form-group.bmd-form-group-lg label,
 .bmd-form-group.bmd-form-group-lg input:-ms-input-placeholder {
   line-height: 1;
 }
@@ -15985,6 +16088,41 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
   line-height: 1;
 }
 
+.bmd-form-group.bmd-form-group-lg input.form-control, .bmd-form-group.bmd-form-group-lg input.custom-file-control,
+.bmd-form-group.bmd-form-group-lg input.form-control::-webkit-input-placeholder,
+.bmd-form-group.bmd-form-group-lg input.custom-file-control::-webkit-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group.bmd-form-group-lg input.form-control, .bmd-form-group.bmd-form-group-lg input.custom-file-control,
+.bmd-form-group.bmd-form-group-lg input.form-control::-moz-placeholder,
+.bmd-form-group.bmd-form-group-lg input.custom-file-control::-moz-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group.bmd-form-group-lg input.form-control, .bmd-form-group.bmd-form-group-lg input.custom-file-control,
+.bmd-form-group.bmd-form-group-lg input.form-control:-ms-input-placeholder,
+.bmd-form-group.bmd-form-group-lg input.custom-file-control:-ms-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group.bmd-form-group-lg input.form-control, .bmd-form-group.bmd-form-group-lg input.custom-file-control,
+.bmd-form-group.bmd-form-group-lg input.form-control::-ms-input-placeholder,
+.bmd-form-group.bmd-form-group-lg input.custom-file-control::-ms-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+.bmd-form-group.bmd-form-group-lg input.form-control, .bmd-form-group.bmd-form-group-lg input.custom-file-control,
+.bmd-form-group.bmd-form-group-lg input.form-control::placeholder,
+.bmd-form-group.bmd-form-group-lg input.custom-file-control::placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
 .bmd-form-group.bmd-form-group-lg .radio label,
 .bmd-form-group.bmd-form-group-lg label.radio-inline,
 .bmd-form-group.bmd-form-group-lg .checkbox label,
@@ -15994,6 +16132,10 @@ fieldset[disabled][disabled] .has-danger .form-control, fieldset[disabled][disab
 }
 
 .bmd-form-group.bmd-form-group-lg input::-webkit-input-placeholder {
+  font-size: 1.25rem;
+}
+
+.bmd-form-group.bmd-form-group-lg input::-moz-placeholder {
   font-size: 1.25rem;
 }
 
@@ -16073,6 +16215,12 @@ input::-webkit-input-placeholder {
 
 .form-control, .custom-file-control,
 label,
+input::-moz-placeholder {
+  line-height: 1;
+}
+
+.form-control, .custom-file-control,
+label,
 input:-ms-input-placeholder {
   line-height: 1;
 }
@@ -16089,6 +16237,41 @@ input::placeholder {
   line-height: 1;
 }
 
+input.form-control, input.custom-file-control,
+input.form-control::-webkit-input-placeholder,
+input.custom-file-control::-webkit-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+input.form-control, input.custom-file-control,
+input.form-control::-moz-placeholder,
+input.custom-file-control::-moz-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+input.form-control, input.custom-file-control,
+input.form-control:-ms-input-placeholder,
+input.custom-file-control:-ms-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+input.form-control, input.custom-file-control,
+input.form-control::-ms-input-placeholder,
+input.custom-file-control::-ms-input-placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
+input.form-control, input.custom-file-control,
+input.form-control::placeholder,
+input.custom-file-control::placeholder {
+  padding: 0.28125rem 0;
+  line-height: 1.5;
+}
+
 .radio label,
 label.radio-inline,
 .checkbox label,
@@ -16098,6 +16281,10 @@ label.checkbox-inline,
 }
 
 input::-webkit-input-placeholder {
+  font-size: 1rem;
+}
+
+input::-moz-placeholder {
   font-size: 1rem;
 }
 
@@ -16405,6 +16592,10 @@ thead.thead-inverse th,
 }
 
 .navbar-dark .form-control::-webkit-input-placeholder, .navbar-dark .custom-file-control::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar-dark .form-control::-moz-placeholder, .navbar-dark .custom-file-control::-moz-placeholder {
   color: rgba(255, 255, 255, 0.75);
 }
 
@@ -17537,6 +17728,10 @@ select.form-control > option, select.custom-file-control > option {
 }
 
 .navbar-form .bmd-form-group input::-webkit-input-placeholder {
+  color: grey !important;
+}
+
+.navbar-form .bmd-form-group input::-moz-placeholder {
   color: grey !important;
 }
 

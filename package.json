@@ -40,7 +40,7 @@
   "devDependencies": {
     "autoprefixer": "^9.4.7",
     "bootstrap": "4.3.1",
-    "bootstrap-material-design": "4.1.1",
+    "bootstrap-material-design": "4.1.2",
     "bootswatch": "thomaspark/bootswatch#v4.3.1",
     "clean-css-cli": "^4.2.1",
     "node-sass": "^4.11.0",
