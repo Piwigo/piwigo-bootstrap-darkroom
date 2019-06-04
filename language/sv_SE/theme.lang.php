@@ -97,3 +97,4 @@ $lang['Hero image'] = 'Hjälteimage';
 $lang['Description display style'] = 'Visningsstil för beskrivning';
 $lang['Advanced'] = 'Avancerat';
 $lang['A mobile-ready theme based on Bootstrap 4'] = 'Ett mobilvinklat tema baserat på Bootstrap 4';
+$lang['Use description rather than title for images'] = 'Använd beskrivningen hellre än titeln för foton';
