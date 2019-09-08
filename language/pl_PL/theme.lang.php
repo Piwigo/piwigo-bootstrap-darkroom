@@ -75,3 +75,11 @@ $lang['If you find any issues, please report them to the'] = 'Jeśli znajdziesz 
 $lang['Issue tracker'] = 'Śledzenie problemów';
 $lang['URL or releative path to the image'] = 'URL lub relatywna ścieżka do obrazu';
 $lang['Use 6 colums for viewports >= 1680px'] = 'Użyj 6 kolumn dla panelu >= 1680px';
+$lang['The path to the image, relative to your Piwigo installation folder'] = 'Ścieżka do zdjęcia, wewnątrz folderu instalacji Piwigo';
+$lang['Center mode'] = 'Tryb wyśrodkowany';
+$lang['Use description rather than title for images'] = 'Używaj opisu zamiast tytułu zdjęć';
+$lang['center-aligned h5 heading'] = 'wyśrodkowany nagłówek H5';
+$lang['left-aligned free text for advanced descriptions'] = 'tekst zaawansowanego opisu (wyrównany do lewej)';
+$lang['loads all images one after another when the page loads (use carefully!)'] = 'wczyta wszystkie obrazy podczas ładowania strony (używaj ostrożnie!)';
+$lang['milliseconds'] = 'milisekundy';
+$lang['will load the image as soon as you slide to it'] = 'wczyta obraz po najechaniu na niego';
