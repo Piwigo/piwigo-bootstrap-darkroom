@@ -1131,7 +1131,7 @@ ul#thumbnails .gthumb a img.thumbnail {
 #theCollectionPage .user-collections-clear-icon:before {
   content: "\f00d";
   font-family: "Font Awesome 5 Free";
-  font-weight: 400;
+  font-weight: 900;
 }
 
 #theCollectionPage .user-collections-delete-icon:before {
