@@ -5,7 +5,7 @@
         <a id="calendar-prev" class="btn btn-secondary pull-left" href="{$bar.previous.URL}"><span class="fas fa-arrow-left"></span> {$bar.previous.LABEL}</a>
 	{/if}
 	{if !empty($bar.items)}
-        <div id="calendar-nav-buttons" class="btn-group" role=group">
+        <div id="calendar-nav-buttons" class="btn-group" role="group">
            {assign var=item_type value=reset($bar.items)} {* avoid strict standards warning with nested resets *}
            {if gettype(reset($item_type)) === 'string' || (!isset($bar.previous) && !isset($bar.next))}
            {foreach from=$bar.items item=item}
