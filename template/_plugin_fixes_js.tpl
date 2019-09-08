@@ -177,6 +177,12 @@ $(document).ready(function() {
     $(this).addClass('nav-link').closest('li').addClass('nav-item');
   });
 
+  $cdm.find('a.new').off().on('click', function(e) {
+    jQuery(this).hide().next().find('.new').show().focus();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
 {if isset($loaded_plugins['GThumb']) && $theme_config->photoswipe}
   $('#theCollectionPage').find('ul#thumbnails').each(function() {
     $(this).find('a.preview-box.cboxElement').removeClass('preview-box cboxElement');
