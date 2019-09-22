@@ -61,7 +61,7 @@
             <div class="card-body">
                 <div class="form-group row">
                     <label for="nb_image_page" class="col-12 col-md-3 col-form-label">{'Number of photos per page'|@translate}</label>
-                    <div class="col-12 col-md-1">
+                    <div class="col-12 col-md-2">
                         <input type="text" maxlength="3" name="nb_image_page" id="nb_image_page" class="form-control" value="{$NB_IMAGE_PAGE}">
                     </div>
                 </div>
@@ -83,12 +83,12 @@
                 </div>
                 <div class="form-group row">
                     <label for="recent_period" class="col-12 col-md-3 col-form-label">{'Recent period'|@translate}</label>
-                    <div class="col-12 col-md-1">
+                    <div class="col-12 col-md-2">
                         <input type="text" size="3" maxlength="2" name="recent_period" id="recent_period" class="form-control" value="{$RECENT_PERIOD}">
                     </div>
                 </div>
-                <label class="col-12 col-md-3 form-check-label float-left pl-0">{'Expand all albums'|@translate}</label>
-                <div class="col-12 col-md-6">
+                <label class="col-12 col-lg-4 form-check-label float-left pl-0">{'Expand all albums'|@translate}</label>
+                <div class="col-12 col-lg-8">
 {foreach from=$radio_options key=option item=value}
                     <div class="form-check form-check-inline radio">
                         <label for="expand" class="form-check-label">
@@ -99,8 +99,8 @@
 {/foreach}
                 </div>
 {if $ACTIVATE_COMMENTS}
-                <label class="col-12 col-md-3 form-check-label float-left pl-0">{'Show number of comments'|@translate}</label>
-                <div class="col-12 col-md-6">
+                <label class="col-12 col-lg-4 form-check-label float-left pl-0">{'Show number of comments'|@translate}</label>
+                <div class="col-12 col-lg-8">
 {foreach from=$radio_options key=option item=value}
                     <div class="form-check form-check-inline radio">
                         <label for="show_nb_comments" class="form-check-label">
@@ -111,8 +111,8 @@
 {/foreach}
                 </div>
 {/if}
-                <label class="col-12 col-md-3 form-check-label float-left pl-0">{'Show number of hits'|@translate}</label>
-                <div class="col-12 col-md-9">
+                <label class="col-12 col-lg-4 form-check-label float-left pl-0">{'Show number of hits'|@translate}</label>
+                <div class="col-12 col-lg-8">
 {foreach from=$radio_options key=option item=value}
                     <div class="form-check form-check-inline radio">
                         <label for="show_nb_hits" class="form-check-label">
