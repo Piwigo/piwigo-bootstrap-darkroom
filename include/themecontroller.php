@@ -10,6 +10,7 @@ class ThemeController {
 
     public function init() {
         load_language('theme.lang', PHPWG_THEMES_PATH.'bootstrap_darkroom/');
+        load_language('lang', PHPWG_ROOT_PATH.PWG_LOCAL_DIR, array('no_fallback'=>true, 'local'=>true) );
 
         add_event_handler('init', array($this, 'assignConfig'));
         add_event_handler('init', array($this, 'setInitValues'));
