@@ -30,7 +30,11 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       <div class="tab-content">
     {if $COMMENT_COUNT > 0}
       <div id="viewcomments" class="tab-pane active">
-        {include file='comment_list.tpl'}
+        {if isset($COMMENT_LIST)}
+          {$COMMENT_LIST}
+        {else}
+          {include file='comment_list.tpl'}
+        {/if}
         {if !empty($navbar) }
         <div class="row justify-content-center">
           {include file='navigation_bar.tpl' fragment='comments'|@get_extent:'navbar'}

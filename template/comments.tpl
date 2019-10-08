@@ -87,7 +87,11 @@
 <div class="container{if $theme_config->fluid_width}-fluid{/if} comment-search">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-{include file='comment_list.tpl' comment_derivative_params=$derivative_params}
+{if isset($COMMENT_LIST)}
+  {$COMMENT_LIST}
+{else}
+  {include file='comment_list.tpl' comment_derivative_params=$derivative_params}
+{/if}
         </div>
     </div>
 </div>
