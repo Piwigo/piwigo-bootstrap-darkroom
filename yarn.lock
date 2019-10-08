@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@fortawesome/fontawesome-free@^5.8.1":
-  version "5.10.2"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.10.2.tgz#27e02da1e34b50c9869179d364fb46627b521130"
-  integrity sha512-9pw+Nsnunl9unstGEHQ+u41wBEQue6XPBsILXtJF/4fNN1L3avJcMF/gGF86rIjeTAgfLjTY9ndm68/X4f4idQ==
+"@fortawesome/fontawesome-free@^5.10.2":
+  version "5.11.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.11.2.tgz#8644bc25b19475779a7b7c1fc104bc0a794f4465"
+  integrity sha512-XiUPoS79r1G7PcpnNtq85TJ7inJWe0v+b5oZJZKb0pGHNIV6+UiNeQWiFGmuQ0aj7GEhnD/v9iqxIsjuRKtEnQ==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -1435,7 +1435,7 @@ jQuery-Touch-Events@benmajor/jQuery-Touch-Events#2.0.0:
   version "1.0.9"
   resolved "https://codeload.github.com/benmajor/jQuery-Touch-Events/tar.gz/96771542eebc115e694e0f0df08dfda6103d9b70"
 
-jquery-migrate@^3.0.1:
+jquery-migrate@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/jquery-migrate/-/jquery-migrate-3.1.0.tgz#8158de74cca39fb7fc2635db570151ae7ce3ddea"
   integrity sha512-u/MtE1ST2pCr3rCyouJG2xMiw/k3OzLNeRKprjKTeHUezCGr0DyEgeXFdqFLmQfxfR5EsVu+mGo/sCcYdiYcIQ==
