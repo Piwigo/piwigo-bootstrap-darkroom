@@ -18,6 +18,13 @@ body {
   overflow-x: hidden;
 }
 
+@supports (padding: max(0px)) {
+  .container-fluid {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+  }
+}
+
 @media (min-width: 1800px) {
   .container {
     width: 1600px;
