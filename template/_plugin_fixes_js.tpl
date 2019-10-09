@@ -143,6 +143,7 @@ $(window).on("load", function() {
 {if isset($loaded_plugins['UserCollections']) && ($BODY_ID == 'thePicturePage' || $BODY_ID == 'theCollectionPage' || $BODY_ID == 'theCategoryPage')}
 {footer_script require='jquery'}
 $(document).ready(function() {
+  var $cdm = jQuery('#collectionsDropdown');
   $('.navbar-nav .addCollection').removeClass('pwg-button pwg-state-default').addClass('nav-link dropdown-toggle').closest('li').addClass('nav-item dropdown').attr('id', 'collectionsDropdownBS');
   $('.navbar-nav #collectionsDropdownBS .pwg-button-text').addClass('d-lg-none ml-2').removeClass('pwg-button-text');
   $('.navbar-nav .user-collections-icon').addClass('fa fa-star fa-fw').removeClass('pwg-icon user-collections-icon');
