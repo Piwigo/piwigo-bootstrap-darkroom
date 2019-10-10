@@ -1,0 +1,10 @@
+@supports (padding: unquote('max(0px)')) {
+  .container-fluid {
+    padding-left: unquote('max(15px, env(safe-area-inset-left))');
+    padding-right: unquote('max(15px, env(safe-area-inset-right))');
+  }
+  .navbar-expand-lg>.container-fluid {
+    padding-left: unquote('max(15px, calc(env(safe-area-inset-left)*0.7))');
+    padding-right: unquote('max(15px, calc(env(safe-area-inset-right)*0.7))');
+  }
+}
