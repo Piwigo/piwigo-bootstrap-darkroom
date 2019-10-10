@@ -13,12 +13,12 @@ body {
   overflow-x: hidden;
 }
 
-@supports(padding: unquote('max(0px)')) {
-  .container-fluid {
-    padding-left: unquote('max(15px, env(safe-area-inset-left))');
-    padding-right: unquote('max(15px, env(safe-area-inset-right))');
-  }
-}
+//@supports(padding: unquote('max(0px)')) {
+//  .container-fluid {
+//    padding-left: unquote('max(15px, env(safe-area-inset-left))');
+//    padding-right: unquote('max(15px, env(safe-area-inset-right))');
+//  }
+//}
 
 @media (min-width: 1800px) {
   .container {
