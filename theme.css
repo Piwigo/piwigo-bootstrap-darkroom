@@ -1021,6 +1021,17 @@ a.pswp__share--google:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+@supports (padding: max(0px)) {
+  .container-fluid {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+  }
+  .navbar-expand-lg > .container-fluid {
+    padding-left: max(15px, calc(env(safe-area-inset-left)*0.7));
+    padding-right: max(15px, calc(env(safe-area-inset-right)*0.7));
+  }
+}
+
 .pwg-icon {
   position: relative;
   top: 1px;
