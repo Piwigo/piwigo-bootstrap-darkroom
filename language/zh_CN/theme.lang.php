@@ -58,7 +58,7 @@ $lang['Enable PhotoSwipe fullscreen slideshow. Disable if you prefer to use Plug
 $lang['Display categories as Bootstrap media wells'] = '将目录显示为 Bootstrap Media Wells';
 $lang['Display the currently selected image in the middle. Works best with infinite looping enabled.'] = '在中间显示当前选中图片。启用无限循环模式时效果最好。';
 $lang['Display category description in grid view'] = '在网格视图中显示目录描述';
-$lang['A color theme from'] = '一组颜色主题，来自';
+$lang['A color theme from'] = '一组彩色主题，来自';
 $lang['Always'] = '始终';
 $lang['Autoplay interval'] = '自动播放时间间隔';
 $lang['Basic'] = '基础';
@@ -95,6 +95,6 @@ $lang['Card grid below the image'] = '图片下方卡片';
 $lang['Appearance'] = '外观';
 $lang['Banner style'] = 'Banner 样式';
 $lang['Display number of images in album and subalbums'] = '显示相册和子相册中图片的数量';
-$lang['A mobile-ready theme based on Bootstrap 4'] = '移动设备友好的 Piwigo 主题，基于 Bootstrap 4 开发';
+$lang['A mobile-ready theme based on Bootstrap 4'] = '对移动设备友好的 Piwigo 主题，基于 Bootstrap 4 开发';
 $lang['Advanced'] = '高级';
 $lang['Components'] = '组件';
