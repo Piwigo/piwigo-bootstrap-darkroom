@@ -79,7 +79,7 @@ class ThemeController {
     public function checkIfHomepage() {
         global $template, $page;
 
-        if (isset($page['is_homepage'])) {
+        if (isset($page['is_homepage']) and $page['is_homepage']) {
             $template->assign('is_homepage', true);
         } else {
             $template->assign('is_homepage', false);
