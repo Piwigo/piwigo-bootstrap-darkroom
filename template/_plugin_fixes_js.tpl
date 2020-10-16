@@ -120,6 +120,10 @@ $(window).on('load', function() {
 {if isset($loaded_plugins['download_by_size'])}
 {footer_script require='jquery'}
 $(document).ready(function() {
+  if ($('#downloadSizeBox').length < 1) {
+    return false;
+  }
+
   var liDownloadSizeLink = $('#downloadSwitchLink').closest('li');
   $(liDownloadSizeLink).addClass('dropdown');
   $('#downloadSizeBox').appendTo(liDownloadSizeLink);
