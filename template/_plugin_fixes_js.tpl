@@ -96,18 +96,6 @@ $(document).ready(function() {
     $('#batchDownloadLink').addClass('nav-link').removeClass('pwg-state-default pwg-button');
   }
   $('.batch-downloader-icon').addClass('fas fa-cloud-download-alt fa-fw').removeClass('pwg-icon').after('<span class="d-lg-none"> ' + $('#batchDownloadLink').attr('title') + '</span>');
-  if ($('.navbar-main dt:contains("Downloads")').length > 0) {
-    $('.navbar-main dt:contains("Downloads")').next('dd').appendTo($('.navbar-main dt:contains("Downloads")'));
-    $('.navbar-main dt:contains("Downloads")').wrap('<li class="nav-item"></li>');
-    $('.navbar-main dt:contains("Downloads")').closest('li').addClass('dropdown').attr('id', 'bd_downloads');
-    $('.navbar-main dt:contains("Downloads")').changeElementType('a');
-    $('#bd_downloads>a').addClass('nav-link dropdown-toggle').attr('data-toggle', 'dropdown');
-    $('#bd_downloads dd ul').appendTo('#bd_downloads');
-    $('#bd_downloads dd').remove();
-    $('#bd_downloads ul').addClass('dropdown-menu dropdown-menu-right');
-    $('#bd_downloads ul>li>a').addClass('dropdown-item');
-    $('#bd_downloads ul').find('span').each(function() { $(this).appendTo($(this).prev('a')); });
-  }
 });
 $(window).on('load', function() {
  if ($('#batchDownloadLink').next('div#batchDownloadBox').length > 0) {
