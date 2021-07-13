@@ -29,7 +29,7 @@ class ThemeController {
         add_event_handler('loc_begin_page_header', array($this, 'checkIfHomepage'));
         add_event_handler('loc_after_page_header', array($this, 'stripBreadcrumbs'));
         add_event_handler('format_exif_data', array($this, 'exifReplacements'));
-        add_event_handler('loc_end_picture', array($this, 'registerPictureTemplates'));
+        add_event_handler('loc_end_picture', array($this, 'registerPictureTemplates'), 1000);
         add_event_handler('loc_begin_index_thumbnails', array($this, 'returnPageStart'));
 
         if ($this->config->slick_enabled === true || $this->config->photoswipe === true) {
@@ -132,6 +132,8 @@ class ThemeController {
         global $template;
 
         $template->set_filenames(array('picture_nav'=>'picture_nav.tpl'));
+        $template->parse_picture_buttons();
+        $template->parse_index_buttons();
         $template->assign_var_from_handle('PICTURE_NAV', 'picture_nav');
     }
 
