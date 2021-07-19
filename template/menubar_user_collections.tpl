@@ -1,3 +1,13 @@
+{function name=collectionsMenuItem}
+{function collectionsMenuItem}
+<a class="dropdown-item" id="menu-info-coll-{$coll_id}" href="{$coll_edit}" {if $coll_id == "coll_template"}style="display:none"{/if}>
+    {$coll_name}
+    <span class="badge badge-secondary ml-2" title="{$cat_title}">{$coll_nb_images}</span>
+</a>
+{/function}
+{/function}
+
+
 <li class="nav-item dropdown">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{$block->get_title()|strip_tags:true}</a>
     <div class="dropdown-menu dropdown-menu-right" role="menu">
@@ -9,10 +19,25 @@
                 {/if}
         {/strip}</a>
         <div class="divider"></div>
-        {if $block->data.collections}
-        {foreach from=$block->data.collections item=col}{strip}
-	<a class="dropdown-item" href="{$col.u_edit}">{$col.name}<span class="badge badge-secondary ml-2" title="{$cat.TITLE}">{$col.nb_images}</span></a>
-        {/strip}{/foreach}
+        <div id="menu-info-coll-container">
+            {collectionsMenuItem
+                coll_id = "coll_template" 
+                coll_name = "coll_name"
+                coll_edit = "coll_edit"
+                coll_nb_images = "coll_nb_images"
+                cat_title = $cat.TITLE
+            }
+            {if $block->data.collections}
+            {foreach from=$block->data.collections item=col}{strip}
+                {collectionsMenuItem
+                    coll_id = $col.id
+                    coll_name = $col.name
+                    coll_edit = $col.u_edit
+                    coll_nb_images = $col.nb_images
+                    cat_title = $cat.TITLE
+                }
+            {/strip}{/foreach}
+        </div>
         {if isset($block->data.MORE)}
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="{$block->data.U_LIST}">{'%d more...'|translate:$block->data.MORE}</a>
