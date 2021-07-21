@@ -1108,7 +1108,7 @@ ul#thumbnails .gthumb a img.thumbnail {
   text-overflow: ellipsis;
 } 
 
-#collectionsDropdown .collectionsItem .uc-icon-star-filled, #collectionsDropdown .collectionsItem .uc-icon-star {
+#collectionsDropdown .collectionsItem i {
   font-size: 20px;
 }
 
