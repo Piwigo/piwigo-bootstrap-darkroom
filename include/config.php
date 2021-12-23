@@ -34,7 +34,6 @@ class Config {
     const KEY_PICTURE_INFO = 'picture_info';
     const KEY_PHOTOSWIPE = 'photoswipe';
     const KEY_PHOTOSWIPE_INTERVAL = 'photoswipe_interval';
-    const KEY_PHOTOSWIPE_METADATA = 'photoswipe_metadata';
     const KEY_THUMBNAIL_LINKTO = 'thumbnail_linkto';
     const KEY_THUMBNAIL_CAPTION = 'thumbnail_caption';
     const KEY_THUMBNAIL_DESC = 'thumbnail_desc';
@@ -80,7 +79,6 @@ class Config {
         self::KEY_PICTURE_INFO => 'cards',
         self::KEY_PHOTOSWIPE => true,
         self::KEY_PHOTOSWIPE_INTERVAL => '3500',
-        self::KEY_PHOTOSWIPE_METADATA => false,
         self::KEY_THUMBNAIL_LINKTO => 'picture',
         self::KEY_THUMBNAIL_CAPTION => true,
         self::KEY_THUMBNAIL_DESC => false,
@@ -124,7 +122,6 @@ class Config {
         self::KEY_PICTURE_INFO => self::TYPE_STRING,
         self::KEY_PHOTOSWIPE => self::TYPE_BOOL,
         self::KEY_PHOTOSWIPE_INTERVAL => self::TYPE_NUM,
-        self::KEY_PHOTOSWIPE_METADATA => self::TYPE_BOOL,
         self::KEY_THUMBNAIL_LINKTO => self::TYPE_STRING,
         self::KEY_THUMBNAIL_CAPTION => self::TYPE_BOOL,
         self::KEY_THUMBNAIL_DESC => self::TYPE_BOOL,

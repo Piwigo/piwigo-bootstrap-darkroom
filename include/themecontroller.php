@@ -196,23 +196,6 @@ class ThemeController {
 
         $theme_config = $template->get_template_vars('theme_config');
 
-        if ($theme_config->photoswipe_metadata) {
-            if (array_key_exists('bootstrap_darkroom_ps_exif_mapping', $conf)) {
-                $exif_mapping = $conf['bootstrap_darkroom_ps_exif_mapping'];
-            } else {
-                $exif_mapping = array(
-                                      'date_creation' => 'DateTimeOriginal',
-                                      'make'          => 'Make',
-                                      'model'         => 'Model',
-                                      'lens'          => 'UndefinedTag:0xA434',
-                                      'shutter_speed' => 'ExposureTime',
-                                      'iso'           => 'ISOSpeedRatings',
-                                      'apperture'     => 'FNumber',
-                                      'focal_length'  => 'FocalLength',
-                                     );
-            }
-        }
-
         foreach ($pictures as $row)
         {
             $url = duplicate_picture_url(
@@ -236,21 +219,6 @@ class ThemeController {
                 'PATH' => $row['path'],
                 'DATE_CREATED' => $row['date_creation'],
             ));
-
-            if ($theme_config->photoswipe_metadata) {
-                $tpl_var = array_merge($tpl_var, array (
-                    'EXIF' => get_exif_data($row['path'], $exif_mapping),
-                ));
-
-                //optional replacements
-                if (array_key_exists('bootstrap_darkroom_ps_exif_replacements', $conf)) {
-                    foreach ($conf['bootstrap_darkroom_ps_exif_replacements'] as $tag => $replacement) {
-                        if (array_key_exists($tag, $tpl_var['EXIF'])) {
-                            $tpl_var['EXIF'][$tag] = str_replace($replacement[0], $replacement[1], $tpl_var['EXIF'][$tag]);
-                        }
-                    }
-                }
-            }
 
             $tpl_thumbnails_var[] = $tpl_var;
         }
