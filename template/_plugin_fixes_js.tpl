@@ -132,63 +132,6 @@ $(window).on("load", function() {
 {/footer_script}
 {/if}
 
-{if isset($loaded_plugins['UserCollections']) && ($BODY_ID == 'thePicturePage' || $BODY_ID == 'theCollectionPage' || $BODY_ID == 'theCategoryPage')}
-{footer_script require='jquery'}
-$(document).ready(function() {
-  var $cdm = jQuery('#collectionsDropdown');
-  $('.navbar-nav .addCollection').removeClass('pwg-button pwg-state-default').addClass('nav-link dropdown-toggle').closest('li').addClass('nav-item dropdown').attr('id', 'collectionsDropdownBS');
-  $('.navbar-nav #collectionsDropdownBS .pwg-button-text').addClass('d-lg-none ml-2').removeClass('pwg-button-text');
-  $('.navbar-nav .user-collections-icon').addClass('fa fa-star fa-fw').removeClass('pwg-icon user-collections-icon');
-  if ($('#collectionsDropdown').length == 0) {
-    $('.navbar-nav #collectionsDropdownBS').addClass('d-none');
-  }
-
-  $('#theCategoryPage .addCollection').on('click', function(e) {
-    e.preventDefault();
-    var img_id = jQuery(this).data('id'),
-        album_id = jQuery(this).data('albumId'),
-        col_ids = jQuery(this).data('cols');
-
-    $cdm.data('img_id', img_id);
-    $cdm.data('album_id', album_id);
-    $cdm.children('.add').each(function() {
-       if (col_ids && col_ids.indexOf(jQuery(this).data('id')) != -1) {
-         jQuery(this).css('font-weight', 'bold').next().next().show();
-       } else {
-         jQuery(this).css('font-weight', 'normal').next().next().hide();
-       }
-    });
-    $cdm.css({ 'left': Math.min(e.pageX - jQuery(window).scrollLeft() - 20, jQuery(window).width() - $cdm.outerWidth(true) - 5), 'top': e.pageY - 5 - $(window).scrollTop() });
-    $cdm.toggle();
-
-    e.stopPropagation();
-  });
-
-  $('#theCollectionPage input[type="submit"]').addClass('btn btn-primary');
-  $('#theCollectionPage #edit_form_hide').addClass('btn btn-secondary');
-  $('#theCollectionPage .navbar-nav').find('.pwg-button').each(function() {
-    $(this).addClass('nav-link').closest('li').addClass('nav-item');
-  });
-
-  $cdm.find('a.new').off().on('click', function(e) {
-    jQuery(this).hide().next().find('.new').show().focus();
-    e.stopPropagation();
-    e.preventDefault();
-  });
-
-{if isset($loaded_plugins['GThumb']) && $theme_config->photoswipe}
-  $('#theCollectionPage').find('ul#thumbnails').each(function() {
-    $(this).find('a.preview-box.cboxElement').removeClass('preview-box cboxElement');
-  });
-{/if}
-
-  $('.content-list').find('.col-outer').each(function() {
-    $(this).find('.addCollection').attr('style', 'width: ' + $(this).find('img').width() + 'px');
-  });
-});
-{/footer_script}
-{/if}
-
 {if isset($loaded_plugins['PWG_Stuffs'])}
 {footer_script require='jquery'}
 $(document).ready(function() {
