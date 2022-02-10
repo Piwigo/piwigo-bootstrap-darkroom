@@ -43,7 +43,7 @@
     "bootstrap-material-design": "4.1.2",
     "bootswatch": "thomaspark/bootswatch#v4.3.1",
     "clean-css-cli": "^4.2.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "node-sass-tilde-importer": "^1.0.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^6.1.1",
