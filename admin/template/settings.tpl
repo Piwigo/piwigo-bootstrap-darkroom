@@ -296,14 +296,6 @@
                     <label labelfor="photoswipe_interval">{'Autoplay interval'|@translate}</label>
                     <input type="number" name="photoswipe_interval" value="{$theme_config->photoswipe_interval}" min="1000" max="50000"> {'milliseconds'|@translate}
                 </li>
-                <li>
-                    <label class="font-checkbox">
-                       <span class="icon-check"></span>
-                       <input type="checkbox" name="photoswipe_metadata"{if $theme_config->photoswipe_metadata} checked="checked"{/if}>
-                       {'Show basic EXIF metadata'|@translate}
-                    </label>
-                    <span class="info">{'For more information on metadata visit'|@translate} <a href="https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki/EXIF-Metadata-in-PhotoSwipe">Wiki:EXIF-Metadata-in-PhotoSwipe</a></span>
-                </li>
             </ul>
         </fieldset>
         <fieldset>

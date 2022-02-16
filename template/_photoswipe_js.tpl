@@ -51,26 +51,10 @@ function startPhotoSwipe(idx) {
                          $height_medium  = $size_medium[1],
                          $href           = $(this).attr('href'),
                          $title          = '<a href="' + $href + '"><div><div>' + $(this).data('name');
-{if $theme_config->photoswipe_metadata}
-                         $title         += '<ul id="pswp--caption--date_created" class="pull-right"><li><em>' + $(this).data('date-created') + '</em></li></ul>';
-{/if}
                          $title         += '</div>';
 {literal}
                      if ($(this).data('description').length > 0) {$title += '<ul id="pswp--caption--description"><li>' + $(this).data('description') + '</li></ul>'; }
 {/literal}
-{if $theme_config->photoswipe_metadata}
-                         $title         += '<ul id="pswp--caption--metadata" class="pull-right">';
-{literal}
-                     if ($(this).data('exif-make').length > 0) {$title += '<li><em>' + $(this).data('exif-make') + '</em></li>';}
-                     if ($(this).data('exif-model').length > 0) {$title += '<li><em>&nbsp;' + $(this).data('exif-model') + '</em></li>';}
-                     if ($(this).data('exif-lens').length > 0) {$title += '<li><em>, ' + $(this).data('exif-lens') + '</em></li>';}
-                     if ($(this).data('exif-focal-length').length > 0) {$title += '<li><em>, ' + $(this).data('exif-focal-length') + '</em></li>';}
-                     if ($(this).data('exif-apperture') > 0) {$title += '<li><em>, f/' + $(this).data('exif-apperture') + '</em></li>';}
-                     if ($(this).data('exif-shutter-speed').length > 0) {$title += '<li><em>, ' + $(this).data('exif-shutter-speed') + '</em></li>';}
-                     if ($(this).data('exif-iso') > 0) {$title += '<li><em>, ISO' + $(this).data('exif-iso') + '</em></li>';}
-{/literal}
-                         $title += '</ul>';
-{/if}
                          $title      += '</div></a>';
                      var item = {
                          is_video: false,

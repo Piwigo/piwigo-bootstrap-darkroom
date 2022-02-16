@@ -329,6 +329,16 @@ var limit_storage = {$limit_storage};
         jQuery(".infos").append('<ul><li>'+sprintf(photosUploaded_label, uploadedPhotos.length, uploadCategory.label)+'</li></ul>');
 
         jQuery.ajax({
+          url: rootUrl + "ws.php?format=json&method=pwg.images.uploadCompleted",
+          type:"POST",
+          data: {
+            pwg_token: pwg_token,
+            image_id: uploadedPhotos.join(","),
+            category_id: uploadCategory.id,
+          }
+        });
+
+        jQuery.ajax({
           url: rootUrl + "ws.php?format=json&method=community.images.uploadCompleted",
           type:"POST",
           data: {
