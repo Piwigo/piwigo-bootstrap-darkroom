@@ -99,6 +99,7 @@ $(document).ready(function() {
 });
 $(window).on('load', function() {
  if ($('#batchDownloadLink').next('div#batchDownloadBox').length > 0) {
+    $('#batchDownloadLink').next('div#batchDownloadBox').off();
     $('#batchDownloadLink').off().on('click', function() { $('#batchDownloadLink').dropdown() });
   }
 });
