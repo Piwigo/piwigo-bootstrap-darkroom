@@ -1,5 +1,5 @@
    <!-- comments -->
-{if isset($comment_add) || $COMMENT_COUNT > 0}
+{if isset($comment_add) || !empty($COMMENT_COUNT)}
     <div id="comments">
   {$shortname = $theme_config->comments_disqus_shortname}
   {if $theme_config->comments_type == 'disqus' and !empty($shortname)}
@@ -16,19 +16,19 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 {/footer_script}
   {else}
       <ul class="nav nav-pills p-2" role="tablist">
-    {if $COMMENT_COUNT > 0}
+    {if !empty($COMMENT_COUNT)}
         <li class="nav-item">
           <a class="nav-link active" href="#viewcomments" data-toggle="pill" aria-controls="viewcomments">{$COMMENT_COUNT|@translate_dec:'%d comment':'%d comments'}</a>
         </li>
     {/if}
     {if isset($comment_add)}
         <li class="nav-item">
-          <a class="nav-link{if $COMMENT_COUNT == 0} active{/if}" href="#addcomment" data-toggle="pill" aria-controls="addcomment">{'Add a comment'|@translate}</a>
+          <a class="nav-link{if empty($COMMENT_COUNT)} active{/if}" href="#addcomment" data-toggle="pill" aria-controls="addcomment">{'Add a comment'|@translate}</a>
         </li>
     {/if}
       </ul>
       <div class="tab-content">
-    {if $COMMENT_COUNT > 0}
+    {if !empty($COMMENT_COUNT)}
       <div id="viewcomments" class="tab-pane active">
         {if isset($COMMENT_LIST)}
           {$COMMENT_LIST}
@@ -43,7 +43,7 @@ dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       </div>
     {/if}
     {if isset($comment_add)}
-        <div id="addcomment" class="tab-pane{if $COMMENT_COUNT == 0} active{/if}">
+        <div id="addcomment" class="tab-pane{if empty($COMMENT_COUNT)} active{/if}">
           <form method="post" action="{$comment_add.F_ACTION}">
       {if $comment_add.SHOW_AUTHOR}
             <div class="form-group">

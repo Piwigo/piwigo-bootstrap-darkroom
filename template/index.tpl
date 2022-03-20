@@ -121,7 +121,7 @@
                             <i class="fas fa-th fa-fw"></i><span class="d-lg-none ml-2">{'Grid view'|@translate}</span>
                         </a>
                     </li>
-                    <li id="btn-list" class="nav-item{if $smarty.cookies.view == 'list'} active{/if}">
+                    <li id="btn-list" class="nav-item{if !empty($smarty.cookies.view) && $smarty.cookies.view == 'list'} active{/if}">
                         <a class="nav-link" href="javascript:;" title="{'List view'|@translate}">
                             <i class="fas fa-th-list fa-fw"></i><span class="d-lg-none ml-2">{'List view'|@translate}</span>
                         </a>
@@ -163,7 +163,7 @@
 {/if}
     </div>
 {/if}
-    <div id="content" class="{if $smarty.cookies.view == 'list'}content-list{else}content-grid{/if}{if empty($CONTENT_DESCRIPTION)} pt-3{/if}">
+    <div id="content" class="{if !empty($smarty.cookies.view) && $smarty.cookies.view == 'list'}content-list{else}content-grid{/if}{if empty($CONTENT_DESCRIPTION)} pt-3{/if}">
 {if !empty($CONTENT)}
     <!-- Start of content -->
     {$CONTENT}
