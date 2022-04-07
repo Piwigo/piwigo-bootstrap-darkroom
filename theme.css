@@ -1206,4 +1206,14 @@ ul.thumbnailCategories {
   padding-right: 0.5rem;
 }
 
+#TagsGroupRemoveTag img{
+  display:none;
+}
+
+#TagsGroupRemoveTag i{
+  transform: rotate(45deg);
+  margin: 5px;
+  font-size: 15px;
+}
+
 /*# sourceMappingURL=theme.css.map */
