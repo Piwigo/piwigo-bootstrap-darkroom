@@ -1,0 +1,85 @@
+<?php
+// +-----------------------------------------------------------------------+
+// | This file is part of Piwigo.                                          |
+// |                                                                       |
+// | For copyright and license information, please view the COPYING.txt    |
+// | file that was distributed with this source code.                      |
+// +-----------------------------------------------------------------------+
+$lang['Span the full viewport height'] = 'Spanna alla hæð útsýnisgáttarinnar';
+$lang['Tabs below the image'] = 'Flipar fyrir neðan myndina';
+$lang['The path to the image, relative to your Piwigo installation folder'] = 'Slóðin að myndinni, miðað við þína Piwigo uppsetningarmöppu';
+$lang['This will display categories as media wells with squared thumbnails, similar to the smartpocket mobile theme.'] = 'Þetta mun birta flokka sem gagnabrunn með ferningasmámyndum, svipað og smartpocket farsímaþemað.';
+$lang['Thumbnail Link Target'] = 'Tengill fyrir smámyndir';
+$lang['Thumbnail page display'] = 'Birting smámyndasíðu';
+$lang['URL or releative path to the image'] = 'Vefslóð eða tilvísunarslóð að myndinni';
+$lang['Use 6 colums for viewports >= 1680px'] = 'Notaðu 6 dálka fyrir útsýnisgáttir >= 1680px';
+$lang['Use colored share buttons instead of icons'] = 'Notaðu litaða deilingarhnappa í stað tákna';
+$lang['Use description rather than title for images'] = 'Notaðu lýsingu frekar en titil fyrir myndir';
+$lang['Use full width containers that span the entire width of the viewport'] = 'Notaðu ílát í fullri breidd sem spanna alla breidd útsýnisgáttarinnar';
+$lang['center-aligned h5 heading'] = 'miðstillt h5 fyrirsögn';
+$lang['directly in the navigation bar'] = 'beint á leiðsögustikunni';
+$lang['from'] = 'frá';
+$lang['lazyLoad method'] = 'lazyLoad aðferð';
+$lang['left-aligned free text for advanced descriptions'] = 'vinstrijafnaður frjáls texti fyrir ítarlegar lýsingar';
+$lang['loads all images one after another when the page loads (use carefully!)'] = 'hleður öllum myndum hverri á eftir annarri þegar síðan hleðst (notið varlega!)';
+$lang['milliseconds'] = 'millisekúndur';
+$lang['will load the image as soon as you slide to it'] = 'mun hlaða myndinni um leið og þú rennir að henni';
+$lang['Issue tracker'] = 'Vandamálarakning';
+$lang['Link thumbnail to'] = 'Tengdu smámynd við';
+$lang['List view'] = 'Listasýn';
+$lang['Never'] = 'Aldrei';
+$lang['On mobile devices only'] = 'Aðeins í farsímum';
+$lang['Page header'] = 'Síðuhaus';
+$lang['PhotoSwipe Slideshow'] = 'PhotoSwipe Skyggnusýning';
+$lang['Photoswipe Slideshow (Mobile devices only)'] = 'Photoswipe Skyggnusýning (aðeins fyrir farsíma)';
+$lang['Picture details page'] = 'Myndaupplýsingasíða';
+$lang['Picture info display position'] = 'Birtingarstaða myndupplýsinga';
+$lang['Picture page display'] = 'Birting myndasíðu';
+$lang['Show a jumbotron banner on the categroy pages.'] = 'Sýndu jumbotron borða á flokkasíðunum.';
+$lang['Show basic EXIF metadata'] = 'Sýndu grunn EXIF lýsigögn';
+$lang['Show image caption'] = 'Sýndu myndatexta';
+$lang['Sidebar (like Boostrap Default)'] = 'Hliðarstika (eins og Bootstrap Sjálfgefið)';
+$lang['Simple'] = 'Einfalt';
+$lang['Site logo'] = 'Vefsíðulógó';
+$lang['Social Media Integration'] = 'Samfélags Samþætting';
+$lang['Social integration'] = 'Samfélags samþætting';
+$lang['Disabled'] = 'Afvirkjað';
+$lang['Discover'] = 'Skoða';
+$lang['Display a site logo image instead of plain text'] = 'Birtu lógómynd vefsíðunnar í stað venjulegs texta';
+$lang['Display categories as Bootstrap media wells'] = 'Birta flokka sem Bootstrap gagnabrunna';
+$lang['Display category description in grid view'] = 'Birta flokkalýsingu í töfluyfirliti';
+$lang['Display number of images in album and subalbums'] = 'Birta fjölda mynda í albúmi og undiralbúmum';
+$lang['Display the currently selected image in the middle. Works best with infinite looping enabled.'] = 'Sýndu myndina sem er valin í miðjunni. Virkar best með óendanlega lykkju virka.';
+$lang['Enable PhotoSwipe fullscreen slideshow. Disable if you prefer to use Plugins like Fotorama or Piwigo\'s default slideshow.'] = 'Virkjaðu PhotoSwipe skyggnusýningu á öllum skjánum. Slökktu ef þú vilt frekar nota viðbætur eins og Fotorama eða sjálfgefna myndasýningu Piwigo.';
+$lang['Enable the slick carousel below the main image on the picture page'] = 'Virkjaðu klóku hringekjuna fyrir neðan aðalmyndina á myndasíðunni';
+$lang['Enabled'] = 'Virkjað';
+$lang['Endlessly scroll through album images'] = 'Skrunaðu endalaust í gegnum albúmmyndir';
+$lang['For more information on metadata visit'] = 'Fyrir frekari upplýsingar um lýsigögn heimsóttu';
+$lang['Full width layout'] = 'Skipulag í fullri breidd';
+$lang['Fullscreen'] = 'Fullskjár';
+$lang['Grid view'] = 'Töflusýn';
+$lang['HTML 5 canvas'] = 'HTML 5 strigi';
+$lang['Hero image'] = 'Auðkennismynd';
+$lang['If you find any issues, please report them to the'] = 'Ef þú finnur einhver vandamál, vinsamlegast tilkynntu þau til';
+$lang['Infinite looping'] = 'Óendanleg lykkja';
+$lang['Integrate lower navbar'] = 'Samþættu neðri leiðsögustiku';
+$lang['A color theme from'] = 'Litaþema frá';
+$lang['A mobile-ready theme based on Bootstrap 4'] = 'Farsímatilbúið þema byggt á Bootstrap 4';
+$lang['Advanced'] = 'Ítarlegri';
+$lang['Always'] = 'Alltaf';
+$lang['Appearance'] = 'Útlit';
+$lang['Autoplay interval'] = 'Sjálfspilunarbil';
+$lang['Banner style'] = 'Borðastíll';
+$lang['Basic'] = 'Grunnþema';
+$lang['Bootstrap Darkroom\'s custom dark color theme'] = 'Sérsniðið dökkt litaþema Bootstrap Darkroom';
+$lang['Bootstrap theme'] = 'Bootstrap þema';
+$lang['Bootstrap\'s default theme'] = 'Bootstrap sjálfgefið þema';
+$lang['Bootswatch theme'] = 'Bootwatch þema';
+$lang['Bug reports and feature requests'] = 'Villuskýrslur og eiginleikabeiðnir';
+$lang['By'] = 'Eftir';
+$lang['Card grid below the image'] = 'Kortatöflu fyrir neðan myndina';
+$lang['Category page display'] = 'Birting flokkasíðu';
+$lang['Center mode'] = 'Miðjuhamur';
+$lang['Color theme'] = 'Litaþema';
+$lang['Components'] = 'Einingar';
+$lang['Description display style'] = 'Birtingarstíll lýsingar';
