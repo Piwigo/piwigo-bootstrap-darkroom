@@ -170,15 +170,28 @@ class ThemeController {
     {
         global $template, $conf, $user, $page;
 
-        include_once(PHPWG_ROOT_PATH.'/include/functions_metadata.inc.php');
-
         if (!$page['items'] || ($page['section'] == 'categories' && !isset($page['category']) && !isset($page['chronology_field']) && !isset($page['flat']))) {
-            return;
+          return;
+        }
+
+        if (count($page['items']) > 1000)
+        {
+          $this->config->slick_enabled = false; 
+          $this->config->photoswipe = false; 
+
+          return;
         }
 
         // select all pictures for this category
         $query = '
-            SELECT *
+            SELECT 
+              id,
+              file,
+              width,
+              height,
+              date_creation,
+              path,
+              rotation
             FROM '.IMAGES_TABLE.'
             WHERE id IN ('.implode(',', $page['items']).')
             ORDER BY FIELD(id, '.implode(',', $page['items']).')
