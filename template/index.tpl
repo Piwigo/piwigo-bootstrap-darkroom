@@ -249,6 +249,13 @@ function setupPhotoSwipe() {
          });
       }
    });
+
+   if (window.location.hash) {
+        const pidMatch = /(#|&)pid=(\d+)(&|$)/.exec(window.location.hash);
+        if (pidMatch) {
+            startPhotoSwipe(parseInt(pidMatch[2]) - 1);
+        }
+   }
 }
 
 {if $theme_config->thumbnail_linkto == 'photoswipe' || ($theme_config->thumbnail_linkto == 'photoswipe_mobile_only' && get_device() != 'desktop')}
