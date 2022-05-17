@@ -128,6 +128,11 @@ body {
   width: auto;
 }
 
+.card-img-top-svg {
+  object-fit: contain;
+  height: 255px;
+}
+
 .form-control-plaintext {
   color: inherit;
 }
