@@ -231,6 +231,8 @@ class ThemeController {
                 'SIZE' => $row['width'].'x'.$row['height'],
                 'PATH' => $row['path'],
                 'DATE_CREATED' => $row['date_creation'],
+                'file_ext' => strtolower(get_extension($row['file'])),
+                'path_ext' => strtolower(get_extension($row['path'])),
             ));
 
             $tpl_thumbnails_var[] = $tpl_var;

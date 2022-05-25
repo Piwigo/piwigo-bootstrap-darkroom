@@ -128,9 +128,16 @@ body {
   width: auto;
 }
 
-.card-img-top-svg {
+.card-thumbnail.file-ext-svg img.thumb-img,
+.card-thumbnail.path-ext-svg img.thumb-img {
   object-fit: contain;
   height: 255px;
+}
+
+#carousel-container img.path-ext-svg,
+#carousel-container img.file-ext-svg {
+  width: 100px;
+  height: 100px;
 }
 
 .form-control-plaintext {

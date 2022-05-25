@@ -23,10 +23,10 @@
 {/if}
 {include file="grid_classes.tpl" width=$rwidth height=$rheight}
 <div class="col-outer {if $smarty.cookies.view == 'list'}col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
-    <div class="card card-thumbnail">
+    <div class="card card-thumbnail path-ext-{$thumbnail.path_ext} file-ext-{$thumbnail.file_ext}">
       <div class="h-100">
         <a href="{$thumbnail.URL}" data-index="{$idx}" class="ripple{if $smarty.cookies.view != 'list'} d-block{/if}">
-            <img class="{if $smarty.cookies.view == 'list'}card-img-left{else}card-img-top {if isset($thumbnail.is_svg) and $thumbnail.is_svg}card-img-top-svg{/if}{/if}" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}">
+            <img class="{if $smarty.cookies.view == 'list'}card-img-left{else}card-img-top{/if} thumb-img" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{$thumbnail.TN_TITLE}">
         </a>
 {assign var=idx value=$idx+1}
 {if $SHOW_THUMBNAIL_CAPTION}
