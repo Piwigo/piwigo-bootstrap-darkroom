@@ -27,7 +27,7 @@
                 <div class="form-group">
                     <label for="username_or_email" class="col-sm-2 control-label">{'Username or email'|@translate}</label>
                     <div class="col-sm-4">
-                        <input type="text" id="username_or_email" name="username_or_email" class="form-control" maxlength="40"{if isset($username_or_email)} value="{$username_or_email}"{/if} placeholder="{'Username or email'|@translate}">
+                        <input type="text" id="username_or_email" name="username_or_email" class="form-control" maxlength="100"{if isset($username_or_email)} value="{$username_or_email}"{/if} placeholder="{'Username or email'|@translate}">
                     </div>
                 </div>
                 <div class="form-group">
