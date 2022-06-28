@@ -6,7 +6,7 @@ A mobile-ready [Piwigo](http://piwigo.org) theme based on [Bootstrap 4](https://
 
 * Various color styles
   * [Bootswatch](https://bootswatch.com)
-  * [Material Design](http://fezvrasta.github.io/bootstrap-material-design/)
+  * [Material Design](https://mdbootstrap.com/)
   * Darkroom: a dark, low contrast color scheme based on Lightroom® colors (the default)
 * Optional page header with fancy fading full width background image, or a jumbotron banner
 * Different layout option for the picture details page
@@ -59,7 +59,7 @@ A demo is available at https://pwdemo.kuther.net
 
 * [Bootstrap 4](https://getbootstrap.com)
 * [Bootswatch](https://bootswatch.com)
-* [Bootstrap Material Design](https://fezvrasta.github.io/bootstrap-material-design/)
+* [Bootstrap Material Design](https://mdbootstrap.com/)
 * [PhotoSwipe](http://photoswipe.com/)
 * [Slick](http://kenwheeler.github.io/slick/)
 * [jQuery-Touch-Events](https://github.com/benmajor/jQuery-Touch-Events)
