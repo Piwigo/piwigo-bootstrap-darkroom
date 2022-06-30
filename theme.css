@@ -1223,4 +1223,18 @@ ul.thumbnailCategories {
   padding-right: 0.5rem;
 }
 
+.container-original-to-resize{
+  text-align: center;
+  position: relative
+}
+
+.container-original-to-resize img{
+  max-height: 100%;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+}
+
 /*# sourceMappingURL=theme.css.map */
