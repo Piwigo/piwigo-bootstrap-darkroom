@@ -1228,7 +1228,7 @@ ul.thumbnailCategories {
   position: relative
 }
 
-.container-original-to-resize img{
+.container-original-to-resize img.thumb-img{
   max-height: 100%;
   width: auto;
   top: 50%;

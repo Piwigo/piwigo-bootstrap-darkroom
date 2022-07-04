@@ -8,23 +8,36 @@
  *}
 {footer_script require='jquery'}
   {literal}
+$( document ).ready(function() {
 
-var imageHeight = "180";
-var imagesToResize = new Array();
-let pattern = /-cu_e\d+x\d+/;
+  var minHeight = 1000;
+  var imagesToResize = new Array();
+  let pattern = /-cu_e\d+x\d+/;
 
-$('.thumb-img').each(function( index ) {
-  if('-1' != $(this).prop("currentSrc").search(pattern)){
-    imageHeight = $(this).height();
+  $('.thumb-img').each(function( index ) {
+    if('-1' != $(this).prop("currentSrc").search(pattern)){
+      if($(this).height() < minHeight){
+        minHeight = $(this).height();
+      }
+    }
+  });
+
+  if(minHeight == 1000){
+    minHeight = 180;
   }
-  else{
-    imagesToResize.push($(this));    
-  } 
-});
 
-$(imagesToResize).each(function( index ) {
-  $(this).parent().addClass('container-original-to-resize');
-  $(this).parent().css('height', imageHeight);
+  $('.thumb-img').each(function( index ) {
+    if($(this).height() > minHeight+5 || $(this).height() < minHeight-5 ){
+      imagesToResize.push($(this)); 
+    }
+  });
+
+  var minHeightString = minHeight +'px';
+
+  $(imagesToResize).each(function( index ) {
+    $(this).parent().addClass('container-original-to-resize');
+    $(this).parent().css('height', minHeightString);
+  });
 });
 
   {/literal}
