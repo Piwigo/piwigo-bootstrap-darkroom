@@ -101,7 +101,7 @@
 {/if}
 </head>
 
-<body id="{$BODY_ID}" class="{foreach from=$BODY_CLASSES item=class}{$class} {/foreach}"  data-infos={$BODY_DATA}>
+<body id="{$BODY_ID}" class="{foreach from=$BODY_CLASSES item=class}{$class} {/foreach}"  data-infos='{$BODY_DATA}'>
 
 <div id="wrapper">
 {if isset($MENUBAR)}
