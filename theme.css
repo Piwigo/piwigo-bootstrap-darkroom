@@ -1231,6 +1231,7 @@ ul.thumbnailCategories {
 .container-original-to-resize img.thumb-img{
   max-height: 100%;
   width: auto;
+  max-width:100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
