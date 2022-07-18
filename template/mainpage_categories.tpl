@@ -20,7 +20,7 @@
 {* this needs a fixed size else it messes up the grid on tablets *}
 {include file="grid_classes.tpl" width=260 height=180}
   <div class="col-outer mt-3 {if $smarty.cookies.view == 'list'}col-12{else}{$col_class}{/if}" data-grid-classes="{$col_class}">
-    <div class="card card-thumbnail path-ext-{$cat.path_ext} file-ext-{$cat.file_ext}">
+  <div class="card card-thumbnail {if isset($cat.path_ext)}path-ext-{$cat.path_ext}{/if} {if isset($cat.file_ext)}file-ext-{$cat.file_ext}{/if}">
       <div class="h-100">
         <a href="{$cat.URL}" class="ripple{if $smarty.cookies.view != 'list'} d-block{/if}">
           <img class="{if $smarty.cookies.view == 'list'}card-img-left{else}card-img-top{/if} thumb-img" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
