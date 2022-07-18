@@ -102,7 +102,7 @@ $('#theImage img').bind('swipeleft swiperight', function (event) {
         <div class="text-center{if $thumbnail.id eq $current.id} thumbnail-active{/if}">
           <a href="{$thumbnail.URL}">
   {/if}
-            <img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{if isset($thumbnail.TN_TITLE)}{$thumbnail.TN_TITLE}{/if}" class="img-fluid path-ext-{$thumbnail.path_ext} file-ext-{$thumbnail.file_ext}">
+            <img {if $derivative->is_cached()}data-lazy="{$derivative->get_url()}"{else}data-lazy="{$ROOT_URL}{$themeconf.icon_dir}/img_small.png" data-src="{$derivative->get_url()}"{/if} alt="{$thumbnail.TN_ALT}" title="{if isset($thumbnail.TN_TITLE)}{$thumbnail.TN_TITLE}{/if}" class="img-fluid {if isset($thumbnail.path_ext)}path-ext-{$thumbnail.path_ext}{/if} {if isset($thumbnail.file_ext)}file-ext-{$thumbnail.file_ext}{/if}">
           </a>
         </div>
   {assign var=idx value=$idx+1}
