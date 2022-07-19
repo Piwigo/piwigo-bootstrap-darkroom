@@ -164,6 +164,7 @@
             </div>
 {/if}
 {if isset($metadata)}
+<div id="metadata" class="imageInfo">
 {foreach from=$metadata item=meta}
             <br />
             <h4>{$meta.TITLE}</h4>
@@ -172,6 +173,7 @@
             <dd>{$value}</dd>
 {/foreach}
 {/foreach}
+</div>
 {/if}
         </dl>
     </div>
