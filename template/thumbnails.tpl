@@ -2,9 +2,6 @@
 {footer_script}
   var error_icon = "{$ROOT_URL}{$themeconf.icon_dir}/errors_small.png"{if isset($maxRequests)}, max_requests = {$maxRequests}{/if};
 {/footer_script}
-
-{include file="original_resize.tpl"}
-
 {if $derivative_params->type == "thumb"}
 {assign var=width value=520}
 {assign var=height value=360}
