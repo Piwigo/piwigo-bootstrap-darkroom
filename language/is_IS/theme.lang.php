@@ -15,7 +15,7 @@ $lang['URL or releative path to the image'] = 'Vefslóð eða tilvísunarslóð 
 $lang['Use 6 colums for viewports >= 1680px'] = 'Notaðu 6 dálka fyrir útsýnisgáttir >= 1680px';
 $lang['Use colored share buttons instead of icons'] = 'Notaðu litaða deilingarhnappa í stað tákna';
 $lang['Use description rather than title for images'] = 'Notaðu lýsingu frekar en titil fyrir myndir';
-$lang['Use full width containers that span the entire width of the viewport'] = 'Notaðu ílát í fullri breidd sem spanna alla breidd útsýnisgáttarinnar';
+$lang['Use full width containers that span the entire width of the viewport'] = 'Notaðu vefsíðu í fullri breidd sem spannar alla breidd vefskoðarans';
 $lang['center-aligned h5 heading'] = 'miðstillt h5 fyrirsögn';
 $lang['directly in the navigation bar'] = 'beint á leiðsögustikunni';
 $lang['from'] = 'frá';
