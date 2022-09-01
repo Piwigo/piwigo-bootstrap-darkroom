@@ -187,6 +187,8 @@ class ThemeController {
             SELECT 
               id,
               file,
+              name,
+              comment,
               width,
               height,
               date_creation,
