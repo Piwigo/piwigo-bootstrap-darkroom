@@ -143,6 +143,8 @@ body {
 #theImage img.path-ext-svg,
 #theImage img.file-ext-svg {
   min-width: 100px;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .form-control-plaintext {
