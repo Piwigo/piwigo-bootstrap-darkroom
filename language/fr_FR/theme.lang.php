@@ -98,3 +98,12 @@ $lang['Description display style'] = 'Style d\'affichage de la description';
 $lang['A mobile-ready theme based on Bootstrap 4'] = 'Un thème pour mobile en Bootstrap 4';
 $lang['Banner style'] = 'Style de bannière';
 $lang['Advanced'] = 'Avancé';
+$lang['Close (Esc)'] = 'Fermer (Esc)';
+$lang['Share'] = 'Partager';
+$lang['Toggle fullscreen'] = 'Toggle fullscreen';
+$lang['Zoom in/out'] = 'Zoom avant/arrière';
+$lang['Picture details'] = 'Détails de l\'image';
+$lang['AutoPlay'] = 'Lecture automatique';
+$lang['Previous (arrow left)'] = 'Précédent (flèche gauche)';
+$lang['Next (arrow right)'] = 'Suivant (flèche droite)';
+
