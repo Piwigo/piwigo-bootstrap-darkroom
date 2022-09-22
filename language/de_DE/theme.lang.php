@@ -98,3 +98,11 @@ $lang['left-aligned free text for advanced descriptions'] = 'Linksbündiger Frei
 $lang['Use 6 colums for viewports >= 1680px'] = 'Benutze 6 Spalten für Viewports >= 1680px';
 $lang['Use colored share buttons instead of icons'] = 'Benutze farbige buttons anstatt der icons';
 $lang['Use description rather than title for images'] = 'Benutze Beschreibung statt des Bildtitels';
+$lang['Toggle fullscreen'] = 'Vollbild umschalten';
+$lang['Zoom in/out'] = 'Vergrößern/Verkleinern';
+$lang['Picture details'] = 'Bild-Details';
+$lang['Previous (arrow left)'] = 'Zurück (Pfeil links)';
+$lang['Share'] = 'Teilen Sie';
+$lang['AutoPlay'] = 'Automatische Wiedergabe';
+$lang['Close (Esc)'] = 'Schließen (Esc)';
+$lang['Next (arrow right)'] = 'Weiter (Pfeil rechts)';
