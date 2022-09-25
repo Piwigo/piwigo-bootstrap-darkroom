@@ -98,3 +98,11 @@ $lang['Use 6 colums for viewports >= 1680px'] = 'Gebruik 6 kolommen voor kaders 
 $lang['Use colored share buttons instead of icons'] = 'Gebruik gekleurde deelknoppen i.p.v. iconen';
 $lang['Use full width containers that span the entire width of the viewport'] = 'Gebruik volledige breedte containers die de totale breedte van het kader omsluiten';
 $lang['Use description rather than title for images'] = 'Gebruik voor afbeeldingen de beschrijving in plaats van de titel ';
+$lang['AutoPlay'] = 'AutoPlay';
+$lang['Close (Esc)'] = 'Sluit (Esc)';
+$lang['Next (arrow right)'] = 'Volgende (rechts pijltje)';
+$lang['Picture details'] = 'Afbeelding details';
+$lang['Previous (arrow left)'] = 'Vorige (links pijltje)';
+$lang['Share'] = 'Deel';
+$lang['Toggle fullscreen'] = 'Schele volledig scherm in';
+$lang['Zoom in/out'] = 'Zoem in/uit';
