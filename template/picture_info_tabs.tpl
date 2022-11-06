@@ -7,7 +7,7 @@
         <li class="nav-item"><a class="flex-sm-fill text-sm-center nav-link" href="#tab_metadata" aria-controls="tab_metadata" role="tab" data-toggle="tab">{'EXIF Metadata'|@translate}</a></li>
 {/if}
 {/if}
-{if isset($comment_add) || $COMMENT_COUNT > 0}
+{if isset($comment_add) || !empty($COMMENT_COUNT)}
         <li class="nav-item{if $theme_config->picture_info == 'disabled' || ($theme_config->picture_info != 'tabs' && get_device() == 'desktop')} active{/if}"><a class="flex-sm-fill text-sm-center nav-link" href="#tab_comments" aria-controls="tab_comments" role="tab" data-toggle="tab">{'Comments'|@translate} <span class="badge badge-secondary">{$COMMENT_COUNT}</span></a></li>
 {/if}
       </ul>
@@ -224,7 +224,7 @@
 {/if}
 
         <!-- comments -->
-{if isset($comment_add) || $COMMENT_COUNT > 0}
+{if isset($comment_add) || !empty($COMMENT_COUNT)}
         <div role="tabpanel" class="tab-pane" id="tab_comments">
           {include file='picture_info_comments.tpl'}
         </div>
