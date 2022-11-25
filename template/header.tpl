@@ -101,7 +101,8 @@
 {/if}
 </head>
 
-<body id="{$BODY_ID}">
+<body id="{$BODY_ID}" class="{foreach from=$BODY_CLASSES item=class}{$class} {/foreach}"  data-infos='{$BODY_DATA}'>
+
 <div id="wrapper">
 {if isset($MENUBAR)}
         <nav class="navbar navbar-expand-lg navbar-main {$theme_config->navbar_main_bg} {if $theme_config->page_header == 'fancy'}navbar-dark navbar-transparent fixed-top{else}{$theme_config->navbar_main_style}{/if}">
