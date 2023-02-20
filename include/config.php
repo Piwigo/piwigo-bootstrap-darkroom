@@ -86,7 +86,7 @@ class Config {
         self::KEY_CATEGORY_WELLS => 'never',
         self::KEY_LOGO_IMAGE_ENABLED => false,
         self::KEY_LOGO_IMAGE_PATH => '',
-        self::KEY_QUICKSEARCH_NAVBAR => false,
+        self::KEY_QUICKSEARCH_NAVBAR => true,
         self::KEY_CAT_DESCRIPTIONS => false,
         self::KEY_CAT_NB_IMAGES => true,
         self::KEY_SOCIAL_ENABLED => true,
