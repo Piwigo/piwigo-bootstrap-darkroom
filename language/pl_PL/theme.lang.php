@@ -105,3 +105,5 @@ $lang['Share'] = 'Udostępnij';
 $lang['Toggle fullscreen'] = 'Przełącz pełny widok';
 $lang['Close (Esc)'] = 'Zamknij (Esc)';
 $lang['Next (arrow right)'] = 'Następne (strzałka w prawo)';
+$lang['AutoPlay'] = 'Automatyczne odtwarzanie';
+$lang['Zoom in/out'] = 'Powiększenie/pomniejszenie';
