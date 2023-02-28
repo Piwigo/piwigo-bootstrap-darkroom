@@ -192,7 +192,7 @@
 {/if}
     </div>
 
-{if isset($metadata) || (isset($comment_add) || $COMMENT_COUNT > 0)}
+{if isset($metadata) || (isset($comment_add) || !empty($COMMENT_COUNT))}
     <div id="infopanel-right" class="col-lg-6 col-12">
     <!-- metadata -->
 {if isset($metadata)}
