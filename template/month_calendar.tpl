@@ -12,9 +12,7 @@
            {if !isset($item.URL)}
            <a class="btn btn-secondary" disabled="disabled">{$item.LABEL}</a>
            {else}
-            {if isset($item.NB_IMAGES)}
-               <a class="btn btn-secondary" title="{$item.NB_IMAGES|@translate_dec:'%d photo':'%d photos'}" href="{$item.URL}">{$item.LABEL}</a>
-            {/if}
+           <a class="btn btn-secondary" title="{$item.NB_IMAGES|@translate_dec:'%d photo':'%d photos'}" href="{$item.URL}">{$item.LABEL}</a>
            {/if}
            {/foreach}
            {else}
