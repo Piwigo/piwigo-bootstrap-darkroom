@@ -60,3 +60,7 @@ $lang['Fullscreen'] = 'Tela cheia';
 $lang['Grid view'] = 'Visualização de grelha';
 $lang['Hero image'] = 'Imagem heroína';
 $lang['If you find any issues, please report them to the'] = 'Se encontrar algum problema, informe-o ao';
+$lang['HTML 5 canvas'] = 'Tela HTML 5';
+$lang['Simple'] = 'Simples';
+$lang['Site logo'] = 'Logo do site';
+$lang['Social Media Integration'] = 'Integração social';
