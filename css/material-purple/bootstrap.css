@@ -17784,4 +17784,84 @@ input[type=password].form-control,
 input.custom-file-control[type=password] {
   color: #000;
 }
+
+.mcs-no-result .text span:first-child,
+.filetypes-option label .checked-icon,
+.added_by-option label .checked-icon,
+.date_posted-option label .checked-icon,
+.breadcrumb-item .icon-cancel-circled:hover,
+.clear-all.clickable,
+.filter-form .filter-form-title
+{
+  color: var(--primary)!important;
+}
+
+.tags-found-container .tag-item,
+.albums-found-container .album-item,
+.breadcrumb-item,
+.filter-tag-form .selectize-control.multi .selectize-input [data-value].active,
+.filter-author-form .selectize-control.multi .selectize-input [data-value].active,
+.filter-added_by-form .selectize-control.multi .selectize-input [data-value].active,
+.date_posted-option input:checked + label,
+.filetypes-option  input:checked + label,
+.added_by-option  input:checked + label{
+  background: var(--secondary)!important;
+}
+
+.albums-found-popin .mcs-popin-title,
+.tags-found-popin .mcs-popin-title,
+.filter-manager-popin .mcs-popin-title,
+
+.filter-form .filter-form-title,
+.tags-found-container .tag-item,
+.albums-found-container .album-item,
+.search-result-item,
+.filter-manager-close.pwg-icon-cancel:before,
+.tags-found-close.pwg-icon-cancel:before,
+.albums-found-close.pwg-icon-cancel:before,
+.ClosePopIn.pwg-icon-cancel:before{
+  color: var(--gray)!important;
+}
+
+.filter-manager,
+.filter-validate,
+.mcs-container .filter-filled,
+.mcs-container .filter-filled .filter-icon,
+.mcs-side-results.search-in-set-button a{
+  color:var(--light)!important;
+}
+
+.mcs-container .filter-filled,
+.filter-manager,
+.filter-validate,
+.filter-manager:hover,
+.filter-validate:hover,
+.filetypes-option label .ext-badge,
+.added_by-option label .added_by-badge,
+.date_posted-option label .date_posted-badge,
+.mcs-side-results > div{
+  background: var(--primary)!important;
+}
+
+.mcs-container .filter-filled {
+  border: 1px solid var(--primary) !important;
+}
+
+.filter-manager-close.pwg-icon-cancel:before,
+.tags-found-close.pwg-icon-cancel:before,
+.albums-found-close.pwg-icon-cancel:before,
+.ClosePopIn.pwg-icon-cancel:before,
+.mcs-side-results > div{
+  color:var(--light)!important;
+}
+
+.search-result-item{
+  background:var(--light);
+}
+
+.filter-tag-form .selectize-control.multi .selectize-input > div,
+.filter-author-form .selectize-control.multi .selectize-input > div,
+.filter-added_by-form .selectize-control.multi .selectize-input > div{
+  background: var(--light)!important;
+}
 /*# sourceMappingURL=bootstrap.css.map */
