@@ -17912,16 +17912,14 @@ select.form-control > option, select.custom-file-control > option {
 .filter-manager-close.pwg-icon-cancel:before,
 .tags-found-close.pwg-icon-cancel:before,
 .albums-found-close.pwg-icon-cancel:before,
-.ClosePopIn.pwg-icon-cancel:before{
-  color: var(--gray)!important;
-}
-
+.ClosePopIn.pwg-icon-cancel:before,
+.filter-manager,
+.mcs-side-results.search-in-set-button a,
 .filter-manager,
 .filter-validate,
-.mcs-container .filter-filled,
 .mcs-container .filter-filled .filter-icon,
-.mcs-side-results.search-in-set-button a{
-  color:var(--light)!important;
+.mcs-container .filter-filled{
+  color: var(--gray)!important;
 }
 
 .mcs-container .filter-filled,

@@ -10383,7 +10383,6 @@ a.text-dark:hover, a.text-dark:focus {
 .albums-found-popin .mcs-popin-title,
 .tags-found-popin .mcs-popin-title,
 .filter-manager-popin .mcs-popin-title,
-s
 .filter-form .filter-form-title,
 .tags-found-container .tag-item,
 .albums-found-container .album-item{
@@ -10394,7 +10393,8 @@ s
 .filter-validate,
 .mcs-container .filter-filled,
 .mcs-container .filter-filled .filter-icon,
-.mcs-side-results.search-in-set-button a{
+.mcs-side-results.search-in-set-button a,
+.mcs-side-results > div p{
   color:var(--light)!important;
 }
 
@@ -10403,7 +10403,8 @@ s
 .filetypes-option label .ext-badge,
 .added_by-option label .added_by-badge,
 .date_posted-option label .date_posted-badge,
-.search-result-item{
+.search-result-item,
+.mcs-side-badge{
   background: var(--primary)!important;
 }
 
@@ -10414,7 +10415,8 @@ s
 .filter-manager-close.pwg-icon-cancel:before,
 .tags-found-close.pwg-icon-cancel:before,
 .albums-found-close.pwg-icon-cancel:before,
-.ClosePopIn.pwg-icon-cancel:before{
+.ClosePopIn.pwg-icon-cancel:before,
+.mcs-side-badge{
   color:var(--light);
 }
 /*# sourceMappingURL=bootstrap.css.map */

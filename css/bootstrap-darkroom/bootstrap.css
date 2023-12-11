@@ -10561,7 +10561,6 @@ a.text-dark:hover, a.text-dark:focus {
 .albums-found-popin .mcs-popin-title,
 .tags-found-popin .mcs-popin-title,
 .filter-manager-popin .mcs-popin-title,
-.filter-manager,
 .filter-validate,
 .filter-form .filter-form-title,
 .mcs-container .filter-filled,
@@ -10590,6 +10589,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 .mcs-container .filter-filled {
   border: 1px solid var(--primary) !important;
+}
+
+.filter-manager{
+  color: var(--white);
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
