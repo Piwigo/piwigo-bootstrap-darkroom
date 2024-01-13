@@ -33,7 +33,8 @@ A mobile-ready [Piwigo](http://piwigo.org) theme based on [Bootstrap 4](https://
 3. Disable the smartpocket theme (it's enabled by default). This is required in order to use Bootstrap Darkroom by default on mobile devices, too.
 
 ### Demo
-A demo is available at https://pwdemo.kuther.net
+
+A demo is available at https://demo2.piwigo.com/ and another one at https://demo4.piwigo.com/
 
 ### Documentation, Support and Issue tracker
 * [Github Wiki](https://github.com/tkuther/piwigo-bootstrap-darkroom/wiki)

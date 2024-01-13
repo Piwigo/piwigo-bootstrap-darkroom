@@ -16,7 +16,8 @@ $themeconf = array(
     'load_parent_css' => false,
     'load_parent_local_head' => true,
     'local_head' => 'local_head.tpl',
-    'url' => 'https://kuther.net/'
+    'url' => 'https://kuther.net/',
+    'colorscheme' => 'dark'
 );
 
 //debug
@@ -30,4 +31,50 @@ $video_ext = array('mp4','m4v');
 $conf['file_ext'] = array_merge ($conf['file_ext'], $video_ext, array_map('strtoupper', $video_ext));
 
 $controller = new \BootstrapDarkroom\ThemeController();
+
+
+// Define if skin is clear or dark
+$clear_skins = array(
+    'bootstrap-default',
+    'material-amber',
+    'material-blue',
+    'material-brown',
+    'material-deep-orange',
+    'material-deep-purple',
+    'material-indigo',
+    'material-light-green',
+    'material-lime',
+    'material-purple',
+    'material-indigo',
+    'material-red',
+    'material-teal',
+    'bootswatch-cerulean',
+    'bootswatch-cosmo',
+    'bootswatch-flatly',
+    'bootswatch-journal',
+    'bootswatch-litera',
+    'bootswatch-lumen',
+    'bootswatch-lux',
+    'bootswatch-materia',
+    'bootswatch-minty',
+    'bootswatch-pulse',
+    'bootswatch-sandstone',
+    'bootswatch-simplex',
+    'bootswatch-sketchy',
+    'bootswatch-spacelab',
+    'bootswatch-united',
+    'bootswatch-yeti',
+);
+// Get value of bootstrap theme and set themeconf to clear or leave as default (dark)
+$closure = \Closure::bind(function &(\BootstrapDarkroom\ThemeController $controller) {
+    return $controller->config;
+}, null, \BootstrapDarkroom\ThemeController::class);
+
+$config = &$closure($controller);
+
+if (in_array($config->bootstrap_theme, $clear_skins))
+{
+    $themeconf['colorscheme'] = 'clear';
+}
+
 $controller->init();
