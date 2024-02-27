@@ -2,7 +2,7 @@
 {function collectionsMenuItem}
 <a class="dropdown-item" id="menu-info-coll-{$coll_id}" href="{$coll_edit}" {if $coll_id == "coll_template"}style="display:none"{/if}>
     {$coll_name}
-    <span class="badge badge-secondary ml-2" title="{$cat_title}">{$coll_nb_images}</span>
+    <span class="badge badge-secondary ml-2" >{$coll_nb_images}</span>
 </a>
 {/function}
 {/function}
@@ -21,20 +21,18 @@
         <div class="divider"></div>
         <div id="menu-info-coll-container">
             {collectionsMenuItem
-                coll_id = "coll_template" 
-                coll_name = "coll_name"
-                coll_edit = "coll_edit"
-                coll_nb_images = "coll_nb_images"
-                cat_title = $cat.TITLE
+              coll_id = "coll_template" 
+              coll_name = "coll_name"
+              coll_edit = "coll_edit"
+              coll_nb_images = "coll_nb_images"
             }
             {if $block->data.collections}
             {foreach from=$block->data.collections item=col}{strip}
                 {collectionsMenuItem
-                    coll_id = $col.id
-                    coll_name = $col.name
-                    coll_edit = $col.u_edit
-                    coll_nb_images = $col.nb_images
-                    cat_title = $cat.TITLE
+                  coll_id = $col.id
+                  coll_name = $col.name
+                  coll_edit = $col.u_edit
+                  coll_nb_images = $col.nb_images
                 }
             {/strip}{/foreach}
         </div>
