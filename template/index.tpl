@@ -27,7 +27,7 @@
             <span class="pwg-button-text">{'Search in this set'|translate}</span>
         </a>
     </li>
-{/if}                
+{/if}
 {if !empty($image_orders)}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
@@ -307,7 +307,7 @@ $(document).ajaxComplete(function() {
   addVideoIndicator();
 });
 {else}
-$('.card-thumbnail').find('img[src*="pwg_representative"]').each(function() {
+$('.card-thumbnail:not(.file-ext-heic)').find('img[src*="pwg_representative"]').each(function() {
   $(this).closest('div').append('<i class="fas fa-file-video fa-2x video-indicator" aria-hidden="true" style="position: absolute; top: 10px; left: 10px; z-index: 100; color: #fff;"></i>');
 });
 {/if}
