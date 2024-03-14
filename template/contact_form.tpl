@@ -26,12 +26,8 @@
     {if isset($EASYCAPTCHA)}
       {$EASYCAPTCHA.parsed_content}
     {/if}
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="send_copy" name="send_copy">
-      <label class="form-check-label" for="send_copy">{'Send copy to my email'|translate}</label>
-    </div>
     <input type="hidden" name="key" value="{$KEY}" />
-    <button type="submit" class="btn btn-primary">{'Send'|translate}</button>
+    <button type="submit" name="send_mail" class="btn btn-primary">{'Send'|translate}</button>
   </form>
 </div>
 
