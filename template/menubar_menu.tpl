@@ -10,7 +10,7 @@
 {/if}
 {foreach from=$blocks.mbMenu->data item=link}
 {if is_array($link)}
-      <a class="dropdown-item" href="{$link.URL}" title="{$link.TITLE}"{if isset($link.REL)} {$link.REL}{/if}>{$link.NAME}
+      <a class="dropdown-item" href="{$link.URL}"{if isset($link.TITLE)} title="{$link.TITLE}"{/if}{if isset($link.REL)} {$link.REL}{/if}>{$link.NAME}
           {if isset($link.COUNTER)}<span class="badge badge-secondary ml-2">{$link.COUNTER}</span>{/if}
       </a>
 {/if}
