@@ -171,7 +171,9 @@
 {if isset($SEARCH_IN_SET_BUTTON) and $SEARCH_IN_SET_BUTTON}
     <div class="mcs-side-results search-in-set-button ">
       <div>
-        <p><a href="{$SEARCH_IN_SET_URL}" class=""><i class="fas fa-search"></i>{'Search in this set'|translate}</a></p>
+        <p><a href="{$SEARCH_IN_SET_URL}" class="">
+        <i class="fas fa-share-square"></i>
+        {'Search in this set'|translate}</a></p>
       </div>
     </div>
 {/if}
