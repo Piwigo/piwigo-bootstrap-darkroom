@@ -36,6 +36,12 @@
                     <td><div id="Copyright" class="imageInfo">{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</div></td>
                   </tr>
 {/if}
+{if isset($PDF_NB_PAGES) and $current.path_ext=="pdf" }
+              <tr id="Pages" class="imageInfo">
+                <th>{'Pages'|@translate}</dt>
+                <td>{$PDF_NB_PAGES}</td>
+              </tr>
+{/if}
 {if $display_info.rating_score and isset($rate_summary)}
                   <tr>
                     <th scope="row">{'Rating score'|@translate}</th>

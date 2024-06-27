@@ -71,6 +71,12 @@
                 </dd>
             </div>
 {/if}
+{if isset($PDF_NB_PAGES) and $current.path_ext=="pdf" }
+  <div id="Pages" class="imageInfo">
+    <dt>{'Pages'|@translate}</dt>
+    <dd>{$PDF_NB_PAGES}</td>
+  </div>
+{/if}
 {if $display_info.rating_score and isset($rate_summary)}
             <div id="Average" class="imageInfo">
                 <dt>{'Rating score'|@translate}</dt>

@@ -20,8 +20,21 @@
     </video>
   </div>
 </div>
+
+{else if isset($current.path_ext) and $current.path_ext == 'pdf' and isset($PDF_VIEWER_FILESIZE_THRESHOLD) and $current.filesize < $PDF_VIEWER_FILESIZE_THRESHOLD}
+  <div class="row d-block justify-content-center mb-3">
+      <embed src="{$ROOT_URL}{$current.path}" type="application/pdf" style='width: 95%; height:calc(100vh - 200px); min-height:600px;'/>
+  </div>
+
 {else}
 <img class="{if isset($current.path_ext)}path-ext-{$current.path_ext}{/if} {if isset($current.file_ext)}file-ext-{$current.file_ext}{/if}" {if $current.selected_derivative->is_cached()}src="{$current.selected_derivative->get_url()}" {$current.selected_derivative->get_size_htm()}{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$current.selected_derivative->get_url()}"{/if} alt="{$ALT_IMG}" id="theMainImage" usemap="#map{$current.selected_derivative->get_type()}" title="{if isset($COMMENT_IMG)}{$COMMENT_IMG|@strip_tags:false|@replace:'"':' '}{else}{$current.TITLE_ESC} - {$ALT_IMG}{/if}">
+  
+  {if isset($current.path_ext) and $current.path_ext == 'pdf' and isset($PDF_VIEWER_FILESIZE_THRESHOLD) and $current.filesize > $PDF_VIEWER_FILESIZE_THRESHOLD}
+    <div class="pdf-too-heavy">
+        {'The PDF you requested is too large to display on this page.'|translate}</br>
+        <a href="{$ROOT_URL}{$current.path}" target="_blank">{'Click here to display it'|translate}</a>
+    </div>
+  {/if}
 
 {foreach from=$current.unique_derivatives item=derivative key=derivative_type}{strip}
     <map name="map{$derivative->get_type()}">
