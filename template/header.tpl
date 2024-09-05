@@ -56,6 +56,9 @@
 {strip}
 {if $theme_config->bootstrap_theme} {* see https://github.com/tkuther/piwigo-bootstrap-darkroom/issues/104 *}
     {combine_css path="themes/bootstrap_darkroom/css/{$theme_config->bootstrap_theme}/bootstrap.min.css" order=-20}
+    {if is_file("themes/bootstrap_darkroom/css/{$theme_config->bootstrap_theme}/skin.css")}
+      {combine_css path="themes/bootstrap_darkroom/css/{$theme_config->bootstrap_theme}/skin.css" order=-10}
+    {/if}
 {else}
     {combine_css path="themes/bootstrap_darkroom/css/bootstrap-default/bootstrap.min.css" order=-20}
 {/if}
