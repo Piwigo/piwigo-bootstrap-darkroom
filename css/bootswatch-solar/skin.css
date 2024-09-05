@@ -1,0 +1,14 @@
+/* Search page */
+.search-result-item {
+  background-color: #002b36;
+  color: #839496;
+}
+
+.linkedAlbumPopInContainer {
+  background-color: #073642;
+}
+
+#linkedAlbumSearch .search-input {
+  background: #002b36;
+  color: #839496;
+}
