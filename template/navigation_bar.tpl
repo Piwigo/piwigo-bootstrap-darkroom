@@ -9,6 +9,11 @@
 {/if}
 {assign var='prev_page' value=0}
 {foreach from=$navbar.pages key=page item=url}
+{if $page > $prev_page+1}
+        <li class="page-item disabled">
+          <span class="page-link">...</span>
+        </li>
+{/if}
 {if $page == $navbar.CURRENT_PAGE}
         <li class="page-item active"><a class="page-link" href="#">{$page}</a></li>
 {else}
