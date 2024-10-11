@@ -1,8 +1,4 @@
 /* Search page */
-.search-result-item {
-  background-color: #333333;
-  color: #bbbbbb;
-}
 
 .filetypes-option label .ext-badge,
 .added_by-option label .added_by-badge,
@@ -40,7 +36,7 @@
 .date_created-option .selected .accordion-toggle, 
 .ratios-option input:checked + label,
 .ratings-option input:checked + label{
-  background: #7a8288!important;
+  background: #e7f3f8!important;
 }
 
 .slider-info{
@@ -49,14 +45,14 @@
 .ui-state-default, .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default,
 .ui-slider-range.ui-widget-header.ui-corner-all{
-  border: 1px solid var(--primary);
+  border: 1px solid #656565;
 }
 
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default,
 .ui-slider .ui-slider-range{
-  background: var(--primary);
+  background: #656565;
 }
 
 .date_posted-option.day,
@@ -65,5 +61,5 @@
 }
 
 .no_filtered_photos{
-  color:var(--light);
+  color:var(--dark);
 }

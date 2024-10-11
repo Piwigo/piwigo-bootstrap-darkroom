@@ -12,3 +12,119 @@
   background: #002b36;
   color: #839496;
 }
+
+.mcs-container .filter {
+  border: 2px solid #839496;
+  color: #839496;
+}
+
+#word-search,
+.filter-tag-form .selectize-input,
+.filter-author-form .selectize-input,
+.filter-added_by-form .selectize-input,
+.filter-tag-form .selectize-input input,
+.filter-author-form .selectize-input input,
+.filter-added_by-form .selectize-input input{
+  background-color: #002b36;
+}
+
+.filter-manager-popin :checked + span{
+  background-color: #839496;
+  border:1px solid #839496;
+  color: #fff;
+}
+
+.filetypes-option label .ext-badge,
+.added_by-option label .added_by-badge,
+.date_posted-badge,
+.date_created-badge,
+.ratios-option label .ratio-badge,
+.ratings-option label .ratings-badge{
+  background-color:var(--primary) !important;
+}
+
+.filetypes-option label .checked-icon,
+.added_by-option label .checked-icon,
+.date_posted-option label .checked-icon,
+.date_created-option label .checked-icon,
+.ratios-option label .checked-icon,
+.ratings-option label .checked-icon{
+  color:var(--primary) !important;
+}
+
+.date_posted-option .accordion-toggle:hover,
+.date_created-option .accordion-toggle:hover{
+  color:var(--primary);
+}
+
+.date_posted-option input:checked + label,
+.preset_posted_date .date_posted-option input:checked + label,
+.date_created-option input:checked + label,
+.preset_posted_date .date_created-option input:checked + label,
+.custom_posted_date .selected input:checked,
+.added_by-option input:checked + label,
+.filetypes-option input:checked + label,
+.date_posted-option .selected label,
+.date_posted-option .selected .accordion-toggle,
+.date_created-option .selected label,
+.date_created-option .selected .accordion-toggle, 
+.ratios-option input:checked + label,
+.ratings-option input:checked + label{
+  background: var(--green)!important;
+  color:black;
+}
+
+.slider-info{
+  color:var(--gray) !important;
+}
+.ui-state-default, .ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-slider-range.ui-widget-header.ui-corner-all{
+  border: 1px solid var(--primary);
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-slider .ui-slider-range{
+  background: var(--primary);
+}
+
+.date_posted-option.day,
+.date_created-option.day {
+  margin-right: 0px!important;
+}
+
+.filetypes-option:nth-child(odd),
+.added_by-option:nth-child(odd),
+.preset_posted_date .date_posted-option:nth-child(odd) label,
+.preset_posted_date .date_posted-option:nth-child(odd) i,
+.custom_posted_date .date_posted-option:nth-child(odd) .year_input label,
+.custom_posted_date .date_posted-option:nth-child(odd) .year_input i,
+.custom_posted_date .date_posted-option:nth-child(even) .month_input label,
+.custom_posted_date .date_posted-option:nth-child(even) .month_input i,
+.custom_posted_date .days_container .date_posted-option:nth-child(odd) label,
+.custom_posted_date .days_container .date_posted-option:nth-child(odd) i,
+.preset_created_date .date_created-option:nth-child(odd) label,
+.preset_created_date .date_created-option:nth-child(odd) i,
+.custom_created_date .date_created-option:nth-child(odd) .year_input label,
+.custom_created_date .date_created-option:nth-child(odd) .year_input i,
+.custom_created_date .date_created-option:nth-child(even) .month_input label,
+.custom_created_date .date_created-option:nth-child(even) .month_input i,
+.custom_created_date .days_container .date_created-option:nth-child(odd) label,
+.custom_created_date .days_container .date_created-option:nth-child(odd) i,
+.ratios-option:nth-child(odd), .ratings-option:nth-child(odd){
+  background: var(--gray);
+}
+
+.ratios-option.disabled label .ratio-name,
+.filetypes-option.disabled label .ext-name,
+.date_posted-option.disabled label .date-period,
+.date_created-option.disabled label .date-period,
+.ratings-option.disabled label .ratings-name {
+  color: var(--black);
+}
+
+.no_filtered_photos{
+  color:var(--light);
+}

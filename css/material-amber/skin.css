@@ -1,7 +1,24 @@
+.navbar-brand .badge-secondary{
+ background-color:var(--light);
+ color:var(--dark);
+}
+
 /* Search page */
-.search-result-item {
-  background-color: #333333;
-  color: #bbbbbb;
+.mcs-container .filter-filled,
+.filter-manager, .filter-validate,
+.filter-manager:hover,
+.filter-validate:hover,
+.filetypes-option label .ext-badge,
+.added_by-option label .added_by-badge,
+.date_posted-option label .date_posted-badge,
+.mcs-side-results > div,
+.filter-manager,
+.filter-validate,
+.mcs-container .filter-filled,
+.mcs-container .filter-filled .filter-icon,
+.mcs-side-results.search-in-set-button a{
+  background-color:var(--primary);
+  color:var(--white)!important;
 }
 
 .filetypes-option label .ext-badge,
@@ -18,13 +35,19 @@
 .date_posted-option label .checked-icon,
 .date_created-option label .checked-icon,
 .ratios-option label .checked-icon,
-.ratings-option label .checked-icon{
+.ratings-option label .checked-icon,
+.clear-all.clickable{
   color:var(--primary) !important;
 }
 
 .date_posted-option .accordion-toggle:hover,
-.date_created-option .accordion-toggle:hover{
-  color:var(--primary);
+.date_created-option .accordion-toggle:hover,
+.filter-form .filter-form-title{
+  color:var(--info);
+}
+
+.breadcrumb-item{
+  background-color:var(--info);
 }
 
 .date_posted-option input:checked + label,
@@ -40,7 +63,8 @@
 .date_created-option .selected .accordion-toggle, 
 .ratios-option input:checked + label,
 .ratings-option input:checked + label{
-  background: #7a8288!important;
+  background: var(--light)!important;
+  color:var(--dark);
 }
 
 .slider-info{
@@ -64,6 +88,20 @@
   margin-right: 0px!important;
 }
 
+.mcs-container .filter-filled {
+  border: 1px solid var(--primary)!important;
+}
+
 .no_filtered_photos{
-  color:var(--light);
+  color:var(--dark);
+}
+
+.linkedAlbumPopInContainer .search-result-item,
+.filter-album .breadcrumb-item{
+  background-color:var(--dark)!important;
+  color:var(--white)!important;
+}
+
+.bmd-form-group{
+  padding-top:0;
 }

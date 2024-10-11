@@ -1,0 +1,107 @@
+.navbar-brand .badge-secondary{
+  background-color:var(--light);
+  color:var(--dark);
+ }
+ 
+ /* Search page */
+ .mcs-container .filter-filled,
+ .filter-manager, .filter-validate,
+ .filter-manager:hover,
+ .filter-validate:hover,
+ .filetypes-option label .ext-badge,
+ .added_by-option label .added_by-badge,
+ .date_posted-option label .date_posted-badge,
+ .mcs-side-results > div,
+ .filter-manager,
+ .filter-validate,
+ .mcs-container .filter-filled,
+ .mcs-container .filter-filled .filter-icon,
+ .mcs-side-results.search-in-set-button a{
+   background-color:var(--primary);
+   color:var(--white)!important;
+ }
+ 
+ .filetypes-option label .ext-badge,
+ .added_by-option label .added_by-badge,
+ .date_posted-badge,
+ .date_created-badge,
+ .ratios-option label .ratio-badge,
+ .ratings-option label .ratings-badge{
+   background-color:var(--primary) !important;
+ }
+ 
+ .filetypes-option label .checked-icon,
+ .added_by-option label .checked-icon,
+ .date_posted-option label .checked-icon,
+ .date_created-option label .checked-icon,
+ .ratios-option label .checked-icon,
+ .ratings-option label .checked-icon,
+ .clear-all.clickable{
+   color:var(--primary) !important;
+ }
+ 
+ .date_posted-option .accordion-toggle:hover,
+ .date_created-option .accordion-toggle:hover,
+ .filter-form .filter-form-title{
+   color:var(--info);
+ }
+ 
+ .breadcrumb-item{
+   background-color:var(--info);
+ }
+ 
+ .date_posted-option input:checked + label,
+ .preset_posted_date .date_posted-option input:checked + label,
+ .date_created-option input:checked + label,
+ .preset_posted_date .date_created-option input:checked + label,
+ .custom_posted_date .selected input:checked,
+ .added_by-option input:checked + label,
+ .filetypes-option input:checked + label,
+ .date_posted-option .selected label,
+ .date_posted-option .selected .accordion-toggle,
+ .date_created-option .selected label,
+ .date_created-option .selected .accordion-toggle, 
+ .ratios-option input:checked + label,
+ .ratings-option input:checked + label{
+   background: var(--light)!important;
+   color:var(--dark);
+ }
+ 
+ .slider-info{
+   color:var(--gray) !important;
+ }
+ .ui-state-default, .ui-widget-content .ui-state-default,
+ .ui-widget-header .ui-state-default,
+ .ui-slider-range.ui-widget-header.ui-corner-all{
+   border: 1px solid var(--primary);
+ }
+ 
+ .ui-state-default,
+ .ui-widget-content .ui-state-default,
+ .ui-widget-header .ui-state-default,
+ .ui-slider .ui-slider-range{
+   background: var(--primary);
+ }
+ 
+ .date_posted-option.day,
+ .date_created-option.day {
+   margin-right: 0px!important;
+ }
+ 
+ .mcs-container .filter-filled {
+   border: 1px solid var(--primary)!important;
+ }
+ 
+ .no_filtered_photos{
+   color:var(--dark);
+ }
+ 
+ .linkedAlbumPopInContainer .search-result-item,
+ .filter-album .breadcrumb-item{
+   background-color:var(--dark)!important;
+   color:var(--white)!important;
+ }
+ 
+ .bmd-form-group{
+   padding-top:0;
+ }

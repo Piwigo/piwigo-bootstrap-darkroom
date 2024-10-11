@@ -1,7 +1,18 @@
 /* Search page */
-.search-result-item {
-  background-color: #333333;
-  color: #bbbbbb;
+.mcs-container .filter-filled,
+.filter-manager, .filter-validate,
+.filter-manager:hover,
+.filter-validate:hover,
+.filetypes-option label .ext-badge,
+.added_by-option label .added_by-badge,
+.date_posted-option label .date_posted-badge,
+.mcs-side-results > div,
+.filter-manager,
+.filter-validate,
+.mcs-container .filter-filled,
+.mcs-container .filter-filled .filter-icon,
+.mcs-side-results.search-in-set-button a{
+  color:var(--white)!important;
 }
 
 .filetypes-option label .ext-badge,
@@ -40,7 +51,8 @@
 .date_created-option .selected .accordion-toggle, 
 .ratios-option input:checked + label,
 .ratings-option input:checked + label{
-  background: #7a8288!important;
+  background: var(--secondary)!important;
+  color:var(--white);
 }
 
 .slider-info{
@@ -65,5 +77,5 @@
 }
 
 .no_filtered_photos{
-  color:var(--light);
+  color:var(--danger);
 }

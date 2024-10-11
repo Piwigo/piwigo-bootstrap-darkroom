@@ -1,3 +1,7 @@
+.badge-secondary {
+  background-color: var(--gray-dark);
+}
+
 /* Search page */
 .search-result-item {
   background-color: #2b3e50;
@@ -11,4 +15,90 @@
 #linkedAlbumSearch .search-input {
   background: #2b3e50;
   color: #ebebeb;
+}
+
+.mcs-container .filter-filled,
+.filter-manager, .filter-validate,
+.filter-manager:hover,
+.filter-validate:hover,
+.filetypes-option label .ext-badge,
+.added_by-option label .added_by-badge,
+.date_posted-option label .date_posted-badge,
+.mcs-side-results > div,
+.filter-manager,
+.filter-validate,
+.mcs-container .filter-filled,
+.mcs-container .filter-filled .filter-icon,
+.mcs-side-results.search-in-set-button a{
+  color:var(--white)!important;
+}
+
+.filetypes-option label .ext-badge,
+.added_by-option label .added_by-badge,
+.date_posted-badge,
+.date_created-badge,
+.ratios-option label .ratio-badge,
+.ratings-option label .ratings-badge{
+  background-color:var(--primary) !important;
+}
+
+.filetypes-option label .checked-icon,
+.added_by-option label .checked-icon,
+.date_posted-option label .checked-icon,
+.date_created-option label .checked-icon,
+.ratios-option label .checked-icon,
+.ratings-option label .checked-icon{
+  color:var(--primary) !important;
+}
+
+.date_posted-option .accordion-toggle:hover,
+.date_created-option .accordion-toggle:hover{
+  color:var(--primary);
+}
+
+.date_posted-option input:checked + label,
+.preset_posted_date .date_posted-option input:checked + label,
+.date_created-option input:checked + label,
+.preset_posted_date .date_created-option input:checked + label,
+.custom_posted_date .selected input:checked,
+.added_by-option input:checked + label,
+.filetypes-option input:checked + label,
+.date_posted-option .selected label,
+.date_posted-option .selected .accordion-toggle,
+.date_created-option .selected label,
+.date_created-option .selected .accordion-toggle, 
+.ratios-option input:checked + label,
+.ratings-option input:checked + label{
+  background: var(--secondary)!important;
+  color:var(--white);
+}
+
+.slider-info{
+  color:var(--gray) !important;
+}
+.ui-state-default, .ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-slider-range.ui-widget-header.ui-corner-all{
+  border: 1px solid var(--primary);
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-slider .ui-slider-range{
+  background: var(--primary);
+}
+
+.date_posted-option.day,
+.date_created-option.day {
+  margin-right: 0px!important;
+}
+
+.mcs-container .filter {
+  border: 1px solid var(--orange);
+  color: #aeaeae;
+}
+
+.no_filtered_photos{
+  color:var(--warning);
 }

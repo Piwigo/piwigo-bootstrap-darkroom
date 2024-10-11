@@ -1,9 +1,4 @@
 /* Search page */
-.search-result-item {
-  background-color: #333333;
-  color: #bbbbbb;
-}
-
 .filetypes-option label .ext-badge,
 .added_by-option label .added_by-badge,
 .date_posted-badge,
@@ -22,16 +17,14 @@
   color:var(--primary) !important;
 }
 
-.date_posted-option .accordion-toggle:hover,
-.date_created-option .accordion-toggle:hover{
-  color:var(--primary);
+.date_posted-option .accordion-toggle:hover{
+  color:var(--white);
 }
 
-.date_posted-option input:checked + label,
 .preset_posted_date .date_posted-option input:checked + label,
-.date_created-option input:checked + label,
-.preset_posted_date .date_created-option input:checked + label,
 .custom_posted_date .selected input:checked,
+.preset_created_date .date_created-option input:checked + label,
+.custom_created_date .selected input:checked,
 .added_by-option input:checked + label,
 .filetypes-option input:checked + label,
 .date_posted-option .selected label,
@@ -40,11 +33,11 @@
 .date_created-option .selected .accordion-toggle, 
 .ratios-option input:checked + label,
 .ratings-option input:checked + label{
-  background: #7a8288!important;
+  background: var(--secondary) !important;
 }
 
 .slider-info{
-  color:var(--gray) !important;
+  color:#bbb!important;
 }
 .ui-state-default, .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default,
@@ -59,11 +52,22 @@
   background: var(--primary);
 }
 
-.date_posted-option.day,
-.date_created-option.day {
-  margin-right: 0px!important;
+.mcs-container input[type="number"],
+.mcs-container input[type="number"]:focus{
+  background-color:#777;
+  color:black;
 }
 
-.no_filtered_photos{
-  color:var(--light);
+.albums-found-popin .mcs-popin-title,
+.tags-found-popin .mcs-popin-title,
+.filter-manager-popin .mcs-popin-title,
+.filter-form .filter-form-title,
+.tags-found-container .tag-item,
+.albums-found-container .album-item,
+.search-result-item,
+.filter-manager-close.pwg-icon-cancel:before,
+.tags-found-close.pwg-icon-cancel:before,
+.albums-found-close.pwg-icon-cancel:before,
+.ClosePopIn.pwg-icon-cancel:before{
+  color:#bbb!important;
 }

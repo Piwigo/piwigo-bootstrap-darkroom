@@ -1,7 +1,6 @@
 /* Search page */
-.search-result-item {
-  background-color: #333333;
-  color: #bbbbbb;
+.filter-manager {
+  color: #dbdbdb;
 }
 
 .filetypes-option label .ext-badge,
@@ -24,14 +23,13 @@
 
 .date_posted-option .accordion-toggle:hover,
 .date_created-option .accordion-toggle:hover{
-  color:var(--primary);
+  color:var(--white);
 }
 
-.date_posted-option input:checked + label,
 .preset_posted_date .date_posted-option input:checked + label,
-.date_created-option input:checked + label,
-.preset_posted_date .date_created-option input:checked + label,
 .custom_posted_date .selected input:checked,
+.preset_created_date .date_created-option input:checked + label,
+.custom_created_date .selected input:checked,
 .added_by-option input:checked + label,
 .filetypes-option input:checked + label,
 .date_posted-option .selected label,
@@ -40,7 +38,7 @@
 .date_created-option .selected .accordion-toggle, 
 .ratios-option input:checked + label,
 .ratings-option input:checked + label{
-  background: #7a8288!important;
+  background: var(--secondary) !important;
 }
 
 .slider-info{
@@ -49,21 +47,12 @@
 .ui-state-default, .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default,
 .ui-slider-range.ui-widget-header.ui-corner-all{
-  border: 1px solid var(--primary);
+  border: 1px solid #656565;
 }
 
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default,
 .ui-slider .ui-slider-range{
-  background: var(--primary);
-}
-
-.date_posted-option.day,
-.date_created-option.day {
-  margin-right: 0px!important;
-}
-
-.no_filtered_photos{
-  color:var(--light);
+  background: #656565;
 }
