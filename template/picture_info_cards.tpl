@@ -4,6 +4,14 @@
         <div class="card-body">
           <h5 class="card-title">{'Information'|@translate}</h5>
           <div id="info-content" class="d-flex flex-column">
+{if isset($PDF_NB_PAGES) and $current.path_ext=="pdf" }
+            <div id="Pages" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-sm-5">{'Pages'|@translate}</dt>
+                <dd class="col-sm-7">{$PDF_NB_PAGES}</dd>
+              </dl>
+            </div>
+{/if}
 {if $display_info.author and isset($INFO_AUTHOR)}
             <div id="Author" class="imageInfo">
               <dl class="row mb-0">
