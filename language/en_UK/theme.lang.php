@@ -85,3 +85,4 @@ $lang['Picture details'] = 'Picture details';
 $lang['AutoPlay'] = 'AutoPlay';
 $lang['Previous (arrow left)'] = 'Previous (arrow left)';
 $lang['Next (arrow right)'] = 'Next (arrow right)';
+$lang['Display number of images in breadcrumb'] = 'Display number of images in breadcrumb';

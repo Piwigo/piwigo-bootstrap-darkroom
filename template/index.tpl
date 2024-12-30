@@ -14,6 +14,9 @@
 {else}
                 <div class="nav-breadcrumb d-inline-flex">{$TITLE}</div>
 {/if}
+
+{if isset($theme_config->thumbnail_nb_images) and true == $theme_config->thumbnail_nb_images}<span class="badge badge-secondary nb_items">{$NB_ITEMS}</span>{/if}
+  
             </div>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fas fa-bars"></span>
