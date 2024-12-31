@@ -25,7 +25,7 @@
                 <ul class="navbar-nav">
 {if isset($SEARCH_IN_SET_ACTION) and $SEARCH_IN_SET_ACTION}
     <li id="cmdSearchInSet" class="nav-item">
-        <a href="{$SEARCH_IN_SET_URL}" title="{'Search in this set'|translate}" class="pwg-state-default pwg-button nav-link">
+        <a href="{$SEARCH_IN_SET_URL}" title="{'Search in this set'|translate}" class="pwg-state-default pwg-button nav-link"  rel="nofollow">
             <i class="fas fa-search"></i>
             <span class="pwg-button-text">{'Search in this set'|translate}</span>
         </a>
@@ -174,7 +174,7 @@
 {if isset($SEARCH_IN_SET_BUTTON) and $SEARCH_IN_SET_BUTTON}
     <div class="mcs-side-results search-in-set-button ">
       <div>
-        <p><a href="{$SEARCH_IN_SET_URL}" class="">
+        <p><a href="{$SEARCH_IN_SET_URL}" class="" rel="nofollow">
         <i class="fas fa-share-square"></i>
         {'Search in this set'|translate}</a></p>
       </div>
