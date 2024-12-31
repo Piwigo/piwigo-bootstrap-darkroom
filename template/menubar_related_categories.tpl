@@ -2,7 +2,7 @@
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Related albums'|@translate}</a>
     <div class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$block->data.MENU_CATEGORIES item=cat}
-       <{if isset($cat.url)}a href="{$cat.url}"{else}span{/if} class="dropdown-item" data-level="{($cat.LEVEL -1)}">{$cat.name}
+       <{if isset($cat.url)}a href="{$cat.url}"  rel="nofollow"{else}span{/if} class="dropdown-item" data-level="{($cat.LEVEL -1)}">{$cat.name}
   {if !empty($cat.count_images)}
         <span class="badge badge-primary ml-2" title="{if isset($cat.TITLE)}{$cat.TITLE}{/if}">{$cat.count_images}</span>
   {/if}
