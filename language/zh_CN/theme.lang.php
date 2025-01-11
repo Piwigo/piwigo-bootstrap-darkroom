@@ -106,3 +106,4 @@ $lang['Previous (arrow left)'] = '上一页（向左箭头）';
 $lang['Share'] = '分享';
 $lang['Toggle fullscreen'] = '切换全屏';
 $lang['Zoom in/out'] = '放大/缩小';
+$lang['Display number of images in breadcrumb'] = '在面包屑导航中显示图片数量';
