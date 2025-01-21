@@ -160,42 +160,6 @@
                     </td>
                   </tr>
 {/if}
-{if $display_info.privacy_level and isset($available_permission_levels)}
-{combine_script id='core.scripts' load='async' path='themes/default/js/scripts.js'}
-{footer_script require='jquery'}{strip}
-    function setPrivacyLevel(id, level, label) {
-    (new PwgWS('{$ROOT_URL}')).callService(
-        "pwg.images.setPrivacyLevel", { image_id:id, level:level},
-        {
-            method: "POST",
-            onFailure: function(num, text) { alert(num + " " + text); },
-            onSuccess: function(result) {
-                jQuery('#dropdownPermissions').html(label);
-                jQuery('.permission-li').removeClass('active');
-                jQuery('#permission-' + level).addClass('active');
-            }
-        }
-    );
-    }
-{/strip}{/footer_script}
-                  <tr>
-                    <th scope="row">{'Who can see this photo?'|@translate}</th>
-                    <td>
-                      <div id="Privacy" class="imageInfo">
-                        <div class="dropdown">
-                          <button class="btn btn-secondary btn-raised dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
-                            {$available_permission_levels[$current.level]}
-                          </button>
-                          <div class="dropdown-menu" role="menu" aria-labelledby="dropdownPermissions">
-{foreach from=$available_permission_levels item=label key=level}
-                            <a id="permission-{$level}" class="dropdown-item permission-li {if $current.level == $level} active{/if}" href="javascript:setPrivacyLevel({$current.id},{$level},'{$label}')">{$label}</a>
-{/foreach}
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-{/if}
                 </tbody>
               </table>
             </div>
