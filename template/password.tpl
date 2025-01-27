@@ -13,9 +13,11 @@
 <div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <form id="lostPassword" action="{$form_action}?action={$action}{if isset($key)}&amp;key={$key}{/if}" method="post" class="form-horizontal">
         <div class="card">
+            {if !isset($is_first_login)}
             <h4 class="card-header">
                 {'Forgot your password?'|@translate}
             </h4>
+            {/if}
             <div class="card-body">
                 <input type="hidden" name="pwg_token" value="{$PWG_TOKEN}">
 {if $action eq 'lost'}
@@ -36,18 +38,18 @@
                     </div>
                 </div>
 {elseif $action eq 'reset'}
-                <div>{'Hello'|@translate} <em>{$username}</em>. {'Enter your new password below.'|@translate}</div>
+                <div>{'Hello'|@translate} <em>{$username}</em>. {if !isset($is_first_login)}{'Enter your new password below.'|@translate}{else}{'Set your password below.'|translate}{/if}</div>
                 <br />
                 <div class="form-group">
-                    <label for="use_new_pwd" class="col-sm-2 control-label">{'New password'|@translate}</label>
+                    <label for="use_new_pwd" class="col-sm-2 control-label">{if !isset($is_first_login)}{'New password'|@translate}{else}{'Password'|translate}{/if}</label>
                     <div class="col-sm-4">
-                        <input type="password" name="use_new_pwd" id="use_new_pwd" value="" class="form-control" placeholder="{'New password'|@translate}">
+                        <input type="password" name="use_new_pwd" id="use_new_pwd" value="" class="form-control" placeholder="">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="passwordConf" class="col-sm-2 control-label">{'Confirm Password'|@translate}</label>
                     <div class="col-sm-4">
-                        <input type="password" name="passwordConf" id="passwordConf" class="form-control" value="" placeholder="{'Confirm Password'|@translate}">
+                        <input type="password" name="passwordConf" id="passwordConf" class="form-control" value="" placeholder="">
                     </div>
                 </div>
                 <div class="form-group">
