@@ -91,3 +91,4 @@ $lang['Previous (arrow left)'] = 'Nazaj (puščica levo)';
 $lang['Share'] = 'Delite';
 $lang['Toggle fullscreen'] = 'Preklop na celozaslonski način';
 $lang['Zoom in/out'] = 'Povečanje/pomanjšanje';
+$lang['Display number of images in breadcrumb'] = 'Prikaz števila slik v drobtinah';
