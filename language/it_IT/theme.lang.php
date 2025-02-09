@@ -92,3 +92,4 @@ $lang['Enable the slick carousel below the main image on the picture page'] = 'A
 $lang['Endlessly scroll through album images'] = 'Scorri all\'infinito le immagini dell\'album.';
 $lang['Full width layout'] = 'Impaginazione a tutta larghezza.';
 $lang['Grid view'] = 'Vista a griglia.';
+$lang['Display number of images in breadcrumb'] = 'Mostra il numero delle immagini nel menù "briciole di pane"';
