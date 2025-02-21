@@ -91,3 +91,4 @@ $lang['Category page display'] = 'תצוגת עמוד קטגוריה';
 $lang['Center mode'] = 'מצב מרכז';
 $lang['Close (Esc)'] = 'סגירה (Esc)';
 $lang['Color theme'] = 'ערכת צבע';
+$lang['Display number of images in breadcrumb'] = 'הצג מספר תמונות בשביל ניווט';
