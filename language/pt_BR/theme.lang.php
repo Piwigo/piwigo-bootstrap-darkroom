@@ -106,3 +106,4 @@ $lang['Previous (arrow left)'] = 'Anterior (seta para a esquerda)';
 $lang['Share'] = 'Compartilhar';
 $lang['Toggle fullscreen'] = 'Alternar para o modo tela cheia';
 $lang['Zoom in/out'] = 'Ampliar/Reduzir';
+$lang['Display number of images in breadcrumb'] = 'Exibir número de imagens na trilha de navegação';
