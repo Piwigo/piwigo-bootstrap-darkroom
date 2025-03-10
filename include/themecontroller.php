@@ -174,7 +174,7 @@ class ThemeController {
           return;
         }
 
-        if (count($page['items']) > 1000)
+        if (count($page['items']) > 10000)
         {
           $this->config->slick_enabled = false; 
           $this->config->photoswipe = false; 
