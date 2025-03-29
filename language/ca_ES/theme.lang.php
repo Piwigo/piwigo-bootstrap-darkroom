@@ -106,3 +106,4 @@ $lang['Previous (arrow left)'] = 'Anterior (fletxa esquerra)';
 $lang['Share'] = 'Comparteix';
 $lang['Toggle fullscreen'] = 'Commuta la pantalla completa';
 $lang['Zoom in/out'] = 'Aproxima/allunya';
+$lang['Display number of images in breadcrumb'] = 'Mostra el nombre d\'imatges en la ruta de navegació';
