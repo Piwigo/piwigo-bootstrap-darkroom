@@ -106,3 +106,4 @@ $lang['Picture details'] = 'Λεπτομέρειες εικόνας';
 $lang['Next (arrow right)'] = 'Επόμενο (βέλος δεξιά)';
 $lang['Close (Esc)'] = 'Κλείσιμο (Esc)';
 $lang['AutoPlay'] = 'Αυτόματη αναπαραγωγή';
+$lang['Display number of images in breadcrumb'] = 'Δείξε τον αριθμό των φωτογραφιών στην δυναμική περιήγηση';
