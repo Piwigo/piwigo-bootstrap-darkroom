@@ -1,4 +1,9 @@
+
 <li class="nav-item dropdown" id="identificationDropdown">
+{if (isset($use_standard_pages) or $themeconf.use_standard_pages) and !isset($USERNAME)}
+  <a class="nav-link" href="{$U_LOGIN}">{'Sign in'|@translate}</a>
+{else}
+
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{if isset($USERNAME)}<i class="fas fa-user"></i> {$USERNAME}{else}{'Login'|@translate}{/if}</a>
     <div class="dropdown-menu dropdown-menu-right" role="menu">
 {strip}
@@ -24,9 +29,9 @@
                 <button type="submit" class="btn btn-primary btn-raised" name="login">{'Login'|@translate}</button>
             </form>
          </div>
-         {if isset($U_REGISTER)||isset($U_LOGOUT)||isset($U_PROFILE)||isset($U_ADMIN)}
+        {if isset($U_REGISTER)||isset($U_LOGOUT)||isset($U_PROFILE)||isset($U_ADMIN)}
          <div class="dropdown-divider"></div>
-         {/if}
+        {/if}
     {/if}
     {if isset($U_REGISTER)}
          <a class="dropdown-item" href="{$U_REGISTER}" title="{'Create a new account'|@translate}" rel="nofollow">{'Register'|@translate}</a>
@@ -42,4 +47,8 @@
     {/if}
 {/strip}
     </div>
+
+
+{/if}
 </li>
+
