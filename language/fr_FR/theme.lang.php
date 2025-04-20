@@ -106,4 +106,4 @@ $lang['Picture details'] = 'Détails de l\'image';
 $lang['AutoPlay'] = 'Lecture automatique';
 $lang['Previous (arrow left)'] = 'Précédent (flèche gauche)';
 $lang['Next (arrow right)'] = 'Suivant (flèche droite)';
-
+$lang['Display number of images in breadcrumb'] = 'Afficher le nombre d\'images dans le fil d\'arianne';

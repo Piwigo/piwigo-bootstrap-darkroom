@@ -215,6 +215,13 @@
                         <span class="info">{'left-aligned free text for advanced descriptions'|@translate}
                     </blockquote>
                 </li>
+                <li>
+                <label class="font-checkbox">
+                   <span class="icon-check"></span>
+                   <input type="checkbox" name="thumbnail_nb_images" {if $theme_config->thumbnail_nb_images}checked="checked"{/if}>
+                   {'Display number of images in breadcrumb'|@translate}
+                </label>
+            </li>
             </ul>
         </fieldset>
         <fieldset>

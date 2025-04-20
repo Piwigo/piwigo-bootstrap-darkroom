@@ -91,3 +91,4 @@ $lang['Grid view'] = '網格顯示';
 $lang['HTML 5 canvas'] = 'HTML5畫布';
 $lang['Hero image'] = '主頁橫幅';
 $lang['If you find any issues, please report them to the'] = '如果有問題，請回報至';
+$lang['Display number of images in breadcrumb'] = '在 breadcrumb 中顯示照片的數量';

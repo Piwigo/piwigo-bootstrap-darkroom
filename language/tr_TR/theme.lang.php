@@ -106,3 +106,4 @@ $lang['Previous (arrow left)'] = 'Önceki (sol ok)';
 $lang['Share'] = 'Paylaş';
 $lang['Toggle fullscreen'] = 'Tam ekrana geç';
 $lang['Zoom in/out'] = 'Yakınlaştır/uzaklaştır';
+$lang['Display number of images in breadcrumb'] = 'breadcrumb içindeki imaj sayısını göster';

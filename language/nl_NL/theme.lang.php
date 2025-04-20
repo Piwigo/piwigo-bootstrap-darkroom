@@ -106,3 +106,4 @@ $lang['Previous (arrow left)'] = 'Vorige (links pijltje)';
 $lang['Share'] = 'Deel';
 $lang['Toggle fullscreen'] = 'Schele volledig scherm in';
 $lang['Zoom in/out'] = 'Zoem in/uit';
+$lang['Display number of images in breadcrumb'] = 'Toon het aantal afbeeldingen in kruimelspoor';

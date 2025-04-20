@@ -106,3 +106,4 @@ $lang['Picture details'] = 'Detalles de la imagen';
 $lang['Next (arrow right)'] = 'Siguiente (Flecha derecha)';
 $lang['Close (Esc)'] = 'Cerrar (Esc)';
 $lang['AutoPlay'] = 'Reproducción automática';
+$lang['Display number of images in breadcrumb'] = 'Mostrar el número de imágenes en el rastro de navegación';

@@ -22,6 +22,19 @@ if (!in_array($page['tab'], array(TAB_SETTINGS, TAB_ABOUT))) {
 
 $themeconfig = new \BootstrapDarkroom\Config();
 
+//Add check for new config settings added after 2024-12
+//This allows us to avoid unset variable errors in php 8
+//We force the object parameter to be added using the default value set in config.php,
+$ReflectionClass = new ReflectionClass('\BootstrapDarkroom\Config');
+$themeconfig_vars = $ReflectionClass->getDefaultProperties();
+$themeconfig_defaults = $themeconfig_vars['defaults'];
+
+if (!isset($themeconfig->thumbnail_nb_images) and !isset($_POST['boostrap_darkroom_settings']))
+{
+  $themeconfig->thumbnail_nb_images = $themeconfig_defaults['thumbnail_nb_images'];
+  $themeconfig->save();
+}
+
 // Save settings
 if ($page['tab'] == TAB_SETTINGS) {
     if (isset($_POST['boostrap_darkroom_settings'])) {

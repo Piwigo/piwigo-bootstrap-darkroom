@@ -106,3 +106,4 @@ $lang['Share'] = 'Teilen Sie';
 $lang['AutoPlay'] = 'Automatische Wiedergabe';
 $lang['Close (Esc)'] = 'Schließen (Esc)';
 $lang['Next (arrow right)'] = 'Weiter (Pfeil rechts)';
+$lang['Display number of images in breadcrumb'] = 'Anzahl der Bilder im Breadcrumb anzeigen';

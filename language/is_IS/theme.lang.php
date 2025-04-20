@@ -91,3 +91,4 @@ $lang['Previous (arrow left)'] = 'Fyrri (ör til vinstri)';
 $lang['Share'] = 'Deila';
 $lang['Toggle fullscreen'] = 'Skipta í/úr fullskjá';
 $lang['Zoom in/out'] = 'Þysja inn/út';
+$lang['Display number of images in breadcrumb'] = 'Birta fjölda mynda í slóð';
