@@ -1346,4 +1346,9 @@ ul.thumbnailCategories {
 .date_posted-option input:checked + label .checked-icon{
   margin-top:0;
 }
+
+.bmd-form-group .bmd-label-static{
+  display:none;
+}
+
 /*# sourceMappingURL=theme.css.map */
