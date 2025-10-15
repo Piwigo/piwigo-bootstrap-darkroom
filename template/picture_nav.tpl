@@ -83,7 +83,7 @@
 {if isset($U_SET_AS_REPRESENTATIVE)}
                 <li class="nav-item">
                     <a class="nav-link" id="cmdSetRepresentative" href="{$U_SET_AS_REPRESENTATIVE}" title="{'set as album representative'|@translate}" rel="nofollow">
-                        <i class="fas fa-link fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'set as album representative'|@translate}</span>
+                        <i class="fas fa-thumbtack fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'set as album representative'|@translate}</span>
                     </a>
                 </li>
 {/if}
@@ -108,7 +108,7 @@
 {/strip}{/footer_script}
                 <li class="nav-item">
                     <a class="nav-link" href="{$U_CADDIE}" onclick="addToCadie(this, '{$ROOT_URL}', {$current.id}); return false;" title="{'Add to caddie'|@translate}" rel="nofollow">
-                        <i class="fas fa-shopping-basket fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Add to caddie'|@translate}</span>
+                        <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Add to caddie'|@translate}</span>
                     </a>
                 </li>
 {/if}

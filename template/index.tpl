@@ -46,7 +46,7 @@
 {if !empty($image_derivatives)}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Photo sizes'|@translate}">
-                            <i class="far fa-image fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span>
+                            <i class="fas fa-image fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Photo sizes'|@translate}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$image_derivatives item=image_derivative name=loop}
@@ -72,7 +72,7 @@
 {if isset($U_CADDIE)}
                     <li class="nav-item">
                         <a class="nav-link" href="{$U_CADDIE}" title="{'Add to caddie'|@translate}">
-                            <i class="fas fa-shopping-basket fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Add to caddie'|@translate}</span>
+                            <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2">{'Add to caddie'|@translate}</span>
                         </a>
                     </li>
 {/if}
@@ -112,13 +112,13 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
 {if isset($U_MODE_POSTED)}
-                            <a class="dropdown-item" href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
-                                <i class="fas fa-share-alt fa-fw" aria-hidden="true"></i> {'display a calendar by posted date'|@translate}
+                            <a class="dropdown-item d-block" href="{$U_MODE_POSTED}" title="{'display a calendar by posted date'|@translate}" rel="nofollow">
+                                <i class="fas fa-calendar-plus fa-fw d-inline" aria-hidden="true"></i> {'display a calendar by posted date'|@translate}
                             </a>
 {/if}
 {if isset($U_MODE_CREATED)}
-                            <a class="dropdown-item" href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
-                                <i class="fas fa-camera-retro fa-fw" aria-hidden="true"></i> {'display a calendar by creation date'|@translate}
+                            <a class="dropdown-item d-block" href="{$U_MODE_CREATED}" title="{'display a calendar by creation date'|@translate}" rel="nofollow">
+                                <i class="fas fa-calendar-check fa-fw d-inline" aria-hidden="true"></i> {'display a calendar by creation date'|@translate}
                             </a>
 {/if}
                         </div>
