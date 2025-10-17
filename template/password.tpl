@@ -37,6 +37,22 @@
                         <input type="submit" name="submit" value="{'Change my password'|@translate}" class="btn btn-primary btn-raised">
                     </div>
                 </div>
+{elseif $action eq 'lost_code'}
+                <div>
+                    <div class="message">{"If you do not receive the email, please contact your webmaster."|translate}</div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="user_code" class="col-sm-2 control-label">{'Verification code'|@translate}</label>
+                    <div class="col-sm-4">
+                        <input type="text" id="user_code" name="user_code" class="form-control" maxlength="100" placeholder="XXXXXX">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" name="submit" value="{'Verify'|@translate}" class="btn btn-primary btn-raised">
+                    </div>
+                </div>
 {elseif $action eq 'reset'}
                 <div>{'Hello'|@translate} <em>{$username}</em>. {if !isset($is_first_login)}{'Enter your new password below.'|@translate}{else}{'Set your password below.'|translate}{/if}</div>
                 <br />
@@ -69,5 +85,7 @@
 {literal}try{document.getElementById('username_or_email').focus();}catch(e){}{/literal}
 {elseif $action eq 'reset'}
 {literal}try{document.getElementById('use_new_pwd').focus();}catch(e){}{/literal}
+{elseif $action eq 'lost_code'}
+{literal}try{document.getElementById('user_code').focus();}catch(e){}{/literal}
 {/if}
 </script>
