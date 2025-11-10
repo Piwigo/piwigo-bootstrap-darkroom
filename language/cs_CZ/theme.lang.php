@@ -91,3 +91,4 @@ $lang['Category page display'] = 'Zobrazení stránky kategorie';
 $lang['Center mode'] = 'Středový režim';
 $lang['Close (Esc)'] = 'Zavřít (Esc)';
 $lang['Color theme'] = 'Barevné téma';
+$lang['Display number of images in breadcrumb'] = 'Zobrazit počet obrázků v drobečkové navigaci (breadcrumb)';
