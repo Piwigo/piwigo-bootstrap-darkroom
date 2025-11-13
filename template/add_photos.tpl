@@ -19,7 +19,7 @@
 {combine_script id='piecon' load='footer' path='themes/default/js/plugins/piecon.js'}
 
 {footer_script}
-var rootUrl = "{get_absolute_root_url()}";
+var rootUrl = "{$ABSOLUTE_ROOT_URL}";
 {literal}
 jQuery(document).ready(function(){
 
