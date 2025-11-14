@@ -35,7 +35,7 @@
         <a class="dropdown-item" href="{$U_LOGOUT}">{'Logout'|@translate}</a>
     {/if}
     {if isset($U_PROFILE)}
-        <a class="dropdown-item" href="{$U_PROFILE}" title="{'customize the appareance of the gallery'|@translate}">{'Customize'|@translate}</a>
+        <a class="dropdown-item" href="{$U_PROFILE}" title="{'edit user preferences'|@translate}">{'Profile'|@translate}</a>
     {/if}
     {if isset($U_ADMIN)}
         <a class="dropdown-item" href="{$U_ADMIN}" title="{'available for administrators only'|@translate}">{'Administration'|@translate}</a>
