@@ -58,3 +58,42 @@
 .ui-slider .ui-slider-range{
   background: #2fa4e7;
 }
+
+/* Related tages */
+
+span.related-tags{
+  background-color:var(--light);
+  color:var(--primary);
+}
+
+span.related-tags:hover{
+  background-color:#2fa4e7;
+}
+
+#selected-tags-container .selected-related-tag {
+  background-color: #e9ecef;
+  border: 1px solid #dbdbdb;
+  color: #2fa4e7;
+}
+
+span.related-tags .tag-counter{
+  color:#212529;
+}
+
+span.related-tags a{
+  color:var(--primary);
+}
+
+span.related-tags:hover a{
+  color:var(--light);
+}
+
+
+#selected-tags-container .selected-related-tag a{
+  color:#4f4f4f!important;
+}
+
+#selected-tags-container .selected-related-tag a:hover,
+#selected-tags-container .selected-related-tag a.selected-related-tag-remove:hover{
+  color:#000!important;
+}

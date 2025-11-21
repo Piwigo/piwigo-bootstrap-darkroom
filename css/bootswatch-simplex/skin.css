@@ -68,3 +68,40 @@
 .no_filtered_photos{
   color:var(--dark);
 }
+
+/* Related tages */
+
+span.related-tags{
+  background-color:var(--light);
+}
+
+span.related-tags:hover{
+  background-color:#d9230f;
+}
+
+#selected-tags-container .selected-related-tag {
+  background-color: #fff;
+  border: 1px solid #d9230f;
+  color: #a91b0c;
+}
+
+span.related-tags .tag-counter{
+  color:#ACACAC;
+}
+
+span.related-tags a{
+  color:#a91b0c;
+}
+
+span.related-tags:hover a{
+  color:var(--light);
+}
+
+#selected-tags-container .selected-related-tag a{
+  color:#a91b0c!important;
+}
+
+#selected-tags-container .selected-related-tag a:hover,
+#selected-tags-container .selected-related-tag a.selected-related-tag-remove:hover{
+  color:#000!important;
+}

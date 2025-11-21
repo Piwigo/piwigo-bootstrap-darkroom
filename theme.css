@@ -1259,7 +1259,7 @@ ul.thumbnailCategories {
   display: flex;
   flex-direction: row;
   gap: 5px;
-  margin: 15px 0 0 15px;
+  margin: 0px;
 }
 
 .mcs-side-results > div {
@@ -1303,10 +1303,6 @@ ul.thumbnailCategories {
   background: #777;
 }
 
-.mcs-side-results.search-in-set-button {
-  margin-bottom: 30px;
-}
-
 .mcs-side-results.search-in-set-button p {
   margin:0;
 }
@@ -1329,10 +1325,9 @@ ul.thumbnailCategories {
   margin:20vh 0;
 }
 
-.mcs-container,
-.mcs-side-results{
+.mcs-container{
   margin:0;
-  margin-top:15px;
+  margin-top:20px;
 }
 
 .filetypes-option label,
@@ -1349,6 +1344,99 @@ ul.thumbnailCategories {
 
 .bmd-form-group .bmd-label-static{
   display:none;
+}
+
+.action-buttons{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  margin: 20px 0;
+  padding:0;
+}
+
+h3.related-tags-title{
+  margin:0 15px;
+  font-weight:400;
+  font-size:20px;
+}
+
+span.related-tags{
+  padding:4px 12px;
+  margin:3px;
+  border-radius:15px;
+  font-size:15px;
+}
+
+span.related-tags a{
+  font-weight:700;
+  text-decoration:none;
+}
+
+span.related-tags .tag-counter{
+  display: inline-block;
+  margin-left:9px;
+  font-weight:700;
+}
+
+#relatedTagsBox.switchBox A {
+  padding:unset;
+  display:block;
+}
+
+#selected-tags-container{
+  margin:0 15px;
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+#selected-tags-container .selected-related-tag {
+  border-radius:15px;
+  padding:5px 10px;
+  /* padding-right:5px; */
+  margin-right:5px;
+  height:fit-content;
+  display:inline-flex;
+}
+
+#selected-tags-container .selected-related-tag.unique-tag{
+  padding-right:10px;
+}
+
+#selected-tags-container .selected-related-tag a{
+  font-weight: 700;
+  font-size: 12px;
+}
+
+#selected-tags-container .selected-related-tag a.selected-related-tag-remove:hover{
+  text-decoration:none;
+}
+
+#selected-tags-container .selected-related-tag .gallery-icon-cancel{
+  rotate:45deg;
+  margin-left:5px;
+}
+
+.related-tag-condition{
+  border-radius:5px;
+  margin:2px 5px 0 15px;
+  font-weight:900;
+  font-size:20px;
+  padding:0 5px;
+}
+
+#breadcrumb{
+  display:flex;
+  align-items: baseline;
+}
+
+@media (max-width: 600px) {
+  #breadcrumb{
+    flex-direction:column;
+  }
+}
+
+.navbar-brand .selected-related-tag a:first-child::before{
+  content:unset;
 }
 
 /*# sourceMappingURL=theme.css.map */

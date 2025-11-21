@@ -16,7 +16,11 @@
 {/if}
 
 {if isset($theme_config->thumbnail_nb_images) and true == $theme_config->thumbnail_nb_images and $NB_ITEMS > 0}<span class="badge badge-secondary nb_items">{$NB_ITEMS}</span>{/if}
-  
+
+  {* We want the badge before the related tags *}
+{if !isset($chronology.TITLE)}
+                <div class="nav-breadcrumb d-inline-flex">{$SELECTED_TAGS_TEMPLATE}</div>
+{/if}
             </div>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#secondary-navbar" aria-controls="secondary-navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fas fa-bars"></span>
@@ -30,7 +34,25 @@
             <span class="pwg-button-text">{'Search in this set'|translate}</span>
         </a>
     </li>
-{/if}                
+{/if}
+
+{* We want the related tags action icon on all pages except the index and tag pages*}
+{if isset($RELATED_TAGS_ACTION) and $RELATED_TAGS_ACTION}
+    <li id="cmdRelatedTags" class="nav-item dropdown">
+        <a href="#" title="{'Related tags'|@translate}" class="nav-link dropdown-toggle" data-toggle="dropdown" rel="nofollow">
+            <i class="fas fa-tags"></i>
+            <span class="pwg-button-text">{'Related tags'|@translate}</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" role="menu">
+  {foreach from=$RELATED_TAGS item=tag}
+          <a class="dropdown-item" href="{$tag.URL}" title="{'display photos linked to this tag'|@translate}">
+            {$tag.name}
+          </a>
+  {/foreach}
+        </div>
+    </li>
+{/if}    
+            
 {if !empty($image_orders)}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
@@ -171,6 +193,8 @@
     {include file=$FILE_CHRONOLOGY_VIEW}
 {/if}
 
+<div class="action-buttons">
+
 {if isset($SEARCH_IN_SET_BUTTON) and $SEARCH_IN_SET_BUTTON}
     <div class="mcs-side-results search-in-set-button ">
       <div>
@@ -180,6 +204,12 @@
       </div>
     </div>
 {/if}
+
+{if isset($COMBINABLE_TAGS)}
+{include file='include/related_tags.inc.tpl'}
+{/if}
+
+</div>
 
 {if !empty($CONTENT_DESCRIPTION)}
     <div id="content-description" class="py-3{if $theme_config->thumbnail_cat_desc == 'simple'} text-center{/if}">
@@ -250,6 +280,8 @@ $(document).ready(function() {
             <a href="{$thumbnail.URL}" data-index="{$idx}" data-name="{$thumbnail.NAME}" data-description="{$thumbnail.DESCRIPTION}" data-src-medium="{$derivative_medium->get_url()}" data-size-medium="{$derivative_medium->get_size_hr()}" data-src-large="{$derivative_large->get_url()}" data-size-large="{$derivative_large->get_size_hr()}" data-src-xlarge="{$derivative_xxlarge->get_url()}" data-size-xlarge="{$derivative_xxlarge->get_size_hr()}"{if preg_match("/(mp4|m4v)$/", $thumbnail.PATH)} data-src-original="{$U_HOME}{$thumbnail.PATH}" data-size-original="{$thumbnail.SIZE}" data-video="true"{else}{/if}></a>
 {assign var=idx value=$idx+1}
 {/foreach}
+
+
 {include file='_photoswipe_js.tpl' selector='#photoSwipeData'}
         </div>
 {footer_script require='jquery' require='photoswipe'}{strip}
