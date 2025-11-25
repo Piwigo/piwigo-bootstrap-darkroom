@@ -6,9 +6,9 @@
             </h4>
             <div class="card-body">
               <fieldset>
-{if isset($loaded_plugins['user_custom_fields'])}
+{* {if isset($loaded_plugins['user_custom_fields'])}
 {$UCF_PROFILE_ADD}
-{else}
+{else} *}
                 <div class="form-group row">
                     <label for="username" class="col-12 col-md-3 col-form-label">{'Username'|@translate}</label>
                     <div class="col-12 col-md-4">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
 {/if}
-{/if}
+{* {/if} *}
             </div>
         </div>
 {if $ALLOW_USER_CUSTOMIZATION}
@@ -124,6 +124,17 @@
                 </div>
             </div>
         </div>
+
+{if isset($PLUGINS_PROFILE)}
+    {foreach from=$PLUGINS_PROFILE item=plugin_block}
+        <div class="card my-3">
+            <h4 class="card-header">{$plugin_block.name}</h4>
+            <div class="card-body plugins">
+                {include file=$plugin_block.template}
+            </div>
+        </div>
+    {/foreach}
+{/if}
 
         <input class="btn btn-primary btn-raised" type="submit" name="validate" value="{'Submit'|@translate}">
         <input class="btn btn-info btn-raised" type="reset" name="reset" value="{'Reset'|@translate}">
