@@ -6,8 +6,8 @@
 	{/if}
 	{if !empty($bar.items)}
         <div id="calendar-nav-buttons" class="btn-group" role="group">
-           {assign var=item_type value=reset($bar.items)} {* avoid strict standards warning with nested resets *}
-           {if gettype(reset($item_type)) === 'string' || (!isset($bar.previous) && !isset($bar.next))}
+        {assign var=item_type value=$bar.items[0]} {* avoid strict standards warning with nested resets *}  
+        {if (!isset($item_type[0])) || (!isset($bar.previous) && !isset($bar.next))}
            {foreach from=$bar.items item=item}
            {if !isset($item.URL)}
            <a class="btn btn-secondary" disabled="disabled">{$item.LABEL}</a>
