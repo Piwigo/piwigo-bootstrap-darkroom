@@ -1,7 +1,7 @@
 
 <li class="nav-item dropdown" id="identificationDropdown">
 {if (isset($use_standard_pages) or $themeconf.use_standard_pages) and !isset($USERNAME)}
-  <a class="nav-link" href="{$U_LOGIN}">{'Sign in'|@translate}</a>
+  <a class="nav-link" href="{$U_LOGIN}">{'Login'|@translate}</a>
 {else}
 
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{if isset($USERNAME)}<i class="fas fa-user"></i> {$USERNAME}{else}{'Login'|@translate}{/if}</a>
