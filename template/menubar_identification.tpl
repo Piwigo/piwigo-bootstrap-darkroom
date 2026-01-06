@@ -1,6 +1,6 @@
 
 <li class="nav-item dropdown" id="identificationDropdown">
-{if (isset($use_standard_pages) or $themeconf.use_standard_pages) and !isset($USERNAME)}
+{if !isset($USERNAME) and ( ($use_standard_pages ?? false) === true and ($themeconf.use_standard_pages ?? false) === true)  }
   <a class="nav-link" href="{$U_LOGIN}">{'Login'|@translate}</a>
 {else}
 
