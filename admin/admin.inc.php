@@ -40,6 +40,12 @@ if ($page['tab'] == TAB_SETTINGS) {
     if (isset($_POST['boostrap_darkroom_settings'])) {
         $themeconfig->fromPost($_POST);
         $themeconfig->save();
+      
+      $template->assign(
+        array(
+          'save_success' => l10n('Your configuration settings are saved'),
+        )
+      );
     }
 }
 // TabSheet

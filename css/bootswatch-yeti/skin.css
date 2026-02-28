@@ -90,3 +90,47 @@
 .no_filtered_photos{
   color:var(--dark);
 }
+
+.dropdown-header{
+  color:#fff;
+}
+
+/* Related tages */
+
+span.related-tags{
+  background-color:#eee;
+}
+
+span.related-tags:hover{
+  background-color:#008cba;
+}
+
+#selected-tags-container .selected-related-tag {
+  background-color: #e9ecef;
+  border: 1px solid #dbdbdb;
+  color: #008cba;
+}
+
+span.related-tags .tag-counter{
+  color:#222;
+}
+
+span.related-tags a{
+  color:#222;
+  font-size: .820312rem;
+  font-weight: 300;
+}
+
+span.related-tags:hover a{
+  color:var(--light);
+}
+
+
+#selected-tags-container .selected-related-tag a{
+  color:#4f4f4f!important;
+}
+
+#selected-tags-container .selected-related-tag a:hover,
+#selected-tags-container .selected-related-tag a.selected-related-tag-remove:hover{
+  color:#000!important;
+}

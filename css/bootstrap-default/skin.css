@@ -56,3 +56,40 @@
 .ui-slider .ui-slider-range{
   background: #656565;
 }
+
+/* Related tages */
+
+span.related-tags{
+  background-color:var(--light);
+}
+
+span.related-tags:hover{
+  background-color:#343a40;
+}
+
+#selected-tags-container .selected-related-tag {
+  background-color: #dbdbdb;
+  border: 1px solid #9e9e9e;
+  color: #4f4f4f;
+}
+
+span.related-tags .tag-counter{
+  color:#ACACAC;
+}
+
+span.related-tags a{
+  color:var(--secondary);
+}
+
+span.related-tags:hover a{
+  color:var(--light);
+}
+
+#selected-tags-container .selected-related-tag a{
+  color:#4f4f4f!important;
+}
+
+#selected-tags-container .selected-related-tag a:hover,
+#selected-tags-container .selected-related-tag a.selected-related-tag-remove:hover{
+  color:#000!important;
+}

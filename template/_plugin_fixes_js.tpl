@@ -66,14 +66,10 @@ $(form).find('label').remove();
 {footer_script require='jquery'}
 var ucf_body_id = $('{if $BODY_ID == 'theProfilePage'}#theProfilePage{else}#theRegisterPage{/if}');
 $(document).ready(function() {
-  $(ucf_body_id).find('fieldset>legend').remove();
-  $(ucf_body_id).find('fieldset>ul>li').changeElementType('div');
-  $(ucf_body_id).find('fieldset>ul>div').addClass('form-group row').unwrap();
-  $(ucf_body_id).find('fieldset>div>.property>label').addClass('col-sm-2 control-label').unwrap();
-  $(ucf_body_id).find('fieldset>.form-group>input').wrap('<div class="col-sm-4"></div>').addClass('form-control');
-  $('#theProfilePage .property').addClass('col-sm-2 control-label').changeElementType('label');
-  var u = $('#theProfilePage form#profile .form-group').first().contents().filter(function() { return this.nodeType == 3; }).eq(1);
-  $(u).wrap('<div class="col-sm-4"><p class="form-control-static"></p></div>');
+  $(ucf_body_id).find('.ucf_container').addClass('{if $BODY_ID == 'theProfilePage'}form-group row{else}form-group{/if}');
+  $(ucf_body_id).find('.ucf_input_container').addClass('{if $BODY_ID == 'theProfilePage'}col-12 col-md-4{else}col-sm-4{/if}');
+  $(ucf_body_id).find('.ucf_container label').addClass('{if $BODY_ID == 'theProfilePage'}col-12 col-md-3 col-form-label{else}col-sm-2 control-label{/if}');
+  $(ucf_body_id).find('.ucf_container input').addClass('form-control');
 });
 {/footer_script}
 {/if}

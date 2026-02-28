@@ -42,3 +42,38 @@
   color: #222;
   background-color: #aaa;
 }
+
+
+/* Related tages */
+
+span.related-tags{
+  background-color:#f8f9fa;
+}
+
+span.related-tags:hover{
+  background-color:#aaa;
+}
+
+#selected-tags-container .selected-related-tag {
+  background-color: var(--secondary);
+  border: 1px solid #222;
+  color: #fff;
+}
+
+span.related-tags .tag-counter{
+  color:#ccc;
+}
+
+span.related-tags a{
+  color:#222;
+  font-family: "News Cycle","Arial Narrow Bold",sans-serif;
+}
+
+#selected-tags-container .selected-related-tag a{
+  color:#fff!important;
+}
+
+#selected-tags-container .selected-related-tag a:hover,
+#selected-tags-container .selected-related-tag a.selected-related-tag-remove:hover{
+  color:#000!important;
+}

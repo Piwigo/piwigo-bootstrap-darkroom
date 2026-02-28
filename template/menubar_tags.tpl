@@ -4,7 +4,7 @@
 {assign var=level value=$tag.level}
 {/if}
 <li class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Related tags'|@translate}</a>
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{'Tags'|@translate}</a>
     <div class="dropdown-menu dropdown-menu-right" role="menu">
 {foreach from=$block->data item=tag}
         {strip}<a class="dropdown-item tagLevel{$level}" href=

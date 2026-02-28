@@ -19,7 +19,7 @@
 {combine_script id='piecon' load='footer' path='themes/default/js/plugins/piecon.js'}
 
 {footer_script}
-var rootUrl = "{get_absolute_root_url()}";
+var rootUrl = "{$ABSOLUTE_ROOT_URL}";
 {literal}
 jQuery(document).ready(function(){
 
@@ -201,7 +201,7 @@ var limit_storage = {$limit_storage};
 		
 		filters : {
 			// Maximum file size
-			max_file_size : '1000mb',
+			max_file_size : '{/literal}{$upload_max_filesize}{literal}',
 			// Specify what files to browse for
 			mime_types: [
 				{title : "Image files", extensions : "{/literal}{$file_exts}{literal}"}

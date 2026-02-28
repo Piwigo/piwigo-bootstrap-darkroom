@@ -60,3 +60,36 @@
   background: #eee;
   color: #444;
 }
+
+/* Related tages */
+
+span.related-tags{
+  background-color:var(--primary);
+}
+
+span.related-tags:hover{
+  background-color:#18bc9c;
+}
+
+#selected-tags-container .selected-related-tag {
+  background-color: var(--primary);
+  border: 1px solid #18bc9c;
+  color: #fff;
+}
+
+span.related-tags .tag-counter{
+  color:#ccc;
+}
+
+span.related-tags a{
+  color:#fff;
+}
+
+#selected-tags-container .selected-related-tag a{
+  color:#fff!important;
+}
+
+#selected-tags-container .selected-related-tag a:hover,
+#selected-tags-container .selected-related-tag a.selected-related-tag-remove:hover{
+  color:#18bc9c!important;
+}

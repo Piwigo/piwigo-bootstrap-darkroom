@@ -58,3 +58,40 @@
   background-color:#777;
   color:#eee;
 }
+
+.mcs-side-results.search-in-set-button a{
+  color: #fff!important;
+}
+
+/* Related tages */
+
+span.related-tags{
+  background-color:#282828;
+}
+
+span.related-tags:hover{
+  background-color:var(--primary);
+}
+
+#selected-tags-container .selected-related-tag {
+  background-color: #00bc8c;
+  border: 1px solid #303030;
+  color: #4f4f4f;
+}
+
+span.related-tags .tag-counter{
+  color:#ACACAC;
+}
+
+span.related-tags a{
+  color:#fff;
+}
+
+#selected-tags-container .selected-related-tag a{
+  color:#000!important;
+}
+
+#selected-tags-container .selected-related-tag a:hover,
+#selected-tags-container .selected-related-tag a.selected-related-tag-remove:hover{
+  color:#fff!important;
+}

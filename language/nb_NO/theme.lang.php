@@ -106,3 +106,4 @@ $lang['Previous (arrow left)'] = 'Forrige (pil venstre)';
 $lang['Share'] = 'Dele';
 $lang['Toggle fullscreen'] = 'Slå på fullskjerm';
 $lang['Zoom in/out'] = 'Zoom inn/ut';
+$lang['Display number of images in breadcrumb'] = 'Vis antall bilder i brødsmulelisten';

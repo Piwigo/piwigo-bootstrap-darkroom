@@ -17,7 +17,8 @@ $themeconf = array(
     'load_parent_local_head' => true,
     'local_head' => 'local_head.tpl',
     'url' => 'https://kuther.net/',
-    'colorscheme' => 'dark'
+    'colorscheme' => 'dark',
+    'use_standard_pages' => false,
 );
 
 //debug

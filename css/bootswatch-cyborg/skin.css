@@ -71,3 +71,36 @@
 .ClosePopIn.pwg-icon-cancel:before{
   color:#bbb!important;
 }
+
+/* Related tages */
+
+span.related-tags{
+  background-color:#282828;
+}
+
+span.related-tags:hover{
+  background-color:#2e2e2e;
+}
+
+#selected-tags-container .selected-related-tag {
+  background-color: #2a9fd6;
+  border: 1px solid #2a9fd6;
+  color: #4f4f4f;
+}
+
+span.related-tags .tag-counter{
+  color:#ACACAC;
+}
+
+span.related-tags a{
+  color:#fff;
+}
+
+#selected-tags-container .selected-related-tag a{
+  color:#000!important;
+}
+
+#selected-tags-container .selected-related-tag a:hover,
+#selected-tags-container .selected-related-tag a.selected-related-tag-remove:hover{
+  color:#fff!important;
+}
