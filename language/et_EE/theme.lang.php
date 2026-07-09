@@ -91,3 +91,6 @@ $lang['Description display style'] = 'Kirjelduse kuvamise stiil';
 $lang['Components'] = 'Komponendid';
 $lang['Disabled'] = 'Keelatud';
 $lang['Enabled'] = 'Lubatud';
+$lang['Download'] = 'Laadi alla';
+$lang['Show a download button'] = 'Näita allalaadimise nuppu';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Lisab PhotoSwipe’i tööriistaribale allalaadimise nupu, mis võimaldab külastajatel algse faili alla laadida.';

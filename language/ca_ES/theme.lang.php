@@ -107,3 +107,6 @@ $lang['Share'] = 'Comparteix';
 $lang['Toggle fullscreen'] = 'Commuta la pantalla completa';
 $lang['Zoom in/out'] = 'Aproxima/allunya';
 $lang['Display number of images in breadcrumb'] = 'Mostra el nombre d\'imatges en la ruta de navegació';
+$lang['Download'] = 'Baixa';
+$lang['Show a download button'] = 'Mostra un botó de baixada';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Afegeix un botó de baixada a la barra d\'eines de PhotoSwipe, permetent als visitants baixar el fitxer original.';

@@ -107,3 +107,6 @@ $lang['Next (arrow right)'] = 'Siguiente (Flecha derecha)';
 $lang['Close (Esc)'] = 'Cerrar (Esc)';
 $lang['AutoPlay'] = 'Reproducción automática';
 $lang['Display number of images in breadcrumb'] = 'Mostrar el número de imágenes en el rastro de navegación';
+$lang['Download'] = 'Descargar';
+$lang['Show a download button'] = 'Mostrar un botón de descarga';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Añade un botón de descarga a la barra de herramientas de PhotoSwipe, permitiendo a los visitantes descargar el archivo original.';

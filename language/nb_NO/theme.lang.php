@@ -107,3 +107,6 @@ $lang['Share'] = 'Dele';
 $lang['Toggle fullscreen'] = 'Slå på fullskjerm';
 $lang['Zoom in/out'] = 'Zoom inn/ut';
 $lang['Display number of images in breadcrumb'] = 'Vis antall bilder i brødsmulelisten';
+$lang['Download'] = 'Last ned';
+$lang['Show a download button'] = 'Vis en nedlastingsknapp';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Legger til en nedlastingsknapp i PhotoSwipe-verktøylinjen slik at besøkende kan laste ned originalfilen.';

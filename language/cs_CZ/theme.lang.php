@@ -92,3 +92,6 @@ $lang['Center mode'] = 'Středový režim';
 $lang['Close (Esc)'] = 'Zavřít (Esc)';
 $lang['Color theme'] = 'Barevné téma';
 $lang['Display number of images in breadcrumb'] = 'Zobrazit počet obrázků v drobečkové navigaci (breadcrumb)';
+$lang['Download'] = 'Stáhnout';
+$lang['Show a download button'] = 'Zobrazit tlačítko stažení';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Přidá tlačítko stažení do panelu nástrojů PhotoSwipe, které návštěvníkům umožní stáhnout původní soubor.';

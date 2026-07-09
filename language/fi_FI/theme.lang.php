@@ -92,3 +92,6 @@ $lang['Category page display'] = 'Kategoriasivun näyttö';
 $lang['Center mode'] = 'Keskitystila';
 $lang['Close (Esc)'] = 'Sulje (ESc)';
 $lang['Color theme'] = 'Väriteema';
+$lang['Download'] = 'Lataa';
+$lang['Show a download button'] = 'Näytä latauspainike';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Lisää PhotoSwipe-työkalupalkkiin latauspainikkeen, jonka avulla kävijät voivat ladata alkuperäisen tiedoston.';

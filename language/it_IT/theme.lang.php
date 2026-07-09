@@ -92,3 +92,6 @@ $lang['Endlessly scroll through album images'] = 'Scorri all\'infinito le immagi
 $lang['Full width layout'] = 'Impaginazione a larghezza intera';
 $lang['Grid view'] = 'Vista a griglia';
 $lang['Display number of images in breadcrumb'] = 'Mostra il numero delle immagini nel percorso';
+$lang['Download'] = 'Scarica';
+$lang['Show a download button'] = 'Mostra un pulsante di download';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Aggiunge un pulsante di download alla barra degli strumenti di PhotoSwipe, permettendo ai visitatori di scaricare il file originale.';

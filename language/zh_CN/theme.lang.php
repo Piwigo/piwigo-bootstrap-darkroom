@@ -107,3 +107,6 @@ $lang['Share'] = '分享';
 $lang['Toggle fullscreen'] = '切换全屏';
 $lang['Zoom in/out'] = '放大/缩小';
 $lang['Display number of images in breadcrumb'] = '在面包屑导航中显示图片数量';
+$lang['Download'] = '下载';
+$lang['Show a download button'] = '显示下载按钮';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = '在 PhotoSwipe 工具栏中添加一个下载按钮，让访客可以下载原始文件。';

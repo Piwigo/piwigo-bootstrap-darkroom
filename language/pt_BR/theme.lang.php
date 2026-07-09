@@ -107,3 +107,6 @@ $lang['Share'] = 'Compartilhar';
 $lang['Toggle fullscreen'] = 'Alternar para o modo tela cheia';
 $lang['Zoom in/out'] = 'Ampliar/Reduzir';
 $lang['Display number of images in breadcrumb'] = 'Exibir número de imagens na trilha de navegação';
+$lang['Download'] = 'Baixar';
+$lang['Show a download button'] = 'Mostrar um botão de download';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Adiciona um botão de download à barra de ferramentas do PhotoSwipe, permitindo que os visitantes baixem o arquivo original.';

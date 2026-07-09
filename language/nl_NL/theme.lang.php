@@ -107,3 +107,6 @@ $lang['Share'] = 'Deel';
 $lang['Toggle fullscreen'] = 'Schele volledig scherm in';
 $lang['Zoom in/out'] = 'Zoem in/uit';
 $lang['Display number of images in breadcrumb'] = 'Toon het aantal afbeeldingen in kruimelspoor';
+$lang['Download'] = 'Downloaden';
+$lang['Show a download button'] = 'Toon een downloadknop';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Voegt een downloadknop toe aan de PhotoSwipe-werkbalk, zodat bezoekers het originele bestand kunnen downloaden.';

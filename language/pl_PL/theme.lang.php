@@ -108,3 +108,6 @@ $lang['Next (arrow right)'] = 'Następne (strzałka w prawo)';
 $lang['AutoPlay'] = 'Automatyczne odtwarzanie';
 $lang['Zoom in/out'] = 'Powiększenie/pomniejszenie';
 $lang['Display number of images in breadcrumb'] = 'Wyświetl liczbę zdjęć w nawigacji okruszkowej';
+$lang['Download'] = 'Pobierz';
+$lang['Show a download button'] = 'Pokaż przycisk pobierania';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Dodaje przycisk pobierania do paska narzędzi PhotoSwipe, umożliwiając odwiedzającym pobranie oryginalnego pliku.';
