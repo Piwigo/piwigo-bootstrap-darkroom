@@ -303,6 +303,14 @@
                     <label labelfor="photoswipe_interval">{'Autoplay interval'|@translate}</label>
                     <input type="number" name="photoswipe_interval" value="{$theme_config->photoswipe_interval}" min="1000" max="50000"> {'milliseconds'|@translate}
                 </li>
+                <li>
+                    <label class="font-checkbox">
+                        <span class="icon-check"></span>
+                        <input type="checkbox" name="download_enabled"{if $theme_config->download_enabled} checked="checked"{/if}>
+                        {'Show a download button'|@translate}
+                    </label>
+                    <span class="info">{'Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'|@translate}</span>
+                </li>
             </ul>
         </fieldset>
         <fieldset>

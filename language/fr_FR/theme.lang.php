@@ -107,3 +107,6 @@ $lang['AutoPlay'] = 'Lecture automatique';
 $lang['Previous (arrow left)'] = 'Précédent (flèche gauche)';
 $lang['Next (arrow right)'] = 'Suivant (flèche droite)';
 $lang['Display number of images in breadcrumb'] = 'Afficher le nombre d\'images dans le fil d\'arianne';
+$lang['Download'] = 'Télécharger';
+$lang['Show a download button'] = 'Afficher un bouton de téléchargement';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Ajoute un bouton de téléchargement à la barre d\'outils PhotoSwipe, permettant aux visiteurs de télécharger le fichier original.';

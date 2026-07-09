@@ -16,6 +16,9 @@
                  <button class="pswp__button pswp__button--fs" title="{'Toggle fullscreen'|@translate}"></button>
                  <button class="pswp__button pswp__button--zoom" title="{'Zoom in/out'|@translate}"></button>
                  <button class="pswp__button pswp__button--details" title="{'Picture details'|@translate}"></button>
+{if $theme_config->download_enabled}
+                 <button class="pswp__button pswp__button--download" title="{'Download'|@translate}"></button>
+{/if}
                  <button class="pswp__button pswp__button--autoplay" title="{'AutoPlay'|@translate}"></button>
                  <div class="pswp__preloader">
                      <div class="pswp__preloader__icn">

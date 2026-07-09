@@ -86,3 +86,6 @@ $lang['AutoPlay'] = 'AutoPlay';
 $lang['Previous (arrow left)'] = 'Previous (arrow left)';
 $lang['Next (arrow right)'] = 'Next (arrow right)';
 $lang['Display number of images in breadcrumb'] = 'Display number of images in breadcrumb';
+$lang['Download'] = 'Download';
+$lang['Show a download button'] = 'Show a download button';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.';

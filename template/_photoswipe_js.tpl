@@ -12,6 +12,7 @@ function startPhotoSwipe(idx) {
              getItems = function() {
                  var items = [];
                  $pic.find('a').each(function() {
+                   var $download = $(this).data('download');
                    if ($(this).attr('data-video')) {
                      var $src            = $(this).data('src-original'),
                          $size           = $(this).data('size-original').split('x'),
@@ -26,6 +27,7 @@ function startPhotoSwipe(idx) {
                      var item = {
                          is_video : true,
                          href     : $href,
+                         downloadUrl : $download,
                          src      : $src_preview,
                          w        : $width_preview,
                          h        : $height_preview,
@@ -59,6 +61,7 @@ function startPhotoSwipe(idx) {
                      var item = {
                          is_video: false,
                          href: $href,
+                         downloadUrl: $download,
                          mediumImage: {
                              src   : $src_medium,
                              w     : $width_medium,
@@ -202,6 +205,11 @@ function startPhotoSwipe(idx) {
             $('.pswp__button--details').on('click touchstart', function() {
                 location.href = photoSwipe.currItem.href
             });
+{if $theme_config->download_enabled}
+            $('.pswp__button--download').on('click touchstart', function() {
+                if (photoSwipe.currItem.downloadUrl) location.href = photoSwipe.currItem.downloadUrl;
+            });
+{/if}
         });
 
         photoSwipe.listen('afterChange', function() {
@@ -209,6 +217,11 @@ function startPhotoSwipe(idx) {
             $('.pswp__button--details').off().on('click touchstart', function() {
                 location.href = photoSwipe.currItem.href
             });
+{if $theme_config->download_enabled}
+            $('.pswp__button--download').off().on('click touchstart', function() {
+                if (photoSwipe.currItem.downloadUrl) location.href = photoSwipe.currItem.downloadUrl;
+            });
+{/if}
         });
 
         photoSwipe.listen('beforeChange', function() {
