@@ -92,3 +92,6 @@ $lang['Close (Esc)'] = '닫기 (Esc)';
 $lang['Color theme'] = '컬러 테마';
 $lang['By'] = '에서';
 $lang['from'] = '출처';
+$lang['Download'] = '다운로드';
+$lang['Show a download button'] = '다운로드 버튼 표시';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'PhotoSwipe 도구 모음에 다운로드 버튼을 추가하여 방문자가 원본 파일을 다운로드할 수 있게 합니다.';

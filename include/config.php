@@ -4,7 +4,7 @@ namespace BootstrapDarkroom;
 class Config {
 
     const CONF_PARAM = 'bootstrap_darkroom';
-    const CONF_VERSION = 20;
+    const CONF_VERSION = 21;
 
     const TYPE_BOOL = 'bool';
     const TYPE_STRING = 'string';
@@ -34,6 +34,7 @@ class Config {
     const KEY_PICTURE_INFO = 'picture_info';
     const KEY_PHOTOSWIPE = 'photoswipe';
     const KEY_PHOTOSWIPE_INTERVAL = 'photoswipe_interval';
+    const KEY_DOWNLOAD_ENABLED = 'download_enabled';
     const KEY_THUMBNAIL_LINKTO = 'thumbnail_linkto';
     const KEY_THUMBNAIL_CAPTION = 'thumbnail_caption';
     const KEY_THUMBNAIL_DESC = 'thumbnail_desc';
@@ -80,6 +81,7 @@ class Config {
         self::KEY_PICTURE_INFO => 'cards',
         self::KEY_PHOTOSWIPE => true,
         self::KEY_PHOTOSWIPE_INTERVAL => '3500',
+        self::KEY_DOWNLOAD_ENABLED => true,
         self::KEY_THUMBNAIL_LINKTO => 'picture',
         self::KEY_THUMBNAIL_CAPTION => true,
         self::KEY_THUMBNAIL_DESC => false,
@@ -124,6 +126,7 @@ class Config {
         self::KEY_PICTURE_INFO => self::TYPE_STRING,
         self::KEY_PHOTOSWIPE => self::TYPE_BOOL,
         self::KEY_PHOTOSWIPE_INTERVAL => self::TYPE_NUM,
+        self::KEY_DOWNLOAD_ENABLED => self::TYPE_BOOL,
         self::KEY_THUMBNAIL_LINKTO => self::TYPE_STRING,
         self::KEY_THUMBNAIL_CAPTION => self::TYPE_BOOL,
         self::KEY_THUMBNAIL_DESC => self::TYPE_BOOL,

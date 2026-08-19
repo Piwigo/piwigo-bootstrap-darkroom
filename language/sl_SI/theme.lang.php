@@ -92,3 +92,6 @@ $lang['Share'] = 'Delite';
 $lang['Toggle fullscreen'] = 'Preklop na celozaslonski način';
 $lang['Zoom in/out'] = 'Povečanje/pomanjšanje';
 $lang['Display number of images in breadcrumb'] = 'Prikaz števila slik v drobtinah';
+$lang['Download'] = 'Prenesi';
+$lang['Show a download button'] = 'Prikaži gumb za prenos';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Doda gumb za prenos v orodno vrstico PhotoSwipe, ki obiskovalcem omogoča prenos izvirne datoteke.';

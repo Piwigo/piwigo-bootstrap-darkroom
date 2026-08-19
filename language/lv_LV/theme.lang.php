@@ -99,3 +99,6 @@ $lang['Appearance'] = 'Izskats';
 $lang['Page header'] = 'Lapas galvene';
 $lang['Banner style'] = 'Banera stils';
 $lang['Use description rather than title for images'] = 'Lietot aprakstu nevis attēla nosaukumu';
+$lang['Download'] = 'Lejupielādēt';
+$lang['Show a download button'] = 'Rādīt lejupielādes pogu';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Pievieno lejupielādes pogu PhotoSwipe rīkjoslai, ļaujot apmeklētājiem lejupielādēt oriģinālo failu.';

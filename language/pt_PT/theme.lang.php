@@ -95,3 +95,6 @@ $lang['Use 6 colums for viewports >= 1680px'] = 'Usar 6 colunas para janela de v
 $lang['Use colored share buttons instead of icons'] = 'Usar botões de compartilhamento coloridos em vez de ícones';
 $lang['Use description rather than title for images'] = 'Usar descrição em vez de título para imagens';
 $lang['Use full width containers that span the entire width of the viewport'] = 'Usar largura total que abrangem toda a largura da janela de visualização';
+$lang['Download'] = 'Transferir';
+$lang['Show a download button'] = 'Mostrar um botão de transferência';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Adiciona um botão de transferência à barra de ferramentas do PhotoSwipe, permitindo aos visitantes transferir o ficheiro original.';

@@ -92,3 +92,6 @@ $lang['Share'] = 'Deila';
 $lang['Toggle fullscreen'] = 'Skipta í/úr fullskjá';
 $lang['Zoom in/out'] = 'Þysja inn/út';
 $lang['Display number of images in breadcrumb'] = 'Birta fjölda mynda í slóð';
+$lang['Download'] = 'Sækja';
+$lang['Show a download button'] = 'Sýna niðurhalshnapp';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Bætir niðurhalshnappi við PhotoSwipe tólastikuna svo gestir geti sótt upprunalegu skrána.';

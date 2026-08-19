@@ -92,3 +92,6 @@ $lang['HTML 5 canvas'] = 'HTML5畫布';
 $lang['Hero image'] = '主頁橫幅';
 $lang['If you find any issues, please report them to the'] = '如果有問題，請回報至';
 $lang['Display number of images in breadcrumb'] = '在 breadcrumb 中顯示照片的數量';
+$lang['Download'] = '下載';
+$lang['Show a download button'] = '顯示下載按鈕';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = '在 PhotoSwipe 工具列中新增一個下載按鈕，讓訪客可以下載原始檔案。';

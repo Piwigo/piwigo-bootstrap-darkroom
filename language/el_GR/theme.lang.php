@@ -107,3 +107,6 @@ $lang['Next (arrow right)'] = 'Επόμενο (βέλος δεξιά)';
 $lang['Close (Esc)'] = 'Κλείσιμο (Esc)';
 $lang['AutoPlay'] = 'Αυτόματη αναπαραγωγή';
 $lang['Display number of images in breadcrumb'] = 'Δείξε τον αριθμό των φωτογραφιών στην δυναμική περιήγηση';
+$lang['Download'] = 'Λήψη';
+$lang['Show a download button'] = 'Εμφάνιση κουμπιού λήψης';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Προσθέτει ένα κουμπί λήψης στη γραμμή εργαλείων του PhotoSwipe, επιτρέποντας στους επισκέπτες να κατεβάσουν το πρωτότυπο αρχείο.';

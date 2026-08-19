@@ -107,3 +107,6 @@ $lang['Share'] = 'Paylaş';
 $lang['Toggle fullscreen'] = 'Tam ekrana geç';
 $lang['Zoom in/out'] = 'Yakınlaştır/uzaklaştır';
 $lang['Display number of images in breadcrumb'] = 'breadcrumb içindeki imaj sayısını göster';
+$lang['Download'] = 'İndir';
+$lang['Show a download button'] = 'Bir indirme düğmesi göster';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'PhotoSwipe araç çubuğuna bir indirme düğmesi ekler ve ziyaretçilerin orijinal dosyayı indirmesine olanak tanır.';

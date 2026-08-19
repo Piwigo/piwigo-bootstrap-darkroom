@@ -106,3 +106,6 @@ $lang['Previous (arrow left)'] = 'Предыдущее (стрелка влев�
 $lang['Share'] = 'Поделиться';
 $lang['Toggle fullscreen'] = 'Перейти в полный экран';
 $lang['Zoom in/out'] = 'Зум (приближение / отдаление)';
+$lang['Download'] = 'Скачать';
+$lang['Show a download button'] = 'Показать кнопку скачивания';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Добавляет кнопку скачивания на панель инструментов PhotoSwipe, позволяя посетителям скачать оригинальный файл.';

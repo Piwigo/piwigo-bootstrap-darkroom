@@ -92,3 +92,6 @@ $lang['Center mode'] = 'מצב מרכז';
 $lang['Close (Esc)'] = 'סגירה (Esc)';
 $lang['Color theme'] = 'ערכת צבע';
 $lang['Display number of images in breadcrumb'] = 'הצג מספר תמונות בשביל ניווט';
+$lang['Download'] = 'הורדה';
+$lang['Show a download button'] = 'הצג כפתור הורדה';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'מוסיף כפתור הורדה לסרגל הכלים של PhotoSwipe, ומאפשר למבקרים להוריד את הקובץ המקורי.';

@@ -92,3 +92,6 @@ $lang['center-aligned h5 heading'] = 'nadpis h5 zarovnaný na stred';
 $lang['directly in the navigation bar'] = 'priamo v navigačnom paneli';
 $lang['lazyLoad method'] = 'metóda lazyLoad';
 $lang['left-aligned free text for advanced descriptions'] = 'voľný text zarovnaný vľavo pre rozšírené popisy';
+$lang['Download'] = 'Stiahnuť';
+$lang['Show a download button'] = 'Zobraziť tlačidlo sťahovania';
+$lang['Add a download button to the PhotoSwipe toolbar, letting visitors download the original file.'] = 'Pridá tlačidlo sťahovania do panela nástrojov PhotoSwipe, ktoré návštevníkom umožní stiahnuť pôvodný súbor.';
