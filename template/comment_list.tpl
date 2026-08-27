@@ -10,6 +10,7 @@
 {/html_style}{/strip}
 {footer_script}var error_icon = "{$ROOT_URL}{$themeconf.icon_dir}/errors_small.png";{/footer_script}
 {/if}
+{if isset($comments)}
 <div id="commentList">
 {foreach from=$comments item=comment name=comment_loop}
     <div class="comment">
@@ -85,3 +86,4 @@
     </div>
 {/foreach}
 </div>
+{/if}
