@@ -34,7 +34,7 @@ jQuery(document).ready(function(){
     }
 
     var nbFiles = 0;
-    nbFiles = jQuery(".uploadifyQueueItem").size();
+    nbFiles = jQuery(".uploadifyQueueItem").length;
 
     if (nbFiles == 0) {
       jQuery("#formErrors #noPhoto").show();
