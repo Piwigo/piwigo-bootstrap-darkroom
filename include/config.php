@@ -230,7 +230,19 @@ class Config {
     }
 
     public function save() {
-        conf_update_param(self::CONF_PARAM, json_encode($this->config));
+        // conf_update_param() only escapes the array/object branch, where it does
+        // addslashes(serialize($value)). A string value goes through
+        // boolean_to_string(), which returns it untouched, and is then interpolated
+        // straight into the INSERT. A JSON payload is a string, and json_encode()
+        // does not escape single quotes: any setting containing an apostrophe
+        // breaks the query.
+        //
+        // Escaping here rather than passing the raw array on purpose: the array
+        // branch would store serialize() output, while __construct() reads the row
+        // back with json_decode(). Switching the stored format would make every
+        // existing installation decode null on upgrade and silently fall back to
+        // the default configuration.
+        conf_update_param(self::CONF_PARAM, addslashes(json_encode($this->config)));
     }
 
     private function createDefaultConfig() {
