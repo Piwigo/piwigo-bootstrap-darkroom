@@ -31,10 +31,6 @@ node_modules/bootstrap-material-design/dist/*
 node_modules/jquery/*
 !node_modules/jquery/dist
 
-!node_modules/jquery-migrate
-node_modules/jquery-migrate/*
-!node_modules/jquery-migrate/dist
-
 !node_modules/popper.js
 node_modules/popper.js/*
 !node_modules/popper.js/dist

@@ -269,7 +269,7 @@ $(document).ready(function() {
 {if !empty($THUMBNAILS)}
         <!-- Start of thumbnails -->
         <div id="thumbnails" class="row">{$THUMBNAILS}</div>
-{footer_script require='jquery'}{literal}$(document).ready(function(){$('#content img').load(function(){$('#content .col-inner').equalHeights()})});{/literal}{/footer_script}
+{footer_script require='jquery'}{literal}$(document).ready(function(){$('#content img').on('load', function(){$('#content .col-inner').equalHeights()})});{/literal}{/footer_script}
 {if $theme_config->photoswipe}
         <div id="photoSwipeData">
 {assign var=idx value=0}

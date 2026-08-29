@@ -1,8 +1,0 @@
-{
-	"extends": "../src/.eslintrc.json",
-	"root": true,
-	"rules": {
-		// That is okay for the built version
-		"no-multiple-empty-lines": "off"
-	}
-}
